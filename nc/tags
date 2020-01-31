@@ -1,0 +1,204 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+0	.vscode/launch.json	/^                {$/;"	o	array:configurations.0.setupCommands
+0	.vscode/launch.json	/^        {$/;"	o	array:configurations
+BinarySearch	binsearchtest.c	/^void BinarySearch(int a[], int key, int n){$/;"	f	typeref:typename:void
+Bsearch	DS_PROJECT/binarySearch.c	/^void Bsearch(int *a, int k, int n){$/;"	f	typeref:typename:void
+Bsort	DS_PROJECT/binarySearch.c	/^void Bsort(int *a, int n){$/;"	f	typeref:typename:void
+Bsort	DS_PROJECT/bubbleSort.c	/^void Bsort(int* a, int n){$/;"	f	typeref:typename:void
+Combine	DS_PROJECT/mergeSort.c	/^void Combine(int *a, int beg, int mid, int end){$/;"	f	typeref:typename:void
+DELETE	DS_PROJECT/queueOperation1.c	/^int DELETE(void){$/;"	f	typeref:typename:int
+DEQUEUE	DS_PROJECT/circularQueue1.c	/^int DEQUEUE(void){\/\/can't use void as data type else it will give error, check function callin/;"	f	typeref:typename:int
+DEQUEUE	DS_PROJECT/queueOperation2.c	/^struct queue *DEQUEUE(struct queue *q){$/;"	f	typeref:struct:queue *
+DEQUEUE	circularQueue2.c	/^struct cirqueue *DEQUEUE(struct cirqueue *q){$/;"	f	typeref:struct:cirqueue *
+DISPLAY	DS_PROJECT/circularQueue1.c	/^void DISPLAY(){$/;"	f	typeref:typename:void
+DISPLAY	DS_PROJECT/queueOperation1.c	/^void DISPLAY(){$/;"	f	typeref:typename:void
+DISPLAY	DS_PROJECT/queueOperation2.c	/^struct queue *DISPLAY(struct queue *q){$/;"	f	typeref:struct:queue *
+DISPLAY	DS_PROJECT/stackOperation1.c	/^void DISPLAY(){$/;"	f	typeref:typename:void
+DISPLAY	DS_PROJECT/stackOperation2.c	/^struct stack *DISPLAY(struct stack *top){$/;"	f	typeref:struct:stack *
+DISPLAY	circularQueue2.c	/^struct cirqueue *DISPLAY(struct cirqueue *q){$/;"	f	typeref:struct:cirqueue *
+ENQUEUE	DS_PROJECT/circularQueue1.c	/^void ENQUEUE(){$/;"	f	typeref:typename:void
+ENQUEUE	DS_PROJECT/queueOperation2.c	/^struct queue* ENQUEUE(struct queue *q, int val){\/\/void can't be used because we are taking ret/;"	f	typeref:struct:queue *
+ENQUEUE	circularQueue2.c	/^struct cirqueue *ENQUEUE(struct cirqueue *q, int val){$/;"	f	typeref:struct:cirqueue *
+Fact	factorial.c	/^int Fact(int n){$/;"	f	typeref:typename:int
+INSERT	DS_PROJECT/queueOperation1.c	/^void INSERT(){$/;"	f	typeref:typename:void
+Lsearch	DS_PROJECT/linearSearch.c	/^void Lsearch(int *a, int k, int n){$/;"	f	typeref:typename:void
+MIMode	.vscode/launch.json	/^            "MIMode": "gdb",$/;"	s	object:configurations.0
+Max1	MergeArray.c	/^#define Max1 /;"	d	file:
+Max2	MergeArray.c	/^#define Max2 /;"	d	file:
+PEEK	DS_PROJECT/circularQueue1.c	/^int PEEK(void){$/;"	f	typeref:typename:int
+PEEK	DS_PROJECT/queueOperation1.c	/^int PEEK(void){$/;"	f	typeref:typename:int
+PEEK	DS_PROJECT/queueOperation2.c	/^int PEEK(struct queue *q){$/;"	f	typeref:typename:int
+POP	DS_PROJECT/stackOperation1.c	/^void POP(){$/;"	f	typeref:typename:void
+POP	DS_PROJECT/stackOperation2.c	/^struct stack *POP(struct stack *top){$/;"	f	typeref:struct:stack *
+PUSH	DS_PROJECT/stackOperation.c	/^void PUSH(int *a, int sp){$/;"	f	typeref:typename:void
+PUSH	DS_PROJECT/stackOperation1.c	/^void PUSH(){$/;"	f	typeref:typename:void
+PUSH	DS_PROJECT/stackOperation2.c	/^struct stack *PUSH(struct stack *top, int val){$/;"	f	typeref:struct:stack *
+Partition	DS_PROJECT/quickSort.c	/^int Partition(int *a,int beg,int end){$/;"	f	typeref:typename:int
+QuickSort	DS_PROJECT/quickSort.c	/^void QuickSort(int *a,int beg,int end){$/;"	f	typeref:typename:void
+Sorting	DS_PROJECT/mergeSort.c	/^void Sorting(int *a,int beg,int end){$/;"	f	typeref:typename:void
+__anond6869a500103	instacode.c	/^enum{false,true};$/;"	g	file:
+a	DS_PROJECT/circularQueue1.c	/^int a[size],front=-1,rear=-1;$/;"	v	typeref:typename:int[]
+a	DS_PROJECT/queueOperation1.c	/^int a[size], f = -1, r = -1;$/;"	v	typeref:typename:int[]
+a	DS_PROJECT/stackOperation1.c	/^int a[size],ch,i=-1,data,c;$/;"	v	typeref:typename:int[]
+a	array1.c	/^int a[5][5], i, j, rc;$/;"	v	typeref:typename:int[5][5]
+addafter	opll.c	/^void addafter(struct node **q, int loc, int num){$/;"	f	typeref:typename:void
+addtobeg	opll.c	/^void addtobeg(struct node **q, int num){$/;"	f	typeref:typename:void
+append	opll.c	/^void append(struct node **q, int num){$/;"	f	typeref:typename:void
+args	.vscode/launch.json	/^            "args": [],$/;"	a	object:configurations.0
+c	DS_PROJECT/stackOperation1.c	/^int a[size],ch,i=-1,data,c;$/;"	v	typeref:typename:int[]
+ch	DS_PROJECT/stackOperation1.c	/^int a[size],ch,i=-1,data,c;$/;"	v	typeref:typename:int[]
+circqueue	circularQueue2.c	/^struct circqueue{$/;"	s	file:
+configurations	.vscode/launch.json	/^    "configurations": [$/;"	a
+count	opll.c	/^int count(struct node *q){$/;"	f	typeref:typename:int
+create	DS_PROJECT/circularlinkedlist.c	/^struct node *create(struct node *start){$/;"	f	typeref:struct:node *
+create	DS_PROJECT/singlylinkedlist.c	/^struct node *create(struct node *start){$/;"	f	typeref:struct:node *
+create_ll	DS_PROJECT/doublylinkedlist.c	/^struct node *create_ll(struct node *start)$/;"	f	typeref:struct:node *
+cwd	.vscode/launch.json	/^            "cwd": "${workspaceFolder}",$/;"	s	object:configurations.0
+data	DS_PROJECT/circularlinkedlist.c	/^    int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	DS_PROJECT/doublylinkedlist.c	/^int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	DS_PROJECT/queueOperation2.c	/^	int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	DS_PROJECT/singlylinkedlist.c	/^    int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	DS_PROJECT/stackOperation1.c	/^int a[size],ch,i=-1,data,c;$/;"	v	typeref:typename:int[]
+data	DS_PROJECT/stackOperation2.c	/^    int data;$/;"	m	struct:stack	typeref:typename:int	file:
+data	OperationLinkedList.c	/^    int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	circularQueue2.c	/^    int data;$/;"	m	struct:node	typeref:typename:int	file:
+data	opll.c	/^    int data;$/;"	m	struct:node	typeref:typename:int	file:
+del	opll.c	/^void del(struct node **q, int num){$/;"	f	typeref:typename:void
+delete_after	DS_PROJECT/circularlinkedlist.c	/^struct node *delete_after(struct node *start)$/;"	f	typeref:struct:node *
+delete_after	DS_PROJECT/doublylinkedlist.c	/^struct node *delete_after(struct node *start)$/;"	f	typeref:struct:node *
+delete_after	DS_PROJECT/singlylinkedlist.c	/^struct node *delete_after(struct node *start){$/;"	f	typeref:struct:node *
+delete_before	DS_PROJECT/doublylinkedlist.c	/^struct node *delete_before(struct node *start)$/;"	f	typeref:struct:node *
+delete_beg	DS_PROJECT/circularlinkedlist.c	/^struct node *delete_beg(struct node *start)$/;"	f	typeref:struct:node *
+delete_beg	DS_PROJECT/doublylinkedlist.c	/^struct node *delete_beg(struct node *start)$/;"	f	typeref:struct:node *
+delete_beg	DS_PROJECT/singlylinkedlist.c	/^struct node *delete_beg(struct node *start){$/;"	f	typeref:struct:node *
+delete_end	DS_PROJECT/circularlinkedlist.c	/^struct node *delete_end(struct node *start)$/;"	f	typeref:struct:node *
+delete_end	DS_PROJECT/doublylinkedlist.c	/^struct node *delete_end(struct node *start)$/;"	f	typeref:struct:node *
+delete_end	DS_PROJECT/singlylinkedlist.c	/^struct node *delete_end(struct node *start){$/;"	f	typeref:struct:node *
+delete_list	DS_PROJECT/circularlinkedlist.c	/^struct node *delete_list(struct node *start)$/;"	f	typeref:struct:node *
+delete_list	DS_PROJECT/doublylinkedlist.c	/^struct node *delete_list(struct node *start)$/;"	f	typeref:struct:node *
+delete_list	DS_PROJECT/singlylinkedlist.c	/^struct node *delete_list(struct node *start){$/;"	f	typeref:struct:node *
+delete_node	DS_PROJECT/singlylinkedlist.c	/^struct node *delete_node(struct node *start){$/;"	f	typeref:struct:node *
+description	.vscode/launch.json	/^                    "description": "Enable pretty-printing for gdb",$/;"	s	object:configurations.0.setupCommands.0
+display	DS_PROJECT/circularlinkedlist.c	/^struct node *display(struct node *start){$/;"	f	typeref:struct:node *
+display	DS_PROJECT/doublylinkedlist.c	/^struct node *display(struct node *start)$/;"	f	typeref:struct:node *
+display	DS_PROJECT/singlylinkedlist.c	/^struct node *display(struct node *start){$/;"	f	typeref:struct:node *
+display	MergeArray.c	/^void display(int *arr,int size){$/;"	f	typeref:typename:void
+display	opll.c	/^void display(struct node *q){$/;"	f	typeref:typename:void
+display_mat	array1.c	/^void display_mat(int c[5][5], int n){$/;"	f	typeref:typename:void
+environment	.vscode/launch.json	/^            "environment": [],$/;"	a	object:configurations.0
+externalConsole	.vscode/launch.json	/^            "externalConsole": false,$/;"	b	object:configurations.0
+f	DS_PROJECT/queueOperation1.c	/^int a[size], f = -1, r = -1;$/;"	v	typeref:typename:int[]
+front	DS_PROJECT/circularQueue1.c	/^int a[size],front=-1,rear=-1;$/;"	v	typeref:typename:int[]
+front	DS_PROJECT/queueOperation2.c	/^	struct node *front;$/;"	m	struct:queue	typeref:struct:node *	file:
+front	circularQueue2.c	/^    struct node *front;$/;"	m	struct:circqueue	typeref:struct:node *	file:
+function	testcss1.c	/^void function(char *input) {$/;"	f	typeref:typename:void
+i	DS_PROJECT/stackOperation1.c	/^int a[size],ch,i=-1,data,c;$/;"	v	typeref:typename:int[]
+i	array1.c	/^int a[5][5], i, j, rc;$/;"	v	typeref:typename:int[5][5]
+i	array3.c	/^int i, j, mat[3][3];$/;"	v	typeref:typename:int
+ignoreFailures	.vscode/launch.json	/^                    "ignoreFailures": true$/;"	b	object:configurations.0.setupCommands.0
+insert	MergeArray.c	/^int *insert(int size){$/;"	f	typeref:typename:int *
+insert_after	DS_PROJECT/doublylinkedlist.c	/^struct node *insert_after(struct node *start)$/;"	f	typeref:struct:node *
+insert_after	DS_PROJECT/singlylinkedlist.c	/^struct node *insert_after(struct node *start){$/;"	f	typeref:struct:node *
+insert_before	DS_PROJECT/doublylinkedlist.c	/^struct node *insert_before(struct node *start)$/;"	f	typeref:struct:node *
+insert_before	DS_PROJECT/singlylinkedlist.c	/^struct node *insert_before(struct node *start){$/;"	f	typeref:struct:node *
+insert_beg	DS_PROJECT/circularlinkedlist.c	/^struct node *insert_beg(struct node *start){$/;"	f	typeref:struct:node *
+insert_beg	DS_PROJECT/doublylinkedlist.c	/^struct node *insert_beg(struct node *start)$/;"	f	typeref:struct:node *
+insert_beg	DS_PROJECT/singlylinkedlist.c	/^struct node *insert_beg(struct node *start){$/;"	f	typeref:struct:node *
+insert_end	DS_PROJECT/circularlinkedlist.c	/^struct node *insert_end(struct node *start){$/;"	f	typeref:struct:node *
+insert_end	DS_PROJECT/doublylinkedlist.c	/^struct node *insert_end(struct node *start)$/;"	f	typeref:struct:node *
+insert_end	DS_PROJECT/singlylinkedlist.c	/^struct node *insert_end(struct node *start){$/;"	f	typeref:struct:node *
+j	array1.c	/^int a[5][5], i, j, rc;$/;"	v	typeref:typename:int[5][5]
+j	array3.c	/^int i, j, mat[3][3];$/;"	v	typeref:typename:int
+main	DS_PROJECT/binarySearch.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/bubbleSort.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/circularQueue1.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/circularlinkedlist.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/doublylinkedlist.c	/^int main()$/;"	f	typeref:typename:int
+main	DS_PROJECT/linearSearch.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/mergeSort.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/queueOperation1.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/queueOperation2.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/quickSort.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/singlylinkedlist.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/stackOperation.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/stackOperation1.c	/^int main(){$/;"	f	typeref:typename:int
+main	DS_PROJECT/stackOperation2.c	/^int main(){$/;"	f	typeref:typename:int
+main	MergeArray.c	/^int main(){$/;"	f	typeref:typename:int
+main	OperationLinkedList.c	/^int main(){$/;"	f	typeref:typename:int
+main	UnderstandPointer.c	/^int main(){$/;"	f	typeref:typename:int
+main	array1.c	/^int main(int arc, char *argv[]){$/;"	f	typeref:typename:int
+main	array2.c	/^int main(int arc, char *argv[]){$/;"	f	typeref:typename:int
+main	array3.c	/^int main(int arc, char *argv[]){$/;"	f	typeref:typename:int
+main	binsearchtest.c	/^int main(int arc, char *argv[]){$/;"	f	typeref:typename:int
+main	circularQueue2.c	/^int main(){$/;"	f	typeref:typename:int
+main	delarray.c	/^int main(){$/;"	f	typeref:typename:int
+main	delarray1.c	/^int main(){$/;"	f	typeref:typename:int
+main	factorial.c	/^int main(){$/;"	f	typeref:typename:int
+main	fmt_vuln.c	/^int main(int argc, char *argv[]){$/;"	f	typeref:typename:int
+main	hello.c	/^int main(){$/;"	f	typeref:typename:int
+main	hello_arg.c	/^int main(int argc, int *argv[]){$/;"	f	typeref:typename:int
+main	instacode.c	/^int main(int argc, char *argv[]){$/;"	f	typeref:typename:int
+main	learnvim.c	/^int main(){$/;"	f	typeref:typename:int
+main	loopWorld.c	/^int main(){$/;"	f	typeref:typename:int
+main	opll.c	/^int main(){$/;"	f	typeref:typename:int
+main	searchlinear.c	/^int main(int arc, char *argv[]){$/;"	f	typeref:typename:int
+main	testcss1.c	/^int main(){$/;"	f	typeref:typename:int
+main	vstrial.c	/^int main(){$/;"	f	typeref:typename:int
+mat	array3.c	/^int i, j, mat[3][3];$/;"	v	typeref:typename:int[3][3]
+merge	MergeArray.c	/^int *merge(int *a,int *b){$/;"	f	typeref:typename:int *
+miDebuggerPath	.vscode/launch.json	/^            "miDebuggerPath": "\/usr\/bin\/gdb"$/;"	s	object:configurations.0
+name	.vscode/launch.json	/^            "name": "gcc build and debug active file",$/;"	s	object:configurations.0
+next	DS_PROJECT/circularlinkedlist.c	/^    struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	DS_PROJECT/doublylinkedlist.c	/^struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	DS_PROJECT/queueOperation2.c	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	DS_PROJECT/singlylinkedlist.c	/^    struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	DS_PROJECT/stackOperation2.c	/^    struct stack *next;$/;"	m	struct:stack	typeref:struct:stack *	file:
+next	OperationLinkedList.c	/^    struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	circularQueue2.c	/^    struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+next	opll.c	/^    struct node *next;$/;"	m	struct:node	typeref:struct:node *	file:
+node	DS_PROJECT/circularlinkedlist.c	/^struct node{$/;"	s	file:
+node	DS_PROJECT/doublylinkedlist.c	/^struct node$/;"	s	file:
+node	DS_PROJECT/queueOperation2.c	/^struct node{$/;"	s	file:
+node	DS_PROJECT/singlylinkedlist.c	/^struct node{$/;"	s	file:
+node	OperationLinkedList.c	/^struct node{$/;"	s	file:
+node	circularQueue2.c	/^struct node{$/;"	s	file:
+node	opll.c	/^struct node{$/;"	s	file:
+num	DS_PROJECT/stackOperation.c	/^#define num /;"	d	file:
+preLaunchTask	.vscode/launch.json	/^            "preLaunchTask": "gcc build active file",$/;"	s	object:configurations.0
+prev	DS_PROJECT/doublylinkedlist.c	/^struct node *prev;$/;"	m	struct:node	typeref:struct:node *	file:
+program	.vscode/launch.json	/^            "program": "${fileDirname}\/${fileBasenameNoExtension}",$/;"	s	object:configurations.0
+q	DS_PROJECT/queueOperation2.c	/^struct queue *q;$/;"	v	typeref:struct:queue *
+q	circularQueue2.c	/^struct cirqueue *q;$/;"	v	typeref:struct:cirqueue *
+queue	DS_PROJECT/queueOperation2.c	/^struct queue{$/;"	s	file:
+r	DS_PROJECT/queueOperation1.c	/^int a[size], f = -1, r = -1;$/;"	v	typeref:typename:int[]
+rc	array1.c	/^int a[5][5], i, j, rc;$/;"	v	typeref:typename:int[5][5]
+read_mat	array1.c	/^void read_mat(int b[5][5], int num){$/;"	f	typeref:typename:void
+rear	DS_PROJECT/circularQueue1.c	/^int a[size],front=-1,rear=-1;$/;"	v	typeref:typename:int[]
+rear	DS_PROJECT/queueOperation2.c	/^	struct node *rear;$/;"	m	struct:queue	typeref:struct:node *	file:
+rear	circularQueue2.c	/^    struct node *rear;$/;"	m	struct:circqueue	typeref:struct:node *	file:
+request	.vscode/launch.json	/^            "request": "launch",$/;"	s	object:configurations.0
+search	searchlinear.c	/^void search(int arr[], int n){$/;"	f	typeref:typename:void
+selectionsort	binsearchtest.c	/^void selectionsort(int a[], int n){$/;"	f	typeref:typename:void
+setupCommands	.vscode/launch.json	/^            "setupCommands": [$/;"	a	object:configurations.0
+size	DS_PROJECT/circularQueue1.c	/^#define size /;"	d	file:
+size	DS_PROJECT/mergeSort.c	/^#define size /;"	d	file:
+size	DS_PROJECT/queueOperation1.c	/^#define size /;"	d	file:
+size	DS_PROJECT/stackOperation1.c	/^#define size /;"	d	file:
+size	binsearchtest.c	/^#define size /;"	d	file:
+size	searchlinear.c	/^#define size /;"	d	file:
+sort	MergeArray.c	/^void sort(int *arr,int size){$/;"	f	typeref:typename:void
+sort_list	DS_PROJECT/singlylinkedlist.c	/^struct node *sort_list(struct node *start){$/;"	f	typeref:struct:node *
+stack	DS_PROJECT/stackOperation2.c	/^struct stack{$/;"	s	file:
+start	DS_PROJECT/circularlinkedlist.c	/^struct node *start = NULL;$/;"	v	typeref:struct:node *
+start	DS_PROJECT/doublylinkedlist.c	/^struct node *start = NULL;$/;"	v	typeref:struct:node *
+start	DS_PROJECT/singlylinkedlist.c	/^struct node *start=NULL;$/;"	v	typeref:struct:node *
+stopAtEntry	.vscode/launch.json	/^            "stopAtEntry": false,$/;"	b	object:configurations.0
+text	.vscode/launch.json	/^                    "text": "-enable-pretty-printing",$/;"	s	object:configurations.0.setupCommands.0
+top	DS_PROJECT/stackOperation2.c	/^struct stack *top = NULL;$/;"	v	typeref:struct:stack *
+type	.vscode/launch.json	/^            "type": "cppdbg",$/;"	s	object:configurations.0
