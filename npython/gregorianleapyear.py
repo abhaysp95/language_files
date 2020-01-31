@@ -9,8 +9,13 @@
 # This means that in the Gregorian calendar, the years 2000 and 2400 are leap years, while 1800, 1900, 2100, 2200, 2300 and 2500 are NOT leap years.
 
 y=int(input())
-if y>=1900 and y<=10**5:
-    if y%400==0:
+if y >= 1900 and y <= 10**5:
+    if y%400:
         print("True")
+    elif y%100 != 0:
+        if y%4 == 0:
+            print("True")
+        else:
+            print("False")
     else:
         print("False")
