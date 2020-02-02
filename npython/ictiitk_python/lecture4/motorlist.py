@@ -28,8 +28,18 @@ print(companies)
 print(popped_company)
 
 companies.append('bajaj')
+print(companies)
 last_owned = companies.pop()
 print(f"The last motorcycle I owned was a {last_owned.title()}")
 last_owned = companies.pop()
 print(f"The last motorcycle I owned was a {last_owned.title()}")
 print(last_owned)
+
+# remove with pop when index number is known
+first_owned = companies.pop(0)
+print(f"First owned motercycle was {first_owned}.")
+print(companies)
+
+# to remove an item by value
+last_removed = companies.remove('ducati')
+print(f"Last removed item is {last_removed}.")
