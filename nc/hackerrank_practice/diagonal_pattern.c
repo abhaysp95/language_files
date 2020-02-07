@@ -4,41 +4,39 @@
 
 
 int main(int argc, char *argv[]){
-	int n,i,j,k;
+	int n,i,j,k,l;
 	printf("\nEnter the number: ");
 	scanf("%d",&n);
-	for (i = 0; i < ((2*n)-1); ++i) {
-		for (j = 0; j < (((2*n)-1)-i); ++j) {
-			/* if(i>0){ */
-			/* 	if(j==0){ */
-			/* 		printf("%d",n); */
-			/* 	} */
-			/* 	else if (j>0){ */
-			/* 		printf("%d",n-j); */
-			/* 	} */
-			/* } */
-			/* else */
-			/* 	printf("%d",n); */
-			if (j==0) {
-				printf("%d",n);
-			}
-			else if (j>0) {
-				if (j>=i) {
-					printf("%d",n-i);
-				}
-				else
-					printf("%d",n-j);
-			}
+	// for the upper part
+	for (i = 0; i < n; i++) {
+		// for the first triangle
+		for (j = 0; j < i; j++) {
+			printf("%d",n-j);
 		}
-		if (i!=0) {
-			for (k = 0; k < i; ++k) {
-				/* if (k==((2*n)-2)) { */
-				/* 	printf("%d",n); */
-				/* } */
-				/* else */
-				/* printf("%d",n-k); */
-				printf("%d",j+k-1);
-			}
+		// for the mid triangle
+		for (k = 0; k < (2*(n-i))-1; k++) {
+			printf("%d",n-i);
+		}
+		// for the last triangle
+		for (l = 0; l < i; l++) {
+			printf("%d",n-i+l+1);
+		}
+		printf("\n");
+	}
+
+	// for the bottom part
+	for (i = 1; i < n; i++) {
+		// for the first triangle
+		for (j = 0; j < n-i; j++) {
+			printf("%d",n-j);
+		}
+		// for the mid triangle
+		for (k = 0; k < (2*i)-1; k++) {
+			printf("%d",i+1);
+		}
+		// for the last triangle
+		for (l = 0; l < n-i; l++) {
+			printf("%d",n-j+l+1);
 		}
 		printf("\n");
 	}
