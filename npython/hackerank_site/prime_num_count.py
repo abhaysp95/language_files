@@ -32,13 +32,15 @@ if num > 0:
         flag = 0
         if num == 2:
             count += 1
+        elif num == 1:
+            flag = 1    # 1 is neither prime nor composite
         else:
             i = 2
-            for i in range(2,r):
+            for i in range(2, r):
                 if r%i == 0:
                     flag = 1
                     break
-                if flag == 0:
-                    count += 1
+        if flag == 0:
+            count += 1
         num = num//10
     print(count)
