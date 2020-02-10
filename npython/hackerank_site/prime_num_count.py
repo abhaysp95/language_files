@@ -30,9 +30,9 @@ if num > 0:
     while num > 0:
         r = num%10
         flag = 0
-        if num == 2:
+        if r == 2:
             count += 1
-        elif num == 1:
+        elif r == 1:
             flag = 1    # 1 is neither prime nor composite
         else:
             i = 2
@@ -40,7 +40,7 @@ if num > 0:
                 if r%i == 0:
                     flag = 1
                     break
-        if flag == 0:
+        if flag == 0 and r != 2:
             count += 1
         num = num//10
     print(count)
