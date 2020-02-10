@@ -81,10 +81,10 @@ void sort_by_area(int *arr1, int (*arr)[3], int n) {
 				printf("\n%d",d);
 			}
 		}
+		printf("\n");
 		for (j = 0; j < 3; j++) {
-			printf("\n%d",arr[d][j]);
+			printf("%d ",arr[d][j]);
 		}
 		printf("\n");
 	}
 }
-
