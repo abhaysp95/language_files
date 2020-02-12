@@ -11,6 +11,7 @@ Last Edit -> 2020-02-11 */
 
 void calculate_the_maximum(int ,int );
 void sort_array(int *arr3, int );
+void get_max(int *arr4, int , int );
 
 int main(int argc, char *argv[]){
 	int n, k;
@@ -64,12 +65,16 @@ void calculate_the_maximum(int n, int k) {
 		printf("%d ",arr2[i]);
 	}
 
+	get_max(arr, l, k);
+	get_max(arr1, p, k);
+	get_max(arr2, q, k);
+
 }
 
-void sort_array(int *arr3, int l) {
+void sort_array(int *arr3, int s) {
 	int i, j, temp;
-	for (i = 0; i < l; ++i) {
-		for (j = 0; j < l-i; j++) {
+	for (i = 0; i < s-1; ++i) {
+		for (j = 0; j < s-i-1; j++) {
 			if (arr3[j+1] < arr3[j]) {
 				temp = arr3[j+1];
 				arr3[j + 1] = arr3[j];
@@ -79,3 +84,19 @@ void sort_array(int *arr3, int l) {
 	}
 }
 
+void get_max(int *arr4, int l, int k) {
+	int i = 0, max = 0, arr5[size], u = 0;
+	for (i = 0; i < l; i++) {
+		if (arr4[i] < k) {
+			arr5[u] = arr4[i];
+			u++;
+		}
+	}
+	max = arr5[0];
+	for (i = 0; i < u; i++) {
+		if (arr5[i] > max) {
+			max = arr5[i];
+		}
+	}
+	printf("\n%d",max);
+}
