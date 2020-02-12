@@ -7,7 +7,7 @@ Last Edit -> 2020-02-11 */
 
 #include<stdio.h>
 #include<math.h>
-#define size 50
+#define size 1000
 
 void calculate_the_maximum(int ,int );
 void sort_array(int *arr3, int );
