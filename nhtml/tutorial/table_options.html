@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+			table#t01,#t03, th, td {
+				border: 1px solid black;
+			}
+
+			th, td {
+				padding: 20px;
+			}
+			th#t01,#t03 {
+				text-align: left;
+				background-color: #282828;
+			}
+
+			table#t01,#t03 {
+				border-spacing: 10px;
+				background-color: #282828;
+			}
+		</style>
+				<!-- for borders to collapse into one border, add the border-collapse property -->
+				<!-- border-collapse: collapse; -->
+			<!-- add cell padding to html table -->
+			<!-- By default, table headings are bold and left aligned and centered, to change use text-align property -->
+		<!-- above one is css element, I think -->
+	</head>
+
+	<body>
+		<table style="width:100%" id="t01">
+			<caption>Candidate's Details</caption>
+			<!-- width:100% means expands table to full page in width -->
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Age</th>
+			</tr>
+			<tr>
+				<td>Priya</td>
+				<td>Sharma</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>Arun</td>
+				<td>Singh</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>Sam</td>
+				<td>Watson</td>
+				<td>41</td>
+			</tr>
+		</table>
+	</body>
+
+	<head>
+		<style>
+			table#t02, tr, th {
+				border-collapse: collapse;
+				background-color: #a89984;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>Cell that spans two columns: </h2>
+		<table id="t02">
+			<caption>Vikas's Details</caption>
+			<tr>
+				<th>Name</th>
+				<th colspan="2">Telephone</th>
+			</tr>
+			<tr>
+				<td>Vikas Rawat</td>
+				<td>9125577854</td>
+				<td>8565557785</td>
+			</tr>
+		</table>
+
+		<h2>Cell that spans two rows: </h2>
+		<table id="t03">
+			<caption>Details</caption>
+			<tr>
+				<th>Name:</th>
+				<td>Vikas Rawat</td>
+			</tr>
+			<tr>
+				<th rowspan="2">Telephone:</th>
+				<td>9125577854</td>
+			</tr>
+			<tr>
+				<td>8565557785</td>
+			</tr>
+		</table>
+		<h2>Creating a Nested table: </h2>
+		<table border=5 bordercolor=cyan width=100%>
+			<tr>
+				<td>First column of outer table</td>
+				<td>
+					<table border=5 bordercolor=grey width=100%>
+						<tr>
+							<td>First row of Inner table</td>
+						</tr>
+						<tr>
+							<td>Second row of Inner table</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
