@@ -11,19 +11,18 @@ Last Edit -> 2020-02-14 */
 void print(int *, int );
 
 int main(int argc, char *argv[]){
-	int arr[size], i, n;
-	printf("\nEnter the numbers: ");
+	int arr[size], n, i;
+	int *p;
 	scanf("%d", &n);
+	p = arr;
 	for (i = 0; i < n; i++) {
-		scanf("%d", &arr[i]);
+		scanf("%d",p);
+		p = p + 1;	// p is increasing in terms of size of int like 100 to 102
 	}
-	print(arr, n);
+	p = arr;
+	for (i = 0; i < n; i++) {
+		printf("%d\n", *p);
+		p = p + 1;
+	}
 	return 0;
-}
-
-void print(int *arr, int n) {
-	int i;
-	for (i = 0; i < n; i++) {
-		printf("%d",arr[i]);
-	}
 }

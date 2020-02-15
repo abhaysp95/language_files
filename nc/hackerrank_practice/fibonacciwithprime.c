@@ -9,7 +9,7 @@ Last Edit -> 2020-02-14 */
 #define size 1000
 
 int main(int argc, char *argv[]){
-	int num, a = 1, b = 1, c, i, j, flag, pos, d = 0;
+	int num, a = 1, b = 1, c, i, j, flag = 0, pos, d = 0;
 	printf("\nEnter the position: ");
 	scanf("%d", &num);
 	if ((num + 1)%2 == 0) {
