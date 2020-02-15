@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 					d++;
 				}
 				if (d == pos) {
-					printf("%d ",i);
+					printf("%d",i);
 					break;
 				}
 			}
