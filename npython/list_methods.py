@@ -15,8 +15,15 @@ print("Max element: ", max(lst))
 print("Min element: ", min(lst))
 
 # to add list element convert them into int
-lst2 = [int(num) for num in n]
-print("Sum: ", sum(lst2))
+lst = [int(num) for num in n]
+print("Sum: ", sum(lst))
 # print("Sort ascending: ", lst.sort())
-v = lst.sort()
-print(v)
+lst.sort()      # if used v = lst.sort() it will return NONE
+print(lst)
+
+lst.sort(reverse=True)
+print(lst)
+
+print("Length of list is: ", len(lst))
+# v=".join[str(num) for num in n]
+# print(v)
