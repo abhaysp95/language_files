@@ -170,3 +170,11 @@ struct node *insert_after(struct node *root) {
 	return root;
 }
 
+struct node *delete_beg(struct node *root) {
+	int num;
+	root = root -> link;
+	free(root);
+	return root;
+}
+
+
