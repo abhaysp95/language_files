@@ -21,6 +21,8 @@ int main(int argc, char *argv[]){
 	fgets(s2, sizeof(s2), stdin);
 	a = strlen(s1);
 	b = strlen(s2);
+	printf("a is %d", a);
+	printf("b is %d", b);
 	printf("\nSize of first number set: %ld", a-1);
 	printf("\nSize of second number set: %ld", b-1);
 	printf("\n");
