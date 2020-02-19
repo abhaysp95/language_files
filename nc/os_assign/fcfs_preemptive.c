@@ -9,7 +9,7 @@ Last Edit -> 2020-02-18 */
 #define size 100
 
 int main(int argc, char *argv[]){
-	int wt[size], bt[size], at[size], tat[size], i, j, np;
+	int pro[size], wt[size], bt[size], at[size], tat[size], i, j, np;
 	float val = 0, val1 = 0;
 	printf("\nEnter number of process: ");
 	scanf("%d", &np);
@@ -26,6 +26,10 @@ int main(int argc, char *argv[]){
 	for (i = 0; i < np; i++) {
 		printf("Process %d: ", i+1);
 		scanf("%d", &at[i]);
+	}
+
+	for (i = 0; i < np; i++) {
+		pro[i] = i + 1;
 	}
 
 	// calculating turn around time
@@ -64,9 +68,14 @@ int main(int argc, char *argv[]){
 				temp = at[j];
 				at[j] = at[j+1];
 				at[j+1] = temp;
+
 				temp = bt[j];
 				bt[j] = bt[j+1];
 				bt[j+1] = temp;
+
+				temp = pro[j];
+				pro[j] = pro[j+1];
+				pro[j+1] = temp;
 			}
 		}
 	}
@@ -82,17 +91,43 @@ int main(int argc, char *argv[]){
 
 	// tat
 	for (i = 0; i < np; i++) {
-		printf("\nTurn around time for P%d: ", i+1);
+		/* printf("\nTurn around time for P%d: ", pro[i]); */
 		val = val + bt[i] - at[i] + at[i-1];
 		tat[i] = val;
-		printf("%d", tat[i]);
+		/* printf("%d", tat[i]); */
 	}
 
 	// wt
 	for (i = 0; i < np; i++) {
-		printf("\nwaiting time for P%d: ", i+1);
+		/* printf("\nwaiting time for P%d: ", pro[i]); */
 		val = tat[i] - bt[i];
 		wt[i] = val;
+		/* printf("%d", wt[i]); */
+	}
+
+	for (i = 0; i < np - 1; i++) {
+		for (j = 0; j < np - i -1; j++) {
+			if (pro[j] > pro[j+1]) {
+				temp = pro[j];
+				pro[j] = pro[j+1];
+				pro[j+1] = temp;
+
+				temp = tat[j];
+				tat[j] = tat[j+1];
+				tat[j+1] = temp;
+
+				temp = wt[j];
+				wt[j] = wt[j+1];
+				wt[j+1] = temp;
+			}
+		}
+	}
+
+	for (i = 0; i < np; i++) {
+		printf("\n\nTurn around Time for process P%d: ", pro[i]);
+		printf("%d", tat[i]);
+		// pro[i] isn't necessary here for numbering, it's just to bind values with process
+		printf("\nWaiting time for process P%d: ", i+1);
 		printf("%d", wt[i]);
 	}
 
@@ -103,7 +138,7 @@ int main(int argc, char *argv[]){
 		val1 = val1 + wt[i];
 	}
 
-	printf("\nAverage waiting time: %.2f", val1/np);
+	printf("\n\nAverage waiting time: %.2f", val1/np);
 	printf("\nAverage turn around time: %.2f", val/np);
 	return 0;
 }

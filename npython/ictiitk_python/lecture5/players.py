@@ -18,7 +18,7 @@ print(players[-4:-1])
 print(players[:-2])
 
 print("\nHere are the first three players: ")
-for player in players[:]:
+for player in players[:3]:      # if used [:] then it will iterate through all elemmentsg
     print(player.title())
 
 # copy list
