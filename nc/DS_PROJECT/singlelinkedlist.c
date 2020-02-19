@@ -14,6 +14,17 @@ struct node {
 } *root = NULL;
 
 struct node *create_ll(struct node *);
+struct node *display(struct node *);
+struct node *insert_beg(struct node *);
+struct node *insert_end(struct node *);
+struct node *insert_before(struct node *);
+struct node *insert_after(struct node *);
+struct node *delete_beg(struct node *);
+struct node *delete_end(struct node *);
+struct node *delete_node(struct node *);
+struct node *delete_after(struct node *);
+struct node *delete_list(struct node *);
+struct node *sort_list(struct node *);
 
 int main(int argc, char *argv[]){
 	int ch;
@@ -79,6 +90,7 @@ struct node *create_ll(struct node *root) {
 		if (root == NULL)
 			root = temp;
 		else {
+			ptr = root;
 			while (ptr -> link != NULL)
 				ptr = ptr -> link;
 			ptr -> link = temp;
@@ -95,7 +107,7 @@ struct node *display(struct node *root) {
 	ptr = root;
 	while (ptr != NULL) {
 		printf("\n%d", ptr -> data);
-		ptr = ptr -> next;
+		ptr = ptr -> link;
 	}
 	return root;
 }
@@ -171,10 +183,91 @@ struct node *insert_after(struct node *root) {
 }
 
 struct node *delete_beg(struct node *root) {
-	int num;
+	struct node *ptr;
+	ptr = root;
 	root = root -> link;
-	free(root);
+	free(ptr);
 	return root;
 }
 
+struct node *delete_end(struct node *root) {
+	struct node *ptr, *preptr;
+	ptr = root;
+	/* preptr = ptr; */
+	while (ptr -> link != NULL) {
+		preptr = ptr;
+		ptr = ptr -> link;
+	}
+	preptr -> link = NULL;
+	free(ptr);
+	return root;
+}
 
+struct node *delete_node(struct node *root) {
+	int val;
+	struct node *ptr, *preptr;
+	printf("\nEnter the value which you want to delete: ");
+	scanf("%d", &val);
+	ptr = root;
+	if (ptr -> data == val) {
+		delete_beg(root);
+		return root;
+	}
+	else {
+		while (ptr -> data != val) {
+			preptr = ptr;
+			ptr = ptr -> link;
+		}
+		preptr -> link = ptr -> link;
+		free(ptr);
+		return root;
+	}
+}
+
+struct node *delete_after(struct node *start) {
+	int val;
+	struct node *ptr, *preptr;
+	printf("\n Enter the value: ");
+	scanf("%d", &val);
+	ptr = root;
+	preptr = ptr;
+	while (preptr -> data != val) {
+		preptr = ptr;
+		ptr = ptr -> link;
+	}
+	preptr -> link = ptr -> link;
+	free(ptr);
+	return root;
+}
+
+struct node *delete_list(struct node *root) {
+	struct node *ptr;
+	if(root != NULL) {
+		ptr = root;
+		while (ptr != NULL) {
+			printf("\n%d is going to be deleted next.", ptr -> data);
+			root = delete_beg(root);
+			ptr = root;
+		}
+	}
+	return root;
+}
+
+struct node *sort_list(struct node *root) {
+	struct node *ptr, *preptr;
+	int temp;
+	ptr = root;
+	while (ptr -> link != NULL) {
+		preptr = ptr -> link;
+		while (preptr != NULL) {
+			if (ptr -> data > preptr -> data) {
+				temp = ptr -> data;
+				ptr -> data = preptr -> data;
+				preptr -> data = temp;
+			}
+			preptr = preptr -> link;
+		}
+		ptr = ptr -> link;
+	}
+	return root;
+}
