@@ -21,9 +21,9 @@ int main(int argc, char *argv[]){
 	// creation of linked list
 	root = create_ll(root);
 	// finding max element and deleting it
-	root = max_del(root);
+	/* root = max_del(root); */
 	// display list
-	root = display(root);
+	/* root = display(root); */
 	return 0;
 }
 
@@ -52,6 +52,8 @@ struct node *create_ll(struct node *root) {
 			}
 			val--;
 		}
+		root = max_del(root);
+		root = display(root);
 	}
 	else {
 		while (val > 0) {
