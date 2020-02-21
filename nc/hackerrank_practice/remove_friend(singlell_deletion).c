@@ -7,6 +7,7 @@ Last Edit -> 2020-02-20 */
 
 #include<stdio.h>
 #include<stdlib.h>
+#define size 1000
 
 struct node {
 	int data;
@@ -21,47 +22,44 @@ int main(int argc, char *argv[]){
 	// creation of linked list
 	root = create_ll(root);
 	// finding max element and deleting it
-	root = max_del(root);
-	// display list
-	root = display(root);
+	/* root = max_del(root); */
+	/* // display list */
+	/* root = display(root); */
 	return 0;
 }
 
 struct node *create_ll(struct node *root) {
 	struct node *ptr, *temp;
-	int val, num, arr[50];
+	int val, num;
 	printf("\nEnter the limit: ");
 	scanf("%d", &val);
-	if (val >= 1 && val <= 10) {
+	/* if (val >= 1 && val <= 10) { */
 		while (val > 0) {
-			printf("\nEnter the element: ");
-			scanf("%d", &num);
-			temp = (struct node *)malloc(sizeof(struct node));
-			temp -> data = num;
-			temp -> link = NULL;
-			if (root == NULL) {
-				root = temp;
-			}
-			else {
-				ptr = root;
-				while (ptr -> link != NULL) {
-					ptr = ptr -> link;
-				}
-				ptr -> link = temp;
+				printf("\nEnter the element: ");
+				scanf("%d", &num);
+				temp = (struct node *)malloc(sizeof(struct node));
+				temp -> data = num;
 				temp -> link = NULL;
-			}
-			val--;
+				if (root == NULL) {
+					root = temp;
+				}
+				else {
+					ptr = root;
+					while (ptr -> link != NULL) {
+						ptr = ptr -> link;
+					}
+					ptr -> link = temp;
+					temp -> link = NULL;
+				}
+				root = max_del(root);
+
 		}
-	}
-	else {
-		while (val > 0) {
-			int i = 0;
-			scanf("%d", &arr[i]);
-			val--;
-			i++;
-		}
-		printf("\nfriend list exceeded from limit");
-	}
+	/* } */
+	/* else { */
+	/* 	for (int i = 0; i < val; i++) */
+	/* 		scanf("%d", &arr[i]); */
+	/* 	printf("\nfriend list exceeded from limit"); */
+	/* } */
 	return root;
 }
 
@@ -90,6 +88,7 @@ struct node *max_del(struct node *root) {
 		preptr -> link = ptr -> link;
 		free(ptr);
 	}
+	root = display(root);
 	return root;
 }
 

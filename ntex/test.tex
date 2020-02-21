@@ -1,0 +1,115 @@
+% function are called with class
+\documentclass{article}	% some others are book, a4letter, beamer
+\usepackage{graphicx}	% for images
+\usepackage{blindtext}
+\usepackage{wrapfig}
+
+\author{Abhay Shanker Pathak}
+\title{First {\LaTeX} document}
+\date{Last Tuesday}
+
+% stuff up this line is preamble
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+	\blindtext
+	\blindtext
+	\blindtext
+% it's going in next section
+	\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.7\textwidth]{/home/raytracer/2020-01-28-195626_1366x768_scrot.png}
+		\caption{tiling window manager}
+	\end{figure}
+	\blindtext
+	\blindtext
+
+	This is some text.
+	This new line in my editor.
+
+	You have to make two returns.
+
+\section{new section}
+
+So, in Section~\ref{list}, we will talk about lists
+
+\begin{center}
+\includegraphics[width=5in,height=6in,keepaspectratio]{/home/raytracer/2020-02-12-203212_1338x722_scrot.png}
+\end{center}
+
+\section{Just another section}
+
+\begin{figure}[h]	% h to put exactly where you want
+	% t to put image on top of page, b to put on bottom and p to put on page of its own
+\begin{center}
+\includegraphics[scale=0.3]{$HOME/2020-02-11-171559_1366x768_scrot.png}
+\end{center}
+	\caption{example: .xinitrc}
+\end{figure}
+
+We talked about bread, in Section\textbf{~\ref{list}} on number\emph{~\ref{bread}}
+
+\section{Formatting}
+
+\blindtext
+\blindtext
+\begin{wrapfigure}{l}{4in}
+%\begin{center}
+	\centering
+	\includegraphics[width=3in]{$HOME/2020-02-21-111530_1366x768_scrot.png}
+	\caption{compton effect\label{compton}}
+%\end{center}
+\end{wrapfigure}
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+
+	\subsection{Subsection}
+
+	I'm going to put a image here
+
+\begin{center}
+\includegraphics[width=0.8\textwidth,angle=5]{$HOME/2020-02-12-203212_1338x722_scrot.png}
+\end{center}
+
+		This is normal text. \textbf{This is bold text}. \textit{This is italic!}. \emph{This is emphatic.}
+
+		Refer, to \textbf{Figure: }~\ref{compton}, to get to know \textbf{COMPTON} effect
+
+		\underline{Here are some underlined text.}
+
+		% "This is in quotation marks."
+		% makes opening and closing both closing. So, use grave
+
+		`` This is in proper quotation marks.''
+
+		` This is in single quotation marks.'
+
+\section{Lists\label{list}}
+
+This is an ordered list
+
+\begin{enumerate}
+	\item Bread\label{bread}
+	\item butter
+	\item toilet paper
+	\item cream
+\end{enumerate}
+
+This is an unordered list
+
+\begin{itemize}
+		\item corn
+			\begin{itemize}
+				\item red corn
+				\item black corn
+			\end{itemize}
+		\item maize
+		\item lamp
+\end{itemize}
+\end{document}
