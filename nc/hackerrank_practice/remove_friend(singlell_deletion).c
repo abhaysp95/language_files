@@ -23,7 +23,11 @@ int main(int argc, char *argv[]){
 	root = create_ll(root);
 	// finding max element and deleting it
 	/* root = max_del(root); */
+<<<<<<< HEAD
 	/* // display list */
+=======
+	// display list
+>>>>>>> ce12354d3862c7cea32a734dae6797b5d26e8021
 	/* root = display(root); */
 	return 0;
 }
@@ -40,6 +44,7 @@ struct node *create_ll(struct node *root) {
 				temp = (struct node *)malloc(sizeof(struct node));
 				temp -> data = num;
 				temp -> link = NULL;
+<<<<<<< HEAD
 				if (root == NULL) {
 					root = temp;
 				}
@@ -53,6 +58,20 @@ struct node *create_ll(struct node *root) {
 				}
 				root = max_del(root);
 
+=======
+			}
+			val--;
+		}
+		root = max_del(root);
+		root = display(root);
+	}
+	else {
+		while (val > 0) {
+			int i = 0;
+			scanf("%d", &arr[i]);
+			val--;
+			i++;
+>>>>>>> ce12354d3862c7cea32a734dae6797b5d26e8021
 		}
 	/* } */
 	/* else { */
