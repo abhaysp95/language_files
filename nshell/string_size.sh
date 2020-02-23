@@ -25,7 +25,7 @@ else
 	echo "The string $val2 isn't empty"
 fi
 #
-if [ -z $val3 ]; then
+if [ -z $val3 ]; then	# although not declared it still works
 	echo "The string $val3 is empty"
 else
 	echo "The string $val3 isn't empty"

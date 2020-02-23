@@ -15,9 +15,9 @@ if [ -e "$name" ]; then
 	echo Object "$name" exists
 	if [ -s "$name" ]; then
 		#echo "$name" has data in it.
-		printf "%s" "$name" "has data in it\nDeletion not performed."
+		printf "%s has data in it\nDeletion not performed." "$name"
 	else
-		printf "%s" "$name" " doesn't have data in it\nDeleting it"
+		printf "%s doesn't have data in it\nDeleting it" "$name"
 		rm "$name"
 	fi
 else

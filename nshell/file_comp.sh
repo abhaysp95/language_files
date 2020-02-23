@@ -27,8 +27,14 @@ fi
 
 gpath="$HOME"/dox/nshell
 
-if [ "$gpath"/2+calc.sh -nt "$gpath/3+calc.sh" ]; then
+if [ "$gpath"/2+calc.sh -nt "$gpath"/3+calc.sh ]; then
 	echo "First one is newer than the other."
 else
 	echo "Second one is newer than other."
+fi
+
+if [ "$gpath"/calc.sh -ot "$gpath"/test.sh ]; then
+	echo "First one is older than other."
+else
+	echo "Second one is older than other."
 fi
