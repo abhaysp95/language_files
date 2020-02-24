@@ -33,5 +33,6 @@ void display_mat(int c[5][5], int n){
             printf("%d\t",a[i][j]);
         }
         printf("\n");
+		printf("new output");
     }
 }
