@@ -64,16 +64,31 @@ struct node *display(struct node *root) {
 struct node *check_loop(struct node *root) {
 	struct node *ptr, *preptr;
 	ptr = root;
-	preptr = ptr;
-	int c = 0;
-	while (ptr -> data != preptr -> data) {
-		c++;
-		ptr = ptr -> link;
-		preptr = preptr -> link -> link;
+	preptr = ptr -> link;
+	//int c = 0;
+	if (root == NULL) {
+		printf("This isn't any cycle");
+		return 0;
 	}
-	if (c != 0)
-		printf("\nThere is a loop in linked list");
-	else
-		printf("\nThere isn't a loop in linked list");
+	else {
+		while (preptr != NULL) {
+			if (preptr -> link == NULL) {
+				//printf("There isn't any loop");
+				break;
+			}
+			preptr = preptr -> link -> link;
+			ptr = ptr -> link;
+			if (preptr == ptr) {
+				printf("\nThere exists a loop");
+				return 0;
+			}
+		}
+		printf("\nThere doesn't exists a loop");
+	}
+	/* if (c != 0) */
+	/* 	printf("\nThere is a loop in linked list"); */
+
+	/* else */
+	/* 	printf("\nThere isn't a loop in linked list"); */
 	return 0;
 }

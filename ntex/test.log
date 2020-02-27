@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.19)  21 FEB 2020 08:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.19)  27 FEB 2020 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**test.tex
-(./test.tex
+**/home/raytracer/dox/ntex/test.tex
+(/home/raytracer/dox/ntex/test.tex
 LaTeX2e <2019-10-01> patch level 1
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -22,38 +22,294 @@ File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-No file test.aux.
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count88
+\c@Blindtext=\count89
+\c@blind@countparstart=\count90
+\blind@countxx=\count91
+\blindtext@numBlindtext=\count92
+\blind@countyy=\count93
+\c@blindlist=\count94
+\c@blindlistlevel=\count95
+\c@blindlist@level=\count96
+\blind@listitem=\count97
+\c@blind@listcount=\count98
+\c@blind@levelcount=\count99
+\blind@mathformula=\count100
+\blind@Mathformula=\count101
+\c@blind@randomcount=\count102
+\c@blind@randommax=\count103
+\c@blind@pangramcount=\count104
+\c@blind@pangrammax=\count105
+)
+(/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen105
+\WF@size=\dimen106
+\c@WF@wrappedlines=\count106
+\WF@box=\box27
+\WF@everypar=\toks15
+Package: wrapfig 2003/01/31  v 3.6
+) (./test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen107
+\scratchbox=\box28
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen108
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks17
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+</home/raytracer/Pictures/Screenshots/2020-01-28-195626_1366x768_scrot.png, id=
+1, 1371.1225pt x 770.88pt>
+File: /home/raytracer/Pictures/Screenshots/2020-01-28-195626_1366x768_scrot.png
+ Graphic file (type png)
+<use /home/raytracer/Pictures/Screenshots/2020-01-28-195626_1366x768_scrot.png>
+
+Package pdftex.def Info: /home/raytracer/Pictures/Screenshots/2020-01-28-195626
+_1366x768_scrot.png  used on input line 24.
+(pdftex.def)             Requested size: 241.49895pt x 135.77646pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./test.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+</home/raytracer/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png, id=
+11, 1343.0175pt x 724.7075pt>
+File: /home/raytracer/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png
+ Graphic file (type png)
+<use /home/raytracer/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png>
+
+Package pdftex.def Info: /home/raytracer/Pictures/Screenshots/2020-02-12-203212
+_1338x722_scrot.png  used on input line 40.
+(pdftex.def)             Requested size: 361.34903pt x 194.98804pt.
+
+Overfull \hbox (16.34903pt too wide) in paragraph at lines 40--41
+ [] 
+ []
+
+[2 </home/raytracer/Pictures/Screenshots/2020-01-28-195626_1366x768_scrot.png>]
+<$HOME/Pictures/Screenshots/2020-02-11-171559_1366x768_scrot.png, id=15, 1371.1
+225pt x 770.88pt>
+File: $HOME/Pictures/Screenshots/2020-02-11-171559_1366x768_scrot.png Graphic f
+ile (type png)
+<use $HOME/Pictures/Screenshots/2020-02-11-171559_1366x768_scrot.png>
+Package pdftex.def Info: $HOME/Pictures/Screenshots/2020-02-11-171559_1366x768_
+scrot.png  used on input line 48.
+(pdftex.def)             Requested size: 411.33992pt x 231.26578pt.
+
+Overfull \hbox (66.33992pt too wide) in paragraph at lines 48--49
+ [] 
+ []
+
+<$HOME/Pictures/Screenshots/2020-02-21-111530_1366x768_scrot.png, id=16, 1371.1
+225pt x 770.88pt>
+File: $HOME/Pictures/Screenshots/2020-02-21-111530_1366x768_scrot.png Graphic f
+ile (type png)
+<use $HOME/Pictures/Screenshots/2020-02-21-111530_1366x768_scrot.png>
+Package pdftex.def Info: $HOME/Pictures/Screenshots/2020-02-21-111530_1366x768_
+scrot.png  used on input line 62.
+(pdftex.def)             Requested size: 216.81pt x 121.89651pt.
+[3 </home/raytracer/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png> 
+</home/raytracer/Pictures/Screenshots/2020-02-11-171559_1366x768_scrot.png>]
+Overfull \hbox (12.13564pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 sit amet, con-
+ []
+
+
+Overfull \hbox (17.49673pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 sectetuer adip-
+ []
+
+
+Overfull \hbox (8.96901pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 Etiam lobor-
+ []
+
+
+Overfull \hbox (0.19118pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 lam nec mi
+ []
+
+
+Overfull \hbox (19.94118pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 et neque phare-
+ []
+
+
+Underfull \hbox (badness 2277) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 tra sol-lic-
+ []
+
+
+Overfull \hbox (10.54308pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 i-tudin. Prae-
+ []
+
+
+Overfull \hbox (15.8301pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 sent im-perdiet
+ []
+
+
+Overfull \hbox (5.46895pt too wide) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 mi nec ante.
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 65--71
+\OT1/cmr/m/n/10 Donec ul-
+ []
+
+[4 </home/raytracer/Pictures/Screenshots/2020-02-21-111530_1366x768_scrot.png>]
+<$HOME/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png, id=25, 1343.0
+175pt x 724.7075pt>
+File: $HOME/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png Graphic f
+ile (type png)
+<use $HOME/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png>
+Package pdftex.def Info: $HOME/Pictures/Screenshots/2020-02-12-203212_1338x722_
+scrot.png  used on input line 77.
+(pdftex.def)             Requested size: 276.00105pt x 148.93091pt.
+[5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 84.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 84.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+07.
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
+ [6 </home/raytracer/Pictures/Screenshots/2020-02-12-203212_1338x722_scrot.png>
+] (./test.aux) ) 
 Here is how much of TeX's memory you used:
- 213 strings out of 492167
- 2199 string characters out of 6131558
- 61758 words of memory out of 5000000
- 4663 multiletter control sequences out of 15000+600000
- 3938 words of font info for 15 fonts, out of 8000000 for 9000
+ 1777 strings out of 492167
+ 26963 string characters out of 6131558
+ 100203 words of memory out of 5000000
+ 6126 multiletter control sequences out of 15000+600000
+ 8856 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,4n,21p,137b,99s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on test.pdf (1 page, 10108 bytes).
+ 46i,6n,30p,296b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on test.pdf (6 pages, 1792232 bytes).
 PDF statistics:
- 12 PDF objects out of 1000 (max. 8388607)
- 7 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
