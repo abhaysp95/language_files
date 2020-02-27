@@ -1,6 +1,7 @@
+@import url("style2.css");
 p
 	{
 		color:red;
-		background-color:yellow;
+		/* background-color:yellow; */
 		font-size:35px;
 	}

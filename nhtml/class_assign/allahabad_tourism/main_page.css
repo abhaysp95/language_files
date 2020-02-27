@@ -1,0 +1,7 @@
+body
+{
+	background-image: url("On_the_banks_of_New_Yamuna_bridge,_Allahabad.jpg"), url("allahabad.jpg");
+	background-position: top;
+	background-width: 100%;
+	background-size: cover;
+}
