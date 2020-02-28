@@ -1,0 +1,48 @@
+<!-- using p>i will mean that will select only child not grand child, else use 'p i' -->
+<html>
+	<head>
+		<style>
+p>*>i{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is first heading</h1>
+		<p>Here are some contents for the first paragraph.
+ The shadow exclude options are helpful if you have shadows enabled. Due to the way picom draws its shadows, certain applications will have visual glitches
+# (most applications are fine, only apps that do weird things with xshapes or argb are affected).
+# This list includes all the affected apps I found in my testing. The "! name~=''" part excludes shadows on any "Unknown" windows, this prevents a visual glitch with the XFWM alt tab switcher.</p>
+		<h2>Here is second heading</h2>
+		<p>
+	shadow = true;
+	# The blur radius for shadows. (default 12)
+	shadow-radius = 8;
+	# The left offset for shadows. (default -15)
+	shadow-offset-x = -2;
+	# The top offset for shadows. (default -15)
+	shadow-offset-y = 0;
+	# The translucency for shadows. (default .75)
+	shadow-opacity = 1;
+		</p>
+		<h3>Here is third and maybe last heading</h3>
+		<p>
+	# GLX backend: GLX buffer swap method we assume.
+	# Could be undefined (0), copy (1), exchange (2), 3-6, or buffer-age (-1).
+	# undefined is the slowest and the safest, and the default value.
+	# copy is fastest, but may fail on some drivers,
+	# 2-6 are gradually slower but safer (6 is still faster than 0).
+	# Usually, double buffer means 2, triple buffer means 3.
+	# buffer-age means auto-detect using GLX_EXT_buffer_age, supported by some drivers.
+	# Useless with --glx-use-copysubbuffermesa.
+	# Partially breaks --resize-damage.
+	# Defaults to undefined.
+	#glx-swap-method = "undefined";
+	<i>Here is an italic element.</i>
+	<b>bold element <i>Italic & bold element</i></b>
+	<u><i>Underlined and italic element</i></u>
+	<i>Only italic</i>
+		</p>
+		<i>next-line</i>
+	</body>
+</html>
