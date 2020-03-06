@@ -1,65 +1,97 @@
-/*...Menu driven program to perform stack operations...*/
+/** Name -> Abhay Shanker Pathak
+Date -> 2020-03-02
+Description -> Stack Operations with array
+Email -> abhaysp9955@gmail.com
+Github -> https://github.com/CoolAbhayS
+Last Edit -> 2020-03-02 */
 
 #include<stdio.h>
-#define num 9
-//#define size 9
+#include<stdlib.h>
+#define size 50
 
-void PUSH(int *,int );
-//void POP(int *);
+int arrst[size], top = -1;
+void push(int *, int );
+int pop(int *);
+int peek(int *);
+void display(int *);
 
-int main(){
-    int n,a[num],sp=0,data,c;
 
-    printf("\nEnter the choice to PUSH or POP - \nPUSH - 1 \nPOP - 2\n\n");
-    scanf("%d",&n);
-    switch (n){
-        case 1:{
-            printf("\nFound 1\n");
-            PUSH(a, sp);
-            break;
-        }
-        case 2:{
-            printf("\nFound 2\n");
-            //POP(a);
-            break;
-        }
-    }
-    //printf("\nStack after operation - \n");
-    /*for(int i=num;i>=0;i++)
-        printf("%d\n",a[i]);
-        printf("\n");*/
-    return 0;
+int main(int argc, char *argv[]){
+	int val, choice;
+	do {
+		printf("## Menu ##");
+		printf("\n 1. Push ");
+		printf("\n 2. Pop");
+		printf("\n 3. Peek");
+		printf("\n 4. Display");
+		printf("\n 5. Exit");
+		printf("\n Enter your option: ");
+		scanf("%d", &choice);
+		switch(choice) {
+			case 1:
+				printf("\n Enter the number to push in stack: ");
+				scanf("%d", &val);
+				push(arrst, val);
+				break;
+			case 2:
+				val = pop(arrst);
+				if(val != -1)
+					printf("\n Value popped from stack is %d ", val);
+				break;
+			case 3:
+				val = peek(arrst);
+				if (val != -1)
+					printf("\n Top value of stack is %d", val);
+				break;
+			case 4:
+				display(arrst);
+				break;
+		}
+	} while (choice != 5);
+	return 0;
 }
 
-void PUSH(int *a, int sp){
-    int data,ch,c=sp,b[9];
-    printf("\nEnter the element to PUSH into stack -\n");
-    scanf("%d",&data);
-    if(sp==num-1)
-        printf("\nOverflow. Perform POP\n\n");
-    else
-    {
-        a[sp]=data;
+void push(int *arrst, int val) {
+	if(top == size - 1)
+		printf("\nStack Overflow");
+	else {
+		top++;
+		arrst[top] = val;
+	}
+}
 
-    }
-    printf("\nWant to PUSH again - \nEnter '1' else Enter '2' \n");
-    scanf("%d",&ch);
-    if(ch==1){
+int pop(int *arrst) {
+	int val;
+	if (top == -1) {
+		printf("\nStack Underflow");
+		return -1;
+	}
+	else {
+		val = arrst[top];
+		top--;
+		return val;
+	}
+}
 
-
-        printf("%d",c);
-        PUSH(a,sp+1);
-    }
-    if(ch==2){
-        for(int i=0,j=sp+1;i<sp+1 && j>=0;i++,j--){
-            b[j]=a[i];
-
-            printf("\n%d",b[i]);
-        }
-        printf("\n");
-    }
+int peek(int *arrst) {
+	if(top == -1)
+	{
+		printf("\nStack is empty");
+		return -1;
+	}
+	else
+		return(arrst[top]);
 
 }
 
-//void POP(int *a){}
-
+void display(int *arrst) {
+	int i;
+	if (top == -1) {
+		printf("\n Stack is empty");
+	}
+	else {
+		for (i = top; i >= 0; i--) {
+			printf("\n%d", arrst[i]);
+		}
+	}
+}
