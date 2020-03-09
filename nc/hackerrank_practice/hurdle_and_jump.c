@@ -25,11 +25,11 @@ int main(int argc, char *argv[]){
 	scanf("%d", &hurdle_num);
 	printf("Enter the max of jump height limit of athelete: ");
 	scanf("%d", &max_jump);
-	// entryl of hurdles individual heights in linked list
+	// entry of hurdles individual heights in linked list
 	root = hurdle_heights(root);
 	// display linked list
 	root = display(root);
-	// sort out the linked list and finding if it's max then the max_jump
+	// max element of linked list and finding if it's max then the max_jump
 	root = max_and_max(root);
 	// freeing linked list
 	deleteallnodes(root);
