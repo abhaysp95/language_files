@@ -41,10 +41,10 @@ int main(int argc, char *argv[]){
 
 void sort_by_area(int *arr1, int (*arr)[3], int n) {
 	int i, j, arr2[size], temp, d;
-	printf("\n");
-	for (i = 0; i < 3; i++) {
-		printf("%d\n",arr[1][i]);
-	}
+	/* printf("\n"); */
+	/* for (i = 0; i < 3; i++) { */
+	/* 	printf("%d\n",arr[1][i]); */
+	/* } */
 	/* for (i = 0; i < n; i++) { */
 	/* 	printf("Area of %d triangle: %d\n",i+1,arr1[i]); */
 	/* } */
@@ -69,16 +69,16 @@ void sort_by_area(int *arr1, int (*arr)[3], int n) {
 		}
 	}
 	// now checking if the areas stored in arr2 are sorted
-	for (i = 0; i < n; i++) {
-		printf("\n%d",arr2[i]);
-	}
-	printf("\n");
+	/* for (i = 0; i < n; i++) { */
+	/* 	printf("\n%d",arr2[i]); */
+	/* } */
+	/* printf("\n"); */
 	for (i = 0; i < n; i++ ) {
 		for (j = 0; j < 3; j++) {
 			d = 0;
 			if(arr2[i] == arr1[j]){
 				d = j;
-				printf("\n%d",d);
+				/* printf("\n%d",d); */
 			}
 		}
 		printf("\n");
