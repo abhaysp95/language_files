@@ -33,7 +33,7 @@ void Bsearch(int *a, int k, int n){
             printf("\nElement %d found at %d position.\n\n",k,beg);
         }
         beg++;
-        
+
     }
     if(beg>end)
         printf("\nElement not found. Check before entering.\n\n");

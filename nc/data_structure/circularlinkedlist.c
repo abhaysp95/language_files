@@ -139,7 +139,7 @@ struct node *delete_beg(struct node *start)
 struct node *ptr;
 ptr = start;
 while(ptr -> next != start)
-		
+
  ptr = ptr -> next;
 ptr -> next = start -> next;
 free(start);
@@ -154,9 +154,9 @@ struct node *ptr, *preptr;
 ptr = start;
 while(ptr -> next != start)
 {
-		
+
  preptr = ptr;
-		
+
  ptr = ptr -> next;
 }
 preptr -> next = ptr -> next;
@@ -175,14 +175,14 @@ ptr = start;
 preptr = ptr;
 while(preptr -> data != val)
 {
-		
+
  preptr = ptr;
-		
+
  ptr = ptr -> next;
 }
 preptr -> next = ptr -> next;
 if(ptr == start)
-		
+
  start = preptr -> next;
 free(ptr);
 return start;
@@ -194,7 +194,7 @@ struct node *delete_list(struct node *start)
 struct node *ptr;
 ptr = start;
 while(ptr -> next != start)
-		
+
  start = delete_end(start);
 free(start);
 return start;
