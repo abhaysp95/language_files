@@ -33,6 +33,8 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
+// just a comment
+
 void Sum(char s1[], char s2[], int a, int b) {
 	int s3[size];
 	int i = a - 1, j = b - 1, k = a - 1;

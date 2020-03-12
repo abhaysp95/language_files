@@ -21,8 +21,8 @@ int main(int argc, char *argv[]){
 	fgets(s2, sizeof(s2), stdin);
 	a = strlen(s1);
 	b = strlen(s2);
-	printf("a is %d", a);
-	printf("b is %d", b);
+	printf("a is %ld", a);
+	printf("b is %ld", b);
 	printf("\nSize of first number set: %ld", a-1);
 	printf("\nSize of second number set: %ld", b-1);
 	printf("\n");
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
 /* 	} */
 	return 0;
 }
-
+// just a comment
 void Sum(char s1[], char s2[], int a, int b) {
 	/* int dsum = 0; */
 	/* for (int i = 0; i < a; i++) { */
