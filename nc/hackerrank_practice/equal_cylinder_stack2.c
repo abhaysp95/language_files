@@ -16,12 +16,14 @@ struct node {
 
 struct node *push_stack(struct node *);
 struct node *display(struct node *);
-struct node *pop_stack(struct node *);
+int pop_stack1(struct node *);
+int pop_stack2(struct node *);
+int pop_stack3(struct node *);
 void freethelist(struct node *);
 int total_of_llele(struct node *);
 
 int main(int argc, char *argv[]){
-	int n1, n2, n3, tota, totb, totc;
+	int n1, n2, n3, tota, totb, totc, a, b, c;
 	printf("\nEnter the element number for first stack cylinder: ");
 	scanf("%d", &n1);
 	printf("\nEnter the element number for second stack cylinder: ");
@@ -67,71 +69,84 @@ int main(int argc, char *argv[]){
 
 	// comparision logic
 	/* while (tota != totb || totb != totc || tota != 0 || totb != 0 || totc != 0) { */
-	int c = 0;
-	while (c == 0) {
+	int d = 0;
+	while (d == 0) {
 		if (tota == totb) {
 			if (totb == totc) {
 				//printf("\nMaximum height of stack: %d", tota);
-				c = 1;
+				d = 1;
 			}
 			else if (totb > totc) {
-				root1 = pop_stack(root1);
-				root2 = pop_stack(root2);
+				a = pop_stack1(root1);
+				tota -= a;
+				b = pop_stack2(root2);
+				totb -= b;
 				//printf("\n Maximum height of stack: %d", totb);
 			}
 			else {
-				root3 = pop_stack(root3);
+				c = pop_stack3(root3);
+				totc -= c;
 				//printf("\n Maximum height of stack: %d", totc);
 			}
 		}
 		else if (tota == totc) {
 			if (totc > totb) {
-				root1 = pop_stack(root1);
-				root3 = pop_stack(root3);
+				a = pop_stack1(root1);
+				tota -= a;
+				c = pop_stack3(root3);
+				totc -= c;
 				//printf("\nMaximum height of stack is: %d", totc);
 			}
 			else {
-				root2 = pop_stack(root2);
+				b = pop_stack2(root2);
+				totb -= b;
 				//printf("\nMaximum height of stack is: %d", totb);
 			}
 		}
 		else if (totb == totc) {
 			if (totc > tota) {
-				root2 = pop_stack(root2);
-				root3 = pop_stack(root3);
+				b = pop_stack2(root2);
+				totb -= b;
+				c = pop_stack3(root3);
+				totc -= c;
 				//printf("\nMaximum height of stack is: %d", totc);
 			}
 			else {
-				root1 = pop_stack(root1);
+				a = pop_stack1(root1);
+				tota -= a;
 				//printf("\nMaximum height of stack is: %d", tota);
 			}
 		}
 		else if (tota > totb) {
 			if (tota > totc) {
-				root1 = pop_stack(root1);
+				a = pop_stack1(root1);
+				tota -= a;
 				//printf("\nMaximum height of stack is: %d", tota);
 			}
 			else {
-				root3 = pop_stack(root3);
+				c = pop_stack3(root3);
+				totc -= c;
 				//printf("\nMaximum height of stack is: %d", totc);
 			}
 		}
 		else {
 			if (totb > totc) {
-				root2 = pop_stack(root2);
+				b = pop_stack2(root2);
+				totb -= b;
 				//printf("\nMaximum height of stack is: %d", totb);
 			}
 			else {
-				root3 = pop_stack(root3);
+				c = pop_stack3(root3);
+				totc -= c;
 				//printf("\nMaximum height of stack is: %d", totc);
 			}
 		}
 		/* n--; */
-	tota = total_of_llele(root1);
+	/* tota = total_of_llele(root1); */
 	//printf("\nTotal from first stack: %d", tota);
-	totb = total_of_llele(root2);
+	/* totb = total_of_llele(root2); */
 	//printf("\nTotal from second stack: %d", totb);
-	totc = total_of_llele(root3);
+	/* totc = total_of_llele(root3); */
 	//printf("\nTotal from third stack: %d", totc);
 	}
 	printf("\nSo, total max height of stack will be: %d", tota);
@@ -182,14 +197,40 @@ int total_of_llele(struct node *root) {
 	return sum;
 }
 
-struct node *pop_stack(struct node *root) {
+int pop_stack1(struct node *root1) {
 	struct node *ptr;
-	ptr = root;
+	int a;
+	ptr = root1;
 	if (ptr != NULL) {
-		root = root -> link;
+		a = root1 -> data;
+		root1 = root1 -> link;
 		free(ptr);
 	}
-	return root;
+	return a;
+}
+
+int pop_stack2(struct node *root2) {
+	struct node *ptr;
+	int b;
+	ptr = root2;
+	if (ptr != NULL) {
+		b = root2 -> data;
+		root2 = root2 -> link;
+		free(ptr);
+	}
+	return b;
+}
+
+int pop_stack3(struct node *root1) {
+	struct node *ptr;
+	int c;
+	ptr = root3;
+	if (ptr != NULL) {
+		c = root1 -> data;
+		root3 = root3 -> link;
+		free(ptr);
+	}
+	return c;
 }
 
 void freethelist(struct node *root) {
