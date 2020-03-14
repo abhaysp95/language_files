@@ -221,7 +221,7 @@ int pop_stack2(struct node *root2) {
 	return b;
 }
 
-int pop_stack3(struct node *root1) {
+int pop_stack3(struct node *root3) {
 	struct node *ptr;
 	int c;
 	ptr = root3;
