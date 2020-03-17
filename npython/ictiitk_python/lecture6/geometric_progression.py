@@ -10,7 +10,7 @@ Last Edited: 2020-02-18
 """
 
 r = float(input('r = '))
-a = float(input('a = '))
+a = int(input('a = '))
 n = int(input('n = '))
 
 j = 0
