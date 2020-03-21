@@ -1,0 +1,220 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{url}
+\onehalfspacing
+
+\newcommand{\oops}[1]{\textbf{\textit{#1}}}
+
+
+\begin{document}
+
+% This below is called topmatter, although there is no \topmatter
+
+\title{Learning Basics of {\LaTeX}}
+\author{Abhay Shanker Pathak}
+\date{March 2020}
+\maketitle	% you should write this
+
+\renewcommand{\abstractname}{New Abstract}
+
+\begin{abstract}
+	This here goes abstract.
+
+	It is available in \textit{aritcle and report} but not \textit{book}
+\end{abstract}
+
+\tableofcontents
+\vfill	% similarily there's \hfill
+\clearpage
+
+\setlength{\parindent}{1cm}
+
+Hello! world
+I'm new here.
+
+To make a new paragraph, leave a blank line. {\LaTeX} treats all the spaces as same.
+
+Following characters should be used with backslash in latex.
+
+\# \$ \% \^{} \{ \} \~{} \textbackslash{} \&
+
+You can't just enter \textbackslash{} \textbackslash{} to get a backslash in latex. You have to use \textbf{textbackslash{}} escaped with \textbf{\textbackslash{}} to write \textbackslash{}.
+
+You have to use \{\} after writing \textbackslash{}\~{} or \textbackslash{}\^{}. If not latex will wait for a character after it. Like writing \textbackslash{}\~{}n will give \textbf{\~n}.
+
+You can also use \textbf{\textbackslash{}textasciitilde} for \textbf{\textasciitilde} and \textbf{\textbackslash{}textasciicircum} for \textbf{\textasciicircum}.
+
+Just for now, you have to write \textbf{\textbackslash{}textless} for \textbf{\textless} and \textbf{\textbackslash{}textgreater} for \textbf{\textgreater}. But these two are non-reserved characters.
+
+Sometimes a certain state should be kept local, it's scope should be limited. This can be done enclosing the part to be changed locally in curly braces. In certain ocassions, using braces won't be possible. {\LaTeX} provides \textbf{\textbackslash{}bgroup} and \textbf{\textbackslash{}egroup} to begin and end the group, respectively.
+
+Here's an example:
+
+normal text {\itshape walzing \bfseries Wombat} more normal text
+
+normal text \bgroup\itshape walzing \bfseries Womabat\egroup{} more normal text.
+
+Testing {\bfseries This should be bold.}
+Testing \bgroup\itshape This should be italic.\egroup{}
+
+Okk, so \bgroup\bfseries \textbackslash{}bfseries makes the text bold\egroup{}. Whereas, \bgroup\itshape \textbackslash{}itshape is used to make italic\egroup{}. There are more which will be discussed later.
+
+Environmet in {\LaTeX} have a role that is quite similar to command but they effect wider part of the document. Their syntax is:
+
+\textbf{\textbackslash{}begin}\{environments\}
+
+text to be influenced
+
+\textbf{\textbackslash{}end}\{environments\}
+
+
+{\LaTeX} commands are case sensitive, and take one of the following two formats:
+
+\begin{enumerate}
+	\item They start with a backslash[\textbf{\textbackslash{}}] and then have a name consisting of letters only.
+		\begin{itemize}
+			\item Command names are terminated by a space, a number or any other non-letter.
+		\end{itemize}
+	\item They consist of a backslash[\textbf{\textbackslash{}}] and exactly one non-letter.
+		\begin{itemize}
+			\item Command names are terminated after that one non-letter.
+		\end{itemize}
+\end{enumerate}
+
+Some commands need an argument, which has to be given between curly braces \textbf{\{\}} after that command name. Some commands support optional parameters, which are added after the command name in square brackets \textbf{[]}. The general syntax is:
+
+\textbf{\textbackslash{}commandname}[option1,option2, \ldots]
+
+\textbf{\{}argument1\textbf{\}}\textbf{\{}argument2\textbf{\}}
+
+A \textit{switch} should never be called outside of any scope, or it'll apply to the whole environment. For example
+
+\textbf{\textbackslash{}emph}\{emphasized text\}, so, \textbackslash{}emph is a command with argument
+\textbf{\{\textbackslash{}em} emphasized text\textbf{\}}, so \textbackslash{}em is a switch.
+
+You should use \textbf{\textbackslash{}ldots} for using \ldots
+
+When {\LaTeX} encounters a \textbf{\%} character while processing an input file, it ignores the rest of the current line, the line break, and all whitespace at begining of the next line.
+
+This can be used to write notes into the input file, which will not show up in the printed version.
+
+Here goes comment: %This is a comment.
+
+You can write something you not want latex to typeset and then you can write it below in
+
+\textbf{\textbackslash{}end\{}document\textbf{\}}
+
+\ldots
+
+When processing an input file, {\LaTeX} needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their extension.
+
+\textbf{\textbackslash{}documentclass}[option]\{class\}
+
+By default, {\LaTeX} uses the word ``abstract" as title, see above \textbf{abstract} section to see how to change.
+
+\section{Sectioning Commands}
+
+\noindent The commands for inserting sections are fairly intuitive. All commands of section not work on all document environment. Like \textbf{\textbackslash{}chapter}\{Introduction\} is not for \emph{article} type environment.
+
+You don't need \textbackslash{}begin and \textbackslash{}end commands to indicate which content to a given block.
+
+{\LaTeX} provide 7 levels of depth for defining sections:-
+
+\textbf{\textbackslash{}part\{}``part''\textbf{\}}, level -1, not in letters
+
+\textbf{\textbackslash{}chapter\{}``chapter''\textbf{\}}, level 0, only books and reports
+
+\textbf{\textbackslash{}section\{}``section''\textbf{\}}, level 1, not in letters
+
+\textbf{\textbackslash{}subsection\{}``subsection''\textbf{\}}, level 2, not in letters
+
+\textbf{\textbackslash{}subsubsection\{}``subsubsection''\textbf{\}}, not in letters
+
+\textbf{\textbackslash{}paragraph\{}``paragraph''\textbf{\}}, not in letters
+
+\textbf{\textbackslash{}subparagraph\{}``subparagraph''\textbf{\}}, not in letters
+
+{\LaTeX} provides optional heading, like in [] after \textbackslash{}section.
+
+\section[Optional heading]{I think it's orignal heading}
+
+\subsection{Section Numbering}
+
+Numbering of the section is performed automatically in {\LaTeX}. You can change the depth to which section numbering occurs, so you can turn off selectively. By default it is 3. For example if you want to change it to ``1'':
+
+\textbf{\textbackslash{}setcounter\{}secnumdepth\textbf{\}\{}1\textbf{\}}
+
+Same as, \emph{tocdepth} specifies what depth to take the Table of Contents. Syntax same as of \bgroup\em secnumdepth \egroup{}.
+
+To get unnumbered section heading which doesn't go into the Table of Contents, follow the command name with an asterisk before the opening curly brace:
+
+\textbf{\textbackslash{}subsection*\{}Introduction\textbf{\}}
+
+If you want the unnumbered section to be into the table of contents anyway, use package \emph{unnumberedtotoc}. It provides the command
+
+\textbf{\textbackslash{}addsec\{}Introduction\textbf{\}}
+
+which will take care of a proper header as well. \emph{\textbackslash{}addpart} and \emph{\textbackslash{}addchap} are also available.
+
+If you don't want to use package \textit{unnumberedtotoc}, you have to do everything by hand using \textbf{\textbackslash{}addcontentsline} and \emph{\textbackslash{}markright\{\}} (or even \emph{\textbackslash{}markboth\{\}\{\}})
+
+\subsection*{Not included}
+\addcontentsline{toc}{subsection}{Not included}
+
+This section should not be included in \textbackslash{}tableofcontents, as it is not numbered.
+
+But what I wrote below \textbackslash{}subsection\{\}, will include it in \textbackslash{}tableofcontents
+
+\begin{doublespace}
+	This paragraph has double line spacing.
+
+	See, I told you double line spacing.
+\end{doublespace}
+
+\begin{spacing}{2.5}
+	This paragraph has huge gaps between lines.
+
+	See, I told you huge gaps.
+\end{spacing}
+
+{\LaTeX} uses `\textasciitilde' as a non-breaking space.
+
+\hyphenation{This will hyphenate word list}
+
+\bgroup\Large Not shelfull\\
+but shelf{}ful\egroup{}
+
+This is a line,\\
+this is another line without a blank line between it.
+
+By default, \emph{\slash} / is not automatically entered, you have to write \emph{\textbackslash{}slash}
+
+\subsection{Formatting macros}
+
+Do not \oops{enter} this room, it's occupied by \oops{machines} of \\[10pt] unknown origin and purpose.
+
+\subsubsection{Text mode superscipt and subscript}
+
+Sub and superscipt can be done quite easily in {\LaTeX}
+
+This is the 1\textsuperscript{st}, line
+
+This is the 2\textsubscript{nd}, line
+
+\begin{verbatim}
+	The verbatim environment simply reproduces every character you input,
+
+including all spaces!
+\end{verbatim}
+
+\subsection{Typesetting URLs}
+
+One of the either \oops{hyperref} or \oops{url} packages provide the \oops{\textbackslash{}url} command, which properly typesets URLs, for example:
+
+\noindent Goto\\
+\url{https://archlinux.org} to checkout archlinux
+
+\end{document}

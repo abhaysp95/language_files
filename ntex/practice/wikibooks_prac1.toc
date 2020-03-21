@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Sectioning Commands}{4}% 
+\contentsline {section}{\numberline {2}Optional heading}{4}% 
+\contentsline {subsection}{\numberline {2.1}Section Numbering}{4}% 
+\contentsline {subsection}{Not included}{5}% 
+\contentsline {subsection}{\numberline {2.2}Formatting macros}{5}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Text mode superscipt and subscript}{6}% 
+\contentsline {subsection}{\numberline {2.3}Typesetting URLs}{6}% 
