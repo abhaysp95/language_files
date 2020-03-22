@@ -13,7 +13,11 @@
 \contentsline {subsection}{\numberline {4.1}Differential Amplifier}{7}% 
 \contentsline {subsection}{\numberline {4.2}Differential Gain}{8}% 
 \contentsline {subsection}{\numberline {4.3}Common-mode gain}{8}% 
-\contentsline {section}{\numberline {5}Input Impdence, Output Impedence, Offset Voltage}{9}% 
-\contentsline {subsection}{\numberline {5.1}Input Impdence(Z\textsubscript {in})}{9}% 
-\contentsline {subsection}{\numberline {5.2}Output Impedance(Z\textsubscript {out})}{9}% 
-\contentsline {subsection}{\numberline {5.3}Offset Voltage(V\textsubscript {io})}{9}% 
+\contentsline {section}{\numberline {5}Question 1}{9}% 
+\contentsline {section}{\numberline {6}Question 2}{10}% 
+\contentsline {subsection}{\numberline {6.1}Slow Rate}{10}% 
+\contentsline {section}{\numberline {7}Input Impdence, Output Impedence, Offset Voltage}{11}% 
+\contentsline {subsection}{\numberline {7.1}Input Impdence(Z\textsubscript {in})}{11}% 
+\contentsline {subsection}{\numberline {7.2}Output Impedance(Z\textsubscript {out})}{11}% 
+\contentsline {subsection}{\numberline {7.3}Offset Voltage(V\textsubscript {io})}{11}% 
+\contentsline {section}{\numberline {8}Differentiate Pin 2 and Pin 3 in IC741}{12}% 

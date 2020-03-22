@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.19)  22 MAR 2020 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.19)  22 MAR 2020 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -21,6 +21,18 @@ File: size11.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
+)
+(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box27
+\beforetitleunit=\skip43
+\aftertitleunit=\skip44
+\ttl@plus=\dimen103
+\ttl@minus=\dimen104
+\ttl@toksa=\toks14
+\titlewidth=\dimen105
+\titlewidthlast=\dimen106
+\titlewidthfirst=\dimen107
 )
 (/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -62,7 +74,7 @@ Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
@@ -78,24 +90,24 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
 )
 (/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen105
-\WF@size=\dimen106
+\wrapoverhang=\dimen110
+\WF@size=\dimen111
 \c@WF@wrappedlines=\count88
-\WF@box=\box27
-\WF@everypar=\toks15
+\WF@box=\box28
+\WF@everypar=\toks16
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count89
-\float@exts=\toks16
-\float@box=\box28
-\@float@everytoks=\toks17
-\@floatcapt=\box29
+\float@exts=\toks17
+\float@box=\box29
+\@float@everytoks=\toks18
+\@floatcapt=\box30
 )
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -125,44 +137,44 @@ Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen107
-\ar@mcellbox=\box30
-\extrarowheight=\dimen108
-\NC@list=\toks18
-\extratabsurround=\skip43
-\backup@length=\skip44
-\ar@cellbox=\box31
+\col@sep=\dimen112
+\ar@mcellbox=\box31
+\extrarowheight=\dimen113
+\NC@list=\toks19
+\extratabsurround=\skip45
+\backup@length=\skip46
+\ar@cellbox=\box32
 )
 (/usr/share/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip45
-\L@UnitsRaiseTextstyle=\skip46
-\L@UnitsRaiseScriptstyle=\skip47
+\L@UnitsRaiseDisplaystyle=\skip47
+\L@UnitsRaiseTextstyle=\skip48
+\L@UnitsRaiseScriptstyle=\skip49
 
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks19
-\inpenc@posthook=\toks20
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
 ) (./Assignment1.aux)
 \openout1 = `Assignment1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+2.
 
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -170,16 +182,16 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count90
-\scratchdimen=\dimen109
-\scratchbox=\box32
+\scratchdimen=\dimen114
+\scratchbox=\box33
 \nofMPsegments=\count91
 \nofMParguments=\count92
-\everyMPshowfont=\toks21
+\everyMPshowfont=\toks22
 \MPscratchCnt=\count93
-\MPscratchDim=\dimen110
+\MPscratchDim=\dimen115
 \MPnumerator=\count94
 \makeMPintoPDFobject=\count95
-\everyMPtoPDFconversion=\toks22
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -231,41 +243,45 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \celsius on input line 19.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 19.
+LaTeX Info: Redefining \celsius on input line 22.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 22.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 19.
-Package gensymb Info: Using \Omega for \ohm on input line 19.
+LaTeX Info: Redefining \ohm on input line 22.
+Package gensymb Info: Using \Omega for \ohm on input line 22.
 
 Package gensymb Warning: Not defining \micro.
 
+
+LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
+(Font)              using `OT1/lmr/bx/n' instead on input line 24.
+
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-1.
+4.
 (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-21.
+24.
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-21.
+24.
 
 (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 21.
+(Font)              <12> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 21.
+(Font)              <8> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 21.
+(Font)              <6> on input line 24.
  (./Assignment1.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 2.
@@ -285,133 +301,149 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout5 = `Assignment1.lof'.
 
  [2]
-<images/op-amp_circuit_diagram.png, id=15, 321.2pt x 273.02pt>
+<images/op-amp_circuit_diagram.png, id=14, 321.2pt x 273.02pt>
 File: images/op-amp_circuit_diagram.png Graphic file (type png)
 <use images/op-amp_circuit_diagram.png>
 Package pdftex.def Info: images/op-amp_circuit_diagram.png  used on input line 
-55.
+59.
 (pdftex.def)             Requested size: 108.0011pt x 91.80075pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-82.
+86.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Font Warning: Command \Large invalid in math mode on input line 84.
+LaTeX Font Warning: Command \Large invalid in math mode on input line 88.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 84.
+(Font)              <14.4> on input line 88.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 84.
+(Font)              <10> on input line 88.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 84.
-<images/op-amp without negative feedback.png, id=17, 321.2pt x 302.12875pt>
+(Font)              <7> on input line 88.
+<images/op-amp without negative feedback.png, id=16, 321.2pt x 302.12875pt>
 File: images/op-amp without negative feedback.png Graphic file (type png)
 <use images/op-amp without negative feedback.png>
 Package pdftex.def Info: images/op-amp without negative feedback.png  used on i
-nput line 88.
+nput line 92.
 (pdftex.def)             Requested size: 108.0011pt x 101.58832pt.
 [1
 
  <./images/op-amp_circuit_diagram.png>]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 9
-9.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
+03.
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 99.
-<images/741-type operational amplifier.png, id=27, 1351.0475pt x 602.25pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 103.
+<images/741-type operational amplifier.png, id=26, 1351.0475pt x 602.25pt>
 File: images/741-type operational amplifier.png Graphic file (type png)
 <use images/741-type operational amplifier.png>
 Package pdftex.def Info: images/741-type operational amplifier.png  used on inp
-ut line 108.
-(pdftex.def)             Requested size: 144.54pt x 64.42816pt.
-
-Underfull \hbox (badness 4205) in paragraph at lines 116--117
-[]\OT1/lmr/m/n/10.95 Circuit de-sign fol-lows the
- []
-
-[2 <./images/op-amp without negative feedback.png> <./images/741-type operation
-al amplifier.png (PNG copy)>] [3]
+ut line 112.
+(pdftex.def)             Requested size: 143.9978pt x 64.18922pt.
+ [2 <./images/op-amp without negative feedback.png> <./images/741-type operatio
+nal amplifier.png (PNG copy)>]
+[3]
 File: images/op-amp_circuit_diagram.png Graphic file (type png)
 <use images/op-amp_circuit_diagram.png>
 Package pdftex.def Info: images/op-amp_circuit_diagram.png  used on input line 
-155.
+159.
 (pdftex.def)             Requested size: 143.9978pt x 122.39961pt.
  [4
 
 ]
-<images/Pin-Diagram-of-IC-741-removebg-preview.png, id=38, 333.49594pt x 197.98
+<images/Pin-Diagram-of-IC-741-removebg-preview.png, id=37, 333.49594pt x 197.98
 969pt>
 File: images/Pin-Diagram-of-IC-741-removebg-preview.png Graphic file (type png)
 
 <use images/Pin-Diagram-of-IC-741-removebg-preview.png>
 Package pdftex.def Info: images/Pin-Diagram-of-IC-741-removebg-preview.png  use
-d on input line 176.
+d on input line 180.
 (pdftex.def)             Requested size: 143.9978pt x 85.49039pt.
  [5 <./images/Pin-Diagram-of-IC-741-removebg-preview.png>]
 LaTeX Font Info:    Trying to load font information for OML+lmr on input line 2
-02.
- (/usr/share/texmf-dist/tex/latex/lm/omllmr.fd
+08.
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 202.
-
-Overfull \hbox (10.59393pt too wide) in paragraph at lines 195--223
-[][] 
- []
-
-<images/op-amp block diagram.png, id=45, 1155.31625pt x 192.72pt>
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <6> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 208.
+<images/op-amp block diagram.png, id=44, 1155.31625pt x 192.72pt>
 File: images/op-amp block diagram.png Graphic file (type png)
 <use images/op-amp block diagram.png>
 Package pdftex.def Info: images/op-amp block diagram.png  used on input line 23
-2.
+6.
 (pdftex.def)             Requested size: 360.0pt x 60.05135pt.
-[6
+ [6
 
  <./images/op-amp block diagram.png>]
-<images/Differential-amplifier-circuit.jpg, id=49, 296.60812pt x 222.07968pt>
+<images/Differential-amplifier-circuit.jpg, id=50, 296.60812pt x 222.07968pt>
 File: images/Differential-amplifier-circuit.jpg Graphic file (type jpg)
 <use images/Differential-amplifier-circuit.jpg>
 Package pdftex.def Info: images/Differential-amplifier-circuit.jpg  used on inp
-ut line 251.
+ut line 255.
 (pdftex.def)             Requested size: 180.0pt x 134.77711pt.
  [7
 
  <./images/Differential-amplifier-circuit.jpg>] [8]
-Overfull \hbox (5.32864pt too wide) in paragraph at lines 329--329
-[]\OT1/lmr/bx/n/14.4 Input Im-p-dence, Out-put Im-pe-dence, Off-set Volt-
+<images/qna1.jpg, id=57, 4625.28pt x 3468.96pt>
+File: images/qna1.jpg Graphic file (type jpg)
+<use images/qna1.jpg>
+Package pdftex.def Info: images/qna1.jpg  used on input line 342.
+(pdftex.def)             Requested size: 360.0pt x 269.9532pt.
+ [9
+
+ <./images/qna1.jpg>]
+<images/qna2.jpg, id=62, 4625.28pt x 3468.96pt>
+File: images/qna2.jpg Graphic file (type jpg)
+<use images/qna2.jpg>
+Package pdftex.def Info: images/qna2.jpg  used on input line 364.
+(pdftex.def)             Requested size: 360.0pt x 269.9532pt.
+ [10
+
+ <./images/qna2.jpg>]
+Overfull \hbox (5.32864pt too wide) in paragraph at lines 370--370
+|[]\OT1/lmr/bx/n/14.4 Input Im-p-dence, Out-put Im-pe-dence, Off-set Volt-
  []
 
-[9
+[11
 
-] (./Assignment1.aux) ) 
+] [12
+
+] (./Assignment1.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2520 strings out of 492167
- 35908 string characters out of 6131558
- 106585 words of memory out of 5000000
- 6801 multiletter control sequences out of 15000+600000
- 54012 words of font info for 45 fonts, out of 8000000 for 9000
+ 2826 strings out of 492167
+ 39836 string characters out of 6131558
+ 113392 words of memory out of 5000000
+ 7101 multiletter control sequences out of 15000+600000
+ 56958 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,12n,37p,757b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/font
-s/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx1
-0.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf
--dist/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf-dist/fonts/type1/public
-/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type
-1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></u
-sr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy
-10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Assignment1.pdf (11 pages, 447100 bytes).
+ 46i,12n,37p,757b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dis
+t/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hsy.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/
+share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/
+type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pf
+b></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist
+/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Assignment1.pdf (14 pages, 13718142 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

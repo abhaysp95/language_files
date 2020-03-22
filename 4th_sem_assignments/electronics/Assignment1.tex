@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper,oneside]{article}
+\usepackage{titlesec}
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -11,7 +12,9 @@
 \usepackage{nicefrac}
 \usepackage[utf8]{inputenc}
 
-\title{Assignment-1\\Electronics Engineering(KOE-048)\\Unit - 4}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\title{\textbf{\textsc{Assignment-1\\Electronics Engineering(KOE-048)\\Unit - 4}}}
 \author{Abhay Shanker Pathak\\United Institute of Technology, Prayagraj\\
 	IT-Department}
 \date{March 2020}
@@ -30,10 +33,11 @@
 	\end{center}
 \end{abstract}
 
+\pagenumbering{roman}
 \tableofcontents
 \listoftables
 \listoffigures
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \clearpage
 
 \pagenumbering{arabic}
@@ -103,11 +107,11 @@ Op-Amp is a \emph{high gain} differential amplifier. It has high input impedence
 
 	\subsection{Applications}
 
-	\begin{wrapfigure}{R}{2.5in}
+	\begin{figure}[hbt!]
 		\centering
-		\includegraphics[width=2in]{images/741-type operational amplifier.png}
+		\includegraphics[width=0.4\textwidth]{images/741-type operational amplifier.png}
 		\caption{\textcolor{blue}{DIP pinout} for 741-type operational amplifier}
-	\end{wrapfigure}
+	\end{figure}
 
 	\subsubsection{Use in electronics system design}
 
@@ -199,9 +203,9 @@ Op-Amp is a \emph{high gain} differential amplifier. It has high input impedence
 				\hline
 				Op Amp & Vid & (V\textsubscript{1} $-$ V\textsubscript{2}) \\
 				& (V\textsubscript{1} $-$ V\textsubscript{2}) & \nicefrac{1}{2}(V\textsubscript{1} $-$ V\textsubscript{2}) \\
-				& & Ad -\textgreater very large, Ac -\textgreater very small \\
 				\hline
 				Gain & $\infty$(Ad) & Finite, Very large \\
+				& & \tiny Ad -\textgreater very large, Ac -\textgreater very small \\
 				\hline
 				Input resistance & $\infty$ & Very high \\
 				Rin & & (in M$\Omega$) \\
@@ -303,7 +307,7 @@ $=\{-(R\textsubscript{3}/R\textsubscript{1}) * V\textsubscript{1}\} + \{R\textsu
 Which results in,
 
 \begin{center}
-$V\textsubscript{0} = (\textsubscript{3}/R\textsubscript{1}) * \{V\textsubscript{2} - V\textsubscript{1}\}$
+	$V\textsubscript{0} = (R\textsubscript{3}/R\textsubscript{1}) * \{V\textsubscript{2} - V\textsubscript{1}\}$
 \end{center}
 
 When the resistors R\textsubscript{3} and R\textsubscript{1} are of the same value, the output is the direct difference of the input voltages applied. By selecting R\textsubscript{3} greater than R\textsubscript{1}, the output can be made an amplified version of the difference of the input voltages.
@@ -326,6 +330,43 @@ A perfect operational amplifier amplifies only the voltage difference between it
 
 \clearpage
 
+\section{Question 1}
+\noindent \large \textbf{Determine the ouptut voltage of an op-amp for the input voltage of 300$\mu$Volt and 240$\mu$Volt. The differential gain of the amplifier is 5000 and the value of CMRR is 10\textsuperscript{5}.}
+
+\vskip 1cm
+
+The solution is provided in the image below:
+
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[width=1\textwidth, angle=-90]{images/qna1.jpg}
+	\caption{solution for ques. 1}
+\end{figure}
+
+\clearpage
+
+\section{Question 2}
+\noindent \large \textbf{Find the slow rate of an op-amp, if maximum change in output voltage is 0.25 volt for a time duration of 20$\mu$sec.}
+
+\vskip 1cm
+
+\subsection{Slow Rate}
+Slow rate is defined as \underline{maximum} rate of change of output voltage with respect to time
+
+\bgroup \bfseries
+\begin{center}
+	$S.R. = \left.\nicefrac{dV\textsubscript{o}}{dt}\right\vert\textsubscript{max}$
+\end{center}
+\egroup{}
+
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[width=1\textwidth]{images/qna2.jpg}
+	\caption{solution of question. 2}
+\end{figure}
+
+\clearpage
+
 \section{Input Impdence, Output Impedence, Offset Voltage}
 
 \subsection{Input Impdence(Z\textsubscript{in})}
@@ -339,5 +380,13 @@ Output impedance is defined as the ratio of the output voltage to the input curr
 \subsection{Offset Voltage(V\textsubscript{io})}
 
 The offset voltage of an \textcolor{orange}{ideal op amp} is zero, which means that the output voltage will be zero if the difference between the inverting and non-inverting terminal is zero. If both the terminals are grounded, the output voltage will be zero. But real \textbf{op amps} have an offset voltage.
+
+\clearpage
+
+\section{Differentiate Pin 2 and Pin 3 in IC741}
+
+Pin 2 and Pin 3 are \textbf{input} pins of IC. Pin 2 is \textbf{inverting input} pin and pin 3 is \textbf{non inverting input} pin. If the voltage in pin 2 is greater than voltage of pin 3, i.e., the voltage at inverting input in higher, the output signal stays low. Similarly, the voltage in pin 3 is greater than the voltage at pin 2, i.e., the voltage in non-inverting input is high, the output goes high.
+
+\clearpage
 
 \end{document}
