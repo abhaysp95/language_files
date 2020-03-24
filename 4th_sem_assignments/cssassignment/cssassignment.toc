@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {2}Adding CSS}{1}% 
+\contentsline {subsection}{\numberline {2.1}External Style Sheet}{1}% 
+\contentsline {subsection}{\numberline {2.2}Embedded Style Sheet}{2}% 
+\contentsline {subsection}{\numberline {2.3}Imported Style Sheet}{2}% 
+\contentsline {subsection}{\numberline {2.4}Inline Style Sheet}{2}% 
+\contentsline {section}{\numberline {3}Selectors In CSS}{3}% 
+\contentsline {subsubsection}{\numberline {3.0.1}Simple Selector}{3}% 
+\contentsline {subsubsection}{\numberline {3.0.2}Grouping:}{3}% 
+\contentsline {subsubsection}{\numberline {3.0.3}Universal selectors:}{4}% 
+\contentsline {subsubsection}{\numberline {3.0.4}Descendent Selector}{4}% 
+\contentsline {subsubsection}{\numberline {3.0.5}Child Selector}{5}% 
+\contentsline {subsubsection}{\numberline {3.0.6}Class Selector}{6}% 
+\contentsline {subsubsection}{\numberline {3.0.7}ID Selector}{6}% 
+\contentsline {subsubsection}{\numberline {3.0.8}Pseudo Class}{7}% 
+\contentsline {subsubsection}{\numberline {3.0.9}Pseudo Element}{7}% 
