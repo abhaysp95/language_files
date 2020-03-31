@@ -8,15 +8,21 @@ Last Edit -> 2020-03-21 */
 #include<stdio.h>
 #include<stdlib.h>
 
-struct list {
+struct given {
 	int pro;
 	int bt;
-	struct list* link;
+	int at;
+	struct given* link;
 } *root = NULL;
 
+struct solved {
+	int wt;
+	int tat;
+} *root1 = NULL;
+
 // prototype declaration <<<
-struct list* entry(struct list* ,int );
-struct list* display(struct list* );
+struct given* entry(struct given* ,int );
+struct given* display(struct given* );
 // >>>
 
 // main function <<<
@@ -33,6 +39,9 @@ int main(int argc, char *argv[]){
 	}
 	// >>>
 
+	// solving for tat and wt
+	root1 = issolved(root, root1);
+
 	// display <<<
 	root = display(root);
 	//>>>
@@ -41,19 +50,21 @@ int main(int argc, char *argv[]){
 // >>>
 
 // function: entry <<<
-struct list* entry(struct list* root, int i) {
-	struct list* temp;
+struct given* entry(struct given* root, int i) {
+	struct given* temp;
 	int val;
-	temp = (struct list*)malloc(sizeof(struct list));
+	temp = (struct given*)malloc(sizeof(struct given));
 	temp -> pro = i + 1;
 	printf("\nEnter the burst time for %d process: ", temp -> pro);
 	scanf("%d", &val);
 	temp -> bt = val;
+	printf("\nEnter the arrival time for %d process: ", temp -> pro);
+	scanf("%d", &(temp -> at));
 	temp -> link = NULL;
 	if (root == NULL)
 		root = temp;
 	else {
-		struct list *ptr = root;
+		struct given *ptr = root;
 		while (ptr -> link != NULL)
 			ptr = ptr -> link;
 		ptr -> link = temp;
@@ -62,17 +73,24 @@ struct list* entry(struct list* root, int i) {
 }
 // >>>
 
-struct list* display(struct list* root) {
-	struct list *ptr;
+struct given* display(struct given* root) {
+	struct given *ptr;
 	printf("\nDisplaying information about process: \n");
 
 	// display loop <<<
 	ptr = root;
 	while (ptr != NULL) {
 		printf("Process Number: %d\t", ptr -> pro);
-		printf("Burst time: %d\n", ptr -> bt);
+		printf("Arrival time: %d\t", ptr -> at);
+		printf("\tBurst time: %d\n", ptr -> bt);
 		ptr = ptr -> link;
 	}
 	// >>>
 	return root;
 }
+
+// function if solved <<<
+/* struct solved* issolved(struct given* root, struct solved* root1) { */
+
+/* } */
+// >>>

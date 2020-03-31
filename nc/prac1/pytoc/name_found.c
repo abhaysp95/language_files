@@ -11,27 +11,45 @@ Last Edit -> 2020-03-25 */
 
 // main function <<<
 int main(int argc, char *argv[]){
-	int count, length = 0;
-	int *pos;
+	int count, f = 0;
 	char **name;
+	char *keyword;
 	printf("\nEnter the count of names: ");
-	scanf("%d", &count);
+	scanf("%d\n", &count);
 
 	/* char *name = (char *)malloc((count * 100) * (sizeof(char))); */
 	name = malloc(count * sizeof(char *));
-	pos = malloc((count + 1) * sizeof(char));
 
-	printf("\nEnter the names: ");
-	/* for (int i = 0; i < count; i++) { */
-	/* 	scanf("%[^\n]%*c", (name + length)); */
-	/* 	length = strlen(name) + 1; */
-	/* 	*(pos + i) = length; */
-	/* } */
+	printf("\nEnter the names: \n");
 	for (int i = 0; i < count; i++) {
 		name[i] = malloc(100 * sizeof(char));
-		/* scanf("%[^\n]%*c", (name[i])); */
-		fgets(name[i], sizeof(name[i]), stdin);
-		printf("\nlength of string is: %zu", strlen(name[i]));
+		scanf("%[^\n]%*c", (name[i]));
+		/* fgets(name[i], sizeof(name[i]), stdin); */
+		// taking names without spaces
+		/* scanf("%s", name[i]); */
+		printf("length of string is: %zu\n", strlen(name[i]));
+	}
+
+	printf("\nEnter the keyword: \n");
+	keyword = malloc(sizeof(char) * 50);
+	/* scanf("%s", keyword); */
+	scanf("%[^\n]%*c", keyword);
+
+	printf("\nNames are: ");
+	for (int i = 0; i < count; i++) {
+		printf("%s\n", (name[i]));
+	}
+
+	// comparing logic
+	for (int i = 0; i < count; i++) {
+		if (strcmp(name[i], keyword) == 0) {
+			printf("Name found, Position %d", i + 1);
+			f++;
+			break;
+		}
+	}
+	if (f == 0) {
+		printf("Name not found");
 	}
 
 	//testing
@@ -39,10 +57,7 @@ int main(int argc, char *argv[]){
 	/* for (int i = 0; i < count; i ++) { */
 	/* 	printf("Positions are: %d\n", *(pos + i)); */
 	/* } */
-	printf("\nNames are: ");
-	for (int i = 0; i < count; i++) {
-		printf("%s\n", (name[i]));
-	}
+
 	free(name);
 	return 0;
 }
