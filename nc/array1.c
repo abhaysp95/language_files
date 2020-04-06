@@ -1,4 +1,4 @@
-/* Program to fill square matrix with 0 in diagonals, 1 in upper triangle and -1 in lower traingl */
+/* Program to fill square matrix with 0 in diagonals, 1 in upper triangle and -1 in lower traingle */
 
 # include<stdio.h>
 void read_mat(int b[5][5], int );
