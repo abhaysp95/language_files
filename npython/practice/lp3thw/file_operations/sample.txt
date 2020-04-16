@@ -1,0 +1,5 @@
+This is sample.txt
+It's running on hp 245 g5
+It is a simple text file
+It's kernel is Linux
+It's OS is manjaro with i3 as WM.
