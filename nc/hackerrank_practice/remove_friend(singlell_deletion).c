@@ -56,8 +56,8 @@ struct node *create_ll(struct node *root) {
 			}
 			val--;
 		}
-		root = max_del(root);
-		root = display(root);
+	root = max_del(root);
+	root = display(root);
 	}
 	else {
 		while (val > 0) {
@@ -90,7 +90,6 @@ struct node *max_del(struct node *root) {
 	ptr = root;
 	if (ptr -> data == max) {
 		root = root -> link;
-		free(ptr);
 	}
 	else {
 		while (ptr -> data != max) {
@@ -98,9 +97,9 @@ struct node *max_del(struct node *root) {
 			ptr = ptr -> link;
 		}
 		preptr -> link = ptr -> link;
-		free(ptr);
 	}
 	root = display(root);
+		free(ptr);
 	return root;
 }
 
