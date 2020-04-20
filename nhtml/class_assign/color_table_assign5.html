@@ -25,12 +25,27 @@
 				border-spacing: 45px;
 			}
 			td, th {
-				border-style: solid;
-				border-color: #e68080;
-				border-width: 5px;
+				border-bottom-style: solid;
+				border-bottom-color: #e68080;
+				border-bottom-width: 5px;
+				border-top-style: dashed;
+				border-top-color: #e68080;
+				border-top-width: 1px;
 				text-align: center;
 				border-radius: 60px;
 				color: #c5c8c6;
+			}
+			td:hover, th:hover {
+				background-color: indigo;
+				color: teal;
+				font-style: italic;
+			}
+			tr:hover {
+				background-color: white;
+				color: black;
+			}
+			tr:nth-child(odd) {
+				background-color: #484848;
 			}
 		</style>
 	</head>
