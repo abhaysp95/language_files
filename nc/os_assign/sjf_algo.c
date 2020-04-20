@@ -1,96 +1,201 @@
 /** Name -> Abhay Shanker Pathak
-Date -> 2020-03-21
-Description -> Implementing SJF Algorithm
+Date -> 2020-04-18
+Description -> Shortest job first algo with no arrival time
 Email -> abhaysp9955@gmail.com
 Github -> https://github.com/CoolAbhayS
-Last Edit -> 2020-03-21 */
+Last Edit -> 2020-04-20 */
+
 
 #include<stdio.h>
 #include<stdlib.h>
 
-struct given {
-	int pro;
-	int bt;
-	int at;
-	struct given* link;
-} *root = NULL;
+// pre-declaration of functions <<<
+struct Process* enter_data(struct Process* ,int );
+struct Process* sort_btime(struct Process* );
+struct Process* get_other_values(struct Process* );
+struct Process* sort_pnum(struct Process* );
+void display(struct Process* );
+void list_free(struct Process *);
+// >>>
 
-struct solved {
-	int wt;
-	int tat;
-} *root1 = NULL;
-
-// prototype declaration <<<
-struct given* entry(struct given* ,int );
-struct given* display(struct given* );
+// structure declared <<<
+struct Process {
+	int pnum;	// process number
+	int btime;	// burst time
+	int wtime;	// waiting time
+	int tatime;	// turn-around time
+	struct Process *Link;
+} *Start = NULL;
 // >>>
 
 // main function <<<
-int main(int argc, char *argv[]){
-	int n, i = 0;
-	printf("Enter the number of processes: ");
-	scanf("%d", &n);
+int main(int argc, char* argv[]) {
+	int count;
+	printf("Enter the total number of processes: ");
+	scanf("%d", &count);
 
-	// filling up the process <<<
-	while (n > 0) {
-		root = entry(root, i);
-		i++;
-		n--;
-	}
-	// >>>
+	// enter the data
+	Start = enter_data(Start, count);
 
-	// solving for tat and wt
-	root1 = issolved(root, root1);
+	// sort according to burst time(ascending order)
+	Start = sort_btime(Start);
 
-	// display <<<
-	root = display(root);
-	//>>>
+	// getting turn-around time and waiting time
+	Start = get_other_values(Start);
+
+	// sort according to process number(ascending order)
+	Start = sort_pnum(Start);
+
+	// display the content
+	display(Start);
+
+	// free list
+	list_free(Start);
+
+	printf("\nValue is: %d", Start -> btime);
+
 	return 0;
 }
 // >>>
 
-// function: entry <<<
-struct given* entry(struct given* root, int i) {
-	struct given* temp;
-	int val;
-	temp = (struct given*)malloc(sizeof(struct given));
-	temp -> pro = i + 1;
-	printf("\nEnter the burst time for %d process: ", temp -> pro);
-	scanf("%d", &val);
-	temp -> bt = val;
-	printf("\nEnter the arrival time for %d process: ", temp -> pro);
-	scanf("%d", &(temp -> at));
-	temp -> link = NULL;
-	if (root == NULL)
-		root = temp;
-	else {
-		struct given *ptr = root;
-		while (ptr -> link != NULL)
-			ptr = ptr -> link;
-		ptr -> link = temp;
+// entering the data of processes <<<
+struct Process *enter_data(struct Process *Start, int num) {
+	struct Process *temp, *ptr;
+	for (int i = 1; i <= num; i++) {
+		printf("Enter the burst time for %d process: ", i);
+		temp = malloc(sizeof(struct Process));
+		temp -> pnum = i;
+		scanf("%d", &temp -> btime);
+		temp -> Link = NULL;
+		if (Start == NULL) {
+			Start = temp;
+		}
+		else {
+			ptr = Start;
+			while (ptr -> Link != NULL) {
+				ptr = ptr -> Link;
+			}
+			ptr -> Link = temp;
+			temp -> Link = NULL;
+		}
 	}
-	return root;
+	return Start;
 }
 // >>>
 
-struct given* display(struct given* root) {
-	struct given *ptr;
-	printf("\nDisplaying information about process: \n");
-
-	// display loop <<<
-	ptr = root;
+// display function <<<
+void display(struct Process* Start) {
+	struct Process *ptr;
+	ptr = Start;
+	printf("\nDisplaying the items: \n");
 	while (ptr != NULL) {
-		printf("Process Number: %d\t", ptr -> pro);
-		printf("Arrival time: %d\t", ptr -> at);
-		printf("\tBurst time: %d\n", ptr -> bt);
-		ptr = ptr -> link;
+		printf("Burst time for process p%d: %d\n", ptr -> pnum, ptr -> btime);
+		ptr = ptr -> Link;
 	}
-	// >>>
-	return root;
+	ptr = Start;
+	while (ptr != NULL) {
+		printf("Turn around time for process p%d: %d\n", ptr -> pnum, ptr -> tatime);
+		ptr = ptr -> Link;
+	}
+	ptr = Start;
+	while (ptr != NULL) {
+		printf("Waiting time for process p%d: %d\n", ptr -> pnum, ptr -> wtime);
+		ptr = ptr -> Link;
+	}
+	/* free(ptr); */
 }
-
-// function if solved <<<
-/* struct solved* issolved(struct given* root, struct solved* root1) { */
-
-/* } */
 // >>>
+
+// sorting burst time <<<
+struct Process* sort_btime(struct Process* Start) {
+	struct Process *ptr, *pptr;
+	ptr = Start;
+	while (ptr != NULL) {
+		/* printf("In ptr"); */
+		pptr = ptr -> Link;
+		while (pptr != NULL) {
+			/* printf("\nIn pptr"); */
+			if (ptr -> btime > pptr -> btime) {
+				ptr -> btime = ptr -> btime + pptr -> btime;
+				pptr -> btime = ptr -> btime - pptr -> btime;
+				ptr -> btime = ptr -> btime - pptr -> btime;
+
+				ptr -> pnum = ptr -> pnum + pptr -> pnum;
+				pptr -> pnum = ptr -> pnum - pptr -> pnum;
+				ptr -> pnum = ptr -> pnum - pptr -> pnum;
+			}
+			pptr = pptr -> Link;
+		}
+		ptr = ptr -> Link;
+	}
+	return Start;
+}
+// >>>
+
+// getting values of turn around time and burst time <<<
+struct Process* get_other_values(struct Process *Start) {
+	struct Process* ptr, *pptr;
+	ptr = Start;
+	pptr = ptr -> Link;
+	ptr -> tatime = ptr -> btime;
+	pptr -> tatime = ptr -> btime;
+	ptr -> wtime = ptr -> tatime - ptr -> btime;
+	ptr = ptr -> Link;
+	pptr = ptr -> Link;
+	while (ptr != NULL) {
+		ptr -> tatime += ptr -> btime;
+		pptr -> tatime = ptr -> tatime;
+		ptr -> wtime = ptr -> tatime - ptr -> btime;
+		ptr = ptr -> Link;
+		if (pptr -> Link != NULL) {
+			pptr = ptr -> Link;
+		}
+	}
+	return Start;
+}
+// >>>
+
+// sorting according to process number <<<
+struct Process* sort_pnum(struct Process* Start) {
+	struct Process *ptr, *pptr;
+	ptr = Start;
+	while (ptr != NULL) {
+		/* printf("In ptr"); */
+		pptr = ptr -> Link;
+		while (pptr != NULL) {
+			/* printf("\nIn pptr"); */
+			if (ptr -> pnum > pptr -> pnum) {
+				ptr -> pnum = ptr -> pnum + pptr -> pnum;
+				pptr -> pnum = ptr -> pnum - pptr -> pnum;
+				ptr -> pnum = ptr -> pnum - pptr -> pnum;
+
+				ptr -> btime = ptr -> btime + pptr -> btime;
+				pptr -> btime = ptr -> btime - pptr -> btime;
+				ptr -> btime = ptr -> btime - pptr -> btime;
+
+				ptr -> tatime = ptr -> tatime + pptr -> tatime;
+				pptr -> tatime = ptr -> tatime - pptr -> tatime;
+				ptr -> tatime = ptr -> tatime - pptr -> tatime;
+
+				ptr -> wtime = ptr -> wtime + pptr -> wtime;
+				pptr -> wtime = ptr -> wtime - pptr -> wtime;
+				ptr -> wtime = ptr -> wtime - pptr -> wtime;
+			}
+			pptr = pptr -> Link;
+		}
+		ptr = ptr -> Link;
+	}
+	return Start;
+}
+// >>>
+
+// free the list <<<
+void list_free(struct Process *Start) {
+	struct Process *ptr;
+	while (Start != NULL) {
+		ptr = Start;
+		Start = Start -> Link;
+		free(ptr);
+	}
+}
+/* // >>> */
