@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<font size=70px><b><u>List Styling</u></b></font>
+		<style>
+			body {
+				font-size: 30px;
+				font-style: Italic;
+				font-family: Mononoki Nerd Font Mono;
+				/* text-align: center; */
+			}
+			ul {
+				/* border: 2px, red, solid; */
+				border-width: 2px;
+				border-style: solid;
+				width: 400px;
+				margin: 20px;
+				background-color: red;
+			}
+			ul>li {
+				border-style: dashed;
+				border-radius: 20px;
+				border-width: 2px;
+				margin: 30px;
+				padding-left: 50px;
+				background-color: yellow;
+			}
+			ul.first {
+				list-style-position: inside;
+				list-style-type: square;
+					/* there's also none for list-style-type */
+			}
+			ul.second {
+				list-style-position: outside;
+				list-style-type: circle;
+			}
+			ol {
+				border: 5px groove;
+				border-color: lightcoral;
+				background-color: indigo;
+				border-radius: 10px;
+			}
+			ol>li {
+				border: 2px ridge #282828;
+				/*border-top: none;*/
+				/*border-right: none;*/
+				background-color: teal;
+			}
+			ol.third {
+				list-style-position: inside;
+				list-style-type: upper-roman;
+			}
+			ol.fourth {
+				list-style-position: inside;
+				list-style-type: lower-roman;
+			}
+			ol.fifth {
+				list-style-position: inside;
+				list-style-type: upper-alpha;
+			}
+			ol.sixth {
+				list-style-position: inside;
+				list-style-type: upper-latin;
+			}
+			ol.seventh {
+				list-style-position: inside;
+				list-style-type: lower-greek;
+			}
+			ol.eighth {
+				list-style-position: inside;
+				list-style-type: lower-latin;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Unordered List</h2>
+		<ul class="first">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ul>
+		<ul class="second">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ul>
+		<h2>Ordered List</h2>
+		<ol class="third">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+		<ol class="fourth">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+		<ol class="fifth">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+		<ol class="sixth">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+		<ol class="seventh">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+		<ol class="eighth">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Coca-Cola</li>
+		</ol>
+	</body>
+</html>
