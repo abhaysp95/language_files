@@ -43,19 +43,19 @@ int equalStacks(int h1_count, int* h1, int h2_count, int* h2, int h3_count, int*
         h3_count--;
     }
     k--;
-    
+
     printf("\nFirst Stack");
     display(h1, i);
     printf("\nSecond Stack");
     display(h2, j);
     printf("\nThird Stack");
     display(h3, k);
-    
+
     // reversing the array
     rev_arr(h1, i);
     rev_arr(h2, j);
     rev_arr(h3, k);
-    
+
     //get the total
     tota = total_of_arrele(h1, i);
     totb = total_of_arrele(h2, j);
@@ -222,7 +222,7 @@ int main()
 
         h3[h3_itr] = h3_item;
     }
-    
+
     //declaration of h1_count, h2_count and h3_count
     int h1_count, h2_count, h3_count;
     scanf("%d", &h1_count);
@@ -289,4 +289,3 @@ char** split_string(char* str) {
 
     return splits;
 }
-
