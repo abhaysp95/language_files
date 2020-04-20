@@ -1,6 +1,6 @@
 /** Name -> Abhay Shanker Pathak
 Date -> 2020-03-07
-Description -> Same as equal_cylinder_stack ques but with array
+Description -> Same as equal_cylinder_stack queues but with array
 Email -> abhaysp9955@gmail.com
 Github -> https://github.com/CoolAbhayS
 Last Edit -> 2020-03-07*/
