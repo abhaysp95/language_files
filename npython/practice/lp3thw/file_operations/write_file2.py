@@ -22,14 +22,16 @@ def main():
 
     print("Reading your file\n")
     print(txt.read())
+    print(txt.readline())
 
-    print("""{} is going to be erased.
+    print("""{} is going to be appended.
     If you don't want it, press CTRL-C,
     else press RETURN""".format(filename))
 
     print("?")
-    print("Opening filename in write mode")
-    txt = open(filename, 'w')
+    # use w for write mode, it'll delete the previous content
+    print("Opening filename in append mode")
+    txt = open(filename, 'a')
 
     print('Enter the count of how many lines you want to write.')
 
@@ -42,8 +44,10 @@ def main():
         txt.write(line)
         txt.write('\n')
 
-    print("So, you wrote these things in {filename}")
-    print(txt.read(), '\n')
+    print(f"So, you wrote these things in {filename}:")
+    txt = open(filename)
+    print()
+    print(txt.read())
 
     print('Closing the file')
     txt.close()
