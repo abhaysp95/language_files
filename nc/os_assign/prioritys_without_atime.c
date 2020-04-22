@@ -23,8 +23,8 @@ void list_free(struct Proc_data* );
 struct Proc_data {
 	int pnum;		// process number
 	float btime;	// burst time
-	float wtime;		// waiting time
-	float tatime;		// turn-around time
+	float wtime;	// waiting time
+	float tatime;	// turn-around time
 	int priority;	// priority of process
 	struct Proc_data *Next;
 } *Start = NULL;
