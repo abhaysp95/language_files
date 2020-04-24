@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Loops in Java Script</title>
+		<script type="text/javascript">
+			function show_alert() {
+				alert("I'm an alert box!");
+			}
+
+			function show_confirm() {
+				var r = confirm("Press a button");
+				if (r == true) {
+					//	document.write("You pressed true</br>");
+					alert("You pressed true")
+				}
+				else {
+					//	document.write("You pressed false</br>");
+					alert("You pressed false")
+				}
+			}
+
+			function show_prompt() {
+				var name = prompt("Please enter your name", "Abhay Shanker Pathak");
+				if (name != null && name != "") {
+					alert("You entered name: "+name+"!\nExiting Now!")
+				}
+			}
+
+			// event handling
+			function mouse_over_event() {
+				alert("This is an example of mouse event")
+			}
+		</script>
+		<style>
+#onmouseoverid {
+	font-size: 50px;
+	font-style: italic;
+	background-color: olive;
+}
+		</style>
+	</head>
+	<body onload="window.alert('Page successfully loaded');">
+		<script type="text/javascript">
+			document.write("Entering in for loop</br>")
+			var i = 0;
+			for (i = 0; i < 5; i++) {
+				document.write("The number is "+i);
+				document.write("<br/>")
+			}
+
+			document.write("</br>Entering in while loop</br>")
+			var i = 0;
+			while (i < 5) {
+				document.write("The number is "+i+++"</br>");
+			}
+
+			document.write("</br>Entering in do-while loop</br>")
+			var i = 0;
+			do {
+				document.write("The number is "+i+++"</br>");
+			} while (i < 5);
+
+			document.write("</br>Entering in for...in statement</br>")
+			var x;
+			var mycars = new Array();
+			mycars = ["Charger", "Challenger", "Plymoth", "Skyline", "GTR"];
+			for (x in mycars) {
+				document.write("I have "+mycars[x]+"</br>")
+			}
+			function focusevent() {
+				document.getElementById("input1").style.background="aqua"
+			}
+			function keydownevent() {
+				document.getElementById("input2");
+				alert("Pressed a key");
+			}
+		</script>
+		<p><i>Out of loop execution</i></p>
+		<br></br>
+		<p>Getting on function for alert box</p>
+		<input type="button" onclick="show_alert()" value="It's an alert box"/>
+		<br></br>
+		<p>Getting on function for confirm box</p>
+		<input type="button" onclick="show_confirm()" value="It's a confirm box"/>
+		<br></br>
+		<p>Getting on function for confirm box</p>
+		<input type="button" onclick="show_prompt()" value="Enter the name"/>
+		<br></br>
+		<h3>Mouse Over Event</h3>
+		<p onmouseover="mouse_over_event()" id="onmouseoverid">
+			<b>Keep the cursor over me.</b></p>
+		<br></br>
+
+		<h3>Focus Event</h3>
+		<h4>Enter Something Here</h4>
+		<input type="text" id="input1" onfocus="focusevent()"/>
+		<br></br>
+
+		<h3>Keydown Event</h3>
+		<input type="text" id="input2" onkeydown="keydownevent()"/>
+		<br></br>
+
+		<i>Done</i>
+	</body>
+</html>
