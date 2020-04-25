@@ -41,11 +41,13 @@ int main(int argc, char* argv[]) {
 		scanf("%f %f", &process[i].atime, &process[i].btime);
 		temp[i] = process[i].btime;
 	}
+
 	/* printf("\n temp btime: \n"); */
 	/* for (int i = 0; i < count; i++) { */
 	/* 	printf("%d", temp[i]); */
 	/* 	printf("\n"); */
 	/* } */
+
 	process[max_proc - 1].btime = 9999;
 
 	// get waiting time and turn around time
