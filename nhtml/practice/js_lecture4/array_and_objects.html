@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Arrays and Objects</title>
+		<script type="text/javascript">
+			function printvalue() {
+				var name=document.form1.bname.value;
+				alert("Welcome: "+name);
+			}
+
+			function getCube() {
+				var number = document.getElementById("inumber").value;
+				// cubeNumber = document.write.innerHTML=Math.pow(number, 3);
+				cubeNumber = Math.pow(number, 3);
+				alert("Cube is: "+cubeNumber);
+			}
+
+			function totalElements() {
+				var allgenders = document.getElementsByName("gender");
+				alert("Total Genders:"+allgenders.length);
+			}
+
+			function getProduct(a, b) {
+				return a * b;
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var emp = ["Abhay", "Shanker" , "Pathak"];
+			for (i = 0; i < emp.length; i++) {
+				document.write(emp[i] + "</br>");
+			}
+		</script>
+		<br></br>
+		<p>Out of first script tag</p>
+		<br></br>
+		<script type="text/javascript">
+			var max = 0;
+			var values = [4, 5, 3, 7, 8, 2, 12, 30, 28, 35]
+			for (num = 0; num < values.length; num++) {
+				if (values[num] > max) {
+					max = values[num];
+				}
+			}
+			document.write("<b>Max value from values array s: ", max, "</br>");
+		</script>
+		<br></br>
+		<p><i>Out of second script tag</i></p>
+		<br></br>
+		<script type="text/javascript">
+			var values = [4, 5, 3, 7, 8, 2, 12, 30, 28, 35]
+			sum = 0;
+			for (num = 0; num < values.length; num++) {
+				sum += values[num];
+			}
+			document.write("Sum of elements inside given array is: <br>", sum, "</br>");
+		</script>
+		<br></br>
+		<p>Out of third script tag</p>
+
+		<h2>Starting String Objects from here</h2>
+		<script type="text/javascript">
+			var str = "javascript";
+			document.write(str.charAt(2), "</br>");
+
+			var str2 = "concat example";
+			var str3 = str.concat(str2);
+			document.write(str3, "</br>");
+
+			var sentence = "javascript example for objects of string";
+			var num = sentence.indexOf("for");
+			document.write(num, "</br>");
+
+			var sentence2 = sentence.concat(sentence);
+			var num = sentence2.lastIndexOf("java");
+			document.write(sentence2, "</br>")
+			document.write(num, "</br>");
+
+			var sentence3 = "JavaScript toLowerCase Example";
+			document.write("Previous line: ", sentence3, "</br>");
+			document.write("New	line: ", sentence3.toLowerCase(), "</br>");
+
+			var sentence4 = sentence3.concat(sentence3.toLowerCase());
+			var sentence5 = sentence4.trim();
+			document.write("trim: ", sentence4.trim(), "</br>");
+			document.write("trim: ", sentence5, "</br>");
+			// trim() isn't working
+
+			document.write("Sliced from 10 to 20", sentence4.slice(10, 20), "</br>");
+		</script>
+		<br></br>
+		<h2>Starting date object from here</h2>
+		Current Date and Time: <span id="txt"></span>
+		<br></br>
+		Today is: <span id="txt1"></span>th day.
+		<script type="text/javascript">
+			var whole_date = new Date();
+			document.getElementById('txt').innerHTML=whole_date;
+			var today = new Date();
+			document.getElementById('txt1').innerHTML=today.getDay();
+		</script>
+		<br></br>
+		<h2>Starting Math Object from here</h2>
+		Round of 4.3 is: <span id="p6"></span><br>
+		Round of 4.7 is: <span id="p7"></span><br>
+		Absolute value of -4 is: <span id="p8"></span><br>
+		<script type="text/javascript">
+			document.getElementById('p6').innerHTML=Math.round(4.3);
+			document.getElementById('p7').innerHTML=Math.round(4.7);
+			document.getElementById('p8').innerHTML=Math.abs(-4);
+		</script>
+		<br></br>
+		<h2>Starting Document Object</h2>
+		<form action="" name="form1">
+			Enter Name: <input type="text" name="bname"/>
+			<input type="button" onclick="printvalue()" value="print name"/>
+		</form>
+		<br>
+		<form action="">
+			Enter Number: <input type="text" id="inumber" name="nnumber"/>
+			<input type="button" value="cube" onclick="getCube()"/>
+		</form>
+		<form action="">
+			Male: <input type="radio" name="gender" value="male">
+			Female: <input type="radio" name="gender" value="female">
+			Other: <input type="radio" name="gender" value="other">
+			<input type="button" onclick="totalElements()" value="Total Genders">
+		</form>
+		<script type="text/javascript">
+			document.write(getProduct(4, 3));
+		</script>
+	</body>
+</html>
