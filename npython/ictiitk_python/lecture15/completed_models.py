@@ -10,14 +10,14 @@ Last Edit: 2020-04-23
 
 
 # function for blueprints <<<
-def blueprint_models(blueprints, completed_models):
+def blueprint_models(get_blueprints, get_completed_models):
     '''Stimulate printing each design, until none are left.
     Move each design to complete models after printing'''
 
-    while blueprints:
-        current_design = blueprints.pop()
+    while get_blueprints:
+        current_design = get_blueprints.pop()
         print(f"printing model: {current_design}")
-        completed_models.append(current_design)
+        get_completed_models.append(current_design)
 # >>>
 
 
