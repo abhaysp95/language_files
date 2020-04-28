@@ -27,6 +27,8 @@ def main():
     obj1 = Mobile('Nokia', 12000, 'A6 Plus')
     obj2 = Mobile('Samsung', 62000, 'S9')
     obj3 = Mobile('Asus', 13000, 'Max Pro M1')
+    print(f"Name is given as {obj1.company}.")
+    obj1.show()
     print(obj1.show(), '\n')
     print(obj2.show(), '\n')
     print(obj3.show(), '\n')

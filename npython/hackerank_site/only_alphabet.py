@@ -9,15 +9,37 @@ Github: https://github.com/CoolAbhayS
 Last Edited: 2020-03-20
 """
 
+import itertools as itt
+
+
 # variable declaration
-word = input('Enter the string: ')
+WORD = input('Enter the string: ')
+NEW_WORD = ''
 
 # iteration <<<
-for i in word:
-    if i >= 'a' and i <= 'z':
-        print(i, end='')
-    elif i >= 'A' and i <= 'Z':
-        print(i, end='')
+for alphabet in WORD:
+    if 'a' <= alphabet <= 'z':
+        print(alphabet, end='')
+    elif 'A' <= alphabet <= 'Z':
+        print(alphabet, end='')
+
+for i in itt.chain(range(65, 91), range(97, 123)):
+    if chr(i) in WORD:
+        NEW_WORD = NEW_WORD + chr(i)
+
+print(NEW_WORD)
+
+# this method doesn't works
+# NEW_WORD = ''
+# for i in range(65, 91) + range(97, 123):
+#     if chr(i) in WORD:
+#         NEW_WORD = NEW_WORD + chr(i)
+
+NEW_WORD = ''
+for i in list(range(65, 91)) + list(range(97, 123)):
+    if chr(i) in WORD:
+        NEW_WORD = NEW_WORD + chr(i)
+print(NEW_WORD)
 # >>>
 
 # how to do comparision with ascii code in python?
