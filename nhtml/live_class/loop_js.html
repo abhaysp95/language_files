@@ -1,0 +1,21 @@
+<html>
+    <head>
+	<script type="text/javascript">
+	    function addarr() {
+		arr1 = ["car", "bike", "scooter"];
+		arr1.sort();
+		arr1.push("cycle")
+		s = "";
+		for (i = 0; i < arr1.length; i++) {
+		    s = s+"<option>" + arr1[i] + "</option>";
+		}
+		document.getElementById("s1").innerHTML = s;
+	    }
+	</script>
+    </head>
+    <body>
+	<select id="s1">
+	</select>
+	<input type="button" value="ok" onclick="addarr()"/>
+    </body>
+</html>
