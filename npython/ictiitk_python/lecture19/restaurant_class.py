@@ -32,6 +32,7 @@ def main():
     '''Entering in main class'''
     first_restaurant = Restaurant("kanha Shyam", "Indian")
     second_restaurant = Restaurant("leaky cauldran", "English")
+    third_restaurant = Restaurant("morning_beverage", "Italian")
 
     print(f"Name of first_restaurant is {(first_restaurant.name).title()}")
     print(f"This restaurant is of {(first_restaurant.type).title()} type.")
@@ -44,6 +45,8 @@ def main():
 
     second_restaurant.describe_restaurant()
     second_restaurant.open_restaurant()
+
+    third_restaurant.describe_restaurant()
 # >>>
 
 
