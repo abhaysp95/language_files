@@ -21,6 +21,7 @@ class User:
         self.home_folder = home_dir
         self.login = login_time
         self.logout = logout_itme
+        self.attempt_nums = 0
 
     def describe_user(self):
         '''Giving details of user'''
@@ -39,6 +40,14 @@ class User:
             print("Hello, ", self.name, " Good Afternoon")
         else:
             print("Hello ", self.name, " Good Evening")
+
+    def login_attempts(self):
+        '''Increment login attempts by one'''
+        self.attempt_nums += 1
+
+    def reset_login_attempts(self):
+        '''Reset the login attempts'''
+        self.attempt_nums = 0
 # >>>
 
 
@@ -51,10 +60,32 @@ def main():
     first_user.greet_user()
     first_user.describe_user()
 
+    print("Number of attempts: ", first_user.attempt_nums)
+    first_user.login_attempts()
+    print("Number of attempts: ", first_user.attempt_nums)
+    first_user.login_attempts()
+    print("Number of attempts: ", first_user.attempt_nums)
+    first_user.login_attempts()
+    print("Number of attempts: ", first_user.attempt_nums)
+    print("Resetting login attempts", end='\n')
+    first_user.reset_login_attempts()
+    print("Number of attempts: ", first_user.attempt_nums)
+
     print()
 
     second_user.greet_user()
     second_user.describe_user()
+
+    print("Number of attempts: ", second_user.attempt_nums)
+    second_user.login_attempts()
+    print("Number of attempts: ", second_user.attempt_nums)
+    second_user.login_attempts()
+    print("Number of attempts: ", second_user.attempt_nums)
+    second_user.login_attempts()
+    print("Number of attempts: ", second_user.attempt_nums)
+    print("Resetting login attempts", end='\n')
+    second_user.reset_login_attempts()
+    print("Number of attempts: ", second_user.attempt_nums)
 # >>>
 
 
