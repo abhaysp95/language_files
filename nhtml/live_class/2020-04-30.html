@@ -1,0 +1,61 @@
+<html>
+    <head>
+	<script charset="utf-8">
+	    c = 1
+	    function f1() {
+		// alert('hello')
+		document.getElementById("txt1").value=c;
+		c++;
+		ob = setTimeout(f1, 1500)
+	    }
+	//    function f2() {
+		//alert("hello")
+	    //}
+	    function f2() {
+		clearTimeout(ob)
+	    }
+	    function f3() {
+		clearTimeout(ob)
+		document.getElementById("txt1").value=''
+		c = 1
+		f1()
+	    }
+	    function f4() {
+		clearTimeout(ob)
+		document.getElementById("txt1").value=''
+	    }
+	    function f5() {
+		document.getElementById("image1").src="/home/raytracer/Pictures/portrait_wall/461x604/Force-2-925867307-6388908-1.jpg"
+		obj = setTimeout(f5, 1000)
+	    }
+	    function f6() {
+		x = document.getElementById("t1").value
+		rg = /^91[7-9][0-9]{8,10}$/;
+		email = /^[a-zA-Z]+[0-9a-zA-Z]+[_|.]?[a-zA-Z0-9]@[a-zA-Z]+[.][a-zA-Z]{2,4}$/
+		// range in curly brace
+		// repition with +
+		// 0 or 1 with ?
+		// 0 or more with *
+		if (email.test(x)) {
+		    alert("valid")
+		}
+		else {
+		    alert("not valid")
+		}
+	    }
+	</script>
+    </head>
+    <body>
+	<form action="">
+	    <input type="text" id="txt1"/>
+	    <input type="button" value="Start" onclick="f1()"/>
+	    <input type="button" value="Stop" onclick="f2()"/>
+	    <input type="button" value="Restart" onclick="f3()"/>
+	    <input type="button" value="Reset" onclick="f4()"/>
+	    <input type="button" value="Change" onclick="f5()"/>
+	    <input type="text" id="t1"/>
+	    <input type="button" value="Check" onclick="f6()"/>
+	</form>
+	<img id="image1" src="/home/raytracer/Pictures/portrait_wall/314x480/6b62d6ad11a8ddf9328145d1dd8f97a0.jpg"/>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>hello_world_js</title>
+		<script type="text/javascript">
+			a = 123;
+			function product() {
+				b = 14;
+				document.write(a * b + "<br>");
+				a = 12;
+				document.write("a is " + a + "<br>");
+				var a = 142;
+				document.write("a is " + a + "<br>");
+			}
+			document.write("a is " + a);
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write("Hello World");
+			// for older browser that don't offer scripting
+		</script>
+		<script type="text/javascript">
+			<!--
+			document.write("hello world")
+			// -->
+		</script>
+		<script type="text/javascript">
+			var x = 0;
+			x += 10;
+			x -= 5;
+			document.write("Value of x is " + x + "<br></br>");
+			document.write(
+				"Use \\ to escape \" and ' if using of same types<br></br>"
+			);
+			greetings = "Hello there";
+			document.write(greetings + "<br></br>");
+			alphabets = [
+				["a", "b", "c"],
+				["d", "e", "f"],
+				["g", "h", "i"],
+			];
+			document.write(alphabets[1][0] + "<br></br>");
+			name = "Abhay";
+	  name += " Shanker";
+	  name += " Pathak";
+			document.write("My name is " + name + "<br>");
+			heading = "Name\nAge\tLocation";
+			document.write(heading + "<br>");
+
+			/* it isn't necessary to use ; in js but
+			when writing multiple commands in same line
+			use ; after every command */
+
+				n = "93284798324";
+			document.write("n = " + n + ", and is a " + typeof n + "<br>");
+			n = "93284798324" * 123;
+			document.write("n = " + n + ", and is a " + typeof n + "<br>");
+			n = 12345 * 234;
+			document.write("n = " + n + ", and is a " + typeof n + "<br>");
+			n += " plus some text";
+			document.write("n = " + n + ", and is a " + typeof n + "<br>");
+			n = n * 2;
+			document.write("n = " + n + ", and is a " + typeof n + "<br>");
+		</script>
+		<input type="button" onclick="product()" value="product" />
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Link Test</title>
+    <body>
+      <a id="mylink" href="https://archlinux.org">Click Me</a><br />
+      <a id="nextlink" href="https://manjaro.org">Click Me</a><br />
+      <script type="text/javascript">
+        // url = document.links.mylink.href;
+
+        // we can also write as below also
+        // url = mylink.href;
+
+        // above written forms will not work on internet explorer
+        // another way is to fetch the element by its id
+        // url = document.getElementById("mylink").href;
+        // $("mylink").href; // this is another method
+
+        // the links object is actually an array of URL, so
+        // url = document.links[0].href; // also works
+        for (j = 0; j < document.links.length; j++) {
+          document.write("The url is " + document.links[j].href + "<br>");
+        }
+        numlinks = document.links.length;
+        document.write("The total num of link/s is/are " + numlinks + "<br>");
+
+        document.write("Number of histories: " + history.length + "<br>");
+
+        // movement in history
+        history.back();
+        history.forward();
+        history.go(-2);
+
+        document.location.href = "URL"; // to replace current url
+      </script>
+
+      <script type="text/javascript">
+        // $ function is written to use instead of document.getElementById()
+        // function below show how
+        function $(id) {
+          return document.getElementById(id);
+        }
+      </script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>check_global_js</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      test();
+
+      if (typeof a != "undefined") document.write('a = "' + a + '"<br>');
+      if (typeof b != "undefined") document.write('b = "' + b + '"<br>');
+      if (typeof c != "undefined") document.write('c = "' + c + '"<br>');
+
+      function test() {
+        a = 123; // global scope
+        var b = 456; // local scope
+        if (a == 123) c = 789; // local scope
+      }
+    </script>
+  </body>
+</html>
