@@ -28,12 +28,12 @@ def is_sum_equal_to_target(val_subsets, target):
 
     # loop to get sum
     for subset in val_subsets:
-        print(subset)
+        # print(subset)
         sum = 0
         for num in subset:
-            print(num)
+            # print(num)
             sum = sum + num
-        print('sum is', sum)
+        # print('sum is', sum)
         if sum == target:
             matched_subset.append(subset)
     return matched_subset
@@ -52,33 +52,35 @@ def make_seq_desired_format(got_sequence):
 # main function <<<
 def main():
     '''Entering in main function'''
-    prompt = '> '
+    # prompt = '> '
 
     # enter number count for total elements
-    print('Enter the count value')
-    count = int(input(prompt))
+    # print('Enter the count value')
+    count = int(input())
 
     # enter the elements
     val_list = []
-    print('\nEnter the elements: ')
-    for _ in range(count):
-        val_list.append(int(input(prompt)))
+    # print('\nEnter the elements: ')
+    # for _ in range(count):
+    #     val_list.append(int(input(prompt)))
+    values = input()
+    val_list = [int(num) for num in values.split(' ')]
 
     # check
     # print('Entered list is: \n', val_list)
 
     # enter the target value
-    print('Enter target value:\n')
-    target = int(input(prompt))
+    # print('Enter target value:\n')
+    target = int(input())
 
     # get all the subsets
     subsets = get_subsets(val_list, count)
-    print('Subsets got is: ', subsets)
+    # print('Subsets got is: ', subsets)
 
     # get all the subsets whose sum matched to target
     res_subsets = is_sum_equal_to_target(subsets, target)
-    print('All the subsets whose sum are equal to target value are:')
-    print(res_subsets)
+    # print('All the subsets whose sum are equal to target value are:')
+    # print(res_subsets)
 
     # values in desired format
     make_seq_desired_format(res_subsets)
