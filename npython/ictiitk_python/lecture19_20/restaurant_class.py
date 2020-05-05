@@ -34,6 +34,9 @@ class Restaurant:
     def increment_number_served(self, inc_num):
         '''Increments the numbers of served customer'''
         self.number_served += inc_num
+
+    def get_number_served(self):
+        return self.number_served
 # >>>
 
 

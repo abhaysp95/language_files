@@ -59,7 +59,7 @@ class Admin_User(User):
         self.get_privilege = Priviliges(get_privilege)
 
 
-class Priviliges():
+class Priviliges:
     def __init__(self, privilege):
         self.privilege = privilege
 
