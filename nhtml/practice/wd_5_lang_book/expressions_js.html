@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>expressions_js</title>
+		<style>
+body {
+	background-color: #282828;
+	color: #ebdbb2;
+}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write('a:' + (42 > 3) + "<br>")
+			document.write('b:' + (91 < 4) + "<br>")
+			document.write('c:' + (8 == 2) + "<br>")
+			document.write('d:' + (4 < 17) + "<br>")
+			document.write("<br>")
+			if (1 == true) document.write('true')
+			if (1 == TRUE) document.write('TRUE')
+		</script>
+		<p>Moving into literals</p>
+		<script type="text/javascript">
+			Myname="Abhay Shanker Pathak"
+			myage=129
+			document.write("a: " + 42     + "<br>") // Numeric literal
+			document.write("b: " + "Hii"  + "<br>") // String literal
+			document.write("c: " + true   + "<br>") // Constant literal
+			document.write("d: " + Myname + "<br>") // String literal
+			document.write("e: " + myage  + "<br>") // Numeric literal
+		</script>
+		<script type="text/javascript">
+			function new_year() {
+				day_number = prompt("Enter the day number", "365")
+				days_to_new_year = 366 - day_number
+				if (days_to_new_year < 30) document.write('It\'s nearly new year')
+				// confirm("You entered" + days_to_new_year)
+			}
+		</script>
+		<input type=button value="Enter" onclick="new_year()"/>
+	</body>
+</html>
