@@ -13,11 +13,11 @@ Last Edit -> 2020-04-21 */
 
 // struct defined <<<
 struct Proc_data {
-	int pnum;		// process number
-	float btime;	// burst time
-	float atime;	// arrival time
-	double wtime;	// waiting time
-	double tatime;	// turn around time
+	int pnum;     // process number
+	float btime;  // burst time
+	float atime;  // arrival time
+	double wtime; // waiting time
+	double tatime;// turn around time
 };
 // >>>
 
@@ -41,12 +41,6 @@ int main(int argc, char* argv[]) {
 		scanf("%f %f", &process[i].atime, &process[i].btime);
 		temp[i] = process[i].btime;
 	}
-
-	/* printf("\n temp btime: \n"); */
-	/* for (int i = 0; i < count; i++) { */
-	/* 	printf("%d", temp[i]); */
-	/* 	printf("\n"); */
-	/* } */
 
 	process[max_proc - 1].btime = 9999;
 
@@ -95,18 +89,10 @@ void get_other_values(struct Proc_data *process, int *temp, int total) {
 			limit++;
 			end = times + 1;
 
-			// get value of waiting time
-			/* sum_wtime = sum_wtime + end - process[smallest].atime - temp[smallest]; */
 			sum_wtime = end - process[smallest].atime - temp[smallest];
-			/* printf("\nwtime for smallest value %d is %lf\n", smallest, sum_wtime); */
-			/* printf("end is %lf, atime is %lf\n", end, process[smallest].atime); */
 			process[smallest].wtime = sum_wtime;
 
-			// get value of turn around time
-			/* sum_tatime = sum_tatime + end - process[smallest].atime; */
 			sum_tatime = end - process[smallest].atime;
-			/* printf("\ntatime for smallest value %d is %lf\n", smallest, sum_tatime); */
-			/* printf("end is %lf, atime is %lf\n", end, process[smallest].atime); */
 			process[smallest].tatime = sum_tatime;
 		}
 	}
