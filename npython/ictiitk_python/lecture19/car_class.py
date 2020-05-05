@@ -6,7 +6,7 @@ Author: Abhay Shanker Pathak
 Date: 2020-04-29
 Description: making car class(modifying attributes of instances)
 Email: abhaysp9955@gmail.com
-Last Edit: 2020-04-29
+Last Edit: 2020-05-04
 """
 
 # this file also contains example of inheritance which is of lecture 20
@@ -67,6 +67,33 @@ class Car:  # pylint: disable=too-few-public-methods
 # >>>
 
 
+class Battery:
+    '''Attempt to model battery of electric car'''
+    def __init__(self, battery_size=64):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        '''Print a statement describing the battery size'''
+        print("The has a {}-KWh battery".format(self.battery_size))
+
+    def upgrade_battery(self):
+        if self.battery_size != 100:
+            self.battery_size = 100
+
+    def get_range(self):
+        if self.battery_size >= 80:
+            range = 300
+        elif 50 <= self.battery_size < 80:
+            range = 240
+        elif 20 <= self.battery_size < 50:
+            range = 143
+        else:
+            print('You should recharge the battery')
+
+        if self.battery_size >= 20:
+            print("This car can go about {} kilometers".format(range))
+
+
 # electric car class <<<
 class ElectricCar(Car):
     '''Represent ascpects of a electric car'''
@@ -74,12 +101,7 @@ class ElectricCar(Car):
     def __init__(self, company_name, model, year):
         '''initializing attributes of parent class'''
         super().__init__(company_name, model, year)
-        self.battery_size = 75
-
-    def describe_battery(self):
-        '''Print a statement describing the battery size'''
-        print("The has a {}-KWh battery and company is {}"
-              .format(self.battery_size, self.make))
+        self.battery = Battery()
 
     def diesel_tank(self, litres):
         '''Do electirc cars use diesel as fuel'''
@@ -100,9 +122,7 @@ def main():
 
     # modifying attributes with method
     first_car.update_odometer(32)
-
     first_car.read_odometer()
-
     first_car.diesel_tank(15)
 
     print(second_car.get_descriptive_name())
@@ -112,9 +132,12 @@ def main():
     second_car.diesel_tank(27)
 
     print(third_car.get_descriptive_name())
-    print(third_car.describe_battery())
-    print(third_car.diesel_tank(20))
-# >>>
+    third_car.diesel_tank(20)
+    third_car.battery.describe_battery()
+    third_car.battery.get_range()
+    third_car.battery.upgrade_battery()
+    third_car.battery.get_range()
+# >>
 
 
 if __name__ == "__main__":

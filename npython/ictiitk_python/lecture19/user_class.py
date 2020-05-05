@@ -51,11 +51,29 @@ class User:
 # >>>
 
 
+class Admin_User(User):
+    '''Admin class inheriting User class'''
+    def __init__(self, user_name, home_dir, login_time, logout_itme,
+                 get_privilege):
+        super().__init__(user_name, home_dir, login_time, logout_itme)
+        self.get_privilege = Priviliges(get_privilege)
+
+
+class Priviliges():
+    def __init__(self, privilege):
+        self.privilege = privilege
+
+    def show_privileges(self):
+        print(f"User has privilage to {self.privilege}")
+
+
 # main class <<<
 def main():
     '''Entering in main class'''
     first_user = User('abhay', 'yes', '12.00', '16.00')
     second_user = User('thor', 'no', '2:00', '5:00')
+    third_user = Admin_User('Captain', 'yes',
+                            '12:00', '4:00', 'can command other users')
 
     first_user.greet_user()
     first_user.describe_user()
@@ -86,6 +104,21 @@ def main():
     print("Resetting login attempts", end='\n')
     second_user.reset_login_attempts()
     print("Number of attempts: ", second_user.attempt_nums)
+
+    third_user.greet_user()
+    third_user.describe_user()
+
+    print("Number of attempts: ", third_user.attempt_nums)
+    third_user.login_attempts()
+    print("Number of attempts: ", third_user.attempt_nums)
+    third_user.login_attempts()
+    print("Number of attempts: ", third_user.attempt_nums)
+    third_user.login_attempts()
+    print("Number of attempts: ", third_user.attempt_nums)
+    print("Resetting login attempts", end='\n')
+    third_user.reset_login_attempts()
+    print("Number of attempts: ", third_user.attempt_nums)
+    print(third_user.get_privilege.show_privileges())
 # >>>
 
 
