@@ -16,7 +16,8 @@ def toh(count, first, second, third):
     '''function of recursion for tower of hanoi'''
     if count > 0:
         toh(count - 1, first, third, second)
-        print('(', first, ',', third, ')')
+        # print('(', first, ',', third, ')')
+        print('({0},{1})'.format(first, third))
         toh(count - 1, second, first, third)
 
 
