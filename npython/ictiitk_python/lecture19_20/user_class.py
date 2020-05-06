@@ -48,7 +48,6 @@ class User:
     def reset_login_attempts(self):
         '''Reset the login attempts'''
         self.attempt_nums = 0
-# >>>
 
 
 class Admin_User(User):
