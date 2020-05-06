@@ -8,10 +8,10 @@ Last Edit -> 2020-04-21 */
 
 #include<stdio.h>
 #include<stdlib.h>
-#include <string.h>
+#include<string.h>
 #define max_proc 15
 
-// struct defined <<<
+// struct defined
 struct Proc_data {
 	int pnum;     // process number
 	float btime;  // burst time
@@ -19,15 +19,15 @@ struct Proc_data {
 	double wtime; // waiting time
 	double tatime;// turn around time
 };
-// >>>
 
-// function pre-declaration <<<
+
+// function pre-declaration
 void get_avg_values(struct Proc_data *process, int );
 void get_other_values(struct Proc_data *process, int *, int );
 void display_proc(struct Proc_data *process, int );
-// >>>
 
-// main function <<<
+
+// main function
 int main(int argc, char* argv[]) {
 	struct Proc_data process[max_proc];
 	int count;
@@ -55,12 +55,12 @@ int main(int argc, char* argv[]) {
 
 	return 0;
 }
-// >>>
 
-// function to get avg waiting and turn around time <<<
+
+// function to get avg waiting and turn around time
 void get_avg_values(struct Proc_data *process, int total) {
 	// calculating average
-	double sum_wtime = 0, sum_tatime;
+	double sum_wtime = 0, sum_tatime = 0;
 	for (int i = 0; i < total; i++) {
 		sum_wtime = sum_wtime + process[i].wtime;
 		sum_tatime = sum_tatime + process[i].tatime;
@@ -68,9 +68,9 @@ void get_avg_values(struct Proc_data *process, int total) {
 	printf("Average value of Waiting time for entered processes: %lf", sum_wtime / total);
 	printf("\nAverage Turn around time for entered processes: %lf", sum_tatime / total);
 }
-// >>>
 
-// function to get values of waiting and turn around time for all process <<<
+
+// function to get values of waiting and turn around time for all process
 void get_other_values(struct Proc_data *process, int *temp, int total) {
 	int i = 0, times = 0, smallest = 0, limit = 0;
 	double end, sum_wtime = 0, sum_tatime = 0;
@@ -97,13 +97,13 @@ void get_other_values(struct Proc_data *process, int *temp, int total) {
 		}
 	}
 }
-// >>>
 
-// function to display waiting and turn-around time for all processes <<<
+
+// function to display waiting and turn-around time for all processes
 void display_proc(struct Proc_data *process, int total) {
 	printf("Process name\tWaiting time\t\tTurn around time\n");
 	for (int i = 0; i < total; i++) {
 		printf("p%d\t\t%lf\t\t\t%lf\n", process[i].pnum, process[i].wtime, process[i].tatime);
 	}
 }
-// >>>
+
