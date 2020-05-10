@@ -1,0 +1,42 @@
+div {
+	background: purple;
+	color: white;
+}
+
+p#quote {
+	font-family: 'Mononoki Nerd Font Mono', 'Dank Mono';
+	color: black;
+}
+
+.links {
+	background: steelblue;
+	color: whitesmoke;
+}
+
+.un_list {
+	background: navajowhite;
+	color: darkseagreen;
+}
+
+span#faltu {
+	text-transform: uppercase;
+}
+
+#alist ul li {
+	color: maroon;
+}
+
+#alist ol li {
+	color: paleturquoise;
+}
+
+h1 + p {
+	/* selects only first <p> after h1 */
+	background-color: black;
+	color: honeydew;
+}
+
+p[class] {
+	/* same can be done for id */
+	background-color: green;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Page2</title>
+		<link rel="stylesheet" href="/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="page2.css" type="text/css">
+	</head>
+	<body>
+		<p id="lorem">
+Let's take an example, suppose I opened a text editor in linux system and typed a program to read a file and write something into it.
+Now, data is stored in _storage drive(HDD, SSD etc)_. So, after `user-process executing` a `get system call` will happen.
+Like in program `Read()` will happen.
+
+Now, as Read() will happen, a **trap()**(interrupt) is set up. Now, I as soon as we shift from user mode to kernel mode, mode bit changes from **1 to 0**.
+
+Yes, Mode bit for **User mode** is 1.
+Mode bit for **Kernel mode** is 0.
+
+Now, system call will be executed and after that we'll come back to user mode, because user works in User mode.
+And, also mode bit changes to 1 from 0.
+
+Let's take another example, there's a C program in which it is written to add two number.
+Now, this doesn't require kernel to process. But, if wrote `printf()` to show output in monitor, it requires kernel mode.
+		</p>
+
+		<!-- Demonstrate font styling -->
+
+		<ol>
+			<li id="normal">Font style - Normal</li>
+			<li id="italic">Font style - Italic</li>
+			<li id="oblique">Font style - Oblique</li>
+			<li id="smallcap">Font variant - Small Cap</li>
+			<li id="wnormal">Font weight - normal</li>
+			<li id="wbold">Font weight - bold</li>
+			<li id="wbolder">Font weight - bolder</li>
+			<li id="wlighter">Font weight - lighter</li>
+			<li id="xxlarge">Font size - xx large</li>
+			<li id="large">Font size - large</li>
+			<li id="medium">Font size - medium</li>
+			<li id="small">Font size - small</li>
+			<li id="xxsmall">Font size - xx small</li>
+			<li id="ptsize">Font size - 25pt</li>
+			<li id="persize">Font size - 150%</li>
+			<li id="lnormal">Line height - Normal</li>
+			<li id="lpt">Line height - 25pt</li>
+			<li id="lper">Line height - 200%</li>
+			<li id="lem">Line height - 2em</li>
+		</ol>
+	</body>
+</html>

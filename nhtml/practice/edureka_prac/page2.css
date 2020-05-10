@@ -1,0 +1,84 @@
+#lorem {
+	background-color: black;
+	color: white;
+	border: 3px ridge red;
+	padding: 20px 10px 15px 5px; /* moves in clockwise fasion top, right, bottom, left */
+	/* If only two paddings are given like padding: 25px 20px; it means 25px on top-bottom and 20 on left-right */
+	margin: 10px auto; /* auto means gives equal amount on left-right */
+}
+
+#normal {
+	font-style: normal;
+}
+
+#italic {
+	font-style: italic;
+}
+
+#oblique {
+	font-style: oblique;
+}
+
+#smallcap {
+	font-variant:small-caps;
+}
+
+#wnormal {
+	font-weight: normal;
+}
+
+#wbold {
+	font-weight: bold;
+}
+
+#wbolder {
+	font-weight: bolder;
+}
+
+#wlighter {
+	font-weight: lighter;
+}
+
+#xxlarge {
+	font-size: xx-large; /* there's also extra large(x-large) */
+}
+
+#large {
+	font-size: large;
+}
+
+#medium {
+	font-size: medium;
+}
+
+#small {
+	font-size: small;
+}
+
+#xxsmall {
+	font-size: xx-small;
+}
+
+#ptsize {
+	font-size: 25pt; /* 1pt = 2in */
+}
+
+#persize {
+	font-size: 150%; /* 100% == current size */
+}
+
+#lnormal {
+	line-height: normal;
+}
+
+#lpt {
+	line-height: 25pt;
+}
+
+#lper {
+	line-height: 200%;
+}
+
+#lem {
+	line-height: 2em;
+}
