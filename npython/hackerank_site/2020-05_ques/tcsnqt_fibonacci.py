@@ -15,8 +15,10 @@ PROMPT = '> '
 # function to get fib <<<
 def fib(number):
     '''function will return integer from fibonacci series for given position'''
-    if number == 0:
-        return 0
+    # if number == 0:
+    #     return 0
+    # no need for number == 0, because recursion will
+    # never reach for 0
     if number <= 2:
         return 1
     return fib(number - 1) + fib(number - 2)
