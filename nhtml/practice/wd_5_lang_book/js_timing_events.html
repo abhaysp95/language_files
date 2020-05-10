@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>js_timing_events</title>
+	</head>
+	<body>
+		<p><b>setTimeout()</b> executes a function after waiting a specified time</p>
+		<script type="text/javascript">
+			function first_function() {
+				alert('Hello')
+			}
+			// myvar = setTimeout(first_function, 1000)
+		</script>
+		<button onclick="myvar = setTimeout(first_function, 1000)">Try it</button>
+		<button onclick="clearTimeout(myvar)">Stop it</button>
+		<script type="text/javascript">
+			myvar = setInterval(myTimer, 1000)
+
+			function myTimer() {
+
+			}
+		</script>
+	</body>
+</html>

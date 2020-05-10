@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>from_with_statement</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			string = "The quick brown fox jumps over the lazy dog"
+
+			with(string) {
+				document.write("The string is " + length + " characters.<br>")
+				document.write("In uppercase it's: " + toUpperCase())
+			}
+		</script>
+
+		<p>variable scope</p>
+		<br></br>
+
+		<script type="text/javascript">
+			name = "Jack"
+			document.write("Name = " + name + "<br>")
+			if (true) {
+				var name = "Johnny"
+				document.write("Name = " + name + "<br>")
+			}
+			// for (i = 0; i < 3; ++i) {
+			// 	var num = i
+			// 	setTimeout(function() { alert(num); }, 10)
+			// }
+
+			for (i = 0; i < 3; ++i) {
+				setTimeout(function() { alert(i); }, 5000);
+				// setTimeout( {alert(i); }, 1000)
+			}
+		</script>
+	</body>
+</html>
