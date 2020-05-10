@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Img_slider</title>
+		<style type="text/css" media="screen">
+			@import url('./img_slider.css')
+		</style>
+	</head>
+	<body>
+		<script src="img_slider.js"></script>
+
+		<div class="slidecontainer">
+			<div class="showSlide getfade">
+				<div class="countof">1 / 4</div>
+				<img src="2020-05/image1.png" alt="">
+				<div class="captiontxt">First Image</div>
+			</div>
+
+			<div class="showSlide">
+				<div class="countof">2 / 4</div>
+				<img src="2020-05/image2.png" alt="">
+				<div class="captiontxt">Second Image</div>
+			</div>
+
+			<div class="showSlide">
+				<div class="countof">3 / 4</div>
+				<img src="2020-05/image3.png" alt="">
+				<div class="captiontxt">Third Image</div>
+			</div>
+
+			<div class="showSlide">
+				<div class="countof">4 / 4</div>
+				<img src="2020-05/image4.png" alt="">
+				<div class="captiontxt">Fourth Image</div>
+			</div>
+
+			<a class="prev" onclick="prev_img(-1)">&#10094;</a>
+			<a class="next" onclick="next_img(1)">&#10095;</a>
+		</div>
+		<br></br>
+
+		<div class="dots">
+			<span class="dot" onclick="current_img(1)"></span>
+			<span class="dot" onclick="current_img(2)"></span>
+			<span class="dot" onclick="current_img(3)"></span>
+			<span class="dot" onclick="current_img(4)"></span>
+		</div>
+	</body>
+</html>
