@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>2020 05 11</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.alert("hello");
+			x = window.prompt("enter number");
+			y = window.confirm("Are you sure?");
+
+			function bub_sort() {
+				x = [2, 54, 32, 234, 2091 , 109 ,3, 23];
+				document.write(x);
+				for (i = 0; i < 8; i++) {
+					for (j = i + 1; j < 8; j++) {
+						if (x[i] > x[j]) {
+							x[i] = x[i] + x[j];
+							x[j] = x[i] - x[j];
+							x[i] = x[i] - x[j];
+						}
+					}
+				}
+				document.write(x);
+			}
+
+			function get_index() {
+				str = "hello world"
+
+				str.indexOf("o");
+				str.lastIndexOf("o");
+				str.search("ll")
+				str.replace("hello", "hi");
+				str.toUpper();
+			}
+
+			function doing_math() {
+				math.sin(30);
+				math.abs(-45);
+				math.floor(4.5)
+				math.ceil(4.5)
+				math.power(4, 5); // 4^5
+			}
+
+			function fordate() {
+				x = document.getElementById(d1).value;
+				var r = new Date();
+
+				if (x == r) {
+					alert("yes")
+				}
+			}
+
+			function getmax() {
+				// this is new way of js
+
+				var a, b, c, d, e;
+				x = math.max(a, b);
+				y = math.max(c, d);
+				z = math.max(x, y);
+				document.write(math.max(e, z));
+
+				// tradintional way
+				arr = [1, 2, 4, 9, 3]
+				max = arr[0];
+				i = 0
+				while (i < 5) {
+					if (max < arr[i]) {
+						max = arr[i]
+					}
+					i++;
+				}
+			}
+			document.write("<br>", max);
+		</script>
+		<input type="date" id="d1">
+		<img src="some_image.png" onLoad="function_name()" alt="A image here"/>
+	</body>
+</html>
