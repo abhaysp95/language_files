@@ -1,9 +1,12 @@
+body {
+	background: linear-gradient(to left, #53bdfa, #91b362);
+}
 .main-container {
 	margin-top: 100px;
 	position: relative;
 }
 #d1 {
-	background-color: cyan;
+	/* background-color: cyan; */
 	position: absolute;
 	top: 75px;
 	left: 175px;
@@ -20,7 +23,7 @@
 	position: absolute;
 	top: 0;
 	width: 40px;
-	height: 600px;
+	height: 563px;
 }
 #d3 {
 	background-color: rgb(38, 38, 38, 0.2);
@@ -28,7 +31,7 @@
 	top: 0;
 	left: 960px;
 	width: 40px;
-	height: 600px;
+	height: 563px;
 }
 
 img {
@@ -61,21 +64,17 @@ button {
 @keyframes to_white {
 	0% {
 		background-color: rgb(38, 38, 38, 0.2);
-		color: orange;
 	}
 	100% {
-		background-color: rgb(200, 200, 200, 0.5);
-		color: red;
+		background: linear-gradient(to bottom, rgb(104, 104, 104, 0.4), rgb(199, 199, 199, 0.4), rgb(104, 104, 104, 0.4));
 	}
 }
 @keyframes to_gray {
 	0% {
-		background-color: rgb(200, 200, 200, 0.5);
-		color: red;
+		background: linear-gradient(to bottom, rgb(104, 104, 104, 0.4), rgb(199, 199, 199, 0.4), rgb(104, 104, 104, 0.4));
 	}
 	100% {
 		background-color: rgb(38, 38, 38, 0.2);
-		color: orange;
 	}
 }
 @keyframes fade_out {
