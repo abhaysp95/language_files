@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>2020 05 14</title>
+		<link rel="stylesheet" href="basic_img_viewer.css">
+		<script src="basic_img_viewer.js"></script>
+	</head>
+	<body>
+		<div class="main_container">
+			<div class="fade-out" id="d1"><img id="img" src="2020-05/image1.png"/>
+				<div class="fcol scol" onmouseover="fcol(this)" onmouseout="scol(this)" id="d2">
+					<button class="fcol scol" onclick="prev()"> < </button>
+				</div>
+				<div class="fcol scol" onmouseover="fcol(this)" onmouseout="scol(this)" id="d3">
+					<button class="fcol scol" onclick="next();fade_out(this)"> > </button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

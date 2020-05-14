@@ -1,0 +1,88 @@
+.main-container {
+	margin-top: 100px;
+	position: relative;
+}
+#d1 {
+	background-color: cyan;
+	position: absolute;
+	top: 75px;
+	left: 175px;
+	height: 600px;
+	width: 1000px;
+}
+.fade-out {
+	animation-name: fade_out;
+	animation-duration: 1s;
+}
+
+#d2 {
+	background-color: rgb(38, 38, 38, 0.2);
+	position: absolute;
+	top: 0;
+	width: 40px;
+	height: 600px;
+}
+#d3 {
+	background-color: rgb(38, 38, 38, 0.2);
+	position: absolute;
+	top: 0;
+	left: 960px;
+	width: 40px;
+	height: 600px;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+button {
+	position: relative;
+	color: orange;
+	text-align: center;
+	top: 275px;
+	left: 0px;
+	font-size: 50px;
+	border: none;
+	background-color: rgb(38, 38, 38, 0.2);
+}
+.fcol {
+	animation-name: to_white;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+.scol {
+	animation-name: to_gray;
+	animation-duration: 0.5s;
+	animation-fill-mode: backwards;
+}
+
+/* // keyframes // */
+@keyframes to_white {
+	0% {
+		background-color: rgb(38, 38, 38, 0.2);
+		color: orange;
+	}
+	100% {
+		background-color: rgb(200, 200, 200, 0.5);
+		color: red;
+	}
+}
+@keyframes to_gray {
+	0% {
+		background-color: rgb(200, 200, 200, 0.5);
+		color: red;
+	}
+	100% {
+		background-color: rgb(38, 38, 38, 0.2);
+		color: orange;
+	}
+}
+@keyframes fade_out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
