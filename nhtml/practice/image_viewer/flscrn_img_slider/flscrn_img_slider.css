@@ -28,6 +28,8 @@ body, .wrap, .slider, .slide-content {
 .slide3 {background-image: url("flimage3.jpg")}
 .slide4 {background-image: url("flimage4.jpg")}
 .slide5 {background-image: url("flimage5.jpg")}
+.slide6 {background-image: url("flimage6.jpg")}
+.slide7 {background-image: url("flimage7.jpg")}
 
 .slide-content {
 	display: flex;
