@@ -1,0 +1,216 @@
+body {
+	overflow: hidden;
+}
+
+body, .wrap, .slider, .slide-content {
+	margin: 0;
+	padding: 0;
+	font-family: Operator Mono, Arial;
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+.wrap {
+	position: relative;
+}
+
+.slide {
+	/* cover fits the smallest while contain fits the largest area
+	while preserving aspect ratio */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.slide1 {background-image: url("flimage1.jpg")}
+.slide2 {background-image: url("flimage2.jpg")}
+.slide3 {background-image: url("flimage3.jpg")}
+.slide4 {background-image: url("flimage4.jpg")}
+.slide5 {background-image: url("flimage5.jpg")}
+
+.slide-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end; /* align flex container item */
+	align-content: center; /* not useful if only have single line, use justify-content instead, similar to align-content */
+	text-align: center;
+}
+
+.slide-content span {
+	font-size: 2rem;  /* relative em, default size of html core content is 16px */
+	margin-bottom: 20px;
+	color: #ccc;
+}
+
+/* .slide-content span:hover { */
+/* 	font-size: 5rem; */
+/* 	margin-bottom: 0; */
+/* 	color: #ccc; */
+/* 	text-shadow: 0px 5px 5px #686868; */
+/* 	transition: 0.2s; */
+/* } */
+
+@keyframes smalltobig {
+	0% {
+		font-size: 2rem;
+		color: #ccc;
+		margin-bottom: 20px;
+	}
+	100% {
+		font-size: 5rem;
+		color: #90e1c6;
+		margin-bottom: 0;
+		text-shadow: 0px 3px 5px #91b362;
+	}
+}
+@keyframes bigtosmall {
+	0% {
+		font-size: 5rem;
+		color: #90e1c6;
+		margin-bottom: 0;
+		text-shadow: 0px 3px 5px #91b362;
+	}
+	100% {
+		font-size: 2rem;
+		color: #ccc;
+		margin-bottom: 20px;
+	}
+}
+
+span.big {
+	animation-name: smalltobig;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+span.small {
+	animation-name: bigtosmall;
+	animation-duration: 0.5s;
+	animation-fill-mode: backwards;
+}
+
+.arrow {
+	cursor: pointer;
+}
+
+#arrow-left {
+	position: absolute;
+	bottom: 25px;
+	left: 30px;
+	display: flex;
+	color: #2196f3;
+	font-size: 2rem;
+	transition: 0.2s;
+	padding: 10px 20px;
+}
+
+#arrow-left:hover {
+	color: #255784;
+	background-color: #2196f3;
+	box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+	transition-delay: 1s;
+}
+
+.arrow span {
+	position: absolute;
+	display: block;
+}
+
+.arrow span:nth-child(1) {
+	top: 0;
+	left: 0;
+	width: 25%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+.arrow:hover span:nth-child(1) {
+	left: 75%;
+	transition: 0.25s;
+}
+
+.arrow span:nth-child(3) {
+	bottom: 0;
+	right: 0;
+	width: 25%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+.arrow:hover span:nth-child(3) {
+	right: 75%;
+	transition: 0.25s;
+	transition-delay: 0.50s;
+}
+
+.arrow span:nth-child(2) {
+	top: -50%;
+	right: 0;
+	width: 2px;
+	height: 50%;
+	background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+.arrow:hover span:nth-child(2) {
+	top: 50%;
+	transition: 0.25s;
+	transition-delay: 0.25s;
+}
+
+.arrow span:nth-child(4) {
+	bottom: -25%;
+	left: 0;
+	width: 2px;
+	height: 50%;
+	background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+.arrow:hover span:nth-child(4) {
+	bottom: 50%;
+	transition: 0.25s;
+	transition-delay: 0.75s;
+}
+
+#arrow-right {
+	position: absolute;
+	bottom: 25px;
+	right: 30px;
+	display: flex;
+	color: #2196f3;
+	font-size: 2rem;
+	transition: 0.2s;
+	padding: 10px 20px;
+}
+
+#arrow-right:hover {
+	color: #255784;
+	background-color: #2196f3;
+	box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+	transition-delay: 1s;
+}
+
+
+/* #arrow-left { */
+/* 	border-width: 30px 40px 30px 0px; */
+/* 	left: 0; */
+/* 	margin-left: 10px; */
+/* 	/1* border-color: transparent #ccc transparent transparent; *1/ */
+/* } */
+
+/* #arrow-left:hover { */
+/* 	border-color: transparent #2196f3 transparent transparent; */
+/* 	box-shadow: 0 0 80px #2196f3, 0 0 40px #2196f3, 0 0 10px #2196f3; */
+/* } */
+
+/* #arrow-right { */
+/* 	border-width: 30px 0px 30px 40px; */
+/* 	right: 0; */
+/* 	margin-right: 10px; */
+/* 	border-color: transparent transparent transparent #ccc; */
+/* } */
+
+/* #arrow-right:hover { */
+/* 	border-color: transparent transparent transparent #2196f3; */
+/* 	box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3; */
+/* } */
