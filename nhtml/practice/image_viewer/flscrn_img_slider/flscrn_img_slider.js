@@ -44,28 +44,28 @@ function slideRight() {
 
 // click to previous
 leftArrow.addEventListener('click', function() {
-	sliderContainer.style.opacity = 0;
-	sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
+	// sliderContainer.style.opacity = 0;
+	// sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
 	if (current === 0) {
 		current = sliderImages.length;
 	}
 	slideLeft();
-	sliderContainer.style.opacity = 1;
-	sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
+	// sliderContainer.style.opacity = 1;
+	// sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
 	// don't uncomment this -> sliderContainer.style.transition = 'transform 0.4s ease-in-out';
 })
 
 // click to next
 rightArrow.addEventListener('click', ()=> {  // another way to add function
-	sliderContainer.style.opacity = 0;
-	sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
+	// sliderContainer.style.opacity = 0;
+	// sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
 	if (current === sliderImages.length - 1) {
 		current = -1;
 	}
 	// don't uncomment this -> sliderContainer.style.transition = 'transform 0.4s ease-in-out';
 	slideRight();
-	sliderContainer.style.opacity = 1;
-	sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
+	// sliderContainer.style.opacity = 1;
+	// sliderContainer.style.transition = 'opacity 0.4s ease-in-out';
 })
 
 startSlide();
