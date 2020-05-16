@@ -1,0 +1,24 @@
+.parent {
+	background-color: #5e69b7;
+	padding: 10px;
+	position: absolute;
+	height: 200vh;
+}
+
+.child {
+	padding: 5px;
+}
+
+.child-one {
+	background-color: rgb(116, 255, 116);
+	position: sticky;
+	top: 10px;
+}
+
+.child-two {
+	background-color: #f9a8c7;
+}
+
+.child-three {
+	background-color: orange;
+}

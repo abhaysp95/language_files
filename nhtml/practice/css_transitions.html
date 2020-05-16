@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Css_transitions</title>
+		<style>
+			.box {
+				width: 300px;
+				height: 150px;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.alone {
+				width: 300px;
+				height: 300px;
+				background: #3DCCC7;
+				margin: 100px;
+				transition-duration: 500ms;
+				transition-property: background, transform;
+				/* we can use all but not recommended */
+				transition-timing-function: ease-in;
+			}
+			.alone:hover {
+				background: #FF6B6B;
+				transform:rotate(45deg);
+			}
+			.container {
+				margin-left: 0px;
+				margin-top: 150px;
+				height: 150vh;
+			}
+			.one {
+				background: #00acb8;
+				transition-duration: 2000ms;
+				transition-property: width;
+				transition-timing-function: linear;
+			}
+			.one:hover {
+				width: 1000px;
+			}
+			.two {
+				background: #30bdc7;
+				transition-duration: 2000ms;
+				transition-property: width;
+				transition-timing-function: ease-in;
+			}
+			.two:hover {
+				width: 1000px;
+			}
+			.three {
+				background: #92e0ee;
+				transition-duration: 2000ms;
+				transition-property: width;
+				transition-timing-function: ease-out;
+			}
+			.three:hover {
+				width: 1000px;
+			}
+			.four {
+				background: #a8eff1;
+				transition-duration: 2000ms;
+				transition-property: width;
+				transition-timing-function: ease-in-out;
+			}
+			.four:hover {
+				width: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box alone"></div>
+		<div class="container">
+			<div class="box one">linear</div>
+			<div class="box two">ease-in</div>
+			<div class="box three">ease-out</div>
+			<div class="box four">ease-in-out</div>
+		</div>
+	</body>
+</html>

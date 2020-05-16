@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Sticky_positioning2</title>
+		<link rel="stylesheet" href="sticky_positioning2.css">
+		<style>
+			/* currently only 50% of browser supports sticky positioning, and 90% if we prefix them like this */
+			/* .list-header {
+				position: -webkit-sticky; for chromium based browsers
+				position: -moz-sticky; for mozilla
+				position: -ms-sticky; for microsoft
+				position: -o-sticky; for opera
+				position: sticky; by prefexing now maximum browsers will be supported
+				top: 0;
+			} */
+			/* but to get around of those 10% which don't support it, we add @supports for our css,
+			   now those which supports will behave normally and those who don't will fallback to sticky */
+			.list-header {
+				position: relative;
+				top: 0;
+			}
+			@supports (position: sticky) {
+				.list-header {
+					position: -webkit-sticky;
+					position: -moz-sticky;
+					position: -ms-sticky;
+					position: -o-sticky;
+					position: sticky;
+					top: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="list">
+				<div class="list-group">
+					<div class="list-header">
+						A
+					</div>
+						<div class="list-content">
+							<div>Apple</div>
+							<div>Artichoke</div>
+							<div>Aardvark</div>
+							<div>Ant</div>
+							<div>Acorn</div>
+						</div>
+				</div>
+				<div class="list-group">
+					<div class="list-header">
+						B
+					</div>
+						<div class="list-content">
+							<div>Bird</div>
+							<div>Banana</div>
+							<div>Buzzard</div>
+							<div>Bee</div>
+							<div>Bacon</div>
+						</div>
+				</div>
+				<div class="list-group">
+					<div class="list-header">
+						C
+					</div>
+						<div class="list-content">
+							<div>Caramel</div>
+							<div>Cat</div>
+							<div>Candy</div>
+							<div>Coffee</div>
+						</div>
+				</div>
+				<div class="list-group">
+					<div class="list-header">
+						D
+					</div>
+						<div class="list-content">
+							<div>Dog</div>
+							<div>Date</div>
+							<div>Danish</div>
+							<div>Dandelon</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

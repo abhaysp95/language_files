@@ -1,0 +1,27 @@
+body {
+	font-family: Jetbrains Mono;
+	background-color: #cccccc;
+}
+.list {
+	margin-top: 1.8vw;
+	margin-left: 2vw;
+	margin-right: 2vw;
+}
+.container {
+	height: 125vw;
+	margin: 0vw;
+}
+.list-header {
+	background-color: #282828;
+	color: rgb(116, 255, 116);
+	font-size: 4vw;
+	/* margin-top: 1.8vw; */
+	/* margin-bottom: 1.8vw; */
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	padding-left: 2vw;
+}
+.list-content {
+	font-size: 2vw;
+	margin-left: 2vw;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>2020 05 14(2)</title>
+		<style>
+			@keyframes divanime1 {
+				from {
+					width: 600px;
+					background-color: red;
+					transform:rotate(0deg);
+				}
+				to {
+					width: 1000px;
+					background-color: green;
+					transform:rotate(90deg);
+					transform:skew(45deg) !important;
+				}
+			}
+			@keyframes divanime2 {
+				from {
+					width: 1000px;
+					background-color: green;
+					transform:rotate(90deg);
+					transform:skew(45deg);
+				}
+				to {
+					width: 600px;
+					background-color: red;
+					transform:rotate(0deg);
+					transform:skew(0deg);
+				}
+			}
+			div {
+				background-color: red;
+				height: 400px;
+				width: 600px;
+			}
+			.class1 {
+				animation-name: divanime1;
+				animation-duration: 2.5s;
+				animation-fill-mode: forwards;
+			}
+			.class2 {
+				animation-name: divanime2;
+				animation-duration: 2.5s;
+				animation-fill-mode: backwards;
+			}
+			/* div:hover {
+				animation-name: divanime;
+				animation-duration: 2.5s;
+			} */
+		</style>
+		<script type="text/javascript">
+			function f1(x) {
+				x.className="class1";
+			}
+			function f2(x) {
+				x.className="class2";
+			}
+		</script>
+	</head>
+	<body>
+		<div onmouseover="f1(this)" onmouseout="f2(this)">
+		</div>
+	</body>
+</html>
