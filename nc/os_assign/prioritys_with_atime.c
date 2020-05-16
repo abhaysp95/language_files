@@ -44,11 +44,6 @@ int main(int argc, char* argv[]) {
 		temp[i] = process[i].btime;
 	}
 
-	// show entered data
-	// for (int i = 0; i < count; i++) {
-	// 	printf("%d\t%f\t%f\t%d", process[i].pnum, process[i].atime, process[i].btime, process[i].priority);
-	// }
-
 	process[max_proc - 1].btime = 9999;
 	process[max_proc - 1].priority = 9999;
 
