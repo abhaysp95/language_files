@@ -78,7 +78,7 @@ fun1();
 fun2();
 
 var outerWear = 'T-Shirt';
-
+// precedence of local variable is more than global variable
 function myOutfit() {
 	var outerWear = "sweater";
 	console.log('Scope inside function: ' + outerWear);
@@ -87,3 +87,125 @@ function myOutfit() {
 // console.log(myOutfit());
 myOutfit();
 console.log('Scope outside function: ' + outerWear);
+
+// simulation of queue
+function nextInLine(arr, item) {
+	arr.push(item);
+	return arr.shift();
+}
+var testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: ", JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: ", JSON.stringify(testArr));
+console.log("type is: " + typeof JSON.stringify(testArr));
+
+
+// boolean in js
+function welcomeToBooleans() {
+	return true;
+}
+
+
+// if-else in js
+function trueOrFalse(wasThatTrue) {
+	if (wasThatTrue) {
+		return "yes, that was true";
+	}
+	return "no, that was false";
+}
+console.log(trueOrFalse(true));
+
+// == attempts to convert both values being compared to same type
+// === doesn't convert
+
+function testStrict(val) {
+	if (val === 3) {
+		return "First Equal";
+	}
+	else if (val === '3') {
+		return "Second Equal";
+	}
+	return "not equal";
+}
+console.log(testStrict('3'));
+
+function compareEquality(a, b) {
+	if (a == b) {  // converts string into int
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(compareEquality(10, "10"));
+
+function compareStrictEquality(a, b) {
+	if (a === b) {  // no conversion, checking if int == string
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(compareStrictEquality(10, "10"));
+// != inequality, does type-conversion
+// !== strict-inequality, no type-conversion
+
+
+// comparision operation
+function testLogical(val) {
+	if (20 <= val <= 50) {
+		return "It's true";
+	}
+	return "It's False";
+}
+console.log(testLogical(35));
+
+
+// Golf Code
+var names = ["Hole-in-one", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home"];
+function golfScore(par, strokes) {
+	if (strokes == 1) {
+		return names[0];
+	}
+	else if (strokes <= par - 2) {
+		return names[1];
+	}
+	else if (strokes == par - 1) {
+		return names[2];
+	}
+	else if (strokes == par) {
+		return names[3];
+	}
+	else if (strokes == par + 1) {
+		// return names[-3];  this type of slicing doesn't work in js
+		return names[names.length - 3];
+	}
+	else if (strokes == par + 2) {
+		return names[names.length - 2];
+	}
+	else if (strokes >= par + 3) {
+		return names[names.length - 1];
+	}
+}
+console.log(golfScore(4, 5));
+
+
+// switch statement
+function caseInSwitch(val) {
+	var answer="";
+	switch(val) {
+		case 1:
+			answer = "alpha"; break;
+		case 2:
+			answer = "beta";
+			break;
+		case 3:
+			answer = "gamma";
+			break;
+		case 4:
+			answer = "delta";
+			break;
+		default:
+			answer = "not given right value";
+	}
+	return answer;
+}
+console.log(caseInSwitch(1));
