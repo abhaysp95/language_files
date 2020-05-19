@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
 
 	printf("you entered: \n");
 	for (int i = 0; i < count; i++) {
-		printf("%f\t%f", process[i].atime, process[i].btime);
+		printf("%f\t%f\n", process[i].atime, process[i].btime);
 	}
 
 	// calling function to get waiting time and turn around time for all processes

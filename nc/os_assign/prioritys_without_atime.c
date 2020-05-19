@@ -9,7 +9,7 @@ Last Edit -> 2020-04-20 */
 #include <stdio.h>
 #include <stdlib.h>
 
-// predeclaration of functions <<<
+// predeclaration of functions
 struct Proc_data* create_list(struct Proc_data* ,int );
 struct Proc_data* sort_priority(struct Proc_data* );
 struct Proc_data* get_other_values(struct Proc_data* );
@@ -17,9 +17,9 @@ struct Proc_data* sort_pnum(struct Proc_data* );
 void display_list(struct Proc_data* );
 void get_avg(struct Proc_data* ,int );
 void list_free(struct Proc_data* );
-// >>>
 
-// struct defined <<<
+
+// struct defined
 struct Proc_data {
 	int pnum;		// process number
 	float btime;	// burst time
@@ -28,9 +28,9 @@ struct Proc_data {
 	int priority;	// priority of process
 	struct Proc_data *Next;
 } *Start = NULL;
-// >>>
 
-// main function <<<
+
+// main function
 int main(int argc, char* argv[]) {
 	int total_proc;
 	printf("Enter the total number of process: ");
@@ -60,9 +60,9 @@ int main(int argc, char* argv[]) {
 
 	return 0;
 }
-// >>>
 
-// creating list <<<
+
+// creating list
 struct Proc_data* create_list(struct Proc_data* Start, int total_proc) {
 	struct Proc_data *temp_node, *ptr_node;
 	printf("\nEnter the details of processes: \n");
@@ -87,9 +87,9 @@ struct Proc_data* create_list(struct Proc_data* Start, int total_proc) {
 	}
 	return Start;
 }
-// >>>
 
-// function to display list <<<
+
+// function to display list
 void display_list(struct Proc_data* Start) {
 	struct Proc_data *ptr_node = Start;
 	printf("\nDisplaying data for process: \n");
@@ -99,9 +99,9 @@ void display_list(struct Proc_data* Start) {
 		ptr_node = ptr_node -> Next;
 	}
 }
-// >>>
 
-// function to sort according priority <<<
+
+// function to sort according priority
 struct Proc_data* sort_priority(struct Proc_data* Start) {
 	struct Proc_data *ptr_node, *pptr_node;
 	ptr_node = Start;
@@ -127,9 +127,9 @@ struct Proc_data* sort_priority(struct Proc_data* Start) {
 	}
 	return Start;
 }
-// >>>
 
-// function to free list <<<
+
+// function to free list
 void list_free(struct Proc_data* Start) {
 	struct Proc_data *ptr_node;
 	while (ptr_node != NULL) {
@@ -138,9 +138,9 @@ void list_free(struct Proc_data* Start) {
 		free(ptr_node);
 	}
 }
-// >>>
 
-// function to get waiting time and turn around time <<<
+
+// function to get waiting time and turn around time
 struct Proc_data* get_other_values(struct Proc_data* Start) {
 	struct Proc_data *ptr_node, *pptr_node;
 	ptr_node = Start;
@@ -161,9 +161,9 @@ struct Proc_data* get_other_values(struct Proc_data* Start) {
 	}
 	return Start;
 }
-// >>>
 
-// function to sort list according to process num <<<
+
+// function to sort list according to process num
 struct Proc_data* sort_pnum(struct Proc_data* Start) {
 	struct Proc_data *ptr_node, *pptr_node;
 	ptr_node = Start;
@@ -197,9 +197,9 @@ struct Proc_data* sort_pnum(struct Proc_data* Start) {
 	}
 	return Start;
 }
-// >>>
 
-// get average for tatime and wtime <<<
+
+// get average for tatime and wtime
 void get_avg(struct Proc_data* Start, int total_proc) {
 	struct Proc_data* ptr_node;
 	float avg_wt = 0, avg_tat = 0;
@@ -212,4 +212,4 @@ void get_avg(struct Proc_data* Start, int total_proc) {
 	printf("Avg. waiting time from given data is: %f", avg_wt / total_proc);
 	printf("Avg. turn around time from given data is: %f", avg_tat / total_proc);
 }
-// >>>
+
