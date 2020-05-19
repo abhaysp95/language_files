@@ -9,16 +9,16 @@ Last Edit -> 2020-04-20 */
 #include<stdio.h>
 #include<stdlib.h>
 
-// pre-declaration of functions <<<
+// pre-declaration of functions
 struct Process* enter_data(struct Process* ,int );
 struct Process* sort_btime(struct Process* );
 struct Process* get_other_values(struct Process* );
 struct Process* sort_pnum(struct Process* );
 void display(struct Process* );
 void list_free(struct Process *);
-// >>>
 
-// structure declared <<<
+
+// structure declared
 struct Process {
 	int pnum;	// process number
 	int btime;	// burst time
@@ -26,9 +26,9 @@ struct Process {
 	int tatime;	// turn-around time
 	struct Process *Link;
 } *Start = NULL;
-// >>>
 
-// main function <<<
+
+// main function
 int main(int argc, char* argv[]) {
 	int count;
 	printf("Enter the total number of processes: ");
@@ -56,9 +56,9 @@ int main(int argc, char* argv[]) {
 
 	return 0;
 }
-// >>>
 
-// entering the data of processes <<<
+
+// entering the data of processes
 struct Process *enter_data(struct Process *Start, int num) {
 	struct Process *temp, *ptr;
 	for (int i = 1; i <= num; i++) {
@@ -81,9 +81,9 @@ struct Process *enter_data(struct Process *Start, int num) {
 	}
 	return Start;
 }
-// >>>
 
-// display function <<<
+
+// display function
 void display(struct Process* Start) {
 	struct Process *ptr;
 	ptr = Start;
@@ -104,9 +104,9 @@ void display(struct Process* Start) {
 	}
 	/* free(ptr); */
 }
-// >>>
 
-// sorting burst time <<<
+
+// sorting burst time
 struct Process* sort_btime(struct Process* Start) {
 	struct Process *ptr, *pptr;
 	ptr = Start;
@@ -130,9 +130,9 @@ struct Process* sort_btime(struct Process* Start) {
 	}
 	return Start;
 }
-// >>>
 
-// getting values of turn around time and burst time <<<
+
+// getting values of turn around time and burst time
 struct Process* get_other_values(struct Process *Start) {
 	struct Process* ptr, *pptr;
 	ptr = Start;
@@ -153,9 +153,9 @@ struct Process* get_other_values(struct Process *Start) {
 	}
 	return Start;
 }
-// >>>
 
-// sorting according to process number <<<
+
+// sorting according to process number
 struct Process* sort_pnum(struct Process* Start) {
 	struct Process *ptr, *pptr;
 	ptr = Start;
@@ -187,9 +187,9 @@ struct Process* sort_pnum(struct Process* Start) {
 	}
 	return Start;
 }
-// >>>
 
-// free the list <<<
+
+// free the list
 void list_free(struct Process *Start) {
 	struct Process *ptr;
 	while (Start != NULL) {
@@ -198,4 +198,3 @@ void list_free(struct Process *Start) {
 		free(ptr);
 	}
 }
-/* // >>> */
