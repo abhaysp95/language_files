@@ -650,4 +650,1006 @@ Here, are the screenshots of the cron jobs which I'm using currently:
 
 ![user cronjobs](oslab_images/user_cron.png)
 
-**Thank You**
+
+# WAP a program to implement First Come First Serve (FCFS) CPU Scheduling algorithm without Arrival time
+
+```c
+// this program is fcfs algorithm with non-preemptive mode
+
+#include<stdio.h>
+#define size 100
+
+int main(int argc, char *argv[]){
+	int wt[size], bt[size], tat[size], i, np, val = 0, val1 = 0;
+	printf("\nEnter number of process: ");
+	scanf("%d", &np);
+	printf("\nEnter burst time for process: ");
+	for (i = 0; i < np; i++) {
+		printf("\nProcess %d: ", i+1);
+		scanf("%d", &bt[i]);
+	}
+
+	// calculating turn around time
+	for (i = 0; i < np; i++) {
+		printf("\nTurn around time for P%d: ", i+1);
+		val = val + bt[i];
+		tat[i] = val;
+		printf("%d", tat[i]);
+	}
+
+	// calculating waiting time
+	val = 0;
+	for (i = 0; i< np; i++) {
+		printf("\nWaiting time of P%d: ", i+1);
+		val = tat[i] - bt[i];
+		wt[i] = val;
+		printf("%d", wt[i]);
+	}
+
+	// average waiting and turn around time
+	for (i = 0; i < np; i++) {
+		val = val + tat[i];
+		val1 = val1 + wt[i];
+	}
+	printf("\nAverage waiting time: %d", val/np);
+	printf("\nAverage turn around time: %d", val1/np);
+	return 0;
+}
+```
+
+Result image:
+
+![fcfs](oslab_images/fcfs_nonpreemptive.png)
+
+# WAP a program to implement First Come First Serve (FCFS) CPU Scheduling algorithm with Arrival time
+
+```c
+#include<stdio.h>
+#define size 100
+
+int main(int argc, char *argv[]){
+	int pro[size], wt[size], bt[size], at[size], tat[size], i, j, np;
+	float val = 0, val1 = 0;
+	printf("\nEnter number of process: ");
+	scanf("%d", &np);
+
+	// enter burst time
+	printf("\nEnter burst time for process: ");
+	for (i = 0; i < np; i++) {
+		printf("Process %d: ", i+1);
+		scanf("%d", &bt[i]);
+	}
+
+	// enter arrival time
+	printf("\nEnter arrival time for process: ");
+	for (i = 0; i < np; i++) {
+		printf("Process %d: ", i+1);
+		scanf("%d", &at[i]);
+	}
+
+	for (i = 0; i < np; i++) {
+		pro[i] = i + 1;
+	}
+
+	/* // sorting arrival time */
+
+	int temp;
+	for (i = 0; i < np - 1; i++) {
+		for (j = 0; j < np - i -1; j++) {
+			if (at[j] > at[j+1]) {
+				temp = at[j];
+				at[j] = at[j+1];
+				at[j+1] = temp;
+
+				temp = bt[j];
+				bt[j] = bt[j+1];
+				bt[j+1] = temp;
+
+				temp = pro[j];
+				pro[j] = pro[j+1];
+				pro[j+1] = temp;
+			}
+		}
+	}
+
+	// tat
+	for (i = 0; i < np; i++) {
+		val = val + bt[i] - at[i] + at[i-1];
+		tat[i] = val;
+	}
+
+	// wt
+	for (i = 0; i < np; i++) {
+		val = tat[i] - bt[i];
+		wt[i] = val;
+	}
+
+	for (i = 0; i < np - 1; i++) {
+		for (j = 0; j < np - i -1; j++) {
+			if (pro[j] > pro[j+1]) {
+				temp = pro[j];
+				pro[j] = pro[j+1];
+				pro[j+1] = temp;
+
+				temp = tat[j];
+				tat[j] = tat[j+1];
+				tat[j+1] = temp;
+
+				temp = wt[j];
+				wt[j] = wt[j+1];
+				wt[j+1] = temp;
+			}
+		}
+	}
+
+	for (i = 0; i < np; i++) {
+		printf("\n\nTurn around Time for process P%d: ", pro[i]);
+		printf("%d", tat[i]);
+		// pro[i] isn't necessary here for numbering, it's just to bind values with process
+		printf("\nWaiting time for process P%d: ", i+1);
+		printf("%d", wt[i]);
+	}
+
+	// average waiting and turn around time
+	val = 0;
+	for (i = 0; i < np; i++) {
+		val = val + tat[i];
+		val1 = val1 + wt[i];
+	}
+
+	printf("\n\nAverage waiting time: %.2f", val1/np);
+	printf("\nAverage turn around time: %.2f", val/np);
+	return 0;
+}
+```
+
+# WAP to implement SJF Algorithm
+
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+// pre-declaration of functions
+struct Process* enter_data(struct Process* ,int );
+struct Process* sort_btime(struct Process* );
+struct Process* get_other_values(struct Process* );
+struct Process* sort_pnum(struct Process* );
+void display(struct Process* );
+void list_free(struct Process *);
+
+
+// structure declared
+struct Process {
+	int pnum;	// process number
+	int btime;	// burst time
+	int wtime;	// waiting time
+	int tatime;	// turn-around time
+	struct Process *Link;
+} *Start = NULL;
+
+
+// main function
+int main(int argc, char* argv[]) {
+	int count;
+	printf("Enter the total number of processes: ");
+	scanf("%d", &count);
+
+	// enter the data
+	Start = enter_data(Start, count);
+
+	// sort according to burst time(ascending order)
+	Start = sort_btime(Start);
+
+	// getting turn-around time and waiting time
+	Start = get_other_values(Start);
+
+	// sort according to process number(ascending order)
+	Start = sort_pnum(Start);
+
+	// display the content
+	display(Start);
+
+	// free list
+	list_free(Start);
+
+	printf("\nValue is: %d", Start -> btime);
+
+	return 0;
+}
+
+
+// entering the data of processes
+struct Process *enter_data(struct Process *Start, int num) {
+	struct Process *temp, *ptr;
+	for (int i = 1; i <= num; i++) {
+		printf("Enter the burst time for %d process: ", i);
+		temp = malloc(sizeof(struct Process));
+		temp -> pnum = i;
+		scanf("%d", &temp -> btime);
+		temp -> Link = NULL;
+		if (Start == NULL) {
+			Start = temp;
+		}
+		else {
+			ptr = Start;
+			while (ptr -> Link != NULL) {
+				ptr = ptr -> Link;
+			}
+			ptr -> Link = temp;
+			temp -> Link = NULL;
+		}
+	}
+	return Start;
+}
+
+
+// display function
+void display(struct Process* Start) {
+	struct Process *ptr;
+	ptr = Start;
+	printf("\nDisplaying the items: \n");
+	while (ptr != NULL) {
+		printf("Burst time for process p%d: %d\n", ptr -> pnum, ptr -> btime);
+		ptr = ptr -> Link;
+	}
+	ptr = Start;
+	while (ptr != NULL) {
+		printf("Turn around time for process p%d: %d\n", ptr -> pnum, ptr -> tatime);
+		ptr = ptr -> Link;
+	}
+	ptr = Start;
+	while (ptr != NULL) {
+		printf("Waiting time for process p%d: %d\n", ptr -> pnum, ptr -> wtime);
+		ptr = ptr -> Link;
+	}
+	/* free(ptr); */
+}
+
+
+// sorting burst time
+struct Process* sort_btime(struct Process* Start) {
+	struct Process *ptr, *pptr;
+	ptr = Start;
+	while (ptr != NULL) {
+		/* printf("In ptr"); */
+		pptr = ptr -> Link;
+		while (pptr != NULL) {
+			/* printf("\nIn pptr"); */
+			if (ptr -> btime > pptr -> btime) {
+				ptr -> btime = ptr -> btime + pptr -> btime;
+				pptr -> btime = ptr -> btime - pptr -> btime;
+				ptr -> btime = ptr -> btime - pptr -> btime;
+
+				ptr -> pnum = ptr -> pnum + pptr -> pnum;
+				pptr -> pnum = ptr -> pnum - pptr -> pnum;
+				ptr -> pnum = ptr -> pnum - pptr -> pnum;
+			}
+			pptr = pptr -> Link;
+		}
+		ptr = ptr -> Link;
+	}
+	return Start;
+}
+
+
+// getting values of turn around time and burst time
+struct Process* get_other_values(struct Process *Start) {
+	struct Process* ptr, *pptr;
+	ptr = Start;
+	pptr = ptr -> Link;
+	ptr -> tatime = ptr -> btime;
+	pptr -> tatime = ptr -> btime;
+	ptr -> wtime = ptr -> tatime - ptr -> btime;
+	ptr = ptr -> Link;
+	pptr = ptr -> Link;
+	while (ptr != NULL) {
+		ptr -> tatime += ptr -> btime;
+		pptr -> tatime = ptr -> tatime;
+		ptr -> wtime = ptr -> tatime - ptr -> btime;
+		ptr = ptr -> Link;
+		if (pptr -> Link != NULL) {
+			pptr = ptr -> Link;
+		}
+	}
+	return Start;
+}
+
+
+// sorting according to process number
+struct Process* sort_pnum(struct Process* Start) {
+	struct Process *ptr, *pptr;
+	ptr = Start;
+	while (ptr != NULL) {
+		/* printf("In ptr"); */
+		pptr = ptr -> Link;
+		while (pptr != NULL) {
+			/* printf("\nIn pptr"); */
+			if (ptr -> pnum > pptr -> pnum) {
+				ptr -> pnum = ptr -> pnum + pptr -> pnum;
+				pptr -> pnum = ptr -> pnum - pptr -> pnum;
+				ptr -> pnum = ptr -> pnum - pptr -> pnum;
+
+				ptr -> btime = ptr -> btime + pptr -> btime;
+				pptr -> btime = ptr -> btime - pptr -> btime;
+				ptr -> btime = ptr -> btime - pptr -> btime;
+
+				ptr -> tatime = ptr -> tatime + pptr -> tatime;
+				pptr -> tatime = ptr -> tatime - pptr -> tatime;
+				ptr -> tatime = ptr -> tatime - pptr -> tatime;
+
+				ptr -> wtime = ptr -> wtime + pptr -> wtime;
+				pptr -> wtime = ptr -> wtime - pptr -> wtime;
+				ptr -> wtime = ptr -> wtime - pptr -> wtime;
+			}
+			pptr = pptr -> Link;
+		}
+		ptr = ptr -> Link;
+	}
+	return Start;
+}
+
+
+// free the list
+void list_free(struct Process *Start) {
+	struct Process *ptr;
+	while (Start != NULL) {
+		ptr = Start;
+		Start = Start -> Link;
+		free(ptr);
+	}
+}
+```
+
+Here's the resultant image:
+
+![sjf_algo](oslab_images/sjf_algo.png)
+
+# WAP to implement SRTF Algorithm
+
+```c
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define max_proc 15
+
+// struct defined
+struct Proc_data {
+	int pnum;     // process number
+	float btime;  // burst time
+	float atime;  // arrival time
+	double wtime; // waiting time
+	double tatime;// turn around time
+};
+
+
+// function pre-declaration
+void get_avg_values(struct Proc_data *process, int );
+void get_other_values(struct Proc_data *process, int *, int );
+void display_proc(struct Proc_data *process, int );
+
+
+// main function
+int main(int argc, char* argv[]) {
+	struct Proc_data process[max_proc];
+	int count;
+	int temp[max_proc];
+	printf("Enter the total process count: ");
+	scanf("%d", &count);
+	printf("\nEnter arrival time and burst time for processes: \n");
+	for (int i = 0; i < count; i++) {
+		process[i].pnum = i + 1;
+		printf("Enter arrival time and burst time for process %d: ", process[i].pnum);
+		scanf("%f %f", &process[i].atime, &process[i].btime);
+		temp[i] = process[i].btime;
+	}
+
+	process[max_proc - 1].btime = 9999;
+
+	// get waiting time and turn around time
+	get_other_values(process, temp, count);
+
+	// display waiting and turn around time for all processes
+	display_proc(process, count);
+
+	// function to get other avg values
+	get_avg_values(process, count);
+
+	return 0;
+}
+
+
+// function to get avg waiting and turn around time
+void get_avg_values(struct Proc_data *process, int total) {
+	// calculating average
+	double sum_wtime = 0, sum_tatime = 0;
+	for (int i = 0; i < total; i++) {
+		sum_wtime = sum_wtime + process[i].wtime;
+		sum_tatime = sum_tatime + process[i].tatime;
+	}
+	printf("Average value of Waiting time for entered processes: %lf", sum_wtime / total);
+	printf("\nAverage Turn around time for entered processes: %lf", sum_tatime / total);
+}
+
+
+// function to get values of waiting and turn around time for all process
+void get_other_values(struct Proc_data *process, int *temp, int total) {
+	int i = 0, times = 0, smallest = 0, limit = 0;
+	double end, sum_wtime = 0, sum_tatime = 0;
+
+	for (times = 0; limit != total; times++) {
+		smallest = max_proc - 1;
+		for (i = 0; i < total; i++) {
+			if (process[i].atime <= times && process[i].btime < process[smallest].btime) {
+				if (process[i].btime > 0) {
+					smallest = i;
+				}
+			}
+		}
+		process[smallest].btime--;
+		if (process[smallest].btime == 0) {
+			limit++;
+			end = times + 1;
+
+			sum_wtime = end - process[smallest].atime - temp[smallest];
+			process[smallest].wtime = sum_wtime;
+
+			sum_tatime = end - process[smallest].atime;
+			process[smallest].tatime = sum_tatime;
+		}
+	}
+}
+
+
+// function to display waiting and turn-around time for all processes
+void display_proc(struct Proc_data *process, int total) {
+	printf("Process name\tWaiting time\t\tTurn around time\n");
+	for (int i = 0; i < total; i++) {
+		printf("p%d\t\t%lf\t\t\t%lf\n", process[i].pnum, process[i].wtime, process[i].tatime);
+	}
+}
+```
+
+Here's the resultant screenshot:
+
+![srtf_algo](oslab_images/srtf_algo.png)
+
+# WAP to implement Priority scheduling algorithm without arrival time
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// predeclaration of functions
+struct Proc_data* create_list(struct Proc_data* ,int );
+struct Proc_data* sort_priority(struct Proc_data* );
+struct Proc_data* get_other_values(struct Proc_data* );
+struct Proc_data* sort_pnum(struct Proc_data* );
+void display_list(struct Proc_data* );
+void get_avg(struct Proc_data* ,int );
+void list_free(struct Proc_data* );
+
+
+// struct defined
+struct Proc_data {
+	int pnum;		// process number
+	float btime;	// burst time
+	float wtime;	// waiting time
+	float tatime;	// turn-around time
+	int priority;	// priority of process
+	struct Proc_data *Next;
+} *Start = NULL;
+
+
+// main function
+int main(int argc, char* argv[]) {
+	int total_proc;
+	printf("Enter the total number of process: ");
+	scanf("%d", &total_proc);
+
+	// list creation
+	Start = create_list(Start, total_proc);
+	printf("\nOut of create_list function.");
+
+	// sort according to priority(lowest num highest priority)
+	Start = sort_priority(Start);
+
+	// getting values in tatime and wtime
+	Start = get_other_values(Start);
+
+	// sort according to process number
+	Start = sort_pnum(Start);
+
+	// display list
+	display_list(Start);
+
+	// get average wtime and tatime
+	get_avg(Start, total_proc);
+
+	// free the list
+	list_free(Start);
+
+	return 0;
+}
+
+
+// creating list
+struct Proc_data* create_list(struct Proc_data* Start, int total_proc) {
+	struct Proc_data *temp_node, *ptr_node;
+	printf("\nEnter the details of processes: \n");
+	for (int i = 1; i <= total_proc; i++) {
+		temp_node = malloc(sizeof(struct Proc_data));
+		temp_node -> pnum = i;
+		temp_node -> Next = NULL;
+		printf("Enter burst time and priority for process %d: ", i);
+		scanf("%f %d", &temp_node -> btime, &temp_node -> priority);
+
+		if (Start == NULL) {
+			Start = temp_node;
+		}
+		else {
+			ptr_node = Start;
+			while (ptr_node -> Next != NULL) {
+				ptr_node = ptr_node -> Next;
+			}
+			ptr_node -> Next = temp_node;
+			temp_node -> Next = NULL;
+		}
+	}
+	return Start;
+}
+
+
+// function to display list
+void display_list(struct Proc_data* Start) {
+	struct Proc_data *ptr_node = Start;
+	printf("\nDisplaying data for process: \n");
+	printf("Pnum\tWtime\tTatime\n");
+	while (ptr_node != NULL) {
+		printf("%d\t%f\t\t%f\n", ptr_node -> pnum, ptr_node -> wtime, ptr_node -> tatime);
+		ptr_node = ptr_node -> Next;
+	}
+}
+
+
+// function to sort according priority
+struct Proc_data* sort_priority(struct Proc_data* Start) {
+	struct Proc_data *ptr_node, *pptr_node;
+	ptr_node = Start;
+	while (ptr_node != NULL) {
+		pptr_node = ptr_node -> Next;
+		while (pptr_node != NULL) {
+			if (ptr_node -> priority > pptr_node -> priority) {
+				ptr_node -> priority += pptr_node -> priority;
+				pptr_node -> priority = ptr_node -> priority - pptr_node -> priority;
+				ptr_node -> priority -= pptr_node -> priority;
+
+				ptr_node -> btime += pptr_node -> btime;
+				pptr_node -> btime = ptr_node -> btime - pptr_node -> btime;
+				ptr_node -> btime -= pptr_node -> btime;
+
+				ptr_node -> pnum += pptr_node -> pnum;
+				pptr_node -> pnum = ptr_node -> pnum - pptr_node -> pnum;
+				ptr_node -> pnum -= pptr_node -> pnum;
+			}
+			pptr_node = pptr_node -> Next;
+		}
+		ptr_node = ptr_node -> Next;
+	}
+	return Start;
+}
+
+
+// function to free list
+void list_free(struct Proc_data* Start) {
+	struct Proc_data *ptr_node;
+	while (ptr_node != NULL) {
+		ptr_node = Start;
+		Start = Start -> Next;
+		free(ptr_node);
+	}
+}
+
+
+// function to get waiting time and turn around time
+struct Proc_data* get_other_values(struct Proc_data* Start) {
+	struct Proc_data *ptr_node, *pptr_node;
+	ptr_node = Start;
+	pptr_node = ptr_node -> Next;
+	ptr_node -> tatime = ptr_node -> btime;
+	pptr_node -> tatime = ptr_node -> btime;
+	ptr_node -> wtime = ptr_node -> tatime - ptr_node -> btime;
+	ptr_node = ptr_node -> Next;
+	pptr_node = ptr_node -> Next;
+	while (ptr_node != NULL) {
+		ptr_node -> tatime += ptr_node -> btime;
+		pptr_node -> tatime = ptr_node -> tatime;
+		ptr_node -> wtime = ptr_node -> tatime - ptr_node -> btime;
+		ptr_node = ptr_node -> Next;
+		if (pptr_node -> Next != NULL) {
+			pptr_node = ptr_node -> Next;
+		}
+	}
+	return Start;
+}
+
+
+// function to sort list according to process num
+struct Proc_data* sort_pnum(struct Proc_data* Start) {
+	struct Proc_data *ptr_node, *pptr_node;
+	ptr_node = Start;
+	while (ptr_node != NULL) {
+		pptr_node = ptr_node -> Next;
+		while (pptr_node != NULL) {
+			if (ptr_node -> pnum > pptr_node -> pnum) {
+				ptr_node -> pnum += pptr_node -> pnum;
+				pptr_node -> pnum = ptr_node -> pnum - pptr_node -> pnum;
+				ptr_node -> pnum -= pptr_node -> pnum;
+
+				ptr_node -> priority += pptr_node -> priority;
+				pptr_node -> priority = ptr_node -> priority - pptr_node -> priority;
+				ptr_node -> priority -= pptr_node -> priority;
+
+				ptr_node -> tatime += pptr_node -> tatime;
+				pptr_node -> tatime = ptr_node -> tatime - pptr_node -> tatime;
+				ptr_node -> tatime -= pptr_node -> tatime;
+
+				ptr_node -> wtime += pptr_node -> wtime;
+				pptr_node -> wtime = ptr_node -> wtime - pptr_node -> wtime;
+				ptr_node -> wtime -= pptr_node -> wtime;
+
+				ptr_node -> btime += pptr_node -> btime;
+				pptr_node -> btime = ptr_node -> btime - pptr_node -> btime;
+				ptr_node -> btime -= pptr_node -> btime;
+			}
+			pptr_node = pptr_node -> Next;
+		}
+		ptr_node = ptr_node -> Next;
+	}
+	return Start;
+}
+
+
+// get average for tatime and wtime
+void get_avg(struct Proc_data* Start, int total_proc) {
+	struct Proc_data* ptr_node;
+	float avg_wt = 0, avg_tat = 0;
+	ptr_node = Start;
+	while (ptr_node != NULL) {
+		avg_wt += ptr_node -> wtime;
+		avg_tat += ptr_node -> tatime;
+		ptr_node = ptr_node -> Next;
+	}
+	printf("Avg. waiting time from given data is: %f", avg_wt / total_proc);
+	printf("Avg. turn around time from given data is: %f", avg_tat / total_proc);
+}
+```
+
+Here's the resultant image of priority scheduling algorithm without arrival time
+
+![priority_without_atime](oslab_images/priority_without_atime.png)
+
+# WAP to implement priority scheduling algorithm with arrival time
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define max_proc 15
+
+// struct defination
+struct Proc_data {
+	int pnum;  // process number
+	// priority, lowest num -> highest priority
+	int priority;
+	float btime;  // burst time
+	float atime;  // arrival time
+	float wtime;  // waiting time
+	float tatime;  // turn around time
+};
+
+// function predeclaration
+void get_wtime_tatime(struct Proc_data *, float *, int );
+void get_avg_wtime_tatime(struct Proc_data *, int );
+void display_proc_table(struct Proc_data *, int );
+
+// main function
+int main(int argc, char* argv[]) {
+	struct Proc_data process[max_proc];
+	float temp[max_proc];
+	int count;
+	printf("Enter the count of the process to evaluate: \n");
+	scanf("%d", &count);
+	printf("Enter the process arrival time, burst time and priority: \n");
+	printf("These data can be space seperated \n");
+	printf("Remember, using lowest number as highest priority\n");
+	for (int i = 0; i < count; i++) {
+		process[i].pnum = i + 1;
+		printf("Enter data for process %d: ", i + 1);
+		scanf("%f %f %d", &process[i].atime, &process[i].btime, &process[i].priority);
+		temp[i] = process[i].btime;
+	}
+
+	process[max_proc - 1].btime = 9999;
+	process[max_proc - 1].priority = 9999;
+
+	// get waiting time and turnaround time
+	get_wtime_tatime(process, temp, count);
+
+	// print table for got waiting time and arrival time
+	display_proc_table(process, count);
+
+	// get average time of waiting time and turnaround time
+	get_avg_wtime_tatime(process, count);
+	return 0;
+}
+
+// function to get the values of burst time and turn around time
+void get_wtime_tatime(struct Proc_data *process, float *temp, int total) {
+	int i = 0, smallest = 0, times = 0, limit = 0;
+	double end, sum_wtime = 0, sum_tatime = 0;
+
+	for (times = 0; limit != total; times++) {
+		smallest = max_proc - 1;
+		for (i = 0; i < total; i++) {
+			if (process[i].atime <= times && process[i].priority < process[smallest].priority) {
+				if (process[i].btime > 0) {
+					smallest = i;
+				}
+			}
+		}
+		process[smallest].btime--;
+		if (process[smallest].btime == 0) {
+			limit++;
+			end = times + 1;
+
+			sum_wtime = end - process[smallest].atime - temp[smallest];
+			process[smallest].wtime = sum_wtime;
+
+			sum_tatime = end - process[smallest].atime;
+			process[smallest].tatime = sum_tatime;
+		}
+	}
+}
+
+// function to get average waiting time and turn around time
+void get_avg_wtime_tatime(struct Proc_data *process, int total) {
+	double sum_wtime = 0, sum_tatime = 0;
+	for (int i = 0; i < total; i++) {
+		sum_wtime = sum_wtime + process[i].wtime;
+		sum_tatime = sum_tatime + process[i].tatime;
+	}
+	printf("Average waiting time of these entered processes is: %lf\n", sum_wtime / total);
+	printf("Average turnaround time of these entered process is: %lf", sum_tatime / total);
+}
+
+// function to get process table with waiting time and arrival time
+void display_proc_table(struct Proc_data *process, int total) {
+	printf("Waiting time and turn around time for entered processes are: \n");
+	printf("Process num\tWaiting time\t\t\tTurn around time\n");
+	for (int i = 0; i < total; i++) {
+		printf("p%d\t\t%lf\t\t\t%lf\n", process[i].pnum, process[i].wtime, process[i].tatime);
+	}
+	print('\n');
+}
+```
+
+Here's the resultant screenshot
+
+![priority_with_atime](oslab_images/priority_wit_atime.png)
+
+
+# WAP to implement Round Robin scheduling algorithm
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define max_proc 15
+#define max_ready_proc 100
+
+// struct defination
+struct Proc_data {
+	int pnum;  // process number
+	float btime;  // burst time
+	float atime;  // arrival time
+	float wtime; // waiting time
+	float tatime; // turnaround time
+};
+
+// predeclaration
+void get_wait_tatime(struct Proc_data *process, float *temp, int *ready_queue, int );
+void get_proc_table(struct Proc_data *process, int );
+void get_avg_wait_tatime(struct Proc_data *process, int );
+
+// main function
+int main(int argc, char* argv[]) {
+	struct Proc_data process[max_proc];
+	int ready_queue[max_ready_proc];
+	float temp[max_proc];  // copy burst time of processes
+	int count = 0;
+	printf ("Enter the number of processes: ");
+	scanf("%d", &count);
+	printf("Enter the process arrival time, burst time: \n");
+	printf("These data can be space seperated \n");
+	printf("Taking time quantum = 2\n");
+	for (int i = 0; i < count; i++) {
+		process[i].pnum = i + 1;
+		scanf("%f %f", &process[i].atime, &process[i].btime);
+		temp[i] = process[i].btime;
+	}
+
+	printf("you entered: \n");
+	for (int i = 0; i < count; i++) {
+		printf("%f\t%f\n", process[i].atime, process[i].btime);
+	}
+
+	// calling function to get waiting time and turn around time for all processes
+	get_wait_tatime(process, temp, ready_queue, count);
+
+	// display process table
+	get_proc_table(process, count);
+
+	// display avg waiting and turnaround time
+	get_avg_wait_tatime(process, count);
+	return 0;
+}
+
+// function to get waiting time and turn around time
+void get_wait_tatime(struct Proc_data *process, float *temp, int *ready_queue, int total) {
+	int j = 0, times = 0, limit = 0;
+	double end = 0, sum_wtime = 0, sum_tatime = 0;
+	int ready_count = 0, run_count = 0, temp_index = 0;
+
+	for (times = 0; limit != total; times++) {
+		if (times == 0) {
+			for (j = 0; j < total; j++) {
+				if (process[j].atime == times) {
+					ready_queue[ready_count] = j;
+					ready_count++;
+				}
+			}
+		}
+		if (ready_count != 0) {
+			for (j = 0; j < total; j++) {
+				if (process[j].atime == times + 1) {
+					ready_queue[ready_count] = j;
+					ready_count++;
+				}
+			}
+			temp_index = ready_queue[run_count];
+			if (process[temp_index].btime > 0) {
+				process[temp_index].btime--;
+				if (process[temp_index].btime != 0 && times % 2 == 0) {
+					run_count--;
+				}
+				if (process[temp_index].btime != 0) {
+					if (times % 2 == 1) {
+						ready_queue[ready_count] = temp_index;
+						ready_count++;
+					}
+				}
+			}
+			if (process[temp_index].btime == 0) {
+				limit++;
+				end = times + 1;
+
+				sum_wtime = end - process[temp_index].atime - temp[temp_index];
+				process[temp_index].wtime = sum_wtime;
+
+				sum_tatime = end - process[temp_index].atime;
+				process[temp_index].tatime = sum_tatime;
+			}
+			run_count++;
+		}
+	}
+}
+
+// function to get process table
+void get_proc_table(struct Proc_data *process, int total) {
+	printf("\nPrinting process table with waiting time and turn around time\n");
+	printf("Process num\tWaiting time\t\t\tTurn around time\n");
+	for (int i = 0; i < total; i++) {
+		printf("p%d\t\t%lf\t\t\t%lf\n", process[i].pnum, process[i].wtime, process[i].tatime);
+	}
+}
+
+// function to get average waiting and turn around time
+void get_avg_wait_tatime(struct Proc_data *process, int total) {
+	double sum_wtime = 0, sum_tatime = 0;
+	for (int i = 0; i < total; i++) {
+		sum_wtime = sum_wtime + process[i].wtime;
+		sum_tatime = sum_tatime + process[i].tatime;
+	}
+	printf("Average waiting time of these entered processes is: %lf\n", sum_wtime / total);
+	printf("Average turnaround time of these entered process is: %lf", sum_tatime / total);
+}
+```
+
+Here's the resultant screenshot:
+
+![round_robin](oslab_images/round_robin.png)
+
+
+# WAP to implement producer consumer problem
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<pthread.h>
+#include<semaphore.h>
+
+#define max_items 5 // maximum number of items a produecer can produce or a consumer can cosume
+#define buf_size 5 // size of buffer
+
+sem_t empty;
+sem_t full;
+int get_in = 0, get_out = 0;
+int buffer[buf_size];
+pthread_mutex_t mutex;
+
+// function for producer part
+void *producer(void *pnum) {
+	int item;
+	for (int i = 0; i < max_items; i++) {
+		item = rand();  // produce a random item
+		sem_wait(&empty);
+		pthread_mutex_lock(&mutex);
+		buffer[get_in] = item;
+		printf("Producer %d: Inserted item %d at %d\n", *((int *)pnum), buffer[get_in], get_in);
+		get_in = (get_in + 1) % buf_size;
+		pthread_mutex_unlock(&mutex);
+		sem_post(&full);
+	}
+}
+
+// function for consumer part
+void *consumer(void *cnum) {
+	for (int i = 0; i < max_items; i++) {
+		sem_wait(&full);
+		pthread_mutex_lock(&mutex);
+		int item = buffer[get_out];
+		printf("Consumer %d: Removed item %d from %d\n", *((int *)cnum), item, get_out);
+		get_out = (get_out + 1) % buf_size;
+		pthread_mutex_unlock(&mutex);
+		sem_post(&empty);
+	}
+}
+
+// main function
+int main(int argc, char* argv[]) {
+	pthread_t pro[5], con[5];
+	pthread_mutex_init(&mutex, NULL);
+	sem_init(&empty, 0, buf_size);
+	sem_init(&full, 0, 0);
+
+	// used for numbering of producer and consumer
+	int arr[5] = {1, 2, 3, 4, 5};
+
+	for (int i = 0; i < 5; i++) {
+		pthread_create(&pro[i], NULL, (void *)producer, (void *)&arr[i]);
+	}
+	for (int i = 0; i < 5; i++) {
+		pthread_create(&con[i], NULL, (void *)consumer, (void *)&arr[i]);
+	}
+	for (int i = 0; i < 5; i++) {
+		pthread_join(pro[i], NULL);
+	}
+	for (int i = 0; i < 5; i++) {
+		pthread_join(con[i], NULL);
+	}
+
+	pthread_mutex_destroy(&mutex);
+	sem_destroy(&empty);
+	sem_destroy(&full);
+	return 0;
+}
+```
+
+Here's the resultant screenshot:
+
+![producer_consumer](oslab_images/producer_consumer.png)
+
+
+**Thank You!**

@@ -561,4 +561,969 @@
 <figure>
 <img src="oslab_images/user_cron.png" alt="" /><figcaption>user cronjobs</figcaption>
 </figure>
-<p><strong>Thank You</strong></p>
+<h1 id="wap-a-program-to-implement-first-come-first-serve-fcfs-cpu-scheduling-algorithm-without-arrival-time">WAP a program to implement First Come First Serve (FCFS) CPU Scheduling algorithm without Arrival time</h1>
+<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">// this program is fcfs algorithm with non-preemptive mode</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="pp">#define size 100</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> *argv[]){</span>
+<span id="cb18-7"><a href="#cb18-7"></a>    <span class="dt">int</span> wt[size], bt[size], tat[size], i, np, val = <span class="dv">0</span>, val1 = <span class="dv">0</span>;</span>
+<span id="cb18-8"><a href="#cb18-8"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter number of process: &quot;</span>);</span>
+<span id="cb18-9"><a href="#cb18-9"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;np);</span>
+<span id="cb18-10"><a href="#cb18-10"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter burst time for process: &quot;</span>);</span>
+<span id="cb18-11"><a href="#cb18-11"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb18-12"><a href="#cb18-12"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Process %d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb18-13"><a href="#cb18-13"></a>        scanf(<span class="st">&quot;%d&quot;</span>, &amp;bt[i]);</span>
+<span id="cb18-14"><a href="#cb18-14"></a>    }</span>
+<span id="cb18-15"><a href="#cb18-15"></a></span>
+<span id="cb18-16"><a href="#cb18-16"></a>    <span class="co">// calculating turn around time</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb18-18"><a href="#cb18-18"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Turn around time for P%d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb18-19"><a href="#cb18-19"></a>        val = val + bt[i];</span>
+<span id="cb18-20"><a href="#cb18-20"></a>        tat[i] = val;</span>
+<span id="cb18-21"><a href="#cb18-21"></a>        printf(<span class="st">&quot;%d&quot;</span>, tat[i]);</span>
+<span id="cb18-22"><a href="#cb18-22"></a>    }</span>
+<span id="cb18-23"><a href="#cb18-23"></a></span>
+<span id="cb18-24"><a href="#cb18-24"></a>    <span class="co">// calculating waiting time</span></span>
+<span id="cb18-25"><a href="#cb18-25"></a>    val = <span class="dv">0</span>;</span>
+<span id="cb18-26"><a href="#cb18-26"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i&lt; np; i++) {</span>
+<span id="cb18-27"><a href="#cb18-27"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Waiting time of P%d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb18-28"><a href="#cb18-28"></a>        val = tat[i] - bt[i];</span>
+<span id="cb18-29"><a href="#cb18-29"></a>        wt[i] = val;</span>
+<span id="cb18-30"><a href="#cb18-30"></a>        printf(<span class="st">&quot;%d&quot;</span>, wt[i]);</span>
+<span id="cb18-31"><a href="#cb18-31"></a>    }</span>
+<span id="cb18-32"><a href="#cb18-32"></a></span>
+<span id="cb18-33"><a href="#cb18-33"></a>    <span class="co">// average waiting and turn around time</span></span>
+<span id="cb18-34"><a href="#cb18-34"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb18-35"><a href="#cb18-35"></a>        val = val + tat[i];</span>
+<span id="cb18-36"><a href="#cb18-36"></a>        val1 = val1 + wt[i];</span>
+<span id="cb18-37"><a href="#cb18-37"></a>    }</span>
+<span id="cb18-38"><a href="#cb18-38"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Average waiting time: %d&quot;</span>, val/np);</span>
+<span id="cb18-39"><a href="#cb18-39"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Average turn around time: %d&quot;</span>, val1/np);</span>
+<span id="cb18-40"><a href="#cb18-40"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb18-41"><a href="#cb18-41"></a>}</span></code></pre></div>
+<p>Result image:</p>
+<figure>
+<img src="oslab_images/fcfs_nonpreemptive.png" alt="" /><figcaption>fcfs</figcaption>
+</figure>
+<h1 id="wap-a-program-to-implement-first-come-first-serve-fcfs-cpu-scheduling-algorithm-with-arrival-time">WAP a program to implement First Come First Serve (FCFS) CPU Scheduling algorithm with Arrival time</h1>
+<div class="sourceCode" id="cb19"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb19-1"><a href="#cb19-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="pp">#define size 100</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> *argv[]){</span>
+<span id="cb19-5"><a href="#cb19-5"></a>    <span class="dt">int</span> pro[size], wt[size], bt[size], at[size], tat[size], i, j, np;</span>
+<span id="cb19-6"><a href="#cb19-6"></a>    <span class="dt">float</span> val = <span class="dv">0</span>, val1 = <span class="dv">0</span>;</span>
+<span id="cb19-7"><a href="#cb19-7"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter number of process: &quot;</span>);</span>
+<span id="cb19-8"><a href="#cb19-8"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;np);</span>
+<span id="cb19-9"><a href="#cb19-9"></a></span>
+<span id="cb19-10"><a href="#cb19-10"></a>    <span class="co">// enter burst time</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter burst time for process: &quot;</span>);</span>
+<span id="cb19-12"><a href="#cb19-12"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-13"><a href="#cb19-13"></a>        printf(<span class="st">&quot;Process %d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb19-14"><a href="#cb19-14"></a>        scanf(<span class="st">&quot;%d&quot;</span>, &amp;bt[i]);</span>
+<span id="cb19-15"><a href="#cb19-15"></a>    }</span>
+<span id="cb19-16"><a href="#cb19-16"></a></span>
+<span id="cb19-17"><a href="#cb19-17"></a>    <span class="co">// enter arrival time</span></span>
+<span id="cb19-18"><a href="#cb19-18"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter arrival time for process: &quot;</span>);</span>
+<span id="cb19-19"><a href="#cb19-19"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-20"><a href="#cb19-20"></a>        printf(<span class="st">&quot;Process %d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb19-21"><a href="#cb19-21"></a>        scanf(<span class="st">&quot;%d&quot;</span>, &amp;at[i]);</span>
+<span id="cb19-22"><a href="#cb19-22"></a>    }</span>
+<span id="cb19-23"><a href="#cb19-23"></a></span>
+<span id="cb19-24"><a href="#cb19-24"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-25"><a href="#cb19-25"></a>        pro[i] = i + <span class="dv">1</span>;</span>
+<span id="cb19-26"><a href="#cb19-26"></a>    }</span>
+<span id="cb19-27"><a href="#cb19-27"></a></span>
+<span id="cb19-28"><a href="#cb19-28"></a>    <span class="co">/* // sorting arrival time */</span></span>
+<span id="cb19-29"><a href="#cb19-29"></a></span>
+<span id="cb19-30"><a href="#cb19-30"></a>    <span class="dt">int</span> temp;</span>
+<span id="cb19-31"><a href="#cb19-31"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np - <span class="dv">1</span>; i++) {</span>
+<span id="cb19-32"><a href="#cb19-32"></a>        <span class="cf">for</span> (j = <span class="dv">0</span>; j &lt; np - i -<span class="dv">1</span>; j++) {</span>
+<span id="cb19-33"><a href="#cb19-33"></a>            <span class="cf">if</span> (at[j] &gt; at[j+<span class="dv">1</span>]) {</span>
+<span id="cb19-34"><a href="#cb19-34"></a>                temp = at[j];</span>
+<span id="cb19-35"><a href="#cb19-35"></a>                at[j] = at[j+<span class="dv">1</span>];</span>
+<span id="cb19-36"><a href="#cb19-36"></a>                at[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-37"><a href="#cb19-37"></a></span>
+<span id="cb19-38"><a href="#cb19-38"></a>                temp = bt[j];</span>
+<span id="cb19-39"><a href="#cb19-39"></a>                bt[j] = bt[j+<span class="dv">1</span>];</span>
+<span id="cb19-40"><a href="#cb19-40"></a>                bt[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-41"><a href="#cb19-41"></a></span>
+<span id="cb19-42"><a href="#cb19-42"></a>                temp = pro[j];</span>
+<span id="cb19-43"><a href="#cb19-43"></a>                pro[j] = pro[j+<span class="dv">1</span>];</span>
+<span id="cb19-44"><a href="#cb19-44"></a>                pro[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-45"><a href="#cb19-45"></a>            }</span>
+<span id="cb19-46"><a href="#cb19-46"></a>        }</span>
+<span id="cb19-47"><a href="#cb19-47"></a>    }</span>
+<span id="cb19-48"><a href="#cb19-48"></a></span>
+<span id="cb19-49"><a href="#cb19-49"></a>    <span class="co">// tat</span></span>
+<span id="cb19-50"><a href="#cb19-50"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-51"><a href="#cb19-51"></a>        val = val + bt[i] - at[i] + at[i-<span class="dv">1</span>];</span>
+<span id="cb19-52"><a href="#cb19-52"></a>        tat[i] = val;</span>
+<span id="cb19-53"><a href="#cb19-53"></a>    }</span>
+<span id="cb19-54"><a href="#cb19-54"></a></span>
+<span id="cb19-55"><a href="#cb19-55"></a>    <span class="co">// wt</span></span>
+<span id="cb19-56"><a href="#cb19-56"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-57"><a href="#cb19-57"></a>        val = tat[i] - bt[i];</span>
+<span id="cb19-58"><a href="#cb19-58"></a>        wt[i] = val;</span>
+<span id="cb19-59"><a href="#cb19-59"></a>    }</span>
+<span id="cb19-60"><a href="#cb19-60"></a></span>
+<span id="cb19-61"><a href="#cb19-61"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np - <span class="dv">1</span>; i++) {</span>
+<span id="cb19-62"><a href="#cb19-62"></a>        <span class="cf">for</span> (j = <span class="dv">0</span>; j &lt; np - i -<span class="dv">1</span>; j++) {</span>
+<span id="cb19-63"><a href="#cb19-63"></a>            <span class="cf">if</span> (pro[j] &gt; pro[j+<span class="dv">1</span>]) {</span>
+<span id="cb19-64"><a href="#cb19-64"></a>                temp = pro[j];</span>
+<span id="cb19-65"><a href="#cb19-65"></a>                pro[j] = pro[j+<span class="dv">1</span>];</span>
+<span id="cb19-66"><a href="#cb19-66"></a>                pro[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-67"><a href="#cb19-67"></a></span>
+<span id="cb19-68"><a href="#cb19-68"></a>                temp = tat[j];</span>
+<span id="cb19-69"><a href="#cb19-69"></a>                tat[j] = tat[j+<span class="dv">1</span>];</span>
+<span id="cb19-70"><a href="#cb19-70"></a>                tat[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-71"><a href="#cb19-71"></a></span>
+<span id="cb19-72"><a href="#cb19-72"></a>                temp = wt[j];</span>
+<span id="cb19-73"><a href="#cb19-73"></a>                wt[j] = wt[j+<span class="dv">1</span>];</span>
+<span id="cb19-74"><a href="#cb19-74"></a>                wt[j+<span class="dv">1</span>] = temp;</span>
+<span id="cb19-75"><a href="#cb19-75"></a>            }</span>
+<span id="cb19-76"><a href="#cb19-76"></a>        }</span>
+<span id="cb19-77"><a href="#cb19-77"></a>    }</span>
+<span id="cb19-78"><a href="#cb19-78"></a></span>
+<span id="cb19-79"><a href="#cb19-79"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-80"><a href="#cb19-80"></a>        printf(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Turn around Time for process P%d: &quot;</span>, pro[i]);</span>
+<span id="cb19-81"><a href="#cb19-81"></a>        printf(<span class="st">&quot;%d&quot;</span>, tat[i]);</span>
+<span id="cb19-82"><a href="#cb19-82"></a>        <span class="co">// pro[i] isn&#39;t necessary here for numbering, it&#39;s just to bind values with process</span></span>
+<span id="cb19-83"><a href="#cb19-83"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Waiting time for process P%d: &quot;</span>, i+<span class="dv">1</span>);</span>
+<span id="cb19-84"><a href="#cb19-84"></a>        printf(<span class="st">&quot;%d&quot;</span>, wt[i]);</span>
+<span id="cb19-85"><a href="#cb19-85"></a>    }</span>
+<span id="cb19-86"><a href="#cb19-86"></a></span>
+<span id="cb19-87"><a href="#cb19-87"></a>    <span class="co">// average waiting and turn around time</span></span>
+<span id="cb19-88"><a href="#cb19-88"></a>    val = <span class="dv">0</span>;</span>
+<span id="cb19-89"><a href="#cb19-89"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; np; i++) {</span>
+<span id="cb19-90"><a href="#cb19-90"></a>        val = val + tat[i];</span>
+<span id="cb19-91"><a href="#cb19-91"></a>        val1 = val1 + wt[i];</span>
+<span id="cb19-92"><a href="#cb19-92"></a>    }</span>
+<span id="cb19-93"><a href="#cb19-93"></a></span>
+<span id="cb19-94"><a href="#cb19-94"></a>    printf(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Average waiting time: %.2f&quot;</span>, val1/np);</span>
+<span id="cb19-95"><a href="#cb19-95"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Average turn around time: %.2f&quot;</span>, val/np);</span>
+<span id="cb19-96"><a href="#cb19-96"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb19-97"><a href="#cb19-97"></a>}</span></code></pre></div>
+<h1 id="wap-to-implement-sjf-algorithm">WAP to implement SJF Algorithm</h1>
+<div class="sourceCode" id="cb20"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb20-1"><a href="#cb20-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co">// pre-declaration of functions</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="kw">struct</span> Process* enter_data(<span class="kw">struct</span> Process* ,<span class="dt">int</span> );</span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="kw">struct</span> Process* sort_btime(<span class="kw">struct</span> Process* );</span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="kw">struct</span> Process* get_other_values(<span class="kw">struct</span> Process* );</span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="kw">struct</span> Process* sort_pnum(<span class="kw">struct</span> Process* );</span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="dt">void</span> display(<span class="kw">struct</span> Process* );</span>
+<span id="cb20-10"><a href="#cb20-10"></a><span class="dt">void</span> list_free(<span class="kw">struct</span> Process *);</span>
+<span id="cb20-11"><a href="#cb20-11"></a></span>
+<span id="cb20-12"><a href="#cb20-12"></a></span>
+<span id="cb20-13"><a href="#cb20-13"></a><span class="co">// structure declared</span></span>
+<span id="cb20-14"><a href="#cb20-14"></a><span class="kw">struct</span> Process {</span>
+<span id="cb20-15"><a href="#cb20-15"></a>    <span class="dt">int</span> pnum;   <span class="co">// process number</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a>    <span class="dt">int</span> btime;  <span class="co">// burst time</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a>    <span class="dt">int</span> wtime;  <span class="co">// waiting time</span></span>
+<span id="cb20-18"><a href="#cb20-18"></a>    <span class="dt">int</span> tatime; <span class="co">// turn-around time</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a>    <span class="kw">struct</span> Process *Link;</span>
+<span id="cb20-20"><a href="#cb20-20"></a>} *Start = NULL;</span>
+<span id="cb20-21"><a href="#cb20-21"></a></span>
+<span id="cb20-22"><a href="#cb20-22"></a></span>
+<span id="cb20-23"><a href="#cb20-23"></a><span class="co">// main function</span></span>
+<span id="cb20-24"><a href="#cb20-24"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb20-25"><a href="#cb20-25"></a>    <span class="dt">int</span> count;</span>
+<span id="cb20-26"><a href="#cb20-26"></a>    printf(<span class="st">&quot;Enter the total number of processes: &quot;</span>);</span>
+<span id="cb20-27"><a href="#cb20-27"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;count);</span>
+<span id="cb20-28"><a href="#cb20-28"></a></span>
+<span id="cb20-29"><a href="#cb20-29"></a>    <span class="co">// enter the data</span></span>
+<span id="cb20-30"><a href="#cb20-30"></a>    Start = enter_data(Start, count);</span>
+<span id="cb20-31"><a href="#cb20-31"></a></span>
+<span id="cb20-32"><a href="#cb20-32"></a>    <span class="co">// sort according to burst time(ascending order)</span></span>
+<span id="cb20-33"><a href="#cb20-33"></a>    Start = sort_btime(Start);</span>
+<span id="cb20-34"><a href="#cb20-34"></a></span>
+<span id="cb20-35"><a href="#cb20-35"></a>    <span class="co">// getting turn-around time and waiting time</span></span>
+<span id="cb20-36"><a href="#cb20-36"></a>    Start = get_other_values(Start);</span>
+<span id="cb20-37"><a href="#cb20-37"></a></span>
+<span id="cb20-38"><a href="#cb20-38"></a>    <span class="co">// sort according to process number(ascending order)</span></span>
+<span id="cb20-39"><a href="#cb20-39"></a>    Start = sort_pnum(Start);</span>
+<span id="cb20-40"><a href="#cb20-40"></a></span>
+<span id="cb20-41"><a href="#cb20-41"></a>    <span class="co">// display the content</span></span>
+<span id="cb20-42"><a href="#cb20-42"></a>    display(Start);</span>
+<span id="cb20-43"><a href="#cb20-43"></a></span>
+<span id="cb20-44"><a href="#cb20-44"></a>    <span class="co">// free list</span></span>
+<span id="cb20-45"><a href="#cb20-45"></a>    list_free(Start);</span>
+<span id="cb20-46"><a href="#cb20-46"></a></span>
+<span id="cb20-47"><a href="#cb20-47"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Value is: %d&quot;</span>, Start -&gt; btime);</span>
+<span id="cb20-48"><a href="#cb20-48"></a></span>
+<span id="cb20-49"><a href="#cb20-49"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb20-50"><a href="#cb20-50"></a>}</span>
+<span id="cb20-51"><a href="#cb20-51"></a></span>
+<span id="cb20-52"><a href="#cb20-52"></a></span>
+<span id="cb20-53"><a href="#cb20-53"></a><span class="co">// entering the data of processes</span></span>
+<span id="cb20-54"><a href="#cb20-54"></a><span class="kw">struct</span> Process *enter_data(<span class="kw">struct</span> Process *Start, <span class="dt">int</span> num) {</span>
+<span id="cb20-55"><a href="#cb20-55"></a>    <span class="kw">struct</span> Process *temp, *ptr;</span>
+<span id="cb20-56"><a href="#cb20-56"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= num; i++) {</span>
+<span id="cb20-57"><a href="#cb20-57"></a>        printf(<span class="st">&quot;Enter the burst time for %d process: &quot;</span>, i);</span>
+<span id="cb20-58"><a href="#cb20-58"></a>        temp = malloc(<span class="kw">sizeof</span>(<span class="kw">struct</span> Process));</span>
+<span id="cb20-59"><a href="#cb20-59"></a>        temp -&gt; pnum = i;</span>
+<span id="cb20-60"><a href="#cb20-60"></a>        scanf(<span class="st">&quot;%d&quot;</span>, &amp;temp -&gt; btime);</span>
+<span id="cb20-61"><a href="#cb20-61"></a>        temp -&gt; Link = NULL;</span>
+<span id="cb20-62"><a href="#cb20-62"></a>        <span class="cf">if</span> (Start == NULL) {</span>
+<span id="cb20-63"><a href="#cb20-63"></a>            Start = temp;</span>
+<span id="cb20-64"><a href="#cb20-64"></a>        }</span>
+<span id="cb20-65"><a href="#cb20-65"></a>        <span class="cf">else</span> {</span>
+<span id="cb20-66"><a href="#cb20-66"></a>            ptr = Start;</span>
+<span id="cb20-67"><a href="#cb20-67"></a>            <span class="cf">while</span> (ptr -&gt; Link != NULL) {</span>
+<span id="cb20-68"><a href="#cb20-68"></a>                ptr = ptr -&gt; Link;</span>
+<span id="cb20-69"><a href="#cb20-69"></a>            }</span>
+<span id="cb20-70"><a href="#cb20-70"></a>            ptr -&gt; Link = temp;</span>
+<span id="cb20-71"><a href="#cb20-71"></a>            temp -&gt; Link = NULL;</span>
+<span id="cb20-72"><a href="#cb20-72"></a>        }</span>
+<span id="cb20-73"><a href="#cb20-73"></a>    }</span>
+<span id="cb20-74"><a href="#cb20-74"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb20-75"><a href="#cb20-75"></a>}</span>
+<span id="cb20-76"><a href="#cb20-76"></a></span>
+<span id="cb20-77"><a href="#cb20-77"></a></span>
+<span id="cb20-78"><a href="#cb20-78"></a><span class="co">// display function</span></span>
+<span id="cb20-79"><a href="#cb20-79"></a><span class="dt">void</span> display(<span class="kw">struct</span> Process* Start) {</span>
+<span id="cb20-80"><a href="#cb20-80"></a>    <span class="kw">struct</span> Process *ptr;</span>
+<span id="cb20-81"><a href="#cb20-81"></a>    ptr = Start;</span>
+<span id="cb20-82"><a href="#cb20-82"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Displaying the items: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb20-83"><a href="#cb20-83"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-84"><a href="#cb20-84"></a>        printf(<span class="st">&quot;Burst time for process p%d: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, ptr -&gt; pnum, ptr -&gt; btime);</span>
+<span id="cb20-85"><a href="#cb20-85"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-86"><a href="#cb20-86"></a>    }</span>
+<span id="cb20-87"><a href="#cb20-87"></a>    ptr = Start;</span>
+<span id="cb20-88"><a href="#cb20-88"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-89"><a href="#cb20-89"></a>        printf(<span class="st">&quot;Turn around time for process p%d: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, ptr -&gt; pnum, ptr -&gt; tatime);</span>
+<span id="cb20-90"><a href="#cb20-90"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-91"><a href="#cb20-91"></a>    }</span>
+<span id="cb20-92"><a href="#cb20-92"></a>    ptr = Start;</span>
+<span id="cb20-93"><a href="#cb20-93"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-94"><a href="#cb20-94"></a>        printf(<span class="st">&quot;Waiting time for process p%d: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, ptr -&gt; pnum, ptr -&gt; wtime);</span>
+<span id="cb20-95"><a href="#cb20-95"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-96"><a href="#cb20-96"></a>    }</span>
+<span id="cb20-97"><a href="#cb20-97"></a>    <span class="co">/* free(ptr); */</span></span>
+<span id="cb20-98"><a href="#cb20-98"></a>}</span>
+<span id="cb20-99"><a href="#cb20-99"></a></span>
+<span id="cb20-100"><a href="#cb20-100"></a></span>
+<span id="cb20-101"><a href="#cb20-101"></a><span class="co">// sorting burst time</span></span>
+<span id="cb20-102"><a href="#cb20-102"></a><span class="kw">struct</span> Process* sort_btime(<span class="kw">struct</span> Process* Start) {</span>
+<span id="cb20-103"><a href="#cb20-103"></a>    <span class="kw">struct</span> Process *ptr, *pptr;</span>
+<span id="cb20-104"><a href="#cb20-104"></a>    ptr = Start;</span>
+<span id="cb20-105"><a href="#cb20-105"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-106"><a href="#cb20-106"></a>        <span class="co">/* printf(&quot;In ptr&quot;); */</span></span>
+<span id="cb20-107"><a href="#cb20-107"></a>        pptr = ptr -&gt; Link;</span>
+<span id="cb20-108"><a href="#cb20-108"></a>        <span class="cf">while</span> (pptr != NULL) {</span>
+<span id="cb20-109"><a href="#cb20-109"></a>            <span class="co">/* printf(&quot;\nIn pptr&quot;); */</span></span>
+<span id="cb20-110"><a href="#cb20-110"></a>            <span class="cf">if</span> (ptr -&gt; btime &gt; pptr -&gt; btime) {</span>
+<span id="cb20-111"><a href="#cb20-111"></a>                ptr -&gt; btime = ptr -&gt; btime + pptr -&gt; btime;</span>
+<span id="cb20-112"><a href="#cb20-112"></a>                pptr -&gt; btime = ptr -&gt; btime - pptr -&gt; btime;</span>
+<span id="cb20-113"><a href="#cb20-113"></a>                ptr -&gt; btime = ptr -&gt; btime - pptr -&gt; btime;</span>
+<span id="cb20-114"><a href="#cb20-114"></a></span>
+<span id="cb20-115"><a href="#cb20-115"></a>                ptr -&gt; pnum = ptr -&gt; pnum + pptr -&gt; pnum;</span>
+<span id="cb20-116"><a href="#cb20-116"></a>                pptr -&gt; pnum = ptr -&gt; pnum - pptr -&gt; pnum;</span>
+<span id="cb20-117"><a href="#cb20-117"></a>                ptr -&gt; pnum = ptr -&gt; pnum - pptr -&gt; pnum;</span>
+<span id="cb20-118"><a href="#cb20-118"></a>            }</span>
+<span id="cb20-119"><a href="#cb20-119"></a>            pptr = pptr -&gt; Link;</span>
+<span id="cb20-120"><a href="#cb20-120"></a>        }</span>
+<span id="cb20-121"><a href="#cb20-121"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-122"><a href="#cb20-122"></a>    }</span>
+<span id="cb20-123"><a href="#cb20-123"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb20-124"><a href="#cb20-124"></a>}</span>
+<span id="cb20-125"><a href="#cb20-125"></a></span>
+<span id="cb20-126"><a href="#cb20-126"></a></span>
+<span id="cb20-127"><a href="#cb20-127"></a><span class="co">// getting values of turn around time and burst time</span></span>
+<span id="cb20-128"><a href="#cb20-128"></a><span class="kw">struct</span> Process* get_other_values(<span class="kw">struct</span> Process *Start) {</span>
+<span id="cb20-129"><a href="#cb20-129"></a>    <span class="kw">struct</span> Process* ptr, *pptr;</span>
+<span id="cb20-130"><a href="#cb20-130"></a>    ptr = Start;</span>
+<span id="cb20-131"><a href="#cb20-131"></a>    pptr = ptr -&gt; Link;</span>
+<span id="cb20-132"><a href="#cb20-132"></a>    ptr -&gt; tatime = ptr -&gt; btime;</span>
+<span id="cb20-133"><a href="#cb20-133"></a>    pptr -&gt; tatime = ptr -&gt; btime;</span>
+<span id="cb20-134"><a href="#cb20-134"></a>    ptr -&gt; wtime = ptr -&gt; tatime - ptr -&gt; btime;</span>
+<span id="cb20-135"><a href="#cb20-135"></a>    ptr = ptr -&gt; Link;</span>
+<span id="cb20-136"><a href="#cb20-136"></a>    pptr = ptr -&gt; Link;</span>
+<span id="cb20-137"><a href="#cb20-137"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-138"><a href="#cb20-138"></a>        ptr -&gt; tatime += ptr -&gt; btime;</span>
+<span id="cb20-139"><a href="#cb20-139"></a>        pptr -&gt; tatime = ptr -&gt; tatime;</span>
+<span id="cb20-140"><a href="#cb20-140"></a>        ptr -&gt; wtime = ptr -&gt; tatime - ptr -&gt; btime;</span>
+<span id="cb20-141"><a href="#cb20-141"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-142"><a href="#cb20-142"></a>        <span class="cf">if</span> (pptr -&gt; Link != NULL) {</span>
+<span id="cb20-143"><a href="#cb20-143"></a>            pptr = ptr -&gt; Link;</span>
+<span id="cb20-144"><a href="#cb20-144"></a>        }</span>
+<span id="cb20-145"><a href="#cb20-145"></a>    }</span>
+<span id="cb20-146"><a href="#cb20-146"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb20-147"><a href="#cb20-147"></a>}</span>
+<span id="cb20-148"><a href="#cb20-148"></a></span>
+<span id="cb20-149"><a href="#cb20-149"></a></span>
+<span id="cb20-150"><a href="#cb20-150"></a><span class="co">// sorting according to process number</span></span>
+<span id="cb20-151"><a href="#cb20-151"></a><span class="kw">struct</span> Process* sort_pnum(<span class="kw">struct</span> Process* Start) {</span>
+<span id="cb20-152"><a href="#cb20-152"></a>    <span class="kw">struct</span> Process *ptr, *pptr;</span>
+<span id="cb20-153"><a href="#cb20-153"></a>    ptr = Start;</span>
+<span id="cb20-154"><a href="#cb20-154"></a>    <span class="cf">while</span> (ptr != NULL) {</span>
+<span id="cb20-155"><a href="#cb20-155"></a>        <span class="co">/* printf(&quot;In ptr&quot;); */</span></span>
+<span id="cb20-156"><a href="#cb20-156"></a>        pptr = ptr -&gt; Link;</span>
+<span id="cb20-157"><a href="#cb20-157"></a>        <span class="cf">while</span> (pptr != NULL) {</span>
+<span id="cb20-158"><a href="#cb20-158"></a>            <span class="co">/* printf(&quot;\nIn pptr&quot;); */</span></span>
+<span id="cb20-159"><a href="#cb20-159"></a>            <span class="cf">if</span> (ptr -&gt; pnum &gt; pptr -&gt; pnum) {</span>
+<span id="cb20-160"><a href="#cb20-160"></a>                ptr -&gt; pnum = ptr -&gt; pnum + pptr -&gt; pnum;</span>
+<span id="cb20-161"><a href="#cb20-161"></a>                pptr -&gt; pnum = ptr -&gt; pnum - pptr -&gt; pnum;</span>
+<span id="cb20-162"><a href="#cb20-162"></a>                ptr -&gt; pnum = ptr -&gt; pnum - pptr -&gt; pnum;</span>
+<span id="cb20-163"><a href="#cb20-163"></a></span>
+<span id="cb20-164"><a href="#cb20-164"></a>                ptr -&gt; btime = ptr -&gt; btime + pptr -&gt; btime;</span>
+<span id="cb20-165"><a href="#cb20-165"></a>                pptr -&gt; btime = ptr -&gt; btime - pptr -&gt; btime;</span>
+<span id="cb20-166"><a href="#cb20-166"></a>                ptr -&gt; btime = ptr -&gt; btime - pptr -&gt; btime;</span>
+<span id="cb20-167"><a href="#cb20-167"></a></span>
+<span id="cb20-168"><a href="#cb20-168"></a>                ptr -&gt; tatime = ptr -&gt; tatime + pptr -&gt; tatime;</span>
+<span id="cb20-169"><a href="#cb20-169"></a>                pptr -&gt; tatime = ptr -&gt; tatime - pptr -&gt; tatime;</span>
+<span id="cb20-170"><a href="#cb20-170"></a>                ptr -&gt; tatime = ptr -&gt; tatime - pptr -&gt; tatime;</span>
+<span id="cb20-171"><a href="#cb20-171"></a></span>
+<span id="cb20-172"><a href="#cb20-172"></a>                ptr -&gt; wtime = ptr -&gt; wtime + pptr -&gt; wtime;</span>
+<span id="cb20-173"><a href="#cb20-173"></a>                pptr -&gt; wtime = ptr -&gt; wtime - pptr -&gt; wtime;</span>
+<span id="cb20-174"><a href="#cb20-174"></a>                ptr -&gt; wtime = ptr -&gt; wtime - pptr -&gt; wtime;</span>
+<span id="cb20-175"><a href="#cb20-175"></a>            }</span>
+<span id="cb20-176"><a href="#cb20-176"></a>            pptr = pptr -&gt; Link;</span>
+<span id="cb20-177"><a href="#cb20-177"></a>        }</span>
+<span id="cb20-178"><a href="#cb20-178"></a>        ptr = ptr -&gt; Link;</span>
+<span id="cb20-179"><a href="#cb20-179"></a>    }</span>
+<span id="cb20-180"><a href="#cb20-180"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb20-181"><a href="#cb20-181"></a>}</span>
+<span id="cb20-182"><a href="#cb20-182"></a></span>
+<span id="cb20-183"><a href="#cb20-183"></a></span>
+<span id="cb20-184"><a href="#cb20-184"></a><span class="co">// free the list</span></span>
+<span id="cb20-185"><a href="#cb20-185"></a><span class="dt">void</span> list_free(<span class="kw">struct</span> Process *Start) {</span>
+<span id="cb20-186"><a href="#cb20-186"></a>    <span class="kw">struct</span> Process *ptr;</span>
+<span id="cb20-187"><a href="#cb20-187"></a>    <span class="cf">while</span> (Start != NULL) {</span>
+<span id="cb20-188"><a href="#cb20-188"></a>        ptr = Start;</span>
+<span id="cb20-189"><a href="#cb20-189"></a>        Start = Start -&gt; Link;</span>
+<span id="cb20-190"><a href="#cb20-190"></a>        free(ptr);</span>
+<span id="cb20-191"><a href="#cb20-191"></a>    }</span>
+<span id="cb20-192"><a href="#cb20-192"></a>}</span></code></pre></div>
+<p>Here’s the resultant image:</p>
+<figure>
+<img src="oslab_images/sjf_algo.png" alt="" /><figcaption>sjf_algo</figcaption>
+</figure>
+<h1 id="wap-to-implement-srtf-algorithm">WAP to implement SRTF Algorithm</h1>
+<div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb21-1"><a href="#cb21-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="pp">#include</span><span class="im">&lt;string.h&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="pp">#define max_proc 15</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="co">// struct defined</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="kw">struct</span> Proc_data {</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="dt">int</span> pnum;     <span class="co">// process number</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="dt">float</span> btime;  <span class="co">// burst time</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a>    <span class="dt">float</span> atime;  <span class="co">// arrival time</span></span>
+<span id="cb21-12"><a href="#cb21-12"></a>    <span class="dt">double</span> wtime; <span class="co">// waiting time</span></span>
+<span id="cb21-13"><a href="#cb21-13"></a>    <span class="dt">double</span> tatime;<span class="co">// turn around time</span></span>
+<span id="cb21-14"><a href="#cb21-14"></a>};</span>
+<span id="cb21-15"><a href="#cb21-15"></a></span>
+<span id="cb21-16"><a href="#cb21-16"></a></span>
+<span id="cb21-17"><a href="#cb21-17"></a><span class="co">// function pre-declaration</span></span>
+<span id="cb21-18"><a href="#cb21-18"></a><span class="dt">void</span> get_avg_values(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> );</span>
+<span id="cb21-19"><a href="#cb21-19"></a><span class="dt">void</span> get_other_values(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> *, <span class="dt">int</span> );</span>
+<span id="cb21-20"><a href="#cb21-20"></a><span class="dt">void</span> display_proc(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> );</span>
+<span id="cb21-21"><a href="#cb21-21"></a></span>
+<span id="cb21-22"><a href="#cb21-22"></a></span>
+<span id="cb21-23"><a href="#cb21-23"></a><span class="co">// main function</span></span>
+<span id="cb21-24"><a href="#cb21-24"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb21-25"><a href="#cb21-25"></a>    <span class="kw">struct</span> Proc_data process[max_proc];</span>
+<span id="cb21-26"><a href="#cb21-26"></a>    <span class="dt">int</span> count;</span>
+<span id="cb21-27"><a href="#cb21-27"></a>    <span class="dt">int</span> temp[max_proc];</span>
+<span id="cb21-28"><a href="#cb21-28"></a>    printf(<span class="st">&quot;Enter the total process count: &quot;</span>);</span>
+<span id="cb21-29"><a href="#cb21-29"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;count);</span>
+<span id="cb21-30"><a href="#cb21-30"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter arrival time and burst time for processes: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb21-31"><a href="#cb21-31"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; count; i++) {</span>
+<span id="cb21-32"><a href="#cb21-32"></a>        process[i].pnum = i + <span class="dv">1</span>;</span>
+<span id="cb21-33"><a href="#cb21-33"></a>        printf(<span class="st">&quot;Enter arrival time and burst time for process %d: &quot;</span>, process[i].pnum);</span>
+<span id="cb21-34"><a href="#cb21-34"></a>        scanf(<span class="st">&quot;%f %f&quot;</span>, &amp;process[i].atime, &amp;process[i].btime);</span>
+<span id="cb21-35"><a href="#cb21-35"></a>        temp[i] = process[i].btime;</span>
+<span id="cb21-36"><a href="#cb21-36"></a>    }</span>
+<span id="cb21-37"><a href="#cb21-37"></a></span>
+<span id="cb21-38"><a href="#cb21-38"></a>    process[max_proc - <span class="dv">1</span>].btime = <span class="dv">9999</span>;</span>
+<span id="cb21-39"><a href="#cb21-39"></a></span>
+<span id="cb21-40"><a href="#cb21-40"></a>    <span class="co">// get waiting time and turn around time</span></span>
+<span id="cb21-41"><a href="#cb21-41"></a>    get_other_values(process, temp, count);</span>
+<span id="cb21-42"><a href="#cb21-42"></a></span>
+<span id="cb21-43"><a href="#cb21-43"></a>    <span class="co">// display waiting and turn around time for all processes</span></span>
+<span id="cb21-44"><a href="#cb21-44"></a>    display_proc(process, count);</span>
+<span id="cb21-45"><a href="#cb21-45"></a></span>
+<span id="cb21-46"><a href="#cb21-46"></a>    <span class="co">// function to get other avg values</span></span>
+<span id="cb21-47"><a href="#cb21-47"></a>    get_avg_values(process, count);</span>
+<span id="cb21-48"><a href="#cb21-48"></a></span>
+<span id="cb21-49"><a href="#cb21-49"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb21-50"><a href="#cb21-50"></a>}</span>
+<span id="cb21-51"><a href="#cb21-51"></a></span>
+<span id="cb21-52"><a href="#cb21-52"></a></span>
+<span id="cb21-53"><a href="#cb21-53"></a><span class="co">// function to get avg waiting and turn around time</span></span>
+<span id="cb21-54"><a href="#cb21-54"></a><span class="dt">void</span> get_avg_values(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb21-55"><a href="#cb21-55"></a>    <span class="co">// calculating average</span></span>
+<span id="cb21-56"><a href="#cb21-56"></a>    <span class="dt">double</span> sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb21-57"><a href="#cb21-57"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb21-58"><a href="#cb21-58"></a>        sum_wtime = sum_wtime + process[i].wtime;</span>
+<span id="cb21-59"><a href="#cb21-59"></a>        sum_tatime = sum_tatime + process[i].tatime;</span>
+<span id="cb21-60"><a href="#cb21-60"></a>    }</span>
+<span id="cb21-61"><a href="#cb21-61"></a>    printf(<span class="st">&quot;Average value of Waiting time for entered processes: %lf&quot;</span>, sum_wtime / total);</span>
+<span id="cb21-62"><a href="#cb21-62"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Average Turn around time for entered processes: %lf&quot;</span>, sum_tatime / total);</span>
+<span id="cb21-63"><a href="#cb21-63"></a>}</span>
+<span id="cb21-64"><a href="#cb21-64"></a></span>
+<span id="cb21-65"><a href="#cb21-65"></a></span>
+<span id="cb21-66"><a href="#cb21-66"></a><span class="co">// function to get values of waiting and turn around time for all process</span></span>
+<span id="cb21-67"><a href="#cb21-67"></a><span class="dt">void</span> get_other_values(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> *temp, <span class="dt">int</span> total) {</span>
+<span id="cb21-68"><a href="#cb21-68"></a>    <span class="dt">int</span> i = <span class="dv">0</span>, times = <span class="dv">0</span>, smallest = <span class="dv">0</span>, limit = <span class="dv">0</span>;</span>
+<span id="cb21-69"><a href="#cb21-69"></a>    <span class="dt">double</span> end, sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb21-70"><a href="#cb21-70"></a></span>
+<span id="cb21-71"><a href="#cb21-71"></a>    <span class="cf">for</span> (times = <span class="dv">0</span>; limit != total; times++) {</span>
+<span id="cb21-72"><a href="#cb21-72"></a>        smallest = max_proc - <span class="dv">1</span>;</span>
+<span id="cb21-73"><a href="#cb21-73"></a>        <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb21-74"><a href="#cb21-74"></a>            <span class="cf">if</span> (process[i].atime &lt;= times &amp;&amp; process[i].btime &lt; process[smallest].btime) {</span>
+<span id="cb21-75"><a href="#cb21-75"></a>                <span class="cf">if</span> (process[i].btime &gt; <span class="dv">0</span>) {</span>
+<span id="cb21-76"><a href="#cb21-76"></a>                    smallest = i;</span>
+<span id="cb21-77"><a href="#cb21-77"></a>                }</span>
+<span id="cb21-78"><a href="#cb21-78"></a>            }</span>
+<span id="cb21-79"><a href="#cb21-79"></a>        }</span>
+<span id="cb21-80"><a href="#cb21-80"></a>        process[smallest].btime--;</span>
+<span id="cb21-81"><a href="#cb21-81"></a>        <span class="cf">if</span> (process[smallest].btime == <span class="dv">0</span>) {</span>
+<span id="cb21-82"><a href="#cb21-82"></a>            limit++;</span>
+<span id="cb21-83"><a href="#cb21-83"></a>            end = times + <span class="dv">1</span>;</span>
+<span id="cb21-84"><a href="#cb21-84"></a></span>
+<span id="cb21-85"><a href="#cb21-85"></a>            sum_wtime = end - process[smallest].atime - temp[smallest];</span>
+<span id="cb21-86"><a href="#cb21-86"></a>            process[smallest].wtime = sum_wtime;</span>
+<span id="cb21-87"><a href="#cb21-87"></a></span>
+<span id="cb21-88"><a href="#cb21-88"></a>            sum_tatime = end - process[smallest].atime;</span>
+<span id="cb21-89"><a href="#cb21-89"></a>            process[smallest].tatime = sum_tatime;</span>
+<span id="cb21-90"><a href="#cb21-90"></a>        }</span>
+<span id="cb21-91"><a href="#cb21-91"></a>    }</span>
+<span id="cb21-92"><a href="#cb21-92"></a>}</span>
+<span id="cb21-93"><a href="#cb21-93"></a></span>
+<span id="cb21-94"><a href="#cb21-94"></a></span>
+<span id="cb21-95"><a href="#cb21-95"></a><span class="co">// function to display waiting and turn-around time for all processes</span></span>
+<span id="cb21-96"><a href="#cb21-96"></a><span class="dt">void</span> display_proc(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb21-97"><a href="#cb21-97"></a>    printf(<span class="st">&quot;Process name</span><span class="sc">\t</span><span class="st">Waiting time</span><span class="sc">\t\t</span><span class="st">Turn around time</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb21-98"><a href="#cb21-98"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb21-99"><a href="#cb21-99"></a>        printf(<span class="st">&quot;p%d</span><span class="sc">\t\t</span><span class="st">%lf</span><span class="sc">\t\t\t</span><span class="st">%lf</span><span class="sc">\n</span><span class="st">&quot;</span>, process[i].pnum, process[i].wtime, process[i].tatime);</span>
+<span id="cb21-100"><a href="#cb21-100"></a>    }</span>
+<span id="cb21-101"><a href="#cb21-101"></a>}</span></code></pre></div>
+<p>Here’s the resultant screenshot:</p>
+<figure>
+<img src="oslab_images/srtf_algo.png" alt="" /><figcaption>srtf_algo</figcaption>
+</figure>
+<h1 id="wap-to-implement-priority-scheduling-algorithm-without-arrival-time">WAP to implement Priority scheduling algorithm without arrival time</h1>
+<div class="sourceCode" id="cb22"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="co">// predeclaration of functions</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="kw">struct</span> Proc_data* create_list(<span class="kw">struct</span> Proc_data* ,<span class="dt">int</span> );</span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="kw">struct</span> Proc_data* sort_priority(<span class="kw">struct</span> Proc_data* );</span>
+<span id="cb22-7"><a href="#cb22-7"></a><span class="kw">struct</span> Proc_data* get_other_values(<span class="kw">struct</span> Proc_data* );</span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="kw">struct</span> Proc_data* sort_pnum(<span class="kw">struct</span> Proc_data* );</span>
+<span id="cb22-9"><a href="#cb22-9"></a><span class="dt">void</span> display_list(<span class="kw">struct</span> Proc_data* );</span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="dt">void</span> get_avg(<span class="kw">struct</span> Proc_data* ,<span class="dt">int</span> );</span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="dt">void</span> list_free(<span class="kw">struct</span> Proc_data* );</span>
+<span id="cb22-12"><a href="#cb22-12"></a></span>
+<span id="cb22-13"><a href="#cb22-13"></a></span>
+<span id="cb22-14"><a href="#cb22-14"></a><span class="co">// struct defined</span></span>
+<span id="cb22-15"><a href="#cb22-15"></a><span class="kw">struct</span> Proc_data {</span>
+<span id="cb22-16"><a href="#cb22-16"></a>    <span class="dt">int</span> pnum;       <span class="co">// process number</span></span>
+<span id="cb22-17"><a href="#cb22-17"></a>    <span class="dt">float</span> btime;    <span class="co">// burst time</span></span>
+<span id="cb22-18"><a href="#cb22-18"></a>    <span class="dt">float</span> wtime;    <span class="co">// waiting time</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a>    <span class="dt">float</span> tatime;   <span class="co">// turn-around time</span></span>
+<span id="cb22-20"><a href="#cb22-20"></a>    <span class="dt">int</span> priority;   <span class="co">// priority of process</span></span>
+<span id="cb22-21"><a href="#cb22-21"></a>    <span class="kw">struct</span> Proc_data *Next;</span>
+<span id="cb22-22"><a href="#cb22-22"></a>} *Start = NULL;</span>
+<span id="cb22-23"><a href="#cb22-23"></a></span>
+<span id="cb22-24"><a href="#cb22-24"></a></span>
+<span id="cb22-25"><a href="#cb22-25"></a><span class="co">// main function</span></span>
+<span id="cb22-26"><a href="#cb22-26"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb22-27"><a href="#cb22-27"></a>    <span class="dt">int</span> total_proc;</span>
+<span id="cb22-28"><a href="#cb22-28"></a>    printf(<span class="st">&quot;Enter the total number of process: &quot;</span>);</span>
+<span id="cb22-29"><a href="#cb22-29"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;total_proc);</span>
+<span id="cb22-30"><a href="#cb22-30"></a></span>
+<span id="cb22-31"><a href="#cb22-31"></a>    <span class="co">// list creation</span></span>
+<span id="cb22-32"><a href="#cb22-32"></a>    Start = create_list(Start, total_proc);</span>
+<span id="cb22-33"><a href="#cb22-33"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Out of create_list function.&quot;</span>);</span>
+<span id="cb22-34"><a href="#cb22-34"></a></span>
+<span id="cb22-35"><a href="#cb22-35"></a>    <span class="co">// sort according to priority(lowest num highest priority)</span></span>
+<span id="cb22-36"><a href="#cb22-36"></a>    Start = sort_priority(Start);</span>
+<span id="cb22-37"><a href="#cb22-37"></a></span>
+<span id="cb22-38"><a href="#cb22-38"></a>    <span class="co">// getting values in tatime and wtime</span></span>
+<span id="cb22-39"><a href="#cb22-39"></a>    Start = get_other_values(Start);</span>
+<span id="cb22-40"><a href="#cb22-40"></a></span>
+<span id="cb22-41"><a href="#cb22-41"></a>    <span class="co">// sort according to process number</span></span>
+<span id="cb22-42"><a href="#cb22-42"></a>    Start = sort_pnum(Start);</span>
+<span id="cb22-43"><a href="#cb22-43"></a></span>
+<span id="cb22-44"><a href="#cb22-44"></a>    <span class="co">// display list</span></span>
+<span id="cb22-45"><a href="#cb22-45"></a>    display_list(Start);</span>
+<span id="cb22-46"><a href="#cb22-46"></a></span>
+<span id="cb22-47"><a href="#cb22-47"></a>    <span class="co">// get average wtime and tatime</span></span>
+<span id="cb22-48"><a href="#cb22-48"></a>    get_avg(Start, total_proc);</span>
+<span id="cb22-49"><a href="#cb22-49"></a></span>
+<span id="cb22-50"><a href="#cb22-50"></a>    <span class="co">// free the list</span></span>
+<span id="cb22-51"><a href="#cb22-51"></a>    list_free(Start);</span>
+<span id="cb22-52"><a href="#cb22-52"></a></span>
+<span id="cb22-53"><a href="#cb22-53"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb22-54"><a href="#cb22-54"></a>}</span>
+<span id="cb22-55"><a href="#cb22-55"></a></span>
+<span id="cb22-56"><a href="#cb22-56"></a></span>
+<span id="cb22-57"><a href="#cb22-57"></a><span class="co">// creating list</span></span>
+<span id="cb22-58"><a href="#cb22-58"></a><span class="kw">struct</span> Proc_data* create_list(<span class="kw">struct</span> Proc_data* Start, <span class="dt">int</span> total_proc) {</span>
+<span id="cb22-59"><a href="#cb22-59"></a>    <span class="kw">struct</span> Proc_data *temp_node, *ptr_node;</span>
+<span id="cb22-60"><a href="#cb22-60"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Enter the details of processes: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb22-61"><a href="#cb22-61"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= total_proc; i++) {</span>
+<span id="cb22-62"><a href="#cb22-62"></a>        temp_node = malloc(<span class="kw">sizeof</span>(<span class="kw">struct</span> Proc_data));</span>
+<span id="cb22-63"><a href="#cb22-63"></a>        temp_node -&gt; pnum = i;</span>
+<span id="cb22-64"><a href="#cb22-64"></a>        temp_node -&gt; Next = NULL;</span>
+<span id="cb22-65"><a href="#cb22-65"></a>        printf(<span class="st">&quot;Enter burst time and priority for process %d: &quot;</span>, i);</span>
+<span id="cb22-66"><a href="#cb22-66"></a>        scanf(<span class="st">&quot;%f %d&quot;</span>, &amp;temp_node -&gt; btime, &amp;temp_node -&gt; priority);</span>
+<span id="cb22-67"><a href="#cb22-67"></a></span>
+<span id="cb22-68"><a href="#cb22-68"></a>        <span class="cf">if</span> (Start == NULL) {</span>
+<span id="cb22-69"><a href="#cb22-69"></a>            Start = temp_node;</span>
+<span id="cb22-70"><a href="#cb22-70"></a>        }</span>
+<span id="cb22-71"><a href="#cb22-71"></a>        <span class="cf">else</span> {</span>
+<span id="cb22-72"><a href="#cb22-72"></a>            ptr_node = Start;</span>
+<span id="cb22-73"><a href="#cb22-73"></a>            <span class="cf">while</span> (ptr_node -&gt; Next != NULL) {</span>
+<span id="cb22-74"><a href="#cb22-74"></a>                ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-75"><a href="#cb22-75"></a>            }</span>
+<span id="cb22-76"><a href="#cb22-76"></a>            ptr_node -&gt; Next = temp_node;</span>
+<span id="cb22-77"><a href="#cb22-77"></a>            temp_node -&gt; Next = NULL;</span>
+<span id="cb22-78"><a href="#cb22-78"></a>        }</span>
+<span id="cb22-79"><a href="#cb22-79"></a>    }</span>
+<span id="cb22-80"><a href="#cb22-80"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb22-81"><a href="#cb22-81"></a>}</span>
+<span id="cb22-82"><a href="#cb22-82"></a></span>
+<span id="cb22-83"><a href="#cb22-83"></a></span>
+<span id="cb22-84"><a href="#cb22-84"></a><span class="co">// function to display list</span></span>
+<span id="cb22-85"><a href="#cb22-85"></a><span class="dt">void</span> display_list(<span class="kw">struct</span> Proc_data* Start) {</span>
+<span id="cb22-86"><a href="#cb22-86"></a>    <span class="kw">struct</span> Proc_data *ptr_node = Start;</span>
+<span id="cb22-87"><a href="#cb22-87"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Displaying data for process: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb22-88"><a href="#cb22-88"></a>    printf(<span class="st">&quot;Pnum</span><span class="sc">\t</span><span class="st">Wtime</span><span class="sc">\t</span><span class="st">Tatime</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb22-89"><a href="#cb22-89"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-90"><a href="#cb22-90"></a>        printf(<span class="st">&quot;%d</span><span class="sc">\t</span><span class="st">%f</span><span class="sc">\t\t</span><span class="st">%f</span><span class="sc">\n</span><span class="st">&quot;</span>, ptr_node -&gt; pnum, ptr_node -&gt; wtime, ptr_node -&gt; tatime);</span>
+<span id="cb22-91"><a href="#cb22-91"></a>        ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-92"><a href="#cb22-92"></a>    }</span>
+<span id="cb22-93"><a href="#cb22-93"></a>}</span>
+<span id="cb22-94"><a href="#cb22-94"></a></span>
+<span id="cb22-95"><a href="#cb22-95"></a></span>
+<span id="cb22-96"><a href="#cb22-96"></a><span class="co">// function to sort according priority</span></span>
+<span id="cb22-97"><a href="#cb22-97"></a><span class="kw">struct</span> Proc_data* sort_priority(<span class="kw">struct</span> Proc_data* Start) {</span>
+<span id="cb22-98"><a href="#cb22-98"></a>    <span class="kw">struct</span> Proc_data *ptr_node, *pptr_node;</span>
+<span id="cb22-99"><a href="#cb22-99"></a>    ptr_node = Start;</span>
+<span id="cb22-100"><a href="#cb22-100"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-101"><a href="#cb22-101"></a>        pptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-102"><a href="#cb22-102"></a>        <span class="cf">while</span> (pptr_node != NULL) {</span>
+<span id="cb22-103"><a href="#cb22-103"></a>            <span class="cf">if</span> (ptr_node -&gt; priority &gt; pptr_node -&gt; priority) {</span>
+<span id="cb22-104"><a href="#cb22-104"></a>                ptr_node -&gt; priority += pptr_node -&gt; priority;</span>
+<span id="cb22-105"><a href="#cb22-105"></a>                pptr_node -&gt; priority = ptr_node -&gt; priority - pptr_node -&gt; priority;</span>
+<span id="cb22-106"><a href="#cb22-106"></a>                ptr_node -&gt; priority -= pptr_node -&gt; priority;</span>
+<span id="cb22-107"><a href="#cb22-107"></a></span>
+<span id="cb22-108"><a href="#cb22-108"></a>                ptr_node -&gt; btime += pptr_node -&gt; btime;</span>
+<span id="cb22-109"><a href="#cb22-109"></a>                pptr_node -&gt; btime = ptr_node -&gt; btime - pptr_node -&gt; btime;</span>
+<span id="cb22-110"><a href="#cb22-110"></a>                ptr_node -&gt; btime -= pptr_node -&gt; btime;</span>
+<span id="cb22-111"><a href="#cb22-111"></a></span>
+<span id="cb22-112"><a href="#cb22-112"></a>                ptr_node -&gt; pnum += pptr_node -&gt; pnum;</span>
+<span id="cb22-113"><a href="#cb22-113"></a>                pptr_node -&gt; pnum = ptr_node -&gt; pnum - pptr_node -&gt; pnum;</span>
+<span id="cb22-114"><a href="#cb22-114"></a>                ptr_node -&gt; pnum -= pptr_node -&gt; pnum;</span>
+<span id="cb22-115"><a href="#cb22-115"></a>            }</span>
+<span id="cb22-116"><a href="#cb22-116"></a>            pptr_node = pptr_node -&gt; Next;</span>
+<span id="cb22-117"><a href="#cb22-117"></a>        }</span>
+<span id="cb22-118"><a href="#cb22-118"></a>        ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-119"><a href="#cb22-119"></a>    }</span>
+<span id="cb22-120"><a href="#cb22-120"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb22-121"><a href="#cb22-121"></a>}</span>
+<span id="cb22-122"><a href="#cb22-122"></a></span>
+<span id="cb22-123"><a href="#cb22-123"></a></span>
+<span id="cb22-124"><a href="#cb22-124"></a><span class="co">// function to free list</span></span>
+<span id="cb22-125"><a href="#cb22-125"></a><span class="dt">void</span> list_free(<span class="kw">struct</span> Proc_data* Start) {</span>
+<span id="cb22-126"><a href="#cb22-126"></a>    <span class="kw">struct</span> Proc_data *ptr_node;</span>
+<span id="cb22-127"><a href="#cb22-127"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-128"><a href="#cb22-128"></a>        ptr_node = Start;</span>
+<span id="cb22-129"><a href="#cb22-129"></a>        Start = Start -&gt; Next;</span>
+<span id="cb22-130"><a href="#cb22-130"></a>        free(ptr_node);</span>
+<span id="cb22-131"><a href="#cb22-131"></a>    }</span>
+<span id="cb22-132"><a href="#cb22-132"></a>}</span>
+<span id="cb22-133"><a href="#cb22-133"></a></span>
+<span id="cb22-134"><a href="#cb22-134"></a></span>
+<span id="cb22-135"><a href="#cb22-135"></a><span class="co">// function to get waiting time and turn around time</span></span>
+<span id="cb22-136"><a href="#cb22-136"></a><span class="kw">struct</span> Proc_data* get_other_values(<span class="kw">struct</span> Proc_data* Start) {</span>
+<span id="cb22-137"><a href="#cb22-137"></a>    <span class="kw">struct</span> Proc_data *ptr_node, *pptr_node;</span>
+<span id="cb22-138"><a href="#cb22-138"></a>    ptr_node = Start;</span>
+<span id="cb22-139"><a href="#cb22-139"></a>    pptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-140"><a href="#cb22-140"></a>    ptr_node -&gt; tatime = ptr_node -&gt; btime;</span>
+<span id="cb22-141"><a href="#cb22-141"></a>    pptr_node -&gt; tatime = ptr_node -&gt; btime;</span>
+<span id="cb22-142"><a href="#cb22-142"></a>    ptr_node -&gt; wtime = ptr_node -&gt; tatime - ptr_node -&gt; btime;</span>
+<span id="cb22-143"><a href="#cb22-143"></a>    ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-144"><a href="#cb22-144"></a>    pptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-145"><a href="#cb22-145"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-146"><a href="#cb22-146"></a>        ptr_node -&gt; tatime += ptr_node -&gt; btime;</span>
+<span id="cb22-147"><a href="#cb22-147"></a>        pptr_node -&gt; tatime = ptr_node -&gt; tatime;</span>
+<span id="cb22-148"><a href="#cb22-148"></a>        ptr_node -&gt; wtime = ptr_node -&gt; tatime - ptr_node -&gt; btime;</span>
+<span id="cb22-149"><a href="#cb22-149"></a>        ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-150"><a href="#cb22-150"></a>        <span class="cf">if</span> (pptr_node -&gt; Next != NULL) {</span>
+<span id="cb22-151"><a href="#cb22-151"></a>            pptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-152"><a href="#cb22-152"></a>        }</span>
+<span id="cb22-153"><a href="#cb22-153"></a>    }</span>
+<span id="cb22-154"><a href="#cb22-154"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb22-155"><a href="#cb22-155"></a>}</span>
+<span id="cb22-156"><a href="#cb22-156"></a></span>
+<span id="cb22-157"><a href="#cb22-157"></a></span>
+<span id="cb22-158"><a href="#cb22-158"></a><span class="co">// function to sort list according to process num</span></span>
+<span id="cb22-159"><a href="#cb22-159"></a><span class="kw">struct</span> Proc_data* sort_pnum(<span class="kw">struct</span> Proc_data* Start) {</span>
+<span id="cb22-160"><a href="#cb22-160"></a>    <span class="kw">struct</span> Proc_data *ptr_node, *pptr_node;</span>
+<span id="cb22-161"><a href="#cb22-161"></a>    ptr_node = Start;</span>
+<span id="cb22-162"><a href="#cb22-162"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-163"><a href="#cb22-163"></a>        pptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-164"><a href="#cb22-164"></a>        <span class="cf">while</span> (pptr_node != NULL) {</span>
+<span id="cb22-165"><a href="#cb22-165"></a>            <span class="cf">if</span> (ptr_node -&gt; pnum &gt; pptr_node -&gt; pnum) {</span>
+<span id="cb22-166"><a href="#cb22-166"></a>                ptr_node -&gt; pnum += pptr_node -&gt; pnum;</span>
+<span id="cb22-167"><a href="#cb22-167"></a>                pptr_node -&gt; pnum = ptr_node -&gt; pnum - pptr_node -&gt; pnum;</span>
+<span id="cb22-168"><a href="#cb22-168"></a>                ptr_node -&gt; pnum -= pptr_node -&gt; pnum;</span>
+<span id="cb22-169"><a href="#cb22-169"></a></span>
+<span id="cb22-170"><a href="#cb22-170"></a>                ptr_node -&gt; priority += pptr_node -&gt; priority;</span>
+<span id="cb22-171"><a href="#cb22-171"></a>                pptr_node -&gt; priority = ptr_node -&gt; priority - pptr_node -&gt; priority;</span>
+<span id="cb22-172"><a href="#cb22-172"></a>                ptr_node -&gt; priority -= pptr_node -&gt; priority;</span>
+<span id="cb22-173"><a href="#cb22-173"></a></span>
+<span id="cb22-174"><a href="#cb22-174"></a>                ptr_node -&gt; tatime += pptr_node -&gt; tatime;</span>
+<span id="cb22-175"><a href="#cb22-175"></a>                pptr_node -&gt; tatime = ptr_node -&gt; tatime - pptr_node -&gt; tatime;</span>
+<span id="cb22-176"><a href="#cb22-176"></a>                ptr_node -&gt; tatime -= pptr_node -&gt; tatime;</span>
+<span id="cb22-177"><a href="#cb22-177"></a></span>
+<span id="cb22-178"><a href="#cb22-178"></a>                ptr_node -&gt; wtime += pptr_node -&gt; wtime;</span>
+<span id="cb22-179"><a href="#cb22-179"></a>                pptr_node -&gt; wtime = ptr_node -&gt; wtime - pptr_node -&gt; wtime;</span>
+<span id="cb22-180"><a href="#cb22-180"></a>                ptr_node -&gt; wtime -= pptr_node -&gt; wtime;</span>
+<span id="cb22-181"><a href="#cb22-181"></a></span>
+<span id="cb22-182"><a href="#cb22-182"></a>                ptr_node -&gt; btime += pptr_node -&gt; btime;</span>
+<span id="cb22-183"><a href="#cb22-183"></a>                pptr_node -&gt; btime = ptr_node -&gt; btime - pptr_node -&gt; btime;</span>
+<span id="cb22-184"><a href="#cb22-184"></a>                ptr_node -&gt; btime -= pptr_node -&gt; btime;</span>
+<span id="cb22-185"><a href="#cb22-185"></a>            }</span>
+<span id="cb22-186"><a href="#cb22-186"></a>            pptr_node = pptr_node -&gt; Next;</span>
+<span id="cb22-187"><a href="#cb22-187"></a>        }</span>
+<span id="cb22-188"><a href="#cb22-188"></a>        ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-189"><a href="#cb22-189"></a>    }</span>
+<span id="cb22-190"><a href="#cb22-190"></a>    <span class="cf">return</span> Start;</span>
+<span id="cb22-191"><a href="#cb22-191"></a>}</span>
+<span id="cb22-192"><a href="#cb22-192"></a></span>
+<span id="cb22-193"><a href="#cb22-193"></a></span>
+<span id="cb22-194"><a href="#cb22-194"></a><span class="co">// get average for tatime and wtime</span></span>
+<span id="cb22-195"><a href="#cb22-195"></a><span class="dt">void</span> get_avg(<span class="kw">struct</span> Proc_data* Start, <span class="dt">int</span> total_proc) {</span>
+<span id="cb22-196"><a href="#cb22-196"></a>    <span class="kw">struct</span> Proc_data* ptr_node;</span>
+<span id="cb22-197"><a href="#cb22-197"></a>    <span class="dt">float</span> avg_wt = <span class="dv">0</span>, avg_tat = <span class="dv">0</span>;</span>
+<span id="cb22-198"><a href="#cb22-198"></a>    ptr_node = Start;</span>
+<span id="cb22-199"><a href="#cb22-199"></a>    <span class="cf">while</span> (ptr_node != NULL) {</span>
+<span id="cb22-200"><a href="#cb22-200"></a>        avg_wt += ptr_node -&gt; wtime;</span>
+<span id="cb22-201"><a href="#cb22-201"></a>        avg_tat += ptr_node -&gt; tatime;</span>
+<span id="cb22-202"><a href="#cb22-202"></a>        ptr_node = ptr_node -&gt; Next;</span>
+<span id="cb22-203"><a href="#cb22-203"></a>    }</span>
+<span id="cb22-204"><a href="#cb22-204"></a>    printf(<span class="st">&quot;Avg. waiting time from given data is: %f&quot;</span>, avg_wt / total_proc);</span>
+<span id="cb22-205"><a href="#cb22-205"></a>    printf(<span class="st">&quot;Avg. turn around time from given data is: %f&quot;</span>, avg_tat / total_proc);</span>
+<span id="cb22-206"><a href="#cb22-206"></a>}</span></code></pre></div>
+<p>Here’s the resultant image of priority scheduling algorithm without arrival time</p>
+<figure>
+<img src="oslab_images/priority_without_atime.png" alt="" /><figcaption>priority_without_atime</figcaption>
+</figure>
+<h1 id="wap-to-implement-priority-scheduling-algorithm-with-arrival-time">WAP to implement priority scheduling algorithm with arrival time</h1>
+<div class="sourceCode" id="cb23"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb23-1"><a href="#cb23-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="pp">#include</span><span class="im">&lt;string.h&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="pp">#define max_proc 15</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="co">// struct defination</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="kw">struct</span> Proc_data {</span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="dt">int</span> pnum;  <span class="co">// process number</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>    <span class="co">// priority, lowest num -&gt; highest priority</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>    <span class="dt">int</span> priority;</span>
+<span id="cb23-11"><a href="#cb23-11"></a>    <span class="dt">float</span> btime;  <span class="co">// burst time</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>    <span class="dt">float</span> atime;  <span class="co">// arrival time</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>    <span class="dt">float</span> wtime;  <span class="co">// waiting time</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a>    <span class="dt">float</span> tatime;  <span class="co">// turn around time</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a>};</span>
+<span id="cb23-16"><a href="#cb23-16"></a></span>
+<span id="cb23-17"><a href="#cb23-17"></a><span class="co">// function predeclaration</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a><span class="dt">void</span> get_wtime_tatime(<span class="kw">struct</span> Proc_data *, <span class="dt">float</span> *, <span class="dt">int</span> );</span>
+<span id="cb23-19"><a href="#cb23-19"></a><span class="dt">void</span> get_avg_wtime_tatime(<span class="kw">struct</span> Proc_data *, <span class="dt">int</span> );</span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="dt">void</span> display_proc_table(<span class="kw">struct</span> Proc_data *, <span class="dt">int</span> );</span>
+<span id="cb23-21"><a href="#cb23-21"></a></span>
+<span id="cb23-22"><a href="#cb23-22"></a><span class="co">// main function</span></span>
+<span id="cb23-23"><a href="#cb23-23"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb23-24"><a href="#cb23-24"></a>    <span class="kw">struct</span> Proc_data process[max_proc];</span>
+<span id="cb23-25"><a href="#cb23-25"></a>    <span class="dt">float</span> temp[max_proc];</span>
+<span id="cb23-26"><a href="#cb23-26"></a>    <span class="dt">int</span> count;</span>
+<span id="cb23-27"><a href="#cb23-27"></a>    printf(<span class="st">&quot;Enter the count of the process to evaluate: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-28"><a href="#cb23-28"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;count);</span>
+<span id="cb23-29"><a href="#cb23-29"></a>    printf(<span class="st">&quot;Enter the process arrival time, burst time and priority: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-30"><a href="#cb23-30"></a>    printf(<span class="st">&quot;These data can be space seperated </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-31"><a href="#cb23-31"></a>    printf(<span class="st">&quot;Remember, using lowest number as highest priority</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-32"><a href="#cb23-32"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; count; i++) {</span>
+<span id="cb23-33"><a href="#cb23-33"></a>        process[i].pnum = i + <span class="dv">1</span>;</span>
+<span id="cb23-34"><a href="#cb23-34"></a>        printf(<span class="st">&quot;Enter data for process %d: &quot;</span>, i + <span class="dv">1</span>);</span>
+<span id="cb23-35"><a href="#cb23-35"></a>        scanf(<span class="st">&quot;%f %f %d&quot;</span>, &amp;process[i].atime, &amp;process[i].btime, &amp;process[i].priority);</span>
+<span id="cb23-36"><a href="#cb23-36"></a>        temp[i] = process[i].btime;</span>
+<span id="cb23-37"><a href="#cb23-37"></a>    }</span>
+<span id="cb23-38"><a href="#cb23-38"></a></span>
+<span id="cb23-39"><a href="#cb23-39"></a>    process[max_proc - <span class="dv">1</span>].btime = <span class="dv">9999</span>;</span>
+<span id="cb23-40"><a href="#cb23-40"></a>    process[max_proc - <span class="dv">1</span>].priority = <span class="dv">9999</span>;</span>
+<span id="cb23-41"><a href="#cb23-41"></a></span>
+<span id="cb23-42"><a href="#cb23-42"></a>    <span class="co">// get waiting time and turnaround time</span></span>
+<span id="cb23-43"><a href="#cb23-43"></a>    get_wtime_tatime(process, temp, count);</span>
+<span id="cb23-44"><a href="#cb23-44"></a></span>
+<span id="cb23-45"><a href="#cb23-45"></a>    <span class="co">// print table for got waiting time and arrival time</span></span>
+<span id="cb23-46"><a href="#cb23-46"></a>    display_proc_table(process, count);</span>
+<span id="cb23-47"><a href="#cb23-47"></a></span>
+<span id="cb23-48"><a href="#cb23-48"></a>    <span class="co">// get average time of waiting time and turnaround time</span></span>
+<span id="cb23-49"><a href="#cb23-49"></a>    get_avg_wtime_tatime(process, count);</span>
+<span id="cb23-50"><a href="#cb23-50"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb23-51"><a href="#cb23-51"></a>}</span>
+<span id="cb23-52"><a href="#cb23-52"></a></span>
+<span id="cb23-53"><a href="#cb23-53"></a><span class="co">// function to get the values of burst time and turn around time</span></span>
+<span id="cb23-54"><a href="#cb23-54"></a><span class="dt">void</span> get_wtime_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">float</span> *temp, <span class="dt">int</span> total) {</span>
+<span id="cb23-55"><a href="#cb23-55"></a>    <span class="dt">int</span> i = <span class="dv">0</span>, smallest = <span class="dv">0</span>, times = <span class="dv">0</span>, limit = <span class="dv">0</span>;</span>
+<span id="cb23-56"><a href="#cb23-56"></a>    <span class="dt">double</span> end, sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb23-57"><a href="#cb23-57"></a></span>
+<span id="cb23-58"><a href="#cb23-58"></a>    <span class="cf">for</span> (times = <span class="dv">0</span>; limit != total; times++) {</span>
+<span id="cb23-59"><a href="#cb23-59"></a>        smallest = max_proc - <span class="dv">1</span>;</span>
+<span id="cb23-60"><a href="#cb23-60"></a>        <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb23-61"><a href="#cb23-61"></a>            <span class="cf">if</span> (process[i].atime &lt;= times &amp;&amp; process[i].priority &lt; process[smallest].priority) {</span>
+<span id="cb23-62"><a href="#cb23-62"></a>                <span class="cf">if</span> (process[i].btime &gt; <span class="dv">0</span>) {</span>
+<span id="cb23-63"><a href="#cb23-63"></a>                    smallest = i;</span>
+<span id="cb23-64"><a href="#cb23-64"></a>                }</span>
+<span id="cb23-65"><a href="#cb23-65"></a>            }</span>
+<span id="cb23-66"><a href="#cb23-66"></a>        }</span>
+<span id="cb23-67"><a href="#cb23-67"></a>        process[smallest].btime--;</span>
+<span id="cb23-68"><a href="#cb23-68"></a>        <span class="cf">if</span> (process[smallest].btime == <span class="dv">0</span>) {</span>
+<span id="cb23-69"><a href="#cb23-69"></a>            limit++;</span>
+<span id="cb23-70"><a href="#cb23-70"></a>            end = times + <span class="dv">1</span>;</span>
+<span id="cb23-71"><a href="#cb23-71"></a></span>
+<span id="cb23-72"><a href="#cb23-72"></a>            sum_wtime = end - process[smallest].atime - temp[smallest];</span>
+<span id="cb23-73"><a href="#cb23-73"></a>            process[smallest].wtime = sum_wtime;</span>
+<span id="cb23-74"><a href="#cb23-74"></a></span>
+<span id="cb23-75"><a href="#cb23-75"></a>            sum_tatime = end - process[smallest].atime;</span>
+<span id="cb23-76"><a href="#cb23-76"></a>            process[smallest].tatime = sum_tatime;</span>
+<span id="cb23-77"><a href="#cb23-77"></a>        }</span>
+<span id="cb23-78"><a href="#cb23-78"></a>    }</span>
+<span id="cb23-79"><a href="#cb23-79"></a>}</span>
+<span id="cb23-80"><a href="#cb23-80"></a></span>
+<span id="cb23-81"><a href="#cb23-81"></a><span class="co">// function to get average waiting time and turn around time</span></span>
+<span id="cb23-82"><a href="#cb23-82"></a><span class="dt">void</span> get_avg_wtime_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb23-83"><a href="#cb23-83"></a>    <span class="dt">double</span> sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb23-84"><a href="#cb23-84"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb23-85"><a href="#cb23-85"></a>        sum_wtime = sum_wtime + process[i].wtime;</span>
+<span id="cb23-86"><a href="#cb23-86"></a>        sum_tatime = sum_tatime + process[i].tatime;</span>
+<span id="cb23-87"><a href="#cb23-87"></a>    }</span>
+<span id="cb23-88"><a href="#cb23-88"></a>    printf(<span class="st">&quot;Average waiting time of these entered processes is: %lf</span><span class="sc">\n</span><span class="st">&quot;</span>, sum_wtime / total);</span>
+<span id="cb23-89"><a href="#cb23-89"></a>    printf(<span class="st">&quot;Average turnaround time of these entered process is: %lf&quot;</span>, sum_tatime / total);</span>
+<span id="cb23-90"><a href="#cb23-90"></a>}</span>
+<span id="cb23-91"><a href="#cb23-91"></a></span>
+<span id="cb23-92"><a href="#cb23-92"></a><span class="co">// function to get process table with waiting time and arrival time</span></span>
+<span id="cb23-93"><a href="#cb23-93"></a><span class="dt">void</span> display_proc_table(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb23-94"><a href="#cb23-94"></a>    printf(<span class="st">&quot;Waiting time and turn around time for entered processes are: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-95"><a href="#cb23-95"></a>    printf(<span class="st">&quot;Process num</span><span class="sc">\t</span><span class="st">Waiting time</span><span class="sc">\t\t\t</span><span class="st">Turn around time</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb23-96"><a href="#cb23-96"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb23-97"><a href="#cb23-97"></a>        printf(<span class="st">&quot;p%d</span><span class="sc">\t\t</span><span class="st">%lf</span><span class="sc">\t\t\t</span><span class="st">%lf</span><span class="sc">\n</span><span class="st">&quot;</span>, process[i].pnum, process[i].wtime, process[i].tatime);</span>
+<span id="cb23-98"><a href="#cb23-98"></a>    }</span>
+<span id="cb23-99"><a href="#cb23-99"></a>    print(<span class="ch">&#39;\n&#39;</span>);</span>
+<span id="cb23-100"><a href="#cb23-100"></a>}</span></code></pre></div>
+<p>Here’s the resultant screenshot</p>
+<figure>
+<img src="oslab_images/priority_wit_atime.png" alt="" /><figcaption>priority_with_atime</figcaption>
+</figure>
+<h1 id="wap-to-implement-round-robin-scheduling-algorithm">WAP to implement Round Robin scheduling algorithm</h1>
+<div class="sourceCode" id="cb24"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb24-1"><a href="#cb24-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="pp">#include</span><span class="im">&lt;string.h&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="pp">#define max_proc 15</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="pp">#define max_ready_proc 100</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="co">// struct defination</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a><span class="kw">struct</span> Proc_data {</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    <span class="dt">int</span> pnum;  <span class="co">// process number</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>    <span class="dt">float</span> btime;  <span class="co">// burst time</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>    <span class="dt">float</span> atime;  <span class="co">// arrival time</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>    <span class="dt">float</span> wtime; <span class="co">// waiting time</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>    <span class="dt">float</span> tatime; <span class="co">// turnaround time</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a>};</span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a><span class="co">// predeclaration</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a><span class="dt">void</span> get_wait_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">float</span> *temp, <span class="dt">int</span> *ready_queue, <span class="dt">int</span> );</span>
+<span id="cb24-18"><a href="#cb24-18"></a><span class="dt">void</span> get_proc_table(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> );</span>
+<span id="cb24-19"><a href="#cb24-19"></a><span class="dt">void</span> get_avg_wait_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> );</span>
+<span id="cb24-20"><a href="#cb24-20"></a></span>
+<span id="cb24-21"><a href="#cb24-21"></a><span class="co">// main function</span></span>
+<span id="cb24-22"><a href="#cb24-22"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb24-23"><a href="#cb24-23"></a>    <span class="kw">struct</span> Proc_data process[max_proc];</span>
+<span id="cb24-24"><a href="#cb24-24"></a>    <span class="dt">int</span> ready_queue[max_ready_proc];</span>
+<span id="cb24-25"><a href="#cb24-25"></a>    <span class="dt">float</span> temp[max_proc];  <span class="co">// copy burst time of processes</span></span>
+<span id="cb24-26"><a href="#cb24-26"></a>    <span class="dt">int</span> count = <span class="dv">0</span>;</span>
+<span id="cb24-27"><a href="#cb24-27"></a>    printf (<span class="st">&quot;Enter the number of processes: &quot;</span>);</span>
+<span id="cb24-28"><a href="#cb24-28"></a>    scanf(<span class="st">&quot;%d&quot;</span>, &amp;count);</span>
+<span id="cb24-29"><a href="#cb24-29"></a>    printf(<span class="st">&quot;Enter the process arrival time, burst time: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-30"><a href="#cb24-30"></a>    printf(<span class="st">&quot;These data can be space seperated </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-31"><a href="#cb24-31"></a>    printf(<span class="st">&quot;Taking time quantum = 2</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-32"><a href="#cb24-32"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; count; i++) {</span>
+<span id="cb24-33"><a href="#cb24-33"></a>        process[i].pnum = i + <span class="dv">1</span>;</span>
+<span id="cb24-34"><a href="#cb24-34"></a>        scanf(<span class="st">&quot;%f %f&quot;</span>, &amp;process[i].atime, &amp;process[i].btime);</span>
+<span id="cb24-35"><a href="#cb24-35"></a>        temp[i] = process[i].btime;</span>
+<span id="cb24-36"><a href="#cb24-36"></a>    }</span>
+<span id="cb24-37"><a href="#cb24-37"></a></span>
+<span id="cb24-38"><a href="#cb24-38"></a>    printf(<span class="st">&quot;you entered: </span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-39"><a href="#cb24-39"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; count; i++) {</span>
+<span id="cb24-40"><a href="#cb24-40"></a>        printf(<span class="st">&quot;%f</span><span class="sc">\t</span><span class="st">%f</span><span class="sc">\n</span><span class="st">&quot;</span>, process[i].atime, process[i].btime);</span>
+<span id="cb24-41"><a href="#cb24-41"></a>    }</span>
+<span id="cb24-42"><a href="#cb24-42"></a></span>
+<span id="cb24-43"><a href="#cb24-43"></a>    <span class="co">// calling function to get waiting time and turn around time for all processes</span></span>
+<span id="cb24-44"><a href="#cb24-44"></a>    get_wait_tatime(process, temp, ready_queue, count);</span>
+<span id="cb24-45"><a href="#cb24-45"></a></span>
+<span id="cb24-46"><a href="#cb24-46"></a>    <span class="co">// display process table</span></span>
+<span id="cb24-47"><a href="#cb24-47"></a>    get_proc_table(process, count);</span>
+<span id="cb24-48"><a href="#cb24-48"></a></span>
+<span id="cb24-49"><a href="#cb24-49"></a>    <span class="co">// display avg waiting and turnaround time</span></span>
+<span id="cb24-50"><a href="#cb24-50"></a>    get_avg_wait_tatime(process, count);</span>
+<span id="cb24-51"><a href="#cb24-51"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb24-52"><a href="#cb24-52"></a>}</span>
+<span id="cb24-53"><a href="#cb24-53"></a></span>
+<span id="cb24-54"><a href="#cb24-54"></a><span class="co">// function to get waiting time and turn around time</span></span>
+<span id="cb24-55"><a href="#cb24-55"></a><span class="dt">void</span> get_wait_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">float</span> *temp, <span class="dt">int</span> *ready_queue, <span class="dt">int</span> total) {</span>
+<span id="cb24-56"><a href="#cb24-56"></a>    <span class="dt">int</span> j = <span class="dv">0</span>, times = <span class="dv">0</span>, limit = <span class="dv">0</span>;</span>
+<span id="cb24-57"><a href="#cb24-57"></a>    <span class="dt">double</span> end = <span class="dv">0</span>, sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb24-58"><a href="#cb24-58"></a>    <span class="dt">int</span> ready_count = <span class="dv">0</span>, run_count = <span class="dv">0</span>, temp_index = <span class="dv">0</span>;</span>
+<span id="cb24-59"><a href="#cb24-59"></a></span>
+<span id="cb24-60"><a href="#cb24-60"></a>    <span class="cf">for</span> (times = <span class="dv">0</span>; limit != total; times++) {</span>
+<span id="cb24-61"><a href="#cb24-61"></a>        <span class="cf">if</span> (times == <span class="dv">0</span>) {</span>
+<span id="cb24-62"><a href="#cb24-62"></a>            <span class="cf">for</span> (j = <span class="dv">0</span>; j &lt; total; j++) {</span>
+<span id="cb24-63"><a href="#cb24-63"></a>                <span class="cf">if</span> (process[j].atime == times) {</span>
+<span id="cb24-64"><a href="#cb24-64"></a>                    ready_queue[ready_count] = j;</span>
+<span id="cb24-65"><a href="#cb24-65"></a>                    ready_count++;</span>
+<span id="cb24-66"><a href="#cb24-66"></a>                }</span>
+<span id="cb24-67"><a href="#cb24-67"></a>            }</span>
+<span id="cb24-68"><a href="#cb24-68"></a>        }</span>
+<span id="cb24-69"><a href="#cb24-69"></a>        <span class="cf">if</span> (ready_count != <span class="dv">0</span>) {</span>
+<span id="cb24-70"><a href="#cb24-70"></a>            <span class="cf">for</span> (j = <span class="dv">0</span>; j &lt; total; j++) {</span>
+<span id="cb24-71"><a href="#cb24-71"></a>                <span class="cf">if</span> (process[j].atime == times + <span class="dv">1</span>) {</span>
+<span id="cb24-72"><a href="#cb24-72"></a>                    ready_queue[ready_count] = j;</span>
+<span id="cb24-73"><a href="#cb24-73"></a>                    ready_count++;</span>
+<span id="cb24-74"><a href="#cb24-74"></a>                }</span>
+<span id="cb24-75"><a href="#cb24-75"></a>            }</span>
+<span id="cb24-76"><a href="#cb24-76"></a>            temp_index = ready_queue[run_count];</span>
+<span id="cb24-77"><a href="#cb24-77"></a>            <span class="cf">if</span> (process[temp_index].btime &gt; <span class="dv">0</span>) {</span>
+<span id="cb24-78"><a href="#cb24-78"></a>                process[temp_index].btime--;</span>
+<span id="cb24-79"><a href="#cb24-79"></a>                <span class="cf">if</span> (process[temp_index].btime != <span class="dv">0</span> &amp;&amp; times % <span class="dv">2</span> == <span class="dv">0</span>) {</span>
+<span id="cb24-80"><a href="#cb24-80"></a>                    run_count--;</span>
+<span id="cb24-81"><a href="#cb24-81"></a>                }</span>
+<span id="cb24-82"><a href="#cb24-82"></a>                <span class="cf">if</span> (process[temp_index].btime != <span class="dv">0</span>) {</span>
+<span id="cb24-83"><a href="#cb24-83"></a>                    <span class="cf">if</span> (times % <span class="dv">2</span> == <span class="dv">1</span>) {</span>
+<span id="cb24-84"><a href="#cb24-84"></a>                        ready_queue[ready_count] = temp_index;</span>
+<span id="cb24-85"><a href="#cb24-85"></a>                        ready_count++;</span>
+<span id="cb24-86"><a href="#cb24-86"></a>                    }</span>
+<span id="cb24-87"><a href="#cb24-87"></a>                }</span>
+<span id="cb24-88"><a href="#cb24-88"></a>            }</span>
+<span id="cb24-89"><a href="#cb24-89"></a>            <span class="cf">if</span> (process[temp_index].btime == <span class="dv">0</span>) {</span>
+<span id="cb24-90"><a href="#cb24-90"></a>                limit++;</span>
+<span id="cb24-91"><a href="#cb24-91"></a>                end = times + <span class="dv">1</span>;</span>
+<span id="cb24-92"><a href="#cb24-92"></a></span>
+<span id="cb24-93"><a href="#cb24-93"></a>                sum_wtime = end - process[temp_index].atime - temp[temp_index];</span>
+<span id="cb24-94"><a href="#cb24-94"></a>                process[temp_index].wtime = sum_wtime;</span>
+<span id="cb24-95"><a href="#cb24-95"></a></span>
+<span id="cb24-96"><a href="#cb24-96"></a>                sum_tatime = end - process[temp_index].atime;</span>
+<span id="cb24-97"><a href="#cb24-97"></a>                process[temp_index].tatime = sum_tatime;</span>
+<span id="cb24-98"><a href="#cb24-98"></a>            }</span>
+<span id="cb24-99"><a href="#cb24-99"></a>            run_count++;</span>
+<span id="cb24-100"><a href="#cb24-100"></a>        }</span>
+<span id="cb24-101"><a href="#cb24-101"></a>    }</span>
+<span id="cb24-102"><a href="#cb24-102"></a>}</span>
+<span id="cb24-103"><a href="#cb24-103"></a></span>
+<span id="cb24-104"><a href="#cb24-104"></a><span class="co">// function to get process table</span></span>
+<span id="cb24-105"><a href="#cb24-105"></a><span class="dt">void</span> get_proc_table(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb24-106"><a href="#cb24-106"></a>    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Printing process table with waiting time and turn around time</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-107"><a href="#cb24-107"></a>    printf(<span class="st">&quot;Process num</span><span class="sc">\t</span><span class="st">Waiting time</span><span class="sc">\t\t\t</span><span class="st">Turn around time</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb24-108"><a href="#cb24-108"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb24-109"><a href="#cb24-109"></a>        printf(<span class="st">&quot;p%d</span><span class="sc">\t\t</span><span class="st">%lf</span><span class="sc">\t\t\t</span><span class="st">%lf</span><span class="sc">\n</span><span class="st">&quot;</span>, process[i].pnum, process[i].wtime, process[i].tatime);</span>
+<span id="cb24-110"><a href="#cb24-110"></a>    }</span>
+<span id="cb24-111"><a href="#cb24-111"></a>}</span>
+<span id="cb24-112"><a href="#cb24-112"></a></span>
+<span id="cb24-113"><a href="#cb24-113"></a><span class="co">// function to get average waiting and turn around time</span></span>
+<span id="cb24-114"><a href="#cb24-114"></a><span class="dt">void</span> get_avg_wait_tatime(<span class="kw">struct</span> Proc_data *process, <span class="dt">int</span> total) {</span>
+<span id="cb24-115"><a href="#cb24-115"></a>    <span class="dt">double</span> sum_wtime = <span class="dv">0</span>, sum_tatime = <span class="dv">0</span>;</span>
+<span id="cb24-116"><a href="#cb24-116"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; total; i++) {</span>
+<span id="cb24-117"><a href="#cb24-117"></a>        sum_wtime = sum_wtime + process[i].wtime;</span>
+<span id="cb24-118"><a href="#cb24-118"></a>        sum_tatime = sum_tatime + process[i].tatime;</span>
+<span id="cb24-119"><a href="#cb24-119"></a>    }</span>
+<span id="cb24-120"><a href="#cb24-120"></a>    printf(<span class="st">&quot;Average waiting time of these entered processes is: %lf</span><span class="sc">\n</span><span class="st">&quot;</span>, sum_wtime / total);</span>
+<span id="cb24-121"><a href="#cb24-121"></a>    printf(<span class="st">&quot;Average turnaround time of these entered process is: %lf&quot;</span>, sum_tatime / total);</span>
+<span id="cb24-122"><a href="#cb24-122"></a>}</span></code></pre></div>
+<p>Here’s the resultant screenshot:</p>
+<figure>
+<img src="oslab_images/round_robin.png" alt="" /><figcaption>round_robin</figcaption>
+</figure>
+<h1 id="wap-to-implement-producer-consumer-problem">WAP to implement producer consumer problem</h1>
+<div class="sourceCode" id="cb25"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb25-1"><a href="#cb25-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="pp">#include</span><span class="im">&lt;pthread.h&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="pp">#include</span><span class="im">&lt;semaphore.h&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="pp">#define max_items 5 </span><span class="co">// maximum number of items a produecer can produce or a consumer can cosume</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="pp">#define buf_size 5 </span><span class="co">// size of buffer</span></span>
+<span id="cb25-8"><a href="#cb25-8"></a></span>
+<span id="cb25-9"><a href="#cb25-9"></a>sem_t empty;</span>
+<span id="cb25-10"><a href="#cb25-10"></a>sem_t full;</span>
+<span id="cb25-11"><a href="#cb25-11"></a><span class="dt">int</span> get_in = <span class="dv">0</span>, get_out = <span class="dv">0</span>;</span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="dt">int</span> buffer[buf_size];</span>
+<span id="cb25-13"><a href="#cb25-13"></a>pthread_mutex_t mutex;</span>
+<span id="cb25-14"><a href="#cb25-14"></a></span>
+<span id="cb25-15"><a href="#cb25-15"></a><span class="co">// function for producer part</span></span>
+<span id="cb25-16"><a href="#cb25-16"></a><span class="dt">void</span> *producer(<span class="dt">void</span> *pnum) {</span>
+<span id="cb25-17"><a href="#cb25-17"></a>    <span class="dt">int</span> item;</span>
+<span id="cb25-18"><a href="#cb25-18"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; max_items; i++) {</span>
+<span id="cb25-19"><a href="#cb25-19"></a>        item = rand();  <span class="co">// produce a random item</span></span>
+<span id="cb25-20"><a href="#cb25-20"></a>        sem_wait(&amp;empty);</span>
+<span id="cb25-21"><a href="#cb25-21"></a>        pthread_mutex_lock(&amp;mutex);</span>
+<span id="cb25-22"><a href="#cb25-22"></a>        buffer[get_in] = item;</span>
+<span id="cb25-23"><a href="#cb25-23"></a>        printf(<span class="st">&quot;Producer %d: Inserted item %d at %d</span><span class="sc">\n</span><span class="st">&quot;</span>, *((<span class="dt">int</span> *)pnum), buffer[get_in], get_in);</span>
+<span id="cb25-24"><a href="#cb25-24"></a>        get_in = (get_in + <span class="dv">1</span>) % buf_size;</span>
+<span id="cb25-25"><a href="#cb25-25"></a>        pthread_mutex_unlock(&amp;mutex);</span>
+<span id="cb25-26"><a href="#cb25-26"></a>        sem_post(&amp;full);</span>
+<span id="cb25-27"><a href="#cb25-27"></a>    }</span>
+<span id="cb25-28"><a href="#cb25-28"></a>}</span>
+<span id="cb25-29"><a href="#cb25-29"></a></span>
+<span id="cb25-30"><a href="#cb25-30"></a><span class="co">// function for consumer part</span></span>
+<span id="cb25-31"><a href="#cb25-31"></a><span class="dt">void</span> *consumer(<span class="dt">void</span> *cnum) {</span>
+<span id="cb25-32"><a href="#cb25-32"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; max_items; i++) {</span>
+<span id="cb25-33"><a href="#cb25-33"></a>        sem_wait(&amp;full);</span>
+<span id="cb25-34"><a href="#cb25-34"></a>        pthread_mutex_lock(&amp;mutex);</span>
+<span id="cb25-35"><a href="#cb25-35"></a>        <span class="dt">int</span> item = buffer[get_out];</span>
+<span id="cb25-36"><a href="#cb25-36"></a>        printf(<span class="st">&quot;Consumer %d: Removed item %d from %d</span><span class="sc">\n</span><span class="st">&quot;</span>, *((<span class="dt">int</span> *)cnum), item, get_out);</span>
+<span id="cb25-37"><a href="#cb25-37"></a>        get_out = (get_out + <span class="dv">1</span>) % buf_size;</span>
+<span id="cb25-38"><a href="#cb25-38"></a>        pthread_mutex_unlock(&amp;mutex);</span>
+<span id="cb25-39"><a href="#cb25-39"></a>        sem_post(&amp;empty);</span>
+<span id="cb25-40"><a href="#cb25-40"></a>    }</span>
+<span id="cb25-41"><a href="#cb25-41"></a>}</span>
+<span id="cb25-42"><a href="#cb25-42"></a></span>
+<span id="cb25-43"><a href="#cb25-43"></a><span class="co">// main function</span></span>
+<span id="cb25-44"><a href="#cb25-44"></a><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>* argv[]) {</span>
+<span id="cb25-45"><a href="#cb25-45"></a>    pthread_t pro[<span class="dv">5</span>], con[<span class="dv">5</span>];</span>
+<span id="cb25-46"><a href="#cb25-46"></a>    pthread_mutex_init(&amp;mutex, NULL);</span>
+<span id="cb25-47"><a href="#cb25-47"></a>    sem_init(&amp;empty, <span class="dv">0</span>, buf_size);</span>
+<span id="cb25-48"><a href="#cb25-48"></a>    sem_init(&amp;full, <span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb25-49"><a href="#cb25-49"></a></span>
+<span id="cb25-50"><a href="#cb25-50"></a>    <span class="co">// used for numbering of producer and consumer</span></span>
+<span id="cb25-51"><a href="#cb25-51"></a>    <span class="dt">int</span> arr[<span class="dv">5</span>] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</span>
+<span id="cb25-52"><a href="#cb25-52"></a></span>
+<span id="cb25-53"><a href="#cb25-53"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {</span>
+<span id="cb25-54"><a href="#cb25-54"></a>        pthread_create(&amp;pro[i], NULL, (<span class="dt">void</span> *)producer, (<span class="dt">void</span> *)&amp;arr[i]);</span>
+<span id="cb25-55"><a href="#cb25-55"></a>    }</span>
+<span id="cb25-56"><a href="#cb25-56"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {</span>
+<span id="cb25-57"><a href="#cb25-57"></a>        pthread_create(&amp;con[i], NULL, (<span class="dt">void</span> *)consumer, (<span class="dt">void</span> *)&amp;arr[i]);</span>
+<span id="cb25-58"><a href="#cb25-58"></a>    }</span>
+<span id="cb25-59"><a href="#cb25-59"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {</span>
+<span id="cb25-60"><a href="#cb25-60"></a>        pthread_join(pro[i], NULL);</span>
+<span id="cb25-61"><a href="#cb25-61"></a>    }</span>
+<span id="cb25-62"><a href="#cb25-62"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {</span>
+<span id="cb25-63"><a href="#cb25-63"></a>        pthread_join(con[i], NULL);</span>
+<span id="cb25-64"><a href="#cb25-64"></a>    }</span>
+<span id="cb25-65"><a href="#cb25-65"></a></span>
+<span id="cb25-66"><a href="#cb25-66"></a>    pthread_mutex_destroy(&amp;mutex);</span>
+<span id="cb25-67"><a href="#cb25-67"></a>    sem_destroy(&amp;empty);</span>
+<span id="cb25-68"><a href="#cb25-68"></a>    sem_destroy(&amp;full);</span>
+<span id="cb25-69"><a href="#cb25-69"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb25-70"><a href="#cb25-70"></a>}</span></code></pre></div>
+<p>Here’s the resultant screenshot:</p>
+<figure>
+<img src="oslab_images/producer_consumer.png" alt="" /><figcaption>producer_consumer</figcaption>
+</figure>
+<p><strong>Thank You!</strong></p>
