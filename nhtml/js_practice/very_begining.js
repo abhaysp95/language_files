@@ -95,7 +95,7 @@ function nextInLine(arr, item) {
 }
 var testArr = [1, 2, 3, 4, 5];
 
-console.log("Before: ", JSON.stringify(testArr));
+console.log("Before: ", JSON.stringify(testArr)); // this will convert testArr in string
 console.log(nextInLine(testArr, 6));
 console.log("After: ", JSON.stringify(testArr));
 console.log("type is: " + typeof JSON.stringify(testArr));
@@ -192,6 +192,7 @@ console.log(golfScore(4, 5));
 function caseInSwitch(val) {
 	var answer="";
 	switch(val) {
+		// use "a" as case "a": for string
 		case 1:
 			answer = "alpha"; break;
 		case 2:
@@ -209,3 +210,71 @@ function caseInSwitch(val) {
 	return answer;
 }
 console.log(caseInSwitch(1));
+
+function sequentialSizes(val) {
+	var answer = "";
+	switch(val) {
+		case 1:
+		case 2:
+		case 3:
+			answer = "Low";
+		case 4:
+		case 5:
+		case 6:
+			answer = "Medium";
+		case 7:
+		case 8:
+		case 9:
+			answer = "High";
+	}
+	return answer;
+}
+console.log(sequentialSizes(5));
+
+
+// return boolean from function
+function isLess(a, b) {
+	return a < b
+}
+console.log(isLess(10, 5));
+
+
+// return before
+function abTest(a, b) {
+	if (a < 0 || b < 0) {
+		// return null;
+		return undefined;
+	}
+	console.log(Math.round(Math.pow(b, 2)));
+	return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+console.log(abTest(2, -3));
+
+
+// counting cards
+var count = 0;
+function cc(card) {
+	switch (card) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			// this will increment value of card from 1 to inbetween 6
+			count++;
+			break;
+		case 10:
+		case 'J':
+		case 'Q':
+		case 'K':
+		case 'A':
+			count--;
+			break;
+	}
+	var holdbet = 'Hold';
+	(count > 0?holdbet='bet':null);
+	return count + ' ' + holdbet;
+}
+cc(2); cc('K'); cc(10); cc('K'); cc('A');
+console.log(cc(4));
