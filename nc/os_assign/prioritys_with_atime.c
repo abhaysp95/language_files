@@ -104,5 +104,5 @@ void display_proc_table(struct Proc_data *process, int total) {
 	for (int i = 0; i < total; i++) {
 		printf("p%d\t\t%lf\t\t\t%lf\n", process[i].pnum, process[i].wtime, process[i].tatime);
 	}
-	print('\n');
+	printf('\n');
 }
