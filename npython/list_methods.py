@@ -24,6 +24,9 @@ print(lst)
 lst.sort(reverse=True)
 print(lst)
 
+if 1 > 2:
+    print('True')
+
 print("Length of list is: ", len(lst))
 # v=".join[str(num) for num in n]
 # print(v)
