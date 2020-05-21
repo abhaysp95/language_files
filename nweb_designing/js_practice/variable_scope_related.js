@@ -78,3 +78,65 @@ Object.freeze(MATH_CONSTANTS);
 }
 const G = freezeObj();
 console.log(G);
+
+
+// anonymous function
+/*var magic = functiion() {
+	return new Date();
+};*/
+// can be written as
+
+var magic = () => {
+	return new Date();
+}
+// if returning only one value we can write as
+const MAGIC = () => new Date();
+console.log(MAGIC);
+
+// another example
+var myConcat = function(arr1, arr2) {
+	return arr1.concat(arr2);
+}
+const myConcat2 = (arr1, arr2) => arr1.concat(arr2);
+console.log(myConcat2([12, 43], [34, 902, 932]));
+
+
+// wrapped curly brackets in parentheses to avoid it being considered of wrapping function body brackets
+const myFunction = () => ({value: 'test'})
+console.log(myFunction());
+
+
+const DOUBLE = x => {x * 2};
+console.log(DOUBLE(3));
+
+
+// high oreder arrow functions
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+// if there's only one argument for arrow function, no need to use () around it
+const SQUARELIST = arr => {
+	// method name is Number
+	const SQAUREDINT = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+	return SQAUREDINT;
+};
+// console.log(SQUARELIST(realNumberArray));
+const SQUAREDINTEGERS = SQUARELIST(realNumberArray);
+console.log(SQUAREDINTEGERS);
+
+
+//high order arrow function
+const INCREMENT = (() => {
+	return function increment(number, value = 1) {
+		return number + value;
+	};
+})();
+//const INCREMENT = function() {
+	//return function increment(number, value = 1) {
+		//return number + value;
+	//}
+//}();
+console.log(INCREMENT(5, 2));
+console.log(INCREMENT(5));
+
+
+// rest operator with function parameter
