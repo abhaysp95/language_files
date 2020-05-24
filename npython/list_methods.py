@@ -9,7 +9,7 @@ Github: https://github.com/CoolAbhayS
 Last Edited: 2020-02-17
 """
 
-n = input("Enter number: ") # taking number in string
+n = input("Enter number: ")  # taking number in string
 lst = list(n)
 print("Max element: ", max(lst))
 print("Min element: ", min(lst))

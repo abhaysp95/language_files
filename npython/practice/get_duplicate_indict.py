@@ -35,8 +35,10 @@ blst = [x.split() for i in range(len(blst)) for x in blst[i]]
 print('second time blst is \n', blst)
 
 # making in int
+# for i in range(len(blst)):
+# blst[i][1] = int(blst[i][1])
 for i in range(len(blst)):
-    blst[i][1] = int(blst[i][1])
+    map(int, blst[i][1])
 print('third time blst is \n', blst)
 # >>>
 
