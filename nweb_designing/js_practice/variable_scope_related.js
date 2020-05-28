@@ -459,4 +459,4 @@ console.log(thermos.temperature);
 
 
 // import export
-//export const capitalizedString = str => str.toUpperCase();
+export const capitalizedString = str => str.toUpperCase();
