@@ -3,7 +3,7 @@
 """
 Author: Abhay Shanker Pathak
 Date: 2020-03-20
-Description: Check whether a substring foun in string
+Description: Check whether a substring found in string
 Email: abhaysp9955@gmail.com
 Github: https://github.com/CoolAbhayS
 Last Edited: 2020-03-20

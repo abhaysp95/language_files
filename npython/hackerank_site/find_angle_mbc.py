@@ -9,6 +9,8 @@
 get the angle MBC(downside angle of arm matching the mid point of hypotaneous)
 """
 
+# -*- coding: utf-8 -*-
+# (default in python3)
 import math
 
 
