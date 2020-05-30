@@ -10,7 +10,7 @@ Last Edited: 2020-03-26
 """
 
 # <<<
-count = int(input())
+count = int(input('Enter the count: '))
 a = input()
 alst = a.split()
 b = input()
