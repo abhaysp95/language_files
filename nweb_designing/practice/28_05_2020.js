@@ -1,4 +1,4 @@
-result = (fnum, snum) => {
+let result = (fnum, snum) => {
 	return fnum + snum
 }
 
