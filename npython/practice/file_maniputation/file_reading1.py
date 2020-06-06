@@ -41,6 +41,10 @@ def main():
         # you can also use just strip
         newlist3.append(line.rstrip('\n'))
     print(newlist3)
+
+    newlist4 = []
+    for line in fread:
+        newlist4.append(line.strip())
     file.close()
 
 

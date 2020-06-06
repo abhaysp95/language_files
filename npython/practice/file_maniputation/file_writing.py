@@ -14,12 +14,12 @@ def main():
     '''in main function'''
     file = open('file.txt', 'w')
 
-    file.write('''
-This is from file write operation
+    file.write('''This is from file write operation
 ''')
 
     file.write('I\'m learing how to write a script\n'
                'This is how we do it')
+    file.close()
 
 
 if __name__ == "__main__":
