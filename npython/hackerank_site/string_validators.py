@@ -12,16 +12,49 @@ program to valid strings for differentmethods
 
 def string_validation(string):
     '''function to string validation'''
-    print(string.isalnum())
-    print(string.isalpha())
-    print(string.isdigit())
-    print(string.islower())
-    print(string.isupper())
+    ifalnum = False
+    ifalpha = False
+    ifdigit = False
+    iflower = False
+    ifupper = False
+
+    for char in string:
+        if char.isalnum():
+            ifalnum = True
+        if char.isalpha():
+            ifalpha = True
+        if char.isdigit():
+            ifdigit = True
+        if char.islower():
+            iflower = True
+        if char.isupper():
+            ifupper = True
+
+    print(ifalnum)
+    print(ifalpha)
+    print(ifdigit)
+    print(iflower)
+    print(ifupper)
+
+
+def string_validation2(string):
+    '''function for string validation(trying any)'''
+    ifalnum = any(c.isalnum() for c in string)
+    ifalpha = any(c.isalpha() for c in string)
+    ifdigit = any(c.isdigit() for c in string)
+    iflower = any(c.islower() for c in string)
+    ifupper = any(c.isupper() for c in string)
+    print(ifalnum)
+    print(ifalpha)
+    print(ifdigit)
+    print(iflower)
+    print(ifupper)
 
 
 def main():
     '''inside main function'''
-    string_validation(input())
+    # string_validation2(input())
+    string_validation2('qA2')
 
 
 if __name__ == "__main__":

@@ -15,6 +15,6 @@ lst = [int(x) for x in input().split()]     # taking input and spliting it
 find = int(input('Enter element to get count of: '))
 c = 0
 for n in range(num):
-    if find is lst[n]:  # or if find == lst[n]:
+    if find == lst[n]:  # or if find == lst[n]:
         c += 1
 print(c)
