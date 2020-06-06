@@ -32,17 +32,31 @@ class Dog(Pets):
 
 
 class Fish(Pets):
-    pass
+    def __init__(self, name, age, size):
+        super().__init__(name, age)
+        self.size = size
+
+    def give_size(self):
+        print('My size is ', self.size)
 
 
 p = Pets("Tim", 19)
-print(p.show())
+# print(p.show())
+p.show()
+p.speak()
 c = Cat("Bill", 23, "green")
-print(c.show())
-print(c.speak())
+# print(c.show())
+c.show()
+# print(c.speak())
+c.speak()
 d = Dog('Butch', 8)
-print(d.show())
-print(d.speak())
+# print(d.show())
+# print(d.speak())
+d.show()
+d.speak()
 
-f = Fish("bubble", 10)
-print(f.speak())
+f = Fish("bubble", 10, 'big')
+# print(f.speak())
+f.show()
+f.speak()
+f.give_size()
