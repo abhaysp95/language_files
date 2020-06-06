@@ -127,8 +127,29 @@ let num_array = fizzBuzz2();
 
 // let's try functional approach
 // function to give numbers in certain range
-let range = (low) => (high) => {
+let range = (low) => (high) =>
 	low > high
 		? null
 		: pair (low) (range (low + 1) (high))
-}
+
+range (1) (100)
+list2array(range (1) (100))
+
+// changes using map
+let map = (func) => (xs) =>
+	xs === null
+		? null
+		: map (func (head (xs))) (map (func) (tail(xs)));
+list2array(map ((x) => x * x) (range (1) (10)))
+
+// let's solve fizzBuzz
+let fizzBuzz = (num) =>
+	// if not divisble by 3 or 5, it'll give empty string wcich is considered
+	// false in js
+	((num % 3 === 0 ? 'Fizz' : '') + (num % 5 === 0 ? 'Buzz' : '')) || num
+
+fizzBuzz(1)  // => 1
+fizzBuzz(3)  // => 'Fizz'
+fizzBuzz(5)  // => 'Buzz'
+fizzBuzz(15)  // => 'FizzBuzz'
+list2array(map (fizzBuzz) (range (1) (100)))
