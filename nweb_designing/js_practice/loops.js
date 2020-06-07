@@ -60,3 +60,19 @@ console.log(Object.values(equine));
 for (const v of Object.values(equine)) {
 	console.log(v);
 }
+
+
+// range of num
+let arr = [];
+function rangeOfNum(fnum, snum) {
+	if (fnum > snum) {
+		return;
+	}
+	else {
+		arr.push(fnum);
+		rangeOfNum(fnum + 1, snum);
+	}
+	return arr;
+}
+// more short approach
+let rangeOfNum2 = fnum => snum => fnum > snum ? arr : arr.push(fnum) && rangeOfNum2 (fnum + 1) (snum);

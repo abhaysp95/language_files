@@ -64,6 +64,16 @@ var myObj = {
 };
 console.log(myObj.bed);
 
+let testobj = {
+	gift: "pony",
+	pet: "kitten",
+	bed: "sleigh"
+}
+
+let myObj2 = (obj) => (checkProp) =>
+	obj.hasOwnProperty(checkProp) ? checkProp : 'Not Found';
+myObj2 (testobj) ('gift')
+
 // complex manipulation
 var myMusic = [
 	{
@@ -130,7 +140,7 @@ var collection = {
 // keep a copy of collection
 var collectionCopy = JSON.parse(JSON.stringify(collection));
 
-function updateCollection(id, prop, value) {
+function updateCollection2(id, prop, value) {
 	if (value === "") {
 		// delete collection.id.prop;  this isn't working
 		delete collection[id][prop];
@@ -144,6 +154,14 @@ function updateCollection(id, prop, value) {
 	}
 	return collection;
 }
+// funciton approach
+updateCollection = id => prop => value =>
+	value === ''
+		? delete collection[id][prop]
+		: (prop === 'tracks'
+			? ((collection[id][prop] = collection[id][prop] || [])
+				&& collection[id][prop].push(value))
+			: collection[id][prop] = value)
 console.log(updateCollection(5439, "artist", "ABBA"));
 console.log(updateCollection(1245, "tracks", "test"))
 console.log(collectionCopy);
@@ -195,6 +213,11 @@ var product = multiplyAll([[1, 2], [10], [3, 4], [5, 6, 7]]);
 console.log(product);
 
 
+// sum of the elements of array with recursion
+let sumAll = arr => num => num <= 0 ? 0 : (sumAll (arr) (num - 1) + arr[num - 1])
+sumAll ([4, 5, 9, 2]) (3) // => 18
+
+
 // do-while loop
 var myArray = [];
 var i = 10;
@@ -233,7 +256,14 @@ var contacts = [
 	},
 ]
 
-function lookUpProfile(name, prop) {
+let lookUpProfile = ((name, prop) => {
+	for (let i = 0;  i < contacts.length; i++) {
+		return contacts[i]['firstname'] === name
+			? contacts[i][prop] || 'No Such Property' : null;  // can't do it
+	}
+})
+
+function lookUpProfile2(name, prop) {
 	for (var i = 0; i < contacts.length; i++) {
 		if (contacts[i].firstname === name) {
 			return contacts[i][prop] || "No Such Property";
@@ -242,7 +272,7 @@ function lookUpProfile(name, prop) {
 	return "No Such Contacts";
 }
 
-function lookUpProfile2(name, prop) {
+function lookUpProfile3(name, prop) {
 	var i = 0;
 	while (i < contacts.length) {
 		if (name === contacts[i].firstname) {
