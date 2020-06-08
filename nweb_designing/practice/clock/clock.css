@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;  /* doesn't makes element look bigger when specified padding */
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #091921;
+}
+
+.clock {
+	width: 350px;
+	height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(clock.png);
+	background-size: cover;
+	border: 4px solid #091921;
+	border-radius: 50%;
+	box-shadow: 0 -15px 15px rgba(200, 200, 200, 0.08),
+				inset 0 -15px 15px rgba(0, 0, 0, 0.3),
+				0 15px 15px rgba(200, 200, 200, 0.08),
+				inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.clock:before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 10;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+	position: absolute;
+}
+
+.clock .hour, .hr {
+	width: 150px;
+	height: 150px;
+}
+.clock .min, .mn {
+	width: 200px;
+	height: 200px;
+}
+.clock .sec, .sc {
+	width: 230px;
+	height: 230px;
+}
+
+.hr, .mn, .sc {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	position: absolute;
+	border-radius: 50%;
+}
+
+.hr:before {
+	content: '';
+	width: 8px;
+	height: 75px;
+	background: #ff105e;
+	border-radius: 10px 10px 0 0;
+	z-index: 2;
+}
+
+.mn:before {
+	content: '';
+	width: 4px;
+	height: 100px;
+	background: #ccc;
+	z-index: 3;
+	border-radius: 10px 10px 0 0;
+}
+
+.sc:before {
+	content: '';
+	width: 2px;
+	height: 150px;
+	z-index: 4;
+	background: cyan;
+	border-radius: 10px 10px 0 0;
+}
