@@ -22,3 +22,4 @@
 /nhaskell/haskellpackages
 /.mypy_cache/
 /npython/.mypy_cache/
+/npython/practice/foo_project/__pycache__/
