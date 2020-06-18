@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Tasks 0</title>
+		<style>
+			body {
+				color: #c6c8c6;
+				background-color: #1d1f21;
+			}
+			h1 {
+				font-family: Consolas;
+				font-size: 15vmin;
+				margin-left: 5vmin;
+			}
+			.form-elements {
+				position: absolute;
+				top: 18%;
+				padding-bottom: 5%;
+			}
+			#txt {
+				position: relative;
+				left: 10%;
+				width: 48vmin;
+				height: 8vh;
+				font-size: 5vmin;
+			}
+			#btn-1 {
+				position: absolute;
+				top: 10vmin;
+				left: 10%;
+				height: 5vh;
+				width: 15vmin;
+				font-size: 2.8vmin;
+			}
+			ul {
+				position: relative;
+				top: 8vmin;
+				left: 6vmin;
+				font-size: 3.5vmin;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelector('#new-task').onsubmit = () => {
+
+					// create a new li element
+
+					if (document.querySelector("#txt").value !== "") {
+						const li = document.createElement('li');
+						li.innerHTML = document.querySelector('#txt').value;
+						document.querySelector('#tasklist').append(li);
+						document.querySelector('#txt').value = '';
+					}
+
+					// stops form from submitting details to other website
+					return false;
+				};
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Tasks</h1>
+		<div class="tasks">
+			<ul id="tasklist">
+			</ul>
+		</div>
+		<div class="form-elements">
+			<form id="new-task" action="tasks0.html">
+				<input id='txt' type='text' autofocus autocomplete='off' placeholder='New Task'>
+				<input id='btn-1' type='Submit' value='New Task'>
+			</form>
+		</div>
+	</body>
+</html>

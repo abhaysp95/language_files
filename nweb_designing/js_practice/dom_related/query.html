@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Query</title>
+		<script type="text/javascript">
+			function hello() {
+				// querySelector is just like we select in css and will give
+				// only the first instance of that tag
+				document.querySelector('h1').innerHTML = 'GoodBye!';
+				str = document.querySelector('h1');
+				// document.write(typeof(str));
+				document.querySelector('p').innerHTML = str;
+				// innerHTML is content within the selected tag
+				document.querySelector('p > b').innerHTML = document.querySelector('b').innerHTML + 10;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Welcome!</h1>
+		<h1>See if this changes</h1>
+		<p></p>
+		<b>1</b>
+		<p><b></b></p>
+		<input type='button' value='press' onclick='hello()'/>
+	</body>
+</html>

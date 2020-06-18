@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Divisible by 7</title>
+	</head>
+	<body>
+		<form action="first_odd_divisible_by_7.html" method="">
+			<input type='text' id='txt' placeholder="Enter value of N"/>
+			<input type='submit' value='Submit' onclick="get_odd()"/>
+		</form>
+		<p id='ans'></p>
+		<script type="text/javascript">
+			var ans_is = document.getElementById('ans');
+			var num = document.getElementById('txt').value;
+			function get_odd() {
+				ans_is.innerHTML = num;
+			}
+		</script>
+	</body>
+</html>

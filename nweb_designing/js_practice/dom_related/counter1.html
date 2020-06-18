@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Counter 1</title>
+		<script type="text/javascript">
+			let increment = () => {
+				val = parseInt(document.querySelector('h1').innerHTML);
+				document.querySelector('h1').innerHTML = ++val;
+
+				val % 10 === 0
+					? alert(`Counter is at ${val}!`)
+					: null
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>0</h1>
+			<button onclick='increment()'>Press Here</button>
+		</div>
+	</body>
+</html>

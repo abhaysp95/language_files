@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Get Sum Of Array</title>
+		<script type="text/javascript">
+			// to fix the problem written in comment below, can also use
+			// DOMContentLoaded which fires when DOM content is loaded(basically
+			// for html, js not for css, images etc.)
+			document.addEventListener('DOMContentLoaded', () => {
+				let arr = [];
+				let size = prompt('Enter array size: ');
+				for (let i = 0; i < size; i++) {
+					arr[i] = parseInt(prompt('Enter element number ' + (i + 1) + ': '));
+				}
+				document.querySelector('#init').innerHTML = arr;
+				let sum = 0;
+				for (let i = 0; i < arr.length; i++) {
+					sum += arr[i];
+				}
+				document.querySelector('#final').innerHTML = sum;
+				// document.querySelector('#test').innerHTML = type(document.querySelector('#final').innerHTML);
+				document.querySelector('#test').innerHTML = document.querySelector('#final');
+				// type is not defined at HTMLDocument
+			});
+				// giving error of can't set property to NULL, so DOM wasn't ready
+				// to use, so moved down to body tag
+				// console.log(sum);
+		</script>
+	</head>
+	<body>
+		<h1>Sum Of The Elements Of Array</h1>
+		<b>Got Array:</b> <p id='init'></p>
+		<b>Result:</b> <p id='final'></p>
+		<p id="test"></p>
+	</body>
+</html>

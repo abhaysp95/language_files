@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Counter 0</title>
+		<script type="text/javascript">
+			function increment() {
+				val = document.querySelector('#counter').innerHTML;
+				val = parseInt(val);
+				// document.querySelector('#init').innerHTML = val + typeof(val) + parseInt(val);
+				// document.querySelector('#final').innerHTML = typeof(val) + val + ++val;
+				document.querySelector('#counter').innerHTML = ++val;
+				// document.querySelector('#curr').innerHTML = document.querySelector('#counter').innerHTML;
+			}
+			// let counter = 0;
+			// function increment() {
+			// 	document.querySelector('#counter').innerHTML = ++counter;
+			// }
+		</script>
+	</head>
+	<body>
+		<h2 id="counter">0</h2>
+		<button onclick='increment()'>Press</button>
+	</body>
+</html>

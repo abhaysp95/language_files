@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Tasks New</title>
+	</head>
+		<style>
+			body {
+				color: #c6c8c6;
+				background-color: #1d1f21;
+			}
+			h1 {
+				font-family: Consolas;
+				font-size: 15vmin;
+				margin-left: 5vmin;
+			}
+			.form-elements {
+				position: absolute;
+				top: 18%;
+				padding-bottom: 5%;
+			}
+			#txt {
+				position: relative;
+				left: 10%;
+				width: 48vmin;
+				height: 8vh;
+				font-size: 5vmin;
+			}
+			#btn-2 {
+				position: absolute;
+				top: 10vmin;
+				left: 10%;
+				height: 5vh;
+				width: 20vmin;
+				font-size: 2.8vmin;
+			}
+			#btn-1 {
+				position: absolute;
+				top: 10vmin;
+				left: 68%;
+				height: 5vh;
+				width: 25vmin;
+				font-size: 2.8vmin;
+			}
+			.tasks {
+				position: relative;
+				top: 10vmin;
+			}
+			.heading {
+				position: relative;
+				left: 6vmin;
+				font-size: 4vmin;
+				font-family: Hermit;
+			}
+			.part {
+				position: relative;
+				left: 40px;
+				font-size: 3vmin;
+				font-family: Consolas;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelector('#btn-1').onclick = () => {
+					if (document.querySelector('ul') === null) {
+						let ul = document.createElement("ul");
+						ul.setAttribute("class", "heading");
+						document.querySelector(".tasks").append(ul);
+					}
+					// const li = document.createElement("li", {"class":"part"});
+					let li = document.createElement("li");
+					li.setAttribute("class", "part");
+					// li.class = 'part';
+					li.innerHTML = document.querySelector('#txt').value;
+
+					document.querySelector('.heading').append(li);
+					document.querySelector('#txt').value = '';
+
+					return false;
+				};
+
+				document.querySelector('#btn-2').onclick = () => {
+					let ul = document.createElement("ul");
+					ul.setAttribute("class", "heading");
+
+					document.querySelector(".tasks").append(ul);
+					return false;
+				}
+			});
+		</script>
+	<body>
+		<h1>Tasks</h1>
+		<div class="tasks">
+		</div>
+		<div class="form-elements">
+			<form action="taks_new.html" method="">
+				<input type="text" id="txt" autofocus autocomplete='off' placeholder='task'/>
+				<!--<input type="submit" id="btn-1" value='New Heading'/>-->
+				<!--<input type='submit' id="btn-2" value='New Task'/>-->
+				<button id="btn-1">New Heading</button>
+				<button id="btn-2">New Task</button>
+			</form>
+		</div>
+	</body>
+</html>

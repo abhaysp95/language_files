@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Colors 3</title>
+		<style>
+body {
+	background-color: #1d1f21;
+	color: #c6c8c6;
+}
+.head {
+	width: 50%;
+	height: 30%;
+	position: relative;
+}
+h1 {
+	font-size: 30vmin;
+	font-family: Operator Mono;
+	padding-left: 20px;
+}
+.selection {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	top: 40px;
+	left: 20px;
+}
+select {
+	width: 20vw;
+	height: 10vh;
+	font-size: 1em;
+	background-color: dodgerblue;
+	border: none;
+	box-shadow: 0px 5px 10px rgba(150, 150, 150, 0.3),
+				0px -5px 10px rgba(150, 150, 150, 0.3);
+	-webkit-appearance: button;
+	appearance: button;
+	outline: none;
+}
+
+#sel option[value='noval'] {
+	display: none;
+}
+option:hover {
+	border-color: #ffffff;
+	background-color: blue;
+}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', () => {
+				// document.querySelectorAll('option').forEach(option => {
+				// 	option.onclick = () => {
+				// 		document.querySelector('h1').style.color = option.value;
+				// 	};
+				// });
+				document.querySelector('#sel').onchange = function() {
+					// () => {} will not work with 'this' in here, reason to find out
+					document.querySelector('h1').style.color = this.value;
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="head">
+				<h1>Hello!</h1>
+			</div>
+			<div class="selection">
+				<select id="sel" class="sel-box" name="color">
+					<option id="nocolor" value="noval">Select Color:</option>
+					<option id="silver" value="silver">silver</option>
+					<option id="red" value="red">red</option>
+					<option id="green" value="green">green</option>
+					<option id="blue" value="blue">blue</option>
+				</select>
+			</div>
+		</div>
+	</body>
+</html>

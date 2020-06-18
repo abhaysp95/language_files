@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Counter 2</title>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelector('button').onclick = increment;
+			})
+
+			let increment = () => {
+				val = parseInt(document.querySelector('h1').innerHTML);
+				document.querySelector('h1').innerHTML = ++val;
+
+				val % 10 === 0
+					? alert(`Counter is at ${val}!`)
+					: null;
+			};
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>0</h1>
+			<button>Press</button>
+		</div>
+	</body>
+</html>

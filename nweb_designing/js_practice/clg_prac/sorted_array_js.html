@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Sorted Array</title>
+		<script type="text/javascript">
+			let array = [];
+			let size = prompt('Enter Array Size: ');
+			// let size = 3;
+			for (let i = 0; i < size; i++) {
+				array[i] = prompt('Enter element: ' + (i + 1));
+			}
+			document.write(array + '<br>');
+			// let array = [7, 9, 2];
+			for (i = 0; i < array.length; i++) {
+				for (j = i + 1; j < array.length; j++) {
+					if (array[i] > array[j]) {
+						array[i] = array[i] + array[j];
+						array[j] = array[i] - array[j];
+						array[i] = array[i] - array[j];
+					}
+				}
+			}
+			document.write(array);
+			// let array = [4, 3, 9, 5, 7, 2];
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

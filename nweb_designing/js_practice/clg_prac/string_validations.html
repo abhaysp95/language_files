@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>String Validation</title>
+	</head>
+	<body>
+		<form action="string_validations.html" method="">
+			First Name: <input type='text' id='fn' placeholder="Enter first name"/>
+			Last Name: <input type='text' id='ln' placeholder="Enter last name"/>
+			Password: <input type='text' id='ps' placeholder="Enter password"/>
+			Mobile: <input type='text' id='mb' placeholder="Enter mobile number"/>
+			DOB: <input type='text' id='dob' placeholder="Enter date of birth"/>
+			E-Mail: <input type='text' id='em' placeholder="Enter your email"/>
+		</form>
+		<script type="text/javascript">
+			let fn = document.getElementById('fn');
+			let ln = document.getElementById('ln');
+			let ps = document.getElementById('ps');
+			let mb = document.getElementById('mb');
+			let dob = document.getElementById('dob');
+			let em = document.getElementById('em');
+			if (fn.length == '' || ln.length == '' || ps.length == '' || mb.length == '' || dob.length == '' || em.length == '') {
+				alert('No field could be empty')
+			}
+			if (fn.length < 20 || ln.length < 20) {
+				alert('length can\'t be less than 20');
+			}
+			if (ps.length < 8) {
+				alert('password is weak');
+			}
+			if (isNaN(mb) == true) {
+				alert('Mobile Number is not valid')
+			}
+			i = em.toString().indexOf('@');
+			j = em.toString().lastIndexOf('.');
+			if (i == -1 || j == -1 || i - j < 1) {
+				alert('Not valid email');
+			}
+			cn = new Date();
+			if (cn == dob) {
+				alert ('DOB can\'t be current date');
+			}
+		</script>
+	</body>
+</html>

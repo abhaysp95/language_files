@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Colors 0</title>
+		<style>
+			body {
+				background-color: #1d1f21;
+				color: #c6c8c6;
+			}
+			#head {
+				font-size: 7em;
+				font-family: Monaco;
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.buttons {
+				height: 300px;
+				width: 450px;
+				position: relative;
+				margin-top: -50px;
+			}
+			button {
+				width: 20%;
+				height: 12%;
+				margin-left: 20px;
+				margin-right: 20px;
+				font-size: 1.25em;
+				font-family: Monaco;
+				font-style: Oblique;
+			}
+			button:hover {
+				opacity: 0.75;
+				cursor: grab;
+			}
+			#red {
+				background-color: #cc6666;
+				border-color: #aa6666;
+			}
+			#red:hover {
+				outline: 1px solid rgba(248, 128, 113, 0.88);
+				outline-offset: 2px;
+			}
+			#blue {
+				background-color: #81a2be;
+				border-color: #61a2be;
+			}
+			#blue:hover {
+				outline: 1px solid rgba(113, 127, 248, 0.88);
+				outline-offset: 2px;
+			}
+			#green {
+				background-color: #b5bd68;
+				border-color: #a0bd68;
+			}
+			#green:hover {
+				outline: 1px solid rgba(153, 248, 113, 0.88);
+				outline-offset: 2px;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelectorAll('.color-change').forEach(button => {
+					// querySelectorAll will return an array containing every
+					// attribute of tag for 'color-change' class with data-color
+					// if given;
+					// you can put any name in place of button
+					button.onclick = () => {
+						document.querySelector('#head').style.color = button.dataset.color;
+					};
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="txt">
+			<h1 id="head">Hello!</h1>
+			<div class="buttons">
+				<button class="color-change" id="red" data-color="#cc6666">Red</button>
+				<button class="color-change" id="green" data-color="#b5bd68">Green</button>
+				<button class="color-change" id="blue" data-color="#81a2be">Blue</button>
+				<!-- additional attribute data-color, you can give
+				any name after 'data-' for related information-->
+			</div>
+		</div>
+	</body>
+</html>
