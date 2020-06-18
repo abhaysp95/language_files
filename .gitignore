@@ -23,3 +23,7 @@
 /.mypy_cache/
 /npython/.mypy_cache/
 /npython/practice/foo_project/__pycache__/
+/npackettracer/PT.conf
+/npackettracer/logs/
+/npackettracer/nets
+/npackettracer/uuid
