@@ -2,7 +2,7 @@
 
 x, y, z = 0, 1, 0
 
-if x == 1 or y == 1 or z == 0:
+if x == 1 or y == 1 or z == 1:
     print('true')
 
 if 1 in (x, y, z):
