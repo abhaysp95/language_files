@@ -24,6 +24,9 @@ def first_method():
 
 
 def second_method(fname):
+    if fname == "na na boo boo":
+        print("NA NA BOO BOO TO YOU - You have been punk'd!")
+        exit()
     file_is = open(fname, 'r')
     count = 0
     sum = 0.0
@@ -34,10 +37,27 @@ def second_method(fname):
             count = count + 1
     print('Completed')
     print('Average is %.9f' % (sum / count))
+    file_is.close()
+
+
+def third_method(fname):
+    if fname == "na na boo boo":
+        print("NA NA BOO BOO TO YOU - You have been punk'd!")
+        exit()
+    file_is = open(fname, 'r')
+    num_lst = []
+
+    for line in file_is:
+        if line.startswith('X-DSPAM-Confidence:'):
+            num_lst.append(float(line.strip().split()[-1]))
+    print('Completed')
+    print('Average is %9f' % (sum(num_lst) / float(len(num_lst))))
+    file_is.close()
 
 
 def main():
-    second_method(input('Enter the file name: '))
+    third_method(input('Enter the file name: '))
+
 
 if __name__ == "__main__":
     main()
