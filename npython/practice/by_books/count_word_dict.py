@@ -14,6 +14,8 @@ def get_word_count(fname):
         for word in words:
             if not word.isalpha():
                 continue
+            # since keys will have no values so they will be starting with 1
+            # due to the +1 in get() method
             dict_word[word] = dict_word.get(word, 0) + 1
     return dict_word
 
