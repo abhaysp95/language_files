@@ -12,8 +12,11 @@ struct singlelinkedlist {
 struct singlelinkedlist *create_node(int );
 struct singlelinkedlist *insert_beg(struct singlelinkedlist *);
 struct singlelinkedlist *is_root_null(struct singlelinkedlist *);
+void insert_before(struct singlelinkedlist *, int );
+void insert_after(struct singlelinkedlist *, int );
 struct singlelinkedlist *insert_before_or_after(struct singlelinkedlist *, int );
 void display(struct singlelinkedlist *);
+void free_node();
 
 typedef struct singlelinkedlist node;
 
@@ -61,49 +64,55 @@ node *is_root_null(node *root) {
 	return root;
 }
 
-// fix this function
+void insert_before(node *new_node, int data) {
+	node *ptr, *pptr;
+	ptr = root;
+	pptr = root;
+	while (ptr -> data != data) {
+		pptr = ptr;
+		ptr = ptr -> next;
+	}
+	// in case if there's only one node
+	if (ptr == pptr) {
+		ptr = new_node;
+		new_node -> next = pptr;
+	}
+	else {
+		pptr -> next = new_node;
+		new_node -> next = ptr;
+	}
+}
+
+void insert_after(node *new_node, int data) {
+	node *ptr, *pptr;
+	ptr = root;
+	pptr = ptr -> next;
+	while (ptr -> data != data && pptr != NULL) {
+		ptr = ptr -> next;
+		pptr = ptr -> next;
+	}
+	ptr -> next = new_node;
+	new_node -> next = pptr;
+}
+
 node *insert_before_or_after(node *root, int condition) {
 	int value = 0, data;
-	node *new_node, *ptr, *pptr;
+	node *new_node;
 	if (root == NULL) {
 		root = is_root_null(root);
 		return root;
 	}
-	printf("Enter value of which to put before:\n");
+	printf("Enter data to match:\n");
 	scanf("%d", &data);
 	printf("Enter the value to put in linked list:\n");
 	scanf("%d", &value);
 	new_node = create_node(value);
 	if (condition == 0) {
-		printf("cond: %d\n", condition);
-		ptr = root;
-		pptr = root;
-		printf("before while\n");
-		while (ptr -> data != data) {
-			printf("ptr->data: %d", ptr -> data);
-			pptr = ptr;
-			ptr = ptr -> next;
-		}
-		// in case if there's only one node
-		if (ptr == pptr) {
-			printf("inside nested if\n");
-			ptr = new_node;
-			new_node -> next = pptr;
-		}
-		else {
-			pptr -> next = new_node;
-			new_node -> next = ptr;
-		}
+		// it isn't necessary to pass root, it'll not get lost
+		insert_before(new_node, data);
 	}
 	if (condition == 1) {
-		ptr = root;
-		pptr = ptr -> next;
-		while (ptr -> data != data || pptr != NULL) {
-			ptr = ptr -> next;
-			pptr = ptr -> next;
-		}
-		ptr -> next = new_node;
-		new_node -> next = pptr;
+		insert_after(new_node, data);
 	}
 	return root;
 }
@@ -120,6 +129,16 @@ void display(node *root) {
 		printf("%d\n", ptr -> data);
 		ptr = ptr -> next;
 	}
+}
+
+void free_node() {
+	node *ptr = root;
+	while (ptr -> next != NULL) {
+		root = ptr -> next;
+		free(ptr);
+		ptr = root;
+	}
+	free(root);
 }
 
 // main function
