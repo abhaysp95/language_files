@@ -22,6 +22,7 @@ def getLettersInDict(file_name):
             continue
         line = line.rstrip()
         line = line.translate(line.maketrans('', '', string.punctuation))
+        line = line.translate(line.maketrans('', '', string.digits))
         line = line.lower()
 
         words = line.split()
