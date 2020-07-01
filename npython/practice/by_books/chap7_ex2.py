@@ -15,6 +15,8 @@ def first_method():
         if line.startswith('X-DSPAM-Confidence:'):
             # num = [float(x) for x in line.split() if x.isdigit()]
             # numbers.append(','.join(re.findall(r'[\d\.\d]+', line)))
+            # print(re.findall(r'[\d\.\d]+', line))
+            # print(''.join(re.findall(r'[\d\.\d]+', line)))
             sum = sum + float(''.join(re.findall(r'[\d\.\d]+', line)))
             count = count + 1
     print('Completed!')
@@ -56,7 +58,8 @@ def third_method(fname):
 
 
 def main():
-    third_method(input('Enter the file name: '))
+    #third_method(input('Enter the file name: '))
+    first_method()
 
 
 if __name__ == "__main__":

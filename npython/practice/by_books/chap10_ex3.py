@@ -37,6 +37,7 @@ def getLettersInDict(file_name):
 def sortAndPrint(got_dict, lcount):
     letter_list = list(got_dict.items())
     letter_list.sort()  # sorted alphabetically
+    lcount = sum(letter_list[1])
 
     for letter, count in letter_list:
         # {[arg_index]:[width][.precision][type]}
