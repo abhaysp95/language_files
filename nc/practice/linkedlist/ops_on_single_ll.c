@@ -15,6 +15,8 @@ struct singlelinkedlist *is_root_null(struct singlelinkedlist *);
 void insert_before(struct singlelinkedlist *, int );
 void insert_after(struct singlelinkedlist *, int );
 struct singlelinkedlist *insert_before_or_after(struct singlelinkedlist *, int );
+struct singlelinkedlist *delete_node_of_value(struct singlelinkedlist *);
+struct singlelinkedlist *delete_node_before_value(struct singlelinkedlist *);
 void display(struct singlelinkedlist *);
 void free_node();
 
@@ -117,6 +119,52 @@ node *insert_before_or_after(node *root, int condition) {
 	return root;
 }
 
+node *delete_node_of_value(node *root) {
+	int value = 0;
+	node *ptr, *pptr;
+	if (root == NULL) {
+		printf("There is nothing to delete, linkedlist is empty.");
+		return root;
+	}
+	printf("Enter the value of which node to delete:\n");
+	scanf("%d", &value);
+	ptr = root;
+	pptr = ptr;
+	while (ptr -> data != value && ptr != NULL) {
+		pptr = ptr;
+		ptr = ptr -> next;
+	}
+	pptr -> next = ptr -> next;
+	free(ptr);
+	root = NULL;
+	return root;
+}
+
+node *delete_node_before_value(node *root) {
+	int value;
+	node *ptr, *pptr;
+	if (root == NULL) {
+		printf("There's nothing to delete, try inserting some value first\n");
+		return root;
+	}
+	printf("Enter the value to delete its previous node:\n");
+	scanf("%d", &value);
+	ptr = root;
+	pptr = ptr;
+	// fix segmentation fault here, it's leakage
+	while (ptr -> next -> data != value && ptr -> next != NULL) {
+		pptr = ptr;
+		ptr = ptr -> next;
+	}
+	if (ptr == pptr) {
+		printf("There is no value to delete before entered value\n");
+		return root;
+	}
+	pptr -> next = ptr -> next;
+	free(ptr);
+	return root;
+}
+
 // function to display linked list
 void display(node *root) {
 	node *ptr;
@@ -150,8 +198,10 @@ int main(int argc, char* argv[]) {
 		printf("1. Create or Insert in begining\n");
 		printf("2. Insert a node before the given value\n");
 		printf("3. Insert a node after the given value\n");
-		printf("4. Display linked list\n");
-		printf("5. Exit\n");
+		printf("4. Delete a node for the given value\n");
+		printf("5. Delete a node before the given value\n");
+		printf("6. Display linked list\n");
+		printf("7. Exit\n");
 		scanf("%d", &op_choice);
 		switch (op_choice) {
 			case 1:
@@ -164,9 +214,15 @@ int main(int argc, char* argv[]) {
 				root = insert_before_or_after(root, 1);
 				continue;
 			case 4:
-				display(root);
+				root = delete_node_of_value(root);
 				continue;
 			case 5:
+				root = delete_node_before_value(root);
+				continue;
+			case 6:
+				display(root);
+				continue;
+			case 7:
 				printf("Exiting Now!\n");
 				return 0;
 			default:
