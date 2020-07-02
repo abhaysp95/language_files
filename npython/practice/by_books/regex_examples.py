@@ -33,6 +33,7 @@ def fourthExample(fhand):
             continue
         print(''.join(email))
 
+
 def fifthExample(fhand):
     '''get email'''
     for line in fhand:
@@ -71,7 +72,7 @@ def eighthExample(fhand):
     for line in fhand:
         # if re.search(r'Details:\s.*&rev=[0-9]+$', line):
         # print(line)
-        rev_number = re.findall(r'Details:\s(.*&rev=[0-9]+$)', line)
+        rev_number = re.findall(r'Details:\s(.*&rev=[0-9]+?$)', line)
         if len(rev_number) == 0:
             continue
         print(''.join(rev_number))
@@ -82,11 +83,25 @@ def eighthExample(fhand):
 def ninthExample(url_list):
     '''extract revision numbers from the urls with help of regex'''
     for url in url_list:
-        flnum = re.findall(r'\S+rev=([0-9]+)$', url)
+        flnum = re.findall(r'\S+rev=([0-9]+?)$', url)
         print(''.join(flnum))
 
 
+def tenthExample(fhand):
+    '''get hour of mail sent'''
+    for line in fhand:
+        hour = re.findall(r'^From\s.*\s([0-9]+):.*', line)
+        if len(hour) == 0:
+            continue
+        print(''.join(hour))
+
+
+# some other regex expressions are
+# *?, +?, ?, ??, [aeiou], [a-z0-9], [^A-za-z], \b, \B, \d, \D = [^0-9]
+
+
 def main():
+    '''inside main function'''
     try:
         file_handler = open('mbox-short.txt', 'r')
     except:
@@ -135,6 +150,11 @@ def main():
 
     print('Ninth example')
     ninthExample(url_list)
+    print()
+    file_handler.seek(0, 0)
+
+    print('Tenth example')
+    tenthExample(file_handler)
     print()
     file_handler.seek(0, 0)
 
