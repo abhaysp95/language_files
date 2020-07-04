@@ -1,0 +1,33 @@
+root:x:0:0::/root:/bin/bash
+nobody:x:65534:65534:Nobody:/:/usr/bin/nologin
+dbus:x:81:81:System Message Bus:/:/usr/bin/nologin
+bin:x:1:1::/:/usr/bin/nologin
+daemon:x:2:2::/:/usr/bin/nologin
+mail:x:8:12::/var/spool/mail:/usr/bin/nologin
+ftp:x:14:11::/srv/ftp:/usr/bin/nologin
+http:x:33:33::/srv/http:/usr/bin/nologin
+systemd-journal-remote:x:982:982:systemd Journal Remote:/:/usr/bin/nologin
+systemd-network:x:981:981:systemd Network Management:/:/usr/bin/nologin
+systemd-resolve:x:980:980:systemd Resolver:/:/usr/bin/nologin
+systemd-timesync:x:979:979:systemd Time Synchronization:/:/usr/bin/nologin
+systemd-coredump:x:978:978:systemd Core Dumper:/:/usr/bin/nologin
+uuidd:x:68:68::/:/usr/bin/nologin
+dnsmasq:x:977:977:dnsmasq daemon:/:/usr/bin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/usr/bin/nologin
+gdm:x:120:120:Gnome Display Manager:/var/lib/gdm:/sbin/nologin
+avahi:x:976:976:Avahi mDNS/DNS-SD daemon:/:/usr/bin/nologin
+colord:x:975:975:Color management daemon:/var/lib/colord:/usr/bin/nologin
+cups:x:209:209:cups helper user:/:/usr/bin/nologin
+flatpak:x:974:974:Flatpak system helper:/:/usr/bin/nologin
+geoclue:x:973:973:Geoinformation service:/var/lib/geoclue:/usr/bin/nologin
+git:x:972:972:git daemon user:/:/usr/bin/git-shell
+nm-openconnect:x:971:971:NetworkManager OpenConnect:/:/usr/bin/nologin
+nm-openvpn:x:970:970:NetworkManager OpenVPN:/:/usr/bin/nologin
+ntp:x:87:87:Network Time Protocol:/var/lib/ntp:/bin/false
+polkitd:x:102:102:PolicyKit daemon:/:/usr/bin/nologin
+rtkit:x:133:133:RealtimeKit:/proc:/usr/bin/nologin
+usbmux:x:140:140:usbmux user:/:/usr/bin/nologin
+raytracer:x:1000:1000:raytracer:/home/raytracer:/bin/zsh
+mpd:x:45:45::/var/lib/mpd:/usr/bin/nologin
+gluster:x:967:967:GlusterFS daemons:/var/run/gluster:/usr/bin/nologin
+sndiod:x:966:966::/var/lib/sndiod:/bin/false
