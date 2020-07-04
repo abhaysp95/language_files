@@ -1,0 +1,47 @@
+total 4
+-rwxr-xr-- 1 raytracer raytracer 353 Jul  4 19:53 file_manipulation.py
+
+total 172
+-rwxr-xr-- 1 raytracer raytracer  730 Mar 17 09:11 beersong.py
+drwxr-xr-x 3 raytracer raytracer 4096 Jul  4 11:13 by_books
+-rwxr-xr-- 1 raytracer raytracer  961 Jun  2 20:18 defaultdict.py
+-rwxr-xr-- 1 raytracer raytracer  442 Mar 24 11:13 eval_funtion.py
+drwxr-xr-x 2 raytracer raytracer 4096 Jun  5 10:01 file_maniputation
+-rwxr-xr-- 1 raytracer raytracer  810 Mar 26 13:23 filter_function.py
+-rwxr-xr-- 1 raytracer raytracer  218 Jun  5 10:07 find_and_count.py
+drwxr-xr-x 3 raytracer raytracer 4096 Jun  7 22:01 foo_project
+-rwxr-xr-- 1 raytracer raytracer  430 Mar 24 12:55 func_arg_noret.py
+-rwxr-xr-- 1 raytracer raytracer  585 Mar 26 11:58 func_arg_ret.py
+-rwxr-xr-- 1 raytracer raytracer  843 Mar 26 12:13 func_default_arg.py
+-rwxr-xr-- 1 raytracer raytracer  618 Mar 26 12:19 func_keyword.py
+-rwxr-xr-- 1 raytracer raytracer  390 Mar 24 12:41 func_noarg_noret.py
+-rwxr-xr-- 1 raytracer raytracer  774 Mar 26 19:10 get_dict.py
+-rwxr-xr-- 1 raytracer raytracer 1098 May 24 20:32 get_duplicate_indict.py
+-rwxr-xr-- 1 raytracer raytracer  680 Mar 26 19:35 get_indiname_len.py
+drwxr-xr-x 3 raytracer raytracer 4096 Mar  4 17:13 getphonenum
+drwxr-xr-x 2 raytracer raytracer 4096 Jul  4 19:53 google_it_automation
+-rwxr-xr-- 1 raytracer raytracer 1103 May 28 06:25 groccery_store.py
+-rwxr-xr-- 1 raytracer raytracer  652 May 12 17:22 high_order_func.py
+-rwxr-xr-- 1 raytracer raytracer  375 May 12 11:09 high_order_sort.py
+-rwxr-xr-- 1 raytracer raytracer  205 Jun  5 10:24 is_default.py
+-rwxr-xr-- 1 raytracer raytracer  434 Mar 26 12:42 lambda_func2.py
+-rwxr-xr-- 1 raytracer raytracer  396 Mar 26 12:34 lambda_func.py
+-rwxr-xr-x 1 raytracer raytracer  534 Feb 24 21:59 lambdatrail.py
+-rwxr-xr-x 1 raytracer raytracer  528 Feb 21 20:01 list_comprehension1.py
+-rwxr-xr-x 1 raytracer raytracer  423 Feb 21 20:01 list_comprehension.py
+-rwxr-xr-- 1 raytracer raytracer  488 Mar 26 13:07 map_function.py
+-rwxr-xr-- 1 raytracer raytracer  943 Apr 22 19:39 matrix1.py
+-rwxr-xr-- 1 raytracer raytracer 2549 Apr 22 21:48 matrix2.py
+-rwxr-xr-- 1 raytracer raytracer  656 Apr  3 17:33 name_abbreviation.py
+drwxr-xr-x 2 raytracer raytracer 4096 Apr 28 13:11 OOPs
+-rwxr-xr-- 1 raytracer raytracer  690 Apr 30 11:09 power_with_loop.py
+drwxr-xr-x 2 raytracer raytracer 4096 Mar 17 08:03 __pycache__
+-rw-r--r-- 1 raytracer raytracer  201 Jul  4 09:50 pyvenv.cfg
+drwxr-xr-x 2 raytracer raytracer 4096 May  5 17:12 recursion
+-rwxr-xr-- 1 raytracer raytracer  320 May 30 11:38 rich_module_test.py
+drwxr-xr-x 2 raytracer raytracer 4096 May 12 17:22 sorting
+-rwxr-xr-- 1 raytracer raytracer 1177 Apr  6 11:45 sort_withvalue2.py
+-rwxr-xr-- 1 raytracer raytracer  727 Apr  6 11:45 sort_withvalue.py
+drwxr-xr-x 4 raytracer raytracer 4096 Jul  4 17:52 test_pymodules
+-rwxr-xr-- 1 raytracer raytracer  178 Jun  5 10:34 try_except.py
+-rwxr-xr-- 1 raytracer raytracer  594 Mar 17 08:03 using_datetime.py
