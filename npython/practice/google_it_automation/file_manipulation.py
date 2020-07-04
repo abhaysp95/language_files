@@ -77,7 +77,11 @@ print('size of folder is: %d' % os.path.getsize('test_dir'))
 print(f'Time since timestamp: {os.path.getmtime("test_file.txt")}')
 timestamp = os.path.getmtime("test_file.txt")
 # timestamp method of datetime class, imported from datetime module
-print(f'In human format: {datetime.fromtimestamp(timestamp)}')
+new_format = datetime.fromtimestamp(timestamp)
+print('A little better: ', new_format)
+print('{:10}'.format(str(new_format)))
+# print(type(str(new_format)))
+print(f'In human format: {new_format.strftime("%Y-%m-%d")}')
 
 print('checking isfile: ', os.path.isfile('test_file.txt'))
 
