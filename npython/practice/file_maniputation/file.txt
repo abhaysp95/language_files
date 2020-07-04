@@ -1,3 +1,0 @@
-This is from file write operation
-I'm learing how to write a script
-This is how we do it
