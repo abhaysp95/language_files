@@ -130,19 +130,31 @@ node *delete_node_of_value(node *root) {
 	scanf("%d", &value);
 	ptr = root;
 	pptr = ptr;
-	while (ptr -> data != value && ptr != NULL) {
+	while (ptr -> data != value && ptr -> next != NULL) {
 		pptr = ptr;
 		ptr = ptr -> next;
 	}
-	pptr -> next = ptr -> next;
-	free(ptr);
-	root = NULL;
+	if (ptr == root && ptr -> data == value) {
+		root = ptr -> next;
+		free(ptr);
+	}
+	else if (ptr -> next == NULL && ptr -> data == value) {
+		pptr -> next = NULL;
+		free(ptr);
+	}
+	else if (ptr -> data != value) {
+		printf("Entered data doesn't match with any of the data\n");
+	}
+	else {
+		pptr -> next = ptr -> next;
+		free(ptr);
+	}
 	return root;
 }
 
 node *delete_node_before_value(node *root) {
 	int value;
-	node *ptr, *pptr;
+	node *ptr, *pptr, *ppptr;
 	if (root == NULL) {
 		printf("There's nothing to delete, try inserting some value first\n");
 		return root;
@@ -151,17 +163,26 @@ node *delete_node_before_value(node *root) {
 	scanf("%d", &value);
 	ptr = root;
 	pptr = ptr;
-	// fix segmentation fault here, it's leakage
-	while (ptr -> next -> data != value && ptr -> next != NULL) {
+	ppptr = ptr;
+	while (ptr -> data != value && ptr -> next != NULL) {
+		ppptr = pptr;
 		pptr = ptr;
 		ptr = ptr -> next;
 	}
-	if (ptr == pptr) {
-		printf("There is no value to delete before entered value\n");
-		return root;
+	if (ptr == root) {
+		printf("There's nothing before the node data you entered to delete\n");
 	}
-	pptr -> next = ptr -> next;
-	free(ptr);
+	else if (pptr == root && ptr -> data == value) {
+		root = pptr -> next;
+		free(pptr);
+	}
+	else if (ptr -> data != value) {
+		printf("Enter data didn't matched with any of the nodes data\n");
+	}
+	else {
+		ppptr -> next = ptr;
+		free(pptr);
+	}
 	return root;
 }
 
