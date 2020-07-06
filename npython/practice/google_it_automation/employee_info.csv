@@ -1,4 +1,4 @@
 name,username,department
-a,au,aud
-b,bu,bud
+a,"au,auu",aud
+b,bu\,d,bud
 c,cu,cud
