@@ -17,6 +17,7 @@ void insert_after(struct singlelinkedlist *, int );
 struct singlelinkedlist *insert_before_or_after(struct singlelinkedlist *, int );
 struct singlelinkedlist *delete_node_of_value(struct singlelinkedlist *);
 struct singlelinkedlist *delete_node_before_value(struct singlelinkedlist *);
+struct singlelinkedlist *delete_node_after_value(struct singlelinkedlist *);
 void display(struct singlelinkedlist *);
 void free_node();
 
@@ -186,6 +187,41 @@ node *delete_node_before_value(node *root) {
 	return root;
 }
 
+node *delete_node_after_value(node *root) {
+	node *ptr, *pptr;
+	int value;
+	if (root == NULL) {
+		printf("There's nothing to delete, trying entering some values first\n");
+	}
+	printf("Enter the value to match: \n");
+	scanf("%d", &value);
+	ptr = root;
+	pptr = ptr;
+	while (ptr -> data != value && ptr -> next != NULL) {
+		pptr = ptr;
+		ptr = ptr -> next;
+	}
+	// requires fixing
+	if (ptr -> data != value) {
+		printf("Entered value didn't matched to any of the data in linkedlist\n");
+	}
+	else if (ptr == root && ptr -> next == NULL) {
+		printf("There's nothing after the entered element to delete\n");
+	}
+	else if (pptr == root && ptr -> data == value) {
+		pptr -> next = NULL;
+		free(ptr);
+	}
+	else if (ptr -> data == value && ptr -> next == NULL) {
+		printf("There's nothing after the entered element to delete\n");
+	}
+	else {
+		pptr -> next = ptr -> next;
+		free(ptr);
+	}
+	return root;
+}
+
 // function to display linked list
 void display(node *root) {
 	node *ptr;
@@ -221,8 +257,9 @@ int main(int argc, char* argv[]) {
 		printf("3. Insert a node after the given value\n");
 		printf("4. Delete a node for the given value\n");
 		printf("5. Delete a node before the given value\n");
-		printf("6. Display linked list\n");
-		printf("7. Exit\n");
+		printf("6. Delete a node after the given value\n");
+		printf("7. Display linked list\n");
+		printf("8. Exit\n");
 		scanf("%d", &op_choice);
 		switch (op_choice) {
 			case 1:
@@ -241,9 +278,12 @@ int main(int argc, char* argv[]) {
 				root = delete_node_before_value(root);
 				continue;
 			case 6:
-				display(root);
+				root = delete_node_after_value(root);
 				continue;
 			case 7:
+				display(root);
+				continue;
+			case 8:
 				printf("Exiting Now!\n");
 				return 0;
 			default:
