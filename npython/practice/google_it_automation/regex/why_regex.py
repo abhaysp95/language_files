@@ -12,6 +12,7 @@ def index_method():
 
 def first_regex():
     # giving r"" means we are passing raw string to function
+    # () is known as capturing group
     regex = r"\[(\d+)\]"
     result = re.search(regex, log)
     print(result[1])
