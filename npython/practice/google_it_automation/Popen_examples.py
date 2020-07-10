@@ -119,7 +119,27 @@ def give_input_to_script():
         print('Error is:\n ', errors.decode())
 
 
+def pipe_commands_together():
+    p1 = sp.Popen(
+        ["ls", "-lha"],
+        stdout=sp.PIPE
+    )
+    p2 = sp.Popen(
+        ["grep", "foo"],
+        stdin=p1.stdout,
+        stdout=sp.PIPE,
+        stderr=sp.PIPE
+    )
+    p1.stdout.close()
+    # output, errors = p2.communicate()
+    errors = p2.communicate()[1]
+    # print('Output is:\n ', output.decode())
+    print('Error is:\n ', errors.decode())
+    print('Return Code: ', p2.returncode)
+
+
 # store_output_and_error()
 # redirect_output_to_file()
 # stdout_stderr_to_same_file()
-give_input_to_script()
+# give_input_to_script()
+pipe_commands_together()
