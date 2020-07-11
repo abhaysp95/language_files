@@ -51,7 +51,11 @@ def main():
         if sys.argv[1] == "-h":
             print("Usage: ./change_extensions [RELATIVE_PATH]")
             sys.exit()
+        if sys.argv[1] != '':
+            change_name(input('Enter new extension: '))
     except IndexError:
+        print('No additional argument provided.')
+        print('Considering current folder to make changes')
         change_name(input('Enter new extension: '))
 
 
