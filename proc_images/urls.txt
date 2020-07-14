@@ -1,0 +1,8 @@
+http://brendangregg.com/USEmethod/v480.png
+https://files.realpython.com/media/IOBound.4810a888b457.png
+https://files.realpython.com/media/CPUBound.d2d32cb2626c.png
+https://files.realpython.com/media/Threading.3eef48da829e.png
+https://files.realpython.com/media/Asyncio.31182d3731cf.png
+https://files.realpython.com/media/MProc.7cf3be371bbc.png
+https://files.realpython.com/media/CPUBound.d2d32cb2626c.png
+https://files.realpython.com/media/CPUMP.69c1a7fad9c4.png
