@@ -7,6 +7,7 @@ change high domain abc.edu to xyz.edu
 import csv
 import re
 from os import path
+from memory_profiler import profile
 
 
 def domain_matches(address, domain):
@@ -17,6 +18,7 @@ def domain_matches(address, domain):
     return False
 
 
+@profile
 def change_domain(address, old_domain, new_domain):
     '''change abc.edu to xyz.edu'''
     pattern = r'' + old_domain + '$'

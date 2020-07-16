@@ -1,0 +1,2175 @@
+desc: I1 cache:         32768 B, 64 B, 2-way associative
+desc: D1 cache:         32768 B, 64 B, 8-way associative
+desc: LL cache:         2097152 B, 64 B, 16-way associative
+cmd: python3 ticky.py
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=???
+fn=(below main)
+0 59 6 6 16 1 0 18 0 0
+fn=???
+0 44346784 382785 7971 11728184 668016 54708 4889456 52065 25859
+fn=PyAST_CompileObject
+0 1271 86 22 288 71 4 438 1 0
+fn=PyAST_FromNodeObject
+0 2237 92 20 489 39 0 383 10 0
+fn=PyArena_AddPyObject
+0 564 9 0 188 6 0 94 0 0
+fn=PyArena_Free
+0 188 16 2 50 24 2 42 0 0
+fn=PyArena_Malloc
+0 12987 18 5 4942 0 0 1859 1 0
+fn=PyArena_New
+0 200 16 4 32 0 0 64 1 0
+fn=PyArg_ParseTuple
+0 18135 864 4 4095 29 0 5850 124 0
+fn=PyArg_ParseTupleAndKeywords
+0 9499 835 7 1736 80 0 2296 50 1
+fn=PyArg_UnpackTuple
+0 22565 1794 6 5415 18 0 4972 35 0
+fn=PyAsyncGen_ClearFreeLists
+0 72 4 1 28 7 4 12 0 0
+fn=PyAsyncGen_New
+0 26 3 1 6 0 0 10 0 0
+fn=PyBool_FromLong
+0 8060 678 2 4836 80 1 0 0 0
+fn=PyBuffer_FillInfo
+0 672 60 6 42 0 0 231 0 0
+fn=PyBuffer_IsContiguous
+0 1471 96 2 452 0 0 0 0 0
+fn=PyBuffer_Release
+0 3808 244 3 1295 168 0 469 0 0
+fn=PyByteArray_Resize
+0 285 20 4 55 4 0 40 4 0
+fn=PyBytes_AsString
+0 21 6 2 12 0 0 3 0 0
+fn=PyBytes_Fini
+0 1577 2 2 267 38 33 14 0 0
+fn=PyBytes_FromString
+0 1024 26 2 224 30 0 288 4 0
+fn=PyBytes_FromStringAndSize
+0 175595 1251 11 38537 259 11 34859 928 332
+fn=PyCFunction_Call
+0 42286 1900 9 14910 372 6 6964 5 0
+fn=PyCFunction_ClearFreeList
+0 3739 6 2 1603 407 0 1062 0 0
+fn=PyCFunction_NewEx
+0 151332 4476 18 41332 2505 41 38116 561 10
+fn=PyCallable_Check
+0 3479 144 2 1491 0 0 0 0 0
+fn=PyCapsule_GetPointer
+0 198 12 2 63 3 0 18 0 0
+fn=PyCapsule_New
+0 196 14 2 56 10 1 77 3 0
+fn=PyCell_Set
+0 140 16 3 60 0 0 20 0 0
+fn=PyCode_NewWithPosOnlyArgs
+0 875792 2114 72 297829 5307 15 59884 2937 1961
+fn=PyCode_Optimize
+0 91119 525 102 9150 88 16 4791 0 0
+fn=PyCodec_LookupError
+0 138 2 2 60 6 0 24 0 0
+fn=PyCodec_Register
+0 20 1 1 5 1 0 5 0 0
+fn=PyCodec_RegisterError
+0 160 2 2 40 0 0 40 0 0
+fn=PyConfig_Clear
+0 335 39 24 100 13 10 210 0 0
+fn=PyConfig_InitPythonConfig
+0 32 6 3 12 1 0 18 0 0
+fn=PyConfig_Read
+0 636 56 55 149 10 1 164 2 0
+fn=PyConfig_SetBytesArgv
+0 19 2 2 5 0 0 7 0 0
+fn=PyConfig_SetString
+0 1679 8 2 351 0 0 601 0 0
+fn=PyContext_ClearFreeList
+0 24 2 1 12 3 1 0 0 0
+fn=PyCoro_New
+0 60 6 3 22 1 0 16 0 0
+fn=PyDescr_NewClassMethod
+0 143 19 2 52 7 1 39 0 0
+fn=PyDescr_NewGetSet
+0 3069 92 1 1116 97 0 837 0 0
+fn=PyDescr_NewMember
+0 3102 75 2 1128 30 0 846 0 0
+fn=PyDescr_NewMethod
+0 17509 410 6 4795 72 0 4110 0 0
+fn=PyDescr_NewWrapper
+0 16928 192 1 5290 16 0 4232 0 0
+fn=PyDictProxy_New
+0 5448 95 2 1816 101 1 1816 21 0
+fn=PyDict_Clear
+0 6789 414 9 2388 298 5 1548 1 0
+fn=PyDict_ClearFreeList
+0 2968 7 3 750 51 9 734 0 0
+fn=PyDict_Contains
+0 12836 1210 12 4299 150 1 2211 0 0
+fn=PyDict_Copy
+0 66668 1120 12 23573 2792 73 4278 12 0
+fn=PyDict_DelItem
+0 8306 364 3 2199 81 2 1013 0 0
+fn=PyDict_DelItemString
+0 66 3 2 15 0 0 18 0 0
+fn=PyDict_GetItem
+0 87425 2343 12 26809 1273 8 8795 0 0
+fn=PyDict_GetItemString
+0 286 24 4 65 0 0 78 0 0
+fn=PyDict_GetItemWithError
+0 344094 10064 14 139792 4504 13 61829 245 4
+fn=PyDict_Keys
+0 15230 73 8 5362 1352 13 1388 4 0
+fn=PyDict_MergeFromSeq2
+0 395 22 11 151 5 0 32 0 0
+fn=PyDict_New
+0 28803 1500 4 7590 644 2 7071 165 0
+fn=PyDict_Next
+0 794 22 1 0 0 0 0 0 0
+fn=PyDict_SetDefault
+0 1567264 5102 57 462279 21196 968 180415 1921 282
+fn=PyDict_SetItem
+0 86726 424 6 29598 301 5 6172 0 0
+fn=PyDict_SetItemString
+0 24056 202 4 6984 2 0 5432 1 0
+fn=PyDict_Update
+0 6 2 0 0 0 0 0 0 0
+fn=PyErr_CheckSignals
+0 38 4 2 20 0 0 4 0 0
+fn=PyErr_Clear
+0 48123 1410 2 19180 0 0 8643 0 0
+fn=PyErr_ExceptionMatches
+0 32150 976 5 11847 392 4 2780 1 0
+fn=PyErr_Fetch
+0 5808 425 1 2904 1 0 2420 2 0
+fn=PyErr_Format
+0 82935 3940 15 25702 477 0 16585 310 9
+fn=PyErr_GivenExceptionMatches
+0 8165 758 6 2695 38 2 766 0 0
+fn=PyErr_NewException
+0 280 21 12 58 11 2 45 0 0
+fn=PyErr_Occurred
+0 35178 831 2 23452 58 2 0 0 0
+fn=PyErr_Restore
+0 12000 492 3 4400 0 0 2800 0 0
+fn=PyErr_SetFromErrno
+0 9 3 1 0 0 0 0 0 0
+fn=PyErr_SetFromErrnoWithFilenameObject
+0 86 43 2 0 0 0 0 0 0
+fn=PyErr_SetFromErrnoWithFilenameObjects
+0 3070 181 6 782 14 0 641 0 0
+fn=PyErr_SetImportError
+0 6 1 1 2 2 0 0 0 0
+fn=PyErr_SetImportErrorSubclass
+0 67 5 5 15 0 0 13 0 0
+fn=PyErr_SetNone
+0 45 6 2 18 0 0 0 0 0
+fn=PyErr_SetObject
+0 216 28 0 72 0 0 0 0 0
+fn=PyErr_SetString
+0 497 41 11 182 17 1 70 2 0
+fn=PyEval_CallObjectWithKeywords
+0 10 1 1 3 0 0 0 0 0
+fn=PyEval_EvalCode
+0 736 119 2 46 43 4 460 0 0
+fn=PyEval_EvalCodeEx
+0 3140 110 1 942 25 0 1727 0 0
+fn=PyEval_GetBuiltins
+0 391 77 2 235 40 0 78 0 0
+fn=PyEval_GetGlobals
+0 264 17 3 144 16 0 0 0 0
+fn=PyEval_GetLocals
+0 120 6 2 48 0 0 30 0 0
+fn=PyEval_InitThreads
+0 17 0 0 5 0 0 6 1 0
+fn=PyEval_MergeCompilerFlags
+0 126 14 4 56 0 0 14 0 0
+fn=PyEval_RestoreThread
+0 159120 2267 6 53820 313 0 37440 46 0
+fn=PyEval_SaveThread
+0 77220 2152 2 23400 638 0 18720 0 0
+fn=PyException_GetContext
+0 140 15 1 70 6 0 0 0 0
+fn=PyException_GetTraceback
+0 352 52 0 176 0 0 0 0 0
+fn=PyException_SetCause
+0 6 2 2 2 0 0 2 0 0
+fn=PyException_SetContext
+0 175 11 2 70 0 0 35 0 0
+fn=PyFile_OpenCodeObject
+0 2387 308 2 693 86 0 385 0 0
+fn=PyFloat_ClearFreeList
+0 164 8 4 42 21 2 38 0 0
+fn=PyFloat_FromDouble
+0 10654 325 4 4311 568 0 2423 258 0
+fn=PyFloat_GetInfo
+0 45 4 4 9 4 0 21 0 0
+fn=PyFrame_ClearFreeList
+0 48 4 2 22 6 1 8 0 0
+fn=PyFrame_FastToLocalsWithError
+0 818 72 6 332 60 0 124 0 0
+fn=PyFrame_LocalsToFast
+0 400 24 6 176 26 0 64 0 0
+fn=PyFrozenSet_New
+0 189 63 0 63 62 0 0 0 0
+fn=PyFunction_NewWithQualName
+0 244506 6431 18 93611 7369 307 55392 2080 1296
+fn=PyFuture_FromASTObject
+0 1365 31 8 370 113 0 72 0 0
+fn=PyGC_Collect
+0 32 2 2 12 1 0 8 0 0
+fn=PyGrammar_AddAccelerators
+0 902091 24 24 188761 262 233 62383 666 503
+fn=PyGrammar_RemoveAccelerators
+0 4769 2 1 1080 354 354 823 0 0
+fn=PyImport_AddModule
+0 61 6 4 15 0 0 20 0 0
+fn=PyImport_Cleanup
+0 4181 41 15 1327 261 11 447 2 0
+fn=PyImport_GetImporter
+0 99 8 6 15 4 0 21 0 0
+fn=PyImport_GetMagicNumber
+0 28 2 2 7 1 0 7 0 0
+fn=PyImport_GetModule
+0 180 20 15 75 8 0 26 1 0
+fn=PyImport_GetModuleDict
+0 414 41 2 276 34 0 46 0 0
+fn=PyImport_Import
+0 11610 761 23 4113 329 1 1155 1 0
+fn=PyImport_ImportFrozenModule
+0 17 3 2 5 1 0 5 0 0
+fn=PyImport_ImportFrozenModuleObject
+0 53 4 2 12 1 0 10 0 0
+fn=PyImport_ImportModule
+0 1639 165 1 435 3 1 515 0 0
+fn=PyImport_ImportModuleLevel
+0 279 9 2 63 0 0 72 0 0
+fn=PyImport_ImportModuleLevelObject
+0 62495 4244 62 18592 1944 11 5174 14 0
+fn=PyInit__abc
+0 11 2 1 1 0 0 3 0 0
+fn=PyInit__codecs
+0 3 1 1 0 0 0 0 0 0
+fn=PyInit__collections
+0 62 6 6 10 2 1 14 1 1
+fn=PyInit__csv
+0 109 10 9 36 7 0 29 1 0
+fn=PyInit__functools
+0 64 4 4 12 1 0 15 1 1
+fn=PyInit__heapq
+0 18 2 1 5 0 0 4 0 0
+fn=PyInit__imp
+0 34 2 2 6 1 0 8 0 0
+fn=PyInit__io
+0 445 45 35 99 39 3 105 10 1
+fn=PyInit__locale
+0 458 6 6 117 15 15 72 1 1
+fn=PyInit__operator
+0 37 4 4 5 0 0 8 0 0
+fn=PyInit__signal
+0 1582 33 26 211 7 1 261 19 17
+fn=PyInit__sre
+0 80 7 5 10 1 0 17 0 0
+fn=PyInit__stat
+0 316 27 24 2 1 0 53 0 0
+fn=PyInit__thread
+0 97 14 8 14 5 0 26 2 0
+fn=PyInit__weakref
+0 35 3 3 11 6 0 8 0 0
+fn=PyInit_itertools
+0 382 8 8 48 3 0 77 1 1
+fn=PyInit_posix
+0 4507 80 76 451 29 5 734 9 4
+fn=PyInit_time
+0 58 6 4 4 1 0 14 0 0
+fn=PyInterpreterState_Clear
+0 3 1 1 1 1 0 0 0 0
+fn=PyInterpreterState_Delete
+0 43 2 2 13 2 1 8 0 0
+fn=PyInterpreterState_New
+0 394 5 5 11 1 0 359 42 42
+fn=PyIter_Next
+0 7086 258 5 1712 26 0 473 0 0
+fn=PyList_Append
+0 339423 4364 5 113544 137 0 69450 762 157
+fn=PyList_AsTuple
+0 4305 212 1 1482 14 0 741 0 0
+fn=PyList_ClearFreeList
+0 728 6 2 188 15 2 180 0 0
+fn=PyList_GetItem
+0 30 6 4 18 5 0 0 0 0
+fn=PyList_Insert
+0 12 2 2 6 4 0 2 0 0
+fn=PyList_New
+0 44188 1490 8 11750 1087 1 12080 379 0
+fn=PyList_SetItem
+0 391 25 1 184 6 0 46 0 0
+fn=PyList_SetSlice
+0 102 20 5 34 1 0 0 0 0
+fn=PyList_Size
+0 126 28 3 90 13 0 18 0 0
+fn=PyList_Sort
+0 1280 41 1 320 23 0 192 0 0
+fn=PyLong_AsLong
+0 6729 346 9 2306 162 0 417 0 0
+fn=PyLong_AsLongAndOverflow
+0 377 6 2 145 0 0 29 0 0
+fn=PyLong_AsSsize_t
+0 9542 617 5 3736 299 0 0 0 0
+fn=PyLong_AsUnsignedLong
+0 32 1 1 12 0 0 2 0 0
+fn=PyLong_Fini
+0 17 1 1 8 5 4 3 0 0
+fn=PyLong_FromLong
+0 75108 2137 13 22043 858 21 17421 68 0
+fn=PyLong_FromLongLong
+0 40276 492 3 5910 49 1 7758 1 0
+fn=PyLong_FromSize_t
+0 630 126 4 189 0 0 189 0 0
+fn=PyLong_FromUnsignedLong
+0 62929 1920 8 17409 472 0 13855 267 2
+fn=PyLong_GetInfo
+0 18 2 2 4 2 0 5 0 0
+fn=PyMapping_Check
+0 4290 161 1 1716 544 2 0 0 0
+fn=PyMapping_Items
+0 434 124 3 124 0 0 0 0 0
+fn=PyMapping_Keys
+0 49 16 3 16 0 0 0 0 0
+fn=PyMapping_SetItemString
+0 24 1 1 5 0 0 5 0 0
+fn=PyMapping_Size
+0 144 12 2 45 0 0 0 0 0
+fn=PyMarshal_Init
+0 16 3 2 2 0 0 3 0 0
+fn=PyMarshal_ReadObjectFromString
+0 105 8 2 24 1 0 36 0 0
+fn=PyMem_Calloc
+0 8422 487 7 1783 27 0 1270 0 0
+fn=PyMem_Free
+0 42624 2461 14 13417 914 20 3438 32 7
+fn=PyMem_GetAllocator
+0 270 6 2 165 1 0 150 0 0
+fn=PyMem_Malloc
+0 9912 672 2 2586 6 0 1416 6 0
+fn=PyMem_RawFree
+0 4295 189 2 1718 101 0 0 0 0
+fn=PyMem_RawMalloc
+0 6630 491 2 1326 138 0 0 0 0
+fn=PyMem_RawRealloc
+0 42 3 0 14 0 0 0 0 0
+fn=PyMem_Realloc
+0 60197 3927 12 17228 544 1 9853 47 0
+fn=PyMem_SetAllocator
+0 480 4 2 330 1 0 300 0 0
+fn=PyMember_SetOne
+0 1327 44 12 490 23 5 175 1 0
+fn=PyMemoryView_FromBuffer
+0 945 42 4 525 0 0 525 16 0
+fn=PyMemoryView_FromObject
+0 910 70 2 315 35 0 175 0 0
+fn=PyMethod_ClearFreeList
+0 120 8 3 49 13 1 26 0 0
+fn=PyMethod_New
+0 26610 904 4 9672 710 0 7863 19 0
+fn=PyModuleDef_Init
+0 500 46 3 160 46 17 180 0 0
+fn=PyModule_AddFunctions
+0 483 2 0 115 0 0 115 0 0
+fn=PyModule_AddIntConstant
+0 5980 23 3 1196 0 0 1495 0 0
+fn=PyModule_AddObject
+0 11136 28 4 2688 29 0 1920 1 0
+fn=PyModule_AddStringConstant
+0 20 2 2 4 0 0 5 0 0
+fn=PyModule_Create2
+0 294 19 1 84 3 0 84 0 0
+fn=PyModule_ExecDef
+0 402 21 2 120 9 0 82 0 0
+fn=PyModule_GetDef
+0 656 43 1 410 11 0 82 0 0
+fn=PyModule_GetDict
+0 3448 74 1 2155 15 0 431 0 0
+fn=PyModule_GetFilenameObject
+0 19 2 1 7 2 0 3 0 0
+fn=PyModule_GetName
+0 171 19 1 19 0 0 19 0 0
+fn=PyModule_GetNameObject
+0 756 82 7 336 3 0 84 0 0
+fn=PyModule_GetState
+0 680 80 2 340 35 0 0 0 0
+fn=PyModule_New
+0 391 0 0 115 0 0 115 0 0
+fn=PyModule_NewObject
+0 700 50 3 125 16 0 250 4 0
+fn=PyModule_SetDocString
+0 441 20 2 84 0 0 84 0 0
+fn=PyNode_Free
+0 88 32 4 16 0 0 16 0 0
+fn=PyNode_New
+0 225 29 2 45 7 0 120 3 0
+fn=PyNumber_Add
+0 21789 397 9 8851 264 1 4785 0 0
+fn=PyNumber_AsOff_t
+0 2375 168 2 665 0 0 665 0 0
+fn=PyNumber_AsSsize_t
+0 17744 255 5 7311 0 0 2218 0 0
+fn=PyNumber_Check
+0 1410 165 2 498 139 0 0 0 0
+fn=PyNumber_FloorDivide
+0 420 34 6 165 6 1 90 0 0
+fn=PyNumber_InPlaceAdd
+0 2015 143 5 804 175 1 397 0 0
+fn=PyNumber_InPlaceOr
+0 2526 63 8 918 26 2 426 0 0
+fn=PyNumber_Index
+0 2750 138 1 1250 1 0 250 0 0
+fn=PyNumber_Invert
+0 60 10 2 20 0 0 5 0 0
+fn=PyNumber_Long
+0 4312 333 5 1654 70 0 755 0 0
+fn=PyNumber_Multiply
+0 13446 332 3 5478 337 0 2988 0 0
+fn=PyNumber_Negative
+0 408 30 8 104 0 0 42 0 0
+fn=PyNumber_Subtract
+0 840 16 4 330 7 0 180 0 0
+fn=PyOS_FSPath
+0 7910 261 1 3955 0 0 1695 0 0
+fn=PyOS_InitInterrupts
+0 9 2 1 3 0 0 2 0 0
+fn=PyOS_getsig
+0 962 2 2 382 1 0 128 0 0
+fn=PyOS_setsig
+0 104 9 5 36 3 0 28 0 0
+fn=PyOS_snprintf
+0 88 9 7 16 0 0 36 2 0
+fn=PyOS_strtol
+0 480 25 4 150 14 0 60 6 0
+fn=PyOS_strtoul
+0 1495 43 9 375 34 5 70 0 0
+fn=PyOS_vsnprintf
+0 76 6 4 20 3 0 20 1 1
+fn=PyObject_Call
+0 10468 890 7 3677 194 1 1873 0 0
+fn=PyObject_CallFinalizerFromDealloc
+0 5430 166 3 2172 5 0 1086 6 1
+fn=PyObject_CallFunction
+0 9213 884 10 2432 208 9 1484 18 0
+fn=PyObject_CallFunctionObjArgs
+0 20763 2514 4 3076 7 0 8459 54 0
+fn=PyObject_CallMethod
+0 1668 175 6 266 6 0 492 0 0
+fn=PyObject_CallMethodObjArgs
+0 33210 571 6 5904 6 0 9594 15 1
+fn=PyObject_ClearWeakRefs
+0 7318 31 8 2986 79 0 1493 0 0
+fn=PyObject_DelItem
+0 3298 104 1 776 115 0 194 0 0
+fn=PyObject_Dir
+0 42 3 3 10 0 0 9 0 0
+fn=PyObject_Format
+0 126 12 5 48 2 0 30 0 0
+fn=PyObject_Free
+0 129920 1362 15 40834 1883 96 8752 895 291
+fn=PyObject_GC_Del
+0 164349 3580 15 54688 2655 315 15528 46 0
+fn=PyObject_GC_Track
+0 10336 355 3 3876 3 0 2584 1 0
+fn=PyObject_GC_UnTrack
+0 11840 564 0 4630 263 3 2580 207 3
+fn=PyObject_GenericGetDict
+0 614 27 5 213 1 0 142 0 0
+fn=PyObject_GetAttr
+0 207916 889 3 65664 5108 19 21888 58 1
+fn=PyObject_GetAttrString
+0 3096 118 2 903 45 0 645 2 0
+fn=PyObject_GetBuffer
+0 5418 535 5 840 125 2 1190 29 0
+fn=PyObject_GetItem
+0 57304 2882 3 17632 1113 6 6612 4 0
+fn=PyObject_GetIter
+0 52815 2959 8 16972 1401 25 9423 83 0
+fn=PyObject_Hash
+0 77381 2050 9 21125 1292 1 7056 1 0
+fn=PyObject_Init
+0 3892 451 2 1390 31 1 834 0 0
+fn=PyObject_InitVar
+0 45 5 1 10 0 0 15 5 0
+fn=PyObject_IsSubclass
+0 9396 294 16 3091 2 0 1588 14 0
+fn=PyObject_IsTrue
+0 54312 4307 7 18653 1675 0 1404 0 0
+fn=PyObject_LengthHint
+0 4763 305 6 1203 199 6 751 0 0
+fn=PyObject_Malloc
+0 51752 2051 3 13960 246 0 6980 3 0
+fn=PyObject_Realloc
+0 5194 278 9 1305 53 2 734 4 0
+fn=PyObject_Repr
+0 666 35 14 279 11 0 99 0 0
+fn=PyObject_RichCompare
+0 379544 11200 23 125591 2115 28 55074 77 2
+fn=PyObject_RichCompareBool
+0 1576 67 4 488 3 0 212 0 0
+fn=PyObject_SelfIter
+0 594 162 1 396 0 0 0 0 0
+fn=PyObject_SetAttr
+0 133596 3805 14 51180 2259 19 23880 75 2
+fn=PyObject_SetAttrString
+0 12298 46 2 3311 24 0 2365 0 0
+fn=PyObject_SetItem
+0 30681 1405 5 7090 663 20 2004 0 0
+fn=PyObject_Size
+0 60 7 3 20 0 0 5 0 0
+fn=PyObject_Str
+0 4368 76 16 1716 35 0 520 0 0
+fn=PyObject_Type
+0 15 2 2 9 0 0 0 0 0
+fn=PyParser_ASTFromFileObject
+0 65 7 5 17 3 0 18 0 0
+fn=PyParser_ASTFromStringObject
+0 427 34 8 105 26 0 98 0 0
+fn=PyParser_AddToken
+0 2116101 457 120 543479 4152 406 185478 2273 426
+fn=PyParser_Delete
+0 56 8 0 16 0 0 16 0 0
+fn=PyParser_New
+0 258 24 4 48 9 2 97 8 2
+fn=PyParser_ParseFileObject
+0 58 5 5 18 1 0 16 0 0
+fn=PyParser_ParseStringObject
+0 427 28 6 98 7 1 105 0 0
+fn=PyPreConfig_InitPythonConfig
+0 114 2 1 18 6 2 66 1 0
+fn=PyRun_AnyFileExFlags
+0 27 2 2 5 0 0 6 0 0
+fn=PyRun_FileExFlags
+0 64 6 4 13 4 0 18 0 0
+fn=PyRun_SimpleFileExFlags
+0 150 16 13 29 5 2 33 0 0
+fn=PyRun_StringFlags
+0 343 41 6 56 18 2 84 0 0
+fn=PySeqIter_New
+0 150 12 2 48 3 0 54 1 0
+fn=PySequence_Check
+0 60 6 1 30 0 0 0 0 0
+fn=PySequence_DelItem
+0 119 7 1 35 10 0 7 0 0
+fn=PySequence_Fast
+0 7489 128 3 2996 6 0 998 0 0
+fn=PySequence_List
+0 4876 247 10 1306 142 0 1309 57 0
+fn=PySequence_Tuple
+0 27242 1252 28 10016 308 0 6053 20 2
+fn=PySet_Add
+0 20987 752 18 6590 117 3 3738 0 0
+fn=PySet_Clear
+0 184 23 1 69 7 0 23 0 0
+fn=PySet_Contains
+0 3000 40 8 1275 12 0 450 0 0
+fn=PySet_Discard
+0 3204 24 4 1335 0 0 534 0 0
+fn=PySet_Fini
+0 4 0 0 2 0 0 0 0 0
+fn=PySet_New
+0 18775 615 13 5886 331 0 4409 2 0
+fn=PySet_Size
+0 96 32 3 64 0 0 0 0 0
+fn=PySlice_AdjustIndices
+0 8628 565 6 1318 0 0 220 0 0
+fn=PySlice_Fini
+0 5 1 1 1 0 0 1 0 0
+fn=PySlice_New
+0 17737 635 7 5635 264 0 4031 145 0
+fn=PySlice_Unpack
+0 23746 1378 19 9592 215 0 3568 13 0
+fn=PyState_FindModule
+0 270 30 4 165 74 4 0 0 0
+fn=PyStaticMethod_New
+0 110 9 1 40 10 1 30 0 0
+fn=PyStructSequence_InitType2
+0 1428 24 5 272 64 7 220 44 40
+fn=PyStructSequence_New
+0 5313 312 1 1127 108 0 1610 0 0
+fn=PyStructSequence_NewType
+0 1125 34 8 209 29 11 238 2 0
+fn=PySymtable_BuildObject
+0 1681 73 16 302 27 3 273 4 0
+fn=PySymtable_Free
+0 176 16 3 56 22 0 24 0 0
+fn=PySymtable_Lookup
+0 375 21 2 105 14 0 90 0 0
+fn=PySys_Audit
+0 9650 1097 13 3508 262 0 2420 28 1
+fn=PySys_GetObject
+0 5280 106 2 1760 76 0 960 0 0
+fn=PySys_SetObject
+0 324 18 4 132 5 0 60 0 0
+fn=PyThreadState_Clear
+0 63 5 5 21 5 0 7 0 0
+fn=PyThreadState_GetDict
+0 24 2 2 12 0 0 4 0 0
+fn=PyThreadState_New
+0 2 0 0 0 0 0 0 0 0
+fn=PyThreadState_Swap
+0 10 1 1 6 2 0 2 0 0
+fn=PyThread_GetInfo
+0 51 4 4 8 2 1 12 0 0
+fn=PyThread_acquire_lock
+0 11490 328 3 1575 68 2 1050 0 0
+fn=PyThread_acquire_lock_timed
+0 5936 442 4 1232 50 0 896 0 0
+fn=PyThread_allocate_lock
+0 3302 277 2 776 156 1 584 0 0
+fn=PyThread_free_lock
+0 1930 84 0 386 3 0 386 0 0
+fn=PyThread_get_thread_ident
+0 7839 405 2 3484 301 1 1742 0 0
+fn=PyThread_init_thread
+0 6 2 1 4 1 0 0 0 0
+fn=PyThread_release_lock
+0 3822 448 2 1274 263 1 637 0 0
+fn=PyThread_tss_create
+0 12 1 1 4 0 0 3 0 0
+fn=PyThread_tss_delete
+0 9 0 0 5 2 2 3 0 0
+fn=PyThread_tss_get
+0 2 0 0 2 1 0 0 0 0
+fn=PyThread_tss_set
+0 9 1 1 4 0 0 2 0 0
+fn=PyToken_ThreeChars
+0 27 1 1 6 2 0 0 0 0
+fn=PyToken_TwoChars
+0 5857 55 8 1224 64 9 0 0 0
+fn=PyTokenizer_Free
+0 199 24 4 64 7 0 15 0 0
+fn=PyTokenizer_FromFile
+0 36 4 4 6 0 0 12 0 0
+fn=PyTokenizer_FromUTF8
+0 287 28 8 42 0 0 126 0 0
+fn=PyTraceBack_Here
+0 40139 1921 47 13276 756 17 5854 40 1
+fn=PyTuple_ClearFreeList
+0 119899 25 17 35529 5355 52 7000 61 4
+fn=PyTuple_Fini
+0 9 2 2 3 2 0 2 0 0
+fn=PyTuple_GetSlice
+0 5768 410 2 1030 0 0 206 0 0
+fn=PyTuple_New
+0 324322 9120 6 100353 3461 18 73439 864 386
+fn=PyTuple_Pack
+0 67125 2996 13 17467 439 1 18222 120 2
+fn=PyTuple_Size
+0 147 34 4 84 5 0 0 0 0
+fn=PyType_ClearCache
+0 45751 3 3 8198 1996 1078 12972 513 495
+fn=PyType_FromSpecWithBases
+0 2259 50 12 507 7 2 280 0 0
+fn=PyType_GenericAlloc
+0 43640 2597 9 13476 654 4 9067 13 1
+fn=PyType_GenericNew
+0 50177 2661 12 15391 511 6 9358 0 0
+fn=PyType_IsSubtype
+0 38157 704 3 9839 385 2 0 0 0
+fn=PyType_Modified
+0 24869 778 3 10415 960 32 5812 7 0
+fn=PyType_Ready
+0 959391 11900 135 268803 18062 1034 24853 3 0
+fn=PyUnicode_Append
+0 168 10 6 50 1 0 16 0 0
+fn=PyUnicode_AsEncodedString
+0 52760 2048 14 11991 1923 3 4794 186 6
+fn=PyUnicode_AsUTF8
+0 380 91 1 0 0 0 0 0 0
+fn=PyUnicode_AsUTF8AndSize
+0 17406 660 2 5240 111 13 2620 13 0
+fn=PyUnicode_AsWideCharString
+0 1298 51 3 342 4 0 272 6 0
+fn=PyUnicode_Compare
+0 6232 120 2 2363 13 0 328 0 0
+fn=PyUnicode_Concat
+0 248 10 5 56 4 0 36 0 0
+fn=PyUnicode_Contains
+0 4645 176 21 1057 12 0 310 0 0
+fn=PyUnicode_Decode
+0 169065 81 18 37570 0 0 13260 0 0
+fn=PyUnicode_DecodeASCII
+0 4129 8 8 600 0 0 957 0 0
+fn=PyUnicode_DecodeFSDefault
+0 57 3 2 27 0 0 9 0 0
+fn=PyUnicode_DecodeFSDefaultAndSize
+0 20589 17 4 8917 1 0 2093 0 0
+fn=PyUnicode_DecodeLocale
+0 952 112 4 224 0 0 280 0 0
+fn=PyUnicode_DecodeUTF8
+0 6 3 2 0 0 0 0 0 0
+fn=PyUnicode_DecodeUTF8Stateful
+0 102 7 0 0 0 0 0 0 0
+fn=PyUnicode_EncodeFSDefault
+0 3362 300 2 1764 259 0 326 0 0
+fn=PyUnicode_FSConverter
+0 8730 866 6 2328 38 0 1746 0 0
+fn=PyUnicode_FindChar
+0 61604 647 5 8448 0 0 2154 13 2
+fn=PyUnicode_Format
+0 488 35 35 121 5 2 71 0 0
+fn=PyUnicode_FromFormat
+0 552 12 5 92 0 0 253 0 0
+fn=PyUnicode_FromFormatV
+0 505329 9805 33 117066 1644 4 24825 217 9
+fn=PyUnicode_FromKindAndData
+0 448 56 1 28 0 0 28 0 0
+fn=PyUnicode_FromOrdinal
+0 16 4 2 2 0 0 2 0 0
+fn=PyUnicode_FromString
+0 12348 249 0 2744 37 0 2744 0 0
+fn=PyUnicode_FromStringAndSize
+0 1818 108 1 202 0 0 202 0 0
+fn=PyUnicode_FromWideChar
+0 75570 1166 41 11384 38 0 5859 0 0
+fn=PyUnicode_GetLength
+0 108 7 2 60 5 0 0 0 0
+fn=PyUnicode_InternFromString
+0 14496 37 2 4228 3 0 3624 1 0
+fn=PyUnicode_InternInPlace
+0 348049 565 11 146537 3289 166 65980 3 0
+fn=PyUnicode_IsIdentifier
+0 2013 24 4 331 17 0 239 0 0
+fn=PyUnicode_Join
+0 50 2 1 18 0 0 10 0 0
+fn=PyUnicode_New
+0 89965 1070 30 22966 7 0 24654 555 67
+fn=PyUnicode_RPartition
+0 34527 2236 9 7266 212 0 6602 38 1
+fn=PyUnicode_RichCompare
+0 145302 2419 10 47789 1116 18 8073 27 0
+fn=PyUnicode_Substring
+0 122418 2675 16 28373 44 0 19100 231 74
+fn=PyVectorcall_Call
+0 4108 316 4 1422 112 4 553 1 0
+fn=PyWeakref_GetObject
+0 348 32 2 174 4 0 29 0 0
+fn=PyWeakref_NewRef
+0 33059 318 9 9373 157 40 6569 1 0
+fn=PyWideStringList_Append
+0 48 2 1 18 0 0 9 0 0
+fn=PyWideStringList_Insert
+0 171 4 3 30 0 0 54 0 0
+fn=PyWrapper_New
+0 10108 83 2 3971 10 1 3610 5 0
+fn=Py_BuildValue
+0 1450 164 4 232 0 0 638 0 0
+fn=Py_BytesMain
+0 16 3 3 4 1 1 6 0 0
+fn=Py_DecodeLocale
+0 176 6 3 48 0 0 24 0 0
+fn=Py_FdIsInteractive
+0 15 3 3 6 2 0 3 0 0
+fn=Py_FinalizeEx
+0 88 8 8 20 10 5 48 1 1
+fn=Py_InitializeFromConfig
+0 243 27 17 44 6 3 70 7 2
+fn=Py_MakePendingCalls
+0 7 1 1 2 0 0 2 0 0
+fn=Py_ReprEnter
+0 41 2 2 6 0 0 9 0 0
+fn=Py_ReprLeave
+0 41 3 3 13 0 0 7 0 0
+fn=Py_RunMain
+0 154 20 18 40 11 3 28 0 0
+fn=Py_UniversalNewlineFgets
+0 44049 81 3 8538 56 0 5915 8 0
+fn=_Exit
+0 7 1 1 1 1 1 0 0 0
+fn=_IO_cleanup
+0 102 7 7 33 1 1 18 0 0
+fn=_IO_default_finish
+0 48 6 4 18 0 0 3 0 0
+fn=_IO_default_uflow
+0 88 6 3 22 0 0 13 0 0
+fn=_IO_default_xsputn
+0 1386 15 13 320 0 0 289 3 0
+fn=_IO_doallocbuf
+0 78 9 6 24 1 0 12 0 0
+fn=_IO_file_close
+0 9 3 2 3 0 0 0 0 0
+fn=_IO_file_close_it@@GLIBC_2.2.5
+0 165 15 10 30 2 0 48 0 0
+fn=_IO_file_doallocate
+0 153 12 12 36 2 0 21 2 0
+fn=_IO_file_finish@@GLIBC_2.2.5
+0 39 6 4 9 0 0 6 0 0
+fn=_IO_file_fopen@@GLIBC_2.2.5
+0 369 31 17 79 5 4 43 0 0
+fn=_IO_file_open
+0 143 10 7 28 0 0 29 1 0
+fn=_IO_file_read
+0 120 5 2 40 0 0 0 0 0
+fn=_IO_file_seek
+0 9 2 2 3 0 0 0 0 0
+fn=_IO_file_seekoff@@GLIBC_2.2.5
+0 265 30 30 78 1 1 47 0 0
+fn=_IO_file_stat
+0 15 3 2 3 0 0 0 0 0
+fn=_IO_file_sync@@GLIBC_2.2.5
+0 36 3 3 14 1 1 6 0 0
+fn=_IO_file_underflow@@GLIBC_2.2.5
+0 1217 20 14 376 36 0 287 3 0
+fn=_IO_file_xsgetn
+0 564 14 14 173 0 0 101 0 0
+fn=_IO_flush_all_lockp
+0 122 9 9 38 8 8 20 0 0
+fn=_IO_free_backup_area
+0 12 1 1 4 0 0 5 0 0
+fn=_IO_link_in
+0 529 34 18 199 14 2 102 1 0
+fn=_IO_new_file_init_internal
+0 45 4 2 15 0 0 20 0 0
+fn=_IO_no_init
+0 308 25 11 55 0 0 148 11 5
+fn=_IO_old_init
+0 296 21 9 33 7 3 186 10 5
+fn=_IO_seekoff_unlocked
+0 118 8 8 24 1 1 12 0 0
+fn=_IO_setb
+0 359 12 3 87 0 0 87 2 0
+fn=_IO_sgetn
+0 180 4 3 36 1 0 12 0 0
+fn=_IO_sputbackc
+0 133 6 6 49 0 0 21 0 0
+fn=_IO_str_init_static_internal
+0 216 12 6 30 0 0 74 0 0
+fn=_IO_str_underflow
+0 30 4 2 10 0 0 0 0 0
+fn=_IO_switch_to_get_mode
+0 500 9 6 160 0 0 140 1 0
+fn=_IO_un_link
+0 32 1 0 11 0 0 0 0 0
+fn=_IO_unsave_markers
+0 40 6 4 16 0 0 4 0 0
+fn=_PyAST_GetDocString
+0 497 17 3 223 34 0 0 0 0
+fn=_PyArg_Fini
+0 21 1 1 6 3 2 5 0 0
+fn=_PyArg_ParseTupleAndKeywords_SizeT
+0 5501 526 7 1018 4 0 1320 17 0
+fn=_PyArg_ParseTuple_SizeT
+0 21049 391 5 4753 12 0 6790 81 0
+fn=_PyArg_UnpackKeywords
+0 440 33 15 115 6 1 65 0 0
+fn=_PyArg_UnpackStack
+0 156 20 10 28 0 0 32 3 0
+fn=_PyArgv_AsWstrList
+0 154 5 4 46 6 0 48 2 0
+fn=_PyBuiltin_Init
+0 242 18 18 44 21 0 45 0 0
+fn=_PyBuiltins_AddExceptions
+0 503 38 36 144 94 0 82 1 0
+fn=_PyBytes_Resize
+0 9842 683 17 2855 95 10 1720 3 0
+fn=_PyCode_ConstantKey
+0 28499 124 17 11537 61 0 5575 0 0
+fn=_PyCodecInfo_GetIncrementalDecoder
+0 22 11 2 0 0 0 0 0 0
+fn=_PyCodecInfo_GetIncrementalEncoder
+0 8 0 0 0 0 0 0 0 0
+fn=_PyCodec_Lookup
+0 798 54 10 311 34 0 185 1 0
+fn=_PyCodec_LookupTextEncoding
+0 559 39 6 169 0 0 104 0 0
+fn=_PyConfig_Copy
+0 432 31 16 122 1 0 106 0 0
+fn=_PyConfig_InitCompatConfig
+0 204 4 2 12 3 1 159 6 1
+fn=_PyConfig_InitPathConfig
+0 274 17 15 58 3 0 77 1 0
+fn=_PyConfig_SetPyArgv
+0 27 2 2 8 0 0 6 0 0
+fn=_PyConfig_Write
+0 224 6 6 74 10 0 40 1 0
+fn=_PyConfig_WritePathConfig
+0 16 2 2 6 1 0 3 0 0
+fn=_PyContext_Fini
+0 10 1 1 3 2 0 3 0 0
+fn=_PyContext_Init
+0 39 7 2 10 4 0 10 0 0
+fn=_PyDictKeys_DecRef
+0 336 17 1 113 105 74 0 0 0
+fn=_PyDictView_New
+0 3692 113 1 1278 0 0 994 9 0
+fn=_PyDict_DelItemId
+0 1800 72 1 180 0 0 360 0 0
+fn=_PyDict_DelItem_KnownHash
+0 384787 2176 28 100920 7087 1582 39496 25 0
+fn=_PyDict_FromKeys
+0 270 15 5 60 6 0 48 0 0
+fn=_PyDict_GetItemId
+0 105851 3524 17 35013 2443 13 11023 42 1
+fn=_PyDict_GetItemIdWithError
+0 113036 1536 10 44261 2880 11 19274 15 0
+fn=_PyDict_GetItemStringWithError
+0 261 6 4 72 1 0 63 0 0
+fn=_PyDict_LoadGlobal
+0 1205720 13864 14 354754 21005 57 129670 529 7
+fn=_PyDict_NewKeysForClass
+0 1170 162 2 130 0 0 260 0 0
+fn=_PyDict_NewPresized
+0 7226 621 7 1817 203 0 1654 39 0
+fn=_PyDict_Next
+0 74036 794 10 20725 329 0 6854 16 0
+fn=_PyDict_Pop
+0 1292 67 1 408 27 1 136 0 0
+fn=_PyDict_Pop_KnownHash
+0 4955 353 7 1629 38 0 870 0 0
+fn=_PyDict_SetItemId
+0 28691 629 3 10156 671 1 3734 1 0
+fn=_PyErr_ChainExceptions
+0 1344 167 5 420 0 0 420 0 0
+fn=_PyErr_CheckSignals
+0 5 1 0 2 1 0 0 0 0
+fn=_PyErr_Clear
+0 124 1 0 0 0 0 0 0 0
+fn=_PyErr_ExceptionMatches
+0 120 30 2 30 0 0 0 0 0
+fn=_PyErr_Format
+0 92 12 3 16 0 0 36 0 0
+fn=_PyErr_Init
+0 25 3 1 3 1 1 10 1 0
+fn=_PyErr_NormalizeException
+0 7660 613 4 2640 5 0 1600 0 0
+fn=_PyErr_Restore
+0 1842 86 6 594 0 0 383 0 0
+fn=_PyErr_SetKeyError
+0 3128 200 2 1224 81 0 680 0 0
+fn=_PyErr_SetObject
+0 20953 1232 15 6824 304 5 2542 0 0
+fn=_PyEval_EvalCodeWithName
+0 444894 8862 62 158641 5735 35 63877 381 2
+fn=_PyEval_EvalFrameDefault
+0 6955466 132520 471 2187015 69317 609 747164 6779 197
+fn=_PyEval_FiniThreads
+0 6 1 1 3 1 0 1 0 0
+fn=_PyEval_Initialize
+0 6 1 1 2 1 0 4 1 1
+fn=_PyEval_SliceIndex
+0 364 24 4 140 2 0 70 0 0
+fn=_PyExc_Fini
+0 125 2 2 68 20 17 34 0 0
+fn=_PyExc_Init
+0 1138 88 73 404 162 1 146 3 0
+fn=_PyFaulthandler_Fini
+0 53 4 4 16 2 2 19 0 0
+fn=_PyFaulthandler_Init
+0 50 3 3 6 1 0 22 2 2
+fn=_PyFloat_Init
+0 31 4 3 10 2 1 8 1 1
+fn=_PyFloat_Unpack8
+0 81 3 3 24 1 0 9 0 0
+fn=_PyFrame_New_NoTrack
+0 438109 12228 18 149256 10099 90 126255 6925 398
+fn=_PyFunction_Vectorcall
+0 348171 11021 11 110802 6409 63 72247 1766 16
+fn=_PyGC_CollectIfEnabled
+0 1 1 1 0 0 0 0 0 0
+fn=_PyGC_CollectNoFail
+0 26 5 2 8 2 0 8 2 0
+fn=_PyGC_DumpShutdownStats
+0 17 1 1 7 1 0 3 0 0
+fn=_PyGC_Fini
+0 14 1 1 5 2 0 3 0 0
+fn=_PyGC_Initialize
+0 56 4 4 24 1 1 29 0 0
+fn=_PyGILState_Fini
+0 7 1 1 2 0 0 3 0 0
+fn=_PyGILState_Init
+0 22 1 1 5 0 0 7 0 0
+fn=_PyGen_yf
+0 111 9 3 45 0 0 0 0 0
+fn=_PyHamt_Fini
+0 9 1 1 4 1 0 1 0 0
+fn=_PyHamt_Init
+0 31 6 3 9 3 0 8 0 0
+fn=_PyIOBase_check_readable
+0 1558 82 1 492 135 1 164 0 0
+fn=_PyIOBase_check_seekable
+0 95 6 3 30 4 0 10 0 0
+fn=_PyIOBase_check_writable
+0 76 8 4 24 6 0 8 0 0
+fn=_PyIOBase_finalize
+0 905 50 3 362 0 0 181 0 0
+fn=_PyIO_get_locale_module
+0 203 13 3 77 29 0 42 1 0
+fn=_PyIO_get_module_state
+0 110 20 4 30 0 0 30 0 0
+fn=_PyImportHooks_Init
+0 58 6 3 7 0 0 17 0 0
+fn=_PyImportZip_Init
+0 58 5 4 9 2 0 17 2 0
+fn=_PyImport_AcquireLock
+0 6004 300 2 1680 55 0 1682 0 0
+fn=_PyImport_AddModuleObject
+0 174 16 5 46 9 0 34 0 0
+fn=_PyImport_FindExtensionObjectEx
+0 806 84 4 197 12 0 178 0 0
+fn=_PyImport_FindSharedFuncptr
+0 114 12 10 34 8 0 22 0 0
+fn=_PyImport_Fini
+0 15 1 1 5 2 1 5 0 0
+fn=_PyImport_Fini2
+0 21 2 2 6 1 0 6 0 0
+fn=_PyImport_FixupBuiltin
+0 23 2 0 5 0 0 5 0 0
+fn=_PyImport_FixupExtensionObject
+0 1405 104 6 269 23 1 263 2 0
+fn=_PyImport_GetModuleId
+0 7 2 2 0 0 0 2 0 0
+fn=_PyImport_Init
+0 27 1 1 5 1 0 13 1 0
+fn=_PyImport_LoadDynamicModuleWithSpec
+0 328 26 24 58 10 0 68 3 0
+fn=_PyImport_ReleaseLock
+0 3840 397 2 1200 40 0 960 0 0
+fn=_PyImport_SetModuleString
+0 13 1 1 3 0 0 4 0 0
+fn=_PyIncrementalNewlineDecoder_decode
+0 1740 141 16 418 30 0 230 1 0
+fn=_PyInterpreterState_Enable
+0 32 2 2 8 0 0 13 1 0
+fn=_PyInterpreterState_Get
+0 380 28 1 190 2 0 38 0 0
+fn=_PyLong_AsByteArray
+0 115 8 8 9 0 0 9 0 0
+fn=_PyLong_AsInt
+0 10215 673 3 3027 84 0 1043 0 0
+fn=_PyLong_FormatWriter
+0 20 1 1 0 0 0 0 0 0
+fn=_PyLong_FromNbIndexOrNbInt
+0 1944 162 2 810 171 0 162 22 0
+fn=_PyLong_FromNbInt
+0 3290 350 13 700 67 0 385 0 0
+fn=_PyLong_FromUid
+0 1280 61 0 0 0 0 0 0 0
+fn=_PyLong_Init
+0 5535 3 3 538 134 132 796 2 0
+fn=_PyLong_New
+0 33460 695 4 9560 33 0 6692 173 4
+fn=_PyLong_Sign
+0 80 16 1 16 0 0 0 0 0
+fn=_PyMem_RawStrdup
+0 66 4 4 24 2 0 18 0 0
+fn=_PyMem_RawWcsdup
+0 1175 7 1 376 2 0 282 0 0
+fn=_PyMem_SetDefaultAllocator
+0 45 5 2 0 0 0 0 0 0
+fn=_PyModule_Clear
+0 60 0 0 15 0 0 0 0 0
+fn=_PyModule_ClearDict
+0 105087 126 15 28242 2109 436 1140 0 0
+fn=_PyModule_CreateInitialized
+0 1262 89 8 305 53 14 259 0 0
+fn=_PyNode_FinalizeEndPos
+0 78530 129 20 24476 69 0 14431 8 0
+fn=_PyOS_GetOpt
+0 96 3 3 39 1 1 21 0 0
+fn=_PyOS_ResetGetOpt
+0 27 1 1 12 3 0 12 2 0
+fn=_PyObject_CallFunction_SizeT
+0 4392 234 2 732 5 0 1830 2 0
+fn=_PyObject_CallMethodId
+0 7072 298 5 1127 2 0 2087 0 0
+fn=_PyObject_CallMethodIdObjArgs
+0 15867 1174 14 3732 384 17 4724 8 1
+fn=_PyObject_CallMethodId_SizeT
+0 12210 548 8 1967 3 0 3576 0 0
+fn=_PyObject_Call_Prepend
+0 234 14 3 72 2 0 60 0 0
+fn=_PyObject_FastCallDict
+0 64887 3692 25 21440 1247 22 10179 209 4
+fn=_PyObject_FastCall_Prepend
+0 1156 42 5 306 0 0 272 0 0
+fn=_PyObject_GC_New
+0 200552 5392 14 61036 2779 27 39229 687 297
+fn=_PyObject_GC_NewVar
+0 40168 2361 7 11942 912 0 8088 491 160
+fn=_PyObject_GC_Resize
+0 1180 50 2 295 4 0 177 0 0
+fn=_PyObject_GenericGetAttrWithDict
+0 1527886 9443 50 572272 33181 584 134040 1708 81
+fn=_PyObject_GenericSetAttrWithDict
+0 406599 10862 55 139570 4046 176 42404 405 27
+fn=_PyObject_GetAttrId
+0 29338 758 6 9632 1408 40 3738 0 0
+fn=_PyObject_GetDictPtr
+0 168 12 2 72 0 0 0 0 0
+fn=_PyObject_GetMethod
+0 522257 4922 24 220249 12453 109 78204 323 8
+fn=_PyObject_IsAbstract
+0 10135 70 4 2691 0 0 1299 0 0
+fn=_PyObject_LookupAttr
+0 12887 538 4 5248 235 2 2802 30 1
+fn=_PyObject_LookupAttrId
+0 45925 1186 9 16438 1113 22 7842 93 6
+fn=_PyObject_LookupSpecial
+0 152122 3587 15 61241 5624 33 17521 16 0
+fn=_PyObject_MakeTpCall
+0 455750 18407 37 149773 5815 57 73767 174 6
+fn=_PyObject_New
+0 4710 225 3 1570 138 8 942 0 0
+fn=_PyObject_SetAttrId
+0 5216 170 2 978 0 0 1304 0 0
+fn=_PyPathConfig_Calculate
+0 150 11 11 35 1 0 35 1 0
+fn=_PyPathConfig_ClearGlobal
+0 20 1 1 6 1 1 5 0 0
+fn=_PyPathConfig_ComputeSysPath0
+0 60 5 5 14 3 3 12 1 1
+fn=_PyPreCmdline_Clear
+0 6 1 1 1 0 0 2 0 0
+fn=_PyPreCmdline_Read
+0 154 5 5 39 1 0 42 1 0
+fn=_PyPreCmdline_SetConfig
+0 41 1 1 10 0 0 15 0 0
+fn=_PyPreConfig_GetConfig
+0 16 2 1 5 0 0 3 0 0
+fn=_PyPreConfig_InitFromPreConfig
+0 124 4 2 28 0 0 60 0 0
+fn=_PyPreConfig_Read
+0 227 20 17 59 4 0 71 2 0
+fn=_PyPreConfig_Write
+0 68 4 4 21 3 0 19 2 0
+fn=_PyRuntimeState_Fini
+0 58 2 2 16 0 0 14 0 0
+fn=_PyRuntimeState_Init
+0 252 5 5 12 2 0 208 27 0
+fn=_PyRuntime_Finalize
+0 6 1 1 3 0 0 3 0 0
+fn=_PyRuntime_Initialize
+0 44 2 2 13 2 1 14 0 0
+fn=_PySet_NextEntry
+0 2552 42 3 607 15 0 238 0 0
+fn=_PySlice_GetLongIndices
+0 528 27 4 144 1 0 104 0 0
+fn=_PyStack_AsDict
+0 7084 577 9 2228 338 0 1202 36 0
+fn=_PyStack_UnpackDict
+0 14607 1362 21 4416 71 0 3128 29 1
+fn=_PyState_AddModule
+0 741 44 5 368 62 0 94 0 0
+fn=_PyState_ClearModules
+0 496 4 4 186 69 0 61 0 0
+fn=_PyStructSequence_Init
+0 17 2 2 2 0 0 4 0 0
+fn=_PySys_ClearAuditHooks
+0 26 3 3 10 3 2 6 0 0
+fn=_PySys_Create
+0 2683 108 105 762 27 3 409 10 2
+fn=_PySys_GetObjectId
+0 48 4 3 24 4 0 0 0 0
+fn=_PySys_InitMain
+0 634 57 57 186 6 0 88 1 0
+fn=_PySys_ReadPreinitWarnOptions
+0 39 4 4 17 1 0 15 0 0
+fn=_PySys_ReadPreinitXOptions
+0 39 4 4 17 0 0 15 0 0
+fn=_PySys_SetObjectId
+0 57 6 2 21 0 0 9 0 0
+fn=_PySys_SetPreliminaryStderr
+0 86 8 8 27 5 0 18 0 0
+fn=_PyThread_cond_init
+0 4 1 1 4 0 0 0 0 0
+fn=_PyTime_AsMicroseconds
+0 336 108 1 0 0 0 0 0 0
+fn=_PyTime_AsSecondsDouble
+0 14 1 1 4 1 1 2 0 0
+fn=_PyTime_Init
+0 29 2 2 5 0 0 5 1 0
+fn=_PyTime_localtime
+0 36 3 2 10 0 0 12 0 0
+fn=_PyTraceMalloc_Init
+0 4 1 0 1 0 0 0 0 0
+fn=_PyTuple_FromArray
+0 13547 1008 11 4211 193 0 2758 11 0
+fn=_PyTuple_Resize
+0 4044 80 6 1014 0 0 510 0 0
+fn=_PyType_CalculateMetaclass
+0 6664 314 2 2155 79 0 213 0 0
+fn=_PyType_Fini
+0 837 1 1 279 161 96 95 1 0
+fn=_PyType_GetDocFromInternalDoc
+0 36 4 1 8 0 0 8 0 0
+fn=_PyType_Lookup
+0 315 3 3 144 3 0 27 0 0
+fn=_PyType_LookupId
+0 90 9 0 9 0 0 18 0 0
+fn=_PyType_Name
+0 242 2 1 88 0 0 44 0 0
+fn=_PyTypes_Init
+0 281 47 21 68 39 0 75 1 0
+fn=_PyUnicodeWriter_Finish
+0 610 4 4 211 0 0 91 0 0
+fn=_PyUnicodeWriter_Init
+0 20 1 1 1 0 0 15 0 0
+fn=_PyUnicodeWriter_PrepareInternal
+0 697018 4014 39 182140 100 2 150389 1860 399
+fn=_PyUnicodeWriter_WriteASCIIString
+0 96 4 4 39 0 0 12 0 0
+fn=_PyUnicodeWriter_WriteStr
+0 435 16 6 141 0 0 54 0 0
+fn=_PyUnicode_AsASCIIString
+0 30 4 4 10 0 0 0 0 0
+fn=_PyUnicode_ClearStaticStrings
+0 1587 2 2 426 214 103 298 0 0
+fn=_PyUnicode_EqualToASCIIId
+0 4573 347 4 1279 154 3 651 9 0
+fn=_PyUnicode_EqualToASCIIString
+0 15999 199 5 5159 41 3 3257 0 0
+fn=_PyUnicode_FindMaxChar
+0 13 2 2 3 0 0 0 0 0
+fn=_PyUnicode_Fini
+0 2038 2 2 365 101 33 198 0 0
+fn=_PyUnicode_FromASCII
+0 26736 329 6 6216 4 0 6192 116 16
+fn=_PyUnicode_FromId
+0 2740 350 3 1280 136 10 162 1 0
+fn=_PyUnicode_Init
+0 116 5 4 18 0 0 18 0 0
+fn=_PyUnicode_InitEncodings
+0 72 6 5 18 0 0 24 1 0
+fn=_PyUnicode_IsAlpha
+0 85 2 2 25 9 8 0 0 0
+fn=_PyUnicode_IsDecimalDigit
+0 36 2 1 10 0 0 0 0 0
+fn=_PyUnicode_IsDigit
+0 18 2 2 5 0 0 0 0 0
+fn=_PyUnicode_IsNumeric
+0 18 2 2 5 0 0 0 0 0
+fn=_PyUnicode_IsXidContinue
+0 2232 16 2 620 10 0 0 0 0
+fn=_PyUnicode_IsXidStart
+0 391 16 4 115 30 3 0 0 0
+fn=_PyUnicode_JoinArray
+0 102216 1493 14 22655 101 3 7740 33 0
+fn=_PyUnicode_XStrip
+0 61703 1339 7 11322 117 0 6587 186 9
+fn=_PyWarnings_Init
+0 178 11 6 50 11 0 38 0 0
+fn=_PyWeakref_ClearRef
+0 2160 5 3 900 168 0 1080 5 0
+fn=_PyWideStringList_Clear
+0 830 10 6 336 10 3 296 0 0
+fn=_PyWideStringList_Copy
+0 518 5 3 162 2 0 134 0 0
+fn=_PyWideStringList_Extend
+0 72 3 3 18 0 0 26 0 0
+fn=_Py_Assign
+0 2436 21 4 580 0 0 696 66 0
+fn=_Py_Attribute
+0 6762 17 3 1470 0 0 1764 108 0
+fn=_Py_BinOp
+0 132 6 2 30 0 0 39 2 0
+fn=_Py_BoolOp
+0 1638 38 2 378 0 0 504 34 0
+fn=_Py_BuildValue_SizeT
+0 450 67 8 72 0 0 198 0 0
+fn=_Py_Call
+0 4524 48 4 1044 0 0 1276 87 2
+fn=_Py_CheckFunctionResult
+0 12944 1358 2 4045 0 0 809 0 0
+fn=_Py_ClearArgcArgv
+0 20 2 2 5 0 0 5 0 0
+fn=_Py_ClearFileSystemEncoding
+0 38 4 4 20 9 6 6 0 0
+fn=_Py_ClearStandardStreamEncoding
+0 48 5 5 14 2 1 8 0 0
+fn=_Py_Compare
+0 624 46 6 144 0 0 176 12 0
+fn=_Py_Constant
+0 1406 24 6 296 0 0 370 27 0
+fn=_Py_Continue
+0 29 2 1 6 0 0 8 1 0
+fn=_Py_Dealloc
+0 19896 859 0 19896 1179 6 0 0 0
+fn=_Py_DecodeLocaleEx
+0 8030 120 3 2584 6 0 1212 0 0
+fn=_Py_Dict
+0 72 4 2 16 0 0 20 2 0
+fn=_Py_EncodeLocaleEx
+0 224 15 1 32 0 0 64 0 0
+fn=_Py_EncodeUTF8Ex
+0 490 8 4 62 1 0 86 0 0
+fn=_Py_Expr
+0 825 20 2 150 0 0 225 28 0
+fn=_Py_FinishPendingCalls
+0 22 1 1 10 1 0 8 0 0
+fn=_Py_For
+0 180 14 2 44 0 0 48 6 0
+fn=_Py_FunctionDef
+0 225 15 3 60 0 0 60 8 0
+fn=_Py_GetEnv
+0 80 2 2 24 1 0 16 0 0
+fn=_Py_GetErrorHandler
+0 822 56 5 194 0 0 138 0 0
+fn=_Py_GetForceASCII
+0 4 1 1 3 0 0 0 0 0
+fn=_Py_HashBytes
+0 1368 11 3 456 8 0 152 0 0
+fn=_Py_HashPointer
+0 2940 369 1 588 0 0 0 0 0
+fn=_Py_HashRandomization_Fini
+0 6 0 0 3 1 1 1 0 0
+fn=_Py_HashRandomization_Init
+0 29 2 2 5 1 0 11 1 0
+fn=_Py_If
+0 156 5 2 36 0 0 44 4 0
+fn=_Py_Import
+0 248 7 2 48 0 0 72 10 0
+fn=_Py_Index
+0 143 18 1 22 0 0 44 1 0
+fn=_Py_IsLocaleCoercionTarget
+0 40 1 1 11 1 0 6 0 0
+fn=_Py_KeyedHash
+0 140 35 2 0 0 0 0 0 0
+fn=_Py_Lambda
+0 86 5 3 18 0 0 22 2 0
+fn=_Py_LegacyLocaleDetected
+0 20 2 2 5 2 0 4 0 0
+fn=_Py_List
+0 780 21 2 180 0 0 240 15 1
+fn=_Py_Mangle
+0 17842 69 4 6460 149 0 4794 5 0
+fn=_Py_Module
+0 128 15 4 24 0 0 40 3 0
+fn=_Py_PreInitializeFromConfig
+0 1540 6 2 440 3 0 528 0 0
+fn=_Py_PreInitializeFromPyArgv
+0 66 5 5 17 4 0 20 2 0
+fn=_Py_Return
+0 93 6 1 18 0 0 27 3 0
+fn=_Py_SetFileSystemEncoding
+0 27 2 1 8 0 0 10 0 0
+fn=_Py_SetLocaleFromEnv
+0 12 0 0 6 0 0 6 1 1
+fn=_Py_Slice
+0 80 2 0 16 0 0 28 2 0
+fn=_Py_SourceAsString
+0 252 15 5 91 0 0 56 0 0
+fn=_Py_Starred
+0 246 18 4 54 0 0 72 4 0
+fn=_Py_Subscript
+0 690 37 7 150 0 0 180 15 0
+fn=_Py_Tuple
+0 546 24 4 126 0 0 168 10 0
+fn=_Py_VaBuildStack_SizeT
+0 780 84 1 0 0 0 0 0 0
+fn=_Py_With
+0 111 4 3 27 0 0 33 3 0
+fn=_Py_alias
+0 340 14 4 60 0 0 80 5 0
+fn=_Py_arg
+0 456 8 2 108 0 0 120 6 0
+fn=_Py_arguments
+0 217 12 2 63 0 0 77 6 0
+fn=_Py_asdl_int_seq_new
+0 480 32 3 80 0 0 96 0 0
+fn=_Py_asdl_seq_new
+0 14656 24 6 4129 24 0 2412 0 0
+fn=_Py_bytes_lower
+0 58 8 4 24 4 0 10 0 0
+fn=_Py_convert_optional_to_ssize_t
+0 20 2 2 8 2 0 3 0 0
+fn=_Py_device_encoding
+0 80 0 0 50 0 0 20 0 0
+fn=_Py_fstat_noraise
+0 628 156 0 157 51 0 0 0 0
+fn=_Py_get_env_flag
+0 126 2 2 42 0 0 21 0 0
+fn=_Py_get_xoption
+0 184 1 1 72 0 0 56 0 0
+fn=_Py_keyword
+0 100 2 1 20 0 0 25 0 0
+fn=_Py_read
+0 6601 262 3 1771 17 0 1932 2 0
+fn=_Py_set_inheritable
+0 243 81 1 0 0 0 0 0 0
+fn=_Py_wfopen
+0 155 6 6 28 3 1 29 0 0
+fn=_Py_withitem
+0 51 6 1 9 0 0 12 1 0
+fn=_Py_wreadlink
+0 123 6 6 33 2 0 30 3 3
+fn=_Py_wrealpath
+0 38 3 3 10 0 0 9 0 0
+fn=_Py_write
+0 82 6 3 22 0 0 24 0 0
+fn=__GI__IO_un_link.part.0
+0 443 42 21 151 13 0 79 0 0
+fn=__GI___close_nocancel
+0 60 3 3 10 0 0 0 0 0
+fn=__GI___tunables_init
+0 29649 7 7 5649 39 39 6 1 1
+fn=__GI_strstr
+0 102 9 6 33 3 2 24 2 0
+fn=____strtol_l_internal
+0 62758 10 10 11184 331 3 6028 0 0
+fn=____strtoul_l_internal
+0 466 10 8 74 3 2 44 1 0
+fn=__acos_finite
+0 13 2 2 3 0 0 0 0 0
+fn=__alloc_dir
+0 360 27 5 63 0 0 108 5 1
+fn=__asin_finite
+0 13 1 1 3 0 0 0 0 0
+fn=__atan2_finite
+0 16 2 2 3 0 0 0 0 0
+fn=__call_tls_dtors
+0 12 2 2 5 0 0 2 0 0
+fn=__close_nocancel
+0 78 13 1 13 0 0 0 0 0
+fn=__ctype_b_loc
+0 3624 65 4 2718 7 0 0 0 0
+fn=__ctype_init
+0 17 2 2 10 5 0 3 0 0
+fn=__current_locale_name
+0 552 91 2 368 68 2 0 0 0
+fn=__cxa_atexit
+0 3 1 1 0 0 0 0 0 0
+fn=__cxa_finalize
+0 531 5 5 153 2 2 63 0 0
+fn=__dcigettext
+0 8832 778 33 2392 135 4 2024 36 0
+fn=__default_morecore
+0 176 11 1 22 0 0 22 0 0
+fn=__errno_location
+0 10724 236 1 8043 209 0 0 0 0
+fn=__exp_finite
+0 16 2 2 3 0 0 0 0 0
+fn=__fcntl64_nocancel_adjusted
+0 48 4 4 12 0 0 3 0 0
+fn=__fopen_internal
+0 221 16 8 33 0 0 59 4 2
+fn=__gconv_alias_compare
+0 56708 1 1 28354 2875 0 0 0 0
+fn=__gconv_find_transform
+0 170 8 7 38 2 0 30 0 0
+fn=__gconv_get_builtin_trans
+0 165 4 4 31 6 0 41 0 0
+fn=__gconv_get_path
+0 117 11 11 26 1 1 32 2 0
+fn=__gconv_load_cache
+0 29 3 3 6 0 0 6 2 0
+fn=__gconv_load_conf
+0 20 2 2 6 2 0 0 0 0
+fn=__gconv_lookup_cache
+0 58 5 5 22 0 0 16 0 0
+fn=__gconv_read_conf
+0 420117 19 19 133376 2622 6 37596 138 0
+fn=__gconv_transform_internal_utf8
+0 381329 403 27 107247 0 0 86394 82 13
+fn=__gconv_transform_utf8_internal
+0 224994 486 22 36854 0 0 27122 190 53
+fn=__getclktck
+0 7 2 2 3 2 0 0 0 0
+fn=__getdents
+0 162 9 1 18 0 0 0 0 0
+fn=__init_misc
+0 25 2 2 7 1 0 5 1 0
+fn=__internal_atexit
+0 40 3 3 11 1 0 10 1 0
+fn=__isoc99_sscanf
+0 100 8 6 14 0 0 34 0 0
+fn=__libc_alloc_buffer_alloc_array
+0 156 2 2 18 0 0 6 0 0
+fn=__libc_csu_init
+0 34 3 3 8 0 0 8 0 0
+fn=__libc_current_sigrtmax
+0 3 0 0 2 0 0 0 0 0
+fn=__libc_current_sigrtmin
+0 3 1 1 2 1 0 0 0 0
+fn=__libc_pthread_init
+0 310 2 2 86 6 0 46 6 6
+fn=__libc_scratch_buffer_set_array_size
+0 126 2 2 35 0 0 21 0 0
+fn=__libc_sigaction
+0 3568 31 23 1058 0 0 860 4 2
+fn=__log_finite
+0 16 2 2 3 0 0 0 0 0
+fn=__mbsrtowcs_l
+0 85086 511 24 23262 116 4 19674 134 0
+fn=__memchr_sse2
+0 93754 798 30 10810 910 63 0 0 0
+fn=__memcmp_sse4_1
+0 250249 3998 71 57880 1073 17 0 0 0
+fn=__memcpy_chk
+0 21 3 3 6 0 0 0 0 0
+fn=__memcpy_chk_sse2_unaligned
+0 15 0 0 0 0 0 0 0 0
+fn=__memcpy_sse2_unaligned_erms
+0 460836 6323 11 155900 4157 663 125002 9219 3147
+fn=__memmove_chk
+0 21 3 3 6 0 0 0 0 0
+fn=__mempcpy_sse2_unaligned
+0 8980 19 2 0 0 0 0 0 0
+fn=__memrchr_sse2
+0 2060 177 16 235 23 0 0 0 0
+fn=__memset_sse2_unaligned
+0 232440 2234 1 7972 0 0 15944 705 148
+fn=__memset_sse2_unaligned_erms
+0 310972 5999 4 13980 4 0 163082 22008 10108
+fn=__new_exitfn
+0 32 4 4 8 2 0 5 0 0
+fn=__offtime
+0 1044 15 14 64 1 1 56 0 0
+fn=__open_nocancel
+0 546 31 10 63 0 0 37 1 0
+fn=__pow_finite
+0 13 2 2 3 0 0 0 0 0
+fn=__pread64_nocancel
+0 56 1 1 8 0 0 0 0 0
+fn=__pthread_initialize_minimal
+0 161 13 13 24 6 1 56 8 2
+fn=__pthread_mutex_unlock_usercnt
+0 154756 849 13 42212 4 0 7030 0 0
+fn=__pthread_once_slow
+0 98 10 10 20 3 2 16 1 0
+fn=__pthread_tunables_init
+0 14 2 2 4 0 0 2 0 0
+fn=__rawmemchr_sse2
+0 1562 50 8 181 15 15 0 0 0
+fn=__read_nocancel
+0 156 5 4 26 0 0 0 0 0
+fn=__realpath_chk
+0 4 1 1 0 0 0 0 0 0
+fn=__register_atfork
+0 43 3 3 10 1 1 11 1 1
+fn=__run_exit_handlers
+0 98 9 9 25 4 4 15 1 1
+fn=__sched_cpucount
+0 7 2 2 3 0 0 0 0 0
+fn=__sigjmp_save
+0 81 3 3 18 0 0 18 1 0
+fn=__sigsetjmp
+0 582 8 8 125 4 2 216 7 3
+fn=__stpcpy_sse2_unaligned
+0 2196 117 17 531 27 4 164 4 2
+fn=__strchr_sse2
+0 103198 589 19 13152 428 8 0 0 0
+fn=__strchrnul_sse2
+0 357 8 4 34 4 4 0 0 0
+fn=__strcmp_sse2_unaligned
+0 3824878 260 11 851049 48029 68 0 0 0
+fn=__strcpy_sse2_unaligned
+0 167 26 8 40 7 2 14 0 0
+fn=__strcspn_sse42
+0 37 6 6 5 0 0 0 0 0
+fn=__strlen_sse2
+0 292908 1423 9 41377 6129 1247 0 0 0
+fn=__strncmp_sse42
+0 14796 510 87 1890 221 135 0 0 0
+fn=__strncpy_sse2_unaligned
+0 73445 901 38 10572 209 6 5366 7 0
+fn=__strnlen_sse2
+0 42293 321 16 6741 158 99 952 127 0
+fn=__strrchr_sse2
+0 8425 345 11 745 109 50 0 0 0
+fn=__strspn_sse42
+0 28 5 5 5 2 2 0 0 0
+fn=__strtoul_internal
+0 16 1 0 8 0 0 0 0 0
+fn=__tunable_get_val
+0 605 26 3 124 22 0 31 0 0
+fn=__tz_compute
+0 86 5 3 22 0 0 16 0 0
+fn=__tz_convert
+0 120 5 4 32 1 1 14 0 0
+fn=__tzfile_compute
+0 138 8 8 40 0 0 30 0 0
+fn=__tzfile_read
+0 830 47 46 213 3 1 134 5 2
+fn=__tzset_parse_tz
+0 112 5 3 18 0 0 46 0 0
+fn=__tzstring
+0 56 2 2 7 0 0 14 0 0
+fn=__tzstring_len
+0 568 4 4 113 0 0 94 0 0
+fn=__uflow
+0 144 8 8 44 2 1 8 0 0
+fn=__underflow
+0 645 12 8 198 37 2 39 0 0
+fn=__unregister_atfork
+0 252 4 4 81 2 2 9 0 0
+fn=__vfprintf_internal
+0 2354 91 91 484 30 21 430 11 0
+fn=__vfscanf_internal
+0 1754 63 61 464 12 7 262 9 0
+fn=__vsnprintf_chk
+0 44 6 6 0 0 0 0 0 0
+fn=__vsnprintf_internal
+0 228 12 12 52 0 0 60 7 2
+fn=__wcschr_sse2
+0 525 8 7 53 2 0 0 0 0
+fn=__wcscmp_sse2
+0 31040 500 18 5839 111 3 0 0 0
+fn=__wcscpy_ssse3
+0 358 16 16 71 2 2 33 4 4
+fn=__wcslen_sse2
+0 21441 304 17 7387 54 10 0 0 0
+fn=__wcsmbs_load_conv
+0 202 11 10 41 7 4 26 3 0
+fn=__wcsncpy_chk
+0 16 1 1 0 0 0 0 0 0
+fn=__wcsnlen_sse4_1
+0 69050 121 15 9017 4 3 699 31 6
+fn=__wcsrchr_sse2
+0 245 8 8 21 0 0 0 0 0
+fn=__wmemset_sse2_unaligned
+0 12 2 2 0 0 0 0 0 0
+fn=_dl_add_to_namespace_list
+0 515 10 6 134 1 1 79 1 1
+fn=_dl_add_to_slotinfo
+0 28 2 2 9 2 0 6 0 0
+fn=_dl_addr
+0 71450 11 11 14298 1091 434 17 2 0
+fn=_dl_allocate_tls_init
+0 87 6 6 27 5 0 15 1 1
+fn=_dl_allocate_tls_storage
+0 329 3 3 7 0 0 297 37 37
+fn=_dl_cache_libcmp
+0 5892 4 4 914 55 55 0 0 0
+fn=_dl_catch_error
+0 139 7 6 47 0 0 39 1 0
+fn=_dl_catch_exception
+0 986 19 13 252 7 4 338 10 4
+fn=_dl_cet_check
+0 2 1 1 0 0 0 0 0 0
+fn=_dl_cet_open_check
+0 6 2 2 0 0 0 0 0 0
+fn=_dl_check_all_versions
+0 137 2 2 23 0 0 13 1 0
+fn=_dl_check_map_versions
+0 10644 41 41 3632 77 64 918 57 47
+fn=_dl_count_modids
+0 6 2 2 3 1 1 0 0 0
+fn=_dl_debug_initialize
+0 162 19 9 52 7 5 4 0 0
+fn=_dl_debug_state
+0 12 4 3 6 0 0 0 0 0
+fn=_dl_determine_tlsoffset
+0 72 5 5 16 1 0 11 0 0
+fn=_dl_discover_osversion
+0 85 4 4 12 1 1 4 1 1
+fn=_dl_dst_count
+0 360 11 3 120 0 0 120 4 2
+fn=_dl_find_dso_for_object
+0 139 9 9 54 15 14 12 2 0
+fn=_dl_fini
+0 667 11 11 222 81 79 73 13 13
+fn=_dl_get_tls_static_info
+0 6 1 1 3 0 0 2 1 0
+fn=_dl_important_hwcaps
+0 593 22 22 88 0 0 84 4 4
+fn=_dl_init
+0 239 11 11 73 3 0 30 0 0
+fn=_dl_init_paths
+0 80 8 8 14 0 0 25 2 2
+fn=_dl_load_cache_lookup
+0 2028 22 17 345 56 49 218 2 2
+fn=_dl_lookup_symbol_x
+0 224195 31 31 48310 952 526 24529 11 1
+fn=_dl_map_object
+0 3938 41 41 887 80 76 539 9 8
+fn=_dl_map_object_deps
+0 3967 78 78 778 23 13 405 13 9
+fn=_dl_map_object_from_fd
+0 10091 179 153 2336 104 104 1021 74 69
+fn=_dl_mcount_wrapper_check
+0 22746 128 4 11373 49 0 0 0 0
+fn=_dl_name_match_p
+0 5426 7 6 1350 44 41 783 5 2
+fn=_dl_new_object
+0 2235 65 42 430 9 9 381 56 52
+fn=_dl_next_ld_env_entry
+0 446 2 2 156 0 0 1 0 0
+fn=_dl_next_tls_modid
+0 7 1 1 3 0 0 1 0 0
+fn=_dl_open
+0 130 10 10 30 4 2 40 0 0
+fn=_dl_process_pt_note
+0 770 14 14 218 0 0 102 6 5
+fn=_dl_protect_relro
+0 220 6 6 66 1 0 22 0 0
+fn=_dl_receive_error
+0 17 2 2 5 0 0 7 0 0
+fn=_dl_relocate_object
+0 292377 105 103 71967 5927 5492 24598 4067 3656
+fn=_dl_setup_hash
+0 264 8 6 77 12 12 66 1 1
+fn=_dl_sort_maps
+0 3000 28 27 761 12 12 188 0 0
+fn=_dl_start
+0 1081 20 19 258 40 38 88 39 39
+fn=_dl_sym
+0 8 2 2 0 0 0 0 0 0
+fn=_dl_sysdep_read_whole_file
+0 43 4 4 6 1 1 9 2 2
+fn=_dl_sysdep_start
+0 656 32 31 158 21 19 77 7 7
+fn=_dl_sysdep_start_cleanup
+0 2 1 1 1 0 0 0 0 0
+fn=_dl_unload_cache
+0 23 3 3 7 4 2 2 0 0
+fn=_fxstat
+0 1991 100 4 181 0 0 0 0 0
+fn=_init
+0 22 2 2 7 4 0 6 3 2
+fn=_int_free
+0 217343 8017 31 63187 2945 149 35359 242 11
+fn=_int_malloc
+0 666988 12793 70 100389 5215 25 109586 3560 1945
+fn=_int_realloc
+0 22686 659 12 4516 261 1 3306 182 33
+fn=_lxstat
+0 11 2 2 1 0 0 0 0 0
+fn=_nl_find_locale
+0 242 11 9 49 3 1 55 1 1
+fn=_nl_intern_locale_data
+0 8104 10 10 1629 71 69 526 49 49
+fn=_nl_load_locale_from_archive
+0 778 22 21 128 9 4 138 2 1
+fn=_nl_normalize_codeset
+0 137 4 4 29 5 4 9 0 0
+fn=_nl_postload_ctype
+0 138 9 5 72 11 0 36 4 0
+fn=_pthread_cleanup_pop
+0 12 1 1 4 1 0 2 1 0
+fn=_pthread_cleanup_pop_restore
+0 140 14 6 56 0 0 14 0 0
+fn=_pthread_cleanup_push
+0 14 2 2 4 1 0 8 0 0
+fn=_pthread_cleanup_push_defer
+0 238 14 6 56 11 1 70 0 0
+fn=_setjmp
+0 3 1 1 0 0 0 0 0 0
+fn=_start
+0 12 2 2 2 1 0 3 0 0
+fn=_xstat
+0 2536 222 2 263 7 0 51 9 0
+fn=access
+0 9 1 1 1 0 0 1 0 0
+fn=add_alias2.part.0
+0 32472 39 3 5412 0 0 8118 0 0
+fn=add_module.constprop.0
+0 255017 14 13 62132 571 1 37390 0 0
+fn=alloc_perturb
+0 11720 281 1 5860 0 0 0 0 0
+fn=bcmp
+0 26 2 1 8 0 0 0 0 0
+fn=brk
+0 164 13 3 29 0 0 15 0 0
+fn=call_dl_init
+0 12 2 2 8 0 0 0 0 0
+fn=call_init.part.0
+0 551 13 13 194 42 0 87 0 0
+fn=calloc
+0 41485 72 28 8372 52 0 2800 2 0
+fn=ceil
+0 7 2 2 3 1 0 0 0 0
+fn=check_match
+0 60458 14 14 18558 1243 658 6709 0 0
+fn=check_stdfiles_vtables
+0 12 3 3 7 3 0 0 0 0
+fn=clock_gettime@@GLIBC_2.17
+0 63 3 3 15 2 0 6 0 0
+fn=close
+0 756 84 1 168 0 0 0 0 0
+fn=closedir
+0 81 9 2 18 0 0 18 0 0
+fn=compute_change
+0 192 5 5 44 0 0 28 0 0
+fn=confstr
+0 51 7 7 9 3 3 5 0 0
+fn=cos
+0 16 2 2 3 0 0 0 0 0
+fn=cosf
+0 9 2 2 3 0 0 0 0 0
+fn=dcgettext
+0 276 92 3 0 0 0 0 0 0
+fn=derivation_compare
+0 30 1 1 10 1 0 6 0 0
+fn=dl_cet_check
+0 93 9 9 27 1 0 18 0 0
+fn=dl_main
+0 1362 79 74 340 54 24 150 19 18
+fn=dl_open_worker
+0 712 49 46 213 10 6 69 3 0
+fn=dlopen
+0 44 6 4 16 5 4 10 1 0
+fn=dlsym
+0 66 6 6 26 3 0 18 0 0
+fn=do_lookup_x
+0 317084 47 47 102560 2584 756 49687 8 4
+fn=do_preload
+0 28 2 2 7 0 0 8 0 0
+fn=do_sym
+0 128 10 10 42 4 0 22 0 0
+fn=dup
+0 18 6 2 3 0 0 0 0 0
+fn=elision_init
+0 37 4 4 6 1 1 8 0 0
+fn=exit
+0 6 1 1 0 0 0 1 0 0
+fn=exp2f
+0 9 2 2 3 0 0 0 0 0
+fn=expand_dynamic_string_token
+0 54 6 6 15 0 0 18 0 0
+fn=expf
+0 9 2 2 3 0 0 0 0 0
+fn=fclose@@GLIBC_2.2.5
+0 193 24 17 58 4 0 23 0 0
+fn=fcntl
+0 63 4 4 12 0 0 18 0 0
+fn=feof
+0 82 4 4 30 0 0 8 0 0
+fn=fflush
+0 106 4 4 36 7 7 12 0 0
+fn=fileno
+0 77 14 4 33 12 3 0 0 0
+fn=find_derivation
+0 371393 31 31 93186 11115 0 47284 268 204
+fn=flockfile
+0 1848 21 2 924 9 0 252 0 0
+fn=floor
+0 7 2 2 3 1 0 0 0 0
+fn=fopen@@GLIBC_2.2.5
+0 15 4 2 0 0 0 0 0 0
+fn=fread
+0 61 5 5 20 0 0 10 0 0
+fn=fread_unlocked
+0 253 3 3 44 0 0 44 0 0
+fn=free
+0 55399 2123 7 13329 1549 71 2 0 0
+fn=fseek
+0 30 4 4 7 0 0 5 0 0
+fn=ftell
+0 49 5 5 16 0 0 5 0 0
+fn=ftello
+0 28 4 4 5 0 0 3 0 0
+fn=funlockfile
+0 1008 12 1 420 0 0 168 0 0
+fn=get_common_indices.constprop.0
+0 93 10 10 12 0 0 20 1 1
+fn=get_phys_pages
+0 77 3 3 8 0 0 5 0 0
+fn=getc
+0 14 3 3 5 0 0 2 1 0
+fn=getcwd
+0 46 6 6 11 1 1 7 0 0
+fn=getdelim
+0 154358 12 10 41531 0 0 23729 101 1
+fn=getegid
+0 4 0 0 1 0 0 0 0 0
+fn=getenv
+0 15455 26 8 5097 216 48 311 2 0
+fn=geteuid
+0 4 1 1 1 0 0 0 0 0
+fn=getgid
+0 4 0 0 1 0 0 0 0 0
+fn=getpagesize
+0 24 6 2 12 4 0 0 0 0
+fn=getrandom
+0 9 1 1 2 0 0 0 0 0
+fn=getrlimit
+0 10 1 1 1 0 0 0 0 0
+fn=gettimeofday
+0 7 3 3 3 1 0 0 0 0
+fn=getuid
+0 4 0 0 1 0 0 0 0 0
+fn=handle_intel.constprop.0
+0 162 5 5 36 0 0 42 0 0
+fn=handle_preload_list
+0 53 3 3 12 0 0 10 1 1
+fn=index
+0 1239 19 19 177 11 11 0 0 0
+fn=init_cacheinfo
+0 250 15 15 20 2 0 21 3 3
+fn=init_tls
+0 102 5 5 25 9 1 13 1 1
+fn=insert_module
+0 617988 4 4 131474 24766 0 86113 0 0
+fn=intel_check_word.constprop.0
+0 1351 9 9 123 6 6 18 0 0
+fn=isatty
+0 1470 196 3 392 0 0 196 0 0
+fn=localtime_r
+0 10 1 1 2 0 0 0 0 0
+fn=log2f
+0 9 2 2 3 0 0 0 0 0
+fn=logf
+0 9 2 2 3 0 0 0 0 0
+fn=lseek
+0 1038 93 2 174 0 0 3 0 0
+fn=main
+0 1 0 0 1 0 0 0 0 0
+fn=malloc
+0 202099 4794 12 53608 4458 21 21189 3 1
+fn=malloc_consolidate
+0 1075 37 11 361 36 7 136 3 0
+fn=malloc_hook_ini
+0 12 1 1 3 2 1 3 0 0
+fn=map_doit
+0 15 2 2 5 0 0 3 0 0
+fn=maybe_split_for_insert.isra.0
+0 175739 7 6 45708 3260 0 5512 0 0
+fn=mbsrtowcs
+0 5600 231 2 1600 3 0 0 0 0
+fn=mbstowcs
+0 12000 86 6 3200 0 0 3200 0 0
+fn=memchr
+0 30 1 1 9 0 0 0 0 0
+fn=memcpy
+0 861 18 18 247 3 2 183 29 28
+fn=memcpy@@GLIBC_2.14
+0 63 3 3 18 2 0 0 0 0
+fn=memcpy@GLIBC_2.2.5
+0 206640 443 2 21642 267 75 14428 184 10
+fn=memmem
+0 300 14 7 52 0 0 86 5 0
+fn=memmove
+0 84 5 4 24 3 0 0 0 0
+fn=mempcpy
+0 102 4 4 12 0 0 0 0 0
+fn=memrchr
+0 20 2 2 6 0 0 0 0 0
+fn=memset
+0 1708 18 15 55 0 0 730 171 171
+fn=mmap
+0 1100 35 9 165 0 0 110 0 0
+fn=modf
+0 665 70 2 35 0 0 35 0 0
+fn=mprotect
+0 84 4 3 14 0 0 0 0 0
+fn=msort_with_tmp.part.0
+0 28359 12 8 7353 0 0 4403 38 0
+fn=munmap
+0 12 2 2 2 0 0 0 0 0
+fn=munmap_chunk
+0 32 3 3 11 1 0 0 0 0
+fn=new_composite_name
+0 1534 16 8 183 4 1 163 0 0
+fn=nl_langinfo
+0 48 11 3 24 20 0 0 0 0
+fn=nl_langinfo_l
+0 204 11 4 48 31 3 0 0 0
+fn=open
+0 2872 254 5 592 0 0 344 0 0
+fn=open_verify.constprop.0
+0 2126 42 42 531 37 24 140 6 5
+fn=openaux
+0 306 2 2 136 0 0 51 0 0
+fn=opendir
+0 90 8 1 9 0 0 9 0 0
+fn=opendir_tail
+0 288 27 6 63 0 0 45 0 0
+fn=parse_offset
+0 160 5 5 32 0 0 28 0 0
+fn=parse_tzname
+0 98 2 2 18 0 0 12 0 0
+fn=powf
+0 9 1 1 3 0 0 0 0 0
+fn=pthread_cond_init@@GLIBC_2.3.2
+0 48 3 3 12 1 0 6 0 0
+fn=pthread_cond_signal@@GLIBC_2.3.2
+0 140430 1234 4 51491 216 0 28086 98 15
+fn=pthread_condattr_init
+0 12 3 3 4 0 0 1 0 0
+fn=pthread_condattr_setclock
+0 11 1 1 2 0 0 1 0 0
+fn=pthread_getspecific
+0 78 4 3 21 5 2 0 0 0
+fn=pthread_key_create
+0 45 4 4 7 2 1 4 0 0
+fn=pthread_key_delete
+0 16 1 1 3 1 1 0 0 0
+fn=pthread_mutex_init
+0 76 7 7 22 2 0 18 2 0
+fn=pthread_mutex_lock
+0 260094 1048 17 77322 1317 3 14068 0 0
+fn=pthread_mutex_unlock
+0 77266 332 2 21066 0 0 0 0 0
+fn=pthread_once
+0 34 3 3 10 3 2 0 0 0
+fn=pthread_rwlock_rdlock
+0 4567 61 4 1659 104 2 828 6 0
+fn=pthread_rwlock_unlock
+0 5404 148 8 1148 2 0 288 7 0
+fn=pthread_rwlock_wrlock
+0 177 8 4 50 1 0 33 1 1
+fn=pthread_self
+0 4815 491 2 3210 0 0 0 0 0
+fn=pthread_setspecific
+0 68 4 4 14 0 0 14 2 1
+fn=pthread_testcancel
+0 60 5 3 20 5 1 0 0 0
+fn=ptmalloc_init.part.0
+0 724 9 9 11 5 2 275 36 33
+fn=qsort
+0 9 1 0 0 0 0 0 0 0
+fn=qsort_r
+0 229 15 9 47 1 0 61 2 0
+fn=rawmemchr
+0 10 1 1 3 0 0 0 0 0
+fn=read
+0 1312 91 1 328 0 0 0 0 0
+fn=read_int
+0 311 9 9 46 0 0 19 0 0
+fn=readdir
+0 58388 37 5 24778 157 4 10217 0 0
+fn=readlink
+0 26 2 2 5 1 0 2 0 0
+fn=realloc
+0 25829 1218 8 4897 293 0 2454 0 0
+fn=realloc_hook_ini
+0 19 2 2 5 1 0 4 0 0
+fn=realpath@@GLIBC_2.3
+0 170 10 10 29 0 0 20 0 0
+fn=rewind
+0 45 4 4 16 0 0 7 0 0
+fn=rindex
+0 20 2 1 6 0 0 0 0 0
+fn=rtld_lock_default_lock_recursive
+0 24 1 1 16 1 1 0 0 0
+fn=rtld_lock_default_unlock_recursive
+0 24 0 0 16 0 0 0 0 0
+fn=sbrk
+0 538 35 8 159 26 5 82 2 0
+fn=sem_destroy@@GLIBC_2.2.5
+0 579 134 2 193 0 0 0 0 0
+fn=sem_init@@GLIBC_2.2.5
+0 2134 192 1 194 0 0 388 0 0
+fn=sem_post@@GLIBC_2.2.5
+0 7644 247 2 2548 52 0 0 0 0
+fn=sem_trywait@@GLIBC_2.2.5
+0 5643 309 1 1881 175 7 0 0 0
+fn=sem_wait@@GLIBC_2.2.5
+0 130 6 3 40 6 2 20 0 0
+fn=setlocale
+0 542 24 12 164 10 0 119 3 1
+fn=sigaction
+0 550 4 3 4 1 0 2 0 0
+fn=sigaltstack
+0 18 2 2 3 0 0 0 0 0
+fn=sigemptyset
+0 116 6 4 4 0 0 68 0 0
+fn=sin
+0 16 1 1 3 0 0 0 0 0
+fn=sincosf
+0 9 1 1 3 0 0 0 0 0
+fn=sinf
+0 9 1 1 3 0 0 0 0 0
+fn=stpcpy
+0 12 2 2 4 0 0 0 0 0
+fn=stpncpy
+0 12 1 1 4 0 0 0 0 0
+fn=strcasecmp
+0 6 2 2 3 0 0 0 0 0
+fn=strcasecmp_l
+0 6 2 2 3 0 0 0 0 0
+fn=strcat
+0 12 2 2 4 0 0 0 0 0
+fn=strchrnul
+0 10 1 1 3 0 0 0 0 0
+fn=strcmp
+0 64687 183 168 12994 799 405 0 0 0
+fn=strcpy
+0 48 1 1 16 1 0 0 0 0
+fn=strcspn
+0 234 4 4 106 1 1 34 4 4
+fn=strdup
+0 306 7 5 34 0 0 68 1 1
+fn=strerror
+0 644 57 3 184 0 0 184 0 0
+fn=strerror_r
+0 1656 105 6 506 60 5 322 0 0
+fn=strlen
+0 1421 21 17 229 3 3 0 0 0
+fn=strncasecmp
+0 6 1 1 3 0 0 0 0 0
+fn=strncasecmp_l
+0 6 1 1 3 0 0 0 0 0
+fn=strncmp
+0 30 2 2 10 0 0 0 0 0
+fn=strncpy
+0 36 2 2 12 0 0 0 0 0
+fn=strnlen
+0 20 1 1 6 0 0 0 0 0
+fn=strpbrk
+0 7 1 1 3 0 0 0 0 0
+fn=strspn
+0 7 2 2 3 0 0 0 0 0
+fn=strstr
+0 7 2 2 3 0 0 0 0 0
+fn=strtok_r
+0 49 3 2 13 0 0 10 0 0
+fn=strtol
+0 2740 2 2 1096 266 0 0 0 0
+fn=sysconf
+0 187 22 8 44 5 3 29 1 0
+fn=sysinfo
+0 6 2 2 1 0 0 0 0 0
+fn=sysmalloc
+0 1230 108 38 282 53 6 195 17 12
+fn=systrim.constprop.0
+0 437 27 6 153 29 0 68 0 0
+fn=tcache_init.part.0
+0 114 4 4 9 0 0 84 9 9
+fn=tcgetattr
+0 2356 346 4 526 1 0 256 0 0
+fn=tfind
+0 83447 140 5 14526 1400 1 7876 0 0
+fn=time
+0 7 2 2 3 1 0 0 0 0
+fn=time_syscall
+0 6 1 1 1 0 0 0 0 0
+fn=tsearch
+0 317377 7 7 72103 1237 0 57311 0 0
+fn=tzset_internal
+0 37 7 5 8 1 1 10 1 1
+fn=uname
+0 6 1 1 1 0 0 0 0 0
+fn=ungetc
+0 16 2 2 4 0 0 3 0 0
+fn=unlink_chunk.constprop.0
+0 37265 1406 3 15116 714 26 4398 0 0
+fn=version_check_doit
+0 11 1 1 4 0 0 2 0 0
+fn=wcscat
+0 105 1 1 21 0 0 28 0 0
+fn=wcschr
+0 30 1 1 9 0 0 0 0 0
+fn=wcscmp
+0 20 1 1 6 2 0 0 0 0
+fn=wcscpy
+0 14 1 1 6 0 0 0 0 0
+fn=wcslen
+0 20 2 2 6 0 0 0 0 0
+fn=wcsncmp
+0 10 2 2 3 2 0 0 0 0
+fn=wcsncpy
+0 586 6 5 96 0 0 122 5 2
+fn=wcsnlen
+0 13 2 2 4 0 0 0 0 0
+fn=wcsrchr
+0 10 2 2 3 2 0 0 0 0
+fn=wcsrtombs
+0 288951 236 23 77451 148 2 62553 80 14
+fn=wcstombs
+0 44685 57 4 11916 0 0 11916 8 2
+fn=wmemchr
+0 20 1 1 6 0 0 0 0 0
+fn=wmemcmp
+0 26 2 2 8 0 0 0 0 0
+fn=wmemcpy
+0 72 2 1 0 0 0 0 0 0
+fn=wmemset
+0 22 2 2 6 0 0 0 0 0
+fn=write
+0 18 2 1 4 0 0 0 0 0
+summary: 86062562 936663 16576 23543070 1149307 77146 9674348 137573 54036

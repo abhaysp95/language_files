@@ -1,0 +1,1935 @@
+# callgrind format
+version: 1
+creator: pprofile
+event: usphit :microseconds/hit
+events: hits microseconds usphit
+cmd: ticky.py
+fl=ticky.py
+fn=<module>:3
+3 2 90 45
+7 1 64 64
+cfl=<frozen importlib._bootstrap>
+cfn=_find_and_load:986
+calls=1 986
+7 1 32502 32502
+8 1 22 22
+11 1 21 21
+29 1 21 21
+62 1 20 20
+71 1 20 20
+82 1 20 20
+83 1 86 86
+cfl=ticky.py
+cfn=main:71
+calls=1 71
+83 1 140691 140691
+fn=get_error_count:11
+11 1 14 14
+13 1 17 17
+14 1 19 19
+15 1 168 168
+cfl=/usr/lib/python3.8/_bootlocale.py
+cfn=getpreferredencoding:33
+calls=1 33
+15 1 135 135
+cfl=/usr/lib/python3.8/codecs.py
+cfn=__init__:309
+calls=1 309
+15 1 128 128
+16 101 1652 16
+cfl=/usr/lib/python3.8/codecs.py
+cfn=decode:319
+calls=3 319
+16 3 254 84
+17 100 1437 14
+18 100 3830 38
+cfl=/usr/lib/python3.8/re.py
+cfn=search:198
+calls=100 198
+18 100 34255 342
+19 100 1384 13
+20 34 458 13
+21 66 1091 16
+22 7 101 14
+23 6 90 15
+25 1 175 175
+cfl=ticky.py
+cfn=<lambda>:25
+calls=6 25
+25 6 140 23
+26 1 17 17
+fn=get_user_stats:29
+29 1 18 18
+31 1 20 20
+32 1 22 22
+33 1 29 29
+34 1 24 24
+35 1 143 143
+cfl=/usr/lib/python3.8/_bootlocale.py
+cfn=getpreferredencoding:33
+calls=1 33
+35 1 98 98
+cfl=/usr/lib/python3.8/codecs.py
+cfn=__init__:309
+calls=1 309
+35 1 91 91
+36 101 1709 16
+cfl=/usr/lib/python3.8/codecs.py
+cfn=decode:319
+calls=3 319
+36 3 265 88
+37 100 1523 15
+38 100 4027 40
+cfl=/usr/lib/python3.8/re.py
+cfn=search:198
+calls=100 198
+38 100 28361 283
+39 100 4098 40
+cfl=/usr/lib/python3.8/re.py
+cfn=search:198
+calls=100 198
+39 100 26389 263
+40 100 1674 16
+41 100 1591 15
+42 198 2972 15
+43 66 1005 15
+44 66 926 14
+45 100 1542 15
+46 102 1589 15
+47 34 525 15
+48 34 484 14
+52 21 316 15
+53 40 649 16
+54 20 292 14
+55 20 309 15
+56 20 337 16
+58 1 511 511
+cfl=ticky.py
+cfn=<lambda>:58
+calls=20 58
+58 20 465 23
+59 1 18 18
+fn=write_to_csv:62
+62 2 29 14
+64 2 594 297
+cfl=/usr/lib/python3.8/_bootlocale.py
+cfn=getpreferredencoding:33
+calls=2 33
+64 2 202 101
+cfl=/usr/lib/python3.8/codecs.py
+cfn=__init__:309
+calls=2 309
+64 2 185 92
+cfl=/usr/lib/python3.8/codecs.py
+cfn=__init__:186
+calls=2 186
+64 2 99 49
+65 4 158 39
+cfl=/usr/lib/python3.8/csv.py
+cfn=__init__:131
+calls=2 131
+65 2 258 129
+66 2 34 17
+67 2 90 45
+cfl=/usr/lib/python3.8/csv.py
+cfn=writeheader:141
+calls=2 141
+67 2 1208 604
+68 2 417 208
+cfl=/usr/lib/python3.8/csv.py
+cfn=writerows:156
+calls=2 156
+68 2 9651 4825
+fn=main:71
+71 1 21 21
+73 1 16 16
+74 1 65 65
+cfl=ticky.py
+cfn=get_error_count:11
+calls=1 11
+74 1 45372 45372
+75 1 20 20
+76 1 65 65
+cfl=ticky.py
+cfn=write_to_csv:62
+calls=1 62
+76 1 3974 3974
+77 1 74 74
+cfl=ticky.py
+cfn=get_user_stats:29
+calls=1 29
+77 1 82036 82036
+78 1 20 20
+79 1 67 67
+cfl=ticky.py
+cfn=write_to_csv:62
+calls=1 62
+79 1 8957 8957
+fn=<lambda>:25
+25 12 140 11
+fn=<lambda>:58
+58 40 465 11
+fl=/usr/lib/python3.8/_bootlocale.py
+fn=getpreferredencoding:33
+33 4 64 16
+34 4 82 20
+35 4 67 16
+37 4 93 23
+38 4 66 16
+46 4 62 15
+fl=<frozen zipimport>
+fn=__init__:63
+63 1 21 21
+64 1 36 36
+67 1 21 21
+69 1 21 21
+72 1 21 21
+74 1 20 20
+75 1 57 57
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_stat:80
+calls=1 80
+75 1 50 50
+86 1 23 23
+88 1 30 30
+fl=<frozen importlib._bootstrap_external>
+fn=find_spec:1334
+1334 2 24 12
+1340 2 44 22
+1341 2 32 16
+1342 2 91 45
+cfl=<frozen importlib._bootstrap_external>
+cfn=_get_spec:1302
+calls=2 1302
+1342 2 17091 8545
+1343 2 31 15
+1345 2 30 15
+1356 2 133 66
+fn=_get_spec:1302
+1302 2 30 15
+1307 2 34 17
+1308 9 135 15
+1309 9 142 15
+1311 9 358 39
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_importer_cache:1265
+calls=9 1265
+1311 9 2310 256
+1312 9 132 14
+1313 7 112 16
+1314 7 311 44
+cfl=<frozen importlib._bootstrap_external>
+cfn=find_spec:1431
+calls=7 1431
+1314 7 13251 1893
+1317 7 138 19
+1318 5 73 14
+1319 2 28 14
+1320 2 31 15
+fn=_path_importer_cache:1265
+1265 9 97 10
+1273 9 126 14
+1274 2 30 15
+1275 2 54 27
+1280 9 124 13
+1281 9 137 15
+1282 1 19 19
+1283 1 45 45
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_hooks:1252
+calls=1 1252
+1283 1 1535 1535
+1284 1 21 21
+1285 9 118 13
+fn=_path_hooks:1252
+1252 1 16 16
+1255 1 19 19
+1257 2 36 18
+1258 2 30 15
+1259 2 102 51
+cfl=<frozen zipimport>
+cfn=__init__:63
+calls=1 63
+1259 1 306 306
+cfl=<frozen importlib._bootstrap_external>
+cfn=path_hook_for_FileFinder:1520
+calls=1 1520
+1259 1 968 968
+1260 1 29 29
+1261 1 25 25
+fn=_path_stat:80
+80 12 118 9
+87 12 290 24
+fn=path_hook_for_FileFinder:1520
+1520 1 12 12
+1522 1 47 47
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_isdir:104
+calls=1 104
+1522 1 211 211
+1524 1 56 56
+cfl=<frozen importlib._bootstrap_external>
+cfn=__init__:1394
+calls=1 1394
+1524 1 639 639
+fn=_path_isdir:104
+104 1 11 11
+106 1 15 15
+108 1 48 48
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_is_mode_type:90
+calls=1 90
+108 1 135 135
+fn=_path_is_mode_type:90
+90 3 39 13
+92 3 45 15
+93 3 118 39
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_stat:80
+calls=3 80
+93 3 97 32
+96 3 44 14
+fn=__init__:1394
+1394 1 16 16
+1398 1 20 20
+1399 4 64 16
+1400 3 252 84
+cfl=<frozen importlib._bootstrap_external>
+cfn=<genexpr>:1400
+calls=8 1400
+1400 8 196 24
+1401 1 13 13
+1403 1 18 18
+1404 1 18 18
+1405 1 19 19
+1406 1 19 19
+fn=<genexpr>:1400
+1400 16 196 12
+fn=find_spec:1431
+1431 7 98 14
+1436 7 124 17
+1437 7 125 17
+1438 7 116 16
+1439 7 311 44
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_stat:80
+calls=7 80
+1439 7 228 32
+1442 7 122 17
+1443 1 58 58
+cfl=<frozen importlib._bootstrap_external>
+cfn=_fill_cache:1479
+calls=1 1479
+1443 1 212 212
+1444 1 21 21
+1446 7 280 40
+cfl=<frozen importlib._bootstrap_external>
+cfn=_relax_case:40
+calls=7 40
+1446 7 154 22
+1450 7 125 17
+1451 7 113 16
+1453 7 115 16
+1465 35 562 16
+1466 30 1239 41
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_join:62
+calls=30 62
+1466 30 5014 167
+1467 30 1259 41
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=30 222
+1467 30 704 23
+1468 30 519 17
+1469 2 85 42
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_isfile:99
+calls=2 99
+1469 2 309 154
+1470 4 135 33
+cfl=<frozen importlib._bootstrap_external>
+cfn=_get_spec:1426
+calls=2 1426
+1470 2 1023 511
+1471 2 34 17
+1472 5 76 15
+1477 5 79 15
+fn=_fill_cache:1479
+1479 1 16 16
+1481 1 20 20
+1482 1 19 19
+1483 1 84 84
+1490 1 25 25
+1491 1 23 23
+1507 1 22 22
+fn=_relax_case:40
+40 7 66 9
+42 7 88 12
+fn=_path_join:62
+62 32 313 9
+64 64 1564 24
+cfl=<frozen importlib._bootstrap_external>
+cfn=<listcomp>:64
+calls=32 64
+64 32 3160 98
+65 32 389 12
+fn=<listcomp>:64
+64 196 2346 11
+65 66 814 12
+fn=_path_isfile:99
+99 2 20 10
+101 2 78 39
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_is_mode_type:90
+calls=2 90
+101 2 209 104
+fn=_get_spec:1426
+1426 2 24 12
+1427 2 100 50
+cfl=<frozen importlib._bootstrap_external>
+cfn=__init__:939
+calls=1 939
+1427 1 46 46
+cfl=<frozen importlib._bootstrap_external>
+cfn=__init__:1088
+calls=1 1088
+1427 1 48 48
+1428 4 121 30
+cfl=<frozen importlib._bootstrap_external>
+cfn=spec_from_file_location:629
+calls=2 629
+1428 2 652 326
+1429 2 29 14
+fn=__init__:939
+939 1 11 11
+942 1 17 17
+943 1 17 17
+fn=spec_from_file_location:629
+629 2 33 16
+641 2 35 17
+653 2 46 23
+661 2 100 50
+cfl=<frozen importlib._bootstrap>
+cfn=__init__:342
+calls=2 342
+661 2 233 116
+662 2 34 17
+665 2 33 16
+675 2 33 16
+686 2 34 17
+687 2 35 17
+692 2 32 16
+fn=create_module:774
+774 1 12 12
+775 1 16 16
+fn=_get_cached:424
+424 2 20 10
+425 2 36 18
+426 1 16 16
+427 1 51 51
+cfl=<frozen importlib._bootstrap_external>
+cfn=cache_from_source:294
+calls=1 294
+427 1 680 680
+430 1 14 14
+433 1 16 16
+fn=cache_from_source:294
+294 2 38 19
+312 2 37 18
+319 2 37 18
+320 2 95 47
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_split:68
+calls=2 68
+320 2 138 69
+321 2 39 19
+322 2 36 18
+323 2 35 17
+325 2 38 19
+326 2 47 23
+327 2 35 17
+328 2 34 17
+331 2 35 17
+332 2 34 17
+336 2 36 18
+337 2 35 17
+362 2 86 43
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_join:62
+calls=2 62
+362 2 412 206
+fn=_path_split:68
+68 2 36 18
+70 2 35 17
+71 2 35 17
+72 2 32 16
+fn=exec_module:777
+777 1 16 16
+779 1 52 52
+cfl=<frozen importlib._bootstrap_external>
+cfn=get_code:849
+calls=1 849
+779 1 3021 3021
+780 1 17 17
+783 1 47 47
+cfl=<frozen importlib._bootstrap>
+cfn=_call_with_frames_removed:211
+calls=1 211
+783 1 15157 15157
+fn=get_code:849
+849 1 18 18
+856 1 55 55
+cfl=<frozen importlib._bootstrap_external>
+cfn=_check_name_wrapper:456
+calls=1 456
+856 1 139 139
+857 1 21 21
+858 1 20 20
+859 1 21 21
+860 1 20 20
+861 1 20 20
+862 1 20 20
+863 1 52 52
+cfl=<frozen importlib._bootstrap_external>
+cfn=cache_from_source:294
+calls=1 294
+863 1 575 575
+867 1 20 20
+868 1 54 54
+cfl=<frozen importlib._bootstrap_external>
+cfn=path_stats:1010
+calls=1 1010
+868 1 108 108
+872 1 28 28
+873 1 26 26
+874 1 63 63
+cfl=<frozen importlib._bootstrap_external>
+cfn=get_data:969
+calls=1 969
+874 1 159 159
+878 1 20 20
+879 1 20 20
+880 1 20 20
+882 1 20 20
+883 1 53 53
+cfl=<frozen importlib._bootstrap_external>
+cfn=_classify_pyc:493
+calls=1 493
+883 1 219 219
+884 1 25 25
+885 1 26 26
+886 1 19 19
+887 1 20 20
+888 2 45 22
+889 1 19 19
+891 1 49 49
+cfl=<frozen importlib._bootstrap_external>
+cfn=get_data:969
+calls=1 969
+891 1 117 117
+892 2 59 29
+893 1 19 19
+894 1 19 19
+896 2 92 46
+cfl=<frozen importlib._bootstrap_external>
+cfn=_validate_hash_pyc:554
+calls=1 554
+896 1 32 32
+897 1 19 19
+909 2 71 35
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=1 222
+909 1 26 26
+910 1 19 19
+911 2 69 34
+cfl=<frozen importlib._bootstrap_external>
+cfn=_compile_bytecode:578
+calls=1 578
+911 1 450 450
+912 1 19 19
+913 1 19 19
+fn=_check_name_wrapper:456
+456 1 19 19
+457 1 18 18
+459 1 18 18
+462 1 47 47
+cfl=<frozen importlib._bootstrap_external>
+cfn=get_filename:964
+calls=1 964
+462 1 36 36
+fn=get_filename:964
+964 1 18 18
+967 1 17 17
+fn=path_stats:1010
+1010 1 12 12
+1012 1 43 43
+cfl=<frozen importlib._bootstrap_external>
+cfn=_path_stat:80
+calls=1 80
+1012 1 32 32
+1013 1 19 19
+fn=get_data:969
+969 2 24 12
+971 2 33 16
+972 2 110 55
+973 2 108 54
+fn=_classify_pyc:493
+493 1 16 16
+509 1 19 19
+510 1 19 19
+514 1 19 19
+518 1 58 58
+cfl=<frozen importlib._bootstrap_external>
+cfn=_unpack_uint32:51
+calls=1 51
+518 1 48 48
+520 1 19 19
+523 1 17 17
+fn=_unpack_uint32:51
+51 1 12 12
+53 1 17 17
+54 1 19 19
+fn=_validate_hash_pyc:554
+554 1 14 14
+571 1 18 18
+fn=_compile_bytecode:578
+578 1 17 17
+580 1 283 283
+581 1 21 21
+582 1 46 46
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=1 222
+582 1 26 26
+583 1 17 17
+584 1 19 19
+585 1 17 17
+fn=__init__:1088
+1088 1 12 12
+1089 1 18 18
+1090 1 17 17
+fn=create_module:1099
+1099 1 15 15
+1101 2 71 35
+cfl=<frozen importlib._bootstrap>
+cfn=_call_with_frames_removed:211
+calls=1 211
+1101 1 504 504
+1102 1 17 17
+1103 2 60 30
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=1 222
+1103 1 26 26
+1104 1 17 17
+1105 1 13 13
+fn=exec_module:1107
+1107 1 12 12
+1109 1 42 42
+cfl=<frozen importlib._bootstrap>
+cfn=_call_with_frames_removed:211
+calls=1 211
+1109 1 24 24
+1110 2 72 36
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=1 222
+1110 1 29 29
+1111 1 16 16
+fl=<frozen importlib._bootstrap>
+fn=_find_and_load:986
+986 2 57 28
+988 2 162 81
+cfl=<frozen importlib._bootstrap>
+cfn=__init__:143
+calls=2 143
+988 2 83 41
+cfl=<frozen importlib._bootstrap>
+cfn=__enter__:147
+calls=2 147
+988 2 1279 639
+989 2 36 18
+990 2 31 15
+991 2 208 104
+cfl=<frozen importlib._bootstrap>
+cfn=_find_and_load_unlocked:956
+calls=2 956
+991 2 31241 15620
+cfl=<frozen importlib._bootstrap>
+cfn=__exit__:151
+calls=2 151
+991 2 365 182
+cfl=<frozen importlib._bootstrap>
+cfn=cb:176
+calls=2 176
+991 2 164 82
+fn=__init__:143
+143 2 21 10
+144 2 31 15
+145 2 30 15
+fn=__enter__:147
+147 2 20 10
+148 2 91 45
+cfl=<frozen importlib._bootstrap>
+cfn=_get_module_lock:157
+calls=2 157
+148 2 750 375
+149 2 82 41
+cfl=<frozen importlib._bootstrap>
+cfn=acquire:78
+calls=2 78
+149 2 335 167
+fn=_get_module_lock:157
+157 2 35 17
+163 2 36 18
+164 2 31 15
+165 2 31 15
+166 2 40 20
+167 2 36 18
+168 2 34 17
+170 2 31 15
+171 2 31 15
+174 2 88 44
+cfl=<frozen importlib._bootstrap>
+cfn=__init__:58
+calls=2 58
+174 2 215 107
+176 2 36 18
+187 2 37 18
+189 2 31 15
+191 2 30 15
+fn=__init__:58
+58 2 23 11
+59 2 36 18
+60 2 35 17
+61 2 30 15
+62 2 29 14
+63 2 29 14
+64 2 29 14
+fn=cb:176
+176 2 20 10
+177 2 28 14
+178 2 27 13
+182 2 29 14
+183 2 28 14
+185 2 29 14
+fn=acquire:78
+78 2 28 14
+84 2 33 16
+85 2 30 15
+86 2 28 14
+88 2 34 17
+89 2 30 15
+90 2 29 14
+91 2 30 15
+92 4 60 15
+101 2 29 14
+fn=_find_and_load_unlocked:956
+956 2 29 14
+957 2 33 16
+958 2 39 19
+959 2 33 16
+971 2 96 48
+cfl=<frozen importlib._bootstrap>
+cfn=_find_spec:890
+calls=2 890
+971 2 19236 9618
+972 2 33 16
+975 2 92 46
+cfl=<frozen importlib._bootstrap>
+cfn=_load_unlocked:650
+calls=2 650
+975 2 20526 10263
+976 2 33 16
+980 2 47 23
+fn=_find_spec:890
+890 2 31 15
+892 2 35 17
+893 2 33 16
+898 2 33 16
+904 2 34 17
+905 6 97 16
+906 6 242 40
+cfl=<frozen importlib._bootstrap>
+cfn=__enter__:863
+calls=6 863
+906 6 144 24
+907 6 89 14
+908 6 96 16
+914 6 410 68
+cfl=<frozen importlib._bootstrap>
+cfn=find_spec:725
+calls=2 725
+914 2 121 60
+cfl=<frozen importlib._bootstrap>
+cfn=__exit__:867
+calls=6 867
+914 6 147 24
+cfl=<frozen importlib._bootstrap>
+cfn=find_spec:800
+calls=2 800
+914 2 85 42
+cfl=<frozen importlib._bootstrap_external>
+cfn=find_spec:1334
+calls=2 1334
+914 2 17479 8739
+915 6 90 15
+917 2 30 15
+932 2 32 16
+fn=__enter__:863
+863 6 58 9
+865 6 85 14
+fn=find_spec:725
+725 2 23 11
+727 2 30 15
+729 2 37 18
+732 2 30 15
+fn=__exit__:867
+867 6 59 9
+869 6 87 14
+fn=find_spec:800
+800 2 21 10
+802 2 33 16
+805 2 30 15
+fn=_verbose_message:222
+222 36 377 10
+224 36 491 13
+fn=__init__:342
+342 2 23 11
+344 2 31 15
+345 2 29 14
+346 2 30 15
+347 2 29 14
+348 2 29 14
+351 2 29 14
+352 2 29 14
+fn=_load_unlocked:650
+650 2 25 12
+652 2 30 15
+654 2 32 16
+657 2 84 42
+cfl=<frozen importlib._bootstrap>
+cfn=module_from_spec:549
+calls=2 549
+657 2 3293 1646
+662 2 30 15
+663 2 29 14
+664 2 30 15
+665 2 28 14
+666 2 28 14
+671 2 90 45
+cfl=<frozen importlib._bootstrap_external>
+cfn=exec_module:1107
+calls=1 1107
+671 1 196 196
+cfl=<frozen importlib._bootstrap_external>
+cfn=exec_module:777
+calls=1 777
+671 1 18312 18312
+682 2 34 17
+683 2 30 15
+684 2 80 40
+cfl=<frozen importlib._bootstrap>
+cfn=_verbose_message:222
+calls=2 222
+684 2 54 27
+686 2 30 15
+688 2 29 14
+fn=module_from_spec:549
+549 2 25 12
+552 2 30 15
+553 2 40 20
+556 2 93 46
+cfl=<frozen importlib._bootstrap_external>
+cfn=create_module:774
+calls=1 774
+556 1 28 28
+cfl=<frozen importlib._bootstrap_external>
+cfn=create_module:1099
+calls=1 1099
+556 1 726 726
+560 2 29 14
+561 1 45 45
+cfl=<frozen importlib._bootstrap>
+cfn=_new_module:35
+calls=1 35
+561 1 29 29
+562 2 87 43
+cfl=<frozen importlib._bootstrap>
+cfn=_init_module_attrs:477
+calls=2 477
+562 2 2127 1063
+563 2 29 14
+fn=_new_module:35
+35 1 11 11
+36 1 18 18
+fn=_init_module_attrs:477
+477 2 30 15
+481 2 35 17
+487 2 33 16
+488 2 31 15
+489 2 30 15
+510 2 30 15
+511 2 30 15
+515 2 32 16
+516 2 30 15
+517 2 86 43
+cfl=<frozen importlib._bootstrap>
+cfn=parent:389
+calls=2 389
+517 2 81 40
+521 2 30 15
+522 2 30 15
+526 2 48 24
+527 2 32 16
+533 2 84 42
+cfl=<frozen importlib._bootstrap>
+cfn=has_location:397
+calls=2 397
+533 2 49 24
+534 2 38 19
+535 1 18 18
+536 1 18 18
+540 2 41 20
+541 2 86 43
+cfl=<frozen importlib._bootstrap>
+cfn=cached:376
+calls=2 376
+541 2 1067 533
+542 1 17 17
+543 1 43 43
+cfl=<frozen importlib._bootstrap>
+cfn=cached:376
+calls=1 376
+543 1 35 35
+546 2 31 15
+fn=parent:389
+389 2 21 10
+392 2 28 14
+393 2 30 15
+fn=has_location:397
+397 2 20 10
+399 2 29 14
+fn=cached:376
+376 3 30 10
+378 3 42 14
+379 2 28 14
+380 2 28 14
+382 2 93 46
+cfl=<frozen importlib._bootstrap_external>
+cfn=_get_cached:424
+calls=2 424
+382 2 837 418
+383 3 42 14
+fn=_call_with_frames_removed:211
+211 3 37 12
+219 3 604 201
+cfl=/usr/lib/python3.8/csv.py
+cfn=<module>:2
+calls=1 2
+219 1 15043 15043
+fn=__exit__:151
+151 2 20 10
+152 2 83 41
+cfl=<frozen importlib._bootstrap>
+cfn=release:103
+calls=2 103
+152 2 261 130
+fn=release:103
+103 2 22 11
+104 2 31 15
+105 2 33 16
+106 2 27 13
+108 2 28 14
+109 2 29 14
+110 2 28 14
+111 2 28 14
+112 2 31 15
+fl=/usr/lib/python3.8/re.py
+fn=search:198
+198 300 2974 9
+201 300 11860 39
+cfl=/usr/lib/python3.8/re.py
+cfn=_compile:289
+calls=300 289
+201 300 74170 247
+fn=_compile:289
+289 300 2943 9
+291 300 4405 14
+293 300 3982 13
+294 300 4333 14
+295 3 50 16
+296 3 54 18
+297 3 48 16
+302 3 126 42
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=isstring:595
+calls=3 595
+302 3 95 31
+304 3 145 48
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=compile:759
+calls=3 759
+304 3 56623 18874
+305 3 129 43
+cfl=/usr/lib/python3.8/enum.py
+cfn=__and__:828
+calls=3 828
+305 3 1093 364
+306 3 47 15
+312 3 48 16
+313 3 42 14
+fl=/usr/lib/python3.8/sre_parse.py
+fn=parse:937
+937 3 41 13
+940 3 142 47
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__init__:224
+calls=3 224
+940 3 850 283
+942 3 46 15
+943 3 131 43
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__init__:76
+calls=3 76
+943 3 199 66
+944 3 52 17
+945 3 46 15
+947 3 44 14
+948 3 134 44
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_parse_sub:435
+calls=3 435
+948 3 32385 10795
+958 3 197 65
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=fix_flags:921
+calls=3 921
+958 3 252 84
+960 3 44 14
+964 3 43 14
+967 3 41 13
+fn=__init__:224
+224 3 32 10
+225 3 46 15
+226 3 43 14
+227 3 41 13
+229 3 47 15
+230 3 41 13
+231 3 41 13
+232 3 122 40
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__next:233
+calls=3 233
+232 3 433 144
+fn=__next:233
+233 38 386 10
+234 38 602 15
+235 38 485 12
+236 38 503 13
+237 3 59 19
+238 3 46 15
+239 3 45 15
+240 35 439 12
+241 6 73 12
+242 6 77 12
+243 6 84 14
+247 35 444 12
+248 35 446 12
+fn=__init__:76
+76 3 30 10
+77 3 42 14
+78 3 41 13
+79 3 42 14
+80 3 42 14
+fn=_parse_sub:435
+435 6 98 16
+438 6 103 17
+439 6 104 17
+440 6 99 16
+441 6 247 41
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=tell:286
+calls=6 286
+441 6 153 25
+443 12 480 40
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_parse:493
+calls=6 493
+443 6 31324 5220
+444 6 98 16
+445 6 233 38
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=6 249
+445 6 203 33
+446 6 94 15
+448 6 97 16
+449 6 95 15
+fn=tell:286
+286 15 169 11
+287 15 216 14
+fn=_parse:493
+493 6 166 27
+495 6 363 60
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__init__:111
+calls=6 111
+495 6 482 80
+498 6 168 28
+499 6 167 27
+500 6 166 27
+501 6 165 27
+502 6 169 28
+506 27 711 26
+507 27 672 24
+508 3 75 25
+509 24 603 25
+510 3 74 24
+511 21 1151 54
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=get:254
+calls=21 254
+511 21 3536 168
+513 21 532 25
+524 21 534 25
+525 4 247 61
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_escape:355
+calls=4 355
+525 4 739 184
+526 4 225 56
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=append:172
+calls=4 172
+526 4 102 25
+528 17 435 25
+529 8 457 57
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=append:172
+calls=8 172
+529 8 210 26
+531 9 229 25
+532 3 166 55
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=tell:286
+calls=3 286
+532 3 76 25
+534 3 82 27
+535 3 83 27
+538 3 83 27
+544 3 172 57
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=3 249
+544 3 111 37
+547 9 504 56
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=get:254
+calls=9 254
+547 9 1419 157
+548 9 234 26
+551 9 238 26
+552 3 73 24
+553 6 155 25
+554 2 127 63
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_class_escape:295
+calls=2 295
+554 2 218 109
+556 4 98 24
+567 4 107 26
+568 6 330 55
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=6 249
+568 6 334 55
+570 1 58 58
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=get:254
+calls=1 254
+570 1 154 154
+571 1 31 31
+574 1 30 30
+580 1 31 31
+583 1 30 30
+590 1 31 31
+591 1 39 39
+594 1 31 31
+595 1 30 30
+596 1 30 30
+599 1 32 32
+601 5 137 27
+602 2 57 28
+603 5 129 25
+605 3 190 63
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_uniq:432
+calls=3 432
+605 3 110 36
+607 3 83 27
+614 3 81 27
+618 3 169 56
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=append:172
+calls=3 172
+618 3 81 27
+620 6 170 28
+622 3 163 54
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=tell:286
+calls=3 286
+622 3 75 25
+623 3 80 26
+625 3 86 28
+628 3 80 26
+629 3 83 27
+663 3 181 60
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__len__:160
+calls=3 160
+663 3 83 27
+664 3 177 59
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=3 164
+664 3 374 124
+667 3 261 87
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__len__:160
+calls=3 160
+667 3 72 24
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=3 164
+667 3 109 36
+670 3 171 57
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=3 164
+670 3 110 36
+673 3 169 56
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=3 164
+673 3 109 36
+677 3 174 58
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=3 249
+677 3 109 36
+680 3 184 61
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__setitem__:168
+calls=3 168
+680 3 82 27
+682 3 84 28
+685 3 83 27
+686 3 176 58
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=tell:286
+calls=3 286
+686 3 81 27
+687 3 83 27
+688 3 82 27
+689 3 82 27
+690 3 82 27
+691 3 189 63
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=3 249
+691 3 130 43
+827 3 86 28
+828 3 84 28
+829 3 188 62
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=opengroup:84
+calls=3 84
+829 3 594 198
+832 6 172 28
+834 3 195 65
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=_parse_sub:435
+calls=3 435
+834 3 14648 4882
+835 3 176 58
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=match:249
+calls=3 249
+835 3 555 185
+838 3 82 27
+839 3 179 59
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=closegroup:96
+calls=3 96
+839 3 1585 528
+840 3 168 56
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=append:172
+calls=3 172
+840 3 74 24
+852 24 818 34
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__len__:160
+calls=6 160
+852 6 145 24
+853 18 967 53
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=18 164
+853 18 660 36
+854 18 456 25
+855 3 72 24
+856 3 90 30
+859 6 140 23
+fn=__init__:111
+111 9 107 11
+112 9 122 13
+113 9 121 13
+114 6 77 12
+115 9 113 12
+116 9 116 12
+fn=get:254
+254 31 383 12
+255 31 409 13
+256 31 1095 35
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__next:233
+calls=31 233
+256 31 2844 91
+257 31 378 12
+fn=append:172
+172 18 215 11
+173 18 253 14
+fn=match:249
+249 24 269 11
+250 24 311 12
+251 4 142 35
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__next:233
+calls=4 233
+251 4 417 104
+252 4 52 13
+253 20 251 12
+fn=opengroup:84
+84 3 44 14
+85 3 141 47
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=groups:81
+calls=3 81
+85 3 78 26
+86 3 47 15
+87 3 115 38
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=groups:81
+calls=3 81
+87 3 66 22
+89 3 56 18
+95 3 43 14
+fn=groups:81
+81 12 113 9
+83 12 165 13
+fn=_class_escape:295
+295 2 37 18
+297 2 37 18
+298 2 39 19
+300 2 35 17
+301 2 34 17
+302 2 32 16
+fn=_uniq:432
+432 3 46 15
+433 3 64 21
+fn=__len__:160
+160 15 171 11
+161 15 205 13
+fn=__getitem__:164
+164 45 506 11
+165 45 587 13
+166 3 116 38
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__init__:111
+calls=3 111
+166 3 175 58
+167 42 543 12
+fn=__setitem__:168
+168 3 39 13
+169 3 43 14
+fn=closegroup:96
+96 3 39 13
+97 3 136 45
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=getwidth:174
+calls=3 174
+97 3 1409 469
+fn=getwidth:174
+174 12 147 12
+176 12 188 15
+177 3 42 14
+178 9 133 14
+179 30 467 15
+180 21 299 14
+189 21 294 14
+193 21 294 14
+194 3 128 42
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=getwidth:174
+calls=3 174
+194 3 120 40
+195 3 46 15
+196 3 46 15
+197 18 255 14
+198 3 134 44
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=getwidth:174
+calls=3 174
+198 3 636 212
+199 3 47 15
+200 3 50 16
+201 15 209 13
+202 15 221 14
+203 15 223 14
+220 9 155 17
+221 9 133 14
+fn=fix_flags:921
+921 3 37 12
+923 3 43 14
+924 3 42 14
+926 3 42 14
+927 3 45 15
+935 3 40 13
+fn=_escape:355
+355 4 66 16
+357 4 73 18
+358 4 72 18
+359 2 34 17
+360 2 31 15
+361 2 36 18
+363 2 44 22
+364 2 36 18
+365 2 42 21
+371 2 35 17
+377 2 35 17
+385 2 35 17
+397 2 43 21
+401 2 37 18
+424 2 37 18
+425 2 38 19
+427 2 37 18
+fl=/usr/lib/python3.8/csv.py
+fn=<module>:2
+2 2 106 53
+6 1 29 29
+7 1 133 133
+cfl=<frozen importlib._bootstrap>
+cfn=_find_and_load:986
+calls=1 986
+7 1 12037 12037
+12 1 46 46
+14 1 50 50
+16 2 81 40
+17 1 36 36
+18 1 52 52
+19 1 38 38
+20 1 36 36
+21 1 36 36
+23 1 121 121
+cfl=/usr/lib/python3.8/csv.py
+cfn=Dialect:23
+calls=1 23
+23 1 259 259
+54 1 122 122
+cfl=/usr/lib/python3.8/csv.py
+cfn=excel:54
+calls=1 54
+54 1 159 159
+62 1 57 57
+64 1 126 126
+cfl=/usr/lib/python3.8/csv.py
+cfn=excel_tab:64
+calls=1 64
+64 1 74 74
+67 1 47 47
+69 1 124 124
+cfl=/usr/lib/python3.8/csv.py
+cfn=unix_dialect:69
+calls=1 69
+69 1 178 178
+77 1 46 46
+80 1 129 129
+cfl=/usr/lib/python3.8/csv.py
+cfn=DictReader:80
+calls=1 80
+80 1 198 198
+130 1 132 132
+cfl=/usr/lib/python3.8/csv.py
+cfn=DictWriter:130
+calls=1 130
+130 1 150 150
+160 1 35 35
+161 1 36 36
+165 1 144 144
+cfl=/usr/lib/python3.8/csv.py
+cfn=Sniffer:165
+calls=1 165
+165 1 211 211
+fn=Dialect:23
+23 2 54 27
+24 1 12 12
+31 1 16 16
+32 1 16 16
+34 1 17 17
+35 1 16 16
+36 1 15 15
+37 1 16 16
+38 1 21 21
+39 1 18 18
+40 1 16 16
+42 1 18 18
+47 1 16 16
+fn=excel:54
+54 2 53 26
+55 1 12 12
+56 1 15 15
+57 1 15 15
+58 1 16 16
+59 1 15 15
+60 1 15 15
+61 1 15 15
+fn=excel_tab:64
+64 2 47 23
+65 1 11 11
+66 1 15 15
+fn=unix_dialect:69
+69 2 62 31
+70 1 12 12
+71 1 15 15
+72 1 15 15
+73 1 21 21
+74 1 15 15
+75 1 18 18
+76 1 15 15
+fn=DictReader:80
+80 2 60 30
+81 1 14 14
+90 1 17 17
+93 1 18 18
+94 1 19 19
+103 1 27 27
+104 1 20 20
+107 1 19 19
+fn=DictWriter:130
+130 2 52 26
+131 1 14 14
+141 1 18 18
+145 1 18 18
+153 1 25 25
+156 1 19 19
+fn=__init__:131
+131 2 27 13
+133 2 34 17
+134 2 37 18
+135 2 39 19
+138 2 34 17
+139 2 84 42
+fn=writeheader:141
+141 2 26 13
+142 2 44 22
+143 2 90 45
+cfl=/usr/lib/python3.8/csv.py
+cfn=writerow:153
+calls=2 153
+143 2 1046 523
+fn=_dict_to_list:145
+145 28 312 11
+146 28 408 14
+147 28 495 17
+148 28 390 13
+151 28 429 15
+fn=writerow:153
+153 2 22 11
+154 2 403 201
+cfl=/usr/lib/python3.8/csv.py
+cfn=_dict_to_list:145
+calls=2 145
+154 2 211 105
+cfl=/usr/lib/python3.8/csv.py
+cfn=<genexpr>:151
+calls=7 151
+154 7 201 28
+cfl=/usr/lib/python3.8/codecs.py
+cfn=reset:327
+calls=2 327
+154 2 207 103
+fn=writerows:156
+156 2 27 13
+157 2 3508 1754
+cfl=/usr/lib/python3.8/csv.py
+cfn=_dict_to_list:145
+calls=26 145
+157 26 1825 70
+cfl=/usr/lib/python3.8/csv.py
+cfn=<genexpr>:151
+calls=98 151
+157 98 2252 22
+cfl=/usr/lib/python3.8/codecs.py
+cfn=reset:327
+calls=26 327
+157 26 2037 78
+fn=Sniffer:165
+165 2 69 34
+166 1 17 17
+170 1 24 24
+175 1 24 24
+204 1 25 25
+280 1 24 24
+383 1 24 24
+fn=<genexpr>:151
+151 210 2454 11
+fl=/usr/lib/python3.8/sre_compile.py
+fn=isstring:595
+595 6 61 10
+596 6 105 17
+fn=compile:759
+759 3 40 13
+762 3 130 43
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=isstring:595
+calls=3 595
+762 3 71 23
+763 3 48 16
+764 3 137 45
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=parse:937
+calls=3 937
+764 3 34656 11552
+768 3 140 46
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_code:598
+calls=3 598
+768 3 20660 6886
+770 3 50 16
+775 3 46 15
+776 3 123 41
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=groups:81
+calls=3 81
+776 3 68 22
+777 3 53 17
+780 6 106 17
+781 3 48 16
+782 3 123 41
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=groups:81
+calls=3 81
+782 3 65 21
+783 3 50 16
+fn=_code:598
+598 3 34 11
+600 3 46 15
+601 3 42 14
+604 3 138 46
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_compile_info:536
+calls=3 536
+604 3 6794 2264
+607 3 149 49
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_compile:71
+calls=3 71
+607 3 13348 4449
+609 3 57 19
+611 3 47 15
+fn=_compile_info:536
+536 3 42 14
+540 3 132 44
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=getwidth:174
+calls=3 174
+540 3 2111 703
+541 3 54 18
+543 3 51 17
+547 3 51 17
+548 3 49 16
+549 3 49 16
+550 3 57 19
+552 3 141 47
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_get_literal_prefix:461
+calls=3 461
+552 3 2369 789
+554 3 51 17
+561 3 51 17
+562 3 51 17
+563 3 54 18
+565 3 49 16
+566 3 48 16
+567 3 48 16
+568 3 55 18
+572 3 49 16
+574 3 49 16
+575 3 48 16
+579 3 55 18
+581 3 56 18
+582 3 51 17
+583 3 49 16
+584 1 14 14
+585 3 53 17
+586 3 52 17
+588 3 135 45
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_generate_overlap_table:432
+calls=3 432
+588 3 602 200
+593 3 51 17
+fn=_get_literal_prefix:461
+461 5 75 15
+463 5 89 17
+464 5 88 17
+465 5 87 17
+466 5 215 43
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_get_iscased:453
+calls=5 453
+466 5 194 38
+467 13 231 17
+468 13 218 16
+469 8 134 16
+471 8 148 18
+472 5 91 18
+473 2 44 22
+474 2 94 47
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_combine_flags:65
+calls=2 65
+474 2 93 46
+475 2 117 58
+477 2 103 51
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_get_literal_prefix:461
+calls=2 461
+477 2 452 226
+478 2 34 17
+479 2 33 16
+480 2 34 17
+483 2 34 17
+484 2 35 17
+485 2 33 16
+487 3 48 16
+490 5 87 17
+fn=_get_iscased:453
+453 5 49 9
+454 5 77 15
+455 5 68 13
+fn=_combine_flags:65
+65 5 58 11
+67 5 78 15
+69 5 73 14
+fn=_generate_overlap_table:432
+432 3 36 12
+441 3 51 17
+442 8 121 15
+443 5 72 14
+444 5 71 14
+445 5 70 14
+446 5 69 13
+447 5 68 13
+451 3 39 13
+fn=_compile:71
+71 9 166 18
+73 9 187 20
+74 9 186 20
+75 9 188 20
+76 9 178 19
+77 9 177 19
+78 9 177 19
+79 9 189 21
+80 9 182 20
+81 9 174 19
+82 9 176 19
+90 30 924 30
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=12 164
+90 12 457 38
+91 21 405 19
+92 10 211 21
+93 10 200 20
+94 10 199 19
+119 11 203 18
+120 5 260 52
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_optimize_charset:276
+calls=5 276
+120 5 4100 820
+121 5 106 21
+123 5 94 18
+124 5 95 19
+129 5 102 20
+130 5 234 46
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_compile_charset:249
+calls=5 249
+130 5 1207 241
+131 5 97 19
+132 6 117 19
+137 6 117 19
+138 3 56 18
+140 3 149 49
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_simple:423
+calls=3 423
+140 3 546 182
+141 3 62 20
+142 3 63 21
+145 3 62 20
+146 3 61 20
+147 3 63 21
+148 3 166 55
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_compile:71
+calls=3 71
+148 3 5964 1988
+149 3 61 20
+150 3 61 20
+162 3 61 20
+163 3 61 20
+164 3 60 20
+165 3 61 20
+166 3 61 20
+168 3 256 85
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_combine_flags:65
+calls=3 65
+168 3 117 39
+cfl=/usr/lib/python3.8/sre_compile.py
+cfn=_compile:71
+calls=3 71
+168 3 2735 911
+169 3 60 20
+170 3 66 22
+171 3 60 20
+fn=_simple:423
+423 3 39 13
+425 3 121 40
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__len__:160
+calls=3 160
+425 3 75 25
+427 3 115 38
+cfl=/usr/lib/python3.8/sre_parse.py
+cfn=__getitem__:164
+calls=3 164
+427 3 106 35
+428 3 43 14
+430 3 45 15
+fn=_optimize_charset:276
+276 5 86 17
+278 5 97 19
+279 5 97 19
+280 5 111 22
+281 5 92 18
+282 13 239 18
+284 8 145 18
+285 8 146 18
+286 3 53 17
+295 3 60 20
+296 5 92 18
+297 1 20 20
+298 1 21 21
+311 27 451 16
+312 26 437 16
+313 4 76 19
+316 4 83 20
+331 8 155 19
+334 5 98 19
+335 5 92 18
+337 9 187 20
+338 9 163 18
+339 5 83 16
+340 4 76 19
+343 4 80 20
+344 4 75 18
+347 4 83 20
+348 5 88 17
+350 9 166 18
+351 4 77 19
+352 3 65 21
+354 1 17 17
+355 5 84 16
+357 5 100 20
+360 5 90 18
+fn=_compile_charset:249
+249 5 63 12
+251 5 75 15
+252 13 187 14
+253 8 107 13
+254 8 116 14
+256 8 104 13
+257 3 37 12
+258 5 69 13
+259 1 13 13
+260 1 16 16
+261 4 57 14
+263 4 57 14
+265 4 54 13
+266 4 55 13
+268 4 55 13
+269 4 59 14
+274 5 76 15
+fl=/usr/lib/python3.8/codecs.py
+fn=__init__:309
+309 4 51 12
+310 4 183 45
+cfl=/usr/lib/python3.8/codecs.py
+cfn=__init__:260
+calls=4 260
+310 4 109 27
+312 4 61 15
+fn=__init__:260
+260 4 48 12
+268 4 61 15
+fn=decode:319
+319 6 83 13
+321 6 107 17
+322 6 144 24
+324 6 98 16
+325 6 85 14
+fn=__init__:186
+186 2 25 12
+194 2 40 20
+195 2 33 16
+fn=reset:327
+327 28 272 9
+328 28 1007 35
+cfl=/usr/lib/python3.8/codecs.py
+cfn=reset:276
+calls=28 276
+328 28 601 21
+329 28 363 12
+fn=reset:276
+276 28 254 9
+277 28 347 12
+fl=/usr/lib/python3.8/enum.py
+fn=__and__:828
+828 3 31 10
+829 3 66 22
+831 3 211 70
+cfl=/usr/lib/python3.8/enum.py
+cfn=__call__:278
+calls=6 278
+831 6 783 130
+fn=__call__:278
+278 6 67 11
+303 6 83 13
+304 6 266 44
+cfl=/usr/lib/python3.8/enum.py
+cfn=__new__:557
+calls=6 557
+304 6 365 60
+fn=__new__:557
+557 6 76 12
+561 6 93 15
+566 6 95 15
+567 6 100 16
