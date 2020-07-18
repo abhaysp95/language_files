@@ -4,23 +4,30 @@
 #include<malloc.h>
 #include<stdlib.h>
 
+// structure members
 struct singlelinkedlist {
 	int data;
 	struct singlelinkedlist *next;
 } *root = NULL;
 
+// prototypes
 struct singlelinkedlist *create_node(int );
 struct singlelinkedlist *insert_beg(struct singlelinkedlist *);
 struct singlelinkedlist *is_root_null(struct singlelinkedlist *);
 void insert_before(struct singlelinkedlist *, int );
 void insert_after(struct singlelinkedlist *, int );
 struct singlelinkedlist *insert_before_or_after(struct singlelinkedlist *, int );
+int if_root_null(struct singlelinkedlist *);
+struct singlelinkedlist *delete_beg(struct singlelinkedlist *);
+struct singlelinkedlist *delete_end(struct singlelinkedlist *);
 struct singlelinkedlist *delete_node_of_value(struct singlelinkedlist *);
 struct singlelinkedlist *delete_node_before_value(struct singlelinkedlist *);
 struct singlelinkedlist *delete_node_after_value(struct singlelinkedlist *);
+struct singlelinkedlist *delete_list(struct singlelinkedlist *);
 void display(struct singlelinkedlist *);
-void free_node();
+struct singlelinkedlist *free_node(struct singlelinkedlist *);
 
+// typedef
 typedef struct singlelinkedlist node;
 
 // create the node
@@ -120,130 +127,203 @@ node *insert_before_or_after(node *root, int condition) {
 	return root;
 }
 
-node *delete_node_of_value(node *root) {
-	int value = 0;
-	node *ptr, *pptr;
+// for delete operations
+int if_root_null(node *root) {
 	if (root == NULL) {
-		printf("There is nothing to delete, linkedlist is empty.");
+		printf("There is nothing to delete in linked list\n");
+		printf("Insert somethings first\n");
+		return 1;
+	}
+	return 0;
+}
+
+node *delete_beg(node *root) {
+	node *ptr;
+	int flag;
+	flag = if_root_null(root);
+	if (flag == 1) {
 		return root;
 	}
-	printf("Enter the value of which node to delete:\n");
-	scanf("%d", &value);
-	ptr = root;
-	pptr = ptr;
-	while (ptr -> data != value && ptr -> next != NULL) {
-		pptr = ptr;
-		ptr = ptr -> next;
-	}
-	if (ptr == root && ptr -> data == value) {
-		root = ptr -> next;
-		free(ptr);
-	}
-	else if (ptr -> next == NULL && ptr -> data == value) {
-		pptr -> next = NULL;
-		free(ptr);
-	}
-	else if (ptr -> data != value) {
-		printf("Entered data doesn't match with any of the data\n");
-	}
 	else {
-		pptr -> next = ptr -> next;
+		ptr = root;
+		root = root -> next;
 		free(ptr);
 	}
 	return root;
 }
 
-node *delete_node_before_value(node *root) {
-	int value;
-	node *ptr, *pptr, *ppptr;
-	if (root == NULL) {
-		printf("There's nothing to delete, try inserting some value first\n");
+node *delete_end(node *root) {
+	node *ptr, *pptr;
+	int flag;
+	flag = if_root_null(root);
+	if (flag == 1) {
 		return root;
 	}
-	printf("Enter the value to delete its previous node:\n");
-	scanf("%d", &value);
-	ptr = root;
-	pptr = ptr;
-	ppptr = ptr;
-	while (ptr -> data != value && ptr -> next != NULL) {
-		ppptr = pptr;
-		pptr = ptr;
-		ptr = ptr -> next;
+	else {
+		ptr = root;
+		pptr = root;
+		while (ptr -> next != NULL) {
+			pptr = ptr;
+			ptr = ptr -> next;
+		}
+		if (ptr == pptr) {
+			root = NULL;
+		}
+		else {
+			pptr -> next = NULL;
+			free(ptr);
+		}
 	}
-	if (ptr == root) {
-		printf("There's nothing before the node data you entered to delete\n");
-	}
-	else if (pptr == root && ptr -> data == value) {
-		root = pptr -> next;
-		free(pptr);
-	}
-	else if (ptr -> data != value) {
-		printf("Enter data didn't matched with any of the nodes data\n");
+	return root;
+}
+
+node *delete_node_of_value(node *root) {
+	int value = 0, flag;
+	node *ptr, *pptr;
+	flag = if_root_null(root);
+	if (flag == 1) {
+		return root;
 	}
 	else {
-		ppptr -> next = ptr;
-		free(pptr);
+		printf("Enter the value of which node to delete:\n");
+		scanf("%d", &value);
+		ptr = root;
+		pptr = ptr;
+		while (ptr -> data != value && ptr -> next != NULL) {
+			pptr = ptr;
+			ptr = ptr -> next;
+		}
+		if (ptr == root && ptr -> data == value) {
+			root = ptr -> next;
+			free(ptr);
+		}
+		else if (ptr -> next == NULL && ptr -> data == value) {
+			pptr -> next = NULL;
+			free(ptr);
+		}
+		else if (ptr -> data != value) {
+			printf("Entered data doesn't match with any of the data\n");
+		}
+		else {
+			pptr -> next = ptr -> next;
+			free(ptr);
+		}
+	}
+	return root;
+}
+
+node *delete_node_before_value(node *root) {
+	int value, flag;
+	node *ptr, *pptr, *ppptr;
+	flag = if_root_null(root);
+	if (flag == 1) {
+		return root;
+	}
+	else {
+		printf("Enter the value to delete its previous node:\n");
+		scanf("%d", &value);
+		ptr = root;
+		pptr = ptr;
+		ppptr = ptr;
+		while (ptr -> data != value && ptr -> next != NULL) {
+			ppptr = pptr;
+			pptr = ptr;
+			ptr = ptr -> next;
+		}
+		if (ptr == root) {
+			printf("There's nothing before the node data you entered to delete\n");
+		}
+		else if (pptr == root && ptr -> data == value) {
+			root = pptr -> next;
+			free(pptr);
+		}
+		else if (ptr -> data != value) {
+			printf("Enter data didn't matched with any of the nodes data\n");
+		}
+		else {
+			ppptr -> next = ptr;
+			free(pptr);
+		}
 	}
 	return root;
 }
 
 node *delete_node_after_value(node *root) {
 	node *ptr, *pptr;
-	int value;
-	if (root == NULL) {
-		printf("There's nothing to delete, trying entering some values first\n");
+	int value, flag;
+	flag = if_root_null(root);
+	if (flag == 1) {
+		return root;
 	}
-	printf("Enter the value to match: \n");
-	scanf("%d", &value);
-	ptr = root;
-	pptr = ptr;
-	while (ptr -> data != value && ptr -> next != NULL) {
+	// some problem here in deleting not behaving properly in every condition
+	else {
+		printf("Enter the value to match: \n");
+		scanf("%d", &value);
+		ptr = root;
 		pptr = ptr;
-		ptr = ptr -> next;
+		while (ptr -> data != value && ptr -> next != NULL) {
+			pptr = ptr;
+			ptr = ptr -> next;
+		}
+		if (ptr -> data != value) {
+			printf("Entered value didn't matched to any of the data in linkedlist\n");
+		}
+		else if (ptr == root && ptr -> next == NULL) {
+			printf("There's nothing after the entered element to delete\n");
+		}
+		else if (pptr == root && ptr -> data == value) {
+			pptr -> next = NULL;
+			free(ptr);
+		}
+		else if (ptr -> data == value && ptr -> next == NULL) {
+			printf("There's nothing after the entered element to delete\n");
+		}
+		else {
+			pptr -> next = ptr -> next;
+			free(ptr);
+		}
 	}
-	// requires fixing
-	if (ptr -> data != value) {
-		printf("Entered value didn't matched to any of the data in linkedlist\n");
-	}
-	else if (ptr == root && ptr -> next == NULL) {
-		printf("There's nothing after the entered element to delete\n");
-	}
-	else if (pptr == root && ptr -> data == value) {
-		pptr -> next = NULL;
-		free(ptr);
-	}
-	else if (ptr -> data == value && ptr -> next == NULL) {
-		printf("There's nothing after the entered element to delete\n");
+	return root;
+}
+
+// delete the list
+node *delete_list(node *root) {
+	int flag;
+	flag = if_root_null(root);
+	if (flag == 1) {
+		return root;
 	}
 	else {
-		pptr -> next = ptr -> next;
-		free(ptr);
+		root = free_node(root);
 	}
 	return root;
 }
 
 // function to display linked list
 void display(node *root) {
-	node *ptr;
-	ptr = root;
-	printf("Current Linked list is: \n");
-	if (ptr == NULL) {
-		printf("Linked List is currently empty\n");
+	if (root != NULL) {
+		node *ptr;
+		ptr = root;
+		printf("Current Linked list is: \n");
+		while (ptr != NULL) {
+			printf("%d\n", ptr -> data);
+			ptr = ptr -> next;
+		}
 	}
-	while (ptr != NULL) {
-		printf("%d\n", ptr -> data);
-		ptr = ptr -> next;
+	else {
+		printf("Linked List is currently empty\n");
 	}
 }
 
-void free_node() {
-	node *ptr = root;
-	while (ptr -> next != NULL) {
-		root = ptr -> next;
-		free(ptr);
-		ptr = root;
+node *free_node(node *root) {
+	if (root != NULL) {
+		node *ptr = root;
+		while (ptr != NULL) {
+			root = delete_beg(ptr);
+			ptr = root;
+		}
 	}
-	free(root);
+	return root;
 }
 
 // main function
@@ -255,11 +335,14 @@ int main(int argc, char* argv[]) {
 		printf("1. Create or Insert in begining\n");
 		printf("2. Insert a node before the given value\n");
 		printf("3. Insert a node after the given value\n");
-		printf("4. Delete a node for the given value\n");
-		printf("5. Delete a node before the given value\n");
-		printf("6. Delete a node after the given value\n");
-		printf("7. Display linked list\n");
-		printf("8. Exit\n");
+		printf("4. Delete the begining node\n");
+		printf("5. Delete the end of linkedlist\n");
+		printf("6. Delete a node for the given value\n");
+		printf("7. Delete a node before the given value\n");
+		printf("8. Delete a node after the given value\n");
+		printf("9. Free the linkedlist\n");
+		printf("10. Display linked list\n");
+		printf("11. Exit\n");
 		scanf("%d", &op_choice);
 		switch (op_choice) {
 			case 1:
@@ -272,18 +355,27 @@ int main(int argc, char* argv[]) {
 				root = insert_before_or_after(root, 1);
 				continue;
 			case 4:
-				root = delete_node_of_value(root);
+				root = delete_beg(root);
 				continue;
 			case 5:
-				root = delete_node_before_value(root);
+				root = delete_end(root);
 				continue;
 			case 6:
-				root = delete_node_after_value(root);
+				root = delete_node_of_value(root);
 				continue;
 			case 7:
-				display(root);
+				root = delete_node_before_value(root);
 				continue;
 			case 8:
+				root = delete_node_after_value(root);
+				continue;
+			case 9:
+				root = delete_list(root);
+				continue;
+			case 10:
+				display(root);
+				continue;
+			case 11:
 				printf("Exiting Now!\n");
 				return 0;
 			default:
