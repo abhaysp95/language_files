@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-get errors and users
+get errors and users😎️
 '''
 
 import csv
