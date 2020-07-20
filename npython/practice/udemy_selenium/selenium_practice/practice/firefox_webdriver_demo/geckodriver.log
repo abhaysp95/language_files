@@ -1,0 +1,27 @@
+1595092078771	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejS5T1H"
+
+(firefox:502971): Gtk-WARNING **: 22:38:03.309: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595092091316	Marionette	INFO	Listening on port 46573
+1595092091348	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1595092125173	Marionette	INFO	Stopped listening on port 46573
+1595092560452	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiley7tBOb"
+
+(firefox:516720): Gtk-WARNING **: 22:46:01.921: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595092567988	Marionette	INFO	Listening on port 39007
+1595092568088	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1595092585907	Marionette	INFO	Stopped listening on port 39007
