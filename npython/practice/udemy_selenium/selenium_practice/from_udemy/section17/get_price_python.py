@@ -57,8 +57,7 @@ class GetBalance():
     def get_name(self, name):
         '''match the name'''
         get_name = self.driver.find_element_by_xpath(
-            "//div[text()='Catherine Johnson']"
-        )
+            "//div[text()='Catherine Johnson']")
         return name == get_name.text
 
     def get_balance(self, name):
