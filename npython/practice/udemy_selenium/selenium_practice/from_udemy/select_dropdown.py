@@ -22,7 +22,9 @@ class dropDownSelect():
     def test(self):
         '''testing feature for Select'''
         element = self.driver.find_element_by_id("carselect")
-        sel = Select(element)
+        sel = Select(element)  # only works with "select" tag
+        # these select tags can have "option" tag as child
+        # don't get fooled by seeing a dropdown visually, check it's xpath
 
         print("Select Benz by value")
         sel.select_by_value('benz')
