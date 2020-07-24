@@ -21,6 +21,7 @@ class ClickAndSendKeys():
         self.pass_field = None
         self.driver = webdriver.Firefox()
         print("Initializing process")
+        self.driver.implicitly_wait(10)
         # cause all the elements in page not load at the same time
 
     def get_email_password(self):
