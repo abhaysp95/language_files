@@ -82,6 +82,9 @@ class WorkingWithHiddenElements2():
 
     def check_state(self, cond=None):
         '''check the state of the dropdown item we want'''
+        # the code should fail here, as the element is not present in DOM
+        # currently
+        # that's what this example is for
         age_dropdown = self.driver.find_element_by_xpath(
             "//select[@id='flight-age-select-1-hp-flight']"
         )[0]
