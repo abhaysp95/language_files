@@ -1,0 +1,41 @@
+1595678942992	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile10JX5b"
+
+(firefox:1244397): Gtk-WARNING **: 17:39:05.111: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595678952929	Marionette	INFO	Listening on port 36667
+1595678952971	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595678995855	Marionette	INFO	Stopped listening on port 36667
+1595679085324	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletdatQD"
+
+(firefox:1248536): Gtk-WARNING **: 17:41:26.854: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595679092232	Marionette	INFO	Listening on port 38627
+1595679092299	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595679133126	Marionette	INFO	Stopped listening on port 38627
+1595679145479	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilev43ycz"
+
+(firefox:1250509): Gtk-WARNING **: 17:42:26.960: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595679153456	Marionette	INFO	Listening on port 41943
+1595679153532	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595679178269	Marionette	INFO	Stopped listening on port 41943
+1595679345609	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2uVGTc"
+
+(firefox:1256236): Gtk-WARNING **: 17:45:47.130: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595679353259	Marionette	INFO	Listening on port 43637
+1595679353348	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://fedora.teachablecdn.com/packs/student-legacy-7e0133c37a86c7ac1f82.js, line 239: TypeError: document.querySelector(...) is null
+1595679403554	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595679456504	Marionette	INFO	Stopped listening on port 43637
+1595681201529	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilevxIoE2"
+
+(firefox:1302099): Gtk-WARNING **: 18:16:43.014: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595681208710	Marionette	INFO	Listening on port 33321
+1595681208780	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595681273015	Marionette	INFO	Stopped listening on port 33321
