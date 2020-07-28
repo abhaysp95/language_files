@@ -1,0 +1,200 @@
+1595850496076	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNarNr0"
+
+(firefox:2771179): Gtk-WARNING **: 17:18:20.801: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595850510835	Marionette	INFO	Listening on port 44425
+1595850510874	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://fedora.teachablecdn.com/packs/student-legacy-7e0133c37a86c7ac1f82.js, line 239: TypeError: document.querySelector(...) is null
+1595850554420	Marionette	INFO	Stopped listening on port 44425
+1595850554613	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEiBJN0"
+
+(firefox:2773025): Gtk-WARNING **: 17:19:16.192: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595850562429	Marionette	INFO	Listening on port 41085
+1595850562449	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595850590419	Marionette	INFO	Stopped listening on port 41085
+1595851500655	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile32XrEY"
+
+(firefox:2790699): Gtk-WARNING **: 17:35:04.438: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595851511116	Marionette	INFO	Listening on port 37099
+1595851511136	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595851607258	Marionette	INFO	Stopped listening on port 37099
+1595851626585	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5qriHT"
+
+(firefox:2794231): Gtk-WARNING **: 17:37:07.968: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595851633920	Marionette	INFO	Listening on port 35911
+1595851634024	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595851697906	Marionette	INFO	Stopped listening on port 35911
+1595851951923	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile87XTcZ"
+
+(firefox:2803023): Gtk-WARNING **: 17:42:34.027: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595851960090	Marionette	INFO	Listening on port 34391
+1595851960175	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1595851980937	Marionette	INFO	Stopped listening on port 34391
+1595851982702	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile492ZGu"
+1595852288735	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9PYWYX"
+
+(firefox:2812298): Gtk-WARNING **: 17:48:10.104: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595852296048	Marionette	INFO	Listening on port 34833
+1595852296088	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595852396330	Marionette	INFO	Stopped listening on port 34833
+1595900884251	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejvuM6c"
+
+(firefox:3016539): Gtk-WARNING **: 07:18:09.893: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595900899356	Marionette	INFO	Listening on port 40487
+1595900899468	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1595900935415	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595900938517	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.glassboxcdn.com/expedia/detector-dom.min.js, line 63: asm.js type error: cannot create array view without an asm.js heap parameter
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://a.travel-assets.com/platform-analytics-prime/1/platform-analytics-prime-amd.js, line 8: TypeError: i is undefined
+1595900956158	Marionette	INFO	Stopped listening on port 40487
+1595901030324	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileIv279X"
+
+(firefox:3020918): Gtk-WARNING **: 07:20:31.939: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595901038654	Marionette	INFO	Listening on port 39565
+1595901038687	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595901072689	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595901081191	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.glassboxcdn.com/expedia/detector-dom.min.js, line 63: asm.js type error: cannot create array view without an asm.js heap parameter
+1595901088909	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595901991757	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePMB3Tj"
+
+(firefox:3046484): Gtk-WARNING **: 07:36:39.477: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595902009286	Marionette	INFO	Listening on port 42859
+1595902009373	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.expedia.com/, line 14953: ReferenceError: logExperimentCallback is not defined
+1595902045844	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595902055782	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.glassboxcdn.com/expedia/detector-dom.min.js, line 63: asm.js type error: cannot create array view without an asm.js heap parameter
+1595902080173	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595902130077	Marionette	INFO	Stopped listening on port 42859
+1595902688583	Marionette	INFO	Stopped listening on port 39565
+1595907869651	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTA2ZYA"
+
+(firefox:3202142): Gtk-WARNING **: 09:14:38.331: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+console.error: Region.jsm: "Failed to fetch region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 681))
+1595919656988	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileV3zVQ0"
+
+(firefox:3463930): Gtk-WARNING **: 12:30:59.499: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595919669279	Marionette	INFO	Listening on port 37987
+1595919669340	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1595919724013	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1595919759622	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileatyD84"
+
+(firefox:3466924): Gtk-WARNING **: 12:32:41.106: Theme directory 32@2x/devices of theme Vimix-Black-dark has no size field
+
+1595919762014	Marionette	INFO	Stopped listening on port 37987
+1595919766994	Marionette	INFO	Listening on port 34257
+1595919767058	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595919854201	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1595919892623	Marionette	INFO	Stopped listening on port 34257
