@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+<h1>All posts on wall</h1>
+
+<!-- posts is from app.py -->
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        {% if post.writer %}
+            <h3>By: {{ post.writer }}</h3>
+        {% else %}
+            <h3>By: N/A</h3>
+        {% endif %}
+        <p>{{ post.content }}</p>
+    {% endfor %}
+
+{% endblock %}
