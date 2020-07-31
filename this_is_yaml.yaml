@@ -1,0 +1,69 @@
+# YAML Ain't Markup Language
+# Basically yaml and yml are same
+# btw, this is how we write comment in yaml
+
+# scope in yaml is by indentation
+
+person:
+  # person object has all these values of different data types
+  # key: 'value'
+  name: &myname 'thisismyname'
+  occupation: 'student'
+  age: 200
+  age_float: !!float 23  # data type conversion "23.0"
+  gpa: 23.4
+  gpa_str: !!str 23.4  # "3.5"
+  fav_num: 1e+10
+  male: true
+  birthday: 2020-07-30 13:12:11  # ISO-86 format
+  no_flaws: null
+
+  # list of information
+  hobbies:
+    - hobby1
+    - hobby2
+    - hobby3
+    - hobby4
+  # this is also list
+  movies: [ "movie1", "movie2", "movie3", "movie4", "movie5" ]
+
+  # a complex list(list of object)
+  friends:
+    # first object in list
+    - name: 'friend1'
+      age: '150'
+    # another way of defining object
+    - {name: 'friend2', age: 151}
+  # another way to define list item
+    -
+      name: "friend3"
+      age: 152
+  # all three different formats are equivalent in yaml
+
+  description: >
+    done done done done done done done done done done done
+    done done done done done done done done done done done
+    done done done done done done done done done done done
+    done done done done done done done done done done done
+    done done done done done done done done done done done
+    done done done done done done done done done done done
+  # the > will tell yaml to render all the above text in a single line
+  # none of the formatting will get preserved
+
+  signature: |
+    name
+    signature
+    email - thisisemail@internet.com
+  # the | will tell yaml to preserve all the formatting correctly
+
+  # accessing the anchor
+  id: *myname
+  # now id will have the value of name key
+
+  # storing the key value pair in anchor
+  base: &base_anchor
+    var1: value1
+
+  # accessing the anchor of key value pair
+  foo:
+    <<: *base_anchor
