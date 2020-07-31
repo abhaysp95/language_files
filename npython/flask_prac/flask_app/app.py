@@ -1,85 +1,51 @@
 #!/usr/bin/env python3
 
-'''flask demo'''
+'''
+make a demo app with flask
+'''
 
 from datetime import datetime
 from flask import Flask
+from flask import request
+from flask import redirect
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 
 # flask app
 app = Flask(__name__)
 
-# where database is going to be stored
-# /// is relative to this file, while //// is abs
+# storing database(relative path to this file)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-datab = SQLAlchemy(app)
+database = SQLAlchemy(app)
 
 
-class BlogPost(datab.Model):
-    '''class for blog post'''
-    # each row is seperate blog post, is column is different class variable
-    __tablename__ = 'BlogPost Table'  # necessary to use model
-    id = datab.Column(datab.Integer, primary_key=True)
-    title = datab.Column(datab.String(128), nullable=False)
-    content = datab.Column(datab.Text, nullable=False)
-    author = datab.Column(datab.String(32), nullable=True, default='N/A')
-    data_posted = datab.Column(datab.DateTime, nullable=False, default=datetime.utcnow)
+class BlogPost(database.Model):
+    '''creating model for database storage'''
+    # each row is seperate BlogPost
+    # each column is different class variable
+    __tablename__ = 'BlogPost Table'
+    id = database.Column(database.Integer, primary_key=True)
+    title = database.Column(database.String(128), nullable=False)
+    content = database.Column(database.Text, nullable=False)
+    author = database.Column(database.String(32), nullable=True, default='N/A')
+    date_posted = database.Column(database.DateTime,
+                                  nullable=False,
+                                  default=datetime.utcnow)
+    last_edit = database.Column(database.DateTime,
+                                nullable=True,
+                                default=datetime.utcnow)
+
+    # make use of this in wall_posts.html
+    def return_last_edit(self):
+        '''return the last edit'''
+        last_edited = BlogPost.last_edit
+        return last_edited
 
     def __repr__(self):
-        return 'Blog post ' + str(self.id)
+        return 'Blog Post ' + str(self.id)
 
 
-# url route (decorator)
-@app.route('/')  # base url(domain)
-@app.route('/home')  # using multiple route
-# whatever functions comes next linearly will get run after the
-# deocrator above
-def hello():
-    '''return hello'''
-    return "Hello World 2"
-
-
-@app.route('/college')
-def hello_again():
-    '''next time hello'''
-    return "Hello to the college"
-
-
-# path(<datatype:variable_name>)
-# you can do int etc.
-@app.route("/home/<string:name>")
-def hello_man(name):
-    return "Hello " + name
-
-
-# multiple(dynamic urls)
-@app.route("/home/user/<string:name>/posts/<int:id_num>")
-def with_username(name, id_num):
-    return "Hello, " + name + ". Your ID is " + str(id_num)
-
-
-# http request you want to use, pass list of the allowed methods
-@app.route('/onlyget', methods=['POST'])
-def get_req_get():
-    # this will give 'Method Not Allowed'
-    return "You can only get this webpage. POST"
-
-
-@app.route('/template')
-def index():
-    return """
-<h1>Template Page</h1>
-<b><i><u>This is a small sample for running html</u></i></b>
-    """
-
-
-@app.route('/template/index')
-def index_temp():
-    '''sourcing template from outside'''
-    return render_template('index.html')
-
-
+# some dummy data
 all_posts = [
     {
         'title': 'Post 1',
@@ -93,10 +59,59 @@ all_posts = [
 ]
 
 
-@app.route('/wall/posts')
-def posts_on_wall():
+@app.route('/')
+def root():
+    '''root page'''
+    return render_template('index.html')
+
+
+# if not mentioned, the only allowed request by defualt is GET
+@app.route('/posts', methods=['GET', 'POST'])
+def posts_func():
+    '''some small posting'''
+
+    # save to database
+    if request.method == 'POST':
+        post_title = request.form['title']
+        post_content = request.form['content']
+        post_author = request.form['auth']
+        new_post = BlogPost(title=post_title,
+                            content=post_content,
+                            author=post_author)
+        database.session.add(new_post)
+        database.session.commit()  # permanent save
+        return redirect('/posts')  # redirect back to same session
+    else:
+        # redifine all posts to show from database, instead of dummy data
+        all_posts = BlogPost.query.order_by(
+            BlogPost.date_posted).all()  # get the saved data
     return render_template('wall_posts.html', posts=all_posts)
 
 
+@app.route('/posts/delete/<int:id_num>')
+def delete_with_id(id_num):
+    '''delete the blog post with id'''
+    # get post to delete
+    post = BlogPost.query.get_or_404(id_num)
+    database.session.delete(post)  # delete the post
+    database.session.commit()  # commit the changes to database
+    return redirect('/posts')  # redirect back to /posts
+
+
+@app.route('/posts/edit/<int:id_num>', methods=['GET', 'POST'])
+def edit_with_id(id_num):
+    '''edit the elements of row of BlogPost with id'''
+    # if not found, 404
+    post = BlogPost.query.get_or_404(id_num)
+    if request.method == 'POST':
+        post.title = request.form['title']
+        post.content = request.form['content']
+        post.author = request.form['auth']
+        database.session.commit()
+        return redirect('/posts')
+    else:
+        return render_template('edit.html', post_edit=post)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)  # full breakdown of error
+    app.run(debug=True)
