@@ -1,0 +1,20 @@
+# CRUD:
+## For Create and Update Database:
+1. open 'python interpreter' and do 'from app import datab'
+2. then do 'datab.create_all()', this will go through the model and config and will create the database with that model in mind, and creates a database file.
+3. now, import the model, 'from app import BlogPost'.
+4. 'BlogPost.query.all()' shows what you have given to return in __repr__ of the 'BlogPost' class
+5. datab.session.add(BlogPost(title='title_name', content='Give content', author='myself')) is the way to add row to the table in the model type(BlogPost etc.)
+6. For more thorough looking, you can use 'BlogPost.query.all()[2].content' etc.
+7. You can do "BlogPost.query.first()"
+8. Use filtering like this, "BlogPost.query.filter_by(title='New Title')".all()
+9. There's ordering, "BlogPost.query.order_by(date).all()"
+10. Get id like, "BlogPost.query.get(1)", if out of index it'll return 'None'
+11. There's also "BlogPost.query.get_or_404(<id>)" (primary_key)
+
+## Deletion:
+12. You can delete like "datab.session.delete(BlogPost.query.get(2))" to delete, row with id 2
+13. Like add, after deletion you have to commit the changes or do a rollback
+
+## Update:
+14. One method to update can be "BlogPost.query.all()[2].author = 'New Author'" and then commit, "datab.session.commit()"
