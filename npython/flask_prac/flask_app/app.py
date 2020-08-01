@@ -28,12 +28,14 @@ class BlogPost(database.Model):
     title = database.Column(database.String(128), nullable=False)
     content = database.Column(database.Text, nullable=False)
     author = database.Column(database.String(32), nullable=True, default='N/A')
+    # this isn't correct timing to work with date_posted, and last_edit
+    __current_time__ = datetime.now()
     date_posted = database.Column(database.DateTime,
                                   nullable=False,
-                                  default=datetime.utcnow)
+                                  default=__current_time__)
     last_edit = database.Column(database.DateTime,
-                                nullable=True,
-                                default=datetime.utcnow)
+                                nullable=False,
+                                default=__current_time__)
 
     # make use of this in wall_posts.html
     def return_last_edit(self):
@@ -84,8 +86,26 @@ def posts_func():
     else:
         # redifine all posts to show from database, instead of dummy data
         all_posts = BlogPost.query.order_by(
-            BlogPost.date_posted).all()  # get the saved data
+            BlogPost.date_posted.desc()).all()  # get the saved data
     return render_template('wall_posts.html', posts=all_posts)
+
+
+@app.route('/posts/new')
+def new_post():
+    '''create new wall post'''
+
+    if request.method == 'POST':
+        post_title = request.form['title']
+        post_content = request.form['content']
+        post_author = request.form['auth']
+        new_post_is = BlogPost(title=post_title,
+                               content=post_content,
+                               author=post_author)
+        database.session.add(new_post_is)
+        database.session.commit()  # permanent save
+        return redirect('/posts')
+    else:
+        return render_template('new_post.html')
 
 
 @app.route('/posts/delete/<int:id_num>')
@@ -107,6 +127,7 @@ def edit_with_id(id_num):
         post.title = request.form['title']
         post.content = request.form['content']
         post.author = request.form['auth']
+        post.last_edit = datetime.now()
         database.session.commit()
         return redirect('/posts')
     else:

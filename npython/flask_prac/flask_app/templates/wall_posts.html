@@ -5,35 +5,35 @@
 {% endblock %}
 
 {% block body %}
-<h1>All posts on wall</h1>
-
+<br>
+<br>
+<div>
+    <h1 style="display:inline">All posts on Wall Post</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/posts/new"> + New Post</a>
+</div>
 <hr>
-<h2>Create New Blog Post:</h2>
 
-    <form action="/posts", method='POST'>
-        Title: <input type="text" name="title" id="title">
-        <br>
-        Post: <input type="text" name="content" id="content">
-        <br>
-        Author: <input type="text" name="auth" id="auth">
-        <br>
-        <input type="submit" value="POST">
-    </form>
-    <hr>
-
+<br>
 <!-- posts is from app.py -->
     {% for post in posts %}
+        <br>
+        <br>
         <h2>{{ post.title }}</h2>
         {% if post.author %}
-            <h3>By: {{ post.author }}</h3>
+        <small>Written by {{ post.author }} on {{ post.date_posted }}</small>
         {% else %}
             <h3>By: N/A</h3>
         {% endif %}
         <!-- add some logic to show last_edit -->
-        <p><b>DateTime: {{ post.date_posted }}</b></p>
-        <p>{{ post.content }}</p>
-        <a href='/posts/edit/{{ post.id }}'>Edit</a>
-        <a href='/posts/delete/{{ post.id }}'>Delete</a>
+        {% if post.date_posted != post.last_edit %}
+            <br>
+            LastEdit:<i> {{ post.last_edit }}</i>
+        {% endif %}
+        <p><br></p>
+        <p style="white-space:pre-wrap">{{ post.content }}</p>
+        <br>
+        <a class="btn btn-danger" href='/posts/edit/{{ post.id }}'>Edit</a>
+        <a class="btn btn-primary" href='/posts/delete/{{ post.id }}'>Delete</a>
         <hr>
     {% endfor %}
 

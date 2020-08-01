@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Edit Post</title>
+<title>Edit Wall Post</title>
 {% endblock %}
 
 {% block body %}
@@ -11,16 +11,19 @@
 <h2>Edit</h2>
 
 <form action="/posts/edit/{{ post_edit.id }}", method='POST'>
-    Title: <input type="text" name="title" id="title" value="{{ post_edit.title }}">
+        <label for="title">Title:</label>
+        <input class="form-control" type="text" name="title" id="title" value="{{ post_edit.title }}" aria-label="Enter Title">
         <br>
-        Post: <input type="text" name="content" id="content" value="{{ post_edit.content }}">
+        <label for="auth">Author:</label>
+        <input class="form-control" type="text" name="auth" id="auth" value="{{ post_edit.author }}" aria-label="Enter Author">
         <br>
-        Author: <input type="text" name="auth" id="auth" value="{{ post_edit.author }}">
+        <label for="content">Post:</label>
+        <textarea class="form-control" name="content" id="content" aria-label="What do you want to write" rows="3">{{ post_edit.content }}</textarea>
         <br>
+
         <input type="submit" value="Save">
     </form>
     <hr>
 
 
 {% endblock %}
-
