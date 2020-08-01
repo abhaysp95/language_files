@@ -1,6 +1,0 @@
-# created by virtualenv automatically
-# *
-bin/
-lib/
-pyvenv.cfg
-flask_app/__pycache__/
