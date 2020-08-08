@@ -1,0 +1,5 @@
+First-Class Functions:
+"A programming language is saide to have first-class functions if it treats functions as first-class citizens."
+
+First-Class Citizen (Programming):
+"A first-class Citizen (sometimes called first-class objects) in a programming language is an entitiy which supports all the operations generally available to other entities. These operations typically include being passed as an arguement, returned from a function, and assigned to a variable."
