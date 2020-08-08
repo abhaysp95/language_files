@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-'''calculate which of the two hex value pair are nearest from the given list of hex values
-supports both #RGB and #RRGGBB,
+'''calculate which of the two hex value pair are nearest from the given list of
+hex values supports both #RGB and #RRGGBB,
 '''
 
 import math
@@ -18,6 +18,7 @@ def get_coordinates(got_hex):
         for code in got_hex:
             list_coordinates.append(code+code)
     return list_coordinates
+
 
 def get_distance(first_hex, second_hex):
     '''get the distance'''
@@ -42,19 +43,23 @@ def get_distance(first_hex, second_hex):
     distance_points = format(distance_points, '.3f')
     return distance_points
 
-number = int(input())
-list_hex = [input() for _ in range(number)]
 
-list_hex = [hex.strip('#').strip() for hex in list_hex if hex.startswith('#')]
+def main():
+    '''main function'''
+    number = int(input())
+    list_hex = [input() for _ in range(number)]
 
-hex_dictionary = dict()
-for num, hex_num in enumerate(list_hex):
-    for num_again, hex_again in enumerate(list_hex):
-        if hex_num == hex_again or num_again <= num:
-            continue
-        hex_dictionary[("#" + str(hex_num), "#" + str(hex_again))] = get_distance(hex_num, hex_again)
+    list_hex = [hex.strip('#').strip() for hex in list_hex if hex.startswith('#')]
 
-# print(hex_dictionary)
-shortest_distance = sorted(hex_dictionary.items(), key=lambda x: float(x[1]))[0]
-# print(shortest_distance)
-print(f"The hex pair with shortest distance is \"{shortest_distance[0]}\" with distance of \"{shortest_distance[1]}\".")
+    hex_dictionary = dict()
+    for num, hex_num in enumerate(list_hex):
+        for num_again, hex_again in enumerate(list_hex):
+            if hex_num == hex_again or num_again <= num:
+                continue
+            hex_dictionary[("#" + str(hex_num), "#" + str(hex_again))] = get_distance(hex_num, hex_again)
+    shortest_distance = sorted(hex_dictionary.items(), key=lambda x: float(x[1]))[0]
+    print(f"The hex pair with shortest distance is \"{shortest_distance[0]}\" with distance of \"{shortest_distance[1]}\".")
+
+
+if __name__ == "__main__":
+    main()
