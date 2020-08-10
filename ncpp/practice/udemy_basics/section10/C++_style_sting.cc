@@ -2,15 +2,18 @@
 
 #include <iostream>
 #include <string>  // is in standard namespace
+#include <iomanip>
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
 using std::find;
+using std::boolalpha;
 
 int main() {
 	// some ways to declare and initialize C++ strings
+	// string is class, and s1, s2 etc. are object
 	string s1;  // empty
 	string s2 {"Frank"};  // Frank
 	string s3 {s2};  // Frank
@@ -23,6 +26,9 @@ int main() {
 	s2 = s1;  // valid
 	// compound assignment will work too, like s2 += s1;
 
+	// swap the string
+	s6.swap(s1);
+
 	string part1 {"C++"};
 	string part2 {"is very nice"};
 	string sentence;
@@ -30,7 +36,16 @@ int main() {
 	sentence = part1 + " " + part2 + " " + " language";
 	cout << sentence << endl;
 
+	// insert
+	string s7 {" the"};
+	string s8 {"is the good"};
+
 	// sentence = "C++" + " is nice";  // invalid, cause it's C-style literals and can't be concatenated
+	part2.insert(2, s7);
+	cout << "Part2 after insertion: " << part2 << endl;
+	part2.erase(2, 4);
+	part2.insert(2, s8, 4, 3);
+	cout << "Part2 after insertion: " << part2 << endl;
 
 	// we can use substring and at() with string too
 
@@ -52,6 +67,9 @@ int main() {
 	// is std:;string object and C style string literal
 	// is std:;string object and C style string variable
 	// this comparision returns bool value(true or false)
+
+	cout << boolalpha;  // to change comparision(0, other_num) to 'True' and 'False'
+	cout << s4 << "==" << s5 << ": " << (s4 == s5) << endl;  // 0
 
 	// starting index and characters to include
 	string part2_substring = part2.substr(3, 8);  // very nic
@@ -88,3 +106,7 @@ int main() {
 
 	return 0;
 }
+
+/* C_str() converts a C++ string to C string, returns a pointer to char constant
+ * first char of C string is equivalent to the contents of C++ string
+ */

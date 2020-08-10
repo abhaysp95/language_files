@@ -7,9 +7,12 @@
 #include <cstring>  // for c like string behaviour, rely on null character
 // some features include, copying, concatenation, search, comparision and others
 
+#include <iomanip>
+
 using std::cin;
 using std::cout;
 using std::endl;
+using std::boolalpha;
 
 int main() {
 	char c;
@@ -65,6 +68,11 @@ int main() {
 		cout << "Shit! You won" << endl;
 		cout << "And len is " << strlen(my_name) << endl;
 	}
+
+	cout << "---------------------------------------" << endl;
+	cout << "Again comparing name just for using boolalpha: " << endl;
+	cout << boolalpha;  // don't use it, cause strcmp returns the difference in length between two strings
+	cout << "Bigger name is: my_name > your_name? " << strcmp(my_name, your_name) << endl;
 
 	cout << "----------------------------------" << endl;
 	char just_checking[30] {};
