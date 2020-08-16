@@ -10,6 +10,11 @@ int main() {
 	std::cout << "Third element of temp: " << temp.at(2) << std::endl;
 	std::cout << "Fourth element of temp: " << temp.at(3) << std::endl;
 
+	for (int &num: even) {  // change the value
+		num = 20;
+	}
+	std::cout << "Second element of even: " << even[1] << std::endl;
+
 	temp.push_back(10.3);  // appends the element
 	std::cout << "Second element of temp: " << temp.at(1) << std::endl;
 	std::cout << "21st element of temp: " << temp.at(20) << std::endl;
