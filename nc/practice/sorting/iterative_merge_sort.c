@@ -3,6 +3,10 @@
 #include <stdio.h>
 #define SIZE 10
 
+
+// #define MIN(x, y) (x < y ? x++ : y++)
+/* this will not work since you don't have to increment number after finding smallest but to increment the counter to which number is smallest */
+
 void mergesort(int *);
 void merge(int *, int, int, int);
 
@@ -32,14 +36,10 @@ void merge(int *arr, int low, int mid, int high) {
 	// get the minimum first in the second array
 	while (i <= mid && j <= high) {
 		if (*(arr + i) < *(arr + j)) {
-			*(brr + k) = *(arr + i);
-			++k;
-			++i;
+			*(brr + k++) = *(arr + i++);
 		}
 		else {
-			*(brr + k) = *(arr + j);
-			++k;
-			++j;
+			*(brr + k++) = *(arr + j++);
 		}
 	}
 	// put the remaining elements in the second array
