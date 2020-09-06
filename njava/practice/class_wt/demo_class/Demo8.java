@@ -1,0 +1,43 @@
+class Demo8 {
+
+	// constructor(also said that constructor returns class itself)
+	Demo8() {
+		System.out.println("Constructor called");
+	}
+}
+
+class Demo8again {
+	// no constructor
+	int a;
+	String name;
+
+	int f1() {
+		int b;  // variable inside a function requires Initialization, not initialized by constructor as obvious
+		b = 10;
+		return b;
+	}
+}
+
+class Demo8Main {
+	public static void main(String ...args) {
+		Demo8 demo = new Demo8();
+		// demo.Demo8();  // error: cannot find symbol
+		// so constructor are called only one time at object creation
+
+		Demo8again demo1 = new Demo8again();
+		System.out.println("a: " + demo1.a);  // 0
+		System.out.println("name: " + demo1.name);  // null
+		// but
+		// int x;  // error: x might not have been initialized
+		// so, no constructor for main method or constructor attach(work) for non-static members
+		System.out.println("b: " + demo1.f1());
+	}
+}
+
+/* Following are the motive behind default constructor(created by java object super class):
+ * Create the Object
+ *
+ * Call the super class constructor()
+ *
+ * Initialize all the instance variables of the class object.
+ */
