@@ -1,0 +1,1 @@
+Closures are nested function that caputure non-local varialbes of the outer functions.
