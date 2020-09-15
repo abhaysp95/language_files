@@ -13,7 +13,9 @@ void merge(int *, int, int, int);
 void mergesort(int *arr) {
 	int pass = 0, low = 0, mid = 0, high = 0, i = 0;
 
+	// every pass, can find the number of pass by log(SIZE) of base 2
 	for (pass = 2; pass <= SIZE; pass *= 2) {
+		// list to get sort according to number of pass
 		for (i = 0; i + pass - 1 < SIZE; i += pass) {
 			low = i;
 			high = i + pass - 1;
