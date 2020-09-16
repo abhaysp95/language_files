@@ -6,4 +6,6 @@ public interface Beta extends Alpha {
 		Alpha.super.WhatIsIt();
 		System.out.println("This is Beta");
 	}
+	// remind you that unlike classes extending multiple classes, interface can
+	// extend multiple interfaces and so can classes
 }
