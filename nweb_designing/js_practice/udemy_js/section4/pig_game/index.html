@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+
+        <title>Pig Game</title>
+    </head>
+
+    <body>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+
+            <button class="top-score"><i class="ion-ios-checkmark-outline"></i>Top Score: 100</button>
+            <button data-modal-target="#modal" class="help"><i class="ion-ios-help-outline"></i>Help</button>
+            <!-- modal for help -->
+            <div id="modal" class="modal">
+                <div class="modal-header">
+                    <div class="title">Rules Of Game</div>
+                    <button data-close-button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <strong>Welcome to Pig Game</strong>
+                    <br></br>
+                    <b>1.</b> Each Player gets to role the dice as many times as he wants and the score is added to roundScore(one in red block).
+                    <br></br>
+                    <b>2.</b> If active player hits 1 all his round score goes back to 0 and now its the chance of next player.
+                    <br></br>
+                    <b>3.</b> Active player can hold his/her round score which means it'll be added to the global score.
+                    <br></br>
+                    <b>4.</b> There are two dices in the game, if both the dices give 6 then the global score of player will become 0.
+                    <br></br>
+                    <b>5.</b> Players can set their high score for which they want to play. They will be provided the option to restart or continue the game if they are in the middle of the game.
+                    <br></br>
+                    <b>6.</b> By default, 200 is set as Top Score.
+                    <br></br>
+                    <b>7.</b> Player reaching the Top Score first will be <strong>WINNER</strong>.
+                </div>
+            </div>
+            <div id="overlay" class="overlay"></div>
+
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+
+            <img src="img/dice-5.png" alt="Dice" class="dice dice1">
+            <img src="img/dice-4.png" alt="Dice" class="dice dice2">
+
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

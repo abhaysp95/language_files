@@ -1,0 +1,5 @@
+1. Almost everything in js is an object, except (String, boolean, null, undefined, numbers)
+2. Every JavaScript object has a 'property property', which makes the inheritance possible.
+3. The prototype property of an object is where we put methods and properties that we want other objects to inherit.
+4. The constructor's prototype property is NOT the property of the Constructor itself, it's the prototype of ALL instances that are created through it.
+5. When a certain method(or property) is called, the search starts in the object itself, and if it cannot be found, the search moves on to the object's prototype. This continuees until the method is found: Prototype Chain.
