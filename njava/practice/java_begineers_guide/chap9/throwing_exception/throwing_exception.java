@@ -11,22 +11,28 @@ class Main {
 		System.out.println("---------------------------");
 
 		ReThrowDemo ob2 = new ReThrowDemo();
+		System.out.println("Using ReThrowDemo");
 		try {
 			ob2.reThrowingException();
 		}
 		catch (ArrayIndexOutOfBoundsException aie) {
 			System.out.println("Fatal error: - Progam Terminated");
+			aie.toString();
+			aie.printStackTrace();
 			// but actually not, since this is a catch block
 		}
 
 		System.out.println("---------------------------");
 
+		System.out.println("Using ReThrowDemo1");
 		ReThrowDemo1 ob3 = new ReThrowDemo1();
 		try {
 			ob3.reThrowingException();
 		}
 		catch (ArrayIndexOutOfBoundsException aie) {
 			System.out.println("Another Fatal error: - Progam Terminated");
+			System.out.println("Msg: " + aie.toString());
+			aie.printStackTrace();
 			// but actually not, since this is a catch block
 		}
 
@@ -64,7 +70,7 @@ class ThrowDemo {
  * of exception and other one copes with other aspect */
 class ReThrowDemo {
 	void reThrowingException() {
-		int[] numer = {4, 8, 16, 32, 64, 128, 256};
+		int[] numer = {4, 8, 16, 32, 64, 128, 256, 512, 1024};
 		int[] denom = {2, 0, 4, 4, 0, 8};
 
 		for (int i = 0; i < numer.length; ++i) {
