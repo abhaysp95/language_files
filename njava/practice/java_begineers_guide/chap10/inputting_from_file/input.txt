@@ -1,0 +1,2 @@
+This is from input.txt.
+Check how to use <<, < <, and <<<
