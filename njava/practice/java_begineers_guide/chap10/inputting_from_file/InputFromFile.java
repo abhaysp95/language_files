@@ -100,6 +100,8 @@ abstract class InputFile {
 	abstract public boolean openFile();
 	abstract public void readFile();
 	abstract public boolean closeFile();
+	// another way can be to use finally block to closeFile, since it's
+	// necessary
 }
 
 
