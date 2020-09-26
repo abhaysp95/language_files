@@ -1,0 +1,2 @@
+Basically, io is a table in lua, that has some functions as some of it's values.
+It's part of the standard library.

@@ -37,3 +37,54 @@ repeat
 	print(i)
 	i = i + 1
 until i == 10  -- this loop will run endlessely]]
+
+-- lua5.2 introduced goto statements
+
+
+-- using iterator
+t = { key1 = 10,
+	key2 = 20,
+	key3 = 30 }
+
+for k, v in pairs(t) do
+	print(k, v)
+end
+
+-- note: tables don't store any order information about keys and we also don't have guarantees about the order of iteration
+
+-- if you only care about keys
+for k in pairs(t) do
+	print(k)
+end
+
+
+-- if you care only about value
+for _, v in pairs(t) do
+	print(v)
+end
+-- from the above block, although you can use _ to access key, but this indicates you don't care about that thing
+
+
+-- using ipairs with array
+fib_arr = {1, 1, 2, 3, 5, 8}
+for k, v in ipairs(fib_arr) do
+	print(k, v)
+end
+-- to summarize, use ipairs to iterate over the array that needs to be processed in order otherwise use pairs
+
+
+-- let's try something
+
+print("\n--------------------\n")
+
+print("printing table with ipairs")
+for k, v in ipairs(t) do
+	print(k, v)
+end
+-- printing table with ipair doesn't works
+
+print("printing array with pairs")
+for k, v in pairs(fib_arr) do
+	print(k, v)
+end
+-- but printing array with pairs work, although I'm getting an ordered pair everytime, unlike of tables

@@ -1,0 +1,1 @@
+there's 2 categories of errors that can be communicated across function calls, the first category includes function like error, the second includes errors given by return value
