@@ -1,0 +1,41 @@
+
+void merge(int *arr, int low, int mid, int high) {
+	printf("from print, got low: %d, mid: %d, high: %d\n", low, mid, high);
+	int start = low;
+	while (start <= high) {
+		printf("%d\n", *(arr + start++));
+	}
+	int extra[high - low + 1];  // temporary array
+	int walk = 0;
+	int middle = mid;
+	start = low;
+
+	// compare till one of the two array parts are finished
+	while ((low < middle) && (mid + 1 <= high)) {
+		if (*(arr + low) < *(arr + mid + 1)) {
+			*(extra + walk++) = *(arr + low++);
+		}
+		else {
+			*(extra + walk++) = *(arr + mid++ + 1);
+		}
+	}
+
+	// fill the rest of the array
+	while (low <= middle) {
+		*(extra + walk++) = *(arr + low++);
+	}
+	while (mid + 1 <= high) {
+		*(extra + walk++) = *(arr + mid++ + 1);
+	}
+
+	printf("Walk is %d\n", walk);
+	puts("Content of extra:");
+	for (int i = 0; i < walk; ++i) {
+		printf("%d\n", *(extra + i));
+	}
+
+	// copy the element back from temp array to orignal array
+	for (int i = 0; i < walk; ++i) {
+		*(arr + start++) = *(extra + i);
+	}
+}
