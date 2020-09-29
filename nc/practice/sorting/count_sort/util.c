@@ -24,7 +24,6 @@ int min(int *arr) {
 }
 
 // actual count sort function
-/* functions not correct */
 /*******************************************************/
 
 int *sort(int *arr, int *newarr) {
