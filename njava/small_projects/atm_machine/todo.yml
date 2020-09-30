@@ -1,0 +1,24 @@
+atm-machine:
+  - enter account number
+  - enter password
+  - perform-further-operation:
+    - checking-account:
+      - View Balance:
+        - view total balance
+      - Withdraw Fund:
+        - take amount to withdraw
+        - view total balance
+      - Deposit Fund:
+        - take amount to deposit
+        - view total balance
+      - Exit
+    - saving-account:
+      - View Balance:
+        - view total balance
+      - Withdraw Fund:
+        - take amount to withdraw
+        - view total balance
+      - Deposit Fund:
+        - take amount to deposit
+        - view total balance
+    - Exit
