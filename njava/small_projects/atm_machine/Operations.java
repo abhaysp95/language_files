@@ -45,6 +45,7 @@ public class Operations extends Account {
 			}
 			System.out.println("Provided Account number or Pin number didn't matched");
 		} while(!false);
+		sc.close();
 	}
 
 	private void getOptions() {
