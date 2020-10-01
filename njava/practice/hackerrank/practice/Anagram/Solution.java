@@ -1,5 +1,8 @@
 package Anagram_solution;
 
+
+/* TODO: optimize this solution to take less time, atleast less than 4 sec for long provided dictionary */
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.InputMismatchException;
