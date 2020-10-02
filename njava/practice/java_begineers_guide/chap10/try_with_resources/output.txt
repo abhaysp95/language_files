@@ -1,0 +1,1 @@
+This file is fed up as input for test of try-with-resources

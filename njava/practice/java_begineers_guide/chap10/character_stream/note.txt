@@ -1,0 +1,11 @@
+System.in is a byte stream, you'll need to wrap System.in to some kind of Reader. The best class for reading console input is BufferedReader, which supports a buffered input stream. However, you cannot construct a BufferedReader directly from System.in, instead you have to use InputStreamReader which converts bytes to characters,
+
+InputStreamReader(InputStream inpuStream)
+
+Since, System.in refers to an object of type InputStream, it can be used for inputStream. Next,
+
+BufferedReader(Reader inputReader)
+
+Here, inputReader is the stream that is linked to the instance of BufferedReader being created. Putting it all together:
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
