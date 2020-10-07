@@ -5,12 +5,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Solution {
-	public static void main(String[] args) {
+class Method1 {
+	public void operation() {
 		Scanner scan = new Scanner(System.in);
-
-		//List<Integer> arr1 = new ArrayList<Integer>();
-		//List<Integer> arr2 = new ArrayList<Integer>();
 
 		System.out.println("Enter the space seperated numbers for both array");
 		String forArr1 = scan.nextLine();
@@ -20,7 +17,6 @@ public class Solution {
 		int[] arr2 = Arrays.stream(forArr2.split("\\s")).mapToInt(Integer::parseInt).toArray();
 
 		List<Integer> temp = new ArrayList<Integer>();
-		//int[] newArr = (arr1.length > arr2.length) ? new int[arr1.length] : new int[arr2.length];
 
 		for (int ele1: arr1) {
 			for (int ele2: arr2) {
@@ -29,13 +25,74 @@ public class Solution {
 				}
 			}
 		}
-		//newArr = temp.toArray();
 		int[] newArr = temp.stream().mapToInt(i->i).toArray();
 		System.out.println("printing new arr:");
 		for (int ele: newArr) {
 			System.out.println(ele);
 		}
 		scan.close();
+	}
+}
+
+class Method2 {
+
+	private int[] strToInt(String[] strArr) {
+		int[] arr = new int[strArr.length];
+		int count = 0;
+		for (String str: strArr) {
+			arr[count++] = Integer.parseInt(str);
+		}
+		return arr;
+	}
+
+	private void printArr(int[] arr, int filled) {
+		//System.out.println("Recieved, filled: " + filled);
+		System.out.println();
+		System.out.print("[ ");
+		int count = 0;
+		for (int ele: arr) {
+			count++;
+			if (count == filled) {
+				break;
+			}
+			System.out.print(ele + ", ");
+		}
+		System.out.print(arr[--count] + " ]\n");
+	}
+
+	public void operation() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the space seperated numbers for both array: ");
+		String str1 = scan.nextLine();
+		String str2 = scan.nextLine();
+		String[] strArr1 = str1.split("\\s");
+		String[] strArr2 = str2.split("\\s");
+		int[] intArr1 = strToInt(strArr1);
+		int[] intArr2 = strToInt(strArr2);
+
+		int[] intArr3 = intArr1.length > intArr2.length ?
+			new int[intArr1.length] :
+			new int[intArr2.length];
+		// if first one have element whose double exist in second one
+		int count = 0;
+		for (int ele1: intArr1) {
+			for (int ele2: intArr2) {
+				if (ele1 * 2 == ele2) {
+					//System.out.println("Filling: " + ele1);
+					intArr3[count++] = ele1;
+				}
+			}
+		}
+		// print the arr
+		printArr(intArr3, count);
+	}
+}
+
+public class Solution {
+	public static void main(String[] args) {
+		//Method1 m1 = new Method1();
+		Method2 m2 = new Method2();
+		m2.operation();
 	}
 }
 
