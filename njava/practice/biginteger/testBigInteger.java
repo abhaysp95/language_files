@@ -25,7 +25,7 @@ class Operation {
 		try {
 			String s1 = scan.nextLine();
 			String s2 = scan.nextLine();
-			return (new BigInteger(s1).divide(new BigInteger(s2)));
+			return ((new BigInteger(s1)).divide(new BigInteger(s2)));
 		}
 		catch (NumberFormatException ne) {
 			System.out.println("Input not provided correctly");
