@@ -1,0 +1,60 @@
+$ awk 'PATTERN { ACTION }' file/s
+
+awk goes through input file line by line
+
+you can omit either a PATTERN or ACTION but not both
+
+',' means just put a space
+
+$ awk '{print NF}' file
+now, NF means number of fields, this will print numbers of fields for every line of the file
+if you put '{print $NF}', it'll print the last column, because NF is the total column number which will be equal to last column number
+
+awk knows many mathematical operator, (*, ^, + -), awk also supports () for precedence manipulation for performing operations
+
+$ awk '{print NR}' file
+NR, stands for number of row, awk knows which row you are on
+
+$ awk '{print "line number: ", NR, ", and column numbers are: ", NF}' file
+you can put literal strings in awk too
+
+
+$ awk '{printf("%s made %.2f dollars\n", $1, $2 * $3)}' file
+you can format you print with printf in awk
+
+
+$ awk '{printf("%-8s made $%6.2f dollars\n", $1, $2 * $3)}' emp.data
+also supports padding for string, note '-8' means left align 8 width padding, means extra space will be on right, while '%6.2f' means, 6 padding with right alignment(extra space on left) with 2 place of decimal number
+can also do like `%-6-8.2f` but this means maximum of 8 width padding
+
+Examples:
+$ awk '$2 * $3 > 50 {printf("%s made more than 50 dollars\n", $1)}' emp.da
+
+$ awk '/Mary/ {printf("%s made more than 50 dollars\n", $1)}' emp.da
+you can do pattern matching in '/.../'
+
+$ awk '$1=="Mark" || $1=="Beth" {printf("%s made more than 50 dollars\n", $1)}' emp.data
+so, awk have ||, &&, for comparision operator it supports ==, !=, >= <= and maybe more, awk also supports +=, -= etc.
+
+$ awk 'BEGIN { print "BEGIN" } {print $0} END {print "END"}' junk.data
+Before you want awk to read the file, you want awk to do something you can use BEGIN, same for END to do at end
+
+
+
+$ awk '{emp = emp + 1} END {printf("found %d may employees\n", emp)}' emp.data
+There's no pattern here, The first Action says, for every emp variable I'm going to increment it with one and then print at the END
+you can also initialize variable with yourself(default was zero above)
+$ awk 'BEGIN {emp = 5} {emp = emp + 1} END {printf("found %d may employees\n", emp)}' emp.data
+
+
+$ awk 'BEGIN {emp = 5} {emp = emp + 1; emp += 2} END {printf("found %d may employees\n", emp)}' emp.data
+you can perform multiple action seperated with ; or you can just open another {}
+$ awk 'BEGIN {emp = 5} {emp = emp + 1} { emp += 2} END {printf("found %d may employees\n", emp)}' emp.data
+
+$0 represents whole line in awk
+
+
+you can run awk file with '-f' or '-E' flag
+
+you can change default delimeter from space to something else, like
+$ awk -F ";" '{print $1}' data.ssv
