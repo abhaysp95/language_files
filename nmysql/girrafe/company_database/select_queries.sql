@@ -1,4 +1,4 @@
-use comp_db_girrafe;
+use comp_db_giraffe;
 
 -- find all employee ordered by salary
 select
