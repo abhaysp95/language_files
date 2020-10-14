@@ -40,41 +40,41 @@ public class Square {
 		g.drawRect(200, 100, this.x, this.y);
 	}
 
-	//public void keyPressed(KeyEvent e) {
-		//System.out.println("key pressed");
-		//switch (e.getKeyCode()) {
-			//case KeyEvent.VK_LEFT:
-				//velX = -5;
-				//break;
-			//case KeyEvent.VK_RIGHT:
-				//velX = 5;
-				//break;
-			//case KeyEvent.VK_UP:
-				//velY = -5;
-				//break;
-			//case KeyEvent.VK_DOWN:
-				//velY = 5;
-				//break;
-		//}
-	//}
+	public void keyPressed(KeyEvent e) {
+		System.out.println("key pressed");
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_LEFT:
+				velX = -5;
+				break;
+			case KeyEvent.VK_RIGHT:
+				velX = 5;
+				break;
+			case KeyEvent.VK_UP:
+				velY = -5;
+				break;
+			case KeyEvent.VK_DOWN:
+				velY = 5;
+				break;
+		}
+	}
 
-	//public void keyReleased(KeyEvent e) {
-		//System.out.println("key released");
-		//switch (e.getKeyCode()) {
-			//case KeyEvent.VK_LEFT:
-				//velX = 0;
-				//break;
-			//case KeyEvent.VK_RIGHT:
-				//velX = 0;
-				//break;
-			//case KeyEvent.VK_UP:
-				//velY = 0;
-				//break;
-			//case KeyEvent.VK_DOWN:
-				//velY = 0;
-				//break;
-		//}
-	//}
+	public void keyReleased(KeyEvent e) {
+		System.out.println("key released");
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_LEFT:
+				velX = 0;
+				break;
+			case KeyEvent.VK_RIGHT:
+				velX = 0;
+				break;
+			case KeyEvent.VK_UP:
+				velY = 0;
+				break;
+			case KeyEvent.VK_DOWN:
+				velY = 0;
+				break;
+		}
+	}
 
-	//public void keyTyped(KeyEvent e) {}
+	public void keyTyped(KeyEvent e) {}
 }

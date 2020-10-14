@@ -59,7 +59,7 @@ public class MainClass extends Applet implements Runnable, KeyListener {
 			case KeyEvent.VK_1:
 				this.s.bigger(this);
 				// how to pass outer class method/fields to inner anonymous class
-				this.addKeyListener(new KeyAdapter() {
+				/*this.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						System.out.println("key pressed");
@@ -96,7 +96,7 @@ public class MainClass extends Applet implements Runnable, KeyListener {
 								break;
 						}
 					}
-				});
+				});*/
 				break;
 			case KeyEvent.VK_2:
 				this.c.bigger(this);
