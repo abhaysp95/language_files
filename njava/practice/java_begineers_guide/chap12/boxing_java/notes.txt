@@ -1,0 +1,20 @@
+Number constructor has been deprecated since starting of JDK9, now we use 'valueOf()' method to encapsulate a value within a object, this process is called "boxing".
+
+e.g.,	Integer iOb = Integer.valueOf(100);
+
+The value 100 is said to be boxed inside iOb.
+
+Prior, to JDK5, all boxing took place manually, like above example
+
+The process of extracting a value from a type wrapper is called unboxing. Again, prior to JDK5, all unboxing took place manually, explicitly calling a method on the wrapper to obtain its value.
+
+e.g.,	int i = iOb.intValue();
+
+
+Autoboxing, by which a primitve type is automatically encapsulated(boxed) into its equivalent type wrapper whenever an object of type is needed. Same is said for auto-unboxing(extraction automatically from a type wrapper when its value is needed).
+
+e.g., Integer iOb = 100;  // autoboxing an int
+
+to unbox
+
+e.g., int i = iOb;  // auto-unbox
