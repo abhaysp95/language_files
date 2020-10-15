@@ -70,3 +70,9 @@ int main(int argc, char **argv) {
  * the type void *, the 'universal' pointer type, and must convert them
  * explicitly to float * before dereferencing them to initialize its float
  * variables. */
+
+
+/* so, regarding, floatcmp is implicitly interpreted as function pointer, is this same as:
+   void (*compare)(const void *, const void *) = floatcmp;
+   floatcmp(....);  // calling with appropirate parameters
+*/
