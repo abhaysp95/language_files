@@ -61,8 +61,33 @@ class OpenWithChromium(OpenWithQuteBrowser):
                 sys.exit(2)
 
 
-class OpenWithVivaldi(OpenWithQuteBrowser):
+class OpenWithBrave(OpenWithQuteBrowser):
     ''' open url with brave browser '''
+
+    def __init__(self, url=None):
+        super().__init__(url)
+        self.name = "brave"
+
+    def openBrowser(self):
+        if self.url is None:
+            print("No URL provided")
+            print('Exiting !!!')
+            sys.exit(2)
+        else:
+            try:
+                print("URL opening in %s" % self.name)
+                # by default, brave opens in new tab if a browser session is running
+                output = subprocess.run(
+                    ['brave', self.url],
+                    stdout=subprocess.DEVNULL, check=True)
+            except subprocess.ChildProcessError:
+                print("Error, can't open %s" % self.name)
+                print("Exiting !!!")
+                sys.exit(2)
+
+
+class OpenWithVivaldi(OpenWithQuteBrowser):
+    ''' open url with vivaldi browser '''
 
     def __init__(self, url=None):
         super().__init__(url)
@@ -76,7 +101,7 @@ class OpenWithVivaldi(OpenWithQuteBrowser):
         else:
             try:
                 print("URL opening in %s" % self.name)
-                # by default, brave opens in new tab if a browser session is running
+                # by default, vivaldi opens in new tab if a browser session is running
                 output = subprocess.run(
                     ['vivaldi-stable', self.url],
                     stdout=subprocess.DEVNULL, check=True)
