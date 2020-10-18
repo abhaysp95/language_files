@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 
+'''
+providing logic for title selection and return URL through different
+provided selectors
+'''
+
 from os import path
 import json
 import subprocess
+import sys
 
 class ReadTitles:
-    '''read titles through files'''
+    '''read titles through files and return corresponding URL'''
 
     def __init__(self):
         self.__bFilePath__ = path.expanduser('~') + "/.config/test_bookmarks.json"
@@ -35,10 +41,12 @@ class WithRofi:
         except subprocess.CalledProcessError as cpe:
             print("You haven't selected any title to perform action upon")
             print("Exiting !!!")
+            sys.exit(2)
         else:
             self.selectedTitle = self.selectedTitle.stdout.rstrip()
             print("From Rofi:\nTitle: %s\nURL: %s" %
                   (self.selectedTitle, self.__bDict__[self.selectedTitle]))
+            return self.selectedTitle, self.__bDict__[self.selectedTitle]
 
 
 class WithFzf(WithRofi):
@@ -59,10 +67,12 @@ class WithFzf(WithRofi):
         except subprocess.CalledProcessError as cpe:
             print("You haven't selected any title to perform action upon")
             print("Exiting !!!")
+            sys.exit(2)
         else:
             self.selectedTitle = self.selectedTitle.stdout.rstrip()
             print("From FZF:\nTitle: %s\nURL: %s" %
                   (self.selectedTitle, self.__bDict__[self.selectedTitle]))
+            return self.selectedTitle, self.__bDict__[self.selectedTitle]
 
 
 class WithDmenu(WithRofi):
@@ -81,10 +91,12 @@ class WithDmenu(WithRofi):
         except subprocess.CalledProcessError as cpe:
             print("You haven't selected any title to perform action upon")
             print("Exiting !!!")
+            sys.exit(2)
         else:
             self.selectedTitle = self.selectedTitle.stdout.rstrip()
             print("From FZF:\nTitle: %s\nURL: %s" %
                   (self.selectedTitle, self.__bDict__[self.selectedTitle]))
+            return self.selectedTitle, self.__bDict__[self.selectedTitle]
 
 
 class TitlesWithLauncher:
@@ -93,17 +105,20 @@ class TitlesWithLauncher:
     def __init__(self, launcher='fzf'):
         self.launcher = launcher
         self.launcherObj = None
+        self.gotTitle = None
+        self.gotURL = None
 
     def openLauncher(self):
         if self.launcher == 'rofi':
             self.launcherObj = WithRofi()
-            self.launcherObj.openLauncher()
+            self.gotTitle, self.gotURL = self.launcherObj.openLauncher()
         elif self.launcher == 'fzf':
             self.launcherObj = WithFzf()
-            self.launcherObj.openLauncher()
+            self.gotTitle, self.gotURL = self.launcherObj.openLauncher()
         elif self.launcher == 'dmenu':
             self.launcherObj = WithDmenu()
-            self.launcherObj.openLauncher()
+            self.gotTitle, self.gotURL = self.launcherObj.openLauncher()
+        return self.gotTitle, self.gotURL
 
 
 if __name__ == "__main__":
