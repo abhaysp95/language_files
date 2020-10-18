@@ -5,6 +5,7 @@ import sys
 import os
 
 from src import parse_bookmarks
+from src import selection_of_titles
 
 class ExtTools:
     '''deals with external things of project'''
