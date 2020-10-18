@@ -6,6 +6,8 @@ import os
 
 from src import parse_bookmarks
 from src import selection_of_titles
+from src import open_through_browser
+from src import delete_bookmarks
 
 class ExtTools:
     '''deals with external things of project'''
@@ -14,16 +16,13 @@ class ExtTools:
         self.parser = argparse.ArgumentParser()
         self.selector = selector
         self.browser = browser
+        self.gotTitle = None
+        self.gotURL = None
 
     def make_arguments(self):
         self.group1 = self.parser.add_mutually_exclusive_group()
-        self.group1.add_argument('-s', '--selector', type=str, metavar='rofi|fzf',
-                                 choices=['rofi', 'fzf'], help='use rofi or fzf for selection')
-
-        # self.inner_group1 = self.group1.add_mutually_exclusive_group()  # this group is not allowed with -s/--selector
-        # self.inner_group1.add_argument('-i', '--ice', action='store_true', help='delete bookmark')
-        # self.inner_group1.add_argument('-j', '--king', type=str, metavar='Browser', help='select browser')
-        # self.inner_group1.add_argument('-k', '--joker', action='store_true', help='update bookmarks')
+        self.group1.add_argument('-s', '--selector', type=str, metavar='rofi|fzf|dmenu',
+                                 choices=['rofi', 'fzf', 'dmenu'], help='use rofi, fzf or dmenu for selection')
 
         self.group2 = self.parser.add_mutually_exclusive_group()
         self.group2.add_argument('-d', '--delete', action='store_true', help='delete bookmark')
@@ -35,11 +34,17 @@ class ExtTools:
 
     def process_args(self):
         if self.args.selector:
+            print("inside first if")
             self.selector = self.args.selector
             if self.args.browser:
                 # open url with given browser
+                print("inside first if browser if")
+                gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
+                self.gotTitle, self.gotURL = gotTitles.openLauncher()
                 self.browser = self.args.browser
                 print('open with ' + self.browser)
+                browserObj = open_through_browser.Browser(self.browser, self.gotURL)
+                browserObj.openSelectedBrowser()
             elif self.args.update:
                 # update url
                 print("Warning: No need to use selector flag for updating")
@@ -48,13 +53,27 @@ class ExtTools:
             elif self.args.delete:
                 # delete selected url
                 print('delete with ' + self.selector)
+                gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
+                self.gotTitle, self.gotURL = gotTitles.openLauncher()
+                delBMark = delete_bookmarks.DeleteBMark(self.gotTitle)
+                delBMark.delete()
             else:
                 # open url with default browser using given selector
+                print("inside first if > else")
                 print('select operation to perform: \nselector: %s, browser: %s' % (self.selector, self.browser))
+                gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
+                self.gotTitle, self.gotURL = gotTitles.openLauncher()
+                browserObj = open_through_browser.Browser(self.browser, self.gotURL)
+                browserObj.openSelectedBrowser()
         elif self.args.browser:
             # open url using default selector with given browser
+            print("inside browser elif")
             self.browser = self.args.browser
             print('open url with ' + self.browser + ' using ' + self.selector)
+            gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
+            self.gotTitle, self.gotURL = gotTitles.openLauncher()
+            browserObj = open_through_browser.Browser(self.browser, self.gotURL)
+            browserObj.openSelectedBrowser()
         elif self.args.update:
             # update url with default selector
             updateBookmark = parse_bookmarks.WriteNewBookmarks()
@@ -62,11 +81,24 @@ class ExtTools:
         elif self.args.delete:
             # delete url with default selector
             print('delete with ' + self.selector)
+            gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
+            self.gotTitle, self.gotURL = gotTitles.openLauncher()
+            delBMark = delete_bookmarks.DeleteBMark(self.gotTitle)
+            delBMark.delete()
         else:
             # open url with default selector in default browser
+            print("inside outermost else")
             print('select url: \nusing selector: %s, browser: %s' % (self.selector, self.browser))
+            gotTitles = selection_of_titles.TitlesWithLauncher()
+            self.gotTitle, self.gotURL = gotTitles.openLauncher()
+            browserObj = open_through_browser.Browser(self.browser, self.gotURL)
+            browserObj.openSelectedBrowser()
 
 
-ext = ExtTools()
-ext.make_arguments()
-ext.process_args()
+if __name__ == "__main__":
+    ext = ExtTools()
+    ext.make_arguments()
+    ext.process_args()
+
+
+# set up obj for launchers in appropriate place
