@@ -34,15 +34,13 @@ class ExtTools:
 
     def process_args(self):
         if self.args.selector:
-            print("inside first if")
             self.selector = self.args.selector
             if self.args.browser:
                 # open url with given browser
-                print("inside first if browser if")
                 gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
                 self.gotTitle, self.gotURL = gotTitles.openLauncher()
                 self.browser = self.args.browser
-                print('open with ' + self.browser)
+                print('opening with ' + self.browser)
                 browserObj = open_through_browser.Browser(self.browser, self.gotURL)
                 browserObj.openSelectedBrowser()
             elif self.args.update:
@@ -52,24 +50,22 @@ class ExtTools:
                 updateBookmark.updateBookmarks()
             elif self.args.delete:
                 # delete selected url
-                print('delete with ' + self.selector)
+                print('deleting with ' + self.selector)
                 gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
                 self.gotTitle, self.gotURL = gotTitles.openLauncher()
                 delBMark = delete_bookmarks.DeleteBMark(self.gotTitle)
                 delBMark.delete()
             else:
                 # open url with default browser using given selector
-                print("inside first if > else")
-                print('select operation to perform: \nselector: %s, browser: %s' % (self.selector, self.browser))
+                print('select with %s and open in default browser %s' % (self.selector, self.browser))
                 gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
                 self.gotTitle, self.gotURL = gotTitles.openLauncher()
                 browserObj = open_through_browser.Browser(self.browser, self.gotURL)
                 browserObj.openSelectedBrowser()
         elif self.args.browser:
             # open url using default selector with given browser
-            print("inside browser elif")
             self.browser = self.args.browser
-            print('open url with ' + self.browser + ' using ' + self.selector)
+            print('open url with ' + self.browser + ' using default selector ' + self.selector)
             gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
             self.gotTitle, self.gotURL = gotTitles.openLauncher()
             browserObj = open_through_browser.Browser(self.browser, self.gotURL)
@@ -80,15 +76,14 @@ class ExtTools:
             updateBookmark.updateBookmarks()
         elif self.args.delete:
             # delete url with default selector
-            print('delete with ' + self.selector)
+            print('deleting with ' + self.selector)
             gotTitles = selection_of_titles.TitlesWithLauncher(self.selector)
             self.gotTitle, self.gotURL = gotTitles.openLauncher()
             delBMark = delete_bookmarks.DeleteBMark(self.gotTitle)
             delBMark.delete()
         else:
             # open url with default selector in default browser
-            print("inside outermost else")
-            print('select url: \nusing selector: %s, browser: %s' % (self.selector, self.browser))
+            print('select with default selector %s and open in default browser %s' % (self.selector, self.browser))
             gotTitles = selection_of_titles.TitlesWithLauncher()
             self.gotTitle, self.gotURL = gotTitles.openLauncher()
             browserObj = open_through_browser.Browser(self.browser, self.gotURL)
