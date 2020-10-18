@@ -103,3 +103,8 @@ class WriteNewBookmarks:
         '''finally updatation'''
         WriteNewBookmarks.__checkIfFileExists__(self)
         WriteNewBookmarks.__writeToFile__(self)
+
+
+if __name__ == "__main__":
+    print("This file isn't meant to run individually")
+    print("Exiting !!!")
