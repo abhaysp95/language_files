@@ -52,11 +52,24 @@ class ParseBookmarks:
         except FileNotFoundError:
             print("Bookmark file for Vivaldi not found")
 
+    def __updateQuteBrowser__(self):
+        '''get bookmarks for qutebrowser'''
+        bpath = path.expanduser('~') + "/.config/qutebrowser/bookmarks/urls"
+        try:
+            with open(bpath, 'r') as bfile:
+                lines = bfile.read().splitlines()
+                for line in lines:
+                    ssplit = line.split(' ')
+                    self.__newBDict__[' '.join(ssplit[1:])] = ssplit[0]
+        except FileNotFoundError:
+            print("Bookmark(urls) file for QuteBrowser not found")
+
     def bmarkDict(self):
         '''parse bookmarks from every browsers bookmark file and return dictionary'''
         ParseBookmarks.__updateChromium__(self)
         ParseBookmarks.__updateBrave__(self)
         ParseBookmarks.__updateVivaldi__(self)
+        ParseBookmarks.__updateQuteBrowser__(self);
         return self.__newBDict__;
 
 class WriteNewBookmarks:
