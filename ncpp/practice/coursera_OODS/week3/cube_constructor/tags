@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC=clang++$/;"	m
+Cube	cube.cpp	/^	Cube::Cube() {$/;"	f	class:uiuc::Cube
+Cube	cube.cpp	/^	Cube::Cube(const Cube& obj) {$/;"	f	class:uiuc::Cube
+Cube	cube.cpp	/^	Cube::Cube(double length) {$/;"	f	class:uiuc::Cube
+Cube	cube.hpp	/^	class Cube {$/;"	c	namespace:uiuc
+bar	main.cpp	/^uiuc::Cube* bar(uiuc::Cube *cube) {$/;"	f	typeref:typename:uiuc::Cube *
+clean	Makefile	/^clean:$/;"	t
+foo	main.cpp	/^uiuc::Cube foo(uiuc::Cube cube) {$/;"	f	typeref:typename:uiuc::Cube
+getSurfaceArea	cube.cpp	/^	double Cube::getSurfaceArea() {$/;"	f	class:uiuc::Cube	typeref:typename:double
+getVolume	cube.cpp	/^	double Cube::getVolume() {$/;"	f	class:uiuc::Cube	typeref:typename:double
+length_	cube.hpp	/^			double length_;$/;"	m	class:uiuc::Cube	typeref:typename:double
+main	Makefile	/^main: main.o cube.o$/;"	t
+main	main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+operator =	cube.cpp	/^	Cube& Cube::operator=(const Cube& obj) {$/;"	f	class:uiuc::Cube	typeref:typename:Cube &
+setLength	cube.cpp	/^	void Cube::setLength(double length) {$/;"	f	class:uiuc::Cube	typeref:typename:void
+uiuc	cube.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	cube.hpp	/^namespace uiuc {$/;"	n
