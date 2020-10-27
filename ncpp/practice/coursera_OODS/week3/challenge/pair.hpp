@@ -9,6 +9,8 @@ namespace chlng {
 			Pair(const Pair&);
 			~Pair();
 			void print();
+			static void print(const Pair& obj);
+			static void print(const Pair* obj);
 			bool compare(const Pair& obj);
 			bool compare(const Pair* obj);
 	};

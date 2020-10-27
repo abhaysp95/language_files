@@ -22,6 +22,15 @@ namespace chlng{
 		std::cout << "pa -> " << *pa << std::endl;
 		std::cout << "pb -> " << *pb << std::endl;
 	}
+	/* static can only be defined at class definition, so static is mentioned in header file */
+	void Pair::print(const Pair& obj) {
+		std::cout << "pa -> " << *(obj.pa) << std::endl;
+		std::cout << "pb -> " << *(obj.pb) << std::endl;
+	}
+	void Pair::print(const Pair* obj) {
+		std::cout << "pa -> " << *(obj->pa) << std::endl;
+		std::cout << "pb -> " << *(obj->pb) << std::endl;
+	}
 	bool Pair::compare(const Pair& obj) {
 		return ((*pa == *(obj.pa)) && (*pb == *(obj.pb)));
 	}
