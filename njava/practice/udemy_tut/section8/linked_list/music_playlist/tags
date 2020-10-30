@@ -1,0 +1,54 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Album	Album.java	/^	public Album(String title) {$/;"	m	class:Album
+Album	Album.java	/^public class Album {$/;"	c
+Main	Main.java	/^public class Main {$/;"	c
+MusicPlayer	MusicPlayer.java	/^	public MusicPlayer(String title) {$/;"	m	class:MusicPlayer
+MusicPlayer	MusicPlayer.java	/^public class MusicPlayer {$/;"	c
+Playlist	Playlist.java	/^	public Playlist(String name) {$/;"	m	class:Playlist
+Playlist	Playlist.java	/^public class Playlist {$/;"	c
+Song	Song.java	/^	public Song(String title, double duration) {$/;"	m	class:Song
+Song	Song.java	/^public class Song {$/;"	c
+addFullAblum	Playlist.java	/^	public boolean addFullAblum(Album album) {$/;"	m	class:Playlist
+addPlaylistToPlayer	MusicPlayer.java	/^	public boolean addPlaylistToPlayer(String playlistName) {$/;"	m	class:MusicPlayer
+addSongToAlbum	Album.java	/^	public boolean addSongToAlbum(String title, double duration) {$/;"	m	class:Album
+addSongToGivenPlaylist	MusicPlayer.java	/^	public void addSongToGivenPlaylist(Playlist playlist, Album album, String songName) {$/;"	m	class:MusicPlayer
+addSongToPlaylist	Playlist.java	/^	public boolean addSongToPlaylist(Album album, String songName) {$/;"	m	class:Playlist
+duration	Song.java	/^	private double duration;$/;"	f	class:Song	file:
+findPlaylist	MusicPlayer.java	/^	private Playlist findPlaylist(String playlistName) {$/;"	m	class:MusicPlayer	file:
+findSong	Album.java	/^	public Song findSong(String title) {$/;"	m	class:Album
+getAlbumTitle	Album.java	/^	public String getAlbumTitle() {$/;"	m	class:Album
+getPlayerName	MusicPlayer.java	/^	public String getPlayerName() {$/;"	m	class:MusicPlayer
+getPlaylistName	Playlist.java	/^	public String getPlaylistName() {$/;"	m	class:Playlist
+getSongDuration	Song.java	/^	public double getSongDuration() {$/;"	m	class:Song
+getSongListAlbum	Album.java	/^	public ArrayList<Song> getSongListAlbum() {$/;"	m	class:Album
+getSongTitle	Song.java	/^	public String getSongTitle() {$/;"	m	class:Song
+getSongsinPlaylist	Playlist.java	/^	public LinkedList<Song> getSongsinPlaylist() {$/;"	m	class:Playlist
+main	Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+name	Playlist.java	/^	private String name;$/;"	f	class:Playlist	file:
+playerName	MusicPlayer.java	/^	private String playerName;$/;"	f	class:MusicPlayer	file:
+playlistList	MusicPlayer.java	/^	private LinkedList<Playlist> playlistList = new LinkedList<Playlist>();$/;"	f	class:MusicPlayer	file:
+practice.udemy_tut.section8.linked_list.music_playlist	Album.java	/^package practice.udemy_tut.section8.linked_list.music_playlist;$/;"	p
+practice.udemy_tut.section8.linked_list.music_playlist	Main.java	/^package practice.udemy_tut.section8.linked_list.music_playlist;$/;"	p
+practice.udemy_tut.section8.linked_list.music_playlist	MusicPlayer.java	/^package practice.udemy_tut.section8.linked_list.music_playlist;$/;"	p
+practice.udemy_tut.section8.linked_list.music_playlist	Playlist.java	/^package practice.udemy_tut.section8.linked_list.music_playlist;$/;"	p
+practice.udemy_tut.section8.linked_list.music_playlist	Song.java	/^package practice.udemy_tut.section8.linked_list.music_playlist;$/;"	p
+printSongsFromPlaylist	MusicPlayer.java	/^	public void printSongsFromPlaylist(Playlist playlist) {$/;"	m	class:MusicPlayer
+printSongsInAlbum	Album.java	/^	public void printSongsInAlbum() {$/;"	m	class:Album
+printSongsInPlaylist	Playlist.java	/^	public void printSongsInPlaylist() {$/;"	m	class:Playlist
+removeSong	MusicPlayer.java	/^	private boolean removeSong(ListIterator<Song> songs, String songName) {$/;"	m	class:MusicPlayer	file:
+setSongDuration	Song.java	/^	public void setSongDuration(double duration) {$/;"	m	class:Song
+setSongTitle	Song.java	/^	public void setSongTitle(String title) {$/;"	m	class:Song
+showPlayerOptions	MusicPlayer.java	/^	private void showPlayerOptions() {$/;"	m	class:MusicPlayer	file:
+songArrayList	Album.java	/^	private ArrayList<Song> songArrayList = new ArrayList<Song>();$/;"	f	class:Album	file:
+songsInCurrentPlayingList	MusicPlayer.java	/^	private void songsInCurrentPlayingList(ListIterator<Song> songs) {$/;"	m	class:MusicPlayer	file:
+songsInPlaylist	Playlist.java	/^	private LinkedList<Song> songsInPlaylist = new LinkedList<Song>();$/;"	f	class:Playlist	file:
+startPlaying	MusicPlayer.java	/^	public void startPlaying(Playlist playlist) {$/;"	m	class:MusicPlayer
+title	Album.java	/^	private String title;$/;"	f	class:Album	file:
+title	Song.java	/^	private String title;$/;"	f	class:Song	file:
