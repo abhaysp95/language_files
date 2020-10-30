@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+BaseballPlayer	com/player/BaseballPlayer.java	/^	public BaseballPlayer(String name) { super(name); }$/;"	m	class:BaseballPlayer
+BaseballPlayer	com/player/BaseballPlayer.java	/^public class BaseballPlayer extends Player{$/;"	c
+CricketPlayer	com/player/CricketPlayer.java	/^	public CricketPlayer(String name) { super(name); }$/;"	m	class:CricketPlayer
+CricketPlayer	com/player/CricketPlayer.java	/^public class CricketPlayer extends Player {$/;"	c
+FootballPlayer	com/player/FootballPlayer.java	/^	public FootballPlayer(String name) { super(name); }$/;"	m	class:FootballPlayer
+FootballPlayer	com/player/FootballPlayer.java	/^public class FootballPlayer extends Player {$/;"	c
+League	com/player/League.java	/^	public League(String name) { this.name = name; }$/;"	m	class:League
+League	com/player/League.java	/^public class League<T extends Team> {$/;"	c
+Main	Main.java	/^public class Main {$/;"	c
+Player	com/player/Player.java	/^	Player(String name) { this.name = name; }$/;"	m	class:Player
+Player	com/player/Player.java	/^public class Player {$/;"	c
+Team	com/player/Team.java	/^	public Team(String name) { this.name = name; }$/;"	m	class:Team
+Team	com/player/Team.java	/^public class Team<T extends Player> implements Comparable<Team<T>> {$/;"	c
+add	com/player/League.java	/^	public boolean add(T team) {$/;"	m	class:League
+addPlayer	com/player/Team.java	/^	public boolean addPlayer(T player) {$/;"	m	class:Team
+com.player	com/player/BaseballPlayer.java	/^package com.player;$/;"	p
+com.player	com/player/CricketPlayer.java	/^package com.player;$/;"	p
+com.player	com/player/FootballPlayer.java	/^package com.player;$/;"	p
+com.player	com/player/League.java	/^package com.player;$/;"	p
+com.player	com/player/Player.java	/^package com.player;$/;"	p
+com.player	com/player/Team.java	/^package com.player;$/;"	p
+compareTo	com/player/Team.java	/^	public int compareTo(Team<T> team) {$/;"	m	class:Team
+getName	com/player/Player.java	/^	public String getName() { return this.name; }$/;"	m	class:Player
+getName	com/player/Team.java	/^	public String getName() { return this.name; }$/;"	m	class:Team
+league	com/player/League.java	/^	private List<T> league = new ArrayList<T>();$/;"	f	class:League	file:
+lost	com/player/Team.java	/^	private int lost = 0;$/;"	f	class:Team	file:
+main	Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+main	test.c	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+matchResult	com/player/Team.java	/^	public void matchResult(Team<T> opponent, int ourScore, int theirScore) {$/;"	m	class:Team
+members	com/player/Team.java	/^	private ArrayList<T> members = new ArrayList<T>();$/;"	f	class:Team	file:
+name	com/player/League.java	/^	public String name;$/;"	f	class:League
+name	com/player/Player.java	/^	private String name;$/;"	f	class:Player	file:
+name	com/player/Team.java	/^	private String name;$/;"	f	class:Team	file:
+numPlayers	com/player/Team.java	/^	public int numPlayers() { return this.members.size(); }$/;"	m	class:Team
+played	com/player/Team.java	/^	private int played = 0;$/;"	f	class:Team	file:
+ranking	com/player/Team.java	/^	public int ranking() {$/;"	m	class:Team
+showLeagueTable	com/player/League.java	/^	public void showLeagueTable() {$/;"	m	class:League
+tied	com/player/Team.java	/^	private int tied = 0;$/;"	f	class:Team	file:
+won	com/player/Team.java	/^	private int won = 0;$/;"	f	class:Team	file:
