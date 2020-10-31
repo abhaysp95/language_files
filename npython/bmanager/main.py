@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# TODO: if browser instance isn't always running, it takes up the terminal.
+# Find a way to deal with this problem
+
 import argparse
 import sys
 import os
