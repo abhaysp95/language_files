@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Seat	com/server/Theatre.java	/^		public Seat(String seatNumber) {$/;"	m	class:Theatre.Seat
+Seat	com/server/Theatre.java	/^	private class Seat {$/;"	c	class:Theatre
+Theatre	com/server/Theatre.java	/^	Theatre(String name, int numRows, int seatsPerRow) {$/;"	m	class:Theatre
+Theatre	com/server/Theatre.java	/^public class Theatre {$/;"	c
+cancel	com/server/Theatre.java	/^		public boolean cancel() {$/;"	m	class:Theatre.Seat
+com.server	com/server/Theatre.java	/^package com.server;$/;"	p
+getSeatNumber	com/server/Theatre.java	/^		public String getSeatNumber() { return this.seatNumber; }$/;"	m	class:Theatre.Seat
+getSeats	com/server/Theatre.java	/^	public void getSeats() {$/;"	m	class:Theatre
+getTheatreName	com/server/Theatre.java	/^	public String getTheatreName() { return this.theatreName; }$/;"	m	class:Theatre
+reserve	com/server/Theatre.java	/^		public boolean reserve() {$/;"	m	class:Theatre.Seat
+reserveSeat	com/server/Theatre.java	/^	public boolean reserveSeat(String seatNumber) {$/;"	m	class:Theatre
+reserved	com/server/Theatre.java	/^		private boolean reserved = false;$/;"	f	class:Theatre.Seat	file:
+seatNumber	com/server/Theatre.java	/^		private final String seatNumber;$/;"	f	class:Theatre.Seat	file:
+seats	com/server/Theatre.java	/^	private List<Seat> seats = new ArrayList<Seat>();$/;"	f	class:Theatre	file:
+theatreName	com/server/Theatre.java	/^	private final String theatreName;$/;"	f	class:Theatre	file:
