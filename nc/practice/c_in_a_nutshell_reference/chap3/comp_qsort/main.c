@@ -73,6 +73,6 @@ int main(int argc, char **argv) {
 
 
 /* so, regarding, floatcmp is implicitly interpreted as function pointer, is this same as:
-   void (*compare)(const void *, const void *) = floatcmp;
-   floatcmp(....);  // calling with appropirate parameters
+   void (*compare)(const void *, const void *) = floatcmp;  // can also use &floatcmp
+   floatcmp(....);  // calling with appropirate parameters, also (*floatcmp)(....); will work
 */

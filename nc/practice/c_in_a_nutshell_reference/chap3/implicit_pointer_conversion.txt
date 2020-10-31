@@ -1,0 +1,5 @@
+The compiler converts certain types of pointers implicitly. Assignments, conditional expressions using the equality operators == and !=, and function calls involve implicit pointer conversion in three kinds of cases, which are described individually in the sections that follow. The three kinds of implicit pointer conversion are:
+
+1. Any object pointer type can be implicitly converted to a pointer to void, and vice versa
+2. Any pointer to a given type can be implicitly converted into a pointer to a more qulaified version of that type - that is, a type with one or more additional type qualifiers.
+3. A null pointer constant can be implicitly converted into any pointer type.
