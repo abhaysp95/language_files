@@ -1,6 +1,5 @@
 # /*- Makefile -*/
 
-
 .SILENT:
 .PHONY: all dir clean help
 
@@ -24,10 +23,6 @@ all: dir ${BIN}
 dir:
 	mkdir -p ${DIRS}
 
-
-# ${OBJ}: ${SRC}  # this can't work,
-# it's mulitple output file at once, while below one is one at a time,
-# see %
 
 ${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
 	-@echo "compiling ${?} -> ${@}"
