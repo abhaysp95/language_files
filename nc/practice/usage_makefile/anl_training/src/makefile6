@@ -1,0 +1,26 @@
+# /* - Makefile - */
+
+CC=clang
+CFLAG=-Wall -std=c99 -g
+OUTPUT_OPTION=-MMD -MP -o $@
+# tells the compiler to figure out include dependency information and save them to a file with same name with a .c but with a .d extension
+
+SOURCE=$(wildcard *2.c)  # wildcard is make's thing
+OBJS=$(SOURCE:.c=.o)
+DEPS=$(SOURCE:.c=.d)
+-include ${DEPS}
+# include all the files that is listed with DEPS
+
+libex2.a: ${OBJS}
+	ar cr libex2.a $^
+
+tags:
+	ctags -R -f tags .
+
+help:
+	-@echo "make libex2.a" to make library
+	-@echo "make tags" to generate tags for project
+# -@ tells make whether to display rule before execution, also continue even if you find error
+
+clean:
+	-@rm -f *.o ex2

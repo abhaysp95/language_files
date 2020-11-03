@@ -1,0 +1,10 @@
+CC=clang
+CFLAG=-Wall -std=c99
+
+ex2: ex2.o util2.o
+	$(CC) $(CFLAG) -o $@ $^
+
+util2.o: util2.h
+
+tags:
+	ctags -R -f $@

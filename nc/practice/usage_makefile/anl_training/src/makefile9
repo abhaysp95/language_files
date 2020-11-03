@@ -1,0 +1,26 @@
+# /* - Makefile - */
+
+include makefile9.config
+
+SOURCE = $(wildcard *2.c) # wildcard is make's thing
+OBJS   = $(SOURCE:.c=.o)
+DEPS   = $(SOURCE:.c=.d)
+-include ${DEPS}
+# include all the files that is listed with DEPS
+
+lib: libex2(${OBJS})  # auto update .o and dependency
+
+# make dynamic library instead of static(done in makefile6)
+libex2.${SHARED_LIBRARY_EXTENSION}: ${OBJS}
+	${CC} ${SHARED_LIBRARY_FLAG} -o $@ $^
+
+tags:
+	ctags -R -f tags .
+
+help:
+	-@echo "make lib" to make static ibrary
+	-@echo "make libex2.dylib" to make dynamic library
+	-@echo "make tags" to generate tags for project
+
+clean:
+	rm -f ${OBJS} ex2 libex*

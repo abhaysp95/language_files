@@ -1,0 +1,10 @@
+# this file is input to tool to autotool
+
+AC_INIT()
+
+AC_CHECK_PROGS(CC, [clang, gcc, xlc, icc], [""])
+AC_PROG_CC
+AC_SUBST(CC)
+
+AC_CONFIG_FILES([makefile9.config])
+AC_OUTPUT
