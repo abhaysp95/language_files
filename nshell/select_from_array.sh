@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 PS3="Select your distro: "
 
 menu_from_array () {
 	select item; do
-		echo "$REPLY"
+		echo "$REPLY"  # REPLY is from select itself
 		# check the selected menu item number
 		if [ 1 -le "$REPLY" ] && [ "$REPLY" -le "$#" ]; then
 			echo "The selected operating system is $item"
