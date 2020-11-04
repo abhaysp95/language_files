@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+LinkList	LinkList.java	/^	public LinkList() {$/;"	m	class:LinkList
+LinkList	LinkList.java	/^public class LinkList<T> {$/;"	c
+Node	LinkList.java	/^		public Node(T data) {$/;"	m	class:LinkList.Node
+Node	LinkList.java	/^	private static class Node<T> {$/;"	c	class:LinkList
+data	LinkList.java	/^		public T data;$/;"	f	class:LinkList.Node
+head	LinkList.java	/^	private Node<T> head;$/;"	f	class:LinkList	file:
+insert	LinkList.java	/^	public void insert(T data) {$/;"	m	class:LinkList
+next	LinkList.java	/^		public Node<T> next;$/;"	f	class:LinkList.Node
+size	LinkList.java	/^	private int size;$/;"	f	class:LinkList	file:
+tail	LinkList.java	/^	private Node<T> tail;$/;"	f	class:LinkList	file:
+toString	LinkList.java	/^		public String toString() {$/;"	m	class:LinkList.Node
+toString	LinkList.java	/^	public String toString() {$/;"	m	class:LinkList
