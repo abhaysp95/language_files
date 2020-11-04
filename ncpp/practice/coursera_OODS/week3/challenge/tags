@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC=clang++$/;"	m
+PAIR_H	pair.hpp	/^#define PAIR_H$/;"	d
+Pair	pair.cpp	/^	Pair::Pair(const Pair& obj) {$/;"	f	class:chlng::Pair
+Pair	pair.cpp	/^	Pair::Pair(int a, int b) {$/;"	f	class:chlng::Pair
+Pair	pair.hpp	/^	class Pair {$/;"	c	namespace:chlng
+chlng	pair.cpp	/^namespace chlng{$/;"	n	file:
+chlng	pair.hpp	/^namespace chlng {$/;"	n
+clean	Makefile	/^clean:$/;"	t
+compare	pair.cpp	/^	bool Pair::compare(const Pair& obj) {$/;"	f	class:chlng::Pair	typeref:typename:bool
+compare	pair.cpp	/^	bool Pair::compare(const Pair* obj) {$/;"	f	class:chlng::Pair	typeref:typename:bool
+main	Makefile	/^main: main.o pair.o$/;"	t
+main	main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+pa	pair.hpp	/^			int *pa, *pb;$/;"	m	class:chlng::Pair	typeref:typename:int *
+pb	pair.hpp	/^			int *pa, *pb;$/;"	m	class:chlng::Pair	typeref:typename:int **
+print	pair.cpp	/^	void Pair::print() {$/;"	f	class:chlng::Pair	typeref:typename:void
+print	pair.cpp	/^	void Pair::print(const Pair& obj) {$/;"	f	class:chlng::Pair	typeref:typename:void
+print	pair.cpp	/^	void Pair::print(const Pair* obj) {$/;"	f	class:chlng::Pair	typeref:typename:void
+~Pair	pair.cpp	/^	Pair::~Pair() {$/;"	f	class:chlng::Pair

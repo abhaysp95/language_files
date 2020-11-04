@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BLUE	uiuc/HSLAPixel.cpp	/^	HSLAPixel HSLAPixel::BLUE = HSLAPixel(240, 1, 0.5);$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+BLUE	uiuc/HSLAPixel.hpp	/^			static HSLAPixel BLUE;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+CC	Makefile	/^CC=clang++$/;"	m
+CUBE_H	uiuc/cube.hpp	/^#define CUBE_H$/;"	d
+Cube	uiuc/cube.cpp	/^	Cube::Cube(double width, uiuc::HSLAPixel& color) {$/;"	f	class:uiuc::Cube
+Cube	uiuc/cube.hpp	/^	class Cube : public Shape {$/;"	c	namespace:uiuc
+HSLAPixel	uiuc/HSLAPixel.cpp	/^	HSLAPixel::HSLAPixel() {$/;"	f	class:uiuc::HSLAPixel
+HSLAPixel	uiuc/HSLAPixel.cpp	/^	HSLAPixel::HSLAPixel(double hue, double saturation, double luminance) {$/;"	f	class:uiuc::HSLAPixel
+HSLAPixel	uiuc/HSLAPixel.cpp	/^	HSLAPixel::HSLAPixel(double hue, double saturation, double luminance, double alpha) {$/;"	f	class:uiuc::HSLAPixel
+HSLAPixel	uiuc/HSLAPixel.hpp	/^	class HSLAPixel {$/;"	c	namespace:uiuc
+HSLAPixel.o	Makefile	/^HSLAPixel.o: uiuc\/HSLAPixel.cpp$/;"	t
+ORANGE	uiuc/HSLAPixel.cpp	/^	HSLAPixel HSLAPixel::ORANGE = HSLAPixel(30, 1, 0.5);$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+ORANGE	uiuc/HSLAPixel.hpp	/^			static HSLAPixel ORANGE;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+PURPLE	uiuc/HSLAPixel.cpp	/^	HSLAPixel HSLAPixel::PURPLE = HSLAPixel(270, 1, 0.5);$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+PURPLE	uiuc/HSLAPixel.hpp	/^			static HSLAPixel PURPLE;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+SHAPE_H	shapes.hpp	/^#define SHAPE_H$/;"	d
+Shape	shapes.hpp	/^	class Shape {$/;"	c	namespace:uiuc
+Shape	uiuc/cube.cpp	/^	Shape::Shape() : width_(1) {}$/;"	f	class:uiuc::Shape
+Shape	uiuc/cube.cpp	/^	Shape::Shape(double width) : width_(width) {}$/;"	f	class:uiuc::Shape
+YELLOW	uiuc/HSLAPixel.cpp	/^	HSLAPixel HSLAPixel::YELLOW = HSLAPixel(60, 1, 0.5);$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+YELLOW	uiuc/HSLAPixel.hpp	/^			static HSLAPixel YELLOW;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:HSLAPixel
+a	uiuc/HSLAPixel.hpp	/^			double a;  \/\/ Alpha of the pixel$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+clean	Makefile	/^clean:$/;"	t
+color_	uiuc/cube.hpp	/^			uiuc::HSLAPixel color_;$/;"	m	class:uiuc::Cube	typeref:typename:uiuc::HSLAPixel
+cube.o	Makefile	/^cube.o: uiuc\/cube.cpp$/;"	t
+getVolume	uiuc/cube.cpp	/^	double Cube::getVolume() const {$/;"	f	class:uiuc::Cube	typeref:typename:double
+getWidth	uiuc/cube.cpp	/^	double Shape::getWidth() const { return width_; }$/;"	f	class:uiuc::Shape	typeref:typename:double
+h	uiuc/HSLAPixel.hpp	/^			double h;  \/\/ hue of the pixel in degrees(0, 360)$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+l	uiuc/HSLAPixel.hpp	/^			double l;  \/\/ Luminance of the pixel$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+main	Makefile	/^main: main.o cube.o HSLAPixel.o$/;"	t
+main	main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+s	uiuc/HSLAPixel.hpp	/^			double s;  \/\/ saturation of the pixel$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+uiuc	shapes.hpp	/^namespace uiuc {$/;"	n
+uiuc	uiuc/HSLAPixel.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	uiuc/HSLAPixel.hpp	/^namespace uiuc {$/;"	n
+uiuc	uiuc/cube.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	uiuc/cube.hpp	/^namespace uiuc {$/;"	n
+width_	shapes.hpp	/^			double width_;$/;"	m	class:uiuc::Shape	typeref:typename:double

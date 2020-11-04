@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC=clang++$/;"	m
+CUBE_H	uiuc/cube.hpp	/^#define CUBE_H$/;"	d
+CUSTEMP_H	template.hpp	/^#define CUSTEMP_H$/;"	d
+Cube	uiuc/cube.cpp	/^	Cube::Cube() { length_ = 1; }$/;"	f	class:uiuc::Cube
+Cube	uiuc/cube.cpp	/^	Cube::Cube(unsigned l) { length_ = l; }$/;"	f	class:uiuc::Cube
+Cube	uiuc/cube.hpp	/^	class Cube {$/;"	c	namespace:uiuc
+clean	Makefile	/^clean:$/;"	t
+cube.o	Makefile	/^cube.o: uiuc\/cube.cpp$/;"	t
+getLength	uiuc/cube.cpp	/^	int Cube::getLength() { return length_; }$/;"	f	class:uiuc::Cube	typeref:typename:int
+getVolume	uiuc/cube.cpp	/^	void Cube::getVolume() {$/;"	f	class:uiuc::Cube	typeref:typename:void
+getVolume	uiuc/cube.cpp	/^	void Cube::getVolume(const unsigned l) {$/;"	f	class:uiuc::Cube	typeref:typename:void
+length_	uiuc/cube.hpp	/^			unsigned length_;$/;"	m	class:uiuc::Cube	typeref:typename:unsigned
+main	Makefile	/^main: main.o cube.o template.o$/;"	t
+main	main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+myMax	template.cpp	/^	T myMax(T a, T b) {$/;"	f	namespace:tmax	typeref:typename:T
+setLength	uiuc/cube.cpp	/^	void Cube::setLength(const unsigned l) { length_ = l; }$/;"	f	class:uiuc::Cube	typeref:typename:void
+tmax	template.cpp	/^namespace tmax {$/;"	n	file:
+tmax	template.hpp	/^namespace tmax {$/;"	n
+uiuc	uiuc/cube.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	uiuc/cube.hpp	/^namespace uiuc {$/;"	n
