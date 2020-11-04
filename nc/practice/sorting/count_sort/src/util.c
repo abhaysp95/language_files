@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "util.h"
+#include "../inc/util.h"
 
 // get max number
 int max(int *arr) {

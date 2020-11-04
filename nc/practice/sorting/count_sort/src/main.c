@@ -5,7 +5,7 @@
 */
 
 #include <stdio.h>
-#include "util.h"
+#include "../inc/util.h"
 
 int main(int argc, char **argv) {
 	int arr[SIZE] = {3, 0, 4, 0, 2, 9, 0, 5};
