@@ -1,7 +1,7 @@
 CC=clang++
 CFLAG=-Wall -std=c++14
 
-main: main.o cube.o template.o
+main: main.o cube.o
 	$(CC) $(CFLAG) -o $@ $^
 
 cube.o: uiuc/cube.cpp

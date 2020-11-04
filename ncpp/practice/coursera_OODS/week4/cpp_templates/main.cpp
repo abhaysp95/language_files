@@ -1,9 +1,14 @@
 #include <iostream>
 #include "uiuc/cube.hpp"
-#include "template.hpp"
+//#include "template.hpp"
 
-int tmax::myMax(int a, int b);
-char tmax::myMax(char a, char b);
+namespace tmax {
+	template <typename T>
+	T myMax(T a, T b) {
+		return a > b ? a : b;
+	}
+};
+
 
 int main(int argc, char **argv) {
 	uiuc::Cube cube;
