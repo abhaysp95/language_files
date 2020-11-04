@@ -1,0 +1,17 @@
+to-do list:
+  basic-overview:
+    - add event handler
+    - get input values
+    - add new items to our internal data structure
+    - add items to the UI
+    - calculate budget
+    - update UI
+
+modules:
+  - UI-module:
+    - get input values
+    - add items to the UI
+    - update UI
+  - Data-module:
+    - add new items to our internal data structure
+    - calculate budget
