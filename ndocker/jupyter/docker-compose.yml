@@ -1,0 +1,11 @@
+object_detection:
+  image: notebook
+  #container: jupyter-notebook
+  restart: always
+  environment:
+    - TERM=xterm
+  hostname: '127.0.0.1'
+  ports:
+    - 8888:8888
+  volumes:
+    - /home/raytracer/Documents/npython:/home/docker/python_work
