@@ -1,0 +1,720 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$(EXE)	uiuc/make/uiuc.mk	/^$(EXE): $(patsubst %.o, $(OBJS_DIR)\/%.o, $(OBJS))$/;"	t
+$(EXE)	uiuc/make/uiuc.mk	/^$(EXE):$/;"	t
+$(OBJS_DIR)	uiuc/make/uiuc.mk	/^$(OBJS_DIR):$/;"	t
+$(OBJS_DIR)/%.o	uiuc/make/uiuc.mk	/^$(OBJS_DIR)\/%.o: %.cpp | $(OBJS_DIR)$/;"	t
+$(TEST)	uiuc/make/uiuc.mk	/^$(TEST): $(patsubst %.o, $(OBJS_DIR)\/%.o, $(OBJS_TEST))$/;"	t
+$(TEST)	uiuc/make/uiuc.mk	/^$(TEST):$/;"	t
+ADAM7_DX	uiuc/lodepng/lodepng.cpp	/^static const unsigned ADAM7_DX[7] = { 8, 8, 4, 4, 2, 2, 1 }; \/*x delta values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_DY	uiuc/lodepng/lodepng.cpp	/^static const unsigned ADAM7_DY[7] = { 8, 8, 8, 4, 4, 2, 2 }; \/*y delta values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_IX	uiuc/lodepng/lodepng.cpp	/^static const unsigned ADAM7_IX[7] = { 0, 4, 0, 2, 0, 1, 0 }; \/*x start values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_IY	uiuc/lodepng/lodepng.cpp	/^static const unsigned ADAM7_IY[7] = { 0, 0, 4, 0, 2, 0, 1 }; \/*y start values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ASANFLAGS	uiuc/make/uiuc.mk	/^ASANFLAGS = -fsanitize=address -fno-omit-frame-pointer$/;"	m
+Adam7_deinterlace	uiuc/lodepng/lodepng.cpp	/^static void Adam7_deinterlace(unsigned char* out, const unsigned char* in, unsigned w, unsigned /;"	f	typeref:typename:void	file:
+Adam7_getpassvalues	uiuc/lodepng/lodepng.cpp	/^static void Adam7_getpassvalues(unsigned passw[7], unsigned passh[7], size_t filter_passstart[8]/;"	f	typeref:typename:void	file:
+Adam7_interlace	uiuc/lodepng/lodepng.cpp	/^static void Adam7_interlace(unsigned char* out, const unsigned char* in, unsigned w, unsigned h,/;"	f	typeref:typename:void	file:
+AssertionInfo	uiuc/catch/catch.hpp	/^    struct AssertionInfo$/;"	s	namespace:Catch
+AutoReg	uiuc/catch/catch.hpp	/^struct AutoReg : NonCopyable {$/;"	s	namespace:Catch
+BPMLists	uiuc/lodepng/lodepng.cpp	/^typedef struct BPMLists$/;"	s	file:
+BPMLists	uiuc/lodepng/lodepng.cpp	/^} BPMLists;$/;"	t	typeref:struct:BPMLists	file:
+BPMNode	uiuc/lodepng/lodepng.cpp	/^typedef struct BPMNode$/;"	s	file:
+BPMNode	uiuc/lodepng/lodepng.cpp	/^} BPMNode;$/;"	t	typeref:struct:BPMNode	file:
+CATCH_ARC_ENABLED	uiuc/catch/catch.hpp	/^#define CATCH_ARC_ENABLED /;"	d
+CATCH_ARC_STRONG	uiuc/catch/catch.hpp	/^#define CATCH_ARC_STRONG /;"	d
+CATCH_ARC_STRONG	uiuc/catch/catch.hpp	/^#define CATCH_ARC_STRONG$/;"	d
+CATCH_CONFIG_ALL_PARTS	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_ALL_PARTS$/;"	d
+CATCH_CONFIG_COLOUR_NONE	uiuc/catch/catch.hpp	/^#       define CATCH_CONFIG_COLOUR_NONE$/;"	d
+CATCH_CONFIG_COLOUR_NONE	uiuc/catch/catch.hpp	/^#    define CATCH_CONFIG_COLOUR_NONE$/;"	d
+CATCH_CONFIG_COUNTER	uiuc/catch/catch.hpp	/^#   define CATCH_CONFIG_COUNTER$/;"	d
+CATCH_CONFIG_CPP11_TO_STRING	uiuc/catch/catch.hpp	/^#    define CATCH_CONFIG_CPP11_TO_STRING$/;"	d
+CATCH_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS$/;"	d
+CATCH_CONFIG_ENABLE_CHRONO_STRINGMAKER	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_ENABLE_CHRONO_STRINGMAKER$/;"	d
+CATCH_CONFIG_ENABLE_PAIR_STRINGMAKER	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_ENABLE_PAIR_STRINGMAKER$/;"	d
+CATCH_CONFIG_ENABLE_TUPLE_STRINGMAKER	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_ENABLE_TUPLE_STRINGMAKER$/;"	d
+CATCH_CONFIG_EXTERNAL_INTERFACES	uiuc/catch/catch.hpp	/^#  define CATCH_CONFIG_EXTERNAL_INTERFACES$/;"	d
+CATCH_CONFIG_MAIN	uiuc/catch/catchmain.cpp	/^#define CATCH_CONFIG_MAIN$/;"	d	file:
+CATCH_CONFIG_POSIX_SIGNALS	uiuc/catch/catch.hpp	/^#   define CATCH_CONFIG_POSIX_SIGNALS$/;"	d
+CATCH_CONFIG_WCHAR	uiuc/catch/catch.hpp	/^#   define CATCH_CONFIG_WCHAR$/;"	d
+CATCH_CONFIG_WINDOWS_SEH	uiuc/catch/catch.hpp	/^#   define CATCH_CONFIG_WINDOWS_SEH$/;"	d
+CATCH_CPP14_OR_GREATER	uiuc/catch/catch.hpp	/^#    define CATCH_CPP14_OR_GREATER$/;"	d
+CATCH_CPP17_OR_GREATER	uiuc/catch/catch.hpp	/^#    define CATCH_CPP17_OR_GREATER$/;"	d
+CATCH_IMPL	uiuc/catch/catch.hpp	/^#  define CATCH_IMPL$/;"	d
+CATCH_INTERNAL_CONFIG_COUNTER	uiuc/catch/catch.hpp	/^    #define CATCH_INTERNAL_CONFIG_COUNTER$/;"	d
+CATCH_INTERNAL_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS	uiuc/catch/catch.hpp	/^#    define CATCH_INTERNAL_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS$/;"	d
+CATCH_INTERNAL_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS	uiuc/catch/catch.hpp	/^#  define CATCH_INTERNAL_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS$/;"	d
+CATCH_INTERNAL_CONFIG_NO_CPP11_TO_STRING	uiuc/catch/catch.hpp	/^#    define CATCH_INTERNAL_CONFIG_NO_CPP11_TO_STRING$/;"	d
+CATCH_INTERNAL_CONFIG_NO_POSIX_SIGNALS	uiuc/catch/catch.hpp	/^    #define CATCH_INTERNAL_CONFIG_NO_POSIX_SIGNALS$/;"	d
+CATCH_INTERNAL_CONFIG_NO_POSIX_SIGNALS	uiuc/catch/catch.hpp	/^#       define CATCH_INTERNAL_CONFIG_NO_POSIX_SIGNALS$/;"	d
+CATCH_INTERNAL_CONFIG_NO_WCHAR	uiuc/catch/catch.hpp	/^#  define CATCH_INTERNAL_CONFIG_NO_WCHAR$/;"	d
+CATCH_INTERNAL_CONFIG_NO_WINDOWS_SEH	uiuc/catch/catch.hpp	/^#    define CATCH_INTERNAL_CONFIG_NO_WINDOWS_SEH$/;"	d
+CATCH_INTERNAL_CONFIG_POSIX_SIGNALS	uiuc/catch/catch.hpp	/^    #define CATCH_INTERNAL_CONFIG_POSIX_SIGNALS$/;"	d
+CATCH_INTERNAL_CONFIG_WINDOWS_SEH	uiuc/catch/catch.hpp	/^#    define CATCH_INTERNAL_CONFIG_WINDOWS_SEH$/;"	d
+CATCH_INTERNAL_LINEINFO	uiuc/catch/catch.hpp	/^#define CATCH_INTERNAL_LINEINFO /;"	d
+CATCH_INTERNAL_SUPPRESS_GLOBALS_WARNINGS	uiuc/catch/catch.hpp	/^#       define CATCH_INTERNAL_SUPPRESS_GLOBALS_WARNINGS /;"	d
+CATCH_INTERNAL_SUPPRESS_GLOBALS_WARNINGS	uiuc/catch/catch.hpp	/^#   define CATCH_INTERNAL_SUPPRESS_GLOBALS_WARNINGS$/;"	d
+CATCH_INTERNAL_SUPPRESS_PARENTHESES_WARNINGS	uiuc/catch/catch.hpp	/^#       define CATCH_INTERNAL_SUPPRESS_PARENTHESES_WARNINGS /;"	d
+CATCH_INTERNAL_SUPPRESS_PARENTHESES_WARNINGS	uiuc/catch/catch.hpp	/^#   define CATCH_INTERNAL_SUPPRESS_PARENTHESES_WARNINGS$/;"	d
+CATCH_INTERNAL_UNSUPPRESS_GLOBALS_WARNINGS	uiuc/catch/catch.hpp	/^#       define CATCH_INTERNAL_UNSUPPRESS_GLOBALS_WARNINGS /;"	d
+CATCH_INTERNAL_UNSUPPRESS_GLOBALS_WARNINGS	uiuc/catch/catch.hpp	/^#   define CATCH_INTERNAL_UNSUPPRESS_GLOBALS_WARNINGS$/;"	d
+CATCH_INTERNAL_UNSUPPRESS_PARENTHESES_WARNINGS	uiuc/catch/catch.hpp	/^#       define CATCH_INTERNAL_UNSUPPRESS_PARENTHESES_WARNINGS /;"	d
+CATCH_INTERNAL_UNSUPPRESS_PARENTHESES_WARNINGS	uiuc/catch/catch.hpp	/^#   define CATCH_INTERNAL_UNSUPPRESS_PARENTHESES_WARNINGS$/;"	d
+CATCH_PLATFORM_IPHONE	uiuc/catch/catch.hpp	/^#  define CATCH_PLATFORM_IPHONE$/;"	d
+CATCH_PLATFORM_LINUX	uiuc/catch/catch.hpp	/^#  define CATCH_PLATFORM_LINUX$/;"	d
+CATCH_PLATFORM_MAC	uiuc/catch/catch.hpp	/^#  define CATCH_PLATFORM_MAC$/;"	d
+CATCH_PLATFORM_WINDOWS	uiuc/catch/catch.hpp	/^#  define CATCH_PLATFORM_WINDOWS$/;"	d
+CATCH_REGISTER_TAG_ALIAS	uiuc/catch/catch.hpp	/^#define CATCH_REGISTER_TAG_ALIAS(/;"	d
+CATCH_UNSAFE_UNRETAINED	uiuc/catch/catch.hpp	/^#define CATCH_UNSAFE_UNRETAINED /;"	d
+CATCH_UNSAFE_UNRETAINED	uiuc/catch/catch.hpp	/^#define CATCH_UNSAFE_UNRETAINED$/;"	d
+CATCH_VERSION_MAJOR	uiuc/catch/catch.hpp	/^#define CATCH_VERSION_MAJOR /;"	d
+CATCH_VERSION_MINOR	uiuc/catch/catch.hpp	/^#define CATCH_VERSION_MINOR /;"	d
+CATCH_VERSION_PATCH	uiuc/catch/catch.hpp	/^#define CATCH_VERSION_PATCH /;"	d
+CERROR_BREAK	uiuc/lodepng/lodepng.cpp	/^#define CERROR_BREAK(/;"	d	file:
+CERROR_RETURN	uiuc/lodepng/lodepng.cpp	/^#define CERROR_RETURN(/;"	d	file:
+CERROR_RETURN_ERROR	uiuc/lodepng/lodepng.cpp	/^#define CERROR_RETURN_ERROR(/;"	d	file:
+CERROR_TRY_RETURN	uiuc/lodepng/lodepng.cpp	/^#define CERROR_TRY_RETURN(/;"	d	file:
+CLARA_CONFIG_MAIN	uiuc/catch/catch.hpp	/^#    define CLARA_CONFIG_MAIN$/;"	d
+CLARA_CONFIG_MAIN_NOT_DEFINED	uiuc/catch/catch.hpp	/^#    define CLARA_CONFIG_MAIN_NOT_DEFINED$/;"	d
+CLCL_ORDER	uiuc/lodepng/lodepng.cpp	/^static const unsigned CLCL_ORDER[NUM_CODE_LENGTH_CODES]$/;"	v	typeref:typename:const unsigned[]	file:
+CLEAN_RM	Makefile	/^CLEAN_RM = out-*.png$/;"	m
+COLLECTED_FILES	uiuc/make/uiuc.mk	/^COLLECTED_FILES = uiuc\/HSLAPixel.h uiuc\/HSLAPixel.cpp ImageTransform.h ImageTransform.cpp$/;"	m
+CPP_TEST	uiuc/make/uiuc.mk	/^CPP_TEST = $(wildcard tests\/*.cpp)$/;"	m
+CXX	uiuc/make/uiuc.mk	/^CXX = $(CXX_WHICH)$/;"	m
+CXXFLAGS	uiuc/make/uiuc.mk	/^CXXFLAGS = $(CS400) $(STDVERSION) $(STDLIBVERSION) -g -O0 $(WARNINGS) -MMD -MP -msse2 -c$/;"	m
+CXX_CLANG	uiuc/make/uiuc.mk	/^CXX_CLANG = clang++$/;"	m
+CaseSensitive	uiuc/catch/catch.hpp	/^    struct CaseSensitive { enum Choice {$/;"	s	namespace:Catch
+Catch	uiuc/catch/catch.hpp	/^namespace Catch {$/;"	n
+Catch_global_namespace_dummy	uiuc/catch/catch.hpp	/^struct Catch_global_namespace_dummy {};$/;"	s
+Choice	uiuc/catch/catch.hpp	/^    struct CaseSensitive { enum Choice {$/;"	g	struct:Catch::CaseSensitive
+ColorTree	uiuc/lodepng/lodepng.cpp	/^struct ColorTree$/;"	s	file:
+ColorTree	uiuc/lodepng/lodepng.cpp	/^typedef struct ColorTree ColorTree;$/;"	t	typeref:struct:ColorTree	file:
+ContinueOnFailure	uiuc/catch/catch.hpp	/^        ContinueOnFailure = 0x02,   \/\/ Failures fail test, but execution continues$/;"	e	enum:Catch::ResultDisposition::Flags
+DEFAULT_WINDOWSIZE	uiuc/lodepng/lodepng.cpp	/^#define DEFAULT_WINDOWSIZE /;"	d	file:
+DISTANCEBASE	uiuc/lodepng/lodepng.cpp	/^static const unsigned DISTANCEBASE[30]$/;"	v	typeref:typename:const unsigned[30]	file:
+DISTANCEEXTRA	uiuc/lodepng/lodepng.cpp	/^static const unsigned DISTANCEEXTRA[30]$/;"	v	typeref:typename:const unsigned[30]	file:
+Detail	uiuc/catch/catch.hpp	/^    namespace Detail {$/;"	n	namespace:Catch
+DidntThrowException	uiuc/catch/catch.hpp	/^        DidntThrowException = Exception | 2,$/;"	e	enum:Catch::ResultWas::OfType
+ERROR_BREAK	uiuc/lodepng/lodepng.cpp	/^#define ERROR_BREAK(/;"	d	file:
+EXE	Makefile	/^EXE = ImageTransform$/;"	m
+EXE_OBJ	Makefile	/^EXE_OBJ = main.o$/;"	m
+Exception	uiuc/catch/catch.hpp	/^        Exception = 0x100 | FailureBit,$/;"	e	enum:Catch::ResultWas::OfType
+ExplicitFailure	uiuc/catch/catch.hpp	/^        ExplicitFailure = FailureBit | 2,$/;"	e	enum:Catch::ResultWas::OfType
+ExpressionFailed	uiuc/catch/catch.hpp	/^        ExpressionFailed = FailureBit | 1,$/;"	e	enum:Catch::ResultWas::OfType
+FIRST_LENGTH_CODE_INDEX	uiuc/lodepng/lodepng.cpp	/^#define FIRST_LENGTH_CODE_INDEX /;"	d	file:
+FailureBit	uiuc/catch/catch.hpp	/^        FailureBit = 0x10,$/;"	e	enum:Catch::ResultWas::OfType
+FalseTest	uiuc/catch/catch.hpp	/^        FalseTest = 0x04,           \/\/ Prefix expression with !$/;"	e	enum:Catch::ResultDisposition::Flags
+FatalErrorCondition	uiuc/catch/catch.hpp	/^        FatalErrorCondition = 0x200 | FailureBit$/;"	e	enum:Catch::ResultWas::OfType
+Flags	uiuc/catch/catch.hpp	/^    struct ResultDisposition { enum Flags {$/;"	g	struct:Catch::ResultDisposition
+HASH_BIT_MASK	uiuc/lodepng/lodepng.cpp	/^static const unsigned HASH_BIT_MASK = 65535; \/*HASH_NUM_VALUES - 1, but C90 does not like that /;"	v	typeref:typename:const unsigned	file:
+HASH_NUM_VALUES	uiuc/lodepng/lodepng.cpp	/^static const unsigned HASH_NUM_VALUES = 65536;$/;"	v	typeref:typename:const unsigned	file:
+HSLAPixel	uiuc/HSLAPixel.h	/^	class HSLAPixel {$/;"	c	namespace:uiuc
+Hash	uiuc/lodepng/lodepng.cpp	/^typedef struct Hash$/;"	s	file:
+Hash	uiuc/lodepng/lodepng.cpp	/^} Hash;$/;"	t	typeref:struct:Hash	file:
+HuffmanTree	uiuc/lodepng/lodepng.cpp	/^typedef struct HuffmanTree$/;"	s	file:
+HuffmanTree	uiuc/lodepng/lodepng.cpp	/^} HuffmanTree;$/;"	t	typeref:struct:HuffmanTree	file:
+HuffmanTree_cleanup	uiuc/lodepng/lodepng.cpp	/^static void HuffmanTree_cleanup(HuffmanTree* tree)$/;"	f	typeref:typename:void	file:
+HuffmanTree_getCode	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_getCode(const HuffmanTree* tree, unsigned index)$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_getLength	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_getLength(const HuffmanTree* tree, unsigned index)$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_init	uiuc/lodepng/lodepng.cpp	/^static void HuffmanTree_init(HuffmanTree* tree)$/;"	f	typeref:typename:void	file:
+HuffmanTree_make2DTree	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_make2DTree(HuffmanTree* tree)$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeFromFrequencies	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_makeFromFrequencies(HuffmanTree* tree, const unsigned* frequencies,$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeFromLengths	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_makeFromLengths(HuffmanTree* tree, const unsigned* bitlen,$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeFromLengths2	uiuc/lodepng/lodepng.cpp	/^static unsigned HuffmanTree_makeFromLengths2(HuffmanTree* tree)$/;"	f	typeref:typename:unsigned	file:
+INTERNAL_CATCH_DEF	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_DEF(/;"	d
+INTERNAL_CATCH_EXPAND1	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_EXPAND1(/;"	d
+INTERNAL_CATCH_EXPAND2	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_EXPAND2(/;"	d
+INTERNAL_CATCH_METHOD_AS_TEST_CASE	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_METHOD_AS_TEST_CASE(/;"	d
+INTERNAL_CATCH_NOINTERNAL_CATCH_DEF	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_NOINTERNAL_CATCH_DEF$/;"	d
+INTERNAL_CATCH_REGISTER_TESTCASE	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_REGISTER_TESTCASE(/;"	d
+INTERNAL_CATCH_TESTCASE	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TESTCASE(/;"	d
+INTERNAL_CATCH_TESTCASE2	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TESTCASE2(/;"	d
+INTERNAL_CATCH_TESTCASE_METHOD_NO_REGISTRATION	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TESTCASE_METHOD_NO_REGISTRATION(/;"	d
+INTERNAL_CATCH_TESTCASE_NO_REGISTRATION	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TESTCASE_NO_REGISTRATION(/;"	d
+INTERNAL_CATCH_TEST_CASE_METHOD	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TEST_CASE_METHOD(/;"	d
+INTERNAL_CATCH_TEST_CASE_METHOD2	uiuc/catch/catch.hpp	/^    #define INTERNAL_CATCH_TEST_CASE_METHOD2(/;"	d
+INTERNAL_CATCH_UNIQUE_NAME	uiuc/catch/catch.hpp	/^#  define INTERNAL_CATCH_UNIQUE_NAME(/;"	d
+INTERNAL_CATCH_UNIQUE_NAME_LINE	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_UNIQUE_NAME_LINE(/;"	d
+INTERNAL_CATCH_UNIQUE_NAME_LINE2	uiuc/catch/catch.hpp	/^#define INTERNAL_CATCH_UNIQUE_NAME_LINE2(/;"	d
+IStream	uiuc/catch/catch.hpp	/^    struct IStream {$/;"	s	namespace:Catch
+ITestCasePtr	uiuc/catch/catch.hpp	/^    using ITestCasePtr = std::shared_ptr<ITestInvoker>;$/;"	t	namespace:Catch	typeref:typename:std::shared_ptr<ITestInvoker>
+ITestCaseRegistry	uiuc/catch/catch.hpp	/^    struct ITestCaseRegistry {$/;"	s	namespace:Catch
+ITestInvoker	uiuc/catch/catch.hpp	/^    struct ITestInvoker {$/;"	s	namespace:Catch
+Info	uiuc/catch/catch.hpp	/^        Info = 1,$/;"	e	enum:Catch::ResultWas::OfType
+IsStreamInsertable	uiuc/catch/catch.hpp	/^        class IsStreamInsertable {$/;"	c	namespace:Catch::Detail
+LAST_LENGTH_CODE_INDEX	uiuc/lodepng/lodepng.cpp	/^#define LAST_LENGTH_CODE_INDEX /;"	d	file:
+LCT_GREY	uiuc/lodepng/lodepng.h	/^  LCT_GREY = 0, \/*greyscale: 1,2,4,8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_GREY_ALPHA	uiuc/lodepng/lodepng.h	/^  LCT_GREY_ALPHA = 4, \/*greyscale with alpha: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_PALETTE	uiuc/lodepng/lodepng.h	/^  LCT_PALETTE = 3, \/*palette: 1,2,4,8 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_RGB	uiuc/lodepng/lodepng.h	/^  LCT_RGB = 2, \/*RGB: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_RGBA	uiuc/lodepng/lodepng.h	/^  LCT_RGBA = 6 \/*RGB with alpha: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LD	uiuc/make/uiuc.mk	/^LD = $(CXX_WHICH)$/;"	m
+LDFLAGS	uiuc/make/uiuc.mk	/^LDFLAGS = $(CS400) $(STDVERSION) $(STDLIBVERSION) -lpthread$/;"	m
+LENGTHBASE	uiuc/lodepng/lodepng.cpp	/^static const unsigned LENGTHBASE[29]$/;"	v	typeref:typename:const unsigned[29]	file:
+LENGTHEXTRA	uiuc/lodepng/lodepng.cpp	/^static const unsigned LENGTHEXTRA[29]$/;"	v	typeref:typename:const unsigned[29]	file:
+LFS_BRUTE_FORCE	uiuc/lodepng/lodepng.h	/^  LFS_BRUTE_FORCE,$/;"	e	enum:LodePNGFilterStrategy
+LFS_ENTROPY	uiuc/lodepng/lodepng.h	/^  LFS_ENTROPY,$/;"	e	enum:LodePNGFilterStrategy
+LFS_MINSUM	uiuc/lodepng/lodepng.h	/^  LFS_MINSUM,$/;"	e	enum:LodePNGFilterStrategy
+LFS_PREDEFINED	uiuc/lodepng/lodepng.h	/^  LFS_PREDEFINED$/;"	e	enum:LodePNGFilterStrategy
+LFS_ZERO	uiuc/lodepng/lodepng.h	/^  LFS_ZERO,$/;"	e	enum:LodePNGFilterStrategy
+LODEPNG_COMPILE_ALLOCATORS	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_ALLOCATORS$/;"	d
+LODEPNG_COMPILE_ANCILLARY_CHUNKS	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_ANCILLARY_CHUNKS$/;"	d
+LODEPNG_COMPILE_CPP	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_CPP$/;"	d
+LODEPNG_COMPILE_DECODER	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_DECODER$/;"	d
+LODEPNG_COMPILE_DISK	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_DISK$/;"	d
+LODEPNG_COMPILE_ENCODER	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_ENCODER$/;"	d
+LODEPNG_COMPILE_ERROR_TEXT	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_ERROR_TEXT$/;"	d
+LODEPNG_COMPILE_PNG	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_PNG$/;"	d
+LODEPNG_COMPILE_ZLIB	uiuc/lodepng/lodepng.h	/^#define LODEPNG_COMPILE_ZLIB$/;"	d
+LODEPNG_H	uiuc/lodepng/lodepng.h	/^#define LODEPNG_H$/;"	d
+LODEPNG_MAX	uiuc/lodepng/lodepng.cpp	/^#define LODEPNG_MAX(/;"	d	file:
+LODEPNG_VERSION_STRING	uiuc/lodepng/lodepng.cpp	/^const char* LODEPNG_VERSION_STRING = "20180611";$/;"	v	typeref:typename:const char *
+LodePNGColorMode	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGColorMode$/;"	s
+LodePNGColorMode	uiuc/lodepng/lodepng.h	/^} LodePNGColorMode;$/;"	t	typeref:struct:LodePNGColorMode
+LodePNGColorProfile	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGColorProfile$/;"	s
+LodePNGColorProfile	uiuc/lodepng/lodepng.h	/^} LodePNGColorProfile;$/;"	t	typeref:struct:LodePNGColorProfile
+LodePNGColorType	uiuc/lodepng/lodepng.h	/^typedef enum LodePNGColorType$/;"	g
+LodePNGColorType	uiuc/lodepng/lodepng.h	/^} LodePNGColorType;$/;"	t	typeref:enum:LodePNGColorType
+LodePNGCompressSettings	uiuc/lodepng/lodepng.h	/^struct LodePNGCompressSettings \/*deflate = compress*\/$/;"	s
+LodePNGCompressSettings	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGCompressSettings LodePNGCompressSettings;$/;"	t	typeref:struct:LodePNGCompressSettings
+LodePNGDecoderSettings	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGDecoderSettings$/;"	s
+LodePNGDecoderSettings	uiuc/lodepng/lodepng.h	/^} LodePNGDecoderSettings;$/;"	t	typeref:struct:LodePNGDecoderSettings
+LodePNGDecompressSettings	uiuc/lodepng/lodepng.h	/^struct LodePNGDecompressSettings$/;"	s
+LodePNGDecompressSettings	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGDecompressSettings LodePNGDecompressSettings;$/;"	t	typeref:struct:LodePNGDecompressSettings
+LodePNGEncoderSettings	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGEncoderSettings$/;"	s
+LodePNGEncoderSettings	uiuc/lodepng/lodepng.h	/^} LodePNGEncoderSettings;$/;"	t	typeref:struct:LodePNGEncoderSettings
+LodePNGFilterStrategy	uiuc/lodepng/lodepng.h	/^typedef enum LodePNGFilterStrategy$/;"	g
+LodePNGFilterStrategy	uiuc/lodepng/lodepng.h	/^} LodePNGFilterStrategy;$/;"	t	typeref:enum:LodePNGFilterStrategy
+LodePNGIText_cleanup	uiuc/lodepng/lodepng.cpp	/^static void LodePNGIText_cleanup(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+LodePNGIText_copy	uiuc/lodepng/lodepng.cpp	/^static unsigned LodePNGIText_copy(LodePNGInfo* dest, const LodePNGInfo* source)$/;"	f	typeref:typename:unsigned	file:
+LodePNGIText_init	uiuc/lodepng/lodepng.cpp	/^static void LodePNGIText_init(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+LodePNGInfo	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGInfo$/;"	s
+LodePNGInfo	uiuc/lodepng/lodepng.h	/^} LodePNGInfo;$/;"	t	typeref:struct:LodePNGInfo
+LodePNGState	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGState$/;"	s
+LodePNGState	uiuc/lodepng/lodepng.h	/^} LodePNGState;$/;"	t	typeref:struct:LodePNGState
+LodePNGText_cleanup	uiuc/lodepng/lodepng.cpp	/^static void LodePNGText_cleanup(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+LodePNGText_copy	uiuc/lodepng/lodepng.cpp	/^static unsigned LodePNGText_copy(LodePNGInfo* dest, const LodePNGInfo* source)$/;"	f	typeref:typename:unsigned	file:
+LodePNGText_init	uiuc/lodepng/lodepng.cpp	/^static void LodePNGText_init(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+LodePNGTime	uiuc/lodepng/lodepng.h	/^typedef struct LodePNGTime$/;"	s
+LodePNGTime	uiuc/lodepng/lodepng.h	/^} LodePNGTime;$/;"	t	typeref:struct:LodePNGTime
+LodePNGUnknownChunks_cleanup	uiuc/lodepng/lodepng.cpp	/^static void LodePNGUnknownChunks_cleanup(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+LodePNGUnknownChunks_copy	uiuc/lodepng/lodepng.cpp	/^static unsigned LodePNGUnknownChunks_copy(LodePNGInfo* dest, const LodePNGInfo* src)$/;"	f	typeref:typename:unsigned	file:
+LodePNGUnknownChunks_init	uiuc/lodepng/lodepng.cpp	/^static void LodePNGUnknownChunks_init(LodePNGInfo* info)$/;"	f	typeref:typename:void	file:
+MAX_SUPPORTED_DEFLATE_LENGTH	uiuc/lodepng/lodepng.cpp	/^static const size_t MAX_SUPPORTED_DEFLATE_LENGTH = 258;$/;"	v	typeref:typename:const size_t	file:
+NUM_CODE_LENGTH_CODES	uiuc/lodepng/lodepng.cpp	/^#define NUM_CODE_LENGTH_CODES /;"	d	file:
+NUM_DEFLATE_CODE_SYMBOLS	uiuc/lodepng/lodepng.cpp	/^#define NUM_DEFLATE_CODE_SYMBOLS /;"	d	file:
+NUM_DISTANCE_SYMBOLS	uiuc/lodepng/lodepng.cpp	/^#define NUM_DISTANCE_SYMBOLS /;"	d	file:
+NameAndTags	uiuc/catch/catch.hpp	/^struct NameAndTags {$/;"	s	namespace:Catch
+No	uiuc/catch/catch.hpp	/^        No$/;"	e	enum:Catch::CaseSensitive::Choice
+NonCopyable	uiuc/catch/catch.hpp	/^    class NonCopyable {$/;"	c	namespace:Catch
+Normal	uiuc/catch/catch.hpp	/^        Normal = 0x01,$/;"	e	enum:Catch::ResultDisposition::Flags
+OBJS	Makefile	/^OBJS = main.o ImageTransform.o$/;"	m
+OBJS_DIR	uiuc/make/uiuc.mk	/^OBJS_DIR = .objs$/;"	m
+OBJS_TEST	uiuc/make/uiuc.mk	/^OBJS_TEST = $(filter-out $(EXE_OBJ), $(OBJS))$/;"	m
+OfType	uiuc/catch/catch.hpp	/^    struct ResultWas { enum OfType {$/;"	g	struct:Catch::ResultWas
+Ok	uiuc/catch/catch.hpp	/^        Ok = 0,$/;"	e	enum:Catch::ResultWas::OfType
+PNG	uiuc/PNG.cpp	/^  PNG::PNG() {$/;"	f	class:uiuc::PNG
+PNG	uiuc/PNG.cpp	/^  PNG::PNG(PNG const & other) {$/;"	f	class:uiuc::PNG
+PNG	uiuc/PNG.cpp	/^  PNG::PNG(unsigned int width, unsigned int height) {$/;"	f	class:uiuc::PNG
+PNG	uiuc/PNG.h	/^  class PNG {$/;"	c	namespace:uiuc
+READBIT	uiuc/lodepng/lodepng.cpp	/^#define READBIT(/;"	d	file:
+RegistrarForTagAliases	uiuc/catch/catch.hpp	/^    struct RegistrarForTagAliases {$/;"	s	namespace:Catch
+ResultDisposition	uiuc/catch/catch.hpp	/^    struct ResultDisposition { enum Flags {$/;"	s	namespace:Catch
+ResultWas	uiuc/catch/catch.hpp	/^    struct ResultWas { enum OfType {$/;"	s	namespace:Catch
+ReusableStringStream	uiuc/catch/catch.hpp	/^    class ReusableStringStream {$/;"	c	namespace:Catch
+STDLIBVERSION	uiuc/make/uiuc.mk	/^STDLIBVERSION = $(STDLIBVERSION_GNU)$/;"	m
+STDLIBVERSION_CLANG	uiuc/make/uiuc.mk	/^STDLIBVERSION_CLANG = -stdlib=libc++ # Clang's version; not present on default AWS Cloud9 instan/;"	m
+STDLIBVERSION_GNU	uiuc/make/uiuc.mk	/^STDLIBVERSION_GNU =   # blank on purpose; default GNU library$/;"	m
+STDVERSION	uiuc/make/uiuc.mk	/^STDVERSION = -std=c++14 # proper but requires newer compiler versions (for better or worse)$/;"	m
+SourceLineInfo	uiuc/catch/catch.hpp	/^        SourceLineInfo( char const* _file, std::size_t _line ) noexcept$/;"	f	struct:Catch::SourceLineInfo
+SourceLineInfo	uiuc/catch/catch.hpp	/^    struct SourceLineInfo {$/;"	s	namespace:Catch
+State	uiuc/lodepng/lodepng.cpp	/^State::State()$/;"	f	class:lodepng::State
+State	uiuc/lodepng/lodepng.cpp	/^State::State(const State& other)$/;"	f	class:lodepng::State
+State	uiuc/lodepng/lodepng.h	/^class State : public LodePNGState$/;"	c	namespace:lodepng
+StreamEndStop	uiuc/catch/catch.hpp	/^    struct StreamEndStop {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<NSObject*> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<NSString*> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<R C::*> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<T*> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<T^> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<bool> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<char *> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<char const *> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<char> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<char[SZ]> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<double> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<float> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<int> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<long long> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<long> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<signed char> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<signed char[SZ]> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<std::nullptr_t> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<std::string> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<std::wstring> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<unsigned char> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<unsigned char[SZ]> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<unsigned int> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<unsigned long long> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<unsigned long> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<wchar_t *> {$/;"	s	namespace:Catch
+StringMaker	uiuc/catch/catch.hpp	/^    struct StringMaker<wchar_t const *> {$/;"	s	namespace:Catch
+StringRef	uiuc/catch/catch.hpp	/^        StringRef( StringRef const& other ) noexcept$/;"	f	class:Catch::StringRef
+StringRef	uiuc/catch/catch.hpp	/^        StringRef( StringRef&& other ) noexcept$/;"	f	class:Catch::StringRef
+StringRef	uiuc/catch/catch.hpp	/^        StringRef( char const* rawChars, size_type size ) noexcept$/;"	f	class:Catch::StringRef
+StringRef	uiuc/catch/catch.hpp	/^        StringRef( std::string const& stdString ) noexcept$/;"	f	class:Catch::StringRef
+StringRef	uiuc/catch/catch.hpp	/^        StringRef() noexcept$/;"	f	class:Catch::StringRef
+StringRef	uiuc/catch/catch.hpp	/^    class StringRef {$/;"	c	namespace:Catch
+SuppressFail	uiuc/catch/catch.hpp	/^        SuppressFail = 0x08         \/\/ Failures are reported but do not fail the test$/;"	e	enum:Catch::ResultDisposition::Flags
+TEST	Makefile	/^TEST = test$/;"	m
+TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED	uiuc/catch/catch.hpp	/^#define TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED$/;"	d
+TestInvokerAsMethod	uiuc/catch/catch.hpp	/^    TestInvokerAsMethod( void (C::*testAsMethod)() ) noexcept : m_testAsMethod( testAsMethod ) {/;"	f	class:Catch::TestInvokerAsMethod
+TestInvokerAsMethod	uiuc/catch/catch.hpp	/^class TestInvokerAsMethod : public ITestInvoker {$/;"	c	namespace:Catch
+ThrewException	uiuc/catch/catch.hpp	/^        ThrewException = Exception | 1,$/;"	e	enum:Catch::ResultWas::OfType
+Unknown	uiuc/catch/catch.hpp	/^        Unknown = -1,$/;"	e	enum:Catch::ResultWas::OfType
+WARNINGS	uiuc/make/uiuc.mk	/^WARNINGS = -pedantic -Wall -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable$/;"	m
+Warning	uiuc/catch/catch.hpp	/^        Warning = 2,$/;"	e	enum:Catch::ResultWas::OfType
+Yes	uiuc/catch/catch.hpp	/^        Yes,$/;"	e	enum:Catch::CaseSensitive::Choice
+ZIP_FILE	uiuc/make/uiuc.mk	/^ZIP_FILE = ImageTransform_submission.zip$/;"	m
+_BSD_SOURCE	uiuc/catch/catch.hpp	/^#   define _BSD_SOURCE$/;"	d
+__anonf0414c610108	uiuc/RGB_HSL.h	/^  typedef struct {$/;"	s	namespace:uiuc
+__anonf0414c610208	uiuc/RGB_HSL.h	/^  typedef struct {$/;"	s	namespace:uiuc
+_copy	uiuc/PNG.cpp	/^  void PNG::_copy(PNG const & other) {$/;"	f	class:uiuc::PNG	typeref:typename:void
+a	uiuc/HSLAPixel.h	/^			double h, s, l, a;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+a	uiuc/RGB_HSL.h	/^    double a;  \/\/ [0, 1]$/;"	m	struct:uiuc::__anonf0414c610208	typeref:typename:double
+a	uiuc/RGB_HSL.h	/^    unsigned char r, g, b, a; \/\/ [0, 255]$/;"	m	struct:uiuc::__anonf0414c610108	typeref:typename:unsigned char
+addBitToStream	uiuc/lodepng/lodepng.cpp	/^#define addBitToStream(/;"	d	file:
+addBitsToStream	uiuc/lodepng/lodepng.cpp	/^static void addBitsToStream(size_t* bitpointer, ucvector* bitstream, unsigned value, size_t nbit/;"	f	typeref:typename:void	file:
+addBitsToStreamReversed	uiuc/lodepng/lodepng.cpp	/^static void addBitsToStreamReversed(size_t* bitpointer, ucvector* bitstream, unsigned value, siz/;"	f	typeref:typename:void	file:
+addChunk	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk(ucvector* out, const char* chunkName, const unsigned char* data, size_t/;"	f	typeref:typename:unsigned	file:
+addChunk_IDAT	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_IDAT(ucvector* out, const unsigned char* data, size_t datasize,$/;"	f	typeref:typename:unsigned	file:
+addChunk_IEND	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_IEND(ucvector* out)$/;"	f	typeref:typename:unsigned	file:
+addChunk_IHDR	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_IHDR(ucvector* out, unsigned w, unsigned h,$/;"	f	typeref:typename:unsigned	file:
+addChunk_PLTE	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_PLTE(ucvector* out, const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned	file:
+addChunk_bKGD	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_bKGD(ucvector* out, const LodePNGInfo* info)$/;"	f	typeref:typename:unsigned	file:
+addChunk_iTXt	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_iTXt(ucvector* out, unsigned compressed, const char* keyword, const cha/;"	f	typeref:typename:unsigned	file:
+addChunk_pHYs	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_pHYs(ucvector* out, const LodePNGInfo* info)$/;"	f	typeref:typename:unsigned	file:
+addChunk_tEXt	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_tEXt(ucvector* out, const char* keyword, const char* textstring)$/;"	f	typeref:typename:unsigned	file:
+addChunk_tIME	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_tIME(ucvector* out, const LodePNGTime* time)$/;"	f	typeref:typename:unsigned	file:
+addChunk_tRNS	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_tRNS(ucvector* out, const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned	file:
+addChunk_zTXt	uiuc/lodepng/lodepng.cpp	/^static unsigned addChunk_zTXt(ucvector* out, const char* keyword, const char* textstring,$/;"	f	typeref:typename:unsigned	file:
+addColorBits	uiuc/lodepng/lodepng.cpp	/^static void addColorBits(unsigned char* out, size_t index, unsigned bits, unsigned in)$/;"	f	typeref:typename:void	file:
+addHuffmanSymbol	uiuc/lodepng/lodepng.cpp	/^static void addHuffmanSymbol(size_t* bp, ucvector* compressed, unsigned code, unsigned bitlen)$/;"	f	typeref:typename:void	file:
+addLengthDistance	uiuc/lodepng/lodepng.cpp	/^static void addLengthDistance(uivector* values, size_t length, size_t distance)$/;"	f	typeref:typename:void	file:
+addPaddingBits	uiuc/lodepng/lodepng.cpp	/^static void addPaddingBits(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:void	file:
+addUnknownChunks	uiuc/lodepng/lodepng.cpp	/^static unsigned addUnknownChunks(ucvector* out, unsigned char* data, size_t datasize)$/;"	f	typeref:typename:unsigned	file:
+add_id	uiuc/lodepng/lodepng.h	/^  unsigned add_id;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+adler32	uiuc/lodepng/lodepng.cpp	/^static unsigned adler32(const unsigned char* data, unsigned len)$/;"	f	typeref:typename:unsigned	file:
+all	uiuc/make/uiuc.mk	/^all: $(EXE) $(TEST)$/;"	t
+allocsize	uiuc/lodepng/lodepng.cpp	/^  size_t allocsize; \/*allocated size in bytes*\/$/;"	m	struct:uivector	typeref:typename:size_t	file:
+allocsize	uiuc/lodepng/lodepng.cpp	/^  size_t allocsize; \/*allocated size*\/$/;"	m	struct:ucvector	typeref:typename:size_t	file:
+alpha	uiuc/lodepng/lodepng.h	/^  unsigned alpha; \/*image is not opaque and alpha channel or alpha palette required*\/$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned
+arcSafeRelease	uiuc/catch/catch.hpp	/^inline void arcSafeRelease( NSObject* ){}$/;"	f	typeref:typename:void
+arcSafeRelease	uiuc/catch/catch.hpp	/^inline void arcSafeRelease( NSObject* obj ) {$/;"	f	typeref:typename:void
+auto_convert	uiuc/lodepng/lodepng.h	/^  unsigned auto_convert; \/*automatically choose output PNG color type. Default: true*\/$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+b	uiuc/RGB_HSL.h	/^    unsigned char r, g, b, a; \/\/ [0, 255]$/;"	m	struct:uiuc::__anonf0414c610108	typeref:typename:unsigned char
+background_b	uiuc/lodepng/lodepng.h	/^  unsigned background_b;       \/*blue component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_defined	uiuc/lodepng/lodepng.h	/^  unsigned background_defined; \/*is a suggested background color given?*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_g	uiuc/lodepng/lodepng.h	/^  unsigned background_g;       \/*green component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_r	uiuc/lodepng/lodepng.h	/^  unsigned background_r;       \/*red component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+bitdepth	uiuc/lodepng/lodepng.h	/^  unsigned bitdepth;  \/*bits per sample, see PNG standard or documentation further in this head/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+bits	uiuc/lodepng/lodepng.h	/^  unsigned bits; \/*bits per channel (not for palette). 1,2 or 4 for greyscale only. 16 if 16-bi/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned
+boundaryPM	uiuc/lodepng/lodepng.cpp	/^static void boundaryPM(BPMLists* lists, BPMNode* leaves, size_t numpresent, int c, int num)$/;"	f	typeref:typename:void	file:
+bpmnode_create	uiuc/lodepng/lodepng.cpp	/^static BPMNode* bpmnode_create(BPMLists* lists, int weight, unsigned index, BPMNode* tail)$/;"	f	typeref:typename:BPMNode *	file:
+bpmnode_sort	uiuc/lodepng/lodepng.cpp	/^static void bpmnode_sort(BPMNode* leaves, size_t num)$/;"	f	typeref:typename:void	file:
+btype	uiuc/lodepng/lodepng.h	/^  unsigned btype; \/*the block type for LZ (0, 1, 2 or 3, see zlib standard). Should be 2 for pr/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+bytes	uiuc/catch/catch.hpp	/^            auto bytes = System::Text::Encoding::UTF8->GetBytes(ref->ToString());$/;"	v	namespace:Catch::Detail	typeref:typename:auto
+capturedExpression	uiuc/catch/catch.hpp	/^        StringRef capturedExpression;$/;"	m	struct:Catch::AssertionInfo	typeref:typename:StringRef
+chain	uiuc/lodepng/lodepng.cpp	/^  unsigned short* chain;$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+chains0	uiuc/lodepng/lodepng.cpp	/^  BPMNode** chains0;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+chains1	uiuc/lodepng/lodepng.cpp	/^  BPMNode** chains1;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+chainz	uiuc/lodepng/lodepng.cpp	/^  unsigned short* chainz; \/*those with same amount of zeros*\/$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+checkColorValidity	uiuc/lodepng/lodepng.cpp	/^static unsigned checkColorValidity(LodePNGColorType colortype, unsigned bd) \/*bd = bitdepth*\/$/;"	f	typeref:typename:unsigned	file:
+children	uiuc/lodepng/lodepng.cpp	/^  ColorTree* children[16]; \/*up to 16 pointers to ColorTree of next level*\/$/;"	m	struct:ColorTree	typeref:typename:ColorTree * [16]	file:
+clean	uiuc/make/uiuc.mk	/^clean:$/;"	t
+color	uiuc/lodepng/lodepng.h	/^  LodePNGColorMode color;     \/*color type and bits, palette and transparency of the PNG file*\/$/;"	m	struct:LodePNGInfo	typeref:typename:LodePNGColorMode
+color_convert	uiuc/lodepng/lodepng.h	/^  unsigned color_convert; \/*whether to convert the PNG to the color type you want. Default: yes/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+color_tree_add	uiuc/lodepng/lodepng.cpp	/^static void color_tree_add(ColorTree* tree,$/;"	f	typeref:typename:void	file:
+color_tree_cleanup	uiuc/lodepng/lodepng.cpp	/^static void color_tree_cleanup(ColorTree* tree)$/;"	f	typeref:typename:void	file:
+color_tree_get	uiuc/lodepng/lodepng.cpp	/^static int color_tree_get(ColorTree* tree, unsigned char r, unsigned char g, unsigned char b, un/;"	f	typeref:typename:int	file:
+color_tree_has	uiuc/lodepng/lodepng.cpp	/^static int color_tree_has(ColorTree* tree, unsigned char r, unsigned char g, unsigned char b, un/;"	f	typeref:typename:int	file:
+color_tree_init	uiuc/lodepng/lodepng.cpp	/^static void color_tree_init(ColorTree* tree)$/;"	f	typeref:typename:void	file:
+colored	uiuc/lodepng/lodepng.h	/^  unsigned colored; \/*not greyscale*\/$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned
+colortype	uiuc/lodepng/lodepng.h	/^  LodePNGColorType colortype; \/*color type, see PNG standard or documentation further in this h/;"	m	struct:LodePNGColorMode	typeref:typename:LodePNGColorType
+compress	uiuc/lodepng/lodepng.cpp	/^unsigned compress(std::vector<unsigned char>& out, const std::vector<unsigned char>& in,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+compress	uiuc/lodepng/lodepng.cpp	/^unsigned compress(std::vector<unsigned char>& out, const unsigned char* in, size_t insize,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+compression_method	uiuc/lodepng/lodepng.h	/^  unsigned compression_method;\/*compression method of the original file. Always 0.*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+computeHash	uiuc/PNG.cpp	/^  std::size_t PNG::computeHash() const {$/;"	f	class:uiuc::PNG	typeref:typename:std::size_t
+convert	uiuc/catch/catch.hpp	/^            convert(const Fake& value) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::enable_if<::Catch::Detail::IsStreamInsertable<Fake>::value,std::string>::type
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(NSObject* nsObject) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(NSString * nsstring) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(R C::* p) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(U* p) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(char const* str) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(signed char const* str) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convert	uiuc/catch/catch.hpp	/^        static std::string convert(unsigned char const* str) {$/;"	f	struct:Catch::StringMaker	typeref:typename:std::string
+convertUnknownEnumToString	uiuc/catch/catch.hpp	/^        std::string convertUnknownEnumToString( E e ) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::string
+convertUnstreamable	uiuc/catch/catch.hpp	/^         std::string>::type convertUnstreamable(T const& ex) {$/;"	f	namespace:Catch::Detail
+convertUnstreamable	uiuc/catch/catch.hpp	/^        , std::string>::type convertUnstreamable( T const& value ) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::enable_if<std::is_enum<T>::value,std::string>::type
+convertUnstreamable	uiuc/catch/catch.hpp	/^        std::string>::type convertUnstreamable( T const& ) {$/;"	f	namespace:Catch::Detail
+countZeros	uiuc/lodepng/lodepng.cpp	/^static unsigned countZeros(const unsigned char* data, size_t size, size_t pos)$/;"	f	typeref:typename:unsigned	file:
+createRainbowPNG	tests/part2.cpp	/^PNG createRainbowPNG() {$/;"	f	typeref:typename:PNG
+createSpotlight	ImageTransform.cpp	/^PNG createSpotlight(PNG image, int centerX, int centerY) {$/;"	f	typeref:typename:PNG
+createWatermark	tests/part2.cpp	/^PNG createWatermark() {$/;"	f	typeref:typename:PNG
+custom_context	uiuc/lodepng/lodepng.h	/^  const void* custom_context; \/*optional custom settings for custom functions*\/$/;"	m	struct:LodePNGCompressSettings	typeref:typename:const void *
+custom_context	uiuc/lodepng/lodepng.h	/^  const void* custom_context; \/*optional custom settings for custom functions*\/$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:const void *
+custom_deflate	uiuc/lodepng/lodepng.h	/^  unsigned (*custom_deflate)(unsigned char**, size_t*,$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGCompressSettings *)
+custom_inflate	uiuc/lodepng/lodepng.h	/^  unsigned (*custom_inflate)(unsigned char**, size_t*,$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGDecompressSettings *)
+custom_zlib	uiuc/lodepng/lodepng.h	/^  unsigned (*custom_zlib)(unsigned char**, size_t*,$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGCompressSettings *)
+custom_zlib	uiuc/lodepng/lodepng.h	/^  unsigned (*custom_zlib)(unsigned char**, size_t*,$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGDecompressSettings *)
+data	uiuc/lodepng/lodepng.cpp	/^  unsigned char* data;$/;"	m	struct:ucvector	typeref:typename:unsigned char *	file:
+data	uiuc/lodepng/lodepng.cpp	/^  unsigned* data;$/;"	m	struct:uivector	typeref:typename:unsigned *	file:
+day	uiuc/lodepng/lodepng.h	/^  unsigned day;     \/*1-31*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+decode	uiuc/lodepng/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h, const std::string& fi/;"	f	namespace:lodepng	typeref:typename:unsigned
+decode	uiuc/lodepng/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h, const unsigned char* /;"	f	namespace:lodepng	typeref:typename:unsigned
+decode	uiuc/lodepng/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+decodeGeneric	uiuc/lodepng/lodepng.cpp	/^static void decodeGeneric(unsigned char** out, unsigned* w, unsigned* h,$/;"	f	typeref:typename:void	file:
+decoder	uiuc/lodepng/lodepng.h	/^  LodePNGDecoderSettings decoder; \/*the decoding settings*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGDecoderSettings
+decompress	uiuc/lodepng/lodepng.cpp	/^unsigned decompress(std::vector<unsigned char>& out, const std::vector<unsigned char>& in,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+decompress	uiuc/lodepng/lodepng.cpp	/^unsigned decompress(std::vector<unsigned char>& out, const unsigned char* in, size_t insize,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+defaultPixel_	uiuc/PNG.h	/^    HSLAPixel defaultPixel_;        \/*< Default pixel, returned in cases of errors *\/$/;"	m	class:uiuc::PNG	typeref:typename:HSLAPixel
+deflate	uiuc/lodepng/lodepng.cpp	/^static unsigned deflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned	file:
+deflateDynamic	uiuc/lodepng/lodepng.cpp	/^static unsigned deflateDynamic(ucvector* out, size_t* bp, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+deflateFixed	uiuc/lodepng/lodepng.cpp	/^static unsigned deflateFixed(ucvector* out, size_t* bp, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+deflateNoCompression	uiuc/lodepng/lodepng.cpp	/^static unsigned deflateNoCompression(ucvector* out, const unsigned char* data, size_t datasize)$/;"	f	typeref:typename:unsigned	file:
+empty	uiuc/catch/catch.hpp	/^        auto empty() const noexcept -> bool {$/;"	f	class:Catch::StringRef	typeref:typename:auto
+encode	uiuc/lodepng/lodepng.cpp	/^unsigned encode(const std::string& filename,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+encode	uiuc/lodepng/lodepng.cpp	/^unsigned encode(std::vector<unsigned char>& out, const unsigned char* in, unsigned w, unsigned h/;"	f	namespace:lodepng	typeref:typename:unsigned
+encode	uiuc/lodepng/lodepng.cpp	/^unsigned encode(std::vector<unsigned char>& out,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+encodeLZ77	uiuc/lodepng/lodepng.cpp	/^static unsigned encodeLZ77(uivector* out, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+encoder	uiuc/lodepng/lodepng.h	/^  LodePNGEncoderSettings encoder; \/*the encoding settings*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGEncoderSettings
+error	uiuc/lodepng/lodepng.h	/^  unsigned error;$/;"	m	struct:LodePNGState	typeref:typename:unsigned
+file	uiuc/catch/catch.hpp	/^        char const* file;$/;"	m	struct:Catch::SourceLineInfo	typeref:typename:char const *
+filter	uiuc/lodepng/lodepng.cpp	/^static unsigned filter(unsigned char* out, const unsigned char* in, unsigned w, unsigned h,$/;"	f	typeref:typename:unsigned	file:
+filterScanline	uiuc/lodepng/lodepng.cpp	/^static void filterScanline(unsigned char* out, const unsigned char* scanline, const unsigned cha/;"	f	typeref:typename:void	file:
+filter_method	uiuc/lodepng/lodepng.h	/^  unsigned filter_method;     \/*filter method of the original file*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+filter_palette_zero	uiuc/lodepng/lodepng.h	/^  unsigned filter_palette_zero;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+filter_strategy	uiuc/lodepng/lodepng.h	/^  LodePNGFilterStrategy filter_strategy;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:LodePNGFilterStrategy
+flog2	uiuc/lodepng/lodepng.cpp	/^static float flog2(float f)$/;"	f	typeref:typename:float	file:
+force_palette	uiuc/lodepng/lodepng.h	/^  unsigned force_palette;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+freelist	uiuc/lodepng/lodepng.cpp	/^  BPMNode** freelist;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+g	uiuc/RGB_HSL.h	/^    unsigned char r, g, b, a; \/\/ [0, 255]$/;"	m	struct:uiuc::__anonf0414c610108	typeref:typename:unsigned char
+generateFixedDistanceTree	uiuc/lodepng/lodepng.cpp	/^static unsigned generateFixedDistanceTree(HuffmanTree* tree)$/;"	f	typeref:typename:unsigned	file:
+generateFixedLitLenTree	uiuc/lodepng/lodepng.cpp	/^static unsigned generateFixedLitLenTree(HuffmanTree* tree)$/;"	f	typeref:typename:unsigned	file:
+get	uiuc/catch/catch.hpp	/^        auto get() -> std::ostream& { return *m_oss; }$/;"	f	class:Catch::ReusableStringStream	typeref:typename:std::ostream &
+getHash	uiuc/lodepng/lodepng.cpp	/^static unsigned getHash(const unsigned char* data, size_t size, size_t pos)$/;"	f	typeref:typename:unsigned	file:
+getNumColorChannels	uiuc/lodepng/lodepng.cpp	/^static unsigned getNumColorChannels(LodePNGColorType colortype)$/;"	f	typeref:typename:unsigned	file:
+getPaletteTranslucency	uiuc/lodepng/lodepng.cpp	/^static unsigned getPaletteTranslucency(const unsigned char* palette, size_t palettesize)$/;"	f	typeref:typename:unsigned	file:
+getPixel	uiuc/PNG.cpp	/^  HSLAPixel & PNG::getPixel(unsigned int x, unsigned int y) const {$/;"	f	class:uiuc::PNG	typeref:typename:HSLAPixel &
+getPixelColorRGBA16	uiuc/lodepng/lodepng.cpp	/^static void getPixelColorRGBA16(unsigned short* r, unsigned short* g, unsigned short* b, unsigne/;"	f	typeref:typename:void	file:
+getPixelColorRGBA8	uiuc/lodepng/lodepng.cpp	/^static void getPixelColorRGBA8(unsigned char* r, unsigned char* g,$/;"	f	typeref:typename:void	file:
+getPixelColorsRGBA8	uiuc/lodepng/lodepng.cpp	/^static void getPixelColorsRGBA8(unsigned char* buffer, size_t numpixels,$/;"	f	typeref:typename:void	file:
+getTreeInflateDynamic	uiuc/lodepng/lodepng.cpp	/^static unsigned getTreeInflateDynamic(HuffmanTree* tree_ll, HuffmanTree* tree_d,$/;"	f	typeref:typename:unsigned	file:
+getTreeInflateFixed	uiuc/lodepng/lodepng.cpp	/^static void getTreeInflateFixed(HuffmanTree* tree_ll, HuffmanTree* tree_d)$/;"	f	typeref:typename:void	file:
+getValueRequiredBits	uiuc/lodepng/lodepng.cpp	/^static unsigned getValueRequiredBits(unsigned char value)$/;"	f	typeref:typename:unsigned	file:
+grayscale	ImageTransform.cpp	/^PNG grayscale(PNG image) {$/;"	f	typeref:typename:PNG
+h	uiuc/HSLAPixel.h	/^			double h, s, l, a;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+h	uiuc/RGB_HSL.h	/^    double h;  \/\/ angle in degrees, [0, 360]$/;"	m	struct:uiuc::__anonf0414c610208	typeref:typename:double
+hash_cleanup	uiuc/lodepng/lodepng.cpp	/^static void hash_cleanup(Hash* hash)$/;"	f	typeref:typename:void	file:
+hash_init	uiuc/lodepng/lodepng.cpp	/^static unsigned hash_init(Hash* hash, unsigned windowsize)$/;"	f	typeref:typename:unsigned	file:
+head	uiuc/lodepng/lodepng.cpp	/^  int* head; \/*hash value to head circular pos - can be outdated if went around window*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+headz	uiuc/lodepng/lodepng.cpp	/^  int* headz; \/*similar to head, but for chainz*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+height	uiuc/PNG.cpp	/^  unsigned int PNG::height() const {$/;"	f	class:uiuc::PNG	typeref:typename:unsigned int
+height_	uiuc/PNG.h	/^    unsigned int height_;           \/*< Height of the image *\/$/;"	m	class:uiuc::PNG	typeref:typename:unsigned int
+hour	uiuc/lodepng/lodepng.h	/^  unsigned hour;    \/*0-23*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+hsl2rgb	uiuc/RGB_HSL.h	/^  static rgbaColor hsl2rgb(hslaColor hsl) {$/;"	f	namespace:uiuc	typeref:typename:rgbaColor
+hslaColor	uiuc/RGB_HSL.h	/^  } hslaColor;$/;"	t	namespace:uiuc	typeref:struct:uiuc::__anonf0414c610208
+huffmanDecodeSymbol	uiuc/lodepng/lodepng.cpp	/^static unsigned huffmanDecodeSymbol(const unsigned char* in, size_t* bp,$/;"	f	typeref:typename:unsigned	file:
+ignore_adler32	uiuc/lodepng/lodepng.h	/^  unsigned ignore_adler32; \/*if 1, continue and don't give an error message if the Adler32 chec/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned
+ignore_crc	uiuc/lodepng/lodepng.h	/^  unsigned ignore_crc; \/*ignore CRC checksums*\/$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+ignore_critical	uiuc/lodepng/lodepng.h	/^  unsigned ignore_critical; \/*ignore unknown critical chunks*\/$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+ignore_end	uiuc/lodepng/lodepng.h	/^  unsigned ignore_end; \/*ignore issues at end of file if possible (missing IEND chunk, too larg/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+illinify	ImageTransform.cpp	/^PNG illinify(PNG image) {$/;"	f	typeref:typename:PNG
+imageData_	uiuc/PNG.h	/^    HSLAPixel *imageData_;          \/*< Array of pixels *\/$/;"	m	class:uiuc::PNG	typeref:typename:HSLAPixel *
+in_use	uiuc/lodepng/lodepng.cpp	/^  int in_use;$/;"	m	struct:BPMNode	typeref:typename:int	file:
+index	uiuc/lodepng/lodepng.cpp	/^  int index; \/*the payload. Only has a meaningful value if this is in the last level*\/$/;"	m	struct:ColorTree	typeref:typename:int	file:
+index	uiuc/lodepng/lodepng.cpp	/^  unsigned index; \/*index of this leaf node (called "count" in the paper)*\/$/;"	m	struct:BPMNode	typeref:typename:unsigned	file:
+inflate	uiuc/lodepng/lodepng.cpp	/^static unsigned inflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned	file:
+inflateHuffmanBlock	uiuc/lodepng/lodepng.cpp	/^static unsigned inflateHuffmanBlock(ucvector* out, const unsigned char* in, size_t* bp,$/;"	f	typeref:typename:unsigned	file:
+inflateNoCompression	uiuc/lodepng/lodepng.cpp	/^static unsigned inflateNoCompression(ucvector* out, const unsigned char* in, size_t* bp, size_t*/;"	f	typeref:typename:unsigned	file:
+info_png	uiuc/lodepng/lodepng.h	/^  LodePNGInfo info_png; \/*info of the PNG image obtained after decoding*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGInfo
+info_raw	uiuc/lodepng/lodepng.h	/^  LodePNGColorMode info_raw; \/*specifies the format in which you would like to get the raw pixe/;"	m	struct:LodePNGState	typeref:typename:LodePNGColorMode
+interlace_method	uiuc/lodepng/lodepng.h	/^  unsigned interlace_method;  \/*interlace method of the original file: 0=none, 1=Adam7*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+invoke	uiuc/catch/catch.hpp	/^    void invoke() const override {$/;"	f	class:Catch::TestInvokerAsMethod	typeref:typename:void
+isFalseTest	uiuc/catch/catch.hpp	/^    inline bool isFalseTest( int flags ) { return ( flags & ResultDisposition::FalseTest ) != 0;/;"	f	namespace:Catch	typeref:typename:bool
+is_double	tests/part1.cpp	/^  struct is_double : std::integral_constant<bool, std::is_same<double, T>::value> {};$/;"	s	namespace:uiuc_testing	file:
+itext_keys	uiuc/lodepng/lodepng.h	/^  char** itext_keys; \/*the English keyword of the text chunk (e.g. "Comment")*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_langtags	uiuc/lodepng/lodepng.h	/^  char** itext_langtags; \/*language tag for this text's language, ISO\/IEC 646 string, e.g. ISO/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_num	uiuc/lodepng/lodepng.h	/^  size_t itext_num; \/*the amount of international texts in this PNG*\/$/;"	m	struct:LodePNGInfo	typeref:typename:size_t
+itext_strings	uiuc/lodepng/lodepng.h	/^  char** itext_strings; \/*the actual international text - UTF-8 string*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_transkeys	uiuc/lodepng/lodepng.h	/^  char** itext_transkeys; \/*keyword translated to the international language - UTF-8 string*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+key	uiuc/lodepng/lodepng.h	/^  unsigned key; \/*image is not opaque and color key is possible instead of full alpha*\/$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned
+key_b	uiuc/lodepng/lodepng.h	/^  unsigned key_b;       \/*blue component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_b	uiuc/lodepng/lodepng.h	/^  unsigned short key_b;$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned short
+key_defined	uiuc/lodepng/lodepng.h	/^  unsigned key_defined; \/*is a transparent color key given? 0 = false, 1 = true*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_g	uiuc/lodepng/lodepng.h	/^  unsigned key_g;       \/*green component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_g	uiuc/lodepng/lodepng.h	/^  unsigned short key_g;$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned short
+key_r	uiuc/lodepng/lodepng.h	/^  unsigned key_r;       \/*red\/greyscale component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_r	uiuc/lodepng/lodepng.h	/^  unsigned short key_r; \/*key values, always as 16-bit, in 8-bit case the byte is duplicated, e/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned short
+l	uiuc/HSLAPixel.h	/^			double h, s, l, a;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+l	uiuc/RGB_HSL.h	/^    double l;  \/\/ [0, 1]$/;"	m	struct:uiuc::__anonf0414c610208	typeref:typename:double
+lazymatching	uiuc/lodepng/lodepng.h	/^  unsigned lazymatching; \/*use lazy matching: better compression but a bit slower. Default: tru/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+lengths	uiuc/lodepng/lodepng.cpp	/^  unsigned* lengths; \/*the lengths of the codes of the 1d-tree*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned *	file:
+line	uiuc/catch/catch.hpp	/^        std::size_t line;$/;"	m	struct:Catch::SourceLineInfo	typeref:typename:std::size_t
+lineInfo	uiuc/catch/catch.hpp	/^        SourceLineInfo lineInfo;$/;"	m	struct:Catch::AssertionInfo	typeref:typename:SourceLineInfo
+listsize	uiuc/lodepng/lodepng.cpp	/^  unsigned listsize;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+load_file	uiuc/lodepng/lodepng.cpp	/^unsigned load_file(std::vector<unsigned char>& buffer, const std::string& filename)$/;"	f	namespace:lodepng	typeref:typename:unsigned
+lodepng	uiuc/lodepng/lodepng.cpp	/^namespace lodepng$/;"	n	file:
+lodepng	uiuc/lodepng/lodepng.h	/^namespace lodepng$/;"	n
+lodepng_add32bitInt	uiuc/lodepng/lodepng.cpp	/^static void lodepng_add32bitInt(ucvector* buffer, unsigned value)$/;"	f	typeref:typename:void	file:
+lodepng_add_itext	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_add_itext(LodePNGInfo* info, const char* key, const char* langtag,$/;"	f	typeref:typename:unsigned
+lodepng_add_text	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_add_text(LodePNGInfo* info, const char* key, const char* str)$/;"	f	typeref:typename:unsigned
+lodepng_addofl	uiuc/lodepng/lodepng.cpp	/^static int lodepng_addofl(size_t a, size_t b, size_t* result)$/;"	f	typeref:typename:int	file:
+lodepng_auto_choose_color	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_auto_choose_color(LodePNGColorMode* mode_out,$/;"	f	typeref:typename:unsigned
+lodepng_buffer_file	uiuc/lodepng/lodepng.cpp	/^static unsigned lodepng_buffer_file(unsigned char* out, size_t size, const char* filename)$/;"	f	typeref:typename:unsigned	file:
+lodepng_can_have_alpha	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_can_have_alpha(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_chunk_ancillary	uiuc/lodepng/lodepng.cpp	/^unsigned char lodepng_chunk_ancillary(const unsigned char* chunk)$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_append	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_chunk_append(unsigned char** out, size_t* outlength, const unsigned char* chunk/;"	f	typeref:typename:unsigned
+lodepng_chunk_check_crc	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_chunk_check_crc(const unsigned char* chunk)$/;"	f	typeref:typename:unsigned
+lodepng_chunk_create	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_chunk_create(unsigned char** out, size_t* outlength, unsigned length,$/;"	f	typeref:typename:unsigned
+lodepng_chunk_data	uiuc/lodepng/lodepng.cpp	/^unsigned char* lodepng_chunk_data(unsigned char* chunk)$/;"	f	typeref:typename:unsigned char *
+lodepng_chunk_data_const	uiuc/lodepng/lodepng.cpp	/^const unsigned char* lodepng_chunk_data_const(const unsigned char* chunk)$/;"	f	typeref:typename:const unsigned char *
+lodepng_chunk_generate_crc	uiuc/lodepng/lodepng.cpp	/^void lodepng_chunk_generate_crc(unsigned char* chunk)$/;"	f	typeref:typename:void
+lodepng_chunk_length	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_chunk_length(const unsigned char* chunk)$/;"	f	typeref:typename:unsigned
+lodepng_chunk_next	uiuc/lodepng/lodepng.cpp	/^unsigned char* lodepng_chunk_next(unsigned char* chunk)$/;"	f	typeref:typename:unsigned char *
+lodepng_chunk_next_const	uiuc/lodepng/lodepng.cpp	/^const unsigned char* lodepng_chunk_next_const(const unsigned char* chunk)$/;"	f	typeref:typename:const unsigned char *
+lodepng_chunk_private	uiuc/lodepng/lodepng.cpp	/^unsigned char lodepng_chunk_private(const unsigned char* chunk)$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_safetocopy	uiuc/lodepng/lodepng.cpp	/^unsigned char lodepng_chunk_safetocopy(const unsigned char* chunk)$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_type	uiuc/lodepng/lodepng.cpp	/^void lodepng_chunk_type(char type[5], const unsigned char* chunk)$/;"	f	typeref:typename:void
+lodepng_chunk_type_equals	uiuc/lodepng/lodepng.cpp	/^unsigned char lodepng_chunk_type_equals(const unsigned char* chunk, const char* type)$/;"	f	typeref:typename:unsigned char
+lodepng_clear_itext	uiuc/lodepng/lodepng.cpp	/^void lodepng_clear_itext(LodePNGInfo* info)$/;"	f	typeref:typename:void
+lodepng_clear_text	uiuc/lodepng/lodepng.cpp	/^void lodepng_clear_text(LodePNGInfo* info)$/;"	f	typeref:typename:void
+lodepng_color_mode_cleanup	uiuc/lodepng/lodepng.cpp	/^void lodepng_color_mode_cleanup(LodePNGColorMode* info)$/;"	f	typeref:typename:void
+lodepng_color_mode_copy	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_color_mode_copy(LodePNGColorMode* dest, const LodePNGColorMode* source)$/;"	f	typeref:typename:unsigned
+lodepng_color_mode_equal	uiuc/lodepng/lodepng.cpp	/^static int lodepng_color_mode_equal(const LodePNGColorMode* a, const LodePNGColorMode* b)$/;"	f	typeref:typename:int	file:
+lodepng_color_mode_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_color_mode_init(LodePNGColorMode* info)$/;"	f	typeref:typename:void
+lodepng_color_profile_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_color_profile_init(LodePNGColorProfile* profile)$/;"	f	typeref:typename:void
+lodepng_compress_settings_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_compress_settings_init(LodePNGCompressSettings* settings)$/;"	f	typeref:typename:void
+lodepng_convert	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_convert(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+lodepng_crc32	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_crc32(const unsigned char* data, size_t length)$/;"	f	typeref:typename:unsigned
+lodepng_crc32_table	uiuc/lodepng/lodepng.cpp	/^static unsigned lodepng_crc32_table[256] = {$/;"	v	typeref:typename:unsigned[256]	file:
+lodepng_decode	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode(unsigned char** out, unsigned* w, unsigned* h,$/;"	f	typeref:typename:unsigned
+lodepng_decode24	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode24(unsigned char** out, unsigned* w, unsigned* h, const unsigned char* in/;"	f	typeref:typename:unsigned
+lodepng_decode24_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode24_file(unsigned char** out, unsigned* w, unsigned* h, const char* filena/;"	f	typeref:typename:unsigned
+lodepng_decode32	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode32(unsigned char** out, unsigned* w, unsigned* h, const unsigned char* in/;"	f	typeref:typename:unsigned
+lodepng_decode32_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode32_file(unsigned char** out, unsigned* w, unsigned* h, const char* filena/;"	f	typeref:typename:unsigned
+lodepng_decode_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode_file(unsigned char** out, unsigned* w, unsigned* h, const char* filename/;"	f	typeref:typename:unsigned
+lodepng_decode_memory	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_decode_memory(unsigned char** out, unsigned* w, unsigned* h, const unsigned cha/;"	f	typeref:typename:unsigned
+lodepng_decoder_settings_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_decoder_settings_init(LodePNGDecoderSettings* settings)$/;"	f	typeref:typename:void
+lodepng_decompress_settings_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_decompress_settings_init(LodePNGDecompressSettings* settings)$/;"	f	typeref:typename:void
+lodepng_default_compress_settings	uiuc/lodepng/lodepng.cpp	/^const LodePNGCompressSettings lodepng_default_compress_settings = {2, 1, DEFAULT_WINDOWSIZE, 3, /;"	v	typeref:typename:const LodePNGCompressSettings
+lodepng_default_decompress_settings	uiuc/lodepng/lodepng.cpp	/^const LodePNGDecompressSettings lodepng_default_decompress_settings = {0, 0, 0, 0};$/;"	v	typeref:typename:const LodePNGDecompressSettings
+lodepng_deflate	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_deflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_deflatev	uiuc/lodepng/lodepng.cpp	/^static unsigned lodepng_deflatev(ucvector* out, const unsigned char* in, size_t insize,$/;"	f	typeref:typename:unsigned	file:
+lodepng_encode	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_encode24	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode24(unsigned char** out, size_t* outsize, const unsigned char* image, unsi/;"	f	typeref:typename:unsigned
+lodepng_encode24_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode24_file(const char* filename, const unsigned char* image, unsigned w, uns/;"	f	typeref:typename:unsigned
+lodepng_encode32	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode32(unsigned char** out, size_t* outsize, const unsigned char* image, unsi/;"	f	typeref:typename:unsigned
+lodepng_encode32_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode32_file(const char* filename, const unsigned char* image, unsigned w, uns/;"	f	typeref:typename:unsigned
+lodepng_encode_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode_file(const char* filename, const unsigned char* image, unsigned w, unsig/;"	f	typeref:typename:unsigned
+lodepng_encode_memory	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_encode_memory(unsigned char** out, size_t* outsize, const unsigned char* image,$/;"	f	typeref:typename:unsigned
+lodepng_encoder_settings_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_encoder_settings_init(LodePNGEncoderSettings* settings)$/;"	f	typeref:typename:void
+lodepng_error_text	uiuc/lodepng/lodepng.cpp	/^const char* lodepng_error_text(unsigned code)$/;"	f	typeref:typename:const char *
+lodepng_filesize	uiuc/lodepng/lodepng.cpp	/^static long lodepng_filesize(const char* filename)$/;"	f	typeref:typename:long	file:
+lodepng_free	uiuc/lodepng/lodepng.cpp	/^static void lodepng_free(void* ptr)$/;"	f	typeref:typename:void	file:
+lodepng_get_bpp	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_get_bpp(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_get_bpp_lct	uiuc/lodepng/lodepng.cpp	/^static unsigned lodepng_get_bpp_lct(LodePNGColorType colortype, unsigned bitdepth)$/;"	f	typeref:typename:unsigned	file:
+lodepng_get_channels	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_get_channels(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_get_color_profile	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_get_color_profile(LodePNGColorProfile* profile,$/;"	f	typeref:typename:unsigned
+lodepng_get_raw_size	uiuc/lodepng/lodepng.cpp	/^size_t lodepng_get_raw_size(unsigned w, unsigned h, const LodePNGColorMode* color)$/;"	f	typeref:typename:size_t
+lodepng_get_raw_size_idat	uiuc/lodepng/lodepng.cpp	/^static size_t lodepng_get_raw_size_idat(unsigned w, unsigned h, const LodePNGColorMode* color)$/;"	f	typeref:typename:size_t	file:
+lodepng_get_raw_size_lct	uiuc/lodepng/lodepng.cpp	/^size_t lodepng_get_raw_size_lct(unsigned w, unsigned h, LodePNGColorType colortype, unsigned bit/;"	f	typeref:typename:size_t
+lodepng_has_palette_alpha	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_has_palette_alpha(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_huffman_code_lengths	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_huffman_code_lengths(unsigned* lengths, const unsigned* frequencies,$/;"	f	typeref:typename:unsigned
+lodepng_inflate	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_inflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_inflatev	uiuc/lodepng/lodepng.cpp	/^static unsigned lodepng_inflatev(ucvector* out,$/;"	f	typeref:typename:unsigned	file:
+lodepng_info_cleanup	uiuc/lodepng/lodepng.cpp	/^void lodepng_info_cleanup(LodePNGInfo* info)$/;"	f	typeref:typename:void
+lodepng_info_copy	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_info_copy(LodePNGInfo* dest, const LodePNGInfo* source)$/;"	f	typeref:typename:unsigned
+lodepng_info_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_info_init(LodePNGInfo* info)$/;"	f	typeref:typename:void
+lodepng_info_swap	uiuc/lodepng/lodepng.cpp	/^void lodepng_info_swap(LodePNGInfo* a, LodePNGInfo* b)$/;"	f	typeref:typename:void
+lodepng_inspect	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_inspect(unsigned* w, unsigned* h, LodePNGState* state,$/;"	f	typeref:typename:unsigned
+lodepng_is_alpha_type	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_is_alpha_type(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_is_greyscale_type	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_is_greyscale_type(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_is_palette_type	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_is_palette_type(const LodePNGColorMode* info)$/;"	f	typeref:typename:unsigned
+lodepng_load_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_load_file(unsigned char** out, size_t* outsize, const char* filename)$/;"	f	typeref:typename:unsigned
+lodepng_malloc	uiuc/lodepng/lodepng.cpp	/^static void* lodepng_malloc(size_t size)$/;"	f	typeref:typename:void *	file:
+lodepng_mulofl	uiuc/lodepng/lodepng.cpp	/^static int lodepng_mulofl(size_t a, size_t b, size_t* result)$/;"	f	typeref:typename:int	file:
+lodepng_palette_add	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_palette_add(LodePNGColorMode* info,$/;"	f	typeref:typename:unsigned
+lodepng_palette_clear	uiuc/lodepng/lodepng.cpp	/^void lodepng_palette_clear(LodePNGColorMode* info)$/;"	f	typeref:typename:void
+lodepng_pixel_overflow	uiuc/lodepng/lodepng.cpp	/^static int lodepng_pixel_overflow(unsigned w, unsigned h,$/;"	f	typeref:typename:int	file:
+lodepng_read32bitInt	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_read32bitInt(const unsigned char* buffer)$/;"	f	typeref:typename:unsigned
+lodepng_realloc	uiuc/lodepng/lodepng.cpp	/^static void* lodepng_realloc(void* ptr, size_t new_size)$/;"	f	typeref:typename:void *	file:
+lodepng_save_file	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_save_file(const unsigned char* buffer, size_t buffersize, const char* filename)$/;"	f	typeref:typename:unsigned
+lodepng_set32bitInt	uiuc/lodepng/lodepng.cpp	/^static void lodepng_set32bitInt(unsigned char* buffer, unsigned value)$/;"	f	typeref:typename:void	file:
+lodepng_state_cleanup	uiuc/lodepng/lodepng.cpp	/^void lodepng_state_cleanup(LodePNGState* state)$/;"	f	typeref:typename:void
+lodepng_state_copy	uiuc/lodepng/lodepng.cpp	/^void lodepng_state_copy(LodePNGState* dest, const LodePNGState* source)$/;"	f	typeref:typename:void
+lodepng_state_init	uiuc/lodepng/lodepng.cpp	/^void lodepng_state_init(LodePNGState* state)$/;"	f	typeref:typename:void
+lodepng_zlib_compress	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_zlib_compress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+lodepng_zlib_decompress	uiuc/lodepng/lodepng.cpp	/^unsigned lodepng_zlib_decompress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+m_data	uiuc/catch/catch.hpp	/^        char* m_data = nullptr;$/;"	m	class:Catch::StringRef	typeref:typename:char *
+m_index	uiuc/catch/catch.hpp	/^        std::size_t m_index;$/;"	m	class:Catch::ReusableStringStream	typeref:typename:std::size_t
+m_oss	uiuc/catch/catch.hpp	/^        std::ostream* m_oss;$/;"	m	class:Catch::ReusableStringStream	typeref:typename:std::ostream *
+m_size	uiuc/catch/catch.hpp	/^        size_type m_size;$/;"	m	class:Catch::StringRef	typeref:typename:size_type
+m_start	uiuc/catch/catch.hpp	/^        char const* m_start;$/;"	m	class:Catch::StringRef	typeref:typename:char const *
+m_testAsMethod	uiuc/catch/catch.hpp	/^    void (C::*m_testAsMethod)();$/;"	m	class:Catch::TestInvokerAsMethod	typeref:typename:void (C::*)()
+macroName	uiuc/catch/catch.hpp	/^        StringRef macroName;$/;"	m	struct:Catch::AssertionInfo	typeref:typename:StringRef
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+makeTestInvoker	uiuc/catch/catch.hpp	/^auto makeTestInvoker( void (C::*testAsMethod)() ) noexcept -> ITestInvoker* {$/;"	f	namespace:Catch	typeref:typename:auto
+maxbitlen	uiuc/lodepng/lodepng.cpp	/^  unsigned maxbitlen; \/*maximum number of bits a single code can get*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned	file:
+memory	uiuc/lodepng/lodepng.cpp	/^  BPMNode* memory;$/;"	m	struct:BPMLists	typeref:typename:BPMNode *	file:
+memsize	uiuc/lodepng/lodepng.cpp	/^  unsigned memsize;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+minmatch	uiuc/lodepng/lodepng.h	/^  unsigned minmatch; \/*mininum lz77 length. 3 is normally best, 6 can be better for some PNGs. /;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+minute	uiuc/lodepng/lodepng.h	/^  unsigned minute;  \/*0-59*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+month	uiuc/lodepng/lodepng.h	/^  unsigned month;   \/*1-12*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+name	uiuc/catch/catch.hpp	/^    StringRef name;$/;"	m	struct:Catch::NameAndTags	typeref:typename:StringRef
+nextfree	uiuc/lodepng/lodepng.cpp	/^  unsigned nextfree;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+nicematch	uiuc/lodepng/lodepng.h	/^  unsigned nicematch; \/*stop searching if >= this length found. Set to 258 for best compression/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+numcodes	uiuc/lodepng/lodepng.cpp	/^  unsigned numcodes; \/*number of symbols in the alphabet = number of codes*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned	file:
+numcolors	uiuc/lodepng/lodepng.h	/^  unsigned numcolors; \/*amount of colors, up to 257. Not valid if bits == 16.*\/$/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned
+numfree	uiuc/lodepng/lodepng.cpp	/^  unsigned numfree;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+operator !=	uiuc/PNG.cpp	/^  bool PNG::operator!=(PNG const & other) const {$/;"	f	class:uiuc::PNG	typeref:typename:bool
+operator +	uiuc/catch/catch.hpp	/^    T const& operator + ( T const& value, StreamEndStop ) {$/;"	f	namespace:Catch	typeref:typename:T const &
+operator <<	uiuc/PNG.cpp	/^  std::ostream & operator << ( std::ostream& os, PNG const& png ) {$/;"	f	namespace:uiuc	typeref:typename:std::ostream &
+operator <<	uiuc/catch/catch.hpp	/^        auto operator << ( T const& value ) -> ReusableStringStream& {$/;"	f	class:Catch::ReusableStringStream	typeref:typename:ReusableStringStream &
+operator =	uiuc/PNG.cpp	/^  PNG const & PNG::operator=(PNG const & other) {$/;"	f	class:uiuc::PNG	typeref:typename:PNG const &
+operator =	uiuc/catch/catch.hpp	/^        auto operator = ( StringRef const &other ) noexcept -> StringRef& {$/;"	f	class:Catch::StringRef	typeref:typename:auto
+operator =	uiuc/lodepng/lodepng.cpp	/^State& State::operator=(const State& other)$/;"	f	class:lodepng::State	typeref:typename:State &
+operator ==	uiuc/PNG.cpp	/^  bool PNG::operator==(PNG const & other) const {$/;"	f	class:uiuc::PNG	typeref:typename:bool
+p	uiuc/catch/catch.hpp	/^            cli::pin_ptr<System::Byte> p = &bytes[0];$/;"	v	namespace:Catch::Detail	typeref:typename:cli::pin_ptr<System::Byte>
+paethPredictor	uiuc/lodepng/lodepng.cpp	/^static unsigned char paethPredictor(short a, short b, short c)$/;"	f	typeref:typename:unsigned char	file:
+palette	uiuc/lodepng/lodepng.h	/^  unsigned char palette[1024]; \/*Remembers up to the first 256 RGBA colors, in no particular or/;"	m	struct:LodePNGColorProfile	typeref:typename:unsigned char[1024]
+palette	uiuc/lodepng/lodepng.h	/^  unsigned char* palette; \/*palette in RGBARGBA... order. When allocated, must be either 0, or /;"	m	struct:LodePNGColorMode	typeref:typename:unsigned char *
+palettesize	uiuc/lodepng/lodepng.h	/^  size_t palettesize; \/*palette size in number of colors (amount of bytes is 4 * palettesize)*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:size_t
+performOptionalSelector	uiuc/catch/catch.hpp	/^inline id performOptionalSelector( id obj, SEL sel ) {$/;"	f	typeref:typename:id
+phys_defined	uiuc/lodepng/lodepng.h	/^  unsigned phys_defined; \/*if 0, there is no pHYs chunk and the values below are undefined, if /;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_unit	uiuc/lodepng/lodepng.h	/^  unsigned phys_unit; \/*may be 0 (unknown unit) or 1 (metre)*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_x	uiuc/lodepng/lodepng.h	/^  unsigned phys_x; \/*pixels per unit in x direction*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_y	uiuc/lodepng/lodepng.h	/^  unsigned phys_y; \/*pixels per unit in y direction*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+pixel	tests/part1.cpp	/^  HSLAPixel pixel(260, 0.8, 0.7);$/;"	v	typeref:typename:HSLAPixel
+pixel	tests/part1.cpp	/^  HSLAPixel pixel(260, 0.8, 0.7, 0.4);$/;"	v	typeref:typename:HSLAPixel
+pixel	tests/part1.cpp	/^  HSLAPixel pixel;$/;"	v	typeref:typename:HSLAPixel
+png	tests/part2.cpp	/^  PNG png = createRainbowPNG();$/;"	v	typeref:typename:PNG
+postProcessScanlines	uiuc/lodepng/lodepng.cpp	/^static unsigned postProcessScanlines(unsigned char* out, unsigned char* in,$/;"	f	typeref:typename:unsigned	file:
+preProcessScanlines	uiuc/lodepng/lodepng.cpp	/^static unsigned preProcessScanlines(unsigned char** out, size_t* outsize, const unsigned char* i/;"	f	typeref:typename:unsigned	file:
+predefined_filters	uiuc/lodepng/lodepng.h	/^  const unsigned char* predefined_filters;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:const unsigned char *
+r	uiuc/RGB_HSL.h	/^    unsigned char r, g, b, a; \/\/ [0, 255]$/;"	m	struct:uiuc::__anonf0414c610108	typeref:typename:unsigned char
+rangeToString	uiuc/catch/catch.hpp	/^        std::string rangeToString(InputIterator first, InputIterator last) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::string
+rawMemoryToString	uiuc/catch/catch.hpp	/^        std::string rawMemoryToString( const T& object ) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::string
+readBitFromReversedStream	uiuc/lodepng/lodepng.cpp	/^static unsigned char readBitFromReversedStream(size_t* bitpointer, const unsigned char* bitstrea/;"	f	typeref:typename:unsigned char	file:
+readBitFromStream	uiuc/lodepng/lodepng.cpp	/^static unsigned char readBitFromStream(size_t* bitpointer, const unsigned char* bitstream)$/;"	f	typeref:typename:unsigned char	file:
+readBitsFromReversedStream	uiuc/lodepng/lodepng.cpp	/^static unsigned readBitsFromReversedStream(size_t* bitpointer, const unsigned char* bitstream, s/;"	f	typeref:typename:unsigned	file:
+readBitsFromStream	uiuc/lodepng/lodepng.cpp	/^static unsigned readBitsFromStream(size_t* bitpointer, const unsigned char* bitstream, size_t nb/;"	f	typeref:typename:unsigned	file:
+readChunk_PLTE	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_PLTE(LodePNGColorMode* color, const unsigned char* data, size_t chunkL/;"	f	typeref:typename:unsigned	file:
+readChunk_bKGD	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_bKGD(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)$/;"	f	typeref:typename:unsigned	file:
+readChunk_iTXt	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_iTXt(LodePNGInfo* info, const LodePNGDecompressSettings* zlibsettings,$/;"	f	typeref:typename:unsigned	file:
+readChunk_pHYs	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_pHYs(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)$/;"	f	typeref:typename:unsigned	file:
+readChunk_tEXt	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_tEXt(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)$/;"	f	typeref:typename:unsigned	file:
+readChunk_tIME	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_tIME(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)$/;"	f	typeref:typename:unsigned	file:
+readChunk_tRNS	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_tRNS(LodePNGColorMode* color, const unsigned char* data, size_t chunkL/;"	f	typeref:typename:unsigned	file:
+readChunk_zTXt	uiuc/lodepng/lodepng.cpp	/^static unsigned readChunk_zTXt(LodePNGInfo* info, const LodePNGDecompressSettings* zlibsettings,$/;"	f	typeref:typename:unsigned	file:
+readFromFile	uiuc/PNG.cpp	/^  bool PNG::readFromFile(string const & fileName) {$/;"	f	class:uiuc::PNG	typeref:typename:bool
+read_text_chunks	uiuc/lodepng/lodepng.h	/^  unsigned read_text_chunks; \/*if false but remember_unknown_chunks is true, they're stored in /;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+remember_unknown_chunks	uiuc/lodepng/lodepng.h	/^  unsigned remember_unknown_chunks;$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+removePaddingBits	uiuc/lodepng/lodepng.cpp	/^static void removePaddingBits(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:void	file:
+resize	uiuc/PNG.cpp	/^  void PNG::resize(unsigned int newWidth, unsigned int newHeight) {$/;"	f	class:uiuc::PNG	typeref:typename:void
+result	tests/part2.cpp	/^  PNG result = createSpotlight(png, 100, 50);$/;"	v	typeref:typename:PNG
+result	tests/part2.cpp	/^  PNG result = illinify(png);$/;"	v	typeref:typename:PNG
+result	tests/part2.cpp	/^  PNG result = watermark(png, wm);$/;"	v	typeref:typename:PNG
+resultDisposition	uiuc/catch/catch.hpp	/^        ResultDisposition::Flags resultDisposition;$/;"	m	struct:Catch::AssertionInfo	typeref:typename:ResultDisposition::Flags
+rgb2hsl	uiuc/RGB_HSL.h	/^  static hslaColor rgb2hsl(rgbaColor rgb) {$/;"	f	namespace:uiuc	typeref:typename:hslaColor
+rgba16ToPixel	uiuc/lodepng/lodepng.cpp	/^static void rgba16ToPixel(unsigned char* out, size_t i,$/;"	f	typeref:typename:void	file:
+rgba8ToPixel	uiuc/lodepng/lodepng.cpp	/^static unsigned rgba8ToPixel(unsigned char* out, size_t i,$/;"	f	typeref:typename:unsigned	file:
+rgbaColor	uiuc/RGB_HSL.h	/^  } rgbaColor;$/;"	t	namespace:uiuc	typeref:struct:uiuc::__anonf0414c610108
+s	uiuc/HSLAPixel.h	/^			double h, s, l, a;$/;"	m	class:uiuc::HSLAPixel	typeref:typename:double
+s	uiuc/RGB_HSL.h	/^    double s;  \/\/ [0, 1]$/;"	m	struct:uiuc::__anonf0414c610208	typeref:typename:double
+s_empty	uiuc/catch/catch.hpp	/^        static constexpr char const* const s_empty = "";$/;"	m	class:Catch::StringRef	typeref:typename:char const * const
+save_file	uiuc/lodepng/lodepng.cpp	/^unsigned save_file(const std::vector<unsigned char>& buffer, const std::string& filename)$/;"	f	namespace:lodepng	typeref:typename:unsigned
+searchCodeIndex	uiuc/lodepng/lodepng.cpp	/^static size_t searchCodeIndex(const unsigned* array, size_t array_size, size_t value)$/;"	f	typeref:typename:size_t	file:
+second	uiuc/lodepng/lodepng.h	/^  unsigned second;  \/*0-60 (to allow for leap seconds)*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+setBitOfReversedStream	uiuc/lodepng/lodepng.cpp	/^static void setBitOfReversedStream(size_t* bitpointer, unsigned char* bitstream, unsigned char b/;"	f	typeref:typename:void	file:
+setBitOfReversedStream0	uiuc/lodepng/lodepng.cpp	/^static void setBitOfReversedStream0(size_t* bitpointer, unsigned char* bitstream, unsigned char /;"	f	typeref:typename:void	file:
+size	uiuc/catch/catch.hpp	/^        auto size() const noexcept -> size_type {$/;"	f	class:Catch::StringRef	typeref:typename:auto
+size	uiuc/lodepng/lodepng.cpp	/^  size_t size; \/*size in number of unsigned longs*\/$/;"	m	struct:uivector	typeref:typename:size_t	file:
+size	uiuc/lodepng/lodepng.cpp	/^  size_t size; \/*used size*\/$/;"	m	struct:ucvector	typeref:typename:size_t	file:
+size_type	uiuc/catch/catch.hpp	/^        using size_type = std::size_t;$/;"	t	class:Catch::StringRef	typeref:typename:std::size_t
+string_cleanup	uiuc/lodepng/lodepng.cpp	/^static void string_cleanup(char** out)$/;"	f	typeref:typename:void	file:
+string_init	uiuc/lodepng/lodepng.cpp	/^static void string_init(char** out)$/;"	f	typeref:typename:void	file:
+string_resize	uiuc/lodepng/lodepng.cpp	/^static unsigned string_resize(char** out, size_t size)$/;"	f	typeref:typename:unsigned	file:
+string_set	uiuc/lodepng/lodepng.cpp	/^static void string_set(char** out, const char* in)$/;"	f	typeref:typename:void	file:
+stringify	uiuc/catch/catch.hpp	/^        inline std::string stringify( NSString* nsstring ) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::string
+stringify	uiuc/catch/catch.hpp	/^        std::string stringify(const T& e) {$/;"	f	namespace:Catch::Detail	typeref:typename:std::string
+tags	uiuc/catch/catch.hpp	/^    StringRef tags;$/;"	m	struct:Catch::NameAndTags	typeref:typename:StringRef
+tail	uiuc/lodepng/lodepng.cpp	/^  struct BPMNode* tail; \/*the next nodes in this chain (null if last)*\/$/;"	m	struct:BPMNode	typeref:struct:BPMNode *	file:
+text_compression	uiuc/lodepng/lodepng.h	/^  unsigned text_compression;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+text_keys	uiuc/lodepng/lodepng.h	/^  char** text_keys; \/*the keyword of a text chunk (e.g. "Comment")*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+text_num	uiuc/lodepng/lodepng.h	/^  size_t text_num; \/*the amount of texts in these char** buffers (there may be more texts in it/;"	m	struct:LodePNGInfo	typeref:typename:size_t
+text_strings	uiuc/lodepng/lodepng.h	/^  char** text_strings; \/*the actual text*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+tidy	uiuc/make/uiuc.mk	/^tidy: clean$/;"	t
+time	uiuc/lodepng/lodepng.h	/^  LodePNGTime time;$/;"	m	struct:LodePNGInfo	typeref:typename:LodePNGTime
+time_defined	uiuc/lodepng/lodepng.h	/^  unsigned time_defined; \/*set to 1 to make the encoder generate a tIME chunk*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+tree1d	uiuc/lodepng/lodepng.cpp	/^  unsigned* tree1d;$/;"	m	struct:HuffmanTree	typeref:typename:unsigned *	file:
+tree2d	uiuc/lodepng/lodepng.cpp	/^  unsigned* tree2d;$/;"	m	struct:HuffmanTree	typeref:typename:unsigned *	file:
+ucvector	uiuc/lodepng/lodepng.cpp	/^typedef struct ucvector$/;"	s	file:
+ucvector	uiuc/lodepng/lodepng.cpp	/^} ucvector;$/;"	t	typeref:struct:ucvector	file:
+ucvector_cleanup	uiuc/lodepng/lodepng.cpp	/^static void ucvector_cleanup(void* p)$/;"	f	typeref:typename:void	file:
+ucvector_init	uiuc/lodepng/lodepng.cpp	/^static void ucvector_init(ucvector* p)$/;"	f	typeref:typename:void	file:
+ucvector_init_buffer	uiuc/lodepng/lodepng.cpp	/^static void ucvector_init_buffer(ucvector* p, unsigned char* buffer, size_t size)$/;"	f	typeref:typename:void	file:
+ucvector_push_back	uiuc/lodepng/lodepng.cpp	/^static unsigned ucvector_push_back(ucvector* p, unsigned char c)$/;"	f	typeref:typename:unsigned	file:
+ucvector_reserve	uiuc/lodepng/lodepng.cpp	/^static unsigned ucvector_reserve(ucvector* p, size_t allocsize)$/;"	f	typeref:typename:unsigned	file:
+ucvector_resize	uiuc/lodepng/lodepng.cpp	/^static unsigned ucvector_resize(ucvector* p, size_t size)$/;"	f	typeref:typename:unsigned	file:
+uiuc	uiuc/HSLAPixel.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	uiuc/HSLAPixel.h	/^namespace uiuc {$/;"	n
+uiuc	uiuc/PNG.cpp	/^namespace uiuc {$/;"	n	file:
+uiuc	uiuc/PNG.h	/^namespace uiuc {$/;"	n
+uiuc	uiuc/RGB_HSL.h	/^namespace uiuc {$/;"	n
+uiuc_testing	tests/part1.cpp	/^namespace uiuc_testing {$/;"	n	file:
+uivector	uiuc/lodepng/lodepng.cpp	/^typedef struct uivector$/;"	s	file:
+uivector	uiuc/lodepng/lodepng.cpp	/^} uivector;$/;"	t	typeref:struct:uivector	file:
+uivector_cleanup	uiuc/lodepng/lodepng.cpp	/^static void uivector_cleanup(void* p)$/;"	f	typeref:typename:void	file:
+uivector_init	uiuc/lodepng/lodepng.cpp	/^static void uivector_init(uivector* p)$/;"	f	typeref:typename:void	file:
+uivector_push_back	uiuc/lodepng/lodepng.cpp	/^static unsigned uivector_push_back(uivector* p, unsigned c)$/;"	f	typeref:typename:unsigned	file:
+uivector_reserve	uiuc/lodepng/lodepng.cpp	/^static unsigned uivector_reserve(uivector* p, size_t allocsize)$/;"	f	typeref:typename:unsigned	file:
+uivector_resize	uiuc/lodepng/lodepng.cpp	/^static unsigned uivector_resize(uivector* p, size_t size)$/;"	f	typeref:typename:unsigned	file:
+uivector_resizev	uiuc/lodepng/lodepng.cpp	/^static unsigned uivector_resizev(uivector* p, size_t size, unsigned value)$/;"	f	typeref:typename:unsigned	file:
+unfilter	uiuc/lodepng/lodepng.cpp	/^static unsigned unfilter(unsigned char* out, const unsigned char* in, unsigned w, unsigned h, un/;"	f	typeref:typename:unsigned	file:
+unfilterScanline	uiuc/lodepng/lodepng.cpp	/^static unsigned unfilterScanline(unsigned char* recon, const unsigned char* scanline, const unsi/;"	f	typeref:typename:unsigned	file:
+unknown_chunks_data	uiuc/lodepng/lodepng.h	/^  unsigned char* unknown_chunks_data[3];$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned char * [3]
+unknown_chunks_size	uiuc/lodepng/lodepng.h	/^  size_t unknown_chunks_size[3]; \/*size in bytes of the unknown chunks, given for protection*\/$/;"	m	struct:LodePNGInfo	typeref:typename:size_t[3]
+updateHashChain	uiuc/lodepng/lodepng.cpp	/^static void updateHashChain(Hash* hash, size_t wpos, unsigned hashval, unsigned short numzeros)$/;"	f	typeref:typename:void	file:
+update_adler32	uiuc/lodepng/lodepng.cpp	/^static unsigned update_adler32(unsigned adler, const unsigned char* data, unsigned len)$/;"	f	typeref:typename:unsigned	file:
+use_lz77	uiuc/lodepng/lodepng.h	/^  unsigned use_lz77; \/*whether or not to use LZ77. Should be 1 for proper compression.*\/$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+val	uiuc/lodepng/lodepng.cpp	/^  int* val; \/*circular pos to hash value*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+value	uiuc/catch/catch.hpp	/^            static const bool value = decltype(test<std::ostream, const T&>(0))::value;$/;"	m	class:Catch::Detail::IsStreamInsertable	typeref:typename:const bool
+watermark	ImageTransform.cpp	/^PNG watermark(PNG firstImage, PNG secondImage) {$/;"	f	typeref:typename:PNG
+weight	uiuc/lodepng/lodepng.cpp	/^  int weight; \/*the sum of all weights in this chain*\/$/;"	m	struct:BPMNode	typeref:typename:int	file:
+width	uiuc/PNG.cpp	/^  unsigned int PNG::width() const {$/;"	f	class:uiuc::PNG	typeref:typename:unsigned int
+width_	uiuc/PNG.h	/^    unsigned int width_;            \/*< Width of the image *\/$/;"	m	class:uiuc::PNG	typeref:typename:unsigned int
+windowsize	uiuc/lodepng/lodepng.h	/^  unsigned windowsize; \/*must be a power of two <= 32768. higher compresses more but is slower./;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+wm	tests/part2.cpp	/^  PNG wm = createWatermark();$/;"	v	typeref:typename:PNG
+writeLZ77data	uiuc/lodepng/lodepng.cpp	/^static void writeLZ77data(size_t* bp, ucvector* out, const uivector* lz77_encoded,$/;"	f	typeref:typename:void	file:
+writeSignature	uiuc/lodepng/lodepng.cpp	/^static void writeSignature(ucvector* out)$/;"	f	typeref:typename:void	file:
+writeToFile	uiuc/PNG.cpp	/^  bool PNG::writeToFile(string const & fileName) {$/;"	f	class:uiuc::PNG	typeref:typename:bool
+x	tests/part2.cpp	/^    for (unsigned x = 0; x < result.width(); x++) {$/;"	v	typeref:typename:unsigned
+y	tests/part2.cpp	/^      for (unsigned y = 0; y < result.height(); y++) {$/;"	v	typeref:typename:unsigned
+year	uiuc/lodepng/lodepng.h	/^  unsigned year;    \/*2 bytes used (0-65535)*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+zeros	uiuc/lodepng/lodepng.cpp	/^  unsigned short* zeros; \/*length of zeros streak, used as a second hash chain*\/$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+zip	uiuc/make/uiuc.mk	/^zip:$/;"	t
+zlib_compress	uiuc/lodepng/lodepng.cpp	/^static unsigned zlib_compress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned	file:
+zlib_decompress	uiuc/lodepng/lodepng.cpp	/^static unsigned zlib_decompress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned	file:
+zlibsettings	uiuc/lodepng/lodepng.h	/^  LodePNGCompressSettings zlibsettings; \/*settings for the zlib encoder, such as window size, ./;"	m	struct:LodePNGEncoderSettings	typeref:typename:LodePNGCompressSettings
+zlibsettings	uiuc/lodepng/lodepng.h	/^  LodePNGDecompressSettings zlibsettings; \/*in here is the setting to ignore Adler32 checksums*/;"	m	struct:LodePNGDecoderSettings	typeref:typename:LodePNGDecompressSettings
+~LodePNGState	uiuc/lodepng/lodepng.h	/^  virtual ~LodePNGState(){}$/;"	f	struct:LodePNGState
+~PNG	uiuc/PNG.cpp	/^  PNG::~PNG() {$/;"	f	class:uiuc::PNG
+~State	uiuc/lodepng/lodepng.cpp	/^State::~State()$/;"	f	class:lodepng::State
+~StringRef	uiuc/catch/catch.hpp	/^        ~StringRef() noexcept {$/;"	f	class:Catch::StringRef
