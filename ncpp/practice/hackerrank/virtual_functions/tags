@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
+${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG_OBJ}$/;"	t
+${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+BIN	Makefile	/^BIN       = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR   = bin$/;"	m
+CC	Makefile	/^CC     = clang++$/;"	m
+CDFLAG	Makefile	/^CDFLAG = -Wall -std=c++14 -g$/;"	m
+DEBUG_BIN	Makefile	/^DEBUG_BIN = $(addprefix ${DEBUG_DIR}\/, $(notdir $(realpath .)))$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
+DEBUG_OBJ	Makefile	/^DEBUG_OBJ = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+DIRS	Makefile	/^DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}$/;"	m
+INC_DIR	Makefile	/^INC_DIR   = inc$/;"	m
+LD	Makefile	/^LD     = clang++$/;"	m
+OBJ	Makefile	/^OBJ       = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR   = obj$/;"	m
+Person	inc/data.hpp	/^class Person {$/;"	c
+Person	src/data.cpp	/^Person::Person() {$/;"	f	class:Person
+Professor	inc/data.hpp	/^class Professor: public Person {$/;"	c
+Professor	src/data.cpp	/^Professor::Professor() {$/;"	f	class:Professor
+SIZE	inc/data.hpp	/^#define SIZE /;"	d
+SRC	Makefile	/^SRC       = $(wildcard ${SRC_DIR}\/*.cpp)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR   = src$/;"	m
+Student	inc/data.hpp	/^class Student: public Person {$/;"	c
+Student	src/data.cpp	/^Student::Student() {$/;"	f	class:Student
+age_	inc/data.hpp	/^		int age_;$/;"	m	class:Person	typeref:typename:int
+all	Makefile	/^all: dir ${BIN}$/;"	t
+clean	Makefile	/^clean:$/;"	t
+cur_id_	inc/data.hpp	/^		int cur_id_;$/;"	m	class:Professor	typeref:typename:int
+cur_id_	inc/data.hpp	/^		int cur_id_;$/;"	m	class:Student	typeref:typename:int
+debug	Makefile	/^debug: dir ${DEBUG_BIN}$/;"	t
+dir	Makefile	/^dir:$/;"	t
+getAge	src/data.cpp	/^int Person::getAge() const { return this->age_; }$/;"	f	class:Person	typeref:typename:int
+getName	src/data.cpp	/^const char* Person::getName() const { return this->name_; }$/;"	f	class:Person	typeref:typename:const char *
+getdata	src/data.cpp	/^void Person::getdata() {$/;"	f	class:Person	typeref:typename:void
+getdata	src/data.cpp	/^void Professor::getdata() {$/;"	f	class:Professor	typeref:typename:void
+getdata	src/data.cpp	/^void Student::getdata() {$/;"	f	class:Student	typeref:typename:void
+id	inc/data.hpp	/^		static int id;$/;"	m	class:Professor	typeref:typename:int
+id	inc/data.hpp	/^		static int id;$/;"	m	class:Student	typeref:typename:int
+id	src/data.cpp	/^int Professor::id = 0;$/;"	m	class:Professor	typeref:typename:int
+id	src/data.cpp	/^int Student::id = 0;$/;"	m	class:Student	typeref:typename:int
+main	src/main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+marks_	inc/data.hpp	/^		int* marks_;$/;"	m	class:Student	typeref:typename:int *
+name_	inc/data.hpp	/^		const char* name_;$/;"	m	class:Person	typeref:typename:const char *
+publications_	inc/data.hpp	/^		int publications_;$/;"	m	class:Professor	typeref:typename:int
+putdata	src/data.cpp	/^void Person::putdata() const {$/;"	f	class:Person	typeref:typename:void
+putdata	src/data.cpp	/^void Professor::putdata() const {$/;"	f	class:Professor	typeref:typename:void
+putdata	src/data.cpp	/^void Student::putdata() const {$/;"	f	class:Student	typeref:typename:void
+setAge	src/data.cpp	/^void Person::setAge(int age) { this->age_ = age; }$/;"	f	class:Person	typeref:typename:void
+setName	src/data.cpp	/^void Person::setName(const char* name) { this->name_ = name; }$/;"	f	class:Person	typeref:typename:void
+sum	src/data.cpp	/^int Student::sum() const {$/;"	f	class:Student	typeref:typename:int
