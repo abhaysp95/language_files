@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 
+'''
+basic socket programming in python(server)
+'''
+
 import socket
 
-# giving internet socket and tcp
+# using internet socket(not unix socket) and TCP(SOCK_STREAM, UDP->SOCK_DGRAM)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# udp would be like socket.SOCK_DGRAM
-
-s.bind(("127.0.0.1", 55555))  # host and port
-s.listen()  # puts this in listening mode(behave like server)
+s.bind(('127.0.0.1', 55555))
+s.listen()  # puts our socket in listening mode
 
 while True:
-    # accept all incoming connection
-    client, address = s.accept()
-    print("You are now connected to {}".format(address))
-    # send message to the socket
-    client.send("You are connected".encode("utf-8"))
-    client.close()
+    client, address = s.accept()  # accept every request(client)
+    print("Connected to address: {}".format(address))
+    client.send("You're connected!".encode("UTF-8"))
