@@ -1,0 +1,3 @@
+The problem with scanf at minimum is:
+1. using %s to get a string from the user, which leads to the possibility that the string may be longer than your buffer, causing overflow.
+2. the possibility of a failed scan leaving you file pointer in an inderminate location
