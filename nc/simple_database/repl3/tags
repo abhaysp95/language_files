@@ -1,0 +1,100 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
+${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG}$/;"	t
+${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.c$/;"	t
+${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.c$/;"	t
+BIN	Makefile	/^BIN = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR = bin$/;"	m
+CC	Makefile	/^CC     = clang$/;"	m
+CDFLAG	Makefile	/^CDFLAG = -Wall -std=c99 -g$/;"	m
+CFLAG	Makefile	/^CFLAG  = -Wall -std=c99$/;"	m
+COLUMN_COMPANY_NAME	inc/spdbutil.h	/^#define COLUMN_COMPANY_NAME /;"	d
+COLUMN_MODEL_NAME	inc/spdbutil.h	/^#define COLUMN_MODEL_NAME /;"	d
+COMPANY_OFFSET	src/spdbutil.c	/^const uint32_t COMPANY_OFFSET = YEAR_OFFSET + YEAR_SIZE;$/;"	v	typeref:typename:const uint32_t
+DEBUG	Makefile	/^DEBUG = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.c=.o}))$/;"	m
+DEBUG_BIN	Makefile	/^DEBUG_BIN = $(addprefix ${DEBUG_DIR}\/, $(notdir $(realpath .)))$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
+DEPS	Makefile	/^DEPS = $(notdir ${SRC:.c=.d})$/;"	m
+DIR	Makefile	/^DIR = ${OBJ_DIR} ${BIN_DIR} ${DEBUG_DIR}$/;"	m
+EXECUTE_SUCCESS	inc/spdbutil.h	/^	EXECUTE_SUCCESS,$/;"	e	enum:__anon80c3334b0403
+EXECUTE_TABLE_FULL	inc/spdbutil.h	/^	EXECUTE_TABLE_FULL$/;"	e	enum:__anon80c3334b0403
+ExecuteResult	inc/spdbutil.h	/^} ExecuteResult;$/;"	t	typeref:enum:__anon80c3334b0403
+INC_DIR	Makefile	/^INC_DIR = inc$/;"	m
+InputBuffer	inc/spdbutil.h	/^} InputBuffer;$/;"	t	typeref:struct:__anon80c3334b0108
+LD	Makefile	/^LD     = clang$/;"	m
+LFLAG	Makefile	/^LFLAG  = -v$/;"	m
+META_COMMAND_SUCCESS	inc/spdbutil.h	/^	META_COMMAND_SUCCESS,$/;"	e	enum:__anon80c3334b0203
+META_COMMAND_UNRECOGNIZED	inc/spdbutil.h	/^	META_COMMAND_UNRECOGNIZED$/;"	e	enum:__anon80c3334b0203
+MODEL_OFFSET	src/spdbutil.c	/^const uint32_t MODEL_OFFSET = COMPANY_OFFSET + COMPANY_SIZE;$/;"	v	typeref:typename:const uint32_t
+MetaCommandResult	inc/spdbutil.h	/^} MetaCommandResult;$/;"	t	typeref:enum:__anon80c3334b0203
+OBJ	Makefile	/^OBJ = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.c=.o}))$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR = obj$/;"	m
+PAGE_SIZE	src/spdbutil.c	/^const uint32_t PAGE_SIZE = 4096;$/;"	v	typeref:typename:const uint32_t
+POWER_OFFSET	src/spdbutil.c	/^const uint32_t POWER_OFFSET = MODEL_OFFSET + MODEL_SIZE;$/;"	v	typeref:typename:const uint32_t
+PREPARE_SUCCESS	inc/spdbutil.h	/^	PREPARE_SUCCESS,$/;"	e	enum:__anon80c3334b0303
+PREPARE_SYNTAX_ERROR	inc/spdbutil.h	/^	PREPARE_SYNTAX_ERROR,$/;"	e	enum:__anon80c3334b0303
+PREPARE_UNRECOGNIZED_STATEMENT	inc/spdbutil.h	/^	PREPARE_UNRECOGNIZED_STATEMENT$/;"	e	enum:__anon80c3334b0303
+PrepareResult	inc/spdbutil.h	/^} PrepareResult;$/;"	t	typeref:enum:__anon80c3334b0303
+ROWS_PER_PAGE	src/spdbutil.c	/^const uint32_t ROWS_PER_PAGE = PAGE_SIZE \/ ROW_SIZE;$/;"	v	typeref:typename:const uint32_t
+ROW_SIZE	src/spdbutil.c	/^const uint32_t ROW_SIZE = SLNO_SIZE + YEAR_SIZE + COMPANY_SIZE + MODEL_SIZE + POWER_SIZE;$/;"	v	typeref:typename:const uint32_t
+Row	inc/spdbutil.h	/^} Row;$/;"	t	typeref:struct:__anon80c3334b0608
+SLNO_OFFSET	src/spdbutil.c	/^const uint32_t SLNO_OFFSET = 0;$/;"	v	typeref:typename:const uint32_t
+SPDBUTIL_H	inc/spdbutil.h	/^#define SPDBUTIL_H$/;"	d
+SRC	Makefile	/^SRC = $(wildcard ${SRC_DIR}\/*.c)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR = src$/;"	m
+STATEMENT_INSERT	inc/spdbutil.h	/^	STATEMENT_INSERT,$/;"	e	enum:__anon80c3334b0503
+STATEMENT_SELECT	inc/spdbutil.h	/^	STATEMENT_SELECT$/;"	e	enum:__anon80c3334b0503
+Statement	inc/spdbutil.h	/^} Statement;$/;"	t	typeref:struct:__anon80c3334b0708
+StatementType	inc/spdbutil.h	/^} StatementType;$/;"	t	typeref:enum:__anon80c3334b0503
+TABLE_MAX_PAGES	inc/spdbutil.h	/^#define TABLE_MAX_PAGES /;"	d
+TABLE_MAX_ROWS	src/spdbutil.c	/^const uint32_t TABLE_MAX_ROWS = TABLE_MAX_PAGES * ROWS_PER_PAGE;$/;"	v	typeref:typename:const uint32_t
+Table	inc/spdbutil.h	/^} Table;$/;"	t	typeref:struct:__anon80c3334b0808
+YEAR_OFFSET	src/spdbutil.c	/^const uint32_t YEAR_OFFSET = SLNO_SIZE + SLNO_OFFSET;$/;"	v	typeref:typename:const uint32_t
+__anon80c3334b0108	inc/spdbutil.h	/^typedef struct {$/;"	s
+__anon80c3334b0203	inc/spdbutil.h	/^typedef enum {$/;"	g
+__anon80c3334b0303	inc/spdbutil.h	/^typedef enum {$/;"	g
+__anon80c3334b0403	inc/spdbutil.h	/^typedef enum {$/;"	g
+__anon80c3334b0503	inc/spdbutil.h	/^typedef enum {$/;"	g
+__anon80c3334b0608	inc/spdbutil.h	/^typedef struct {$/;"	s
+__anon80c3334b0708	inc/spdbutil.h	/^typedef struct {$/;"	s
+__anon80c3334b0808	inc/spdbutil.h	/^typedef struct {$/;"	s
+all	Makefile	/^all: dir ${BIN}$/;"	t
+buffer	inc/spdbutil.h	/^	char* buffer;$/;"	m	struct:__anon80c3334b0108	typeref:typename:char *
+buffer_length	inc/spdbutil.h	/^	size_t buffer_length;$/;"	m	struct:__anon80c3334b0108	typeref:typename:size_t
+clean	Makefile	/^clean:$/;"	t
+close_input_buffer	src/spdbutil.c	/^void close_input_buffer(InputBuffer* input_buffer) {$/;"	f	typeref:typename:void
+company	inc/spdbutil.h	/^	char company[COLUMN_COMPANY_NAME];$/;"	m	struct:__anon80c3334b0608	typeref:typename:char[]
+debug	Makefile	/^debug: ${DEBUG_BIN}$/;"	t
+deserialize_row	src/spdbutil.c	/^void deserialize_row(void* source, Row* destination) {$/;"	f	typeref:typename:void
+dir	Makefile	/^dir:$/;"	t
+do_meta_command	src/spdbutil.c	/^MetaCommandResult do_meta_command(InputBuffer* input_buffer) {$/;"	f	typeref:typename:MetaCommandResult
+execute_insert	src/spdbutil.c	/^ExecuteResult execute_insert(Table* table, Statement* statement) {$/;"	f	typeref:typename:ExecuteResult
+execute_select	src/spdbutil.c	/^ExecuteResult execute_select(Table* table, Statement* statement) {$/;"	f	typeref:typename:ExecuteResult
+execute_statement	src/spdbutil.c	/^ExecuteResult execute_statement(Table* table, Statement* statement) {$/;"	f	typeref:typename:ExecuteResult
+free_table	src/spdbutil.c	/^void free_table(Table *table) {$/;"	f	typeref:typename:void
+input_length	inc/spdbutil.h	/^	ssize_t input_length;$/;"	m	struct:__anon80c3334b0108	typeref:typename:ssize_t
+main	src/main.c	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+model	inc/spdbutil.h	/^	char model[COLUMN_MODEL_NAME];$/;"	m	struct:__anon80c3334b0608	typeref:typename:char[]
+new_input_buffer	src/spdbutil.c	/^InputBuffer* new_input_buffer() {$/;"	f	typeref:typename:InputBuffer *
+new_table	src/spdbutil.c	/^Table* new_table() {$/;"	f	typeref:typename:Table *
+num_rows	inc/spdbutil.h	/^	uint32_t num_rows;$/;"	m	struct:__anon80c3334b0808	typeref:typename:uint32_t
+pages	inc/spdbutil.h	/^	void* pages[TABLE_MAX_PAGES];$/;"	m	struct:__anon80c3334b0808	typeref:typename:void * []
+power	inc/spdbutil.h	/^	float power;$/;"	m	struct:__anon80c3334b0608	typeref:typename:float
+prepare_statement	src/spdbutil.c	/^PrepareResult prepare_statement(InputBuffer* input_buffer, Statement* statement) {$/;"	f	typeref:typename:PrepareResult
+print_prompt	src/spdbutil.c	/^void print_prompt() {$/;"	f	typeref:typename:void
+print_row	src/spdbutil.c	/^void print_row(Row* row) {$/;"	f	typeref:typename:void
+read_input	src/spdbutil.c	/^void read_input(InputBuffer* input_buffer) {$/;"	f	typeref:typename:void
+row_slot	src/spdbutil.c	/^void* row_slot(Table* table, uint32_t row_num) {$/;"	f	typeref:typename:void *
+row_to_insert	inc/spdbutil.h	/^	Row row_to_insert;$/;"	m	struct:__anon80c3334b0708	typeref:typename:Row
+serialize_row	src/spdbutil.c	/^void serialize_row(Row* source, void* destination) {$/;"	f	typeref:typename:void
+size_of_attribute	inc/spdbutil.h	/^#define size_of_attribute(/;"	d
+sl_no	inc/spdbutil.h	/^	uint32_t sl_no;$/;"	m	struct:__anon80c3334b0608	typeref:typename:uint32_t
+type	inc/spdbutil.h	/^	StatementType type;$/;"	m	struct:__anon80c3334b0708	typeref:typename:StatementType
+year	inc/spdbutil.h	/^	uint32_t year;$/;"	m	struct:__anon80c3334b0608	typeref:typename:uint32_t
