@@ -1,0 +1,5 @@
+total 12
+drwxr-xr-x  2 raytracer raytracer 4096 Nov 13 20:17 .
+drwxr-xr-x 28 raytracer raytracer 4096 Nov 13 20:13 ..
+-rwxr-xr--  1 raytracer raytracer  478 Nov 13 20:17 main.py
+-rw-r--r--  1 raytracer raytracer    0 Nov 13 20:17 output.txt
