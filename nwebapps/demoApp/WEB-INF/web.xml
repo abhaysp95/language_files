@@ -1,0 +1,31 @@
+<web-app>
+	<servlet>
+		<servlet-name>AddNumbers</servlet-name>
+		<servlet-class>com.server.AddTwoNumbers</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddNumbers</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+
+	<!-- servlet-mapping for another servlet -->
+
+	<servlet>
+		<servlet-name>SqNumbers</servlet-name>
+		<servlet-class>com.server.SqServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SqNumbers</servlet-name>
+		<url-pattern>/sq</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>Name</param-name>
+		<param-value>Raytracer</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>Phone</param-name>
+		<param-value>Asus</param-value>
+	</context-param>
+</web-app>

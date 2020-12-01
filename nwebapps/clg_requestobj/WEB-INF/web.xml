@@ -1,0 +1,18 @@
+<web-app>
+	<servlet>
+		<servlet-name>AddNumbers</servlet-name>
+		<servlet-class>GetValue</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddNumbers</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SqAddNumber</servlet-name>
+		<servlet-class>SqAdd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SqAddNumber</servlet-name>
+		<url-pattern>/sqadd</url-pattern>
+	</servlet-mapping>
+</web-app>
