@@ -11,11 +11,18 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.net.URL;
+import java.nio.file.Paths;
+
 public class Helloworld extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/opt/SceneBuilder/app/javafx_helloworld.fxml"));
+		//Parent root = FXMLLoader.load(getClass().getResource("/opt/SceneBuilder/app/javafx_helloworld.fxml"));
+		URL fmxlURL = Paths.get("/opt/SceneBuilder/app/javafx_helloworld.fxml").toUri().toURL();
+		FXMLLoader loader = new FXMLLoader();
+		//loader.setLocation(getClass().getResource("src/javafx_helloworld.fxml"));
+		Parent root = loader.load(fmxlURL);
 		Scene scene = new Scene(root);
 
 
