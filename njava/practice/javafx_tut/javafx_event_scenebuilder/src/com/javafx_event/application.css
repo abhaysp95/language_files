@@ -1,0 +1,27 @@
+/* demo css */
+
+#clickMe {
+	-fx-font-size: 50px;
+	-fx-background-color: rgba(28, 28, 28, 0.7);
+	-fx-text-fill: #ebdbb2;
+	-fx-padding: 6 6 6 6;
+	-fx-border-radius: 60px;
+	-fx-font-weight: bold;
+	-fx-font: Operator Mono, 10;
+	-fx-label-padding: 10;
+	/* look to shadowing in fx */
+	/* lemme introduce you with a cool little trick */
+}
+
+#myRandomNum {
+	-fx-font-size: 80px;
+	-fx-background-color: rgba(28, 28, 28, 0.7);
+	-fx-text-fill: #ebdbb2;
+	-fx-padding: 6 6 6 6;
+	-fx-border-radius: 60px;
+	-fx-font-weight: bold;
+}
+
+.root {
+	-fx-background-color: gray;
+}
