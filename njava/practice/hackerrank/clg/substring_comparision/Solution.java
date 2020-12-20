@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 class SolutionTraditional {
 	private ArrayList<String> wordList = new ArrayList<String>();
@@ -114,17 +116,66 @@ class MySolutionToSubmit {
 
 		// every substring is having same length
 		for (int i = 0; i < count - 1; ++i) {
-			for (int j = i + 1; j < count; ++j) {
-				if (wordArr[i].compareTo(wordArr[j]) > 0) {
-					String temp = wordArr[i];
-					wordArr[i] = wordArr[j];
-					wordArr[j] = temp;
+			for (int j = 0; j < count - i - 1; ++j) {
+				//if (wordArr[i].compareTo(wordArr[j]) > 0) {
+				if (wordArr[j].compareTo(wordArr[j + 1]) > 0) {
+					String temp = wordArr[j];
+					wordArr[j] = wordArr[j + 1];
+					wordArr[j + 1] = temp;
 				}
 			}
 		}
 		smallest = wordArr[0];
 		largest = wordArr[count - 1];
 		System.out.println("smallest: " + smallest + ", largest: " + largest);
+	}
+}
+
+class OneMoreMethod {
+	private String string;
+	private int count;
+
+	OneMoreMethod(String string, int count) {
+		this.string = string;
+		this.count = count;
+	}
+
+	void printSmallestAndLargest() {
+		// get all the numbers
+		String max = "";
+		String min = this.string.substring(0, this.count);
+
+		for (int i = 0; i <= this.string.length() - this.count; ++i) {
+			max = max.compareTo(this.string.substring(i, i + this.count)) < 0 ? this.string.substring(i, i + this.count) : max;
+			min = min.compareTo(this.string.substring(i, i + this.count)) > 0 ? this.string.substring(i, i + this.count) : min;
+		}
+
+		System.out.println("smallest: " + min + ", largest: " + max);
+	}
+}
+
+class LatestMethod {
+	private SortedSet<String> words;
+	private String string;
+	private int count;
+
+	LatestMethod(String string, int count) {
+		this.string = string;
+		this.count = count;
+		words = new TreeSet<String>();
+	}
+
+	void printSmallestAndLargest() {
+		for (int i = 0; i <= string.length() - count; ++i) {
+			words.add(string.substring(i, i + count));
+		}
+
+		/*for (String word: words) {
+			System.out.println(word);
+		}*/
+
+		System.out.println("Min: " + words.first());
+		System.out.println("Max: " + words.last());
 	}
 }
 
@@ -144,10 +195,14 @@ public class Solution {
 			ob2.print();
 			ob2.getMaxMin();*/
 			//System.out.println("----------  Second ------------");
-			MySolutionToSubmit ob3 = new MySolutionToSubmit();
+			//MySolutionToSubmit ob3 = new MySolutionToSubmit();
 			int k = Integer.parseInt(bf.readLine());
 			String s = bf.readLine();
-			ob3.getSmallestAndLargest(s, k);
+			//ob3.getSmallestAndLargest(s, k);
+			//LatestMethod latestMethod = new LatestMethod(s, k);
+			//latestMethod.printSmallestAndLargest();
+			OneMoreMethod oneMoreMethod = new OneMoreMethod(s, k);
+			oneMoreMethod.printSmallestAndLargest();
 			bf.close();
 		}
 		catch (IOException ie) {
