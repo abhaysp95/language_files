@@ -17,7 +17,7 @@ namespace algo {
 			int get_genes(int index) const;
 			int get_gene_length() const;
 			void calc_fitness();
-			void delete_genes();
+			~individual();
 	};
 
 	class population {
@@ -36,7 +36,7 @@ namespace algo {
 			individual* get_second_fittest() const;
 			int get_least_fittest_index() const;
 			void calculate_fitness();
-			void delete_individuals();
+			~population();
 	};
 
 	class simple_demo_ga {
@@ -56,5 +56,6 @@ namespace algo {
 			void mutation();
 			individual* get_fittest_offspring();
 			void add_fittest_offspring();
+			~simple_demo_ga();
 	};
 };
