@@ -1,5 +1,6 @@
 #include "../inc/phase_util.hpp"
 #include <climits>
+#include <iostream>
 
 namespace algo {
 	simple_demo_ga::simple_demo_ga() {
@@ -23,7 +24,7 @@ namespace algo {
 		this->_second_fittest = this->_population->get_second_fittest();
 	}
 	void simple_demo_ga::crossover() {
-		srand((unsigned) time(0));
+		//srand((unsigned) time(0));
 		// select random crossover point
 		int cross_over_point = rand() % this->_population->get_individual(0)->get_gene_length();
 
@@ -34,7 +35,7 @@ namespace algo {
 		}
 	}
 	void simple_demo_ga::mutation() {
-		srand((unsigned) time(0));
+		//srand((unsigned) time(0));
 		int mutation_point = rand() % this->get_population()->get_individual(0)->get_gene_length();
 		// flip the values at the mutation point
 		if (this->_fittest->get_genes(mutation_point) == 0) {
@@ -67,12 +68,15 @@ namespace algo {
 		// replace least fittest individual from most fittest offspring
 		this->_population->set_individual(least_fittest_index, this->get_fittest_offspring());
 	}
+	simple_demo_ga::~simple_demo_ga() {
+		delete this->_population;
+	}
 
 	individual::individual() {
 		this->_genes = new int[5];
 		this->_gene_length = 5;
 		this->_fitness = 0;
-		srand((unsigned) time(0));
+		//srand((unsigned) time(0));
 		for (int i = 0; i < this->_gene_length; ++i) {
 			_genes[i] = rand() % 2;
 		}
@@ -93,8 +97,11 @@ namespace algo {
 			}
 		}
 	}
-	void individual::delete_genes() {
-		delete this->_genes;
+	individual::~individual() {
+		if (this->_genes != nullptr) {
+			//delete this->_genes;
+			this->_genes = nullptr;
+		}
 	}
 
 	//std::vector<individual> individual::_individuals(10);
@@ -167,11 +174,13 @@ namespace algo {
 		this->get_fittest();
 		//this->set_fittest(this->get_fittest_value());
 	}
-	// free the memory
-	void population::delete_individuals() {
+	population::~population() {
 		for (int i = 0; i < this->_individuals.size(); ++i) {
-			this->_individuals.at(i)->delete_genes();
-			delete this->_individuals.at(i);
+			//delete this->_individuals.at(i);
+			if (this->_individuals.at(i) != nullptr) {
+				//delete this->_individuals.at(i);
+				this->_individuals.at(i) = nullptr;
+			}
 		}
 		this->_individuals.clear();
 	}
