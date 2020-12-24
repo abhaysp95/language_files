@@ -95,9 +95,8 @@ namespace algo {
 		}
 	}
 	individual::~individual() {
-		//delete this->_genes;
 		if (this->_genes != nullptr) {
-			//delete this->_genes;
+			delete[] this->_genes;
 			this->_genes = nullptr;
 		}
 	}
@@ -176,7 +175,7 @@ namespace algo {
 		for (int i = 0; i < this->_individuals.size(); ++i) {
 			//delete this->_individuals.at(i);
 			if (this->_individuals.at(i) != nullptr) {
-				//delete this->_individuals.at(i);
+				delete this->_individuals.at(i);
 				this->_individuals.at(i) = nullptr;
 			}
 		}
