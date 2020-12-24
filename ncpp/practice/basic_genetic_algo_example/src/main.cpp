@@ -50,5 +50,6 @@ int main(int argc, char **argv) {
 		std::cout << demo->get_population()->get_fittest()->get_genes(i);
 	}
 	std::cout << std::endl;
+	delete demo;
 	return 0;
 }
