@@ -29,10 +29,10 @@ namespace algo {
 			population();
 			void initialize_population(int size);
 			void set_individual(int index, individual* new_individual);
-			void set_fittest(individual* temp_individual);
+			void set_fittest(int value);
 			int get_fittest_value() const;
 			individual* get_individual(int index) const;
-			individual* get_fittest() const;
+			individual* get_fittest();
 			individual* get_second_fittest() const;
 			int get_least_fittest_index() const;
 			void calculate_fitness();
@@ -41,7 +41,7 @@ namespace algo {
 
 	class simple_demo_ga {
 		private:
-			population _population;
+			population* _population;
 			individual* _fittest;
 			individual* _second_fittest;
 			int _generation_count = 0;
@@ -49,10 +49,8 @@ namespace algo {
 		public:
 			simple_demo_ga();
 			void set_generation_count(int count);
-			population get_population() const;
+			population* get_population() const;
 			int get_generation_count() const;
-			//individual* get_fittest() const;
-			//individual* get_second_fittest() const;
 			void selection();
 			void crossover();
 			void mutation();
