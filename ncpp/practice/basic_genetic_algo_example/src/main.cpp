@@ -9,16 +9,16 @@ int main(int argc, char **argv) {
 	algo::simple_demo_ga* demo = new algo::simple_demo_ga();
 
 	// initialize population
-	demo->get_population().initialize_population(10);
+	demo->get_population()->initialize_population(10);
 
 	// calculate fitness of each individual
-	demo->get_population().calculate_fitness();
+	demo->get_population()->calculate_fitness();
 
 	std::cout << "Generation: " << demo->get_generation_count() <<
-		" Fittest: " << demo->get_population().get_fittest_value() << std::endl;
+		" Fittest: " << demo->get_population()->get_fittest_value() << std::endl;
 
 	// while population gets an individual with maximum fitness
-	while (demo->get_population().get_fittest_value() < 5) {
+	while (demo->get_population()->get_fittest_value() < 5) {
 		demo->set_generation_count(demo->get_generation_count() + 1);
 
 		// do selection
@@ -36,18 +36,18 @@ int main(int argc, char **argv) {
 		demo->add_fittest_offspring();
 
 		// calculate new fitness value
-		demo->get_population().calculate_fitness();
+		demo->get_population()->calculate_fitness();
 
 		std::cout << "Generation: " << demo->get_generation_count() <<
-			" Fittest: " << demo->get_population().get_fittest_value() << std::endl;
+			" Fittest: " << demo->get_population()->get_fittest_value() << std::endl;
 	}
 
 	std::cout << "\nSolution found in generation " << demo->get_generation_count();
-	std::cout << "\nFitness: " << demo->get_population().get_fittest()->get_fitness();
+	std::cout << "\nFitness: " << demo->get_population()->get_fittest()->get_fitness();
 	std::cout << "\nGenes: ";
 
 	for (int i = 0; i < 5; ++i) {
-		std::cout << demo->get_population().get_fittest()->get_genes(i);
+		std::cout << demo->get_population()->get_fittest()->get_genes(i);
 	}
 	std::cout << std::endl;
 	return 0;
