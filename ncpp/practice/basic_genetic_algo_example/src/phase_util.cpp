@@ -24,7 +24,6 @@ namespace algo {
 		this->_second_fittest = this->_population->get_second_fittest();
 	}
 	void simple_demo_ga::crossover() {
-		//srand((unsigned) time(0));
 		// select random crossover point
 		int cross_over_point = rand() % this->_population->get_individual(0)->get_gene_length();
 
@@ -35,7 +34,6 @@ namespace algo {
 		}
 	}
 	void simple_demo_ga::mutation() {
-		//srand((unsigned) time(0));
 		int mutation_point = rand() % this->get_population()->get_individual(0)->get_gene_length();
 		// flip the values at the mutation point
 		if (this->_fittest->get_genes(mutation_point) == 0) {
@@ -76,7 +74,6 @@ namespace algo {
 		this->_genes = new int[5];
 		this->_gene_length = 5;
 		this->_fitness = 0;
-		//srand((unsigned) time(0));
 		for (int i = 0; i < this->_gene_length; ++i) {
 			_genes[i] = rand() % 2;
 		}
@@ -98,6 +95,7 @@ namespace algo {
 		}
 	}
 	individual::~individual() {
+		//delete this->_genes;
 		if (this->_genes != nullptr) {
 			//delete this->_genes;
 			this->_genes = nullptr;
