@@ -1,61 +1,57 @@
 #pragma once
 
+#include <array>
 #include <cstdlib>
 #include <ctime>
 #include <vector>
 
-namespace algo {
-	class individual {
+namespace Algo {
+	class Individual {
 		private:
 			int _fitness;
-			int* _genes;
-			int _gene_length;
+			std::array<int, 5> _genes;
 		public:
-			individual();
+			Individual();
 			void set_genes(int index, int value);
 			int get_fitness() const;
-			int get_genes(int index) const;
-			int get_gene_length() const;
+			int get_genes(size_t index) const;
+			size_t get_gene_length() const;
 			void calc_fitness();
-			~individual();
 	};
 
-	class population {
+	class Population {
 		private:
-			int _popSize;
-			std::vector<individual*> _individuals;
+			std::vector<Individual> _individuals;
 			int _fittest;
 		public:
-			population();
-			void initialize_population(int size);
-			void set_individual(int index, individual* new_individual);
+			Population(size_t size);
+			//void initialize_population(int size);
+			void set_individual(size_t index, Individual new_individual);
 			void set_fittest(int value);
 			int get_fittest_value() const;
-			individual* get_individual(int index) const;
-			individual* get_fittest();
-			individual* get_second_fittest() const;
-			int get_least_fittest_index() const;
+			Individual get_individual(size_t index) const;
+			Individual get_fittest();
+			Individual get_second_fittest() const;
+			size_t get_least_fittest_index() const;
 			void calculate_fitness();
-			~population();
 	};
 
-	class simple_demo_ga {
+	class Simple_Demo_Ga {
 		private:
-			population* _population;
-			individual* _fittest;
-			individual* _second_fittest;
-			int _generation_count = 0;
+			Population _population;
+			Individual _fittest;
+			Individual _second_fittest;
+			int _generation_count;
 
 		public:
-			simple_demo_ga();
-			void set_generation_count(int count);
-			population* get_population() const;
+			Simple_Demo_Ga(size_t count);;
+			void set_generation_count(size_t count);
+			Population get_population() const;
 			int get_generation_count() const;
 			void selection();
 			void crossover();
 			void mutation();
-			individual* get_fittest_offspring();
+			Individual get_fittest_offspring();
 			void add_fittest_offspring();
-			~simple_demo_ga();
 	};
 };
