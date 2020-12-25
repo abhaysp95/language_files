@@ -10,6 +10,8 @@ ${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
 ${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG_OBJ}$/;"	t
 ${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
 ${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+Algo	inc/phase_util.hpp	/^namespace Algo {$/;"	n
+Algo	src/phase_util.cpp	/^namespace Algo {$/;"	n	file:
 BIN	Makefile	/^BIN       = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
 BIN_DIR	Makefile	/^BIN_DIR   = bin$/;"	m
 CC	Makefile	/^CC     = clang++$/;"	m
@@ -19,56 +21,48 @@ DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
 DEBUG_OBJ	Makefile	/^DEBUG_OBJ = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
 DIRS	Makefile	/^DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}$/;"	m
 INC_DIR	Makefile	/^INC_DIR   = inc$/;"	m
+Individual	inc/phase_util.hpp	/^	class Individual {$/;"	c	namespace:Algo
+Individual	src/phase_util.cpp	/^	Individual::Individual() {$/;"	f	class:Algo::Individual
 LD	Makefile	/^LD     = clang++$/;"	m
 OBJ	Makefile	/^OBJ       = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
 OBJ_DIR	Makefile	/^OBJ_DIR   = obj$/;"	m
+Population	inc/phase_util.hpp	/^	class Population {$/;"	c	namespace:Algo
+Population	src/phase_util.cpp	/^	Population::Population(size_t size):_individuals(size), _fittest(0) {}$/;"	f	class:Algo::Population
 SRC	Makefile	/^SRC       = $(wildcard ${SRC_DIR}\/*.cpp)$/;"	m
 SRC_DIR	Makefile	/^SRC_DIR   = src$/;"	m
-_fitness	inc/phase_util.hpp	/^			int _fitness;$/;"	m	class:algo::individual	typeref:typename:int
-_fittest	inc/phase_util.hpp	/^			individual* _fittest;$/;"	m	class:algo::simple_demo_ga	typeref:typename:individual *
-_fittest	inc/phase_util.hpp	/^			int _fittest;$/;"	m	class:algo::population	typeref:typename:int
-_gene_length	inc/phase_util.hpp	/^			int _gene_length;$/;"	m	class:algo::individual	typeref:typename:int
-_generation_count	inc/phase_util.hpp	/^			int _generation_count = 0;$/;"	m	class:algo::simple_demo_ga	typeref:typename:int
-_genes	inc/phase_util.hpp	/^			int* _genes;$/;"	m	class:algo::individual	typeref:typename:int *
-_individuals	inc/phase_util.hpp	/^			std::vector<individual*> _individuals;$/;"	m	class:algo::population	typeref:typename:std::vector<individual * >
-_popSize	inc/phase_util.hpp	/^			int _popSize;$/;"	m	class:algo::population	typeref:typename:int
-_population	inc/phase_util.hpp	/^			population* _population;$/;"	m	class:algo::simple_demo_ga	typeref:typename:population *
-_second_fittest	inc/phase_util.hpp	/^			individual* _second_fittest;$/;"	m	class:algo::simple_demo_ga	typeref:typename:individual *
-add_fittest_offspring	src/phase_util.cpp	/^	void simple_demo_ga::add_fittest_offspring() {$/;"	f	class:algo::simple_demo_ga	typeref:typename:void
-algo	inc/phase_util.hpp	/^namespace algo {$/;"	n
-algo	src/phase_util.cpp	/^namespace algo {$/;"	n	file:
+Simple_Demo_Ga	inc/phase_util.hpp	/^	class Simple_Demo_Ga {$/;"	c	namespace:Algo
+Simple_Demo_Ga	src/phase_util.cpp	/^	Simple_Demo_Ga::Simple_Demo_Ga(size_t count):_population(count), _generation_count(0) {}$/;"	f	class:Algo::Simple_Demo_Ga
+_fitness	inc/phase_util.hpp	/^			int _fitness;$/;"	m	class:Algo::Individual	typeref:typename:int
+_fittest	inc/phase_util.hpp	/^			Individual _fittest;$/;"	m	class:Algo::Simple_Demo_Ga	typeref:typename:Individual
+_fittest	inc/phase_util.hpp	/^			int _fittest;$/;"	m	class:Algo::Population	typeref:typename:int
+_generation_count	inc/phase_util.hpp	/^			int _generation_count;$/;"	m	class:Algo::Simple_Demo_Ga	typeref:typename:int
+_genes	inc/phase_util.hpp	/^			std::array<int, 5> _genes;$/;"	m	class:Algo::Individual	typeref:typename:std::array<int,5>
+_individuals	inc/phase_util.hpp	/^			std::vector<Individual> _individuals;$/;"	m	class:Algo::Population	typeref:typename:std::vector<Individual>
+_population	inc/phase_util.hpp	/^			Population _population;$/;"	m	class:Algo::Simple_Demo_Ga	typeref:typename:Population
+_second_fittest	inc/phase_util.hpp	/^			Individual _second_fittest;$/;"	m	class:Algo::Simple_Demo_Ga	typeref:typename:Individual
+add_fittest_offspring	src/phase_util.cpp	/^	void Simple_Demo_Ga::add_fittest_offspring() {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:void
 all	Makefile	/^all: dir ${BIN}$/;"	t
-calc_fitness	src/phase_util.cpp	/^	void individual::calc_fitness() {$/;"	f	class:algo::individual	typeref:typename:void
-calculate_fitness	src/phase_util.cpp	/^	void population::calculate_fitness() {$/;"	f	class:algo::population	typeref:typename:void
+calc_fitness	src/phase_util.cpp	/^	void Individual::calc_fitness() {$/;"	f	class:Algo::Individual	typeref:typename:void
+calculate_fitness	src/phase_util.cpp	/^	void Population::calculate_fitness() {$/;"	f	class:Algo::Population	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
-crossover	src/phase_util.cpp	/^	void simple_demo_ga::crossover() {$/;"	f	class:algo::simple_demo_ga	typeref:typename:void
+crossover	src/phase_util.cpp	/^	void Simple_Demo_Ga::crossover() {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:void
 debug	Makefile	/^debug: dir ${DEBUG_BIN}$/;"	t
 dir	Makefile	/^dir:$/;"	t
-get_fitness	src/phase_util.cpp	/^	int individual::get_fitness() const { return this->_fitness; }$/;"	f	class:algo::individual	typeref:typename:int
-get_fittest	src/phase_util.cpp	/^	individual* population::get_fittest() {$/;"	f	class:algo::population	typeref:typename:individual *
-get_fittest_offspring	src/phase_util.cpp	/^	individual* simple_demo_ga::get_fittest_offspring() {$/;"	f	class:algo::simple_demo_ga	typeref:typename:individual *
-get_fittest_value	src/phase_util.cpp	/^	int population::get_fittest_value() const { return this->_fittest; }$/;"	f	class:algo::population	typeref:typename:int
-get_gene_length	src/phase_util.cpp	/^	int individual::get_gene_length() const { return this->_gene_length; }$/;"	f	class:algo::individual	typeref:typename:int
-get_generation_count	src/phase_util.cpp	/^	int simple_demo_ga::get_generation_count() const {$/;"	f	class:algo::simple_demo_ga	typeref:typename:int
-get_genes	src/phase_util.cpp	/^	int individual::get_genes(int index) const {$/;"	f	class:algo::individual	typeref:typename:int
-get_individual	src/phase_util.cpp	/^	individual* population::get_individual(int index) const {$/;"	f	class:algo::population	typeref:typename:individual *
-get_least_fittest_index	src/phase_util.cpp	/^	int population::get_least_fittest_index() const {$/;"	f	class:algo::population	typeref:typename:int
-get_population	src/phase_util.cpp	/^	population* simple_demo_ga::get_population() const {$/;"	f	class:algo::simple_demo_ga	typeref:typename:population *
-get_second_fittest	src/phase_util.cpp	/^	individual* population::get_second_fittest() const {$/;"	f	class:algo::population	typeref:typename:individual *
-individual	inc/phase_util.hpp	/^	class individual {$/;"	c	namespace:algo
-individual	src/phase_util.cpp	/^	individual::individual() {$/;"	f	class:algo::individual
-initialize_population	src/phase_util.cpp	/^	void population::initialize_population(int size) {$/;"	f	class:algo::population	typeref:typename:void
+get_fitness	src/phase_util.cpp	/^	int Individual::get_fitness() const { return this->_fitness; }$/;"	f	class:Algo::Individual	typeref:typename:int
+get_fittest	src/phase_util.cpp	/^	Individual Population::get_fittest() {$/;"	f	class:Algo::Population	typeref:typename:Individual
+get_fittest_offspring	src/phase_util.cpp	/^	Individual Simple_Demo_Ga::get_fittest_offspring() {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:Individual
+get_fittest_value	src/phase_util.cpp	/^	int Population::get_fittest_value() const { return this->_fittest; }$/;"	f	class:Algo::Population	typeref:typename:int
+get_gene_length	src/phase_util.cpp	/^	size_t Individual::get_gene_length() const { return this->_genes.size(); }$/;"	f	class:Algo::Individual	typeref:typename:size_t
+get_generation_count	src/phase_util.cpp	/^	int Simple_Demo_Ga::get_generation_count() const {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:int
+get_genes	src/phase_util.cpp	/^	int Individual::get_genes(size_t index) const {$/;"	f	class:Algo::Individual	typeref:typename:int
+get_individual	src/phase_util.cpp	/^	Individual Population::get_individual(size_t index) const {$/;"	f	class:Algo::Population	typeref:typename:Individual
+get_least_fittest_index	src/phase_util.cpp	/^	size_t Population::get_least_fittest_index() const {$/;"	f	class:Algo::Population	typeref:typename:size_t
+get_population	src/phase_util.cpp	/^	Population Simple_Demo_Ga::get_population() const {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:Population
+get_second_fittest	src/phase_util.cpp	/^	Individual Population::get_second_fittest() const {$/;"	f	class:Algo::Population	typeref:typename:Individual
 main	src/main.cpp	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
-mutation	src/phase_util.cpp	/^	void simple_demo_ga::mutation() {$/;"	f	class:algo::simple_demo_ga	typeref:typename:void
-population	inc/phase_util.hpp	/^	class population {$/;"	c	namespace:algo
-population	src/phase_util.cpp	/^	population::population():_individuals(10) {$/;"	f	class:algo::population
-selection	src/phase_util.cpp	/^	void simple_demo_ga::selection() {$/;"	f	class:algo::simple_demo_ga	typeref:typename:void
-set_fittest	src/phase_util.cpp	/^	void population::set_fittest(int value) {$/;"	f	class:algo::population	typeref:typename:void
-set_generation_count	src/phase_util.cpp	/^	void simple_demo_ga::set_generation_count(int count) {$/;"	f	class:algo::simple_demo_ga	typeref:typename:void
-set_genes	src/phase_util.cpp	/^	void individual::set_genes(int index, int value) {$/;"	f	class:algo::individual	typeref:typename:void
-set_individual	src/phase_util.cpp	/^	void population::set_individual(int index, individual *new_individual) {$/;"	f	class:algo::population	typeref:typename:void
-simple_demo_ga	inc/phase_util.hpp	/^	class simple_demo_ga {$/;"	c	namespace:algo
-simple_demo_ga	src/phase_util.cpp	/^	simple_demo_ga::simple_demo_ga() {$/;"	f	class:algo::simple_demo_ga
-~individual	src/phase_util.cpp	/^	individual::~individual() {$/;"	f	class:algo::individual
-~population	src/phase_util.cpp	/^	population::~population() {$/;"	f	class:algo::population
-~simple_demo_ga	src/phase_util.cpp	/^	simple_demo_ga::~simple_demo_ga() {$/;"	f	class:algo::simple_demo_ga
+mutation	src/phase_util.cpp	/^	void Simple_Demo_Ga::mutation() {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:void
+selection	src/phase_util.cpp	/^	void Simple_Demo_Ga::selection() {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:void
+set_fittest	src/phase_util.cpp	/^	void Population::set_fittest(int value) {$/;"	f	class:Algo::Population	typeref:typename:void
+set_generation_count	src/phase_util.cpp	/^	void Simple_Demo_Ga::set_generation_count(size_t count) {$/;"	f	class:Algo::Simple_Demo_Ga	typeref:typename:void
+set_genes	src/phase_util.cpp	/^	void Individual::set_genes(int index, int value) {$/;"	f	class:Algo::Individual	typeref:typename:void
+set_individual	src/phase_util.cpp	/^	void Population::set_individual(size_t index, Individual new_individual) {$/;"	f	class:Algo::Population	typeref:typename:void
