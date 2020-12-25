@@ -26,7 +26,7 @@ namespace Algo {
 		public:
 			Population(size_t size);
 			//void initialize_population(int size);
-			void set_individual(size_t index, Individual new_individual);
+			void set_individual(size_t index, const Individual& new_individual);
 			void set_fittest(int value);
 			int get_fittest_value() const;
 			Individual get_individual(size_t index) const;

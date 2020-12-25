@@ -89,7 +89,7 @@ namespace Algo {
 	//std::vector<individual> individual::_individuals(10);
 	Population::Population(size_t size):_individuals(size), _fittest(0) {}
 	// set individual
-	void Population::set_individual(size_t index, Individual new_individual) {
+	void Population::set_individual(size_t index, const Individual& new_individual) {
 		this->_individuals.at(index) = new_individual;
 	}
 	// set fittest
