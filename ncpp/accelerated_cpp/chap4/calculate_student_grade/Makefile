@@ -4,8 +4,7 @@ CC     = clang++
 CFLAG  = -Wall -std=c++14
 CDFLAG = -Wall -std=c++14 -g
 LD     = clang++
-LDFLAG = -v
-LFLAG  =
+LFLAG  = -v
 
 
 SRC_DIR   = src
@@ -48,11 +47,11 @@ ${DEBUG_DIR}/%.o: ${SRC_DIR}/%.cpp
 
 ${DEBUG_BIN}: ${DEBUG_OBJ}
 	-@echo "Linking to -> $@"
-	${LD} ${LDFLAG} -o $@ ${DEBUG_DIR}/*.o
+	${LD} ${LFLAG} -o $@ ${DEBUG_DIR}/*.o
 
 
 clean:
-	rm -rf ${DIRS} $(notdir $(realpath .))
+	rm -rf ${DIRS}
 
 .SILENT:
 .PHONY: all dir debug clean

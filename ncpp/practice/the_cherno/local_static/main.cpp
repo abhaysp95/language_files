@@ -9,7 +9,11 @@ void function() {
 }
 
 
-// we can do something like this with singleton(having one instance in existance) without using static local scope thing
+
+
+
+// we can do something like this with singleton(having one instance in
+// existance) without using static local scope thing
 class Singleton {
 	private:
 		static Singleton* s_Instance;
@@ -22,6 +26,16 @@ class Singleton {
 // declare the instance
 Singleton* Singleton::s_Instance = nullptr;
 // type of s_Instance is Singleton*
+
+
+/** static variables, global(namespace) varialbles, or static class members
+ * live during the entire execution of program, they must created before main()
+ * is run and destroyed after execution finishes. Such variables have static
+ * storage duration */
+
+
+
+
 
 
 // or another way
@@ -37,6 +51,12 @@ class AnotherSingleton {
 		void hello() { std::cout << "this is hello" << std::endl; }
 };
 
+
+
+
+
+
+
 int main(int argc, char **argv) {
 	function();
 	function();
@@ -47,3 +67,6 @@ int main(int argc, char **argv) {
 	AnotherSingleton::Get().hello();
 	return 0;
 }
+
+
+// https://pabloariasal.github.io/2020/01/02/static-variable-initialization/

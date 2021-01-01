@@ -1,1 +1,0 @@
-This whole rambling is when we use static outside the class
