@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	while (read(std::cin, record)) {
 		// max requires same type of argument(both are of string::size_type)
 		max_length = std::max(max_length, record.name.size());
-		if (std::cin.eof()) {
+		if (std::cin.eof()) {  // check if eofbit is true
 			students.push_back(record);
 		}
 	}
@@ -36,18 +36,22 @@ int main(int argc, char **argv) {
 }
 
 // seperate passing and failing student records
+// second attempt: correct but also slow
 std::vector<Student_info> extract_fails(std::vector<Student_info>& students) {
-	std::vector<Student_info> pass, fail;
-	for (std::vector<Student_info>::size_type i = 0; i < students.size(); ++i) {
-		Student_info check_student = students.at(i);
-		if (fgrade(check_student)) {
-			fail.push_back(check_student);
+	std::vector<Student_info> fail;
+	std::vector<Student_info>::size_type count{};
+	while (count != students.size()) {  // overhead for calling 'size()' each time is negligible
+		if (fgrade(students.at(count))) {
+			fail.push_back(students.at(count));
+			// instead of making a second vector which contains the pass students
+			// delete the failed ones from parameter's vector, as the failed ones
+			// are already been added to fail vector
+			students.erase(students.begin() + count);
 		}
 		else {
-			pass.push_back(check_student);
+			count++;
 		}
 	}
-	students = pass;
 	return fail;
 }
 
