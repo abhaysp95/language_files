@@ -9,9 +9,12 @@
 #include <algorithm>
 #include <iomanip>
 #include <stdexcept>
+#include <list>
 
-std::vector<Student_info> extract_fails(std::vector<Student_info>& students);
+//std::vector<Student_info> extract_fails(std::vector<Student_info>& students);
+std::list<Student_info> extract_fails(std::list<Student_info>& students);
 void print_details(const std::vector<Student_info>& students, std::string::size_type& max_length_padding);
+void print_details(const std::list<Student_info>& students, std::string::size_type& max_length_padding);
 
 int main(int argc, char **argv) {
 	std::vector<Student_info> students;
@@ -27,7 +30,9 @@ int main(int argc, char **argv) {
 	// alphabetize the records
 	std::sort(students.begin(), students.end(), compare);
 	std::cout << std::endl << "Generating Report...\n" << std::endl;
-	std::vector<Student_info> failed_students = extract_fails(students);
+	// change is made here, created a list from vector                             <------ change
+	std::list<Student_info> students_list(students.begin(), students.end());
+	std::list<Student_info> failed_students = extract_fails(students_list);
 	std::cout << "Students who passed: " << std::endl;
 	print_details(students, max_length);
 	std::cout << std::endl << "Students who failed: " << std::endl;
@@ -36,19 +41,21 @@ int main(int argc, char **argv) {
 }
 
 // seperate passing and failing student records
-// third attempt: itertors but no indexing, still potentially slow
-std::vector<Student_info> extract_fails(std::vector<Student_info>& students) {
-	std::vector<Student_info> fail;
-	std::vector<Student_info>::iterator iter = students.begin();
+// fourth attempt: using list instead of vector
+// list is much faster for insertion and deletion operation anywhere randomly
+// from the list when comparing to vector, whereas vector is much faster for
+// fast random access, so if container grow or shrinks just from end, vector
+// will be much faster, so vector outgrow list if accessed sequentially
+std::list<Student_info> extract_fails(std::list<Student_info>& students) {
+	std::list<Student_info> fail;
+	std::list<Student_info>::iterator iter = students.begin();
 	while (iter != students.end()) {
 		if (fgrade(*iter)) {
 			fail.push_back(*iter);
-			// erasing the iter element(of students) makes the iter pointing to it invalid
-			// but erase returns an iterator which refers to the element after the erasure
 			iter = students.erase(iter);
 		}
 		else {
-			iter++;
+			++iter;
 		}
 	}
 	return fail;
@@ -67,3 +74,27 @@ void print_details(const std::vector<Student_info>& students, std::string::size_
 		}
 	}
 }
+
+void print_details(const std::list<Student_info>& students, std::string::size_type& max_length_padding) {
+	//for (std::list<Student_info>::size_type i = 0; i < students.size(); ++i) {
+	for (std::list<Student_info>::const_iterator iter = students.begin(); iter != students.end(); ++iter) {
+		std::cout << iter->name  // it's same to (*iter).name
+			<< std::string(max_length_padding - iter->name.size() + 1, ' ');
+		try {
+			std::streamsize prec = std::cout.precision();
+			std::cout << std::setprecision(3) << iter->total_grade << std::setprecision(prec) << std::endl;
+		}
+		catch (std::domain_error de) {
+			std::cout << de.what();
+		}
+	}
+}
+
+
+/**
+  list don't invalidate whole iterator when one of the element pointed by iter
+  is being deleted, only the iter which points to element being deleted is
+  being invalid, while vector invalidates whole iter when 'push_back()' or
+  'erase()' happens. Consisting of this reason storing std::vector<_Tp>'s end()
+  is a bad idea
+  */
