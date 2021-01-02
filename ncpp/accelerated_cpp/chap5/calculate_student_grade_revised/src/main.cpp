@@ -36,20 +36,19 @@ int main(int argc, char **argv) {
 }
 
 // seperate passing and failing student records
-// second attempt: correct but also slow
+// third attempt: itertors but no indexing, still potentially slow
 std::vector<Student_info> extract_fails(std::vector<Student_info>& students) {
 	std::vector<Student_info> fail;
-	std::vector<Student_info>::size_type count{};
-	while (count != students.size()) {  // overhead for calling 'size()' each time is negligible
-		if (fgrade(students.at(count))) {
-			fail.push_back(students.at(count));
-			// instead of making a second vector which contains the pass students
-			// delete the failed ones from parameter's vector, as the failed ones
-			// are already been added to fail vector
-			students.erase(students.begin() + count);
+	std::vector<Student_info>::iterator iter = students.begin();
+	while (iter != students.end()) {
+		if (fgrade(*iter)) {
+			fail.push_back(*iter);
+			// erasing the iter element(of students) makes the iter pointing to it invalid
+			// but erase returns an iterator which refers to the element after the erasure
+			iter = students.erase(iter);
 		}
 		else {
-			count++;
+			iter++;
 		}
 	}
 	return fail;
