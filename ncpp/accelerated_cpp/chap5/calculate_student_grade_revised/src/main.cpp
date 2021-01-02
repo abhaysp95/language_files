@@ -17,7 +17,7 @@ void print_details(const std::vector<Student_info>& students, std::string::size_
 void print_details(const std::list<Student_info>& students, std::string::size_type& max_length_padding);
 
 int main(int argc, char **argv) {
-	std::vector<Student_info> students;
+	std::list<Student_info> students;
 	Student_info record;
 	std::string::size_type max_length = 0;
 	while (read(std::cin, record)) {
@@ -28,11 +28,14 @@ int main(int argc, char **argv) {
 		}
 	}
 	// alphabetize the records
-	std::sort(students.begin(), students.end(), compare);
+	//std::sort(students.begin(), students.end(), compare);  // can't use with list
+	// list provides its own sorting method
+	students.sort(compare);
 	std::cout << std::endl << "Generating Report...\n" << std::endl;
 	// change is made here, created a list from vector                             <------ change
-	std::list<Student_info> students_list(students.begin(), students.end());
-	std::list<Student_info> failed_students = extract_fails(students_list);
+	//std::list<Student_info> students_list(students.begin(), students.end());
+	// changed students to list already from vector
+	std::list<Student_info> failed_students = extract_fails(students);
 	std::cout << "Students who passed: " << std::endl;
 	print_details(students, max_length);
 	std::cout << std::endl << "Students who failed: " << std::endl;
