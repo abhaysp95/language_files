@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
+${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG_OBJ}$/;"	t
+${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+BIN	Makefile	/^BIN       = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR   = bin$/;"	m
+CC	Makefile	/^CC     = clang++$/;"	m
+CDFLAG	Makefile	/^CDFLAG = -Wall -std=c++14 -g$/;"	m
+DEBUG_BIN	Makefile	/^DEBUG_BIN = $(addprefix ${DEBUG_DIR}\/, $(notdir $(realpath .)))$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
+DEBUG_OBJ	Makefile	/^DEBUG_OBJ = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+DIRS	Makefile	/^DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}$/;"	m
+INC_DIR	Makefile	/^INC_DIR   = inc$/;"	m
+LD	Makefile	/^LD     = clang++$/;"	m
+LFLAG	Makefile	/^LFLAG  =$/;"	m
+OBJ	Makefile	/^OBJ       = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR   = obj$/;"	m
+SRC	Makefile	/^SRC       = $(wildcard ${SRC_DIR}\/*.cpp)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR   = src$/;"	m
+Student_info	inc/student_info.hpp	/^struct Student_info {$/;"	s
+_GUARD_GRADE_HPP_	inc/grade.hpp	/^#define _GUARD_GRADE_HPP_$/;"	d
+_GUARD_MEDIAN_HPP_	inc/median.hpp	/^#define _GUARD_MEDIAN_HPP_$/;"	d
+_GUARD_STUDENT_INFO_HPP_	inc/student_info.hpp	/^#define _GUARD_STUDENT_INFO_HPP_$/;"	d
+all	Makefile	/^all: dir ${BIN}$/;"	t
+clean	Makefile	/^clean:$/;"	t
+compare	src/student_info.cpp	/^bool compare(const Student_info& student1, const Student_info& student2) {$/;"	f	typeref:typename:bool
+debug	Makefile	/^debug: dir ${DEBUG_BIN}$/;"	t
+dir	Makefile	/^dir:$/;"	t
+final	inc/student_info.hpp	/^	double midterm, final;$/;"	m	struct:Student_info	typeref:typename:double
+grade	src/grade.cpp	/^double grade(const Student_info& student) {$/;"	f	typeref:typename:double
+grade	src/grade.cpp	/^double grade(const double& midterm, const double& final, const std::vector<double>& homework_gra/;"	f	typeref:typename:double
+grade	src/grade.cpp	/^double grade(const double& midterm, const double& final, double homework_median) {$/;"	f	typeref:typename:double
+homework	inc/student_info.hpp	/^	std::vector<double> homework;$/;"	m	struct:Student_info	typeref:typename:std::vector<double>
+main	src/main.cpp	/^int main(int argc, char **argv) {{$/;"	f	typeref:typename:int
+median	src/median.cpp	/^double median(std::vector<double> vec) {$/;"	f	typeref:typename:double
+midterm	inc/student_info.hpp	/^	double midterm, final;$/;"	m	struct:Student_info	typeref:typename:double
+name	inc/student_info.hpp	/^	std::string name;$/;"	m	struct:Student_info	typeref:typename:std::string
+read	src/student_info.cpp	/^std::istream& read(std::istream& in, Student_info& student) {$/;"	f	typeref:typename:std::istream &
+read_hw	src/student_info.cpp	/^std::istream& read_hw(std::istream& in, std::vector<double>& homework_grade) {$/;"	f	typeref:typename:std::istream &
+vec_size	src/median.cpp	/^	typedef std::vector<double>::size_type vec_size;$/;"	t	function:median	typeref:typename:std::vector<double>::size_type	file:
