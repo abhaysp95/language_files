@@ -12,4 +12,8 @@ std::string::size_type get_max_width(const std::vector<std::string>& input_strin
 // get the frame in form of vector
 std::vector<std::string> create_frame(const std::vector<std::string>& input_strings);
 
+// vertical concatenation
+std::vector<std::string> vcat(const std::vector<std::string>& top,
+		const std::vector<std::string>& bottom);
+
 #endif

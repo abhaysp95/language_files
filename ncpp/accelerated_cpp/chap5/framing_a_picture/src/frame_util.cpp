@@ -4,6 +4,7 @@
 
 #include <algorithm>
 
+// get max padding length from the max length string entered
 std::string::size_type get_max_width(const std::vector<std::string>& input_strings) {
 	std::string::size_type max_len = 0;
 	for (std::string string: input_strings) {
@@ -12,6 +13,7 @@ std::string::size_type get_max_width(const std::vector<std::string>& input_strin
 	return max_len;
 }
 
+// create frame with all the input strings
 std::vector<std::string> create_frame(const std::vector<std::string>& input_strings) {
 	std::vector<std::string> frames_per_line;
 	std::string::size_type max_len_string = get_max_width(input_strings);
@@ -29,4 +31,19 @@ std::vector<std::string> create_frame(const std::vector<std::string>& input_stri
 	// write bottom border
 	frames_per_line.push_back(border);
 	return frames_per_line;
+}
+
+// vertical concatenation of two frames(images)
+std::vector<std::string> vcat(const std::vector<std::string>& top,
+		const std::vector<std::string>& bottom) {
+	std::vector<std::string> concatenated_vector = top;
+	concatenated_vector.insert(concatenated_vector.end(), bottom.begin(), bottom.end());
+	//above insert method is same for
+	//for (std::vector<std::string>::const_iterator it = bottom.begin();
+			//it != bottom.end(); ++it) {
+		//concatenated_vector.push_back(*it);
+	//}
+	//the operation done with the help of for loop is a common operation,that's why
+	//there's insert() method to reduce this redundent task
+	return concatenated_vector;
 }
