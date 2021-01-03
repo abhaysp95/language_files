@@ -19,6 +19,7 @@ DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}
 SRC       = $(wildcard ${SRC_DIR}/*.cpp)
 OBJ       = $(addprefix ${OBJ_DIR}/, $(notdir ${SRC:.cpp=.o}))
 BIN       = ${BIN_DIR}/$(notdir $(realpath .))
+BIN_COPY := $(notdir $(realpath .))
 DEBUG_OBJ = $(addprefix ${DEBUG_DIR}/, $(notdir ${SRC:.cpp=.o}))
 DEBUG_BIN = $(addprefix ${DEBUG_DIR}/, $(notdir $(realpath .)))
 
@@ -36,9 +37,12 @@ ${OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp
 ${BIN}: ${OBJ}
 	-@echo "Linking $? -> $@"
 	${LD} ${LFLAG} -o $@ ${OBJ_DIR}/*.o
-	-@echo "copied ${BIN} -> $(notdir $(realpath .))"
-	#cp -f ${BIN} .
-	ln -s ${BIN} ./$(notdir $(realpath .))
+	-@echo "copied ${BIN} -> ${BIN_COPY}"
+	cp -f ${BIN} .
+	#ln -s ${BIN} ./$(notdir $(realpath .))
+	#ifeq ( "${BIN_COPY}", "" )
+		#ln -s ${BIN} ./${BIN_COPY}
+	#endif
 
 
 debug: dir ${DEBUG_BIN}
