@@ -47,3 +47,28 @@ std::vector<std::string> vcat(const std::vector<std::string>& top,
 	//there's insert() method to reduce this redundent task
 	return concatenated_vector;
 }
+
+// horizontal concatenation of two frames(images)
+std::vector<std::string> hcat(const std::vector<std::string>& left,
+		const std::vector<std::string>& right) {
+	std::vector<std::string> concatenated_vector = left;
+	// add 1 to leave space between pictures
+	std::string::size_type width1 = get_max_width(left) + 1;
+	std::vector<std::string>::size_type i{}, j{};
+	// continue until all rows of both pictures are seen
+	while (i != left.size() || j != right.size()) {
+		// construct a new string
+		std::string temp_string;
+		// copy a row from LHS image, if there is one
+		if (i != left.size()) {
+			temp_string = left.at(i++);
+		}
+		temp_string += std::string(width1 - temp_string.size(), ' ');
+		// copy a row from RHS image, if there is one
+		if (j != right.size()) {
+			temp_string += right.at(j++);
+		}
+		concatenated_vector.push_back(temp_string);
+	}
+	return concatenated_vector;
+}

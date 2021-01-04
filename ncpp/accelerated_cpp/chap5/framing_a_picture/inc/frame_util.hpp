@@ -16,4 +16,8 @@ std::vector<std::string> create_frame(const std::vector<std::string>& input_stri
 std::vector<std::string> vcat(const std::vector<std::string>& top,
 		const std::vector<std::string>& bottom);
 
+// horizontal concatenation
+std::vector<std::string> hcat(const std::vector<std::string>& left,
+		const std::vector<std::string>& right);
+
 #endif
