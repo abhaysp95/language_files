@@ -12,6 +12,12 @@ class Player: public Entity {
 	public:
 		Player(const std::string& name)
 			: m_Name(name) {}
+		/**
+		  the above syntax is same as
+		  Player(const std::string& name) {
+			this->m_Name = name;
+		  }
+		  */
 
 		// c++11 introduced override, not necessary to use but it's a good idea to use
 		std::string getName() override { return m_Name; }

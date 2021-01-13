@@ -20,5 +20,7 @@ int main() {
 		}
 	}
 	cout << "Count till hit -99: " << count << endl;
+	std::vector<char> a(3);
+	std::vector<std::vector<char>> b(3, std::vector<char>(3));
 	return 0;
 }
