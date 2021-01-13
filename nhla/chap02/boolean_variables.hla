@@ -1,0 +1,15 @@
+program BoolVar;
+#include ("stdlib.hhf")
+
+static
+	boolVariable: boolean;  // by default, it's false
+	hasClass: boolean:= false;
+	isClear: boolean:= true;
+
+	// boolean datatypes are 1 byte objects, false is 0 and true is 1(or other +ve value)
+
+begin BoolVar;
+	stdout.put("boolVariable: ", boolVariable, nl);
+	stdout.put("hasClass: ", hasClass, nl);
+	stdout.put("isClear: ", isClear, nl);
+end BoolVar;

@@ -1,0 +1,20 @@
+program Demo_Variables;
+#include( "stdlib.hhf" )
+
+static  // begins variable declaration section
+	initialized: int8 := 8;
+	not_initialized: int16;
+// it is important that expression following the assignment operator(:=) must
+// be constant. You can't assign the values of other variables within a STATIC
+// variable declaration
+// there's also i32(probably i64 too for x86_64)
+
+begin Demo_Variables;
+	// display the value of pre-initialized variable
+	stdout.put( "Value of initialized variable is: ", initialized, nl );
+	// input an integer value from user and display that value
+	stdout.put( "Enter a integer value: " );
+	stdin.get( not_initialized );
+	stdout.put( "Value of not_initialized after providing value is ",
+		not_initialized, nl );
+end Demo_Variables;

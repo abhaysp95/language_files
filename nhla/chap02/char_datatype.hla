@@ -1,0 +1,11 @@
+program CharDatatype;
+#include( "stdlib.hhf" );
+
+static
+	c: char;
+	letterA: char:= 'A';
+
+begin CharDatatype;
+	stdout.put( "c: ", c, ", just to check", nl );  // c prints nothing
+	stdout.put( "letterA: ", letterA, nl );
+end CharDatatype;
