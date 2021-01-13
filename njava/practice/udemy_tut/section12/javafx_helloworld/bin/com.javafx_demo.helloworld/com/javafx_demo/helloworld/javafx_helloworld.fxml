@@ -1,0 +1,96 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+<!--<GridPane fx:controller="com.javafx_demo.helloworld.Main">-->
+<!--<GridPane fx:controller="com.javafx_demo.helloworld.Main" xmlns:fx="http://javafx.com/fxml" alignment="top_center" vgap="10" hgap="10" gridLinesVisible="true">
+	<padding>
+		<Insets top="10"/>
+	</padding>
+	[><Label text="Welcome to Javafx" textFill="green">
+		<font>
+			<Font name="Ubuntu Nerd Font Bold" size="70" />
+		</font>
+	</Label><]
+	[> each column is widest width of the element and same for row <]
+	<columnConstraints>
+		[> for the two made colums <]
+		<ColumnConstraints percentWidth="50.0"/>
+		<ColumnConstraints percentWidth="50.0"/>
+	</columnConstraints>
+	<Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.halignment="right" />
+	<Button text="Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+	<Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+	<Button text="Button Four is Very Long" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+	<Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+</GridPane>-->
+
+<!--<HBox fx:controller="com.javafx_demo.helloworld.Main" xmlns:fx="http://javafx.con/fxml" alignment="bottom_right"
+	style="-fx-border-color: red; -fx-border-width: 3; -fx-border-style: dashed" spacing="10">
+	<padding>
+		<Insets bottom="10" right="10" />
+	</padding>
+	<Button text="ok" prefWidth="90" />
+	<Button text="cancel" prefWidth="90" />
+	<Button text="help" prefWidth="90" />
+</HBox>-->
+
+
+<!--<BorderPane fx:controller="com.javafx_demo.helloworld.Main" xmlns:fx="http://javafx.con/fxml" >
+	<top>
+		[>alignment="center" will center the text of the label inside the label width and height but it's prefWidth/Height is just of text wrap, so center the label itself in the top pane<]
+		<Label text="This is top pane of BorderPane" alignment="center" BorderPane.alignment="center"
+			style="-fx-border-color: blue; -fx-border-style: dashed; -fx-border-width: 3" />
+	</top>
+	<left>
+		<Label text="this is the left pane" alignment="CENTER" />
+	</left>
+	<right>
+		<Label text="this is the right pane" alignment="CENTER" />
+	</right>
+	<center>
+		<Label text="this is the center pane and made this line intentionally too long which should not be sufficient" alignment="CENTER" />
+	</center>
+	[>put HBox in one of the five availabe panes of BorderPane<]
+	[>each button could only have one child<]
+	<bottom>
+		<HBox alignment="bottom_right" style="-fx-border-color: red; -fx-border-width: 3; -fx-border-style: dashed" spacing="10">
+			<padding>
+				<Insets top="10" bottom="10" right="10" />
+			</padding>
+			<Button text="ok" prefWidth="90" />
+			<Button text="cancel" prefWidth="90" />
+			<Button text="help" prefWidth="90" />
+		</HBox>
+	</bottom>
+</BorderPane>-->
+
+<!--FlowPane is quite similar to HBox and VBox but it'll wrap the children and not cut them off-->
+<!--<TilePane fx:controller="com.javafx_demo.helloworld.Main" xmlns:fx="http://javafx.con/fxml">-->
+	<!--supports two orientation - horizontal, vertical-->
+	<!--<Button text="Button 1" />-->
+	<!--<Button text="Button 2" />-->
+	<!--<Button text="Button 3" />-->
+	<!--<Button text="Button 4" />-->
+	<!--<Button text="Button 5" />-->
+	<!--<Button text="Button 6" />-->
+	<!--<Button text="Button 7" />-->
+	<!--<Button text="Button 8" />-->
+	<!--<Button text="Button 9" />-->
+	<!--<Button text="Button 10" />-->
+<!--</TilePane>-->
+
+<StackPane fx:controller="com.javafx_demo.helloworld.Main" xmlns:fx="http://javafx.con/fxml">
+	<!--the 0th child will be in the bottom and the last child on top, just as a stack-->
+	<Button text="Button" style="-fx-background-color: grey" />
+	<Label text="This is the Label" style="-fx-background-color: cyan" />
+</StackPane>

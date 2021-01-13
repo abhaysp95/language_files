@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.*?>
+<?import java.lang.String?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_demo.combobox.Maincontroller">
+   <children>
+	   <ComboBox fx:id="comboBox" layoutX="141.0" layoutY="200.0" onAction="#changeLabel" prefHeight="26.0" prefWidth="295.0" promptText="Select Option:" >
+		   <items>
+			   <FXCollections fx:factory="observableArrayList">
+				   <String fx:value="one" />
+				   <String fx:value="two" />
+				   <String fx:value="three" />
+				   <String fx:value="four" />
+			   </FXCollections>
+		   </items>
+	   </ComboBox>
+      <Button layoutX="234.0" layoutY="309.0" mnemonicParsing="false" onAction="#duplicate" text="Duplicate">
+         <font>
+            <Font name="Ubuntu Bold Nerd Font Complete" size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="selection" alignment="CENTER" layoutX="77.0" layoutY="60.0" prefHeight="53.0" prefWidth="445.0" text="Label">
+         <font>
+            <Font name="Ubuntu Bold Nerd Font Complete" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

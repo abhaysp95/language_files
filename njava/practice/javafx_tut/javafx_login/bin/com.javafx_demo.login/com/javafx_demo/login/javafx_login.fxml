@@ -5,12 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_demo.login.Maincontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_demo.login.Maincontroller">
    <children>
       <Button layoutX="119.0" layoutY="223.0" mnemonicParsing="false" onAction="#Login" text="Button" />
       <HBox alignment="CENTER" layoutX="1.0" layoutY="80.0" prefHeight="44.0" prefWidth="300.0" spacing="30.0">
@@ -44,5 +45,9 @@
             <Font name="Fura Code Bold Nerd Font Complete" size="20.0" />
          </font>
       </Label>
+	  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+			<Image url="@../../../home/raytracer/Pictures/bgwallpapers/aspect_ratio/300x168/images.jpg" />
+         </image></ImageView>
    </children>
 </AnchorPane>
