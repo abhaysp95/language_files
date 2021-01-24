@@ -89,9 +89,16 @@ int main(int argc, char **argv) {
 	return 0;
 }
 
+// a nifty way to compare two strings for equality
+size_t compare_names(char* name1, char* name2) {
+	while (*name1 && *name2 && *name1 == *name2 && ++name1 && ++name2);
+	return *name1 == *name2;
+}
+
 town* find_town(town* towns, size_t towns_count, char* town_name) {
 	for (size_t i = 0; i < towns_count; ++i) {
-		if (strcmp(towns[i].name, town_name) == 0) {
+		/*if (strcmp(towns[i].name, town_name) == 0) {*/
+		if (compare_names(towns[i].name, town_name)) {
 			return towns + i;
 		}
 	}
@@ -99,6 +106,40 @@ town* find_town(town* towns, size_t towns_count, char* town_name) {
 }
 
 void send_all_acceptable_package(town* source, size_t source_office_index, town* target, size_t target_office_index) {
+	size_t max_from_target, min_from_target, weight_from_source, count;
+	max_from_target = target->post_office[target_office_index].max_weight;
+	min_from_target = target->post_office[target_office_index].min_weight;
+
+	// let's start checking and setting
+	for (size_t i = 0; i < source->post_office[source_office_index].packages_count; ++i) {
+		weight_from_source = source->post_office[source_office_index].packages[i].weight;
+
+		// if the package from source is acceptable by target
+		if ((weight_from_source >= min_from_target) && (weight_from_source <= max_from_target)) {
+			count = target->post_office[target_office_index].packages_count;
+
+			// increase a package block in target and put package sent by source
+			target->post_office[target_office_index].packages =
+				realloc(target->post_office[target_office_index].packages, sizeof(package) * (count + 1));
+			target->post_office[target_office_index].packages[count] = source->post_office[source_office_index].packages[i];
+			target->post_office[target_office_index].packages_count++;
+
+			// remove that stored package from source now
+			count = source->post_office[source_office_index].packages_count;
+			for (size_t k = i; k < count - 1; ++k) {
+				source->post_office[source_office_index].packages[k] = source->post_office[source_office_index].packages[k + 1];
+			}
+			// free(source->post_office[source_office_index].packages + (count - 1));
+			source->post_office[source_office_index].packages =
+				realloc(source->post_office[source_office_index].packages, sizeof(package) * (count - 1));
+			source->post_office[source_office_index].packages_count--;
+			i--;  // cause packages in source are moved one block behind
+		}
+	}
+}
+
+
+/*void send_all_acceptable_package(town* source, size_t source_office_index, town* target, size_t target_office_index) {
 	char** accepted_package_ids = (char**)malloc(sizeof(char*) * source->post_office[source_office_index].packages_count);
 	size_t accepted_package_counts = 0;
 	char** rejected_package_ids = (char**)malloc(sizeof(char*) * source->post_office[source_office_index].packages_count);
@@ -148,25 +189,21 @@ void send_all_acceptable_package(town* source, size_t source_office_index, town*
 		source->post_office[source_office_index].packages = rejected_packages;
 		free(temp);
 		// free others
-		/*free(accepted_package_ids);*/
-		/*free(rejected_package_ids);*/
+		[>free(accepted_package_ids);<]
+		[>free(rejected_package_ids);<]
 	}
-}
+}*/
 
 town town_with_most_packages(town* towns, size_t towns_count) {
 	size_t most_package = 0;
-	char* name_of_town;
 	size_t town_number;
 	for (size_t i = 0; i < towns_count; ++i) {
+		size_t sum_of_packages = 0;
 		for (size_t j = 0; j < towns[i].offices_count; ++j) {
-			if (most_package < towns[i].post_office[j].packages_count) {
-				most_package = towns[i].post_office[j].packages_count;
-				name_of_town = towns[i].name;
-			}
+			sum_of_packages += towns[i].post_office[j].packages_count;
 		}
-	}
-	for (size_t i = 0; i < towns_count; ++i) {
-		if (strcmp(name_of_town, towns[i].name) == 0) {
+		if (most_package < sum_of_packages) {
+			most_package = sum_of_packages;
 			town_number = i;
 		}
 	}
