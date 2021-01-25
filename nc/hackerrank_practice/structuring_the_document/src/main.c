@@ -1,8 +1,11 @@
 // main file
 
+/* previous solution, not correct(complete) */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <assert.h>
 #define MAX_CHARACTERS 1005
 #define MAX_PARAGRAPHS 5
 
@@ -27,10 +30,18 @@ struct document {
 
 char* get_input_text();
 
-struct document get_document(char* text);
-struct paragraph* get_paragraph(char* str, char* delim);
-struct sentence* get_sentence(char* str, char* delim);
+typedef struct word s_word;
+typedef struct sentence s_sentence;
+typedef struct paragraph s_paragraph;
+typedef struct document s_document;
 
+struct document get_document(char* text);
+
+s_document* create_new_document();
+void doc_add_paragraph(s_document* doc);
+void doc_add_sentence(s_document* doc);
+void doc_add_word(s_document* doc);
+void doc_add_char(s_document* doc, char c);
 
 struct paragraph kth_paragraph(struct document Doc, int k);
 struct sentence kth_sentence_in_mth_paragraph(struct document Doc, int k, int m);
@@ -122,71 +133,120 @@ void print_document(struct document doc) {
 	}
 }
 
-// get a single sentence, which may have multiple words, delim " "
-struct sentence* get_sentence(char* str, char* delim) {
-	struct sentence* sen = (struct sentence*)malloc(sizeof(struct sentence));
-	struct word* words = (struct word*)malloc(sizeof(struct word));
-	int count = 0;
-	char* token;
-	token = strtok(str, delim);
-	words[count++].data = token;
-	words = realloc(words, sizeof(struct word) * (count + 1));
-	while (token != NULL) {
-		token = strtok(NULL, delim);
-		words[count++].data = token;
-		words = realloc(words, sizeof(struct word) * (count + 1));
-	}
-	sen->data = words;
-	sen->word_count = count;
-	return sen;
+s_document* create_new_document() {
+	s_document* doc = calloc(1, sizeof(s_document));
+	assert(doc != NULL);  // check for memory allocation
+	// initialize document structure(info about paragraph)
+	doc->data = NULL;  // we don't have allocated any memory to pointer yet
+	doc->paragraph_count = 0;
+	return doc;
 }
 
-// get a single paragraph, which may have multiple sentences, delim "."
-struct paragraph* get_paragraph(char* str, char* delim) {
-	struct paragraph* para = (struct paragraph*)malloc(sizeof(struct paragraph));
-	struct sentence* sentences = (struct sentence*)malloc(sizeof(struct sentence));
-	int count = 0;
-	char* token;
-	token = strtok(str, delim);  // if you have to, add '\0' here
-	sentences[count++] = *get_sentence(token, " ");
-	sentences = realloc(sentences, sizeof(struct sentence) * (count + 1));
-	while (token != NULL) {
-		token = strtok(NULL, delim);  // if you have to, add '\0' here
-		sentences[count++] = *get_sentence(token, " ");
-		sentences = realloc(sentences, sizeof(struct sentence) * (count + 1));
-	}
-	para->data = sentences;
-	para->senetence_count = count;
-	return para;
+void doc_add_paragraph(s_document* doc) {
+	// make increment in paragraph count of document
+	++doc->paragraph_count;
+	doc->data = realloc(doc->data, doc->paragraph_count * sizeof(s_paragraph));
+	assert(doc->data != NULL);  // check for memory allocation of paragraph
+	// get current paragraph index(it'll always be less than the paragraph_count)
+	size_t para_index = doc->paragraph_count - 1;
+	// initialize paragraph structure(info about sentence)
+	doc->data[para_index].data = NULL;
+	doc->data[para_index].senetence_count = 0;
 }
 
-// get a single document, which may have multiple paragraphs, delim "\n"
-struct document get_document(char* text) {
-	struct document* doc = (struct document*)malloc(sizeof(struct document));
-	struct paragraph* paragraphs = (struct paragraph*)malloc(sizeof(struct paragraph));
-	int count = 0;
-	char* token;
-	token = strtok(text, "\n");  // if you have to, add '\0' here
-	paragraphs[count++] = *get_paragraph(token, ".");
-	paragraphs = realloc(paragraphs, sizeof(struct paragraph) * (count + 1));
-	while (token != NULL) {
-		token = strtok(NULL, "\n");
-		paragraphs[count++] = *get_paragraph(token, ".");
-		paragraphs = realloc(paragraphs, sizeof(struct paragraph) * (count + 1));
+void doc_add_sentence(s_document* doc) {
+	// get paragraph index
+	size_t para_index = doc->paragraph_count - 1;
+	++doc->data[para_index].senetence_count;
+	size_t sen_count = doc->data[para_index].senetence_count;
+	doc->data[para_index].data = realloc(doc->data[para_index].data, sen_count * sizeof(s_sentence));
+	assert(doc->data[para_index].data != NULL);  // check for memory allocation of sentence
+	// sentence index will always be one less than of senetence_count of a paragraph
+	size_t sen_index = doc->data[para_index].senetence_count - 1;
+	// initialize sentence structure(info about word)
+	doc->data[para_index].data[sen_index].data = NULL;
+	doc->data[para_index].data[sen_index].word_count = 0;
+}
+
+void doc_add_word(s_document* doc) {
+	// get paragraph and sentence index
+	size_t para_index = doc->paragraph_count - 1;
+	size_t sen_index = doc->data[para_index].senetence_count - 1;
+	++doc->data[para_index].data[sen_index].word_count;
+	size_t word_count = doc->data[para_index].data[sen_index].word_count;
+	doc->data[para_index].data[sen_index].data =
+		realloc(doc->data[para_index].data[sen_index].data, word_count * sizeof(s_word));
+	assert(doc->data[para_index].data[sen_index].data != NULL);  // check for memory allocation of word
+	size_t word_index = doc->data[para_index].data[sen_index].word_count - 1;
+	doc->data[para_index].data[sen_index].data[word_index].data = NULL;
+}
+
+void doc_add_char(s_document* doc, char c) {
+	// get paragraph, sentence and word index
+	size_t para_index = doc->paragraph_count - 1;
+	size_t sen_index = doc->data[para_index].senetence_count - 1;
+	size_t word_index = doc->data[para_index].data[sen_index].word_count - 1;
+	// if string doesn't exist yet, create one
+	size_t len_of_string = 0;
+	if (doc->data[para_index].data[sen_index].data[word_index].data != NULL) {
+		len_of_string = strlen((doc->data[para_index].data[sen_index].data[word_index].data));
 	}
-	doc->data = paragraphs;
-	doc->paragraph_count = count;
+	// increase memory size to put new char
+	// (len + 2) because one will be for new char and other for '\0'(null char)
+	doc->data[para_index].data[sen_index].data[word_index].data =
+		realloc(doc->data[para_index].data[sen_index].data[word_index].data, ((len_of_string + 2) * sizeof(char)));
+	assert(doc->data[para_index].data[sen_index].data[word_index].data != NULL);
+	/*size_t char_index = len_of_string + 1;*/
+	doc->data[para_index].data[sen_index].data[word_index].data[len_of_string] = c;
+	doc->data[para_index].data[sen_index].data[word_index].data[len_of_string + 1] = '\0';
+}
+
+s_document get_document(char* text) {
+	// create new document
+	s_document* doc = create_new_document();
+	// add first paragraph, sentence and word
+	doc_add_paragraph(doc);
+	doc_add_sentence(doc);
+	doc_add_word(doc);
+
+	// iterate upon the text provided
+	size_t len_text = strlen(text);
+	for (size_t char_index = 0; char_index < len_text; ++char_index) {
+		switch (text[char_index]) {
+			case ' ':
+				doc_add_word(doc);
+				break;
+			// add sentence, word if it's not the last sentence of paragraph or text
+			case '.':
+				if ((text[char_index + 1] != '\n') && (text[char_index + 1] != '\0')) {
+					doc_add_sentence(doc);
+					doc_add_word(doc);
+				}
+				break;
+			// add to paragraph, sentence and word
+			case '\n':
+				doc_add_paragraph(doc);
+				doc_add_sentence(doc);
+				doc_add_word(doc);
+				break;
+			case '\0':
+				break;  // do nothing if it's the end of text
+			default:
+				doc_add_char(doc, text[char_index]);
+				break;
+		}
+	}
 	return *doc;
 }
 
 struct paragraph kth_paragraph(struct document Doc, int k) {
-	return Doc.data[k];
+	return Doc.data[k - 1];
 }
 
 struct sentence kth_sentence_in_mth_paragraph(struct document Doc, int k, int m) {
-	return Doc.data[k].data[m];
+	return Doc.data[k - 1].data[m - 1];
 }
 
 struct word kth_word_in_mth_sentence_of_nth_paragraph(struct document Doc, int k, int m, int n) {
-	return Doc.data[k].data[m].data[n];
+	return Doc.data[k - 1].data[m - 1].data[n - 1];
 }
