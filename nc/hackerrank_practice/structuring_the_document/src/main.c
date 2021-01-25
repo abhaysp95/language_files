@@ -52,6 +52,8 @@ void print_sentence(struct sentence sen);
 void print_paragraph(struct paragraph para);
 void print_document(struct document doc);
 
+void free_memory(s_document* doc);
+
 int main(int argc, char **argv) {
 	char* text = get_input_text();
 	struct document Doc = get_document(text);
@@ -82,6 +84,7 @@ int main(int argc, char **argv) {
 		}
 		printf("\n");
 	}
+	free_memory(&Doc);
 	return 0;
 }
 
@@ -248,4 +251,17 @@ struct sentence kth_sentence_in_mth_paragraph(struct document Doc, int k, int m)
 
 struct word kth_word_in_mth_sentence_of_nth_paragraph(struct document Doc, int k, int m, int n) {
 	return Doc.data[k - 1].data[m - 1].data[n - 1];
+}
+
+// haven't test this function yet
+void free_memory(s_document* doc) {
+	for (size_t p_idx = 0; p_idx < doc->paragraph_count; ++p_idx) {
+		for (size_t s_idx = 0; s_idx < doc->data[p_idx].senetence_count; ++s_idx) {
+			for (size_t w_idx = 0; w_idx < doc->data[p_idx].data[s_idx].word_count; ++w_idx) {
+				free(doc->data[p_idx].data[s_idx].data[w_idx].data);
+			}
+			free(doc->data[p_idx].data[s_idx].data);
+		}
+		free(doc->data[p_idx].data);
+	}
 }
