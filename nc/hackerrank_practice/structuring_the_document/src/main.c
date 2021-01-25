@@ -177,8 +177,7 @@ void doc_add_word(s_document* doc) {
 	doc->data[para_index].data[sen_index].data =
 		realloc(doc->data[para_index].data[sen_index].data, word_count * sizeof(s_word));
 	assert(doc->data[para_index].data[sen_index].data != NULL);  // check for memory allocation of word
-	size_t word_index = doc->data[para_index].data[sen_index].word_count - 1;
-	doc->data[para_index].data[sen_index].data[word_index].data = NULL;
+	doc->data[para_index].data[sen_index].data[word_count - 1].data = NULL;
 }
 
 void doc_add_char(s_document* doc, char c) {
@@ -189,7 +188,7 @@ void doc_add_char(s_document* doc, char c) {
 	// if string doesn't exist yet, create one
 	size_t len_of_string = 0;
 	if (doc->data[para_index].data[sen_index].data[word_index].data != NULL) {
-		len_of_string = strlen((doc->data[para_index].data[sen_index].data[word_index].data));
+		len_of_string = strlen(doc->data[para_index].data[sen_index].data[word_index].data);
 	}
 	// increase memory size to put new char
 	// (len + 2) because one will be for new char and other for '\0'(null char)
