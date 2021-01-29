@@ -26,6 +26,9 @@ int main(int argc, char **argv) {
 					}
 					else {
 						my_map.insert(std::pair<std::string, int>(name, val));
+						// my_map[name] = val;  // this will also work
+						// since name is not found my_map will create new key with
+						// 'name' and give it 'val' value
 					}
 					break;
 				}
