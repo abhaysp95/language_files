@@ -43,6 +43,6 @@ main	src/main.cpp	/^int main(int argc, char **argv) {{$/;"	f	typeref:typename:in
 median	src/median.cpp	/^double median(std::vector<double> vec) {$/;"	f	typeref:typename:double
 midterm	inc/student_info.hpp	/^	double midterm, final;$/;"	m	struct:Student_info	typeref:typename:double
 name	inc/student_info.hpp	/^	std::string name;$/;"	m	struct:Student_info	typeref:typename:std::string
-read	src/student_info.cpp	/^std::istream& read(std::istream& in, Student_info& student) {$/;"	f	typeref:typename:std::istream &
+read	src/student_info.cpp	/^std::istream& read(std::istream& is, Student_info& student) {$/;"	f	typeref:typename:std::istream &
 read_hw	src/student_info.cpp	/^std::istream& read_hw(std::istream& in, std::vector<double>& homework_grade) {$/;"	f	typeref:typename:std::istream &
 vec_size	src/median.cpp	/^	typedef std::vector<double>::size_type vec_size;$/;"	t	function:median	typeref:typename:std::vector<double>::size_type	file:
