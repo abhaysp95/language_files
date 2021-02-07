@@ -1,0 +1,13 @@
+# control-flow statements can only be used in action(not pattern)
+
+# total and average of employees making more than $6.00/hr
+$2 > 6 { n = n + 1; pay = pay + $2 * $3 }
+END {
+		if (n > 0) {
+			print n, "employees, total pay is:", pay,
+				  "average pay is:", pay / n
+		}
+		else {
+			print "no employees are paid more than $6/hr"
+		}
+	}
