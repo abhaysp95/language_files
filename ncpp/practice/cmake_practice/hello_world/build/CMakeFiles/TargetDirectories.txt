@@ -1,0 +1,8 @@
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/CMakeFiles/rebuild_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/CMakeFiles/edit_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/say-hello/CMakeFiles/rebuild_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/say-hello/CMakeFiles/edit_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/say-hello/CMakeFiles/say_hello.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/hello_exec/CMakeFiles/edit_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/hello_exec/CMakeFiles/rebuild_cache.dir
+/home/raytracer/Documents/ncpp/practice/cmake_practice/hello_world/build/hello_exec/CMakeFiles/cmake_good.dir

@@ -1,0 +1,7 @@
+# ninja log v5
+3	917	1613827021870000439	hello_exec/CMakeFiles/cmake_good.dir/main.cpp.o	9130b6fe160c3a45
+1209	1455	1613827022406667105	hello_exec/cmake_good	655541ce31caffb0
+0	94	1613828750820005083	build.ninja	5fedf74d698c3f3b
+3	910	1613827021863333772	say-hello/CMakeFiles/say_hello.dir/src/say-hello/helloworld.cpp.o	9786c7f1036dc167
+910	1209	1613827022160000438	say-hello/libsay_hello.so	bb1cebea2f314b6f
+2	20	0	clean	a31eedcededa8236
