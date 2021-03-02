@@ -54,5 +54,8 @@ int main(int argc, char **argv) {
 	// v-table and it includes the member pointer in the base class that points
 	// to the v-table, and every time calling virtual function is called we
 	// have to go to v-table
+
+	// if we don't want to use virtual function in base class(cause it has no use there)
+	// we can just do downcasting
 	return 0;
 }
