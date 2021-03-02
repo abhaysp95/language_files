@@ -20,12 +20,13 @@ class Entity: public ClassName {
 		virtual std::string another_name() const = 0;
 		virtual std::string yet_another_name() const { return "Again Same Entity"; };
 		virtual ~Entity() = 0;  // look for this
+		//virtual ~Entity() = default; // either do this, or do above line and provide destructor body(as below)
 };
 // it is important to have a body for the pure virtual destructor, as
 // destructor works in reverse order, and when it reaches to the base class, if
 // function body is not provided then what function body will be used for
 // destruction of object, that's why we provide a body to it
-Entity::~Entity() {}
+Entity::~Entity() {}  // (below is here)
 
 class Player: public Entity {
 	private:
@@ -55,6 +56,8 @@ int main(int argc, char **argv) {
 	//print_name(e);  // you can't allocate an object of abstract class type
 	//Even though you have method which is not an abstract one, you can't have object
 	//of the abstract class
+	Player o{"something"};
+	print_name(o);
 	Player* p = new Player("someone");
 	print_name(p);
 	Player* q = new Player("somebody");
