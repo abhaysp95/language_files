@@ -26,7 +26,7 @@ class Entity: public ClassName {
 // destructor works in reverse order, and when it reaches to the base class, if
 // function body is not provided then what function body will be used for
 // destruction of object, that's why we provide a body to it
-Entity::~Entity() {}  // (below is here)
+Entity::~Entity() { std::cout << "from entity\n"; }  // (below is here)
 
 class Player: public Entity {
 	private:
@@ -38,7 +38,7 @@ class Player: public Entity {
 		// functions
 		std::string another_name() const override { return this->_name + " another"; }
 		std::string get_class_name() const override { return "Player"; }
-		//~Player() {}
+		~Player() { std::cout << "from player\n"; }
 };
 
 void print_name(const Entity& entity) {
