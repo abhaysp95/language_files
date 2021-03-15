@@ -1,4 +1,10 @@
-select to_char(dob, 'yyyy/mm/dd') as dateob from student;
+-- look for sql*plus tips and tricks, like(help set)
+
+-- set lines 256
+-- set trimout on
+-- set tab off
+
+select to_char(dob, 'yyyy/mm/dd') as dateob from student;  -- you can provide some other delims too
 
 select avg(marks) as avg_marks from student;
 
@@ -14,7 +20,7 @@ select * from student where marks > 70 and dob > '01-JAN-70' and dob < '01-JAN-0
 
 select * from student where marks > 70 and dob between '01-JAN-70' and '01-JAN-00';
 
-alter table student drop column hostler;
+alter table student drop column hostler;  -- drop a column
 
 select * from student where marks > 60 and
 	std_name like 'A%' or
@@ -23,13 +29,20 @@ select * from student where marks > 60 and
 	std_name like 'O%' or
 	std_name like 'U%';
 
-select * from student where std_name in (select std_name from student where std_name like '%y_s%');  -- like gives here any chars(multiple) then a 'y' then a char in between then 's' and then can be multiple cars
+-- like gives here any chars(multiple) then a 'y' then a char in between then 's' and then can be multiple cars
+select * from student where std_name in (
+	select std_name from student where std_name like '%y_s%');
 
+update student set rollno=35 where std_name='Ramesh';
 
-
-alter table student modify rollno number(5) primary key;
+alter table student modify rollno number(5) primary key;  -- column shouldn't have NULL or duplicate value already
 
 insert all
-	into stud
+	into student values('Mohan', 89, '08-FEB-13', 78, 938493423)
+	into student (std_name, rollno, marks, contact) values('Sohan', 93, 83, 389238439)
+	into employee values(7, 'Mahendra', 'C', date '2011-06-06', 67)
+	into employee values(10, 'Surendra', 'A', date '2010-04-06', 73)
+	into employee (emp_id, emp_name, department, performance_rating) values(14, 'Rajendra', 'B', 73)
+select * from dual;
 
 
