@@ -81,16 +81,38 @@ select f.name, f.id, t.email from first f inner join third t on f.id = t.id;  --
 
 -- problem1
 
+-- 1)
 -- is summing necessary ?
 select category, sum(price) from greetingcard where price > 300 or category = 'Birthday Special' group by category;
 select customerid from customer where custname like '_____' or customerid in (select customerid from greetingcard where price > 300);
 
+-- 2)
 -- select * from customer c inner join greetingcard g on c.customerid = g.customerid;
 select c.customerid, g.cardid, c.custname, g.category from customer c inner join greetingcard g on c.customerid = g.customerid;  -- query not full
 
 -- problem2
 
-select p.pname, p.patientid, c.consultationid, c.doctorid from patient p
+select * from patient p inner join consultation c on p.patientid = c.patientid inner join doctor d on d.doctorid = c.doctorid;
+
+-- 1)
+select p.pname, p.patientid, c.consultationid, c.doctorid, d.dname from patient p
 	inner join consultation c on p.patientid = c.patientid
+	inner join doctor d on c.doctorid = d.doctorid  -- joining more than 2 tables
 	where p.pname in (select pname from patient where pname like '%e%')
 	and c.doctorid in (select doctorid from doctor where dept = 'Cardiology');
+
+-- 2)
+select p.pname, d.dname, d.dept from patient p
+	inner join consultation c on c.patientid = p.patientid
+	inner join doctor d on c.doctorid = d.doctorid
+	where p.pname in (select pname from patient where city = 'Boston' or city = 'Chicago');
+-- still need to show total patient count for the doctors
+
+-- 3)
+select d.dname,
+	-- (select d.dname from doctor inner join consultation on d.doctorid = c.doctorid group by d.doctorid),
+	count(c.patientid) as count_of_patients from patient p  -- try to print doctorid too
+	inner join consultation c on c.patientid = p.patientid
+	inner join doctor d on c.doctorid = d.doctorid
+	where d.dept in (select dept from doctor where dept = 'Cardiology')
+	group by d.dname;
