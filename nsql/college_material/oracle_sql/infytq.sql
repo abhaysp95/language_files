@@ -46,3 +46,31 @@ insert all
 select * from dual;
 
 
+-- Union and join examples
+
+create table first(name varchar(32), id number(5));
+create table second(name varchar(32), id number(5));
+create table third(id number(5), email varchar(32));
+
+insert all
+	into first values('Ram', 4)
+	into first values('Shyam', 10)
+	into first values('Rohit', 18)
+	into second values('Ramesh', 5)
+	into second values('Mahesh', 10)
+	into second values('Ram', 15)
+	into second values('Shyam', 10)
+	into third values(4, 'ram@xyz.com')
+	into third values(18, 'rohit@xyz.com')
+	into third values(5, 'ramesh@xyz.com')
+	into third values(10, 'shyam@xyz.com')
+select * from dual;
+
+select * from first union select * from second;
+select * from first union all select * from second;
+
+-- in union column data-type(not name) should match position wise
+-- the number of columns must match in the query for union
+-- union and union all will give the same result if participating queries are mutually exclusive
+
+select f.name, f.id, t.email from first f inner join third t on f.id = t.id;  -- inner join
