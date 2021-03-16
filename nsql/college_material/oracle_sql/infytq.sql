@@ -74,3 +74,23 @@ select * from first union all select * from second;
 -- union and union all will give the same result if participating queries are mutually exclusive
 
 select f.name, f.id, t.email from first f inner join third t on f.id = t.id;  -- inner join
+
+
+-- practice problem(grouping, joining)
+-- data in the file in this folder
+
+-- problem1
+
+-- is summing necessary ?
+select category, sum(price) from greetingcard where price > 300 or category = 'Birthday Special' group by category;
+select customerid from customer where custname like '_____' or customerid in (select customerid from greetingcard where price > 300);
+
+-- select * from customer c inner join greetingcard g on c.customerid = g.customerid;
+select c.customerid, g.cardid, c.custname, g.category from customer c inner join greetingcard g on c.customerid = g.customerid;  -- query not full
+
+-- problem2
+
+select p.pname, p.patientid, c.consultationid, c.doctorid from patient p
+	inner join consultation c on p.patientid = c.patientid
+	where p.pname in (select pname from patient where pname like '%e%')
+	and c.doctorid in (select doctorid from doctor where dept = 'Cardiology');
