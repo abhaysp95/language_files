@@ -36,7 +36,7 @@ gender VARCHAR2(1) CHECK(gender in ('M','F')),
 emailid VARCHAR2(30) UNIQUE,
 dateofjoining DATE);
 
-CREATE TABLE doctor(
+CREATE TABLE doctor_ddldml(
 doctorid NUMBER PRIMARY KEY REFERENCES employee(empno),
 qualification VARCHAR2(15),
 specialization VARCHAR2(30),
@@ -44,7 +44,7 @@ inpatientfee NUMBER,
 outpatientfee NUMBER
 );
 
-delete from doctor;
+delete from doctor_ddldml;
 delete from employee;
 
 Insert into employee values(1002,'Alice','Doctor',95000,'F',NULL,'9-Jun-15');
@@ -56,13 +56,13 @@ Insert into employee values(1005,'Aldan','Doctor',150000,'M','1002aldan@xyz.com'
 Insert into employee values(1006,'Nicole','Doctor',90000,'F','1006nicole@xyz.com','12-Oct-16');
 Insert into employee values(9204,'Kate','Attendant',20000,'F','9204kate@xyz.com','30-Nov-16');
 
-Insert into doctor values(1002,'MS','Nephrology',600,400);
-Insert into doctor values(1003,'MD','Nephrology',700,500);
-Insert into doctor values(1004,'MS','Neurology',750,550);
-Insert into doctor values(1005,'MS','Cardiology',800,600);
-Insert into doctor values(1006,'MS','Gynaecology',550,350);
+Insert into doctor_ddldml values(1002,'MS','Nephrology',600,400);
+Insert into doctor_ddldml values(1003,'MD','Nephrology',700,500);
+Insert into doctor_ddldml values(1004,'MS','Neurology',750,550);
+Insert into doctor_ddldml values(1005,'MS','Cardiology',800,600);
+Insert into doctor_ddldml values(1006,'MS','Gynaecology',550,350);
 
-select * from doctor;
+select * from doctor_ddldml;
 select * from employee;
 
 

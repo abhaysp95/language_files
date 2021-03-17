@@ -75,6 +75,42 @@ select * from first union all select * from second;
 
 select f.name, f.id, t.email from first f inner join third t on f.id = t.id;  -- inner join
 
+-- practice problem(ddl, dml)
+
+-- 1)
+create table BookTransaction(
+	book_id varchar2(6) primary key check(book_id like 'B%'),
+	book_title varchar2(50),
+	author_name varchar2(20),
+	genre varchar2(10) check(genre = 'Mystery' or genre = 'Thriller'),
+	year_of_publication date
+);
+
+--2)
+create table RetailStore(
+	itemcode varchar2(6) primary key,
+	itemtype varchar2(30),
+	description varchar2(50),
+	price number(5,2),
+	category char(1)
+);
+alter table RetailStore add discout number;
+alter table RetailStore modify description varchar2(45);
+alter table RetailStore modify category varchar2(5);
+alter table RetailStore rename column description to itemdescription;
+alter table RetailStore drop column itemtype;
+alter table RetailStore drop primary key;
+
+--3)
+insert into Course values('C208', 'Software Engineering', 3, 1200);
+insert into CourseRegistration values('R507', 'S306', 'C204', sysdate);
+
+--4)
+select doctorid, qualification from doctor_ddldml where outpatientfee >= 400 and outpatientfee <= 600 and inpatientfee >= 650;
+select specialization, outpatientfee from doctor_ddldml where outpatientfee < 500;
+select empno, empname, emptype from employee where gender = 'F' and empname like '%i%' or empname like '_a%' and salary <= 90000;
+select empname, gender from employee where emailid <> NULL and dateofjoining like '%10%';  -- try date with between
+
 
 -- practice problem(grouping, joining)
 -- data in the file in this folder
