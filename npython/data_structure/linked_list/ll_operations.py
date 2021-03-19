@@ -92,7 +92,6 @@ class LinkedList:
                 if ptr.data == val_before:
                     value_found = True
 
-
     def traverse(self):
         ptr = self.head
         if self.head is None:
