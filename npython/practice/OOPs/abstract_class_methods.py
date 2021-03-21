@@ -13,12 +13,19 @@ class Polygon(ABC):
     def noOfSides(self, sides):
         raise NotImplementedError
 
+    @abstractmethod
+    def testMethod(self):  # test result: with abstract class, you need to override method in all the child classes
+        pass
+
     def notAbstract(self):  # you still can't create object of Polygon, although this method is not needed to overridden necesserily
         print("Parent not abstract")
 
 class Triangle(Polygon):
     def noOfSides(self, sides):
         print("I have ", sides, " sides")
+
+    def testMethod(self):
+        print("testMethod from Triangle")
 
 class Quadrilateral(Polygon):
     def noOfSides(self):  # unlike Java,C++(maybe) this dosn't checks method signature
@@ -38,6 +45,7 @@ class Hexagon(Polygon):
 
 t = Triangle()
 t.noOfSides(3)
+t.testMethod()
 
 q = Quadrilateral()
 q.noOfSides()
