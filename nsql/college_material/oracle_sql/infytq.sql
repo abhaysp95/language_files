@@ -4,6 +4,17 @@
 -- set trimout on
 -- set tab off
 
+-- with error ORA-65096: invalid common user or role name  -- when creating user
+-- WARNING: setting undocumented parameters like this(as indicated by the leading underscore) should only be done under the direction of Oracle Support. Changing such parameters without such guidance may invalidate your support contract. So do it on your own risk
+-- first log into an existing user, then
+alter session set "_ORACLE_SUPPORT"=true  -- if and only if you got ORA-65096
+create user <name> identified by <pass>;
+grant all privileges to <user>;  -- beware, this will grant all privileges
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 select to_char(dob, 'yyyy/mm/dd') as dateob from student;  -- you can provide some other delims too
 
 select avg(marks) as avg_marks from student;
