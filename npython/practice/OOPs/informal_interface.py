@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+reference: https://realpython.com/python-interface/#informal-interfaces
+"""
+
 class InformalParserInterface:
     def load_data_source(self, path: str, file_name: str) -> str:
         """load in the file for extracting text"""
@@ -148,4 +152,9 @@ class Friend:
 # due to implementations of .name() and .age(), Person becomes a virtual base class
 # of Friend
 
-# reference: https://realpython.com/python-interface/#formal-interfaces
+print(issubclass(Friend, Person))  # True
+print(issubclass(Employee, Person))  # True
+print(issubclass(Employee, PersonSuper))  # True
+print(isinstance(Friend, Person))  # False
+print(isinstance(Employee, Person))  # False
+print(isinstance(Employee, PersonSuper))  # False
