@@ -27,7 +27,6 @@ class Queue:
                 self.__rear = -1
             self.__rear += 1
             self.__elements[self.__rear] = value
-            print("rear is: ", self.__rear)
 
     def delete(self):
         if self.isUnderflow():
