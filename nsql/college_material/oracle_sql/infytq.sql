@@ -152,3 +152,129 @@ select d.dname,
 	inner join doctor d on c.doctorid = d.doctorid
 	where d.dept in (select dept from doctor where dept = 'Cardiology')
 	group by d.dname;
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+-- to check if database is in autocommit mode or not
+show autocommit; -- autocommit OFF -- no need to connect user to check this probably
+
+-- let's perform some queries with autocommit on
+update student set marks = 88 where rollno = 45;  -- updated
+
+-- now to rollback
+rollback;  -- goes to previous state(state after previous commit)
+
+-- now we will commit, so update again
+update student set marks = 88 where rollno = 45;  -- updated
+
+-- now commit
+commit
+
+-- now try rollback
+rollback  -- but this time, value is not set back of marks, cause it's commited
+
+-- lets' insert something
+insert into student values('Mahendra', 49, '23-MAR-08', 76, 22890238940);
+insert into student values('Narendra', 50, '29-MAR-09', 77, 22890238940);
+
+-- now commit it
+commit
+
+-- we can also have checkpoint(savepoint)
+savepoint st1;
+
+-- now delete(this one is supposed to mistake)
+delete from student;
+
+-- again make checkpoint
+savepoint sp2;
+
+-- insert some
+insert into student values('Mahesh', 40, '23-JUL-08', 66, 22890238941);
+savepoint st3;
+
+insert into student values('Umesh', 41, '29-JUL-09', 67, 22890238942);
+
+-- now you remeber you mistake, so to rollback
+-- rollback to <save_point> -- savepoint can be any savepoint
+rollback to st3;
+rollback to st1;  -- got all rows back
+-- you can give any checkpoint to rollback
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+-- PL/SQL
+
+
+-- 3 steps
+-- 1) declare
+-- 2) begin  -- scope started
+-- 3) end;   -- scope finished
+
+set serveroutput on;
+
+-- program to add two numbers
+declare
+	a int;
+	b int;
+	c int;
+begin
+	a := &a;  -- you can just give value to a(instead of runtime)
+	b := &b;
+	c := a + b;
+	dbms_output.put_line('Addition of a and b = ' || c);
+end;
+
+-- after putting this, you have to pass delimiter so that db can know you are done with this procedure
+-- default delimiter is '/'
+
+-- conditional statement
+
+declare
+	a int;
+	b int;
+begin
+	a := &a;
+	b := &b;
+	if (a > b) then
+		dbms_output.put_line('largest number is = ' || a);
+	else
+		dbms_output.put_line('largest number is = ' || b);
+	end if;
+end;
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+-- Triggers
+
+-- trigger only works for DDL/DML
+
+-- a basic structure of trigger creation
+create [or replace] trigger trigger_name
+{before|after} triggering_event on table_name
+[for each row]  -- every time on row updation
+[follows | precedes another_trigger]
+[enable/disable]
+[when condition]
+declare declaration statements
+begin executable statements
+exception exception_handling statements
+end;
+
+-- let's create a simple trigger
+create trigger student_trigger
+before update on student
+for each row
+begin
+	dbms_output.put_line('You have got a row updated on your student table')
+end;
+
+-- to delete a trigger
+drop trigger student_trigger;
