@@ -27,7 +27,6 @@ class Queue:
                 self.__rear = -1
             self.__rear += 1
             self.__elements[self.__rear] = value
-            print("rear is: ", self.__rear)
 
     def delete(self):
         if self.isUnderflow():
@@ -43,15 +42,45 @@ class Queue:
         if self.isUnderflow() and self.__elements[self.__rear] is None:
             print("Underflow")
         else:
-            idx = self.__front
-            count = self.__max
-            # infinite loop here
-            while idx != self.__rear:
-                if idx == self.__max:
-                    idx = 0
+            if self.__front <= self.__rear:
+                idx = self.__front
+                while (idx != self.__rear):
+                    print(self.__elements[idx], end = " ")
+                    idx += 1
                 print(self.__elements[idx])
-                idx += 1
-            print(self.__elements[idx])
+            else:
+                idx = self.__rear
+                while idx != self.__max:
+                    print(self.__elements[idx], end = " ")
+                    idx += 1
+                idx = 0
+                while idx != self.__rear:
+                    print(self.__elements[idx], end = " ")
+                    idx += 1
+                print()
+            # idx = self.__front
+            # count = 0
+            # infinite loop here
+            # while (idx != self.__rear and count != self.__max):
+                # if idx == self.__max:
+                    # idx = 0
+                # print(self.__elements[idx])
+                # idx += 1
+                # count += 1
+            # print(self.__elements[idx])
+
+
+# Ques: Say size of circular queue is 5 and we insert 10, 20, 30, 40 & 50. Then
+# we delete 2 times (means 10 and 20 dequed), now on traversing 30, 40 and 50 is
+# shown(which is correct). Now we insert 60 this time, so self.__rear at 0 inserts
+# 60 and with 2 times deletion there's a block space between self.__rear and self.__front
+# (self.__rear < self.__front, currently), now what should the traverse should print?
+
+# 1. 60 None 30 40 50 or
+# 2. 60 20 30 40 50
+
+# since, value is overwritten in block(not actually removed) that's why I included
+# 2nd option? What should be the correct answer ?
 
 
 def printOptions():
@@ -63,7 +92,7 @@ Enter the choice:
 4. Exit""")
 
 def main():
-    q = Queue(3)
+    q = Queue(3)  # size 3 circular queue
     printOptions()
     choice = int(input())
     while choice != 4:
