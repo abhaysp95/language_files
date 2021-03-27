@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <cassert>
 
 size_t get_smallest_missing_positive_int(const int* arr, const size_t& arr_size);
 
@@ -16,12 +17,25 @@ int main(int argc, char **argv) {
 	size_t arr_size;
 	std::cout << "Enter the array size: ";
 	std::cin >> arr_size;
-	// check assert here for constraint
+
+
+
+	// validate constraint for N here
+	assert((arr_size >= 1) && (arr_size <= 10e5));
+
 	int* arr = new int[arr_size];
 	std::cout << "Enter array elements: ";
 	for (size_t idx = 0; idx < arr_size; ++idx) {
-		std::cin >> *(arr + idx);
+		int element{};
+		std::cin >> element;
+
+		// validate constraint for Ai here
+		assert((-10e5 <= element) && (element <= 10e5));
+
+		*(arr + idx) = element;
 	}
+
+
 	size_t resultant_int = get_smallest_missing_positive_int(arr, arr_size);
 	std::cout << "Missing smallest positive integer: " << resultant_int << std::endl;
 	delete[] arr;
