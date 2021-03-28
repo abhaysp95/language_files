@@ -3,6 +3,7 @@
 #include <math.h>
 
 void quicksort(int* arr, unsigned int begin, unsigned int end);
+unsigned int median(int* arr, unsigned int begin, unsigned int end);
 unsigned int partition(int* arr, unsigned int begin, unsigned int end);
 
 int main(int argc, char** argv) {
@@ -46,8 +47,34 @@ void quicksort(int* arr, unsigned int begin, unsigned int end) {
 	}
 }
 
+unsigned int median(int* arr, unsigned int begin, unsigned int end) {
+	unsigned int mid = (begin + end) / 2;
+	if (*(arr + begin) < *(arr + mid)) {
+		if (*(arr + begin) >= *(arr + end)) {
+			return *(arr + begin);
+		}
+		else if (*(arr + mid) < *(arr + end)) {
+			return *(arr + mid);
+		}
+	}
+	else {
+		if (*(arr + begin) < *(arr + end)) {
+			return *(arr + begin);
+		}
+		else if (*(arr + mid) >= *(arr + end)) {
+			return *(arr + mid);
+		}
+	}
+	return *(arr + end);
+}
+
 unsigned int partition(int* arr, unsigned int begin, unsigned int end) {
-	unsigned int pivot = *(arr + (int)floor((begin + end) / 2));
+	// get pivot element
+	/*unsigned int pivot = *(arr + (int)floor((begin + end) / 2));*/
+
+	// another good way to get pivot is to get median
+	unsigned int pivot = median(arr, begin, end);
+
 	unsigned int left = begin;
 	unsigned int right = end;
 
@@ -61,7 +88,6 @@ unsigned int partition(int* arr, unsigned int begin, unsigned int end) {
 			printf("left pointing to: %d\n", *(arr + left));
 		}
 		while (*(arr + right) > pivot) {
-		/*while ((*(arr + right) >= pivot) && (right > 0)) {*/
 			right--;
 			printf("right pointing to: %d\n", *(arr + right));
 		}
