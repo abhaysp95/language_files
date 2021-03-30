@@ -4,11 +4,9 @@
 #include <cassert>
 #include <cmath>
 #include <fstream>
-#include <sys/time.h>
-#include <ctime>
+#include <chrono>  // track time with varying degree of precision
 #define MAX 1000000000
 
-float time_diff(struct timeval* start, struct timeval* end);
 bool brute_force_way(const long* arr, const unsigned long& arr_size, const long& key_sum);
 bool better_way(const long* arr, const unsigned long& arr_size, const long& key_sum);
 void sort(long* arr, const unsigned long& arr_size);  // sort in non-decreasing order
@@ -21,8 +19,7 @@ unsigned long partition(long* arr, unsigned long begin, unsigned long end);
 int main(int argc, char **argv) {
 	srand(time(0));
 
-	struct timeval main_start, main_end;
-	gettimeofday(&main_start, NULL);
+	auto main_start = std::chrono::high_resolution_clock::now();
 
 	/** to take input from file
 	std::ifstream input_data;
@@ -43,8 +40,7 @@ int main(int argc, char **argv) {
 	long* arr = new long[arr_size];
 	std::cout << "Reading array elements\n";
 
-	struct timeval arr_input_start, arr_input_end;
-	gettimeofday(&arr_input_start, NULL);
+	auto arr_input_start = std::chrono::high_resolution_clock::now();
 
 	// take input in array
 	{
@@ -69,20 +65,21 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	gettimeofday(&arr_input_end, NULL);
+	auto arr_input_end = std::chrono::high_resolution_clock::now();
 	std::cout << "\n==> Time taken in array element input: "
-		<< time_diff(&arr_input_start, &arr_input_end) << "\n";
+		<< std::chrono::duration_cast<std::chrono::microseconds>(arr_input_end - arr_input_start).count() / 1e6
+		<< " sec\n";
 
 	std::cout << "Array input complete, array size: " << arr_size << "\n";
 
 	// sorting is not necessary for brute force way
 	{
-		struct timeval sort_time_start, sort_time_end;
-		gettimeofday(&sort_time_start, NULL);
+		auto sort_time_start = std::chrono::high_resolution_clock::now();
 		sort(arr, arr_size);
-		gettimeofday(&sort_time_end, NULL);
+		auto sort_time_end = std::chrono::high_resolution_clock::now();
 		std::cout << "\n==> Time taken in sorting array: "
-			<< time_diff(&sort_time_start, &sort_time_end) << "\n";
+			<< std::chrono::duration_cast<std::chrono::microseconds>(sort_time_end - sort_time_start).count() / 1e6
+			<< " sec\n";
 
 		//std::cout << "\nAfter sorting: \n[ ";
 		//for (unsigned long idx = 0; idx < arr_size; ++idx) {
@@ -95,30 +92,25 @@ int main(int argc, char **argv) {
 	}
 
 	// you can try brute_force_way() here too
-	struct timeval algo_time_start, algo_time_end;
-	gettimeofday(&algo_time_start, NULL);
-
+	auto algo_time_start = std::chrono::high_resolution_clock::now();
 	if (better_way(arr, arr_size, key_sum)) {
 		std::cout << "Pair found\n";
 	}
 	else {
 		std::cout << "Pair not found\n";
 	}
-	gettimeofday(&algo_time_end, NULL);
+	auto algo_time_end = std::chrono::high_resolution_clock::now();
 	std::cout << "\n==> Time taken in actual algo: "
-		<< time_diff(&algo_time_start, &algo_time_end) << "\n";
+		<< std::chrono::duration_cast<std::chrono::microseconds>(algo_time_end - algo_time_start).count() / 1e6
+		<< " sec\n";
 
 	delete[] arr;
 
-	gettimeofday(&main_end, NULL);
+	auto main_end = std::chrono::high_resolution_clock::now();
+	auto main_duration = std::chrono::duration_cast<std::chrono::microseconds>(main_end - main_start);
 	std::cout << "\n==> Total time taken: "
-		<< time_diff(&main_start, &main_end) << std::endl;
+		<< main_duration.count() / 1e6 << " sec" << std::endl;
 	return 0;
-}
-
-float time_diff(struct timeval* start, struct timeval* end) {
-	return ((end->tv_sec - start->tv_sec) +
-			1e-6*(end->tv_usec - start->tv_usec));
 }
 
 long median(const long* arr, const unsigned long& begin, const unsigned long& end) {
