@@ -1,0 +1,22 @@
+<noun> cat
+<noun> dog
+<noun> table
+<noun-phrase> <noun>
+<noun-phrase> <adjective> <noun-phrase>
+<adjective> large
+<adjective> brown
+<adjective> absurd
+<verb> jumps
+<verb> sits
+<location> on the stairs
+<location> under the sky
+<location> wherever it wants
+<sentence> the <noun-phrase> <verb> <location>
+<sentence> the <noun-phrase> <verb> <location> <preposition> <time>
+<preposition> in
+<preposition> at
+<preposition> on
+<preposition> since
+<time> morning
+<time> evening
+<time> afternoon
