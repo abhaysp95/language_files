@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <queue>
 #include <cmath>
+#include <stack>
 
 using namespace std;
 
@@ -58,6 +59,68 @@ void post_order_traversal(struct node* ptr) {
 	post_order_traversal(ptr->_left);
 	post_order_traversal(ptr->_right);
 	cout << ptr->_data << ' ';
+}
+
+void pre_order_norec(struct node* ptr) {
+	stack<struct node*> stk;
+	while (stk.size() != 0 || ptr) {
+		if (ptr) {
+			cout << ptr->_data << " ";
+			stk.push(ptr);
+			ptr = ptr->_left;
+		}
+		else {
+			ptr = stk.top();
+			stk.pop();
+			ptr = ptr->_right;
+		}
+	}
+}
+
+void in_order_norec(struct node* ptr) {
+	stack<struct node*> stk;
+	while (stk.size() != 0 || ptr) {
+		if (ptr) {
+			stk.push(ptr);
+			ptr = ptr->_left;
+		}
+		else {
+			ptr = stk.top();
+			stk.pop();
+			cout << ptr->_data << " ";
+			ptr = ptr->_right;
+		}
+	}
+}
+
+void post_order_norec(struct node* ptr) {
+	stack<struct node*> stk;
+	while (stk.size() != 0 || ptr) {
+		if (ptr) {
+			if (ptr->_right)
+				stk.push(ptr->_right);
+			stk.push(ptr);
+			ptr = ptr->_left;
+		}
+		else {
+			ptr = stk.top();
+			stk.pop();
+			if (!stk.size()) {  // last element(root for post-order)
+				cout << ptr->_data;
+				break;
+			}
+			if (ptr->_right && (ptr->_right->_data == stk.top()->_data)) {
+				struct node* pptr = stk.top();
+				stk.pop();
+				stk.push(ptr);
+				ptr = pptr;
+			}
+			else {
+				cout << ptr->_data << " ";
+				ptr = NULL;
+			}
+		}
+	}
 }
 
 struct node* pre_in_tree(const vector<int>& in, const vector<int>& pre, int start, int end) {
@@ -302,7 +365,10 @@ int main(int argc, char **argv) {
 	cout << "done\n";
 	//pre_order_traversal(temp);
 	//cout << endl;
-	pre_order_traversal(root);
+	// pre_order_traversal(root);
+	post_order_traversal(root);
+	cout << '\n';
+	post_order_norec(root);
 	cout << endl;
 	int height = height_binary_tree(root);
 	cout << "height: " << height << endl;

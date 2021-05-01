@@ -52,7 +52,7 @@ using namespace std;
 #define uset unordered_set
 #define sz(x) ((int)(x).size())
 #define inrange(i,a,b) ((i>=min(a,b)) && (i<=max(a,b)))
-#define cfp(x) 	cout << fixed << showpoint; 	cout << setprecision(x);
+#define cfp(x) 	cout << fixed << showpoint;	cout << setprecision(x);
 #define nl "\n"
 #define br cout << "\n";
 
