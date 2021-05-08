@@ -130,50 +130,44 @@ signed main() {
     }
 }
 
-int cc_num_coins(const vi& carr, int size, int target) {
-	if (!target)
-		return 0;
-	if (!size)
-		return INF;
-	if (carr[size - 1] > target)
-		return cc_num_coins(carr, size - 1, target);
-	return mn(1 + cc_num_coins(carr, size, target - carr[size - 1]),
-			cc_num_coins(carr, size - 1, target));
-}
+/** try to print longest repeating subsequence too */
 
 vvi t;
-int cc_num_coins_tab(const vi& carr, int size, int target) {
-	rloop(i, 0, size)
-		t[i][0] = 0;
-	rloop(i, 0, target)
-		t[0][i] = INF;
-	/** this below loop is the 2nd method which passed test-cases */
-	rloop(i, 1, target) {
-		if (!mod(i, carr[0]))
-			t[1][i] = i / carr[0];
-		else
-			t[1][i] = INF;
-	}
-	/** if you're not using the above test loop, then set `rloop(i, 1, size)`
-	 * for 1st method */
-	rloop(i, 2, size) {
-		rloop(j, 1, target) {
-			if (carr[i - 1] > j)
-				t[i][j] = t[i - 1][j];
-			else
-				t[i][j] = mn(1 + t[i][j - carr[i - 1]], t[i - 1][j]);
+int lrs(string& str) {
+	rloop(i, 0, (str.size())) {
+		rloop(j, 0, (str.size())) {
+			if (!i || !j)
+				t[i][j] = 0;
+			else {
+				if (str[i - 1] == str[j - 1]) {
+					if (i != j)
+						t[i][j] = 1 + t[i - 1][j - 1];
+					else
+						t[i][j] = mx(t[i - 1][j], t[i][j - 1]);
+				}
+				else
+					t[i][j] = mx(t[i - 1][j], t[i][j - 1]);
+			}
 		}
 	}
-	return t[size][target];
+	return t[str.size()][str.size()];
 }
 
-void print_mat() {
-	rep(i, t.size()) {
+string print_lcs(string& str) {
+	rloopd(i, (str.size(), 0)) {
+		rloopd(j, (str.size(), 0)) {
+			// start from here
+		}
+	}
+}
+
+void print_mat(string& str) {
+	rloop(i, 0, (str.size())) {
 		cout << "{";
-		rep(j, t[0].size()) {
+		rloop(j, 0, (str.size())) {
 			cout << t[i][j];
-			if (j < t[0].size() - 1)
-				cout << ", ";
+			if (j < (str.size()))
+					cout << ", ";
 		}
 		cout << "}" << nl;
 	}
@@ -182,15 +176,10 @@ void print_mat() {
 void solvethetestcase() {
 	string in{};
 	cin >> in;
-	vi carr{};
-	tokenize(in, carr, ',');
-	int target{};
-	cin >> target;
-	//cout << cc_num_coins(carr, carr.size(), target) << nl;
 	t.clear();
-	t.resize(carr.size() + 1, vi(target + 1, -1));
-	cout << cc_num_coins_tab(carr, carr.size(), target) << nl;
-	print_mat();
+	t.resize((in.size() + 1), vi((in.size() + 1), -1));
+	cout << lrs(in) << nl;
+	print_mat(in);
 }
 
 #pragma GCC diagnostic pop

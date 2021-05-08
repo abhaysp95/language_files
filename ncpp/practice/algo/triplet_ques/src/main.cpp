@@ -130,67 +130,51 @@ signed main() {
     }
 }
 
-int cc_num_coins(const vi& carr, int size, int target) {
-	if (!target)
-		return 0;
-	if (!size)
-		return INF;
-	if (carr[size - 1] > target)
-		return cc_num_coins(carr, size - 1, target);
-	return mn(1 + cc_num_coins(carr, size, target - carr[size - 1]),
-			cc_num_coins(carr, size - 1, target));
+bool istriplet(vi arr, int i, int j) {
+	int k = i;
+	bool x = true;
+	while (k < j) {
+		if (arr[k] != arr[k + 1])
+			x = false;
+		k++;
+	}
+	if (!x) {
+		k = i;
+		while (k < j) {
+			if (arr[k] + 1 != arr[k + 1])
+				x = false;
+			k++;
+		}
+	}
+	return x;
 }
 
-vvi t;
-int cc_num_coins_tab(const vi& carr, int size, int target) {
-	rloop(i, 0, size)
-		t[i][0] = 0;
-	rloop(i, 0, target)
-		t[0][i] = INF;
-	/** this below loop is the 2nd method which passed test-cases */
-	rloop(i, 1, target) {
-		if (!mod(i, carr[0]))
-			t[1][i] = i / carr[0];
+int solve(int N, int M, vi arr) {
+	sort(arr.begin(), arr.end());
+	int count{};
+	int i{};
+	while (i + 2 < N) {
+		if (istriplet(arr, i, i + 2)) {
+			count++;
+			i += 3;
+		}
 		else
-			t[1][i] = INF;
+			i++;
 	}
-	/** if you're not using the above test loop, then set `rloop(i, 1, size)`
-	 * for 1st method */
-	rloop(i, 2, size) {
-		rloop(j, 1, target) {
-			if (carr[i - 1] > j)
-				t[i][j] = t[i - 1][j];
-			else
-				t[i][j] = mn(1 + t[i][j - carr[i - 1]], t[i - 1][j]);
-		}
-	}
-	return t[size][target];
-}
-
-void print_mat() {
-	rep(i, t.size()) {
-		cout << "{";
-		rep(j, t[0].size()) {
-			cout << t[i][j];
-			if (j < t[0].size() - 1)
-				cout << ", ";
-		}
-		cout << "}" << nl;
-	}
+	return count;
 }
 
 void solvethetestcase() {
-	string in{};
-	cin >> in;
-	vi carr{};
-	tokenize(in, carr, ',');
-	int target{};
-	cin >> target;
-	//cout << cc_num_coins(carr, carr.size(), target) << nl;
-	t.clear();
-	t.resize(carr.size() + 1, vi(target + 1, -1));
-	cout << cc_num_coins_tab(carr, carr.size(), target) << nl;
-	print_mat();
+	int N;
+	cin >> N;
+	int M;
+	cin >> M;
+	vi arr(N);
+	rep(j, N)
+		cin >> arr[j];
+	int result;
+	result = solve(N, M, arr);
+	cout << result << nl;
 }
 
 #pragma GCC diagnostic pop

@@ -130,67 +130,63 @@ signed main() {
     }
 }
 
-int cc_num_coins(const vi& carr, int size, int target) {
-	if (!target)
-		return 0;
-	if (!size)
-		return INF;
-	if (carr[size - 1] > target)
-		return cc_num_coins(carr, size - 1, target);
-	return mn(1 + cc_num_coins(carr, size, target - carr[size - 1]),
-			cc_num_coins(carr, size - 1, target));
+typedef struct numis {
+	string start;
+	string same;
+	string end;
+} nis;
+
+bool issame(string str, int i, int j) {
+	loop(k, i, j)
+		if (str[k] != str[k + 1])
+			return false;
+	return true;
 }
 
-vvi t;
-int cc_num_coins_tab(const vi& carr, int size, int target) {
-	rloop(i, 0, size)
-		t[i][0] = 0;
-	rloop(i, 0, target)
-		t[0][i] = INF;
-	/** this below loop is the 2nd method which passed test-cases */
-	rloop(i, 1, target) {
-		if (!mod(i, carr[0]))
-			t[1][i] = i / carr[0];
-		else
-			t[1][i] = INF;
-	}
-	/** if you're not using the above test loop, then set `rloop(i, 1, size)`
-	 * for 1st method */
-	rloop(i, 2, size) {
-		rloop(j, 1, target) {
-			if (carr[i - 1] > j)
-				t[i][j] = t[i - 1][j];
-			else
-				t[i][j] = mn(1 + t[i][j - carr[i - 1]], t[i - 1][j]);
+int maximumNumber(string A, vi F) {
+	vector<nis> nums{};
+	loop(i, 0, (A.size())) {
+		loop(j, i, (A.size())) {
+			if (issame(A, i, j)) {
+				nis temp;
+				temp.start = string(A.begin(), A.begin() + i);
+				temp.same = string(A.begin() + i, A.begin() + j + 1);
+				temp.end = string(A.begin() + j + 1, A.begin() + A.size());
+				nums.pb(temp);
+			}
 		}
 	}
-	return t[size][target];
-}
 
-void print_mat() {
-	rep(i, t.size()) {
-		cout << "{";
-		rep(j, t[0].size()) {
-			cout << t[i][j];
-			if (j < t[0].size() - 1)
-				cout << ", ";
+	int maxs= -INF;
+	for (nis str: nums) {
+		//if (str.same.size())
+			//cout << str.start << " " << str.same << " " << str.end << nl;
+		if (str.same.size()) {
+			int num = str.same[0] - '0';
+			if (F[num - 1] > num) {
+				string tmp = to_string(F[num - 1]);
+				const char *cn = tmp.c_str();
+				char ch = str.same[0];
+				replace(all(str.same), ch, *cn);
+			}
+			cout << str.start << " " << str.same << " " << str.end << nl;
+			int temp = stoi(str.start + str.same + str.end);
+			if (temp > maxs)
+				maxs = temp;
 		}
-		cout << "}" << nl;
 	}
+	return maxs;
 }
 
 void solvethetestcase() {
-	string in{};
-	cin >> in;
-	vi carr{};
-	tokenize(in, carr, ',');
-	int target{};
-	cin >> target;
-	//cout << cc_num_coins(carr, carr.size(), target) << nl;
-	t.clear();
-	t.resize(carr.size() + 1, vi(target + 1, -1));
-	cout << cc_num_coins_tab(carr, carr.size(), target) << nl;
-	print_mat();
+	string A;
+	cin >> A;
+	vi F(9);
+	rep(j, 9)
+		cin >> F[j];
+	int result;
+	result = maximumNumber(A, F);
+	cout << result << nl;
 }
 
 #pragma GCC diagnostic pop

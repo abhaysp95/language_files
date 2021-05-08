@@ -125,72 +125,41 @@ signed main() {
 	cin >> t;
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cout << "Case #" << testcase << ": ";
+		cout << "Case #" << testcase << ": " << nl;
 		solvethetestcase();
     }
 }
 
-int cc_num_coins(const vi& carr, int size, int target) {
-	if (!target)
-		return 0;
-	if (!size)
-		return INF;
-	if (carr[size - 1] > target)
-		return cc_num_coins(carr, size - 1, target);
-	return mn(1 + cc_num_coins(carr, size, target - carr[size - 1]),
-			cc_num_coins(carr, size - 1, target));
-}
-
 vvi t;
-int cc_num_coins_tab(const vi& carr, int size, int target) {
-	rloop(i, 0, size)
-		t[i][0] = 0;
-	rloop(i, 0, target)
-		t[0][i] = INF;
-	/** this below loop is the 2nd method which passed test-cases */
-	rloop(i, 1, target) {
-		if (!mod(i, carr[0]))
-			t[1][i] = i / carr[0];
-		else
-			t[1][i] = INF;
-	}
-	/** if you're not using the above test loop, then set `rloop(i, 1, size)`
-	 * for 1st method */
-	rloop(i, 2, size) {
-		rloop(j, 1, target) {
-			if (carr[i - 1] > j)
-				t[i][j] = t[i - 1][j];
-			else
-				t[i][j] = mn(1 + t[i][j - carr[i - 1]], t[i - 1][j]);
+int get_lcs(string& a, string& b) {
+	rloop(i, 0, (a.size())) {
+		rloop(j, 0, (b.size())) {
+			if (!i || !j)
+				t[i][j] = 0;
+			else {
+				if (a[i - 1] == b[j - 1])
+					t[i][j] = t[i - 1][j - 1] + 1;
+				else
+					t[i][j] = mx(t[i - 1][j], t[i][j - 1]);
+			}
 		}
 	}
-	return t[size][target];
-}
-
-void print_mat() {
-	rep(i, t.size()) {
-		cout << "{";
-		rep(j, t[0].size()) {
-			cout << t[i][j];
-			if (j < t[0].size() - 1)
-				cout << ", ";
-		}
-		cout << "}" << nl;
-	}
+	return t[a.size()][b.size()];
 }
 
 void solvethetestcase() {
-	string in{};
-	cin >> in;
-	vi carr{};
-	tokenize(in, carr, ',');
-	int target{};
-	cin >> target;
-	//cout << cc_num_coins(carr, carr.size(), target) << nl;
+	string a{}, b{};
+	cin >> a >> b;
 	t.clear();
-	t.resize(carr.size() + 1, vi(target + 1, -1));
-	cout << cc_num_coins_tab(carr, carr.size(), target) << nl;
-	print_mat();
+	t.resize((a.size() + 1), vi((b.size() + 1), -1));
+	int lcs_len = get_lcs(a, b);
+	cout << "insertion: " << (b.size() - lcs_len) << ", "
+		<< "deletion: " << (a.size() - lcs_len) << nl;
+	/**
+	  for min # of insertion, deletion to convert string b to string a, do:
+	  insertion -> a.size() - lcs_len
+	  deletion -> b.size() - lcs_len
+	*/
 }
 
 #pragma GCC diagnostic pop

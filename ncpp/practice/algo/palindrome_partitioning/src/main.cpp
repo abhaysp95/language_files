@@ -130,49 +130,71 @@ signed main() {
     }
 }
 
-int cc_num_coins(const vi& carr, int size, int target) {
-	if (!target)
+bool is_palindrome(string& str, int i, int j) {
+	string temp = string(str.begin() + i, str.begin() + j + 1);
+	cout << temp << nl;
+	return temp == string(rall(temp));
+}
+
+int min_pp(string& in, int i, int j) {
+	if (i >= j)
 		return 0;
-	if (!size)
-		return INF;
-	if (carr[size - 1] > target)
-		return cc_num_coins(carr, size - 1, target);
-	return mn(1 + cc_num_coins(carr, size, target - carr[size - 1]),
-			cc_num_coins(carr, size - 1, target));
+	if (is_palindrome(in, i, j))
+		return 0;
+	int mnval = INF;
+	loop(k, i, j) {
+		int cost = min_pp(in, i, k)
+			+ min_pp(in, k + 1, j) + 1;
+		rmn(mnval, cost);
+	}
+	return mnval;
 }
 
 vvi t;
-int cc_num_coins_tab(const vi& carr, int size, int target) {
-	rloop(i, 0, size)
-		t[i][0] = 0;
-	rloop(i, 0, target)
-		t[0][i] = INF;
-	/** this below loop is the 2nd method which passed test-cases */
-	rloop(i, 1, target) {
-		if (!mod(i, carr[0]))
-			t[1][i] = i / carr[0];
-		else
-			t[1][i] = INF;
+int min_pp_mem(string& in, int i, int j) {
+	if (i >= j)
+		return 0;
+	if (t[i][j] != -1)
+		return t[i][j];
+	if (is_palindrome(in, i, j))
+		return 0;
+	int mnval = INF;
+	loop(k, i, j) {
+		int cost = min_pp_mem(in, i, k) +
+			min_pp_mem(in, k + 1, j) + 1;
+		rmn(mnval, cost);
 	}
-	/** if you're not using the above test loop, then set `rloop(i, 1, size)`
-	 * for 1st method */
-	rloop(i, 2, size) {
-		rloop(j, 1, target) {
-			if (carr[i - 1] > j)
-				t[i][j] = t[i - 1][j];
-			else
-				t[i][j] = mn(1 + t[i][j - carr[i - 1]], t[i - 1][j]);
-		}
-	}
-	return t[size][target];
+	return t[i][j] = mnval;
 }
 
-void print_mat() {
-	rep(i, t.size()) {
+/** this is another little bit optimized way, the only optimization which I'm
+ * thinking of here is that, it reduces uncessary stack filling with fn calls
+ * with are already checked before and will be returned as t[i][j] in the next
+ * call, so in theory, it partitions all the strings same times and same ways
+ * as of min_pp_mem(), it just reduces couple times unnecessary calls */
+int min_pp_mem_opt(string& in, int i, int j) {
+	if (i >= j)
+		return 0;
+	if (t[i][j] != -1)
+		return t[i][j];
+	if (is_palindrome(in, i, j))
+		return 0;
+	int mnval = INF;
+	loop(k, i, j) {
+		int left{}, right{};
+		left = (t[i][k] != -1) ? t[i][k] : min_pp_mem_opt(in, i, k);
+		right = (t[k + 1][j] != -1) ? t[k + 1][j] : min_pp_mem_opt(in, k + 1, j);
+		rmn(mnval, (left + right + 1));
+	}
+	return t[i][j] = mnval;
+}
+
+void print_mat(string& in) {
+	rep(i, (in.size())) {
 		cout << "{";
-		rep(j, t[0].size()) {
+		rep(j, (in.size())) {
 			cout << t[i][j];
-			if (j < t[0].size() - 1)
+			if (j < (in.size() - 1))
 				cout << ", ";
 		}
 		cout << "}" << nl;
@@ -182,15 +204,10 @@ void print_mat() {
 void solvethetestcase() {
 	string in{};
 	cin >> in;
-	vi carr{};
-	tokenize(in, carr, ',');
-	int target{};
-	cin >> target;
-	//cout << cc_num_coins(carr, carr.size(), target) << nl;
 	t.clear();
-	t.resize(carr.size() + 1, vi(target + 1, -1));
-	cout << cc_num_coins_tab(carr, carr.size(), target) << nl;
-	print_mat();
+	t.resize(in.size(), vi(in.size(), -1));
+	cout << min_pp_mem_opt(in, 0, in.size() - 1) << nl;
+	print_mat(in);
 }
 
 #pragma GCC diagnostic pop
