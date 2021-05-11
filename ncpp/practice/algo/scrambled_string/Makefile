@@ -1,9 +1,9 @@
 # /* --- Makefile --- */
 
-CC     = g++
+CC     = clang++
 CFLAG  = -Wall -std=c++14
 CDFLAG = -Wall -std=c++14 -g
-LD     = g++
+LD     = clang++
 LDFLAG = -v
 LFLAG  =
 
