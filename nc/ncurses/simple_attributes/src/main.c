@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 	while((ch = fgetc(fp)) != EOF) {
 		getyx(stdscr, y, x);  // current cursor position
 		if (y == (row - 1)) {  // if we're at last line
-			printf("< Press Any Key >");
+			printw("< Press Any Key >");
 			getch();
 			clear();
 			move(0, 0);  // set cursor to x:0, y:0
