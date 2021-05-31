@@ -50,7 +50,12 @@ void print_pad_names(WIN* pad, int cur_pad_num);
 void free_data(DATA* data);
 
 int main(int argc, char **argv) {
-	DATA data[3];
+
+	DATA data[] = {
+		{.data = NULL, .size = 0},
+		{.data = NULL, .size = 0},
+		{.data = NULL, .size = 0},
+	};
 
 	for (int i = 0; i < 3; ++i)
 		read_data(&data[i], filenames[i]);
@@ -60,7 +65,30 @@ int main(int argc, char **argv) {
 		print_data(&data[i]);
 	}*/
 
-	WIN pad[3];
+	// if you passed the number in [], you don't have to repeat the
+	// initialization everytime, like you did above for data
+	WIN pad[3] = {
+		{
+			.win = NULL,
+			.startx = 0,
+			.starty = 0,
+			.endx = 0,
+			.endy = 0,
+			.rpos = 0,
+			.cpos = 0,
+			.border = {
+				.ls = 0,
+				.rs = 0,
+				.ts = 0,
+				.bs = 0,
+				.tl = 0,
+				.tr = 0,
+				.bl = 0,
+				.br = 0
+			},
+		},
+	};
+
 	PANEL* panels[3];
 	PANEL* top;
 	/*WIN* top_pad;*/
@@ -168,10 +196,10 @@ int main(int argc, char **argv) {
 	}
 
 	for (int i = 0; i < 3; i++)
-		if (panels[i] != NULL)
+		if (NULL != panels[i])
 			del_panel(panels[i]);
 	for (int i = 0; i < 3; i++)
-		if (pad[i].win != NULL)
+		if (NULL != pad[i].win)
 			delwin(pad[i].win);
 	endwin();
 
@@ -195,7 +223,7 @@ void read_data(DATA* data, char* filename) {
 			ch = '\n';
 			lseek(fd, 1, SEEK_CUR);
 		}
-		if (sen == NULL)
+		if (NULL == sen)
 			sen = (char*)malloc(sizeof(char) * 4096);
 		sen[cc++] = ch;
 		if (ch == '\n') {
@@ -327,13 +355,16 @@ void print_pad_names(WIN* pad, int cur_pad_num) {
 }
 
 void free_data(DATA* data) {
-	if (data == NULL)
-		return;
+	if (NULL == data) return;
+
+	/*for (int i = 0; i < 3; i++) (NULL != (data + i)->data ? (for (int j = 0; j < (data + i)->size; j++) (NULL != (data + i)->data[j]) ? free((data + i)->data[j]) : NULL ) : NULL);*/
+
 	for (int i = 0; i < 3; i++) {
-		if ((data + i)->data != NULL) {
-			for (int j = 0; j < (data + i)->size; j++)
-				if ((data + i)->data[j] != NULL)
-					free((data + i)->data[j]);
+		if (NULL != (data + i)->data) {
+			for (int j = 0; j < (data + i)->size; j++) {
+				if (NULL != (data + i)->data[j]) free((data + i)->data[j]);
+			}
 		}
 	}
+
 }
