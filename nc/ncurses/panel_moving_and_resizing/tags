@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/raytracer/Documents/nc/ncurses/panel_moving_and_resizing/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
+${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG_OBJ}$/;"	t
+${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.c$/;"	t
+${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.c$/;"	t
+BIN	Makefile	/^BIN       = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR   = bin$/;"	m
+CC	Makefile	/^CC     = clang$/;"	m
+CDFLAG	Makefile	/^CDFLAG = -Wall -std=c99 -g$/;"	m
+CFLAG	Makefile	/^CFLAG  = -Wall -std=c99$/;"	m
+DEBUG_BIN	Makefile	/^DEBUG_BIN = $(addprefix ${DEBUG_DIR}\/, $(notdir $(realpath .)))$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
+DEBUG_OBJ	Makefile	/^DEBUG_OBJ = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.c=.o}))$/;"	m
+DIRS	Makefile	/^DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}$/;"	m
+INC_DIR	Makefile	/^INC_DIR   = inc$/;"	m
+LD	Makefile	/^LD     = clang$/;"	m
+LDFLAG	Makefile	/^LDFLAG = -v -lncurses -lpanel$/;"	m
+LFLAG	Makefile	/^LFLAG  = -lncurses -lpanel$/;"	m
+NCOLS	src/main.c	/^#define NCOLS /;"	d	file:
+NROWS	src/main.c	/^#define NROWS /;"	d	file:
+OBJ	Makefile	/^OBJ       = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.c=.o}))$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR   = obj$/;"	m
+PANEL_DATA	src/main.c	/^} PANEL_DATA;$/;"	t	typeref:struct:_PANEL_DATA	file:
+SRC	Makefile	/^SRC       = $(wildcard ${SRC_DIR}\/*.c)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR   = src$/;"	m
+_PANEL_DATA	src/main.c	/^typedef struct _PANEL_DATA {$/;"	s	file:
+all	Makefile	/^all: dir ${BIN}$/;"	t
+clean	Makefile	/^clean:$/;"	t
+debug	Makefile	/^debug: dir ${DEBUG_BIN}$/;"	t
+dir	Makefile	/^dir:$/;"	t
+h	src/main.c	/^	int x, y, w, h;$/;"	m	struct:_PANEL_DATA	typeref:typename:int	file:
+init_wins	src/main.c	/^void init_wins(WINDOW** wins, int count) {$/;"	f	typeref:typename:void
+label	src/main.c	/^	char label[80];$/;"	m	struct:_PANEL_DATA	typeref:typename:char[80]	file:
+label_color	src/main.c	/^	int label_color;$/;"	m	struct:_PANEL_DATA	typeref:typename:int	file:
+main	src/main.c	/^int main(int argc, char **argv) {$/;"	f	typeref:typename:int
+next	src/main.c	/^	PANEL* next;$/;"	m	struct:_PANEL_DATA	typeref:typename:PANEL *	file:
+print_in_middle	src/main.c	/^void print_in_middle(WINDOW* win, int starty, int startx, int width, char* string, chtype color)/;"	f	typeref:typename:void
+set_user_ptrs	src/main.c	/^void set_user_ptrs(PANEL** panels, int count) {$/;"	f	typeref:typename:void
+w	src/main.c	/^	int x, y, w, h;$/;"	m	struct:_PANEL_DATA	typeref:typename:int	file:
+win_show	src/main.c	/^void win_show(WINDOW* win, char* label, int label_color) {$/;"	f	typeref:typename:void
+x	src/main.c	/^	int x, y, w, h;$/;"	m	struct:_PANEL_DATA	typeref:typename:int	file:
+y	src/main.c	/^	int x, y, w, h;$/;"	m	struct:_PANEL_DATA	typeref:typename:int	file:

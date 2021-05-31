@@ -120,6 +120,8 @@ int main(int argc, char **argv) {
 
 	if (menu_list.win != NULL)
 		delwin(menu_list.win);
+	if (menu_list.menu_win != NULL)
+		delwin(menu_list.menu_win);
 	endwin();
 
 	free_menu_list(&menu_list);
@@ -216,7 +218,7 @@ void print_menu(MenuList* menu_list) {
 					select_next_item(&menu_list->m_lst[i]);
 					break;
 				case 10:
-					{
+					/*{
 						char* msg = (char*)malloc(sizeof(char) * 1024);
 						strcpy(msg, "You selected \"");
 						char* mname = menu_list->m_lst[i].name;
@@ -228,6 +230,21 @@ void print_menu(MenuList* menu_list) {
 						attron(COLOR_PAIR(2));
 						int y_max, x_max;
 						getmaxyx(stdscr, y_max, x_max);
+						mvprintw(10, (x_max - strlen(msg)) / 2, msg);
+						attroff(COLOR_PAIR(2));
+						refresh();
+						free(msg);
+					}*/
+
+					// much better
+					{
+						char* msg = (char*)malloc(1024 * sizeof(char));
+						sprintf(msg, "You selected \"%s\" menu and [%s] menu item!!!",
+								menu_list->m_lst[i].name,
+								menu_list->m_lst[i].items[menu_list->m_lst[i].selected_item]);
+						int y_max, x_max;
+						getmaxyx(stdscr, y_max, x_max);
+						attron(COLOR_PAIR(2));
 						mvprintw(10, (x_max - strlen(msg)) / 2, msg);
 						attroff(COLOR_PAIR(2));
 						refresh();
