@@ -1,0 +1,26 @@
+program Demo_Try_Exception_EndTry;
+#include ("stdlib.hhf")
+
+static
+	good_integer: boolean;
+	i: int8;  // max-intake -128 to 127
+
+begin Demo_Try_Exception_EndTry;
+
+	repeat
+		mov(false, good_integer);  // initialization
+
+		// try block
+		try
+			stdout.put("Enter an integer: ");
+			stdin.get(i);
+			mov(true, good_integer);
+		// ex is the name of the namespace in which all of the exception IDs are defined
+		exception(ex.ConversionError);
+			stdout.put("Illegal numeric value, please re-enter", nl);
+		exception(ex.ValueOutOfRange);
+			stdout.put("Value out of range, please re-enter", nl);
+		endtry;
+	until(good_integer);  // until good_integer is true
+
+end Demo_Try_Exception_EndTry;

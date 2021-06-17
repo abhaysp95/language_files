@@ -1,0 +1,48 @@
+program Demo_MOV_ADD_SUB;
+
+#include ("stdlib.hhf");
+
+static
+	i8 : int8 := -8;
+	i16: int16:= -16;
+	i32: int32:= -32;
+
+// ADD and SUB don't support memory-to-memory operation
+
+begin Demo_MOV_ADD_SUB;
+
+	// first, print initial values of our variables
+	stdout.put("Initialized values: ", nl, "i8: ", i8, ", i16: ", i16, ", i32: ", i32, nl);
+
+	// now, notice that all the initialized values are in negative, we can change
+	// those to positive by subtracting those to zero(0)
+	// to use MOV, syntax is: mov(source_operand, destination_operand)
+	// to use ADD, syntax is: add(source_operand, destination_operand)
+	// this is equal to destination_operand += source_operand
+	// to use SUB, syntax is: sub(source_operand, destination_operand)
+	// this is equal to destination_operand -= source_operand
+	// now, let's compute the absolute values of those variables
+
+	// compute i8 := -i8;
+	mov(0, al);  // put 0 in register al(8-bit reg)
+	sub(i8, al);  // al -= i8;
+	mov(al, i8);  // copy value from al reg. to i8
+
+	// compute i16 := -i16;
+	mov(0, ax);  // 16-bit
+	sub(i16, ax);
+	mov(ax, i16);
+
+	// compute 132 := -i32;
+	mov(0, eax);  // 32-bit
+	sub(i32, eax);
+	mov(eax, i32);
+
+	// display absolute values
+	stdout.put(nl, "Absolute values: ", nl, "i8: ", i8, ", i16: ", i16, ", i32: ", i32, nl);
+
+	// display ADD for constant-to-memory operation
+	add(32300032, i32);
+	stdout.put(nl, "After addition, i32: ", i32, nl);
+
+end Demo_MOV_ADD_SUB;

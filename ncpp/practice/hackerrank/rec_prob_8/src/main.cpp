@@ -33,6 +33,21 @@ void substrs(string in, string& out, vector<string>& vec_str, const size_t& in_l
 	substrs(in, out2, vec_str, in_length);
 }
 
+// try this one, instead of the above one
+void space_substr(string input, string output) {
+    if (!input.size()) {
+        if (output.size())
+            cout << output << '\n';
+        return;
+    }
+    if (!output.size())
+        space_substr(input.substr(1), output + input[0]);
+    else {
+        space_substr(input.substr(1), output + input[0]);
+        space_substr(input.substr(1), output + " " + input[0]);
+    }
+}
+
 int main(int argc, char **argv) {
 	string in{}, out{};
 	cin >> in;

@@ -289,3 +289,50 @@ end;
 
 -- to delete a trigger
 drop trigger student_trigger;
+
+
+----------------------------
+-- infytq qualifiers cleared
+----------------------------
+
+-- infytq final round(practice)
+
+create table employees(
+	employee_id number(6) not null,
+	first_name varchar2(20),
+	last_name varchar2(25) not null,
+	email varchar2(25) not null,
+	phone_number varchar2(20),
+	hire_date date not null,
+	job_id varchar2(10) not null,
+	salary number(8, 2),
+	commission_act number(2, 2),
+	manager_id number(6),
+	department_id number(4)
+);
+
+create table departement(
+	department_id number(6) not null,
+	departement_name varchar2(25) not null,
+	manager_id number(6),
+	location_id number(10)
+);
+
+create table job_grades(
+	grade char not null,
+	lowest_sal number(8, 2) not null,
+	highest_sal number(8, 2) not null
+);
+
+insert all
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(100, Steven, King SKNG, 17-JUN-87, AD_PRESS, 24000),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(101, Neena, Kochhar, NKOCHHAR, 21-SEP-89, AD_VP, 17000),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(102, Lex, De Haan, UDEHAAN),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),
+	into employees (employee_id, first_name, last_name, email, hire_date, job_id, salary) values(),

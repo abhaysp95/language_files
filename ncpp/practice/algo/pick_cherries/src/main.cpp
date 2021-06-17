@@ -59,22 +59,24 @@ using namespace std;
 #define inrange(i,a,b) (((i)>=mn(a,b)) && ((i)<=mx(a,b)))
 #define cfp(x) 	cout << fixed << showpoint; 	cout << setprecision(x);
 #define nl "\n"
-#define br cout << "\n";
+#define br cout << "\n"
 
 #define fileI(name) \
-	freopen(name".in", "r", stdin);
-#define fileIO(name) \
+	freopen(name".in", "r", stdin)
+#define fileIO(name) { \
 	freopen(name".in", "r", stdin); \
-	freopen(name".out", "w", stdout);
-#define FAST_IO \
+	freopen(name".out", "w", stdout); \
+}
+#define FAST_IO { \
 	ios_base::sync_with_stdio(false); \
 	cin.tie(NULL); \
-	cout.tie(NULL);
+	cout.tie(NULL); \
+}
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcomment"
 
-typedef vector<int> vi;
+/*typedef vector<int> vi;
 typedef vector<vector<int>> vvi;
 typedef vector<string> vs;
 typedef vector<vector<string>> vvs;
@@ -83,7 +85,19 @@ typedef vector<vector<double>> vvd;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
 typedef vector<pll> vpll;
-typedef vector<pii> vpii;
+typedef vector<pii> vpii;*/
+
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vs = vector<string>;
+using vvs = vector<vs>;
+using vd = vector<double>;
+using vvd = vector<vd>;
+using pii = pair<int, int>;
+using pll = pair<ll, ll>;
+using vpll = vector<pll>;
+using vpii = vector<pii>;
+
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 int rngi(int lim) {
 	uniform_int_distribution<int> uid(0,(lim)-1);
@@ -104,7 +118,7 @@ inline void tokenize(const string& str, vs& out, const char&& delim) {
 }
 inline void tokenize(const string& str, vd& out, const char&& delim) {
 	stringstream ss(str);
-	for (double i; ss >> i;) {{ out.pb(i); if (ss.peek() == delim) ss.ignore(); }}
+	for (double i; ss >> i;) { out.pb(i); if (ss.peek() == delim) ss.ignore(); }
 }
 inline void tokenize(const string& str, vi& out, const char&& delim) {
 	stringstream ss(str);
@@ -120,13 +134,13 @@ void solvethetestcase();
 
 signed main() {
 	//comment when using scanf, printf
-	FAST_IO
+	FAST_IO;
 
 	//set the seed
 	//srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 	//comment for input through console
-	fileI("input")
+	fileI("input");
 
 	int t = 1;
 	//(uncomment for multiple test cases)

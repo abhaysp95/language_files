@@ -173,7 +173,7 @@ class BinarySearchTree {
 			else if( isLessThan( t->element, x ) ) remove( x, t->right );
 			else if( nullptr != t->left && nullptr != t->right ) {  // two children
 				BinaryNode* temp = findMin( t->right );
-				t->element = temp->right;
+				t->element = temp->element;
 				remove( t->element, t->right );
 			}
 			else {

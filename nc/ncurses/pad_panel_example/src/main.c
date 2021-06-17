@@ -259,7 +259,7 @@ void init_pads(WIN* pad, DATA* data) {
 		init_win_data(pad + i, (data + i)->size, 200, (data + i));
 
 		keypad(pad[i].win, TRUE);
-		prefresh(pad[i].win, 0, 0, pad[i].starty + 1, pad[i].startx + 1, pad[i].endy - 1, pad[i].endy - 1);
+		/*prefresh(pad[i].win, 0, 0, pad[i].starty + 1, pad[i].startx + 1, pad[i].endy - 1, pad[i].endy - 1);*/
 	}
 	print_pad_names(pad, 0);
 }
@@ -338,7 +338,7 @@ void print_pad_names(WIN* pad, int cur_pad_num) {
 	WIN* win = &pad[0];  // just for ease
 
 	int n = ARRAY_SIZE(pad_names);
-	refresh();
+	/*refresh();*/
 	int d = 4;
 	int y = win->starty + (win->endy - win->starty);
 	int x = win->startx + d;

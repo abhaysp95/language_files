@@ -1,0 +1,112 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Text Area 1,Text Area 2,Text Area 3
+1,Page,,,,,,,,,Page 1,,
+2,Class,UML,1,,,,,,,Driver,"""- scheduleNumber: size_t
+- data: Data
++ POPULATION_SIZE
++ MUTATION_RATE
++ CROSSOVER_RATE
++ TOURNAMENT_SELECTION_SIZE
++ NUMBER_OF_ELITE_SCHEDULE""","""- printAvailableData(): void
+- printScheduleAsTable(): void
++ main()"""
+3,Class,UML,1,,,,,,,GA,"""- data: Data""","""+ GA(data: Data)
++ evolve(population: Population): Population
++ crossoverPopulation(population: Population): Population
++ crossoverSchedule(schedule1: Schedule, schedule2: Schedule): Schedule
++ mutatePopulation(population: Population): Population
++ mutateSchedule(schedule: Schedule): Schedule
++ selectTournamentPopulation(population: Population): Population"""
+4,Class,UML,1,,,,,,,Population,"""- schedules: List<Schedule>""","""+ Population(size: size_t, data:Data)
++ getSchedules: List<Schedule>
++ sortByFitness(): Population/void"""
+5,Class,UML,1,,,,,,,Data,"""- rooms: List<Room>
+- instructors: List<Instructor>
+- courses: List<Course>
+- depts: List<Department>
+- classTimes: List<ClassTime>
+- numberOfClasses: size_t""","""+ Data()
++ initialize(): Data
++ getRooms(): List<Room>
++ getInstructors(): List<Instructor>
++ getCourses(): List<Course>
++ getDepts(): List<Department>
++ getClassTimes(): List<ClassTime>
++ getNumberOfClasses: size_t"""
+6,Class,UML,1,,,,,,,Schedule,"""- classes: List<Class>
+- ifFitnessChanged: bool
+- fitness: double
+- classNumber: size_t
+- numberOfConflicts: size_t
+- data: Data""","""+ Schedule(data: Data)
++ initialize(): Schedule
++ getData(): Data
++ getNumberofConflicts(): size_t
++ getClasses(): List<Class>
++ calculateFitness(): double"""
+7,Class,UML,1,,,,,,,Class,"""- id: String
+- dept: Department
+- room: Room
+- course: Course
+- instructor: Instructor
+- classTime: ClassTime""","""+ Class(id: String, dept Department, course Course)
++ setRoom(room: Room): void
++ setInstructor(instructor: Instructor): void
++ setClassTime(classTime: ClassTime): void
++ getId(): String
++ getDepartment(): Department
++ getCourse(): Course
++ getRoom(): Room
++ getInstructor(): Instructor
++ getClassTime(): ClassTime
++ toString(): String"""
+8,Class,UML,1,,,,,,,Department,"""- name: String
+- courses: List<Course>""","""+ Department(name: String, courses: List<Course>)
++ getName(): String
++ getCourses(): List<Course>"""
+9,Class,UML,1,,,,,,,Course,"""- number: String
+- name: String
+- maxNumOfStudents: size_t
+- instructors: List<Instructor> ""","""+ Course(number: String, name: String, maxNumOfStundents: size_t, instructors: List<Instructor>)
++ getNumber(): String
++ getName(): String
++ getMaxNumOfStudents(): size_t
++ getInstructors(): List<Instructor>
++ toString(): String"""
+10,Class,UML,1,,,,,,,Instructor,"""- id: String
+- name: String""","""+ Instructor(id: String, name: String)
++ getId(): String
++ getName(): String
++ toString(): String"""
+11,Class,UML,1,,,,,,,Room,"""- number: String
+- seatingCapacity: size_t""","""+ Room(number: String, seatingCapacity: size_t)
++ getNumber(): String
++ getSeatingCapacity(): size_t"""
+12,Class,UML,1,,,,,,,ClassTime,"""- id: String
+- time: String""","""+ ClassTime(id: String, time: String)
++ getId(): String
++ getTime(): String"""
+13,Process,Flowchart Shapes,1,,,,,,,Class Diagram: Genetic Algorithm,,
+14,Line,,1,,,2,2,None,Composition,,,
+15,Line,,1,,,4,2,None,Composition,,,
+16,Line,,1,,,3,2,None,Composition,,,
+17,Line,,1,,,5,2,None,Composition,,,
+18,Line,,1,,,6,3,None,Aggregation,,,
+19,Line,,1,,,6,3,None,Composition,,,
+20,Line,,1,,,4,3,None,Composition,,,
+21,Line,,1,,,5,3,None,Aggregation,,,
+22,Line,,1,,,6,4,None,Composition,1..n,1,
+23,Line,,1,,,5,4,None,Aggregation,,,
+24,Line,,1,,,5,6,None,Aggregation,,,
+25,Line,,1,,,7,6,None,Composition,1..n,1,
+26,Line,,1,,,8,7,None,Aggregation,,,
+27,Line,,1,,,9,7,None,Aggregation,,,
+28,Line,,1,,,12,7,None,Aggregation,,,
+29,Line,,1,,,11,7,None,Aggregation,,,
+30,Line,,1,,,10,7,None,Aggregation,,,
+31,Line,,1,,,8,5,None,Composition,1,1..n,
+32,Line,,1,,,12,5,None,Composition,1,1..n,
+33,Line,,1,,,11,5,None,Composition,1,"1,,n",
+34,Line,,1,,,9,5,None,Composition,1,1..n,
+35,Line,,1,,,10,5,None,Composition,1,1..n,
+36,Line,,1,,,9,8,None,Aggregation,1..n,1,
+37,Line,,1,,,10,9,None,Aggregation,1..n,1,
