@@ -155,16 +155,17 @@ signed main() {
 
 vi two_sum(vi& nums, int target) {
 	vi res{0, 0};
-	umap<int, int> ump{};
+	umap<int, pair<int, int>> ump{};
 	vi::size_type i{};
 	while(i < nums.size()) {
-		if(nums[i] <= target) {
-			umap<int, int>::iterator iter = ump.find(target - nums[i]);
-			if(iter != ump.end()) {  // remove this if statement, if you want to also solve for -ve nums array
-				res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
+		if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
+			umap<int, pair<int, int>>::iterator iter = ump.find(target - nums[i]);
+			if(iter != ump.end()) {
+				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
+				res[0] = iter->second.second;
 				res[1] = i;
 			}
-			else ump[nums[i]] = target - nums[i];
+			else ump[nums[i]] = make_pair(target - nums[i], i);
 		}
 		i++;
 	}
