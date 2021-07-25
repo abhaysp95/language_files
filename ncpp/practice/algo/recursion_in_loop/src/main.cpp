@@ -59,31 +59,34 @@ using namespace std;
 #define inrange(i,a,b) (((i)>=mn(a,b)) && ((i)<=mx(a,b)))
 #define cfp(x) 	cout << fixed << showpoint; 	cout << setprecision(x);
 #define nl "\n"
-#define br cout << "\n";
+#define br cout << "\n"
 
 #define fileI(name) \
-	freopen(name".in", "r", stdin);
-#define fileIO(name) \
+	freopen(name".in", "r", stdin)
+#define fileIO(name) { \
 	freopen(name".in", "r", stdin); \
-	freopen(name".out", "w", stdout);
-#define FAST_IO \
+	freopen(name".out", "w", stdout); \
+}
+#define FAST_IO { \
 	ios_base::sync_with_stdio(false); \
 	cin.tie(NULL); \
-	cout.tie(NULL);
+	cout.tie(NULL); \
+}
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcomment"
 
-typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
-typedef vector<string> vs;
-typedef vector<vector<string>> vvs;
-typedef vector<double> vd;
-typedef vector<vector<double>> vvd;
-typedef pair<ll, ll> pll;
-typedef pair<int, int> pii;
-typedef vector<pll> vpll;
-typedef vector<pii> vpii;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vs = vector<string>;
+using vvs = vector<vs>;
+using vd = vector<double>;
+using vvd = vector<vd>;
+using pii = pair<int, int>;
+using pll = pair<ll, ll>;
+using vpll = vector<pll>;
+using vpii = vector<pii>;
+
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 int rngi(int lim) {
 	uniform_int_distribution<int> uid(0,(lim)-1);
@@ -104,11 +107,11 @@ inline void tokenize(const string& str, vs& out, const char&& delim) {
 }
 inline void tokenize(const string& str, vd& out, const char&& delim) {
 	stringstream ss(str);
-	for (double i; ss >> i;) {{ out.pb(i); if (ss.peek() == delim) ss.ignore(); }}
+	for (double i; ss >> i;) { out.pb(i); if (ss.peek() == delim) ss.ignore(); }
 }
 inline void tokenize(const string& str, vi& out, const char&& delim) {
 	stringstream ss(str);
-	for (int i; ss >> i;) { out.pb(i); if (ss.peek() == ',') ss.ignore(); }
+	for (int i; ss >> i;) { out.pb(i); if (ss.peek() == delim) ss.ignore(); }
 }
 inline void ltrim(string& s) { s.erase(s.begin(), find_if(all(s), not1(ptr_fun<int, int>(isspace)))); }
 inline void rtrim(string& s) { s.erase(find_if(rall(s), not1(ptr_fun<int, int>(isspace))).base(), s.end()); }
@@ -120,149 +123,38 @@ void solvethetestcase();
 
 signed main() {
 	//comment when using scanf, printf
-	FAST_IO
+	FAST_IO;
 
 	//set the seed
 	//srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 	//comment for input through console
-	fileI("input")
+	fileI("input");
 
 	int t = 1;
 	//(uncomment for multiple test cases)
-	cin >> t;
-	cin.ignore();
+	//cin >> t;
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cout << "Case #" << testcase << ": ";
-		br;
+		//cout << "Case #" << testcase << ": ";
+		//br;
 		solvethetestcase();
 	}
 }
 
-void print_mat(const vvi& mat) {
-	for (const vi& row: mat) {
-		for (const int& x: row) cout << x << ' ';
-		br;
+void func(int s, int e) {
+	if(s == e) return;
+	for(int i = s; i <= e; i++) {
+		cout << i;
+		func(s + 1, e);
 	}
 }
-
-/*bool is_safe(const vvi& mat, int&& i, int&& j) {
-	if (i < mat.size() && j < mat[0].size() && mat[i][j]) return true;
-	return false;
-}*/
-
-/*bool solve(const vvi& gmat, vvi& tmat, int&& i, int&& j) {
-	if (i == gmat.size() - 1
-			&& j == gmat[0].size() - 1) {
-		tmat[i][j] = 1;
-		return true;
-	}
-	if (is_safe(gmat, std::move(i), std::move(j))) {
-		tmat[i][j] = 1;
-		if (solve(gmat, tmat, std::move(i + 1), std::move(j))) return true;
-		if (solve(gmat, tmat, std::move(i), std::move(j + 1))) return true;
-		tmat[i][j] = 0;
-		return false;
-	}
-	return false;
-}*/
-
-
-
-
-/** One Way */
-
-bool is_safe(const vvi& gmat, int&& i, int&& j) {
-	if ((0 <= i && i < gmat.size()) && (0 <= j && j < gmat[0].size()) && gmat[i][j]) return true;
-	return false;
-}
-
-/*bool is_safe(const vvi& gmat, const vvi& tmat, int&& i, int&& j) {
-	// tmat represents visited matrix
-	if ((0 <= i && i < gmat.size()) && (0 <= j && j < gmat[0].size()) && gmat[i][j] && !tmat[i][j]) return true;
-	return false;
-}*/
-
-bool is_safe(const vvi& gmat, const vvi& tmat, int&& i, int&& j) {
-	if (i < 0 || j < 0 || i >= gmat.size() || j >= gmat[0].size() || !gmat[i][j] || tmat[i][j]) return false;
-	return true;
-}
-
-/*void solve(vvi& gmat, vs& vstr, int i, int j, string&& str) {
-	if (i == gmat.size() - 1 && j == gmat[0].size() - 1) {
-		vstr.pb(std::move(str));
-		return;
-	}
-	if (is_safe(gmat, std::move(i), std::move(j))) {
-		gmat[i][j] = 0;*/
-		/** maybe sequence of calling these recursive calls matters to match
-		 * output but it doesn't particularily matters if you just want to
-		 * solve the question, what actually matters is that you mark the cell
-		 * you visit, so that when coming back it will not create an infinte
-		 * loop */
-		/*solve(gmat, vstr, i + 1, j, str + 'D');
-		solve(gmat, vstr, i - 1, j, str + 'U');
-		solve(gmat, vstr, i, j + 1, str + 'R');
-		solve(gmat, vstr, i, j - 1, str + 'L');
-		gmat[i][j] = 1;
-	}
-}*/
-
-/*void solvethetestcase() {
-	string str{};
-	vvi gmat;
-	while (getline(cin, str)) {
-		if (str == "") break;
-		vi temp;
-		tokenize(str, temp, ' ');
-		gmat.pb(std::move(temp));
-	}
-	print_mat(gmat);
-	cout << "-------------------------------" << nl;*/
-	/*vvi tmat;
-	tmat.resize(gmat.size(), vi(gmat[0].size(), 0));
-	solve(gmat, tmat, 0, 0);
-	print_mat(tmat);*/
-	/*vs vstr;
-	solve(gmat, vstr, 0, 0, "");
-	cout << "size: " << vstr.size() << nl;
-	for (const string& str: vstr) cout << str << nl;
-}*/
-
-// these both are essentially the same way
-
-/** second way */
-
-void solve(const vvi& gmat, vvi& tmat, int i, int j, string&& str) {
-	if (i == gmat.size() - 1 && j == gmat[0].size() - 1) {
-		if(is_safe(gmat, tmat, std::move(i), std::move(j))) cout << str << nl;
-		return;
-	}
-	if (is_safe(gmat, tmat, std::move(i), std::move(j))) {
-		tmat[i][j] = 1;
-		solve(gmat, tmat, i - 1, j, str + 'U');
-		solve(gmat, tmat, i + 1, j, str + 'D');
-		solve(gmat, tmat, i, j - 1, str + 'L');
-		solve(gmat, tmat, i, j + 1, str + 'R');
-		tmat[i][j] = 0;
-	}
-}
-
 
 void solvethetestcase() {
-	string str{};
-	vvi gmat;
-	while (getline(cin, str)) {
-		if (str == "") break;
-		vi temp;
-		tokenize(str, temp, ' ');
-		gmat.pb(std::move(temp));
-	}
-	//print_mat(gmat);
-	vvi tmat;
-	tmat.resize(gmat.size(), vi(gmat[0].size(), 0));
-	solve(gmat, tmat, 0, 0, "");
+	int start{}, end{};
+	cin >> start >> end;
+	func(start, end);
 }
 
 #pragma GCC diagnostic pop
