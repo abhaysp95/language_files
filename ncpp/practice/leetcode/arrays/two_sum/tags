@@ -1,0 +1,120 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/raytracer/Documents/ncpp/practice/leetcode/arrays/two_sum/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+${BIN}	Makefile	/^${BIN}: ${OBJ}$/;"	t
+${DEBUG_BIN}	Makefile	/^${DEBUG_BIN}: ${DEBUG_OBJ}$/;"	t
+${DEBUG_DIR}/%.o	Makefile	/^${DEBUG_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+${OBJ_DIR}/%.o	Makefile	/^${OBJ_DIR}\/%.o: ${SRC_DIR}\/%.cpp$/;"	t
+BIN	Makefile	/^BIN       = ${BIN_DIR}\/$(notdir $(realpath .))$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR   = bin$/;"	m
+CC	Makefile	/^CC     = clang++$/;"	m
+CDFLAG	Makefile	/^CDFLAG := ${CFLAG} -g$/;"	m
+DEBUG_BIN	Makefile	/^DEBUG_BIN = $(addprefix ${DEBUG_DIR}\/, $(notdir $(realpath .)))$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR = debug$/;"	m
+DEBUG_OBJ	Makefile	/^DEBUG_OBJ = $(addprefix ${DEBUG_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+DIRS	Makefile	/^DIRS      = ${BIN_DIR} ${OBJ_DIR} ${DEBUG_DIR}$/;"	m
+FAST_IO	src/main.cpp	/^#define FAST_IO /;"	d	file:
+INC_DIR	Makefile	/^INC_DIR   = inc$/;"	m
+INF	src/main.cpp	/^#define INF /;"	d	file:
+LD	Makefile	/^LD     = clang++$/;"	m
+LDFLAG	Makefile	/^LDFLAG := ${LFLAG} -v$/;"	m
+OBJ	Makefile	/^OBJ       = $(addprefix ${OBJ_DIR}\/, $(notdir ${SRC:.cpp=.o}))$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR   = obj$/;"	m
+PI	src/main.cpp	/^#define PI /;"	d	file:
+SRC	Makefile	/^SRC       = $(wildcard ${SRC_DIR}\/*.cpp)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR   = src$/;"	m
+ab	src/main.cpp	/^#define ab(/;"	d	file:
+all	Makefile	/^all: dir ${BIN}$/;"	t
+all	src/main.cpp	/^#define all(/;"	d	file:
+asum	src/main.cpp	/^#define asum(/;"	d	file:
+br	src/main.cpp	/^#define br /;"	d	file:
+cfp	src/main.cpp	/^#define cfp(/;"	d	file:
+clean	Makefile	/^clean:$/;"	t
+clr	src/main.cpp	/^#define clr(/;"	d	file:
+cltrim	src/main.cpp	/^inline string cltrim(string s) { ltrim(s); return s; }$/;"	f	typeref:typename:string
+cpresent	src/main.cpp	/^#define cpresent(/;"	d	file:
+crtrim	src/main.cpp	/^inline string crtrim(string s) { rtrim(s); return s; }$/;"	f	typeref:typename:string
+debug	Makefile	/^debug: dir ${DEBUG_BIN}$/;"	t
+dir	Makefile	/^dir:$/;"	t
+eb	src/main.cpp	/^#define eb /;"	d	file:
+fe	src/main.cpp	/^#define fe /;"	d	file:
+fileI	src/main.cpp	/^#define fileI(/;"	d	file:
+fileIO	src/main.cpp	/^#define fileIO(/;"	d	file:
+gcd	src/main.cpp	/^template<typename T> T gcd(T a, T b) { return ((b)?__gcd(a,b):(a)); }$/;"	f	typeref:typename:T
+inrange	src/main.cpp	/^#define inrange(/;"	d	file:
+itoc	src/main.cpp	/^#define itoc(/;"	d	file:
+lD	src/main.cpp	/^#define lD /;"	d	file:
+lcm	src/main.cpp	/^template<typename T> T lcm(T a, T b) { return ((a)*((b)\/gcd(a,b))); }$/;"	f	typeref:typename:T
+ll	src/main.cpp	/^#define ll /;"	d	file:
+loop	src/main.cpp	/^#define loop(/;"	d	file:
+loopd	src/main.cpp	/^#define loopd(/;"	d	file:
+loopds	src/main.cpp	/^#define loopds(/;"	d	file:
+loopl	src/main.cpp	/^#define loopl(/;"	d	file:
+loopld	src/main.cpp	/^#define loopld(/;"	d	file:
+looplds	src/main.cpp	/^#define looplds(/;"	d	file:
+loopls	src/main.cpp	/^#define loopls(/;"	d	file:
+loops	src/main.cpp	/^#define loops(/;"	d	file:
+ltrim	src/main.cpp	/^inline void ltrim(string& s) { s.erase(s.begin(), find_if(all(s), not1(ptr_fun<int, int>(isspace/;"	f	typeref:typename:void
+main	src/main.cpp	/^signed main() {$/;"	f	typeref:typename:signed
+mid	src/main.cpp	/^#define mid(/;"	d	file:
+mn	src/main.cpp	/^#define mn(/;"	d	file:
+mod	src/main.cpp	/^#define mod(/;"	d	file:
+mp	src/main.cpp	/^#define mp /;"	d	file:
+mset	src/main.cpp	/^#define mset(/;"	d	file:
+mx	src/main.cpp	/^#define mx(/;"	d	file:
+nl	src/main.cpp	/^#define nl /;"	d	file:
+pb	src/main.cpp	/^#define pb /;"	d	file:
+pii	src/main.cpp	/^using pii = pair<int, int>;$/;"	t	typeref:typename:pair<int,int>	file:
+pll	src/main.cpp	/^using pll = pair<ll, ll>;$/;"	t	typeref:typename:pair<ll,ll>	file:
+pq	src/main.cpp	/^#define pq(/;"	d	file:
+pqd	src/main.cpp	/^#define pqd(/;"	d	file:
+present	src/main.cpp	/^#define present(/;"	d	file:
+print_mat	src/main.cpp	/^inline void print_mat(const vvi& t) {$/;"	f	typeref:typename:void
+rall	src/main.cpp	/^#define rall(/;"	d	file:
+rang	src/main.cpp	/^mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());$/;"	v	typeref:typename:mt19937_64
+rep	src/main.cpp	/^#define rep(/;"	d	file:
+repd	src/main.cpp	/^#define repd(/;"	d	file:
+repl	src/main.cpp	/^#define repl(/;"	d	file:
+repld	src/main.cpp	/^#define repld(/;"	d	file:
+rloop	src/main.cpp	/^#define rloop(/;"	d	file:
+rloopd	src/main.cpp	/^#define rloopd(/;"	d	file:
+rloopds	src/main.cpp	/^#define rloopds(/;"	d	file:
+rloopl	src/main.cpp	/^#define rloopl(/;"	d	file:
+rloopld	src/main.cpp	/^#define rloopld(/;"	d	file:
+rlooplds	src/main.cpp	/^#define rlooplds(/;"	d	file:
+rloopls	src/main.cpp	/^#define rloopls(/;"	d	file:
+rloops	src/main.cpp	/^#define rloops(/;"	d	file:
+rmn	src/main.cpp	/^#define rmn(/;"	d	file:
+rmx	src/main.cpp	/^#define rmx(/;"	d	file:
+rngi	src/main.cpp	/^int rngi(int lim) {$/;"	f	typeref:typename:int
+rngr	src/main.cpp	/^double rngr(double lim) {$/;"	f	typeref:typename:double
+rtrim	src/main.cpp	/^inline void rtrim(string& s) { s.erase(find_if(rall(s), not1(ptr_fun<int, int>(isspace))).base()/;"	f	typeref:typename:void
+se	src/main.cpp	/^#define se /;"	d	file:
+solvethetestcase	src/main.cpp	/^void solvethetestcase() {$/;"	f	typeref:typename:void
+sz	src/main.cpp	/^#define sz(/;"	d	file:
+tokenize	src/main.cpp	/^inline void tokenize(const string& str, vd& out, const char&& delim) {$/;"	f	typeref:typename:void
+tokenize	src/main.cpp	/^inline void tokenize(const string& str, vi& out, const char&& delim) {$/;"	f	typeref:typename:void
+tokenize	src/main.cpp	/^inline void tokenize(const string& str, vs& out, const char&& delim) {$/;"	f	typeref:typename:void
+tr	src/main.cpp	/^#define tr(/;"	d	file:
+trim	src/main.cpp	/^inline void trim(string& s) { ltrim(s); rtrim(s); }$/;"	f	typeref:typename:void
+trr	src/main.cpp	/^#define trr(/;"	d	file:
+two_sum	src/main.cpp	/^vi two_sum(vi& nums, int target) {$/;"	f	typeref:typename:vi
+umap	src/main.cpp	/^#define umap /;"	d	file:
+uset	src/main.cpp	/^#define uset /;"	d	file:
+vd	src/main.cpp	/^using vd = vector<double>;$/;"	t	typeref:typename:vector<double>	file:
+vi	src/main.cpp	/^using vi = vector<int>;$/;"	t	typeref:typename:vector<int>	file:
+vpii	src/main.cpp	/^using vpii = vector<pii>;$/;"	t	typeref:typename:vector<pii>	file:
+vpll	src/main.cpp	/^using vpll = vector<pll>;$/;"	t	typeref:typename:vector<pll>	file:
+vs	src/main.cpp	/^using vs = vector<string>;$/;"	t	typeref:typename:vector<string>	file:
+vvd	src/main.cpp	/^using vvd = vector<vd>;$/;"	t	typeref:typename:vector<vd>	file:
+vvi	src/main.cpp	/^using vvi = vector<vi>;$/;"	t	typeref:typename:vector<vi>	file:
+vvs	src/main.cpp	/^using vvs = vector<vs>;$/;"	t	typeref:typename:vector<vs>	file:
+wl	src/main.cpp	/^#define wl /;"	d	file:

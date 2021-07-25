@@ -143,58 +143,109 @@ signed main() {
 
 	int t = 1;
 	//(uncomment for multiple test cases)
-	cin >> t;
-	cin.ignore();
+	//cin >> t;
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cout << "Case #" << testcase << ": ";
-		br;
+		//cout << "Case #" << testcase << ": ";
+		//br;
 		solvethetestcase();
 	}
 }
 
-vi intersect(vi& nums1, vi& nums2) {
-	vi res{};
-	sort(nums1.begin(), nums1.end());
-	sort(nums2.begin(), nums2.end());
-	vi::size_type i{}, j{};
-	while(i < nums1.size() && j < nums2.size()) {
-		if(nums1[i] > nums2[j]) j++;
-		else if(nums1[i] < nums2[j]) i++;
-		else {
-			res.pb(nums1[i]);
-			i++; j++;
-		}
-	}
-	return res;
-}
+/**
+ * Definition for a binary tree node.
+ */
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
 
-/** Another approach, though I'm not entirely sure if this is better */
-using umseti = unordered_multiset<int>;
-vi intersect2(vi& nums1, vi& nums2) {
-	umseti elements{}, distinct{};
-	for(vi::size_type i = 0; i < nums1.size(); i++)
-		elements.insert(nums1[i]);
-
-	for(vi::size_type i = 0; i < nums2.size(); i++) {
-		if(elements.count(nums2[i])) {  // if element exists
-			distinct.insert(nums2[i]);  // common element
-			umseti::iterator iter = elements.find(nums2[i]);
-			elements.erase(iter);
+/** This approach would work in every condition */
+class Solution {
+	public:
+		TreeNode* sortedArrayToBST(vector<int>& nums) {
+			TreeNode* root = nullptr;
+			for(const int& x: nums) insert(root, x);
+			return root;
 		}
-	}
-	return vi(distinct.begin(), distinct.end());
-}
+		void insert(TreeNode* & root, int x) {
+			if(nullptr == root) root = new TreeNode(x);
+			else if(root->val > x) insert(root->left, x);
+			else if(root->val < x) insert(root->right, x);
+			balance(root);
+		}
+		size_t height(TreeNode* root) {
+			if(nullptr == root) return 0;
+			return 1 + max(height(root->left), height(root->right));
+		}
+		void balance(TreeNode* & root) {
+			if(nullptr == root) return;
+			if((long)(height(root->left) - height(root->right)) > 1) {
+				if(height(root->left->left) >= height(root->left->right)) rotate_with_left_child(root);
+				else drotate_with_left_child(root);
+			}
+			else if((long)(height(root->right) - height(root->left)) > 1) {
+				if(height(root->right->right) >= height(root->right->left)) rotate_with_right_child(root);
+				else drotate_with_right_child(root);
+			}
+		}
+		void rotate_with_left_child(TreeNode* & root) {  // right rotation
+			TreeNode* temp = root->left;
+			root->left = temp->right;
+			temp->right = root;
+			root = temp;
+		}
+		void rotate_with_right_child(TreeNode* & root) {  // left rotation
+			TreeNode* temp = root->right;
+			root->right = temp->left;
+			temp->left = root;
+			root = temp;
+		}
+		void drotate_with_left_child(TreeNode* root) {  // LR rotation
+			rotate_with_right_child(root->left);
+			rotate_with_left_child(root);
+		}
+		void drotate_with_right_child(TreeNode* root) {  // RL rotation
+			rotate_with_left_child(root->right);
+			rotate_with_right_child(root);
+		}
+};
+
+/** A simple approach if array is sorted */
+class Solution2 {
+	public:
+		TreeNode* sortedArrayToBST(vector<int>& nums) {
+			return helper(nums, 0, nums.size() - 1);
+		}
+		TreeNode* helper(vector<int>& nums, int start, int end) {
+			if(start > end) return nullptr;
+			int mid = (start + end) / 2;
+			TreeNode* node = new TreeNode(nums[mid]);
+			node->left = helper(nums, start, mid - 1);
+			node->right = helper(nums, mid + 1, end);
+			return node;
+		}
+		size_t height(TreeNode* root) {
+			if(nullptr == root) return 0;
+			return 1 + max(height(root->left), height(root->right));
+		}
+};
 
 void solvethetestcase() {
-	vi in1{}, in2{};
+	vi in{};
 	string input{};
 	getline(cin, input);
-	tokenize(input, in1, ',');
-	getline(cin, input);
-	tokenize(input, in2, ',');
-	for(const int& x: intersect2(in1, in2)) cout << x << ' ';
-	br;
+	tokenize(input, in, ',');
+	//Solution s;
+	//TreeNode* root = s.sortedArrayToBST(in);
+	Solution2 s;
+	TreeNode* root = s.sortedArrayToBST(in);
+	cout << "height: " << s.height(root) << nl;
 }
 
 #pragma GCC diagnostic pop

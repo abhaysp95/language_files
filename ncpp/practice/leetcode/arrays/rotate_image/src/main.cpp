@@ -144,7 +144,7 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
-	cin.ignore();
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
 		cout << "Case #" << testcase << ": ";
@@ -153,48 +153,36 @@ signed main() {
 	}
 }
 
-vi intersect(vi& nums1, vi& nums2) {
-	vi res{};
-	sort(nums1.begin(), nums1.end());
-	sort(nums2.begin(), nums2.end());
-	vi::size_type i{}, j{};
-	while(i < nums1.size() && j < nums2.size()) {
-		if(nums1[i] > nums2[j]) j++;
-		else if(nums1[i] < nums2[j]) i++;
-		else {
-			res.pb(nums1[i]);
-			i++; j++;
+void rotate(vvi& matrix) {
+	size_t cr{}, cc{}, re{matrix.size() - 1}, ce{matrix[0].size() - 1};
+	for(int i = 0; i < (matrix.size() / 2); i++) {
+		for(int j = i; j < (matrix.size() - i) - 1; j++) {
+			int temp = matrix[cr + i][j];
+			matrix[cr + i][j] = matrix[re - j][cc + i];
+			matrix[re - j][cc + i] = matrix[re - i][ce - j];
+			matrix[re - i][ce - j] = matrix[cr + j][ce - i];
+			matrix[cr + j][ce - i] = temp;
 		}
 	}
-	return res;
-}
-
-/** Another approach, though I'm not entirely sure if this is better */
-using umseti = unordered_multiset<int>;
-vi intersect2(vi& nums1, vi& nums2) {
-	umseti elements{}, distinct{};
-	for(vi::size_type i = 0; i < nums1.size(); i++)
-		elements.insert(nums1[i]);
-
-	for(vi::size_type i = 0; i < nums2.size(); i++) {
-		if(elements.count(nums2[i])) {  // if element exists
-			distinct.insert(nums2[i]);  // common element
-			umseti::iterator iter = elements.find(nums2[i]);
-			elements.erase(iter);
-		}
-	}
-	return vi(distinct.begin(), distinct.end());
 }
 
 void solvethetestcase() {
-	vi in1{}, in2{};
+	int row{};
+	vvi t{};
+	vi temp{};
 	string input{};
-	getline(cin, input);
-	tokenize(input, in1, ',');
-	getline(cin, input);
-	tokenize(input, in2, ',');
-	for(const int& x: intersect2(in1, in2)) cout << x << ' ';
-	br;
+	cin >> row;
+	cin.ignore();
+	while(row--) {
+		getline(cin, input);
+		tokenize(input, temp, ',');
+		t.pb(move(temp));
+	}
+	cout << "before rotation: " << nl;
+	print_mat(t);
+	rotate(t);
+	cout << "after rotation:"  << nl;
+	print_mat(t);
 }
 
 #pragma GCC diagnostic pop
