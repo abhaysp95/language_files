@@ -24,3 +24,13 @@ packages_crates_and_modules/restaurant/Cargo.lock
 packages_crates_and_modules/restaurant/target
 packages_crates_and_modules/seperate_restaurant/Cargo.lock
 packages_crates_and_modules/seperate_restaurant/target
+common_collections/rust_hashmap/Cargo.lock
+common_collections/rust_hashmap/target
+common_collections/rust_string/Cargo.lock
+common_collections/rust_string/target
+common_collections/rust_vectors/Cargo.lock
+common_collections/rust_vectors/target
+error_handling/rust_panic/Cargo.lock
+error_handling/rust_panic/target
+error_handling/rust_recoverable_error/Cargo.lock
+error_handling/rust_recoverable_error/target
