@@ -46,3 +46,6 @@ write_automated_tests/adder/Cargo.lock
 write_automated_tests/adder/target
 write_automated_tests/test_organization/Cargo.lock
 write_automated_tests/test_organization/target
+minigrep/Cargo.lock
+minigrep/target
+minigrep/poem.txt
