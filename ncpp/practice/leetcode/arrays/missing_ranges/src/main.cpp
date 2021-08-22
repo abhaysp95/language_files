@@ -143,61 +143,52 @@ signed main() {
 
 	int t = 1;
 	//(uncomment for multiple test cases)
-	cin >> t;
+	//cin >> t;
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
-		cout << "Case #" << testcase << ": ";
-		br;
+		//cout << "Case #" << testcase << ": ";
+		//br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
-			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+string get_range(int low, int high) {  // inclusive range
+	if(high - low > 2) {
+		return to_string(low + 1) + "->" + to_string(high - 1);
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
+	return to_string(low + 1);
+}
+
+vs find_missing_ranges(const vi& vec, int low, int up) {
+	vs res{};
+	for(vi::size_type i = 0; i <= vec.size(); i++) {
+		// if first element
+		if(i == 0) {
+			/** low - 1 because from where I saw the question, test case had inclusive range on corner elements */
+			if(vec[i] - low > 1) res.push_back(get_range(low - 1, vec[i]));
+		}
+		// if last element
+		else if(i == vec.size()) {
+			/** up + 1, because of the same reason I gave for 'low - 1' */
+			if(up - vec[i - 1] > 1) res.push_back(get_range(vec[i - 1], up + 1));
+		}
+		else {
+			if(vec[i] - vec[i - 1] > 1) res.push_back(get_range(vec[i - 1], vec[i]));
+		}
 	}
 	return res;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
-	}
-}
-
 void solvethetestcase() {
-	vi in{};
-	int tt{};
 	string input{};
-	getline(cin, input);
-	cin >> tt;
+	vi in{};
+	int u{}, l{};
+	cin >> input >> l >> u;
 	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	//cout << input << "," << l << "," << u << nl;
+	vs res = find_missing_ranges(in, l, u);
+	for(const string& str: res) cout << str << nl;
 }
 
 #pragma GCC diagnostic pop

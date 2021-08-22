@@ -144,60 +144,98 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
+//#define ROW_ONLY 2
+//#define COL_ONLY 1
+
+//void do_zero(vvi& matrix, size_t i, size_t j, int flag) {
+	//if(flag & ROW_ONLY) for(vector<int>::size_type x = 0; x < matrix[0].size(); x++) matrix[i][x] = 0;
+	//if(flag & COL_ONLY) for(vector<vector<int>>::size_type x = 0; x < matrix.size(); x++) matrix[x][j] = 0;
+//}
+
+//void set_zeroes(vvi& matrix) {
+	//vi czero(matrix[0].size(), 0);
+	//for(vector<vector<int>>::size_type i = 0; i < matrix.size(); i++) {
+		//bool row_have_zero{false};
+		//for(vector<int>::size_type j = 0; j < matrix[0].size(); j++) {
+			//int flag = 0;
+			//if(!matrix[i][j]) {
+				//if(!czero[j]) {
+					//row_have_zero = true;
+					//czero[j] = 1;
+					//flag |= COL_ONLY;
+					//do_zero(matrix, i, j, flag);
+				//}
+			//}
+			//if(matrix[0].size() - 1 == j && row_have_zero) {
+				//flag = 0;
+				//flag |= ROW_ONLY;
+				//do_zero(matrix, i, j, flag);
+			//}
+		//}
+	//}
+//}
+
+void set_zeroes(vvi& matrix) {
+	vector<bool> czero(matrix[0].size(), false), rzero(matrix.size(), false);
+	for(size_t i = 0; i < matrix.size(); i++) {
+		for(size_t j = 0; j < matrix[0].size(); j++) {
+			if(matrix[i][j] == 0) {
+				if(!rzero[i]) rzero[i] = true;
+				if(!czero[j]) czero[j] = true;
 			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+		}
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
-	}
-	return res;
+
+	for(size_t i = 0; i < matrix.size(); i++) if(rzero[i]) for(size_t j = 0; j < matrix[0].size(); j++) matrix[i][j] = 0;
+	for(size_t i = 0; i < matrix[0].size(); i++) if(czero[i]) for(size_t j = 0; j < matrix.size(); j++) matrix[j][i] = 0;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+void set_zeroes2(vvi& matrix) {
+	bool row_zero{false};  // this will tell if orignal matrix have any zero in its first row
+	size_t m{matrix.size()}, n{matrix[0].size()};
+	for(size_t i = 0; i < m; i++) {
+		for(size_t j = 0; j < n; j++) {
+			if(matrix[i][j] == 0) {
+				matrix[0][j] = 0;  // this will be mark for later on for setting zero to a column
+				if(i > 0) matrix[i][0] = 0;  // mark for setting zero to a row
+				else row_zero = true;
+			}
+		}
 	}
+	for(size_t i = 1; i < m; i++) {
+		for(size_t j = 1; j < n; j++) {
+			if(matrix[0][j] == 0 || matrix[i][0] == 0) matrix[i][j] = 0;
+		}
+	}
+	if(matrix[0][0] == 0) {  // it could be zero only it is originally zero
+		for(size_t i = 1; i < m; i++) matrix[i][0] = 0;
+	}
+	if(row_zero) for(size_t i = 0; i < n; i++) matrix[0][i] = 0;
 }
 
 void solvethetestcase() {
-	vi in{};
-	int tt{};
+	vvi matrix{};
 	string input{};
-	getline(cin, input);
-	cin >> tt;
-	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	while(getline(cin, input)) {
+		if (input.empty()) break;
+		vi temp{};
+		tokenize(input, temp, ',');
+		matrix.push_back(move(temp));
+	}
+	cout << "Before: " << nl;
+	print_mat(matrix);
+	set_zeroes2(matrix);
+	cout << "After: " << nl;
+	print_mat(matrix);
 }
 
 #pragma GCC diagnostic pop

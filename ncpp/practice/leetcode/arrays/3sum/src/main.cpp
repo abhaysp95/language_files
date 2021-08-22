@@ -144,60 +144,66 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
+// time limit will exceed for large inputs
+vvi three_sum(vi& nums) {
+	vector<vector<int>> res{};
+	for(vector<int>::size_type i = 0; i < nums.size() - 2; i++) {
+		unordered_map<int, int> ump{};
+		for(vector<int>::size_type j = i + 1; j < nums.size() - 1; j++) {
+			unordered_map<int, int>::iterator iter = ump.find(0 - (nums[i] + nums[j]));
+			if (iter != ump.end()) {
+				vector<int> temp{nums[i], nums[j], (0 - (nums[i] + nums[j]))};
+				sort(temp.begin(), temp.end());
+				vector<vector<int>>::iterator fiter = find(res.begin(), res.end(), temp);
+				if(fiter == res.end()) res.push_back(temp);
 			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
-	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
+			else {
+				ump[nums[j]] = (0 - (nums[i] + nums[j]));
+			}
+		}
 	}
 	return res;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+vvi three_sum2(vi& nums) {
+	if (nums.size() < 3) return vector<vector<int>>();
+	vector<vector<int>> res{};
+	sort(nums.begin(), nums.end());
+	for(int i = 0; i < nums.size() - 2; i++) {
+		if(i > 0 && nums[i] == nums[i - 1]) continue;
+		int l{i + 1}, r{static_cast<int>(nums.size() - 1)};
+		while (l < r) {
+			int sum = nums[i] + nums[l] + nums[r];
+			if (0 == sum) {
+				res.push_back(vector<int>{nums[i], nums[l], nums[r]}), l++;
+				while (nums[l] == nums[l - 1] && l < r) l++;
+			}
+			else if(0 > sum) l++;
+			else r--;
+		}
 	}
+	return res;
 }
 
 void solvethetestcase() {
-	vi in{};
-	int tt{};
 	string input{};
+	vi in{};
 	getline(cin, input);
-	cin >> tt;
 	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	vvi result = three_sum2(in);
+	for (const vi& vec: result) {
+		for (const int& x: vec) cout << x << ' ';
+		br;
+	}
 }
 
 #pragma GCC diagnostic pop

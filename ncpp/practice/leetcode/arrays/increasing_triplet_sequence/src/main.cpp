@@ -144,60 +144,51 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
+// not correct solution
+bool solve(const vi& nums) {
+	long l{0}, r{0};
+	for(vector<int>::size_type i = 0; i < nums.size() - 2; i++) {
+		l = i + 1, r = nums.size() - 1;
+		while(l < r) {
+			if(nums[l] < nums[r]) {
+				if(nums[i] < nums[l])
+					return true;
+				else break;
 			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+			else {
+				if(nums[l] < nums[r - 1]) r--;
+				else l++;
+			}
+		}
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
-	}
-	return res;
+	return false;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+bool solve2(const vi& nums) {
+	long l{LONG_MAX - 1}, m{LONG_MAX - 1};
+	for(vector<int>::size_type i = 0; i < nums.size(); i++) {
+		if(nums[i] > m) return true;
+		else if(nums[i] < l) l = nums[i];
+		else if(nums[i] > l && nums[i] < m) m = nums[i];
 	}
+	return false;
 }
 
 void solvethetestcase() {
-	vi in{};
-	int tt{};
 	string input{};
+	vi in{};
 	getline(cin, input);
-	cin >> tt;
 	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	cout << (solve(in) ? "TRUE" : "FALSE") << nl;
 }
 
 #pragma GCC diagnostic pop

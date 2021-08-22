@@ -144,60 +144,71 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
-			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+// so, this solution got accepted, but it doesn't look much good
+int length_of_longest_substring(string s) {
+	int max_count{}, cur_count{1};
+	if (1 >= s.size()) return s.size();
+	int i{0}, j{1};
+	while(i < s.size() && j < s.size()) {
+		if((s.begin() + j) == find(s.begin() + i, s.begin() + j, s[j])) {  // if the iterator returned is not in between i & j
+			cur_count++;
+		}
+		else {
+			if(max_count < cur_count) max_count = cur_count;
+			cur_count = 1;
+			i++, j = i;
+		}
+		j++;
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
-	}
-	return res;
+	if(max_count < cur_count) max_count = cur_count;
+	return max_count;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+// slightly better solution then above but uses extra space
+int length_of_longest_substring2(string s) {
+	set<char> st{};  // this will fail if you'll use unordered_set here
+	int i = 0, j = 0, longest = 0;
+	while(i < s.size() && j < s.size()) {
+		if(st.find(s[j]) != st.end()) {
+			st.erase(s[i++]);
+		}
+		else {
+			st.insert(s[j++]);
+			longest = max(longest, j - i);
+		}
 	}
+	return longest;
+}
+
+// better approach
+int length_of_longest_substring3(string s) {
+	unordered_map<char, int> ump{};
+	int i{}, j{}, longest{};
+	while(i < s.size() && j < s.size()) {
+		if(ump.find(s[j]) != ump.end()) {
+			i = max(ump[s[j]], i);
+		}
+		ump[s[j]] = j + 1;
+		longest = max(longest, j - i + 1);
+		j++;
+	}
+	return longest;
 }
 
 void solvethetestcase() {
-	vi in{};
-	int tt{};
 	string input{};
-	getline(cin, input);
-	cin >> tt;
-	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	cin >> input;
+	cout << "input: " << input << nl;
+	cout << length_of_longest_substring3(input) << nl;
 }
 
 #pragma GCC diagnostic pop

@@ -144,60 +144,70 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	//cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
+// tried dp method(but it's not entirely correct, will look for improvement)
+string longest_palindrome_substring(const string& str1) {
+	if(str1.empty()) return "";
+	string str2{str1}, res{};
+	reverse(str2.begin(), str2.end());
+	pair<size_t, size_t> max_idx{};
+	size_t mlen{};
+	vector<vector<int>> t(str1.size() + 1, vector<int>(str1.size() + 1, 0));
+
+	for(string::size_type i = 1; i <= str1.size(); i++) {
+		for(string::size_type j = 1; j <= str1.size(); j++) {
+			if(str1[i - 1] == str2[j - 1]) {
+				t[i][j] = 1 + t[i - 1][j - 1];
+				if(mlen < t[i][j]) mlen = t[i][j], max_idx.first = i, max_idx.second = j;
 			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+		}
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
+
+	long i = max_idx.first, j = max_idx.second;
+	while(i > 0 && j > 0) {
+		if(str1[i - 1] == str2[j - 1]) res += str1[i - 1], i--, j--;
+		else break;
 	}
 	return res;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+void update(long l, long r, const string& s, pair<long, long>& p, long& mlen) {
+	while((l >= 0 && r <= s.size()) && (s[l] == s[r])) {
+		if(mlen < (r - l + 1))
+			mlen = r - l + 1, p.first = l, p.second = r + 1;
+		l--, r++;
 	}
 }
 
+string longest_palindrome(const string& s) {
+	long max_len{};
+	pair<long, long> max_idx{};
+	string::size_type ssize{s.size()};
+	for(string::size_type i = 0; i < ssize; i++) {
+		// for odd len
+		long l = i, r = i;
+		update(l, r, s, max_idx, max_len);
+		// for even len
+		l = i, r = i + 1;
+		update(l, r, s, max_idx, max_len);
+	}
+	cout << max_idx.first << ", " << max_idx.second << nl;
+	return s.substr(max_idx.first, (max_idx.second - max_idx.first));  // 2nd arg is length
+	//return string(s.begin() + max_idx.first, s.begin() + max_idx.second);
+}
+
 void solvethetestcase() {
-	vi in{};
-	int tt{};
-	string input{};
-	getline(cin, input);
-	cin >> tt;
-	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	string str{};
+	cin >> str;
+	cout << longest_palindrome(str) << nl;
 }
 
 #pragma GCC diagnostic pop

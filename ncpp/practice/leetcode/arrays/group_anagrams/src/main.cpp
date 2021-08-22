@@ -144,60 +144,84 @@ signed main() {
 	int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
+	cin.ignore();
 	loopl (testcase, 1, t + 1) {
 		//(uncomment for multiple test cases)
-		cin.ignore();
 		cout << "Case #" << testcase << ": ";
 		br;
 		solvethetestcase();
 	}
 }
 
-vi two_sum(vi& nums, int target) {
-	vi res{0, 0};
-	umap<int, pair<int, int>> ump{};
-	vi::size_type i{};
-	while(i < nums.size()) {
-		// if(nums[i] <= target) {  // remove this if statement, if you want to also solve for -ve nums array
-			int temp = target - nums[i];
-			cout << "temp: " << temp << '\n';
-			umap<int, pair<int, int>>::iterator iter = ump.find(temp);
-			if(iter != ump.end()) {
-				//res[0] = distance(nums.begin(), find(nums.begin(), nums.end(), iter->first));
-				cout << "here\n";
-				res[0] = iter->second.second;
-				res[1] = i;
-				break;
-			}
-			else ump[nums[i]] = make_pair(temp, i);
-		// }
-		i++;
+// solution is correct(but not optimized)
+bool is_anagram(string a, string b) {
+	if(a.size() != b.size()) return false;
+	sort(a.begin(), a.end());
+	sort(b.begin(), b.end());
+	return a == b;
+}
+
+vector<vector<string>> group_anagrams(vector<string>& str) {
+	vector<vector<string>> res{};
+	vector<string> temp{};
+	if(str.empty()) return res;
+	else if(1 == str.size()) {
+		res.push_back(str);
 	}
-	for(auto& x: ump) {
-		cout << x.first << ", " << x.second.first << ", " << x.second.second << "\n";
+	else {
+		size_t i{0}, j{1}, k{1};
+		while(i < str.size()) {
+			temp.push_back(str[i]);
+			while(k < str.size()) {
+				if(is_anagram(str[i], str[k])) {
+					swap(str[j], str[k]);
+					temp.push_back(str[j]);
+					j++, k++;
+				}
+				else {
+					k++;
+				}
+			}
+			res.push_back(temp);
+			temp.clear();
+			i = j++, k = j;
+		}
 	}
 	return res;
 }
 
-// it is given in question that array is sorted
-vi two_sum2(vi& nums, int target) {
-	int i{0}, j{static_cast<int>(nums.size() - 1)};
-	while (i < j) {
-		if(nums[i] + nums[j] == target) return vi{i + 1, j + 1};
-		else if(nums[i] + nums[j] > target) j--;
-		else i++;
+
+vector<vector<string>> group_anagrams2(vector<string>& str) {
+	vector<vector<string>> res{};
+	unordered_map<string, vector<string>> ump{};
+	for(size_t i = 0; i < str.size(); i++) {
+		string tstr = str[i];
+		sort(tstr.begin(), tstr.end());
+		ump[tstr].push_back(str[i]);
 	}
+	for(const auto& x: ump) {
+		res.push_back(x.second);
+	}
+	return res;
 }
 
 void solvethetestcase() {
-	vi in{};
-	int tt{};
+	vector<string> in{};
 	string input{};
 	getline(cin, input);
-	cin >> tt;
 	tokenize(input, in, ',');
-	vi res = two_sum(in, tt);
-	cout << "[" << res[0] << ", " << res[1] << "]" << nl;
+	vector<vector<string>> res = group_anagrams2(in);
+	cout << "[";
+	for(size_t i = 0; i < res.size(); i++) {
+		cout << "[";
+		for(size_t j = 0; j < res[i].size(); j++) {
+			cout << res[i][j];
+			if(j < res[i].size() - 1) cout << ", ";
+		}
+		cout << "]";
+		if(i < res.size() - 1) cout << ", ";
+	}
+	cout << "]" << nl;
 }
 
 #pragma GCC diagnostic pop
