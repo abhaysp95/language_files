@@ -29,7 +29,7 @@ fn test_mybox() {
 // Without 'Deref' trait, the compiler can only dereference & references
 
 
-// Implicit defef coercions with functions and methods
+// Implicit deref coercions with functions and methods
 // deref coercion is a convinience that Rust performs on arguments to functions and methods. Deref coercion works only on types that implement the 'Deref' trait. Like, deref coercion can convert &String to &str because String implements the 'Deref' trait such that it returns 'str'
 
 fn hello(name: &str) {
