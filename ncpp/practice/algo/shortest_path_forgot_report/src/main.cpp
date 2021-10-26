@@ -160,8 +160,11 @@ signed main() {
 }
 
 vvi mat;
+vector<bool> vis;
+int res = INF;
 
-int get_shortest_path(int n, int k) {
+/** initial approach */
+/** int get_shortest_path(int n, int k) {
 	size_t path_sum{};
 	for(int i = 0; i < n - 1; i++) {
 		path_sum += min(mat[i][i + 1], mat[i + 1][i]);
@@ -175,12 +178,42 @@ int get_shortest_path(int n, int k) {
 		//path_sum += min(mat[i][i - 1], mat[i - 1][i]);
 	//}
 	return path_sum;
+} */
+
+
+bool all_path_visited() {
+	for(bool x: vis) {
+		if(!x) return false;
+	}
+	return true;
 }
+
+void depth_first_search(int k, int current, int temp) {
+	if(all_path_visited()) {
+		temp += mat[current][k - 1] + mat[k - 1][0];
+		res = min(res, temp);
+	}
+	for(size_t i = 0; i < vis.size(); i++) {
+		if(!vis[i]) {
+			vis[i] = true;
+			depth_first_search(k, i, temp + mat[current][i]);
+			vis[i] = false;
+		}
+	}
+}
+
+int get_shortest_path(int n, int k) {
+	vis[0] = true;
+	depth_first_search(k, 0, 0);
+	return res;
+}
+
 
 void solvethetestcase() {
 	int K{}, N{};
 	cin >> K >> N;
-	mat.resize(4, vi(4, 0));
+	mat.resize(N, vi(N, 0));
+	vis.resize(N);
 	for(size_t i = 0; i < N; i++) {
 		vi temp(N);
 		for(size_t j = 0; j < N; j++) {
