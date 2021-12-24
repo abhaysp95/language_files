@@ -8,7 +8,7 @@
 		<title>Beating HEART</title>
 <style>
 	.back {
-			background: linear-gradient(to bottom, pink, red, pink);
+		background: linear-gradient(to bottom, pink, red, pink);
 		position: fixed;
 		top: 0px;
 		left: 0px;
@@ -17,10 +17,12 @@
 		animation-name: backdiv;
 		animation-duration: 830ms;
 		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.6, 0.4, 0.8, 0.8);
 	}
 	.heart {
 		margin: auto;
-		background: linear-gradient(35deg, pink, red, pink);
+		// background: linear-gradient(35deg, pink, red, pink);
+		background-color: #b05557;
 		height: 200px;
 		width: 200px;
 		position: absolute;
@@ -30,9 +32,11 @@
 		animation-name: beat;
 		animation-duration: 830ms;
 		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.4, 0.2, 0.8, 1.6);
 	}
 	.heart::before {
-		background: linear-gradient(-125deg, pink, red);
+		// background: linear-gradient(-125deg, pink, red);
+		background-color: #b05557;
 		content: "";
 		height: 200px;
 		width: 200px;
@@ -41,7 +45,8 @@
 		border-radius: 50%;
 	}
 	.heart::after {
-		background: linear-gradient(-125deg, pink, red);
+		// background: linear-gradient(-125deg, pink, red);
+		background-color: #b05557;
 		height: 200px;
 		width: 200px;
 		content: "";
