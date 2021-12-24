@@ -1,0 +1,72 @@
+<!-- how to get same shade of linear-gradient across the pseudo-elements too,
+	so that the pseudo elements combining the actual element look like that
+	they are infact one element (not 2 or 3) -->
+
+<!DOCTYPE html5>
+<html>
+	<head>
+		<title>Beating HEART</title>
+<style>
+	.back {
+			background: linear-gradient(to bottom, pink, red, pink);
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		animation-name: backdiv;
+		animation-duration: 830ms;
+		animation-iteration-count: infinite;
+	}
+	.heart {
+		margin: auto;
+		background: linear-gradient(35deg, pink, red, pink);
+		height: 200px;
+		width: 200px;
+		position: absolute;
+		top: 250px;
+		left: 550px;
+		transform: rotate(-45deg);
+		animation-name: beat;
+		animation-duration: 830ms;
+		animation-iteration-count: infinite;
+	}
+	.heart::before {
+		background: linear-gradient(-125deg, pink, red);
+		content: "";
+		height: 200px;
+		width: 200px;
+		position: absolute;
+		bottom: 110px;
+		border-radius: 50%;
+	}
+	.heart::after {
+		background: linear-gradient(-125deg, pink, red);
+		height: 200px;
+		width: 200px;
+		content: "";
+		position: absolute;
+		left: 110px;
+		border-radius: 50%;
+	}
+	<!-- @keyframes backdiv {
+		50% {
+			background-color: pink;
+			background: linear-gradient(to bottom, red, pink, red);
+		}
+	}
+	@keyframes beat {
+		0% {
+			transform: scale(1) rotate(-45deg);
+		}
+		50% {
+			transform: scale(0.6) rotate(-45deg);
+		}
+	} -->
+</style>
+	</head>
+	<body>
+		<div class="back"></div>
+		<div class="heart"></div>
+	</body>
+</html>
