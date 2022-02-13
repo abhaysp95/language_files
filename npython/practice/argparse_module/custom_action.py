@@ -2,10 +2,10 @@ import argparse
 
 class VerboseStore(argparse.Action):
     def __init__(self, option_strings, dest, nargs=None, **kwargs):
-        # print(option_strings)
-        # print(dest)
-        # print(nargs)
-        # print(kwargs)
+        print(option_strings)
+        print(dest)
+        print(nargs)
+        print(kwargs)
         if nargs is not None:
             raise ValueError('nargs not allowed')
         super(VerboseStore, self).__init__(option_strings, dest, **kwargs)
