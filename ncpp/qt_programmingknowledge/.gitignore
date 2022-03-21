@@ -1,5 +1,1 @@
-build-LoginApp-Desktop-Debug/
-build-QMessageBox-Desktop-Debug/
-build-QMessageBox-Desktop-Release/
-build-SecondWindow-Desktop-Debug/
-build-SplitterDemo-Desktop-Debug/
+build-*/
