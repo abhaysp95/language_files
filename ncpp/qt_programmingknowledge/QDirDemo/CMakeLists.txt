@@ -19,6 +19,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.hpp
         mainwindow.ui
+        newitemwindow.hpp
+        newitemwindow.cpp
+        newitemwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

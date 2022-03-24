@@ -3,6 +3,8 @@
 
 #include <QDebug>
 
+#include <newitemwindow.hpp>
+
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 	, ui(new Ui::MainWindow)
@@ -21,10 +23,12 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::listDirectories() {
 	qDebug() << "listDirectories: " << dir.dirName() << '\n';
 
+
 	for (QFileInfo& finfo: dir.entryInfoList()) {
+		qDebug() << finfo.fileName() << ", " << finfo.isDir() << '\n';
 		if (finfo.isDir()) {
 			qDebug() << "\tdir: " << finfo.absoluteFilePath();
-			ui->comboBox->addItem(finfo.fileName());  // not using absolutePath() or similar functions
+			ui->comboBox->addItem(finfo.absoluteFilePath());  // not using absolutePath() or similar functions
 		}
 	}
 }
@@ -33,6 +37,7 @@ void MainWindow::listFiles() {
 	qDebug() << "listFiles: " << dir.dirName() << '\n';
 
 	for (QFileInfo& finfo: dir.entryInfoList()) {
+		qDebug() << finfo.fileName() << ", " << finfo.isFile() << '\n';
 		if (finfo.isFile()) {
 			ui->listWidget->addItem(finfo.fileName());
 		}
@@ -48,12 +53,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
 	if (this->dir != QDir::root() || ui->comboBox->currentText() != "") {
-		qDebug() << "pushbutton: " << ui->comboBox->currentText() << '\n';
+		qDebug() << "update: " << ui->comboBox->currentText() << '\n';
 		this->dir.setPath(ui->comboBox->currentText());
 	}
 
+	qDebug() << "update: " << this->dir.dirName() << '\n';
 
 	ui->comboBox->clear();
 	ui->listWidget->clear();
@@ -69,4 +74,21 @@ void MainWindow::on_pushButton_clicked()
 // {
 	// this->dir.setPath(ui->comboBox->currentText());
 // }
+
+
+// to create new file
+void MainWindow::on_pushButton_2_clicked()
+{
+		// NewItemWindow newItemWindow {this};
+		NewItemWindow newItemWindow (this->dir);
+		newItemWindow.setModal(true);
+		newItemWindow.exec();
+}
+
+
+// to create new folder
+void MainWindow::on_pushButton_3_clicked()
+{
+
+}
 
