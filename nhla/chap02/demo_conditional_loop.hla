@@ -1,0 +1,49 @@
+program Demo_Conditional_Loop;
+
+#include ("stdlib.hhf");
+
+static
+	i: int16;
+
+begin Demo_Conditional_Loop;
+
+	/** using conditional statement(if, endif) too in loops for demonstration */
+
+	// forever loop
+	mov(0, i);
+	forever
+		if (i == 50) then
+			stdout.put("Reached CheckPoint: ", i, nl);
+			// you can also just use break here
+		elseif (i == 25) then
+			stdout.put("Reached half of CheckPoint: ", i, nl);
+		endif;
+		breakif (i == 50);  // break when reach 100
+		add(5, i);
+	endfor;
+
+	stdout.put(nl, "While", nl);
+
+	// while loop
+	mov(0, i);
+	while (i < 100) do
+		if (i == 3) then
+			stdout.put("Foo", nl);
+		elseif (i == 5) then
+			stdout.put("Bar", nl);
+		elseif (i == 15) then
+			stdout.put("FooBar", nl);
+		endif;
+		breakif(i == 20);
+		add(1, i);
+	endwhile;
+
+	/** Some other program control structures
+	repeat...until  (this is like do...while loop)
+	repeat
+		sequence of one
+		or more statements
+	until (expression);
+	*/
+
+end Demo_Conditional_Loop;

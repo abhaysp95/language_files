@@ -1,0 +1,79 @@
+
+Symtab for file main.c at 0x55909af081e0
+Compilation directory is /home/raytracer/Documents/nc/practice/debug_gdb/security_tube
+Read from object file /home/raytracer/Documents/nc/practice/debug_gdb/security_tube/main_ggdb.dbg (0x55909aca45a0)
+Language: c
+
+Line table:
+
+ line 6 at 0x1159	(stmt)
+ line 8 at 0x1163	(stmt)
+ line 9 at 0x116a	(stmt)
+ line 10 at 0x1175	(stmt)
+ line 11 at 0x1178	(stmt)
+ line 13 at 0x117a	(stmt)
+ line 14 at 0x1184	(stmt)
+ line 15 at 0x118b	(stmt)
+ line 16 at 0x1194	(stmt)
+ line 17 at 0x1197	(stmt)
+ line 19 at 0x1199	(stmt)
+ line 20 at 0x11a8	(stmt)
+ line 20 at 0x11b0	(stmt)
+ line 21 at 0x11be	(stmt)
+ line 21 at 0x11c6	(stmt)
+ line 22 at 0x11d4	(stmt)
+ line 23 at 0x11e3	(stmt)
+ line 24 at 0x1210	(stmt)
+ line 25 at 0x123d	(stmt)
+ line 26 at 0x1242	(stmt)
+ line 0 at 0x1244	(stmt)
+
+Blockvector:
+
+block #000, object at 0x55909af41c80, 1 syms/buckets in 0x1159..0x1244
+ int thisIsGlobal; static at 0x4044 section .bss
+ int main(int, char **); block object 0x55909af41330, 0x1199..0x1244 section .text
+ int subtractNumber(int, int); block object 0x55909af416f0, 0x117a..0x1199
+ int addNumber(int, int); block object 0x55909af41b00, 0x1159..0x117a
+  block #001, object at 0x55909af41bc0 under 0x55909af41c80, 3 syms/buckets in 0x1159..0x1244
+   typedef unsigned char unsigned char; 
+   typedef signed char signed char; 
+   typedef long int long int; 
+   typedef unsigned int unsigned int; 
+   typedef short unsigned int short unsigned int; 
+   typedef short int short int; 
+   typedef long unsigned int long unsigned int; 
+   typedef int int; 
+   typedef char char; 
+   typedef long long int long long int; 
+    block #002, object at 0x55909af41b00 under 0x55909af41bc0, 4 syms/buckets in 0x1159..0x117a, function addNumber
+     int number_1; computed at runtime
+     int number_2; computed at runtime
+     int thisIsStatic; static at 0x4048 section .bss
+     int sum; computed at runtime
+    block #003, object at 0x55909af416f0 under 0x55909af41bc0, 3 syms/buckets in 0x117a..0x1199, function subtractNumber
+     int number_1; computed at runtime
+     int number_2; computed at runtime
+     int difference; computed at runtime
+    block #004, object at 0x55909af41330 under 0x55909af41bc0, 4 syms/buckets in 0x1199..0x1244, function main
+     int argc; computed at runtime
+     char **argv; computed at runtime
+     int input_1; computed at runtime
+     int input_2; computed at runtime
+
+
+Symtab for file /usr/include/stdio.h at 0x55909af08210
+Compilation directory is /home/raytracer/Documents/nc/practice/debug_gdb/security_tube
+Read from object file /home/raytracer/Documents/nc/practice/debug_gdb/security_tube/main_ggdb.dbg (0x55909aca45a0)
+Language: c
+
+Blockvector same as owning compunit: main.c
+
+
+Symtab for file /usr/include/stdlib.h at 0x55909af08240
+Compilation directory is /home/raytracer/Documents/nc/practice/debug_gdb/security_tube
+Read from object file /home/raytracer/Documents/nc/practice/debug_gdb/security_tube/main_ggdb.dbg (0x55909aca45a0)
+Language: c
+
+Blockvector same as owning compunit: main.c
+

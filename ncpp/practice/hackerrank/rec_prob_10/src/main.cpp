@@ -35,6 +35,8 @@ void get_strs(string in, string& out, vector<string>& tot_strs) {
 }
 
 int main(int argc, char **argv) {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 	string in{}, out{};
 	vector<string> tot_strs{};
 	cin >> in;

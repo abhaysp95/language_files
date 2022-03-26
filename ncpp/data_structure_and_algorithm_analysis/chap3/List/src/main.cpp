@@ -278,7 +278,7 @@ class List {
 				push_back(x);
 		}
 		List& operator=(const List& rhs) {
-			List copy = rhs;
+			List copy = rhs;  // don't confuse this with assignment operation(it calls copy constructor)
 			std::swap(*this, copy);
 			return *this;
 		}

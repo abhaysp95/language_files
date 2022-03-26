@@ -296,7 +296,7 @@ void solvethetestcase() {
 	}
 	catch (node_not_found& nnf) {
 		cout << nnf.what() << nl;
-		free(root);  // still have to fix this
+		free_tree(root);  // still have to fix this
 	}
 }
 

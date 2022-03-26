@@ -1,0 +1,20 @@
+[youtube] GLvohMXgcBo: Downloading webpage
+[info] Available formats for GLvohMXgcBo:
+format code  extension  resolution note
+249          webm       audio only tiny   60k , opus @ 50k (48000Hz), 1.69MiB
+250          webm       audio only tiny   79k , opus @ 70k (48000Hz), 2.23MiB
+140          m4a        audio only tiny  130k , m4a_dash container, mp4a.40.2@128k (44100Hz), 4.12MiB
+251          webm       audio only tiny  159k , opus @160k (48000Hz), 4.40MiB
+394          mp4        192x144    144p   65k , av01.0.00M.08, 30fps, video only, 1.76MiB
+278          webm       192x144    144p   74k , webm container, vp9, 30fps, video only, 2.28MiB
+160          mp4        192x144    144p   84k , avc1.4d400c, 30fps, video only, 2.19MiB
+395          mp4        320x240    240p  143k , av01.0.00M.08, 30fps, video only, 3.47MiB
+242          webm       320x240    240p  170k , vp9, 30fps, video only, 4.70MiB
+133          mp4        320x240    240p  184k , avc1.4d400d, 30fps, video only, 4.09MiB
+396          mp4        480x360    360p  292k , av01.0.01M.08, 30fps, video only, 6.78MiB
+243          webm       480x360    360p  312k , vp9, 30fps, video only, 8.43MiB
+134          mp4        480x360    360p  475k , avc1.4d401e, 30fps, video only, 9.97MiB
+397          mp4        640x480    480p  516k , av01.0.04M.08, 30fps, video only, 11.64MiB
+244          webm       640x480    480p  572k , vp9, 30fps, video only, 14.72MiB
+135          mp4        640x480    480p  868k , avc1.4d401e, 30fps, video only, 19.27MiB
+18           mp4        480x360    360p  562k , avc1.42001E, 30fps, mp4a.40.2@ 96k (44100Hz), 17.92MiB (best)

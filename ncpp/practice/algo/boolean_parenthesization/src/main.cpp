@@ -65,11 +65,11 @@ using namespace std;
 	freopen(name".in", "r", stdin);
 #define fileIO(name) \
 	freopen(name".in", "r", stdin); \
-	freopen(name".out", "w", stdout);
+freopen(name".out", "w", stdout);
 #define FAST_IO \
 	ios_base::sync_with_stdio(false); \
-	cin.tie(NULL); \
-	cout.tie(NULL);
+cin.tie(NULL); \
+cout.tie(NULL);
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcomment"
@@ -122,13 +122,13 @@ signed main() {
 	//comment when using scanf, printf
 	FAST_IO
 
-	//set the seed
-	//srand(chrono::high_resolution_clock::now().time_since_epoch().count());
+		//set the seed
+		//srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-	//comment for input through console
-	fileI("input")
+		//comment for input through console
+		fileI("input")
 
-	int t = 1;
+		int t = 1;
 	//(uncomment for multiple test cases)
 	cin >> t;
 	loopl (testcase, 1, t + 1) {
@@ -238,23 +238,23 @@ vector<vvi> t;
 int true_bp_mem(string& in, int i, int j, int bt) {
 	if (i > j)
 		return false;
-	 if (i == j) {
-		 if (bt)
-			 return in[i] == 'T';
-		 else
-			 return in[i] == 'F';
-	 }
-	 if (t[i][j][bt] != -1)
-		 return t[i][j][bt];
-	 int ans{};
-	 loops(k, (i + 1), j, 2) {
-		 int lt = true_bp_mem(in, i, k - 1, true);
-		 int rt = true_bp_mem(in, k + 1, j, true);
-		 int lf = true_bp_mem(in, i, k - 1, false);
-		 int rf = true_bp_mem(in, k + 1, j, false);
-		 ans += expr_val(in, k, bt, lt, rt, lf, rf);
-	 }
-	 return t[i][j][bt] = ans;
+	if (i == j) {
+		if (bt)
+			return in[i] == 'T';
+		else
+			return in[i] == 'F';
+	}
+	if (t[i][j][bt] != -1)
+		return t[i][j][bt];
+	int ans{};
+	loops(k, (i + 1), j, 2) {
+		int lt = true_bp_mem(in, i, k - 1, true);
+		int rt = true_bp_mem(in, k + 1, j, true);
+		int lf = true_bp_mem(in, i, k - 1, false);
+		int rf = true_bp_mem(in, k + 1, j, false);
+		ans += expr_val(in, k, bt, lt, rt, lf, rf);
+	}
+	return t[i][j][bt] = ans;
 }
 
 void print_mat(string& in) {
@@ -277,8 +277,8 @@ void solvethetestcase() {
 	string in{};
 	cin >> in;
 	/*ump.clear();
-	cout << true_bp_mem_ump(in, 0, in.size() - 1, true) << nl;
-	print_umap();*/
+	  cout << true_bp_mem_ump(in, 0, in.size() - 1, true) << nl;
+	  print_umap();*/
 	t.clear();
 	t.resize(in.size() + 1);
 	rep(i, (in.size() + 1)) {

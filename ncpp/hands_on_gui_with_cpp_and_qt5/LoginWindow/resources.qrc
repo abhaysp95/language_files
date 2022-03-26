@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/manjaro_maia_abstract2.png</file>
+    </qresource>
+</RCC>

@@ -16,13 +16,32 @@ set -e  # exit-on-error mode
 trap 'catch $? $LINENO' EXIT
 
 catch() {
-	echo "catching"
+	#echo "catching"
 	if [ "$1" != "0" ]; then
 		# error handling goes here
 		echo "Error $1 occurred in $2"
 	fi
 	#exit 1
 }
+
+
+declare -a dependencies_run=(
+"maim --version"
+"dmenu -v"
+"convert --version"  # <--- this command
+)
+
+check_dependency() {
+	for cmd in "${dependencies_run[@]}"; do
+		echo "${cmd}"
+		${cmd} 2&>1 >/dev/null
+	done
+}
+
+check_dependency
+
+
+
 
 #simple() {
 	#echo "I'm from simple"
@@ -31,6 +50,9 @@ catch() {
 	# will not be called(think of each function as subshell)
 #}
 
+
+
+
 #simple
 
 another_simple() {
@@ -38,8 +60,8 @@ another_simple() {
 	echo "This is from another_simple"
 }
 
-another_simple
-echo "after another_simple call"
+#another_simple
+#echo "after another_simple call"
 
 #echo "before error"
 #dmen -v >/dev/null 2>&1
