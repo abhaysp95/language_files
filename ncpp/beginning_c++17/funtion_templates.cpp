@@ -2,6 +2,7 @@
 #include <vector>
 #include <optional>
 #include <algorithm>
+#include <iomanip>
 
 // template declaration
 /* template<typename T>
@@ -161,6 +162,8 @@ T average(const T (&array)[N]) {
 }
 
 // Exercise
+
+// ex9.3
 template <typename T1, typename T2>
 decltype(auto) plus(T1 a, T2 b)
 {
@@ -173,6 +176,79 @@ template <typename T1, typename T2>
 decltype(auto) plus(T1* a, T2* b)
 {
 	return *a + *b;
+}
+
+std::string plus(const char* a, const char *b)
+{
+	return std::string(a) + b;
+}
+
+// ex9.4
+
+template <typename T, size_t N>
+inline size_t size_of(const T (&array)[N])
+{
+	return N;
+}
+
+template <typename T>
+inline size_t size_of(const std::vector<T>& vec)
+{
+	return vec.size();
+}
+
+template <typename T, size_t N>
+inline size_t size_of(const std::array<T,N>& array)
+{
+	array.size(); // or return N;
+}
+
+// ex9.6
+
+template <typename T>
+void swap(std::vector<T>& vec, size_t first, size_t last)
+{
+	auto temp {vec[first]};
+	vec[first] = vec[last];
+	vec[last] = temp;
+}
+
+template <typename T>
+inline void sort(std::vector<T>& vec)
+{
+	if (vec.empty()) return;
+	sort(vec, 0, vec.size() - 1);
+}
+
+template <typename T>
+void sort(std::vector<T>& vec, size_t start, size_t end)
+{
+	if (!(start < end)) return;
+
+	// choose middle value
+	swap(vec, start, (start + end) / 2);
+
+	size_t current {start};
+	for (size_t i {start + 1}; i < end; i++)
+	{
+		if (vec[start] > vec[i])
+			swap(vec, ++current, i);
+	}
+
+	swap(vec, start, current);
+
+	if (current < start) swap(vec, start, current - 1);
+	if (current + 1 < end) swap(vec, current + 1, end);
+}
+
+template <typename T>
+void print_sorted(const std::vector<T>& vec, size_t N)
+{
+	for (const T& elem: vec)
+	{
+		std::cout << std::setw(N) << elem;
+	}
+	std::cout << std::endl;
 }
 
 int main(int argc, char** argv) {
