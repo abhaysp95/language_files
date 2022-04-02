@@ -1,25 +1,30 @@
 #include <iostream>
 #include <vector>
-#include <optional>
 
 using namespace std;
 
-optional<size_t> check(const vector<int>& nums)
+class Solution
 {
-	for (int i {}; i < nums.size() - 1; i++)
-	{
-		if (i % 2 == 0)
+	public:
+		int minDeletion(vector<int>& nums)
 		{
-			if (nums[i] == nums[i + 1])
+			int del {};
+			size_t sz = nums.size();
+			for (size_t i {}; i < sz; i++)
 			{
-				return i;
+				int delta = i - del;
+				if (nums[i] == nums[i + 1] && delta % 2 == 0)
+					del++;
 			}
+			if ((sz - del) % 2 != 0)
+				del++;
+			return del;
 		}
-	}
-	return nullopt;
-}
+};
 
-int minDeletion(vector<int>& nums)
+int main(int argc, char** argv)
 {
-
+	vector<int> vec {1, 1, 2, 2, 3, 3};
+	Solution sol {};
+	std::cout << sol.minDeletion(vec) << std::endl;
 }
