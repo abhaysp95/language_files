@@ -9,7 +9,7 @@ Cuboid::Cuboid(double aSide): Cuboid{aSide, aSide, aSide} {
 Cuboid::Cuboid(double l, double w, double h): length{l}, width{w}, height{h}
 {}
 
-double Cuboid::Volume() {
+double Cuboid::Volume() const {
 	return this->length * this->width * this->height;
 }
 
@@ -38,3 +38,14 @@ Cuboid& Cuboid::setHeight(double h) {
 	return *this;
 }
 
+double Cuboid::getLength() const {
+	return this->length;
+}
+
+double Cuboid::getWidth() const {
+	return this->width;
+}
+
+double Cuboid::getHeight() const {
+	return this->height;
+}
