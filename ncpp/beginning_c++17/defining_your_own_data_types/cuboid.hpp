@@ -3,9 +3,10 @@
 
 class Cuboid {
 	private:
-		double length;
-		double width;
-		double height;
+		double length {1.0};
+		double width {1.0};
+		double height {1.0};
+		mutable unsigned count {};
 	public:
 		explicit Cuboid() = default;
 		explicit Cuboid(double l, double w, double h);
@@ -24,6 +25,8 @@ class Cuboid {
 		double getLength() const;
 		double getWidth() const;
 		double getHeight() const;
+
+		void printVolume() const;
 };
 
 #endif

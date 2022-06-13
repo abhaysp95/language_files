@@ -21,5 +21,6 @@ int main(void) {
 	// doing method chaining
 	Cuboid box3 {};  // empty cuboid
 	box3.setLength(10).setWidth(20).setHeight(30);
-	std::cout << "Volume of box3: " << box3.Volume() << std::endl;
+	// std::cout << "Volume of box3: " << box3.Volume() << std::endl;
+	box3.printVolume();
 }

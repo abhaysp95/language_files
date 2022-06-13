@@ -49,3 +49,9 @@ double Cuboid::getWidth() const {
 double Cuboid::getHeight() const {
 	return this->height;
 }
+
+void Cuboid::printVolume() const {
+	std::cout << "Volume of box: " << this->Volume() << std::endl;
+	std::cout << "printVolume() has been called " << ++this->count << " times" << std::endl;
+	// updating count is possible even though method is const is because of mutable keyword
+}
