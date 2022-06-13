@@ -1,10 +1,10 @@
-#include "cube.hpp"
+#include "cuboid.hpp"
 
 #include <iostream>
 
 int main(void) {
-	Cube box1 {7.0};
-	Cube box2 {3.0};
+	Cuboid box1 {7.0};
+	Cuboid box2 {3.0};
 	if (box1.hasLargerVolumeThean(box2)) {
 		std::cout << "box1 larger than box2" << std::endl;
 	} else {
@@ -17,4 +17,9 @@ int main(void) {
 	} else {
 		std::cout << "box1 has volume less than or equal to 50.0" << std::endl;
 	} */  // error because using explicit constructor
+
+	// doing method chaining
+	Cuboid box3 {};  // empty cuboid
+	box3.setLength(10).setWidth(20).setHeight(30);
+	std::cout << "Volume of box3: " << box3.Volume() << std::endl;
 }
