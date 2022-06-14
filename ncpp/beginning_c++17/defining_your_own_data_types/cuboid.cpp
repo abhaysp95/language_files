@@ -55,3 +55,7 @@ void Cuboid::printVolume() const {
 	std::cout << "printVolume() has been called " << ++this->count << " times" << std::endl;
 	// updating count is possible even though method is const is because of mutable keyword
 }
+
+size_t Cuboid::getObjectByCount() const {
+	return this->objectCount;
+}

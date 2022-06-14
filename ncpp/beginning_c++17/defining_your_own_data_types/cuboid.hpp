@@ -1,12 +1,15 @@
 #ifndef _CUBOID_H
 #define _CUBOID_H
 
+#include <stddef.h>
+
 class Cuboid {
 	private:
 		double length {1.0};
 		double width {1.0};
 		double height {1.0};
-		mutable unsigned count {};
+		mutable unsigned count {};  // objectCount is serving same purpose
+		static inline size_t objectCount {};
 	public:
 		explicit Cuboid() = default;
 		explicit Cuboid(double l, double w, double h);
@@ -27,6 +30,16 @@ class Cuboid {
 		double getHeight() const;
 
 		void printVolume() const;
+		size_t getObjectByCount() const;
+
+		// friend function
+		friend double surfaceArea(const Cuboid &aCuboid);
 };
 
 #endif
+
+	/** objectCount is static inline, before C++17 (usage of inline), you'll
+	 * have to specifically define the static member values outside of class
+	 * with a statement like this
+	 * size_t Cuboid::objectCount {};
+	 */
