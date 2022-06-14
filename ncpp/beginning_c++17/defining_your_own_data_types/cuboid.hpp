@@ -34,6 +34,9 @@ class Cuboid {
 
 		// friend function
 		friend double surfaceArea(const Cuboid &aCuboid);
+
+		int compare(const Cuboid &cuboid) const;
+		void listCuboid() const;
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "cuboid.hpp"
 
 #include <iostream>
+#include <iomanip>
 
 Cuboid::Cuboid(double aSide): Cuboid{aSide, aSide, aSide} {
 	std::cout << "Cube constructor called" << std::endl;
@@ -58,4 +59,16 @@ void Cuboid::printVolume() const {
 
 size_t Cuboid::getObjectByCount() const {
 	return this->objectCount;
+}
+
+int Cuboid::compare(const Cuboid &cuboid) const {
+	if (this->Volume() < cuboid.Volume()) return -1;
+	if (this->Volume() == cuboid.Volume()) return 0;
+	return +1;
+}
+
+void Cuboid::listCuboid() const {
+	std::cout << " Box(" << std::setw(2) << this->length << ','
+		<< std::setw(2) << this->width << ','
+		<< std::setw(2) << this->height << ')';
 }
