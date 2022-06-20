@@ -40,6 +40,12 @@ class Cuboid {
 		int compare(const Cuboid &cuboid) const;
 		// void listCuboid() const;
 
+		inline Cuboid operator+(const Cuboid& other) const {
+			return Cuboid{std::max(this->length, other.getLength()),
+					std::max(this->width, other.getWidth()),
+					this->height + other.getHeight()};
+		}
+
 		friend inline std::ostream& operator<<(std::ostream& out, const Cuboid& cuboid) {
 			out << " Box("
 				<< std::setw(2) << cuboid.getLength() << ", "
