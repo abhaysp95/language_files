@@ -11,7 +11,7 @@ int main(void) {
 		std::cout << "box1 has less than or equal volume to box2" << std::endl;
 	}
 
-	std::cout << "Volume of box1: " << box1.Volume() << std::endl;
+	std::cout << "Volume of box1: " << box1.volume() << std::endl;
 	/* if (box1.hasLargerVolumeThean(50.0)) {  // processed as box1.hasLargerVolumeThean(cube{50.0})
 		std::cout << "box1 has volume greater than 50.0" << std::endl;
 	} else {

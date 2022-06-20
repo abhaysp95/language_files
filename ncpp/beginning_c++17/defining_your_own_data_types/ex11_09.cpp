@@ -10,9 +10,9 @@ int main(void) {
 
 	std::cout << "Volume and surface area: \n";
 
-	std::cout << c1.Volume() << " " << surfaceArea(c1) << std::endl;
-	std::cout << c2.Volume() << " " << surfaceArea(c2) << std::endl;
-	std::cout << c3->Volume() << " " << surfaceArea(*c3) << std::endl;
+	std::cout << c1.volume() << " " << surfaceArea(c1) << std::endl;
+	std::cout << c2.volume() << " " << surfaceArea(c2) << std::endl;
+	std::cout << c3->volume() << " " << surfaceArea(*c3) << std::endl;
 
 	// std::cout << "Object count is " << Cuboid::objectCount << std::endl;  // objectCount is private, this is just showcasing the usage
 
