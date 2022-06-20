@@ -21,6 +21,7 @@ class TruckLoad {
 
 		Package *pHead {};
 		Package *pTail {};
+		static SharedCuboid nullCuboid;  // pointer to nullptr
 
 	public:
 		class Iterator {
@@ -50,7 +51,7 @@ class TruckLoad {
 		// void listCuboid() const;
 
 		// overloading subscript operator
-		SharedCuboid operator[](size_t index);
+		SharedCuboid& operator[](size_t index);
 };
 
 std::ostream& operator<<(std::ostream& out, const TruckLoad& load);

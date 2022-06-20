@@ -8,6 +8,8 @@ TruckLoad::TruckLoad(const std::vector<SharedCuboid>& cuboids) {
 	}
 }
 
+SharedCuboid TruckLoad::nullCuboid {};  // initialize static member of class
+
 SharedCuboid TruckLoad::Iterator::getFirstCuboid() {
 	pCurrent = pHead;
 	return pCurrent ? pCurrent->pCuboid : nullptr;
@@ -54,16 +56,26 @@ bool TruckLoad::removeCuboid(SharedCuboid aCuboid) {
 	return false;
 }
 
-SharedCuboid TruckLoad::operator[](size_t index) {
+SharedCuboid& TruckLoad::operator[](size_t index) {
 	size_t count{};
-	TruckLoad::Iterator iter = this->getIterator();
+	/* TruckLoad::Iterator iter = this->getIterator();
 	for (SharedCuboid cuboid = iter.getFirstCuboid(); cuboid; cuboid = iter.getNextCuboid()) {
 		if (count++ == index) {
 			return cuboid;
 		}
 	}
 
-	return nullptr;
+	return nullptr; */
+
+	// can't use TruckLoad::Iterator if want to return reference to a cuboid to
+	// modify the results from subscript operator
+	for (Package *package{pHead}; package; package = package->pNext) {
+		if (count++ == index) {
+			return package->pCuboid;
+		}
+	}
+
+	return nullCuboid;
 }
 
 std::ostream& operator<<(std::ostream& out, const TruckLoad& load) {
