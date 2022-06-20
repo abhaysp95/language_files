@@ -13,3 +13,6 @@ set(SOURCES
 	"./program_files_and_preprocessing_directives/preprocessor_directives.cpp")
 
 add_executable(bgcpp ${SOURCES})
+add_subdirectory(./defining_your_own_data_types)
+add_subdirectory(./operator_overloading)
+add_subdirectory(./runtime_errors_and_exceptions)
