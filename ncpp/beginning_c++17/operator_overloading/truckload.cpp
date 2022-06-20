@@ -27,6 +27,7 @@ void TruckLoad::addCuboid(SharedCuboid cuboid) {
 	Package* package = new Package{cuboid};
 	if (pTail) {
 		pTail->pNext = package;
+		pTail = pTail->pNext;
 	} else {
 		pHead = package;
 		pTail = package;
