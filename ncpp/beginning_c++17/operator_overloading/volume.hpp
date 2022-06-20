@@ -14,4 +14,7 @@ class Volume {
 		}
 };
 
+// Unlike many other operators function object (and conversion operators,
+// search it) can't be defined as normal function
+
 #endif
