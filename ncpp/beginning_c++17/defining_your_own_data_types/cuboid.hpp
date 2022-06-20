@@ -14,7 +14,7 @@ class Cuboid {
 		explicit Cuboid() = default;
 		explicit Cuboid(double l, double w, double h);
 		explicit Cuboid(double aSide);
-		double Volume() const;
+		double volume() const;
 		bool hasLargerVolumeThean(Cuboid aCube);
 
 		// copy constructor
