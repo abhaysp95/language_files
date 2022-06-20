@@ -21,6 +21,10 @@ class TruckLoad {
 
 		Package *pHead {};
 		Package *pTail {};
+
+		// don't use this (unless you know the consequences, which is,
+		// non-const reference to nullCuboid which can be used in all sorts of
+		// wrong way)
 		static SharedCuboid nullCuboid;  // pointer to nullptr
 
 	public:
