@@ -98,6 +98,10 @@ class Box {
 			--(*this);
 			return copy;
 		}
+
+		inline explicit operator bool() const {  // if (box) {...}
+			return this->volume();
+		}
 };
 
 // since volume() is public, you can have operator<() as ordinary function as well
