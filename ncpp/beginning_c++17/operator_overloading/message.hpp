@@ -14,6 +14,10 @@ class Message {
 			pText{new std::string(msg)} {}
 		~Message() { delete pText; }
 
+		Message(const Message& msg) {
+			pText = new std::string(msg.getText());
+		}
+
 		// copy assignment operator
 		Message& operator=(const Message& msg) {  // assignment operators can
 												  // be overloaded for
