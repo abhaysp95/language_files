@@ -47,7 +47,10 @@ class TruckLoad {
 			pHead = pTail =  new Package{pCuboid};
 		}
 		TruckLoad(const std::vector<SharedCuboid> &cuboids);
-		// TruckLoad(const TruckLoad &src);  // try to implement copy constructor
+		TruckLoad(const TruckLoad &other);  // try to implement copy constructor
+
+		// copy assignment operator
+		TruckLoad& operator=(const TruckLoad& other);
 
 		Iterator getIterator() const { return Iterator{pHead}; }
 		void addCuboid(SharedCuboid aCuboid);

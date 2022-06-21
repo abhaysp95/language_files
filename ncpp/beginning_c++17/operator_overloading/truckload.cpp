@@ -10,6 +10,25 @@ TruckLoad::TruckLoad(const std::vector<SharedCuboid>& cuboids) {
 
 SharedCuboid TruckLoad::nullCuboid {};  // initialize static member of class
 
+TruckLoad::TruckLoad(const TruckLoad& other) {
+	for (Package *package{other.pHead}; package; package = package->pNext) {
+		this->addCuboid(package->pCuboid);
+	}
+}
+
+TruckLoad& TruckLoad::operator=(const TruckLoad &other) {
+	if (this != &other) {
+		delete pHead;  // will delete all joined packages
+		pHead = pTail = nullptr;
+
+		for (Package *package(other.pHead); package; package = package->pNext) {
+			this->addCuboid(package->pCuboid);
+		}
+	}
+
+	return *this;
+}
+
 SharedCuboid TruckLoad::Iterator::getFirstCuboid() {
 	pCurrent = pHead;
 	return pCurrent ? pCurrent->pCuboid : nullptr;
