@@ -1,10 +1,14 @@
 #include "box.hpp"
 
 Box::Box(double l, double w, double h):
-	length{l}, width{w}, height{h} {}
+	length{l}, width{w}, height{h} {
+		std::cout << "Box(double, double, double)\n";
+}
 
 Box::Box(double s):
-	length{s}, width{s}, height{s} {}
+	Box(s, s, s) {
+		std::cout << "Box(double)\n";
+	}
 
 double Box::volume() const {
 	return length * width * height;
