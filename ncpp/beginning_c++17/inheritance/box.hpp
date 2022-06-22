@@ -19,6 +19,12 @@ class Box {
 		explicit Box(double s);
 		Box() = default;
 
+		Box(const Box& other);
+
+		~Box() {
+			std::cout << "Box destructor called\n";
+		}
+
 		double volume() const;
 
 		// accessors

@@ -8,7 +8,15 @@ Box::Box(double l, double w, double h):
 Box::Box(double s):
 	Box(s, s, s) {
 		std::cout << "Box(double)\n";
-	}
+}
+
+Box::Box(const Box& other) {
+	length = other.getLength();
+	width = other.getWidth();
+	height = other.getHeight();
+
+	std::cout << "Box copy constructor called\n";
+}
 
 double Box::volume() const {
 	return length * width * height;
