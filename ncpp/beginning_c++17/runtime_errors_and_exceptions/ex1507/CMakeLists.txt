@@ -1,1 +1,1 @@
-add_executable(ex1506 "./ex15_06.cpp" "./mytroubles.hpp")
+add_executable(ex1507 "./ex15_07.cpp" "./mytroubles.hpp")
