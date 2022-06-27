@@ -1,8 +1,6 @@
 #include "mytroubles.hpp"
 #include <iostream>
 
-void trySomething(int i);
-
 int main(void) {
 	Trouble trouble;
 	MoreTrouble more_trouble;
