@@ -15,4 +15,6 @@ set(SOURCES
 add_executable(bgcpp ${SOURCES})
 add_subdirectory(./defining_your_own_data_types)
 add_subdirectory(./operator_overloading)
+add_subdirectory(./inheritance)
+add_subdirectory(./polymorphism)
 add_subdirectory(./runtime_errors_and_exceptions)
