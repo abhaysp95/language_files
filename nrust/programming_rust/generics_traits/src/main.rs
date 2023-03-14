@@ -26,10 +26,11 @@ fn top_ten<T: Debug + Hash + Eq>(_values: &Vec<T>) {
     // ...
 }
 
-/* struct Point {
-    x: usize,
-    y: usize,
-} */
+#[allow(dead_code)]
+struct Point {
+    x: i32,
+    y: i32,
+}
 
 trait MeasureDistance {}
 
@@ -43,8 +44,55 @@ fn nearest<'t, 'c, P>(target: &'t P, _candidates: &'c [P]) -> &'t P
 where
     P: MeasureDistance,
 {
-    // only bounds can be provided with "where" type defintion, not types
-    return target
+    // only bounds can be provided with "where" type defintion, not types (obviously, generic means
+    // no type)
+    return target;
+}
+
+/// a plain simple broom
+struct Broom {
+    x: i32,
+    y: i32,
+    height: i32,
+}
+
+/// a plain simple canvas to draw upon
+#[allow(dead_code)]
+struct Canvas {
+    origin: Point,
+    height: usize,
+    width: usize,
+}
+
+impl Canvas {
+    #[allow(unused_variables)]
+    fn write_at(&self, x: i32, y: i32, to_draw: char) {
+        // ... write char the canvas
+    }
+}
+
+/// A trait for characters, items and scenery - anything in the game world that's visible on
+/// screen
+trait Visible {
+    /// Render this object object on the given canvas
+    fn draw(&self, canvas: &mut Canvas);
+
+    /// Return true if clicking at (x, y) should select this object
+    /// select this object
+    fn hit_test(&self, x: i32, y: i32) -> bool;
+}
+
+impl Visible for Broom {
+    fn draw(&self, canvas: &mut Canvas) {
+        for y in self.y - self.height - 1 .. self.y {
+            canvas.write_at(self.x, y, '|');
+        }
+        canvas.write_at(self.x, self.y, 'M');
+    }
+
+    fn hit_test(&self, x: i32, y: i32) -> bool {
+        self.x == x && self.y - self.height - 1 <= y && y <= self.y
+    }
 }
 
 fn main() {
