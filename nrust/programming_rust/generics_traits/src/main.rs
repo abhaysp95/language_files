@@ -102,6 +102,22 @@ impl Visible for Broom {
     }
 }
 
+/* default methods */
+/// A writer that ignores whatever data you write
+struct Sink { }
+
+impl Write for Sink {
+    fn write(&mut self, buf: &[u8]) -> Result<usize> {
+        // claim to have successfully written whatever provided
+        Ok(buf.len())
+    }
+
+    fn flush(&mut self) -> Result<()> {
+        // there's nothing to flush actually, so just get the f... out
+        Ok(())
+    }
+}
+
 fn main() {
     let mut local_file = File::create("hello.txt").unwrap();
     say_hello(&mut local_file).unwrap();
@@ -110,4 +126,7 @@ fn main() {
     let mut bytes = vec![];
     say_hello(&mut bytes).unwrap();
     assert_eq!(bytes, b"hello world\n");
+
+    let mut out = Sink{};
+    out.write_all(b"Hello World\n").unwrap();  // where's write_all() defined ?
 }
