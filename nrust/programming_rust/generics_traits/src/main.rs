@@ -2,8 +2,9 @@ use std::{
     fmt::Debug,
     fs::File,
     hash::Hash,
-    io::{Result, Write, self},
-    ops::Range, rc::Rc,
+    io::{self, Result, Write},
+    ops::Range,
+    rc::Rc,
 };
 
 #[allow(dead_code)]
@@ -141,7 +142,7 @@ impl IsEmoji for char {
 #[allow(dead_code)]
 struct HTMLDocument {
     node_data: String,
-    childrens: Vec<Rc<HTMLDocument>>
+    childrens: Vec<Rc<HTMLDocument>>,
 }
 
 /// trait values to which you can send HTML
@@ -153,6 +154,56 @@ impl<W: Write> WriteHTML for W {
     fn write_html(&mut self, _html: &HTMLDocument) -> io::Result<()> {
         // ... write html document to writer
         Ok(())
+    }
+}
+
+#[allow(dead_code)]
+enum Direction {
+    EAST,
+    WEST,
+    NORTH,
+    SOUTH,
+}
+
+// subtrait
+/* trait Creature: Visible {
+    fn position(&self) -> (i32, i32);
+    fn facing(&self) -> Direction;
+} */
+
+// subtrait is just shorthand for bound on Self
+trait Creature
+where
+    Self: Visible,
+{
+    fn position(&self) -> (i32, i32);
+    fn facing(&self) -> Direction;
+}
+
+struct YetAnotherBroom {}
+
+// any type implementing Creature trait must also implement Visible trait (thus subtrait), but
+// vice-versa is not mendatory
+
+impl Creature for YetAnotherBroom {
+    fn position(&self) -> (i32, i32) {
+        (0, 0)
+    }
+
+    fn facing(&self) -> Direction {
+        Direction::EAST
+    }
+}
+
+impl Visible for YetAnotherBroom {
+    #[allow(unused_variables)]
+    fn draw(&self, canvas: &mut Canvas) {
+        // ...
+    }
+
+    #[allow(unused_variables)]
+    fn hit_test(&self, x: i32, y: i32) -> bool {
+        false
     }
 }
 
