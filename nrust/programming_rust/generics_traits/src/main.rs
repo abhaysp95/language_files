@@ -27,8 +27,8 @@ fn top_ten<T: Debug + Hash + Eq>(_values: &Vec<T>) {
 }
 
 /* struct Point {
-    x usize,
-    y usize,
+    x: usize,
+    y: usize,
 } */
 
 trait MeasureDistance {}
