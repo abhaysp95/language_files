@@ -70,7 +70,6 @@ struct Canvas {
     height: usize,
     width: usize,
 }
-
 impl Canvas {
     #[allow(unused_variables)]
     fn write_at(&self, x: i32, y: i32, to_draw: char) {
@@ -205,6 +204,32 @@ impl Visible for YetAnotherBroom {
     fn hit_test(&self, x: i32, y: i32) -> bool {
         false
     }
+}
+
+// type associated functions (with trait)
+trait StringSet {
+    /// return a new empty set
+    fn new() -> Self;
+
+    /// return a set that contains all the strings in `strings'
+    fn from_slice(string: &[&str]) -> Self;
+
+    /// find out if the set contains a particular 'value'
+    fn contains(&self, value: &str) -> bool;
+
+    /// add a string to this set
+    fn add(&mut self, string: &str);
+} // the first two functions are type associated functions
+
+/// return the set of words in 'document' that aren't in 'wordlist'
+fn unknown_words<S: StringSet>(document: &[String], wordlist: &S) -> S {
+    let mut unknowns = S::new();
+    for word in document {
+        if !wordlist.contains(word) {
+            unknowns.add(word);
+        }
+    }
+    unknowns
 }
 
 fn main() {
