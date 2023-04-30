@@ -123,12 +123,13 @@ impl Display for Point {
 }
 
 // Newtype pattern
-struct Wrapper<T>(Vec<T>);
+struct Wrapper<T: Display>(Vec<T>);
 
 impl<T> fmt::Display for Wrapper<T> where T: Display {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let v = self.0.iter().map(|x| x.to_string()).collect::<Vec<_>>();
-        write!(f, "[{}]", v.join(""))
+        write!(f, "[{}]", v.join(" "))
+        // write!(f, "[{}]", self.0.join(" "))
     }
 }
 
